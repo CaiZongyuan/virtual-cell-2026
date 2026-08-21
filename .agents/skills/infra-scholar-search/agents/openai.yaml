@@ -1,0 +1,4 @@
+interface:
+  display_name: "Infra Scholar Search"
+  short_description: "直接通过 Infra Agent Scholar API 检索并核验学术论文"
+  default_prompt: "使用 $infra-scholar-search 通过 Infra Agent API 检索并核验这个主题的学术原文来源。"
