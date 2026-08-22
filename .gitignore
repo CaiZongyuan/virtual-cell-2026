@@ -15,6 +15,7 @@ venv/
 
 # Experiment outputs and large local datasets
 data/
+output/
 outputs/
 artifacts/
 checkpoints/
