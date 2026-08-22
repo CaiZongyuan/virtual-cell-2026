@@ -216,6 +216,13 @@
 - Scholar 结果会随索引更新而变化；本次重放没有返回此前合并说明中提到的燃料电池结果，因此删除该无法恢复到具体题名和 URL 的泛称，不把未能证明实际评估过的纯 API 噪声伪造为论文记录。
 - 第二个查询采用的 PDS 论文已在“VC2025 任务与指标”中独立记录。搜索结果只用于候选发现；采用的关键结论仍回到 DOI、出版页、预印本、官方文档或代码核验。
 
+### 2026-08-22 检索栈基准测试
+
+- 目的：比较项目内可用的论文检索 Skill 和 API，确定默认路由、补充源和失败回退；不评审论文科学结论。
+- 查询：`zero-shot single-cell perturbation prediction unseen cell context`、用于 SciVerse evidence retrieval 的语义等价自然语言问题，以及 STATE 的完整题名/DOI 精确查找。
+- 来源：Infra Scholar、SciVerse meta/agentic search、Paper Schema、OpenAlex fallback、OpenCLI arXiv/PubMed/Semantic Scholar；调用次数、结果质量和错误见 [基准记录](../research/literature-search-stack-benchmark.md)。
+- 处理：本次只把返回结果用于检索器相关性评估，未据搜索摘要新增项目结论；实际进入后续方案判断的论文仍须按本索引模板逐篇登记。
+
 ## 新增记录模板
 
 新增或重新评估论文时，复制以下字段并补全；即使排除也保留记录和理由。

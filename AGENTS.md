@@ -5,8 +5,27 @@
 本仓库服务于 Arc Institute 2026 Virtual Cell Challenge。核心任务是：根据未知细胞背景的非靶向对照单细胞转录组和待扰动基因，零样本预测 CRISPRi 扰动后的单细胞基因表达原始计数。
 
 - 竞赛规则、数据和提交格式以 `docs/Official-website/` 为首要依据；实现前核对相关页面。
-- 科研检索默认使用 `$infra-scholar-search` 直接调用 Infra Agent HTTP API；详细接口行为见 `docs/Infra-Agent-Research-Search-Guide.md`，关键结论回到论文、数据集或官方文档原文核验。
+- 科研检索遵循下文的分层流程；接口合同见 `docs/Infra-Agent-Research-Search-Guide.md`，当前路由依据见 `docs/research/literature-search-stack-benchmark.md`。
 - 明确区分已验证事实、论文结论、工程假设和待验证猜想，并保留来源与不确定性。
+
+## 科研检索
+
+先查 `docs/references/INDEX.md`，复用已评估材料并识别缺口；再把问题改写为包含生物对象、任务、细胞背景和方法的高信号英文查询。每个检索任务先执行一个查询，只在结果明显缺失时精炼一次，并记录来源、查询词、调用次数、失败和未解决缺口。
+
+### 来源路由
+
+1. **默认发现：**使用 `$infra-scholar-search` 直接调用 Scholar HTTP API，先看前 10 条的题名、DOI、摘要、版本和来源。它是本项目日常主题检索及题名/DOI 查找的第一入口；保持顺序调用，最多不超过已验证的 QPS 3。
+2. **证据与结构补全：**需要自然语言证据片段、可定位全文、图表或相关工作时使用 `$sciverse`；需要年份、作者、期刊、OA、引用量等硬筛选时先 `meta-search`，再把候选 `doc_id` 作为硬范围做语义检索。元数据结果按 DOI 和版本去重，不能把预印本与正式版当成两项独立证据。
+3. **ML 方法精读：**只对单细胞机器学习方法、模型组件和 benchmark 使用 `$sciverse-paper-schema`。其语料主要是已解析的 AI 会议论文；空结果仅表示该语料未收录，不能推出生命科学文献中不存在。
+4. **覆盖审计：**用户要求系统综述、跨库高召回、MeSH、严格引文核对或引用管理时使用 `$nature-academic-search`，按 PubMed/CrossRef/arXiv 的 T1 来源开始，再按需扩展 Semantic Scholar、bioRxiv/medRxiv。MCP 不可用时的 OpenAlex fallback 只作补充召回，不替代 PubMed 或原文核验。
+5. **窄源工具：**OpenCLI arXiv 仅用于明确的 arXiv 题名、ID、作者或预印本查询；Semantic Scholar 仅在需要引文图或相关推荐且 API 当前可用时启用。`$nature-literature-pipeline` 只用于用户明确要求的定时文献监控或推送，不用于一次性交互检索。
+
+### 收敛与核验
+
+1. 合并结果时先规范化 DOI；无 DOI 时用规范化题名和第一作者识别重复。合并预印本、会议版和正式出版版，保留版本关系，并优先采用元数据更完整的正式来源。
+2. 搜索返回的标题、snippet、摘要、引用数和模型生成总结都只是候选线索。影响项目决策的机制、方法、数据、指标和数值必须回到 DOI/出版页、预印本原文、数据集或官方代码核验；SciVerse 证据同时保留 `doc_id`、offset/页码和题名。
+3. 一次精炼后若不再出现新的高优先级方法，且关键结论已有一手来源，即停止扩搜。若来源失败或覆盖不足，报告已检索范围和缺口；“未命中”不得表述为“研究不存在”。
+4. 完成标准：所有实际用于判断的候选均在 `docs/references/INDEX.md` 中标为采用、备选或排除；检索台账完整；关键结论均有可复核的一手来源。未查看题名或摘要的原始命中不必逐条入索引。
 
 ## 协作对象
 

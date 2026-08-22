@@ -1,0 +1,89 @@
+# RAG And Content Tools
+
+Use these tools for natural-language retrieval, source text expansion, and
+paper figure/table fetching.
+
+## semantic_search
+
+Use for natural-language research questions and RAG-style grounding.
+
+```bash
+node scripts/semantic_search.mjs '{
+  "query": "How does Transformer attention work?",
+  "top_k": 5,
+  "mode": "balanced"
+}'
+```
+
+Common arguments:
+
+- `query`: required natural-language query.
+- `top_k`: number of chunks; maximum 100. `balanced` truncates to ~50 server-side
+  regardless of `top_k`; `fast` and `quality` reach the requested `top_k`. At most
+  ~3 chunks are returned per paper.
+- `source_types`: optional `["web"]`, `["pdf"]`, or both.
+- `filters`: optional structured constraints applied at recall time inside both
+  retrieval engines (not post-filtering). AND across fields; same-field arrays
+  are OR. Supported fields: `author`, `publication_published_year` /
+  `publication_published_date` (value or range `{"gte":..,"lte":..}` /
+  `[min,max]`), `publication_venue_name_unified`, `publication_venue_type`,
+  `citation_count`, `influential_citation_count`, `lang`, `metadata_type`,
+  `title`, `topics` (`{"dimensions":{"primary_topic":..,
+  "primary_topic_domain":..},"logic":"and|or"}`). Soft semantics: chunks
+  missing that metadata are NOT excluded — treat as a broad constraint, not a
+  hard guarantee. Exception: `doc_id` (64-char lowercase sha256, value or
+  list) is the one HARD filter — hits never leave the given set, an explicit
+  empty list returns empty hits, up to 1000 deduped ids per request
+  (400 `SCOPE_TOO_LARGE` beyond). Build the set from `search_papers` results
+  to scope semantic search to a candidate corpus. Example:
+
+  ```bash
+  node scripts/semantic_search.mjs '{
+    "query": "methods to reduce hallucination in clinical QA",
+    "filters": {"publication_published_year": {"gte": 2023},
+                "topics": {"dimensions": {"primary_topic_domain": "Health Sciences"}}}
+  }'
+  ```
+- `mode`: `fast`, `balanced`, or `quality`.
+
+Use returned `doc_id`, title, chunk text, score, and offset to decide whether to
+expand the original source text.
+
+## read_content
+
+Use to read source text around a `doc_id` and byte `offset`, usually from a
+`semantic_search` hit.
+
+```bash
+node scripts/read_content.mjs '{
+  "doc_id": "...",
+  "offset": 12000,
+  "limit": 8192
+}'
+```
+
+Common arguments:
+
+- `doc_id`: required.
+- `offset`: byte offset; default 0.
+- `limit`: byte count; maximum 16384.
+
+When `more` is true, continue with `next_offset` only if the user needs more
+surrounding context.
+
+## get_resource
+
+Use when `read_content` returns Markdown image placeholders such as
+`![Figure 3](dt=xxx/paper/f3.png)` and the user asks to inspect the figure or
+table.
+
+```bash
+node scripts/get_resource.mjs '{
+  "file_name": "dt=xxx/paper/f3.png"
+}'
+```
+
+`file_name` must come from `read_content` output. Do not invent paths.
+
+The script returns base64 image data. If the host agent can display images,
+decode and show it; otherwise summarize the returned MIME type and file source.
