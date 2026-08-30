@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 数据合同图解</title>
+  <style>
+    :root {
+      --paper: #f7f8f5;
+      --ink: #182a31;
+      --muted: #5d7076;
+      --line: #c9d5d3;
+      --teal: #167b72;
+      --teal-soft: #dcefeb;
+      --coral: #dc654f;
+      --coral-soft: #f8dfda;
+      --yellow: #d7a82e;
+      --yellow-soft: #faedbd;
+      --blue: #3e71ad;
+      --blue-soft: #dfe9f5;
+      --green: #4d9360;
+      --green-soft: #dfeddf;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dce3e0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    body.single {
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+    }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 12px solid var(--accent, var(--teal));
+      padding: 42px 62px 38px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      min-height: 104px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 18px;
+    }
+
+    .kicker {
+      margin-bottom: 7px;
+      color: var(--accent, var(--teal));
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 43px;
+      line-height: 1.18;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    code {
+      padding: 1px 3px;
+      color: #0e655e;
+      background: var(--teal-soft);
+      font-family: Consolas, monospace;
+      font-weight: 800;
+    }
+
+    h1 code {
+      padding: 0;
+      color: var(--accent, var(--teal));
+      background: transparent;
+      font-size: 0.94em;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 5px 11px;
+      border: 1px solid currentColor;
+      border-radius: 5px;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .tag.teal { color: #0e655e; background: var(--teal-soft); }
+    .tag.coral { color: #a84031; background: var(--coral-soft); }
+    .tag.blue { color: #28588d; background: var(--blue-soft); }
+    .tag.yellow { color: #74560f; background: var(--yellow-soft); }
+
+    .takeaway {
+      position: absolute;
+      left: 62px;
+      right: 62px;
+      bottom: 32px;
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: center;
+      min-height: 74px;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      padding: 12px 18px;
+      background: var(--white);
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .takeaway strong {
+      color: var(--accent, var(--teal));
+      font-size: 21px;
+    }
+
+    /* Context figure */
+    .context-layout {
+      display: grid;
+      grid-template-columns: 0.82fr 118px 1.55fr;
+      gap: 28px;
+      align-items: stretch;
+      height: 584px;
+      padding-top: 30px;
+      padding-bottom: 86px;
+    }
+
+    .era {
+      border-right: 2px solid var(--line);
+      padding-right: 25px;
+    }
+
+    .era:last-child { border-right: 0; padding-right: 0; }
+
+    .era-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .era-title { font-size: 28px; font-weight: 900; }
+    .era-copy { color: var(--muted); font-size: 17px; line-height: 1.45; }
+
+    .h1-world {
+      position: relative;
+      height: 300px;
+      margin: 18px 0 15px;
+      border: 3px solid var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .world-label {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .cells {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 78px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px 12px;
+    }
+
+    .cell {
+      position: relative;
+      width: 42px;
+      height: 36px;
+      border: 3px solid var(--teal);
+      border-radius: 50%;
+      background: var(--white);
+    }
+
+    .cell::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 11px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    .h1-equation {
+      padding: 12px 14px;
+      color: #28588d;
+      background: var(--white);
+      border-left: 5px solid var(--blue);
+      font-family: Consolas, monospace;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .change {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 14px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .big-arrow {
+      position: relative;
+      width: 92px;
+      height: 8px;
+      background: var(--coral);
+    }
+
+    .big-arrow::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: -12px;
+      width: 26px;
+      height: 26px;
+      border-top: 8px solid var(--coral);
+      border-right: 8px solid var(--coral);
+      transform: rotate(45deg);
+    }
+
+    .contexts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .context-box {
+      position: relative;
+      height: 183px;
+      border: 2px solid var(--line);
+      background: var(--white);
+      padding: 13px;
+    }
+
+    .context-box.validation { border-top: 7px solid var(--teal); }
+    .context-box.final { border-top: 7px solid var(--coral); }
+
+    .context-name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .mini-cells {
+      display: grid;
+      grid-template-columns: repeat(5, 23px);
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .mini-cell {
+      position: relative;
+      width: 23px;
+      height: 20px;
+      border: 2px solid var(--context-color, var(--teal));
+      border-radius: 50%;
+      background: var(--context-soft, var(--teal-soft));
+    }
+
+    .mini-cell:nth-child(3n) { transform: translateY(4px); }
+    .mini-cell:nth-child(4n) { width: 20px; }
+
+    .context-note {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .context-equation {
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-left: 5px solid var(--teal);
+      background: var(--teal-soft);
+      font-family: Consolas, monospace;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    /* AnnData figure */
+    .data-layout {
+      display: grid;
+      grid-template-columns: 470px 620px 310px;
+      gap: 26px;
+      height: 592px;
+      padding-top: 30px;
+      padding-bottom: 86px;
+    }
+
+    .section-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 42px;
+      border-bottom: 3px solid var(--accent, var(--teal));
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .section-label span { color: var(--muted); font-size: 15px; font-weight: 700; }
+
+    .obs-table,
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      margin-top: 14px;
+      background: var(--white);
+    }
+
+    .obs-table th,
+    .obs-table td {
+      height: 53px;
+      border: 1px solid var(--line);
+      padding: 7px 8px;
+      overflow: hidden;
+      font-size: 14px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .obs-table th { color: var(--white); background: var(--teal); font-weight: 800; }
+    .obs-table tr.highlight td { background: var(--yellow-soft); }
+
+    .row-explain {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-left: 5px solid var(--yellow);
+      background: var(--yellow-soft);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .var-strip {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      margin-top: 14px;
+      border: 2px solid var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .var-strip div {
+      min-width: 0;
+      padding: 9px 3px;
+      border-right: 1px solid #8ba9cd;
+      color: #254f81;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .var-strip div:last-child { border-right: 0; }
+
+    .matrix-table td {
+      height: 53px;
+      border: 1px solid #d3dcda;
+      color: var(--ink);
+      font-family: Consolas, monospace;
+      font-size: 17px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .matrix-table tr.highlight td { background: var(--yellow-soft); }
+    .count-0 { color: #97a5a6 !important; background: #f4f6f4; }
+    .count-low { background: var(--teal-soft); }
+    .count-mid { background: var(--blue-soft); }
+    .count-high { color: #8f3327 !important; background: var(--coral-soft); }
+
+    .axis-note {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .axis-note div {
+      padding: 10px 12px;
+      border-top: 3px solid var(--blue);
+      color: var(--muted);
+      background: var(--white);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .contracts {
+      display: grid;
+      gap: 15px;
+      margin-top: 14px;
+    }
+
+    .contract {
+      min-height: 115px;
+      border-left: 7px solid var(--contract-color, var(--blue));
+      background: var(--white);
+      padding: 14px 15px;
+    }
+
+    .contract-name { font-size: 19px; font-weight: 900; }
+    .contract-copy { margin-top: 7px; color: var(--muted); font-size: 15px; line-height: 1.42; }
+
+    .arrow-copy {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 9px;
+      color: var(--contract-color, var(--blue));
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .arrow-copy::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: currentColor;
+    }
+  </style>
+</head>
+<body>
+  <section class="figure" data-figure="contexts" style="--accent: var(--coral);">
+    <header class="header">
+      <div>
+        <div class="kicker">背景维度不是新出现，而是从常量变成变量</div>
+        <h1>从固定 H1 到六个匿名细胞背景</h1>
+      </div>
+      <div class="subtitle">一个背景对应一条细胞系和一群单细胞，不是一个单独细胞，也不是字母标签本身。</div>
+    </header>
+
+    <main class="context-layout">
+      <section class="era">
+        <div class="era-head">
+          <div class="era-title">VC2025</div>
+          <span class="tag blue">背景固定</span>
+        </div>
+        <div class="era-copy">所有训练、验证和测试扰动都发生在同一 H1 背景中。</div>
+        <div class="h1-world">
+          <div class="world-label"><span class="tag blue">H1</span> 一条细胞系</div>
+          <div class="cells">
+            <i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i>
+            <i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i>
+            <i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i>
+          </div>
+        </div>
+        <div class="h1-equation">response = f(target, H1)</div>
+      </section>
+
+      <div class="change">
+        <span>context</span>
+        <strong>常量 → 变量</strong>
+        <div class="big-arrow"></div>
+      </div>
+
+      <section class="era">
+        <div class="era-head">
+          <div class="era-title">VC2026</div>
+          <span class="tag coral">背景需推断</span>
+        </div>
+        <div class="era-copy">六个字母只是匿名分组；模型从各自的 NTC 群体推断真实背景。</div>
+        <div class="contexts">
+          <div class="context-box validation" style="--context-color:#167b72;--context-soft:#dcefeb">
+            <div class="context-name">A <span class="tag teal">验证</span></div>
+            <div class="mini-cells"><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i></div>
+            <div class="context-note">1 条匿名细胞系<br>18,400 个 NTC 单细胞</div>
+          </div>
+          <div class="context-box validation" style="--context-color:#3e71ad;--context-soft:#dfe9f5">
+            <div class="context-name">B <span class="tag teal">验证</span></div>
+            <div class="mini-cells"><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i></div>
+            <div class="context-note">1 条匿名细胞系<br>18,400 个 NTC 单细胞</div>
+          </div>
+          <div class="context-box validation" style="--context-color:#4d9360;--context-soft:#dfeddf">
+            <div class="context-name">C <span class="tag teal">验证</span></div>
+            <div class="mini-cells"><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i></div>
+            <div class="context-note">1 条匿名细胞系<br>18,400 个 NTC 单细胞</div>
+          </div>
+          <div class="context-box final" style="--context-color:#dc654f;--context-soft:#f8dfda">
+            <div class="context-name">D <span class="tag coral">最终</span></div>
+            <div class="mini-cells"><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i></div>
+            <div class="context-note">新的匿名细胞系<br>只提供 NTC</div>
+          </div>
+          <div class="context-box final" style="--context-color:#d7a82e;--context-soft:#faedbd">
+            <div class="context-name">E <span class="tag coral">最终</span></div>
+            <div class="mini-cells"><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i></div>
+            <div class="context-note">新的匿名细胞系<br>只提供 NTC</div>
+          </div>
+          <div class="context-box final" style="--context-color:#7b6ca8;--context-soft:#ece7f4">
+            <div class="context-name">F <span class="tag coral">最终</span></div>
+            <div class="mini-cells"><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i></div>
+            <div class="context-note">新的匿名细胞系<br>只提供 NTC</div>
+          </div>
+        </div>
+        <div class="context-equation">response = f(target, NTC(context))</div>
+      </section>
+    </main>
+
+    <div class="takeaway"><strong>核心变化</strong><span>VC2025 主要检验未见目标；VC2026 还要从 NTC 推断未见背景，并学习 target × context 交互。</span></div>
+  </section>
+
+  <section class="figure" data-figure="anndata" style="--accent: var(--teal);">
+    <header class="header">
+      <div>
+        <div class="kicker">H5AD 不是一张裸矩阵</div>
+        <h1>一行细胞怎样连接 <code>.obs</code>、<code>.X</code> 和 <code>.var</code></h1>
+      </div>
+      <div class="subtitle">行元数据解释“这个细胞接受什么条件”，列元数据解释“这个计数属于哪个基因”。</div>
+    </header>
+
+    <main class="data-layout">
+      <section>
+        <div class="section-label">.obs <span>逐细胞元数据</span></div>
+        <table class="obs-table">
+          <thead><tr><th style="width:25%">cell index</th><th style="width:29%">target_gene</th><th style="width:14%">context</th><th style="width:32%">ntc_id</th></tr></thead>
+          <tbody>
+            <tr><td>A_ctrl_000000</td><td>non-targeting</td><td>A</td><td>non-targeting-11</td></tr>
+            <tr class="highlight"><td>A_ctrl_000001</td><td>non-targeting</td><td>A</td><td>non-targeting-11</td></tr>
+            <tr><td>A_ctrl_000002</td><td>non-targeting</td><td>A</td><td>non-targeting-11</td></tr>
+            <tr><td>A_ctrl_000003</td><td>non-targeting</td><td>A</td><td>non-targeting-11</td></tr>
+            <tr><td>A_ctrl_000004</td><td>non-targeting</td><td>A</td><td>non-targeting-11</td></tr>
+          </tbody>
+        </table>
+        <div class="row-explain"><strong>真实高亮行：</strong><code>A_ctrl_000001</code> 的 <code>target_gene</code> 是实验条件标签；这里只展示 8 个真实基因，该行实际仍有 18,533 列。</div>
+      </section>
+
+      <section>
+        <div class="section-label">.X <span>细胞 × 基因原始计数</span></div>
+        <div class="var-strip"><div>TSPAN6</div><div>TNMD</div><div>DPM1</div><div>SCYL3</div><div>ADNP</div><div>ACLY</div><div>AGO1</div><div>AKT2</div></div>
+        <table class="matrix-table">
+          <tbody>
+            <tr><td class="count-0">0</td><td class="count-0">0</td><td class="count-mid">5</td><td class="count-0">0</td><td class="count-0">0</td><td class="count-low">2</td><td class="count-mid">3</td><td class="count-0">0</td></tr>
+            <tr class="highlight"><td class="count-0">0</td><td class="count-0">0</td><td class="count-mid">3</td><td class="count-low">1</td><td class="count-mid">4</td><td class="count-high">8</td><td class="count-low">1</td><td class="count-mid">3</td></tr>
+            <tr><td class="count-0">0</td><td class="count-0">0</td><td class="count-high">7</td><td class="count-0">0</td><td class="count-low">1</td><td class="count-mid">6</td><td class="count-low">2</td><td class="count-mid">3</td></tr>
+            <tr><td class="count-0">0</td><td class="count-0">0</td><td class="count-mid">3</td><td class="count-low">1</td><td class="count-0">0</td><td class="count-low">2</td><td class="count-mid">3</td><td class="count-low">2</td></tr>
+            <tr><td class="count-0">0</td><td class="count-0">0</td><td class="count-mid">4</td><td class="count-0">0</td><td class="count-low">2</td><td class="count-mid">5</td><td class="count-0">0</td><td class="count-0">0</td></tr>
+          </tbody>
+        </table>
+        <div class="axis-note"><div><strong>横向读：</strong>同一个细胞的全基因表达向量。</div><div><strong>纵向读：</strong>同一个基因在许多细胞中的计数分布。</div></div>
+      </section>
+
+      <aside>
+        <div class="section-label">合同文件 <span>解释与约束</span></div>
+        <div class="contracts">
+          <div class="contract" style="--contract-color:var(--blue)">
+            <div class="contract-name">gene_names.csv</div>
+            <div class="contract-copy">规定 18,533 个基因及其固定列顺序。</div>
+            <div class="arrow-copy">对齐 <code>.var</code> 和 <code>.X</code> 列</div>
+          </div>
+          <div class="contract" style="--contract-color:var(--coral)">
+            <div class="contract-name">pert_counts.csv</div>
+            <div class="contract-copy">规定必须预测的 300 个目标基因。</div>
+            <div class="arrow-copy">约束输出 <code>target_gene</code></div>
+          </div>
+          <div class="contract" style="--contract-color:var(--yellow)">
+            <div class="contract-name">manifest.json</div>
+            <div class="contract-copy">标识赛季、分区、面板和背景。</div>
+            <div class="arrow-copy">防止验证与最终文件混用</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <div class="takeaway"><strong>不能错位</strong><span>第 i 行由 <code>.obs[i]</code> 解释，第 j 列由 <code>.var[j]</code> 解释；只重排行、列或标签中的一部分，会让数值语义整体错位。</span></div>
+  </section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    if (requested) {
+      document.body.classList.add("single");
+      const figure = document.querySelector(`[data-figure="${requested}"]`);
+      if (figure) figure.classList.add("active");
+    }
+  </script>
+</body>
+</html>
