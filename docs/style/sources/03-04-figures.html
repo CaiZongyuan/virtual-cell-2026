@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 第 3-4 课教学图</title>
+  <style>
+    :root {
+      --paper: #f6f8f9;
+      --white: #ffffff;
+      --ink: #172a3a;
+      --muted: #5e707b;
+      --line: #cbd6db;
+      --navy: #244e72;
+      --navy-soft: #e2ebf2;
+      --teal: #16847b;
+      --teal-dark: #0e655f;
+      --teal-soft: #dcefeb;
+      --yellow: #d3a529;
+      --yellow-soft: #f9edbd;
+      --red: #ce594c;
+      --red-dark: #963d35;
+      --red-soft: #f7dfdc;
+      --gray: #8b9aa2;
+      --gray-soft: #edf1f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dfe5e8;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body.single {
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+    }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 12px solid var(--accent, var(--navy));
+      padding: 36px 52px 30px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 500px;
+      gap: 32px;
+      align-items: end;
+      min-height: 104px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 17px;
+    }
+
+    .kicker {
+      margin-bottom: 6px;
+      color: var(--accent, var(--navy));
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.18;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    code {
+      color: var(--teal-dark);
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-weight: 800;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 29px;
+      padding: 4px 9px;
+      border: 1px solid currentColor;
+      border-radius: 4px;
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .tag.navy { color: var(--navy); background: var(--navy-soft); }
+    .tag.teal { color: var(--teal-dark); background: var(--teal-soft); }
+    .tag.yellow { color: #73580d; background: var(--yellow-soft); }
+    .tag.red { color: var(--red-dark); background: var(--red-soft); }
+
+    .takeaway {
+      position: absolute;
+      left: 52px;
+      right: 52px;
+      bottom: 28px;
+      display: grid;
+      grid-template-columns: 162px 1fr;
+      gap: 18px;
+      align-items: center;
+      min-height: 72px;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      padding: 11px 16px;
+      background: var(--white);
+      font-size: 19px;
+      line-height: 1.42;
+    }
+
+    .takeaway strong {
+      color: var(--accent, var(--navy));
+      font-size: 21px;
+    }
+
+    /* Metrics figure */
+    .metrics-layout {
+      display: grid;
+      grid-template-columns: 1fr 446px;
+      gap: 28px;
+      height: 638px;
+      padding-top: 24px;
+      padding-bottom: 82px;
+    }
+
+    .metric-board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .metric-card {
+      position: relative;
+      min-width: 0;
+      border: 2px solid var(--line);
+      border-top: 7px solid var(--metric-color, var(--navy));
+      border-radius: 6px;
+      background: var(--white);
+      padding: 14px 15px 12px;
+    }
+
+    .metric-head {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 11px;
+    }
+
+    .lens {
+      display: grid;
+      place-items: center;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      border: 3px solid var(--metric-color, var(--navy));
+      border-radius: 50%;
+      color: var(--metric-color, var(--navy));
+      background: var(--metric-soft, var(--navy-soft));
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .metric-title {
+      min-width: 0;
+      font-size: 23px;
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    .metric-code {
+      display: block;
+      margin-top: 5px;
+      overflow-wrap: anywhere;
+      color: var(--muted);
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.14;
+      font-weight: 700;
+    }
+
+    .metric-question {
+      min-height: 50px;
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.42;
+      font-weight: 800;
+    }
+
+    .metric-note {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 7px;
+      align-items: start;
+      border-top: 1px solid var(--line);
+      padding-top: 9px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .metric-note strong { color: var(--metric-color, var(--navy)); }
+
+    .experiment-panel {
+      border-left: 3px solid var(--line);
+      padding-left: 24px;
+    }
+
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .experiment {
+      margin-bottom: 10px;
+      border: 2px solid var(--line);
+      border-left: 7px solid var(--exp-color, var(--red));
+      border-radius: 5px;
+      background: var(--white);
+      padding: 10px 12px;
+    }
+
+    .experiment-name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 5px;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .impact {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.38;
+    }
+
+    .scale-box {
+      margin-top: 13px;
+      display: grid;
+      grid-template-columns: 73px 1fr;
+      gap: 10px;
+      border: 2px solid var(--navy);
+      background: var(--navy-soft);
+      padding: 10px 12px;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.34;
+    }
+
+    .scale-box strong { font-size: 17px; }
+
+    /* Split figure */
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      height: 638px;
+      padding-top: 24px;
+      padding-bottom: 82px;
+    }
+
+    .split-panel {
+      position: relative;
+      border: 2px solid var(--line);
+      border-top: 8px solid var(--panel-color, var(--red));
+      border-radius: 6px;
+      background: var(--white);
+      padding: 17px 18px 14px;
+    }
+
+    .split-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 15px;
+      min-height: 70px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+
+    .split-title {
+      margin-bottom: 4px;
+      font-size: 27px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .split-copy {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .bad-body {
+      display: grid;
+      grid-template-columns: 1fr 42px 1fr;
+      gap: 10px;
+      padding-top: 17px;
+    }
+
+    .partition {
+      min-height: 337px;
+      border: 2px solid var(--part-color, var(--navy));
+      background: var(--part-soft, var(--navy-soft));
+      padding: 11px;
+    }
+
+    .partition-name {
+      margin-bottom: 9px;
+      color: var(--part-color, var(--navy));
+      font-size: 19px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .condition {
+      margin-bottom: 8px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 7px;
+    }
+
+    .condition-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .dots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      color: var(--dot-color, var(--navy));
+      background: var(--dot-soft, var(--navy-soft));
+    }
+
+    .leak-arrow {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      color: var(--red-dark);
+      font-size: 26px;
+      font-weight: 900;
+    }
+
+    .leak-arrow span {
+      display: block;
+      writing-mode: vertical-rl;
+      margin-top: 6px;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    .warning-box {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 14px;
+      border: 2px solid var(--red);
+      background: var(--red-soft);
+      padding: 9px 12px;
+      color: var(--red-dark);
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .good-flow {
+      display: grid;
+      grid-template-columns: 182px 46px 190px 46px 1fr;
+      gap: 8px;
+      align-items: stretch;
+      padding-top: 18px;
+    }
+
+    .flow-box {
+      min-width: 0;
+      min-height: 343px;
+      border: 2px solid var(--box-color, var(--teal));
+      background: var(--box-soft, var(--teal-soft));
+      padding: 11px;
+    }
+
+    .flow-box.model {
+      display: grid;
+      align-content: center;
+      min-height: 190px;
+      align-self: center;
+      text-align: center;
+    }
+
+    .flow-title {
+      margin-bottom: 10px;
+      color: var(--box-color, var(--teal-dark));
+      font-size: 19px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .flow-copy {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .context-row {
+      margin-bottom: 8px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 7px;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .context-row strong { color: var(--box-color, var(--teal-dark)); }
+
+    .flow-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--teal-dark);
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .hidden-truth {
+      margin-top: 12px;
+      border: 2px dashed var(--red);
+      background: var(--red-soft);
+      padding: 8px;
+      color: var(--red-dark);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .good-note {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 14px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 10px;
+      border: 2px solid var(--teal);
+      background: var(--teal-soft);
+      padding: 9px 12px;
+      color: var(--teal-dark);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .good-note strong { font-size: 17px; }
+  </style>
+</head>
+<body>
+  <section class="figure" data-figure="metrics" style="--accent:var(--navy)">
+    <header class="header">
+      <div>
+        <div class="kicker">VC2026 第 3 课 · 评分指标</div>
+        <h1>六副镜头，检查六种不同的“正确”</h1>
+      </div>
+      <div class="subtitle">先看每项原始值，再放到“平均扰动响应 = 0、真实重复 = 1”的参考尺度；只有 scaled 值参加总分平均。</div>
+    </header>
+
+    <main class="metrics-layout">
+      <section class="metric-board" aria-label="六项指标">
+        <article class="metric-card" style="--metric-color:var(--navy);--metric-soft:var(--navy-soft)">
+          <div class="metric-head"><div class="lens">ID</div><div class="metric-title">扰动身份<span class="metric-code">pds_cosine</span></div></div>
+          <div class="metric-question">预测是否更像自己的真实响应，而不是另外 299 个目标？</div>
+          <div class="metric-note"><strong>不保证</strong><span>表达幅度准确；理想线性缩放不改变 cosine 方向。</span></div>
+        </article>
+
+        <article class="metric-card" style="--metric-color:var(--teal);--metric-soft:var(--teal-soft)">
+          <div class="metric-head"><div class="lens">Δ²</div><div class="metric-title">全谱误差<span class="metric-code">expr_mse_unbiased_capped_norm</span></div></div>
+          <div class="metric-question">群体表达谱离实测有多远，并扣除有限抽样噪声？</div>
+          <div class="metric-note"><strong>Raw</strong><span>越低越好；0 近似完美，NTC 零效应约为 1。</span></div>
+        </article>
+
+        <article class="metric-card" style="--metric-color:var(--yellow);--metric-soft:var(--yellow-soft)">
+          <div class="metric-head"><div class="lens">±</div><div class="metric-title">方向可信度<span class="metric-code">de_wilcoxon_direction_<br>fidelity_yield_raw</span></div></div>
+          <div class="metric-question">模型报出的响应基因，方向正确且没有少报太多吗？</div>
+          <div class="metric-note"><strong>公式</strong><span>方向正确数 / max(预测调用数, 真实调用数)。</span></div>
+        </article>
+
+        <article class="metric-card" style="--metric-color:var(--teal-dark);--metric-soft:var(--teal-soft)">
+          <div class="metric-head"><div class="lens">90</div><div class="metric-title">方向深度<span class="metric-code">de_wilcoxon_direction_<br>reach_raw</span></div></div>
+          <div class="metric-question">按模型信心向下看，方向纯度 ≥ 90% 能保持多深？</div>
+          <div class="metric-note"><strong>不等于</strong><span>第一次出错即停止；纯度恢复后的更深位置仍可计入。</span></div>
+        </article>
+
+        <article class="metric-card" style="--metric-color:var(--navy);--metric-soft:var(--navy-soft)">
+          <div class="metric-head"><div class="lens">∩</div><div class="metric-title">响应集合<span class="metric-code">de_wilcoxon_sig_jaccard</span></div></div>
+          <div class="metric-question">预测与实测是否找到了同一批显著响应基因？</div>
+          <div class="metric-note"><strong>不观察</strong><span>上调或下调，也不观察变化幅度。</span></div>
+        </article>
+
+        <article class="metric-card" style="--metric-color:var(--red);--metric-soft:var(--red-soft)">
+          <div class="metric-head"><div class="lens">|Δ|</div><div class="metric-title">变化幅度<span class="metric-code">de_wilcoxon_lfc_nmae</span></div></div>
+          <div class="metric-question">在真实显著基因上，预测 LFC 的大小是否准确？</div>
+          <div class="metric-note"><strong>Raw</strong><span>越低越好；0 为完美，处处零效应为 1。</span></div>
+        </article>
+      </section>
+
+      <aside class="experiment-panel">
+        <div class="panel-title"><span>破坏实验</span><span class="tag yellow">先预测，再运行</span></div>
+
+        <div class="experiment" style="--exp-color:var(--red)">
+          <div class="experiment-name"><span>随机打乱目标标签</span><span class="tag red">配错身份</span></div>
+          <div class="impact">表达群体没变，却交给错误目标：PDS 与多数指标应下降。</div>
+        </div>
+
+        <div class="experiment" style="--exp-color:var(--yellow)">
+          <div class="experiment-name"><span>统一缩放效应</span><span class="tag yellow">改长度</span></div>
+          <div class="impact">理想 cosine-PDS 近似稳定；MSE、NMAE 与显著集合可能改变。</div>
+        </div>
+
+        <div class="experiment" style="--exp-color:var(--red)">
+          <div class="experiment-name"><span>翻转 LFC 符号</span><span class="tag red">改方向</span></div>
+          <div class="impact">方向两项大幅受损；若名单不变，Jaccard 仍可能较高。</div>
+        </div>
+
+        <div class="experiment" style="--exp-color:var(--teal)">
+          <div class="experiment-name"><span>坍缩单细胞分布</span><span class="tag teal">保均值</span></div>
+          <div class="impact">bulk 两项可能接近；Wilcoxon 与抽样校正会看到分布被改写。</div>
+        </div>
+
+        <div class="scale-box"><strong>Scaled</strong><span><code>s = (u - b) / (r - b)</code><br>0 是同一平均扰动响应；1 是半深度真实重复，不是百分比或理论上限。</span></div>
+      </aside>
+    </main>
+
+    <div class="takeaway"><strong>读成绩单</strong><span>PDS 高而 MSE/NMAE 差，先查效应尺度；集合好而方向差，先查符号；bulk 好而四项 DE 差，先查单细胞方差、零比例和状态混合。</span></div>
+  </section>
+
+  <section class="figure" data-figure="splits" style="--accent:var(--teal)">
+    <header class="header">
+      <div>
+        <div class="kicker">VC2026 第 4 课 · 验证边界</div>
+        <h1>留出一个完整背景，不是随机留出一些细胞</h1>
+      </div>
+      <div class="subtitle">VC2026 推理时可见新背景 NTC，却看不到该背景任何目标扰动真值；离线协议必须保留同样的信息边界。</div>
+    </header>
+
+    <main class="split-layout">
+      <section class="split-panel" style="--panel-color:var(--red)">
+        <div class="split-head">
+          <div><div class="split-title">错误：random cell split</div><div class="split-copy">同一个条件的细胞被随机分到 train 与 validation。</div></div>
+          <span class="tag red">条件已见</span>
+        </div>
+
+        <div class="bad-body">
+          <div class="partition" style="--part-color:var(--navy);--part-soft:var(--navy-soft)">
+            <div class="partition-name">Train · 80%</div>
+            <div class="condition"><div class="condition-name"><span>A × G1</span><span>batch 1</span></div><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></div>
+            <div class="condition"><div class="condition-name"><span>B × G2</span><span>batch 2</span></div><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></div>
+            <div class="condition"><div class="condition-name"><span>C × G3</span><span>batch 3</span></div><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></div>
+          </div>
+
+          <div class="leak-arrow">↔<span>相同条件跨界</span></div>
+
+          <div class="partition" style="--part-color:var(--red);--part-soft:var(--red-soft)">
+            <div class="partition-name">Validation · 20%</div>
+            <div class="condition"><div class="condition-name"><span>A × G1</span><span>batch 1</span></div><div class="dots"><i class="dot" style="--dot-color:var(--red);--dot-soft:var(--red-soft)"></i><i class="dot" style="--dot-color:var(--red);--dot-soft:var(--red-soft)"></i></div></div>
+            <div class="condition"><div class="condition-name"><span>B × G2</span><span>batch 2</span></div><div class="dots"><i class="dot" style="--dot-color:var(--red);--dot-soft:var(--red-soft)"></i><i class="dot" style="--dot-color:var(--red);--dot-soft:var(--red-soft)"></i></div></div>
+            <div class="condition"><div class="condition-name"><span>C × G3</span><span>batch 3</span></div><div class="dots"><i class="dot" style="--dot-color:var(--red);--dot-soft:var(--red-soft)"></i><i class="dot" style="--dot-color:var(--red);--dot-soft:var(--red-soft)"></i></div></div>
+          </div>
+        </div>
+
+        <div class="warning-box">高分只证明同条件内插，甚至可能记住 guide 或 batch；它没有测试新背景。</div>
+      </section>
+
+      <section class="split-panel" style="--panel-color:var(--teal)">
+        <div class="split-head">
+          <div><div class="split-title">正确：leave-one-context-out</div><div class="split-copy">整块隐藏背景 C 的全部扰动真值，只暴露 C 的 NTC。</div></div>
+          <span class="tag teal">背景未见</span>
+        </div>
+
+        <div class="good-flow">
+          <div class="flow-box" style="--box-color:var(--navy);--box-soft:var(--navy-soft)">
+            <div class="flow-title">训练可见</div>
+            <div class="context-row"><strong>A</strong><br>NTC + G1/G2/G3…</div>
+            <div class="context-row"><strong>B</strong><br>NTC + G1/G2/G3…</div>
+            <div class="flow-copy">目标 G1 可在其他背景出现：LOCO 正是在测试它能否跨背景迁移。</div>
+          </div>
+
+          <div class="flow-arrow">+</div>
+
+          <div class="flow-box" style="--box-color:var(--teal-dark);--box-soft:var(--teal-soft)">
+            <div class="flow-title">背景 C 推理输入</div>
+            <div class="context-row"><strong>C · NTC only</strong><br>未扰动单细胞群</div>
+            <div class="context-row"><strong>Target list</strong><br>G1 / G2 / G3…</div>
+            <div class="hidden-truth">C 的所有扰动细胞：隐藏，不参与归一化、选基因或适配。</div>
+          </div>
+
+          <div class="flow-arrow">→</div>
+
+          <div class="flow-box model" style="--box-color:var(--yellow);--box-soft:var(--yellow-soft)">
+            <div class="flow-title">模型预测 C × target</div>
+            <div class="flow-copy">生成单细胞 raw counts<br><br>最后才与隐藏 C 真值比较六项指标</div>
+          </div>
+        </div>
+
+        <div class="good-note"><strong>另做 LOTO</strong><span>若要测试未见目标，应把该目标在所有背景中整体留出；不要把“新背景”和“新目标”混成一个无法诊断的随机 split。</span></div>
+      </section>
+    </main>
+
+    <div class="takeaway"><strong>核心不变量</strong><span>留出背景的 perturbation truth 不能进入训练、归一化、特征选择或 context embedding；该背景唯一允许的条件信息是 NTC 群体与目标标识。</span></div>
+  </section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["metrics", "splits"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      const selected = document.querySelector(`[data-figure="${requested}"]`);
+      selected.classList.add("active");
+    }
+  </script>
+</body>
+</html>

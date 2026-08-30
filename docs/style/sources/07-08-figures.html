@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 计数生成与模型升级图解</title>
+  <style>
+    :root {
+      --paper: #f7f8f5;
+      --ink: #172a31;
+      --muted: #5d7076;
+      --line: #c8d3d1;
+      --white: #ffffff;
+      --teal: #147a70;
+      --teal-soft: #dcefeb;
+      --coral: #d9614c;
+      --coral-soft: #f8dfda;
+      --blue: #3b70aa;
+      --blue-soft: #dfe9f5;
+      --yellow: #d1a32a;
+      --yellow-soft: #faedbd;
+      --green: #4b8f5d;
+      --green-soft: #dfeddf;
+      --violet: #73639c;
+      --violet-soft: #e9e5f1;
+      --gray-soft: #edf0ee;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dce3e0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body.single {
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+    }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      border-top: 12px solid var(--accent, var(--teal));
+      background: var(--paper);
+      padding: 38px 58px 32px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+      min-height: 105px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 17px;
+    }
+
+    .kicker {
+      margin-bottom: 6px;
+      color: var(--accent, var(--teal));
+      font-size: 18px;
+      line-height: 1.3;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.16;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    h1 code {
+      color: var(--accent, var(--teal));
+      background: transparent;
+      font-size: .94em;
+    }
+
+    .counts-title { font-size: 38px; }
+
+    code {
+      padding: 1px 4px;
+      color: #0d625b;
+      background: var(--teal-soft);
+      font-family: Consolas, monospace;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      max-width: 560px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.48;
+      text-align: right;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border: 1px solid currentColor;
+      border-radius: 5px;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .tag.teal { color: #0d625b; background: var(--teal-soft); }
+    .tag.coral { color: #a23d2f; background: var(--coral-soft); }
+    .tag.blue { color: #28588a; background: var(--blue-soft); }
+    .tag.yellow { color: #72550d; background: var(--yellow-soft); }
+    .tag.green { color: #356e45; background: var(--green-soft); }
+    .tag.violet { color: #574979; background: var(--violet-soft); }
+
+    .takeaway {
+      position: absolute;
+      left: 58px;
+      right: 58px;
+      bottom: 26px;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 16px;
+      align-items: center;
+      min-height: 65px;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      padding: 10px 17px;
+      background: var(--white);
+      font-size: 18px;
+      line-height: 1.42;
+    }
+
+    .takeaway strong {
+      color: var(--accent, var(--teal));
+      font-size: 20px;
+    }
+
+    /* Count generation */
+    .counts-main {
+      height: 652px;
+      padding-top: 23px;
+      padding-bottom: 75px;
+    }
+
+    .count-flow {
+      display: grid;
+      grid-template-columns: 270px 72px 330px 72px 1fr;
+      gap: 15px;
+      align-items: stretch;
+      height: 327px;
+    }
+
+    .flow-block {
+      position: relative;
+      min-width: 0;
+      border: 2px solid var(--line);
+      border-top: 7px solid var(--block-color, var(--teal));
+      background: var(--white);
+      padding: 16px 17px;
+    }
+
+    .block-step {
+      color: var(--block-color, var(--teal));
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .block-title {
+      margin-top: 4px;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .block-copy {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.42;
+    }
+
+    .equation {
+      margin-top: 15px;
+      padding: 10px 11px;
+      border-left: 5px solid var(--block-color, var(--teal));
+      background: var(--gray-soft);
+      font-family: Consolas, monospace;
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .delta-bars {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      align-items: end;
+      gap: 5px;
+      height: 74px;
+      margin-top: 15px;
+      padding: 4px 6px 0;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .delta-bars i {
+      display: block;
+      height: var(--h);
+      background: var(--c, var(--teal));
+    }
+
+    .flow-arrow {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 11px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .arrow-line {
+      position: relative;
+      width: 56px;
+      height: 7px;
+      background: var(--arrow-color, var(--coral));
+    }
+
+    .arrow-line::after {
+      content: "";
+      position: absolute;
+      top: -9px;
+      right: -1px;
+      width: 20px;
+      height: 20px;
+      border-top: 7px solid var(--arrow-color, var(--coral));
+      border-right: 7px solid var(--arrow-color, var(--coral));
+      transform: rotate(45deg);
+    }
+
+    .two-stage {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .stage {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 11px;
+      align-items: center;
+      min-height: 88px;
+      border: 1px solid var(--line);
+      background: var(--stage-soft, var(--gray-soft));
+      padding: 10px;
+    }
+
+    .stage-icon {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border: 3px solid var(--stage-color, var(--teal));
+      border-radius: 50%;
+      color: var(--stage-color, var(--teal));
+      background: var(--white);
+      font-family: Consolas, monospace;
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .stage-title { font-size: 17px; font-weight: 900; }
+    .stage-copy { margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.35; }
+
+    .output-grid {
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      gap: 16px;
+      margin-top: 13px;
+    }
+
+    .cell-stack {
+      position: relative;
+      min-height: 180px;
+      border: 1px solid var(--line);
+      background: var(--gray-soft);
+      padding: 14px;
+    }
+
+    .matrix-row {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 3px;
+      margin-bottom: 4px;
+    }
+
+    .matrix-row span {
+      display: grid;
+      place-items: center;
+      height: 24px;
+      color: #30464c;
+      background: var(--white);
+      border: 1px solid #d6dddb;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .matrix-row span.zero { color: #9ca8a7; background: #f5f6f4; }
+    .matrix-row span.low { background: var(--teal-soft); }
+    .matrix-row span.mid { background: var(--blue-soft); }
+    .matrix-row span.high { color: #8e3529; background: var(--coral-soft); }
+
+    .matrix-label {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .contract-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .contract-list div {
+      min-height: 42px;
+      border-left: 5px solid var(--teal);
+      background: var(--teal-soft);
+      padding: 9px 10px;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .sampler-compare {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .sampler {
+      min-height: 207px;
+      border: 2px solid var(--line);
+      border-left: 7px solid var(--sampler-color, var(--blue));
+      background: var(--white);
+      padding: 14px 16px;
+    }
+
+    .sampler-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sampler-name { font-size: 21px; font-weight: 900; }
+    .sampler-formula { margin-top: 8px; color: var(--sampler-color, var(--blue)); font-family: Consolas, monospace; font-size: 14px; font-weight: 900; }
+
+    .signal-row {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 8px;
+      margin-top: 9px;
+      font-size: 14px;
+      line-height: 1.34;
+    }
+
+    .signal-row strong { color: var(--sampler-color, var(--blue)); }
+    .signal-row span { color: var(--muted); }
+
+    /* Model ladder */
+    .ladder-main {
+      height: 652px;
+      padding-top: 24px;
+      padding-bottom: 75px;
+    }
+
+    .ladder-axis {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 13px;
+      align-items: center;
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .axis-track {
+      position: relative;
+      height: 7px;
+      background: var(--line);
+    }
+
+    .axis-track::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -8px;
+      width: 18px;
+      height: 18px;
+      border-top: 7px solid var(--line);
+      border-right: 7px solid var(--line);
+      transform: rotate(45deg);
+    }
+
+    .ladder {
+      display: grid;
+      grid-template-columns: 1fr 26px 1fr 26px 1fr 26px 1fr 26px 1fr;
+      gap: 7px;
+      align-items: stretch;
+      height: 404px;
+    }
+
+    .rung {
+      position: relative;
+      min-width: 0;
+      border: 2px solid var(--line);
+      border-top: 8px solid var(--rung-color, var(--teal));
+      background: var(--white);
+      padding: 13px 12px 12px;
+    }
+
+    .rung-level {
+      color: var(--rung-color, var(--teal));
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .rung-title {
+      margin-top: 4px;
+      min-height: 76px;
+      font-size: 21px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .rung-question {
+      min-height: 54px;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .rung-band {
+      margin-top: 10px;
+      border-left: 5px solid var(--band-color, var(--teal));
+      background: var(--band-soft, var(--teal-soft));
+      padding: 7px 8px;
+    }
+
+    .rung-band strong {
+      display: block;
+      color: var(--band-color, var(--teal));
+      font-size: 12px;
+    }
+
+    .rung-band span {
+      display: block;
+      margin-top: 3px;
+      color: #42575c;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .rung-arrow {
+      display: grid;
+      place-items: center;
+    }
+
+    .rung-arrow .arrow-line { width: 23px; height: 5px; }
+    .rung-arrow .arrow-line::after { top: -7px; width: 16px; height: 16px; border-width: 6px; }
+
+    .rung-cost {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 35px;
+      border-top: 1px solid var(--line);
+      padding-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .cost-bars { display: flex; gap: 3px; align-items: end; height: 20px; }
+    .cost-bars i { display: block; width: 7px; height: var(--h); background: var(--rung-color, var(--teal)); }
+
+    .object-boundary {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 13px;
+      margin-top: 17px;
+    }
+
+    .object {
+      min-height: 80px;
+      border: 1px solid var(--line);
+      background: var(--gray-soft);
+      padding: 10px 13px;
+    }
+
+    .object strong { color: var(--object-color, var(--blue)); font-size: 16px; }
+    .object p { margin: 5px 0 0; color: var(--muted); font-size: 13px; line-height: 1.35; }
+  </style>
+</head>
+<body>
+  <section class="figure" data-figure="counts" style="--accent: var(--teal);">
+    <header class="header">
+      <div>
+        <div class="kicker">COUNT GENERATION · 先固定中心，再比较分布</div>
+        <h1 class="counts-title">从 <code>mean + delta</code> 生成 400 个原始计数细胞</h1>
+      </div>
+      <div class="subtitle">一个均值向量只确定群体中心。单细胞生成还要决定每行总 UMI、基因组成、零、方差和协变。</div>
+    </header>
+
+    <main class="counts-main">
+      <div class="count-flow">
+        <section class="flow-block" style="--block-color:var(--coral)">
+          <div class="block-step">01 · 冻结伪批量</div>
+          <div class="block-title">背景均值<br>+扰动 delta</div>
+          <div class="block-copy">所有生成器共用同一目标，才能将分数差异归因于分布生成。</div>
+          <div class="equation">μ̂<sub>c,p</sub> = μ<sub>c</sub><sup>NTC</sup> + Δ̂<sub>c,p</sub></div>
+          <div class="delta-bars">
+            <i style="--h:34%;--c:var(--teal)"></i><i style="--h:67%;--c:var(--teal)"></i><i style="--h:48%;--c:var(--coral)"></i><i style="--h:84%;--c:var(--blue)"></i><i style="--h:25%;--c:var(--teal)"></i><i style="--h:58%;--c:var(--coral)"></i><i style="--h:42%;--c:var(--blue)"></i><i style="--h:73%;--c:var(--teal)"></i>
+          </div>
+        </section>
+
+        <div class="flow-arrow" style="--arrow-color:var(--coral)">
+          <span>拆成两层</span>
+          <div class="arrow-line"></div>
+        </div>
+
+        <section class="flow-block" style="--block-color:var(--blue)">
+          <div class="block-step">02 · LIBRARY SIZE + COMPOSITION</div>
+          <div class="block-title">先决定总数，再分配给基因</div>
+          <div class="two-stage">
+            <div class="stage" style="--stage-color:var(--blue);--stage-soft:var(--blue-soft)">
+              <div class="stage-icon">L<sub>i</sub></div>
+              <div><div class="stage-title">每细胞总 UMI</div><div class="stage-copy">从当前背景 NTC 保留或拟合深度分布</div></div>
+            </div>
+            <div class="stage" style="--stage-color:var(--yellow);--stage-soft:var(--yellow-soft)">
+              <div class="stage-icon">π<sub>i</sub></div>
+              <div><div class="stage-title">基因组成</div><div class="stage-copy">将 L<sub>i</sub> 个 UMI 分给 18,533 个基因，总比例为 1</div></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="flow-arrow" style="--arrow-color:var(--blue)">
+          <span>采样整数</span>
+          <div class="arrow-line"></div>
+        </div>
+
+        <section class="flow-block" style="--block-color:var(--green)">
+          <div class="block-step">03 · 输出与合同</div>
+          <div class="block-title">400 个扰动后细胞</div>
+          <div class="output-grid">
+            <div class="cell-stack">
+              <div class="matrix-row"><span class="zero">0</span><span class="low">1</span><span class="mid">4</span><span class="zero">0</span><span class="high">9</span><span class="low">2</span><span class="zero">0</span><span class="mid">5</span><span class="low">1</span></div>
+              <div class="matrix-row"><span class="low">1</span><span class="zero">0</span><span class="mid">3</span><span class="low">2</span><span class="mid">6</span><span class="zero">0</span><span class="low">1</span><span class="mid">4</span><span class="zero">0</span></div>
+              <div class="matrix-row"><span class="zero">0</span><span class="zero">0</span><span class="high">7</span><span class="low">1</span><span class="mid">4</span><span class="low">2</span><span class="zero">0</span><span class="high">8</span><span class="low">1</span></div>
+              <div class="matrix-row"><span class="low">2</span><span class="low">1</span><span class="mid">5</span><span class="zero">0</span><span class="high">10</span><span class="zero">0</span><span class="low">1</span><span class="mid">3</span><span class="zero">0</span></div>
+              <div class="matrix-row"><span class="zero">0</span><span class="low">1</span><span class="mid">4</span><span class="zero">0</span><span class="mid">6</span><span class="low">1</span><span class="zero">0</span><span class="mid">5</span><span class="low">2</span></div>
+              <div class="matrix-label"><span>400 行</span><span>×</span><span>18,533 列</span></div>
+            </div>
+            <div class="contract-list">
+              <div>非负整数</div>
+              <div>行和 ≤ 1,000,000</div>
+              <div>CSR 稀疏、无显式零</div>
+              <div>恰好 400 行 / 条件</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="sampler-compare">
+        <section class="sampler" style="--sampler-color:var(--blue)">
+          <div class="sampler-head"><div class="sampler-name">Poisson</div><span class="tag blue">最小随机基线</span></div>
+          <div class="sampler-formula">Var(X) = E(X) = μ</div>
+          <div class="signal-row"><strong>保留</strong><span>期望均值、非负整数、低表达零</span></div>
+          <div class="signal-row"><strong>丢失</strong><span>过度离散、基因模块和多状态结构</span></div>
+        </section>
+
+        <section class="sampler" style="--sampler-color:var(--violet)">
+          <div class="sampler-head"><div class="sampler-name">Negative binomial</div><span class="tag violet">单基因离散</span></div>
+          <div class="sampler-formula">Var(X) = μ + αμ²</div>
+          <div class="signal-row"><strong>新增</strong><span>基因特异过度离散，更灵活的零和重尾</span></div>
+          <div class="signal-row"><strong>仍缺</strong><span>独立采样不保留基因间协方差</span></div>
+        </section>
+
+        <section class="sampler" style="--sampler-color:var(--green)">
+          <div class="sampler-head"><div class="sampler-name">NTC 模板 / 分层</div><span class="tag green">保留背景结构</span></div>
+          <div class="sampler-formula">template state + target-specific shift</div>
+          <div class="signal-row"><strong>保留</strong><span>library size、NTC 零、协变与状态结构</span></div>
+          <div class="signal-row"><strong>风险</strong><span>只复制了 NTC；扰动新状态仍需学习</span></div>
+        </section>
+      </div>
+    </main>
+
+    <div class="takeaway"><strong>验收顺序</strong><span>合同 → 伪批量均值/delta → 方差与零 → 基因协变 → 状态组成 → VC2026 六项指标。后一层不能掩盖前一层失败。</span></div>
+  </section>
+
+  <section class="figure" data-figure="model-ladder" style="--accent: var(--coral);">
+    <header class="header">
+      <div>
+        <div class="kicker">MODEL LADDER · 每次升级都要经过新的验证门</div>
+        <h1>从统计 <code>delta</code> 到单细胞条件生成</h1>
+      </div>
+      <div class="subtitle">阶梯不是流行模型排名。只有当下一级补上已测得的缺口，且在留出背景上通过反证检查，它才是进步。</div>
+    </header>
+
+    <main class="ladder-main">
+      <div class="ladder-axis"><span>表达能力与成本</span><div class="axis-track"></div></div>
+
+      <div class="ladder">
+        <section class="rung" style="--rung-color:var(--blue)">
+          <div class="rung-level">L0 · 可计算的起点</div>
+          <div class="rung-title">统计 delta</div>
+          <div class="rung-question">对照均值 + 可迁移扰动效应</div>
+          <div class="rung-band" style="--band-color:var(--blue);--band-soft:var(--blue-soft)"><strong>能力</strong><span>稳定、可解释的伪批量终点</span></div>
+          <div class="rung-band" style="--band-color:var(--yellow);--band-soft:var(--yellow-soft)"><strong>验证门</strong><span>数据合同 + leave-one-context-out + 六指标</span></div>
+          <div class="rung-cost"><span>成本：低</span><div class="cost-bars"><i style="--h:7px"></i><i style="--h:11px"></i><i style="--h:15px;opacity:.2"></i><i style="--h:19px;opacity:.2"></i></div></div>
+        </section>
+
+        <div class="rung-arrow" style="--arrow-color:var(--coral)"><div class="arrow-line"></div></div>
+
+        <section class="rung" style="--rung-color:var(--coral)">
+          <div class="rung-level">L1 · 最小神经基线</div>
+          <div class="rung-title">Residual MLP</div>
+          <div class="rung-question">背景摘要 × target 表示的非线性交互</div>
+          <div class="rung-band" style="--band-color:var(--coral);--band-soft:var(--coral-soft)"><strong>新增</strong><span>学习非线性 context-target delta</span></div>
+          <div class="rung-band" style="--band-color:var(--yellow);--band-soft:var(--yellow-soft)"><strong>验证门</strong><span>在多个未见 context 上稳定超过 L0</span></div>
+          <div class="rung-cost"><span>成本：中低</span><div class="cost-bars"><i style="--h:7px"></i><i style="--h:11px"></i><i style="--h:15px"></i><i style="--h:19px;opacity:.2"></i></div></div>
+        </section>
+
+        <div class="rung-arrow" style="--arrow-color:var(--coral)"><div class="arrow-line"></div></div>
+
+        <section class="rung" style="--rung-color:var(--teal)">
+          <div class="rung-level">L2 · 群体表示</div>
+          <div class="rung-title">DeepSets / set model</div>
+          <div class="rung-question">直接读取无顺序 NTC 细胞集合与异质性</div>
+          <div class="rung-band" style="--band-color:var(--teal);--band-soft:var(--teal-soft)"><strong>新增</strong><span>稀有状态、多峰分布和群体交互</span></div>
+          <div class="rung-band" style="--band-color:var(--yellow);--band-soft:var(--yellow-soft)"><strong>验证门</strong><span>过置换/子采样/结构打乱检查</span></div>
+          <div class="rung-cost"><span>成本：中高</span><div class="cost-bars"><i style="--h:7px"></i><i style="--h:11px"></i><i style="--h:15px"></i><i style="--h:19px"></i></div></div>
+        </section>
+
+        <div class="rung-arrow" style="--arrow-color:var(--coral)"><div class="arrow-line"></div></div>
+
+        <section class="rung" style="--rung-color:var(--green)">
+          <div class="rung-level">L3 · 结构先验</div>
+          <div class="rung-title">Latent state / graph prior</div>
+          <div class="rung-question">压缩可解码状态，或沿预登记基因关系传播目标信息</div>
+          <div class="rung-band" style="--band-color:var(--green);--band-soft:var(--green-soft)"><strong>新增</strong><span>低维状态与未见 target 关系先验</span></div>
+          <div class="rung-band" style="--band-color:var(--yellow);--band-soft:var(--yellow-soft)"><strong>验证门</strong><span>无先验 / 打乱先验消融与 LOTO</span></div>
+          <div class="rung-cost"><span>成本：中高</span><div class="cost-bars"><i style="--h:7px"></i><i style="--h:11px"></i><i style="--h:15px"></i><i style="--h:19px"></i></div></div>
+        </section>
+
+        <div class="rung-arrow" style="--arrow-color:var(--coral)"><div class="arrow-line"></div></div>
+
+        <section class="rung" style="--rung-color:var(--violet)">
+          <div class="rung-level">L4 · 分布终点</div>
+          <div class="rung-title">Set transition / diffusion / flow</div>
+          <div class="rung-question">在扰动条件下生成多个不同的单细胞</div>
+          <div class="rung-band" style="--band-color:var(--violet);--band-soft:var(--violet-soft)"><strong>新增</strong><span>方差、零、协变和多状态分布</span></div>
+          <div class="rung-band" style="--band-color:var(--yellow);--band-soft:var(--yellow-soft)"><strong>验证门</strong><span>固定同一 mean，分布改善且六指标不退化</span></div>
+          <div class="rung-cost"><span>成本：高</span><div class="cost-bars"><i style="--h:7px"></i><i style="--h:11px"></i><i style="--h:15px"></i><i style="--h:19px"></i></div></div>
+        </section>
+      </div>
+
+      <div class="object-boundary">
+        <div class="object" style="--object-color:var(--blue)"><strong>表示</strong><p>将细胞或基因压成向量；可为预测服务，但本身不是扰动预测。</p></div>
+        <div class="object" style="--object-color:var(--coral)"><strong>终点预测器</strong><p>回答一次 CRISPRi 后的某个实验时点；这已经足以对齐 VC2026。</p></div>
+        <div class="object" style="--object-color:var(--violet)"><strong>世界模型候选</strong><p>还要证明状态可重用、转移可迭代、干预分叉连贯，并报告不确定性。</p></div>
+      </div>
+    </main>
+
+    <div class="takeaway"><strong>晋级原则</strong><span>先证明统计 delta 有信号，再让 MLP 学习交互，然后检验集合异质性，最后才为分布生成付费。表示、终点和世界模型不能混称。</span></div>
+  </section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["counts", "model-ladder"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      const figure = document.querySelector(`[data-figure="${requested}"]`);
+      figure.classList.add("active");
+    }
+  </script>
+</body>
+</html>

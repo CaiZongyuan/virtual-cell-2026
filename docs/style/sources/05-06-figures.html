@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 跨背景基线与表示学习图解</title>
+  <style>
+    :root {
+      --paper: #f7f8f5;
+      --ink: #182a31;
+      --muted: #5d7076;
+      --line: #c9d5d3;
+      --teal: #167b72;
+      --teal-deep: #0e655e;
+      --teal-soft: #dcefeb;
+      --coral: #d65f4a;
+      --coral-deep: #9e3d2e;
+      --coral-soft: #f8dfda;
+      --yellow: #c99922;
+      --yellow-deep: #75550a;
+      --yellow-soft: #faedbd;
+      --blue: #3e71ad;
+      --blue-deep: #28588d;
+      --blue-soft: #dfe9f5;
+      --green: #4d9360;
+      --green-deep: #316b40;
+      --green-soft: #dfeddf;
+      --violet: #7869a6;
+      --violet-soft: #e9e4f3;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dce3e0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    body.single {
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+    }
+
+    .figure {
+      --accent: var(--teal);
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      border-top: 12px solid var(--accent);
+      padding: 38px 58px 34px;
+      background: var(--paper);
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 520px;
+      align-items: flex-start;
+      gap: 30px;
+      min-height: 108px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 17px;
+    }
+
+    .kicker {
+      margin-bottom: 7px;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+      line-height: 1.17;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      width: auto;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      padding: 5px 10px;
+      border: 1px solid currentColor;
+      border-radius: 5px;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .tag.teal { color: var(--teal-deep); background: var(--teal-soft); }
+    .tag.coral { color: var(--coral-deep); background: var(--coral-soft); }
+    .tag.blue { color: var(--blue-deep); background: var(--blue-soft); }
+
+    .takeaway {
+      position: absolute;
+      left: 58px;
+      right: 58px;
+      bottom: 28px;
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: center;
+      min-height: 76px;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      padding: 11px 18px;
+      background: var(--white);
+      font-size: 19px;
+      line-height: 1.42;
+    }
+
+    .takeaway strong {
+      color: var(--accent);
+      font-size: 21px;
+    }
+
+    /* Figure 1: transferable delta */
+    .delta-canvas {
+      height: 624px;
+      padding: 24px 0 86px;
+    }
+
+    .formula-banner {
+      display: grid;
+      grid-template-columns: 165px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      height: 54px;
+      border-left: 6px solid var(--coral);
+      padding: 7px 14px 7px 17px;
+      background: var(--coral-soft);
+    }
+
+    .formula-banner strong {
+      color: var(--coral-deep);
+      font-size: 18px;
+    }
+
+    .formula-banner code {
+      color: var(--ink);
+      background: transparent;
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .formula-banner span {
+      color: var(--coral-deep);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .delta-flow {
+      display: grid;
+      grid-template-columns: 238px 40px 238px 40px 254px 56px 1fr;
+      align-items: stretch;
+      height: 218px;
+      margin-top: 20px;
+    }
+
+    .term {
+      --term-color: var(--teal-deep);
+      --term-soft: var(--teal-soft);
+      position: relative;
+      border: 2px solid var(--term-color);
+      border-radius: 6px;
+      padding: 15px 15px 13px;
+      background: var(--term-soft);
+    }
+
+    .term .step {
+      margin-bottom: 7px;
+      color: var(--term-color);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .term h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.16;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .term p {
+      margin: 0;
+      color: #40545a;
+      font-size: 16px;
+      line-height: 1.38;
+    }
+
+    .term .io {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 12px;
+      border-top: 1px solid var(--term-color);
+      padding-top: 7px;
+      color: var(--term-color);
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .term.base { --term-color: var(--blue-deep); --term-soft: var(--blue-soft); }
+    .term.transfer { --term-color: var(--teal-deep); --term-soft: var(--teal-soft); }
+    .term.interaction { --term-color: #594a82; --term-soft: var(--violet-soft); }
+    .term.expected { --term-color: var(--green-deep); --term-soft: var(--green-soft); }
+
+    .operator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #607378;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .operator.arrow {
+      position: relative;
+      font-size: 0;
+    }
+
+    .operator.arrow::before {
+      content: "";
+      width: 40px;
+      border-top: 4px solid var(--green);
+    }
+
+    .operator.arrow::after {
+      content: "";
+      position: absolute;
+      right: 4px;
+      width: 13px;
+      height: 13px;
+      border-top: 4px solid var(--green);
+      border-right: 4px solid var(--green);
+      transform: rotate(45deg);
+    }
+
+    .count-row {
+      display: grid;
+      grid-template-columns: 1fr 58px 400px;
+      gap: 18px;
+      align-items: center;
+      height: 92px;
+      margin-top: 17px;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      padding: 10px 14px;
+      background: var(--white);
+    }
+
+    .count-inputs {
+      display: grid;
+      grid-template-columns: 180px repeat(3, 1fr);
+      gap: 9px;
+      align-items: center;
+    }
+
+    .count-inputs strong {
+      color: var(--coral-deep);
+      font-size: 17px;
+    }
+
+    .count-chip {
+      --chip: var(--teal-deep);
+      --chip-soft: var(--teal-soft);
+      min-height: 49px;
+      border-left: 4px solid var(--chip);
+      padding: 6px 9px;
+      background: var(--chip-soft);
+      color: #40545a;
+      font-size: 14px;
+      line-height: 1.28;
+    }
+
+    .count-chip b { display: block; color: var(--chip); font-size: 15px; }
+    .count-chip.depth { --chip: var(--blue-deep); --chip-soft: var(--blue-soft); }
+    .count-chip.nonnegative { --chip: var(--coral-deep); --chip-soft: var(--coral-soft); }
+    .count-chip.sample { --chip: var(--yellow-deep); --chip-soft: var(--yellow-soft); }
+
+    .small-arrow {
+      position: relative;
+      height: 4px;
+      background: var(--coral);
+    }
+
+    .small-arrow::after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      right: 0;
+      width: 13px;
+      height: 13px;
+      border-top: 4px solid var(--coral);
+      border-right: 4px solid var(--coral);
+      transform: rotate(45deg);
+    }
+
+    .cell-output {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .cell-output > div { min-width: 0; }
+
+    .cell-output strong {
+      color: var(--coral-deep);
+      font-size: 20px;
+      line-height: 1.28;
+    }
+
+    .cell-output span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.32;
+    }
+
+    .mini-cells {
+      display: grid;
+      grid-template-columns: repeat(5, 30px);
+      gap: 6px;
+    }
+
+    .mini-cell {
+      position: relative;
+      width: 30px;
+      height: 25px;
+      border: 2px solid var(--coral);
+      border-radius: 50%;
+      background: var(--coral-soft);
+    }
+
+    .mini-cell::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .baseline-ladder {
+      display: grid;
+      grid-template-columns: 132px repeat(4, 1fr);
+      gap: 8px;
+      align-items: stretch;
+      height: 73px;
+      margin-top: 16px;
+    }
+
+    .ladder-label {
+      display: flex;
+      align-items: center;
+      color: var(--teal-deep);
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .rung {
+      --rung: var(--blue);
+      border-top: 5px solid var(--rung);
+      padding: 8px 10px;
+      background: var(--white);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.28;
+    }
+
+    .rung b { display: block; margin-bottom: 2px; color: var(--ink); font-size: 16px; }
+    .rung.b0 { --rung: var(--blue); }
+    .rung.b1 { --rung: var(--teal); }
+    .rung.b2 { --rung: var(--yellow); }
+    .rung.b3 { --rung: var(--violet); }
+
+    /* Figure 2: encoders */
+    .encoder-canvas {
+      height: 624px;
+      padding: 22px 0 63px;
+    }
+
+    .encoder-flow {
+      display: grid;
+      grid-template-columns: 505px 505px 1fr;
+      gap: 22px;
+      height: 435px;
+    }
+
+    .branch {
+      --branch: var(--blue-deep);
+      --branch-soft: var(--blue-soft);
+      position: relative;
+      border-top: 7px solid var(--branch);
+      border-bottom: 2px solid var(--branch);
+      padding: 14px 16px 12px;
+      background: var(--branch-soft);
+    }
+
+    .branch.context { --branch: var(--blue-deep); --branch-soft: var(--blue-soft); }
+    .branch.target { --branch: var(--teal-deep); --branch-soft: var(--teal-soft); }
+
+    .branch-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      min-height: 54px;
+    }
+
+    .branch h2 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .branch-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .context-input {
+      display: grid;
+      grid-template-columns: 188px 1fr;
+      gap: 13px;
+      align-items: center;
+      height: 92px;
+      margin-top: 8px;
+      border-top: 1px solid #a8bfd7;
+      border-bottom: 1px solid #a8bfd7;
+    }
+
+    .cell-cloud {
+      display: grid;
+      grid-template-columns: repeat(5, 32px);
+      gap: 7px 5px;
+      justify-content: center;
+    }
+
+    .cloud-cell {
+      position: relative;
+      width: 32px;
+      height: 27px;
+      border: 2px solid var(--blue-deep);
+      border-radius: 50%;
+      background: var(--white);
+    }
+
+    .cloud-cell::after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 9px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    .input-copy strong,
+    .target-symbol strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 18px;
+    }
+
+    .input-copy span,
+    .target-symbol span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.34;
+    }
+
+    .feature-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .feature-step {
+      min-height: 79px;
+      border: 1px solid #a8bfd7;
+      border-radius: 5px;
+      padding: 8px 7px;
+      background: rgba(255,255,255,0.72);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .feature-step b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--blue-deep);
+      font-size: 15px;
+    }
+
+    .encoder-block {
+      display: grid;
+      grid-template-columns: 1fr 40px 126px;
+      gap: 9px;
+      align-items: center;
+      height: 73px;
+      margin-top: 12px;
+      border: 2px solid var(--branch);
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: var(--white);
+    }
+
+    .encoder-block strong { color: var(--branch); font-size: 18px; }
+    .encoder-block p { margin: 2px 0 0; color: var(--muted); font-size: 13px; line-height: 1.28; }
+
+    .inline-arrow {
+      position: relative;
+      height: 3px;
+      background: var(--branch);
+    }
+
+    .inline-arrow::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-top: 3px solid var(--branch);
+      border-right: 3px solid var(--branch);
+      transform: rotate(45deg);
+    }
+
+    .latent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      border-radius: 5px;
+      color: var(--white);
+      background: var(--branch);
+      font-family: Consolas, monospace;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .target-input {
+      display: grid;
+      grid-template-columns: 122px 1fr;
+      gap: 14px;
+      align-items: center;
+      height: 70px;
+      margin-top: 8px;
+      border-top: 1px solid #9cc8c2;
+      border-bottom: 1px solid #9cc8c2;
+    }
+
+    .gene-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 106px;
+      height: 45px;
+      border: 3px solid var(--teal-deep);
+      border-radius: 5px;
+      color: var(--teal-deep);
+      background: var(--white);
+      font-family: Consolas, monospace;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .target-features {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .target-feature {
+      display: block;
+      min-height: 96px;
+      border-left: 4px solid var(--teal);
+      padding: 6px;
+      background: rgba(255,255,255,0.78);
+    }
+
+    .feature-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      margin-bottom: 4px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--teal);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .target-feature b { display: block; color: var(--ink); font-size: 12px; line-height: 1.15; }
+    .target-feature span { color: var(--muted); font-size: 10px; line-height: 1.15; }
+
+    .missing-band {
+      margin-top: 8px;
+      border-left: 4px solid var(--yellow);
+      padding: 5px 9px;
+      background: var(--yellow-soft);
+      color: var(--yellow-deep);
+      font-size: 13px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .fusion {
+      position: relative;
+      border-top: 7px solid var(--coral);
+      border-bottom: 2px solid var(--coral);
+      padding: 14px 15px 12px;
+      background: var(--coral-soft);
+    }
+
+    .fusion::before,
+    .fusion::after {
+      content: "";
+      position: absolute;
+      left: -22px;
+      width: 22px;
+      border-top: 4px solid var(--coral);
+    }
+
+    .fusion::before { top: 112px; }
+    .fusion::after { top: 286px; }
+
+    .fusion h2 {
+      margin: 0;
+      color: var(--coral-deep);
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .fusion-sub {
+      margin: 5px 0 13px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .fusion-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+
+    .fusion-chip {
+      min-height: 44px;
+      border: 1px solid #dea092;
+      border-radius: 5px;
+      padding: 7px;
+      background: var(--white);
+      color: var(--coral-deep);
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-size: 14px;
+      line-height: 1.25;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .delta-head {
+      margin-top: 13px;
+      border: 3px solid var(--coral);
+      border-radius: 6px;
+      padding: 13px 10px;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .delta-head strong {
+      display: block;
+      color: var(--coral-deep);
+      font-size: 21px;
+    }
+
+    .delta-head span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .down-arrow {
+      position: relative;
+      width: 4px;
+      height: 29px;
+      margin: 7px auto 5px;
+      background: var(--coral);
+    }
+
+    .down-arrow::after {
+      content: "";
+      position: absolute;
+      left: -6px;
+      bottom: 0;
+      width: 13px;
+      height: 13px;
+      border-right: 4px solid var(--coral);
+      border-bottom: 4px solid var(--coral);
+      transform: rotate(45deg);
+    }
+
+    .count-head {
+      border: 2px solid var(--yellow);
+      border-radius: 6px;
+      padding: 9px 8px;
+      background: var(--yellow-soft);
+      color: var(--yellow-deep);
+      font-size: 15px;
+      line-height: 1.32;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .boundary-grid {
+      display: grid;
+      grid-template-columns: 130px repeat(4, 1fr);
+      gap: 8px;
+      height: 88px;
+      margin-top: 16px;
+    }
+
+    .boundary-title {
+      display: flex;
+      align-items: center;
+      color: var(--coral-deep);
+      font-size: 17px;
+      line-height: 1.28;
+      font-weight: 900;
+    }
+
+    .boundary {
+      --boundary: var(--blue);
+      border-top: 5px solid var(--boundary);
+      padding: 8px 9px;
+      background: var(--white);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.28;
+    }
+
+    .boundary b { display: block; margin-bottom: 3px; color: var(--ink); font-size: 15px; }
+    .boundary.obs { --boundary: var(--blue); }
+    .boundary.rna { --boundary: var(--teal); }
+    .boundary.prior { --boundary: var(--yellow); }
+    .boundary.truth { --boundary: var(--coral); }
+  </style>
+</head>
+<body>
+  <section class="figure" id="delta" style="--accent: var(--teal);">
+    <header class="header">
+      <div>
+        <div class="kicker">VC2026 · 跨背景统计基线</div>
+        <h1>先预测可迁移的群体变化，再生成单细胞计数</h1>
+      </div>
+      <p class="subtitle">
+        用四层工程分解定位误差。<br>
+        <span class="tag coral">可检验假设，不是生物公式</span>
+      </p>
+    </header>
+
+    <main class="delta-canvas">
+      <div class="formula-banner">
+        <strong>调试地图</strong>
+        <code>y(context, target) = NTC + transferable delta + interaction + count noise</code>
+        <span>加法成立的工作空间必须明确</span>
+      </div>
+
+      <div class="delta-flow">
+        <article class="term base">
+          <div class="step">LAYER 1 · 已观察</div>
+          <h2>背景 NTC</h2>
+          <p>这个匿名背景的基础表达、状态组成和技术过程。</p>
+          <div class="io">输入：新背景 NTC 细胞群</div>
+        </article>
+        <div class="operator">+</div>
+        <article class="term transfer">
+          <div class="step">LAYER 2 · 跨背景</div>
+          <h2>可迁移 delta</h2>
+          <p>目标在其他背景里反复出现的群体表达变化。</p>
+          <div class="io">证据：公开多背景扰动真值</div>
+        </article>
+        <div class="operator">+</div>
+        <article class="term interaction">
+          <div class="step">LAYER 3 · 待学习</div>
+          <h2>背景 × 目标交互</h2>
+          <p>相似背景加权或低秩模式，解释全局 delta 之外的系统性剩余。</p>
+          <div class="io">验收：公开数据 LOCO</div>
+        </article>
+        <div class="operator arrow" aria-hidden="true"></div>
+        <article class="term expected">
+          <div class="step">POPULATION OUTPUT</div>
+          <h2>扰动后期望转录组</h2>
+          <p>先得到可审计的伪批量/均值预测，不把它冒充成 400 个单细胞。</p>
+          <div class="io">输出：每 context × target 一条向量</div>
+        </article>
+      </div>
+
+      <div class="count-row">
+        <div class="count-inputs">
+          <strong>LAYER 4<br>计数生成</strong>
+          <div class="count-chip depth"><b>经验深度</b>从该背景 NTC 抽取 library size</div>
+          <div class="count-chip nonnegative"><b>非负约束</b>不把负数截断当作生物机制</div>
+          <div class="count-chip sample"><b>计数抽样</b>用显式分布生成非负整数</div>
+        </div>
+        <div class="small-arrow" aria-hidden="true"></div>
+        <div class="cell-output">
+          <div class="mini-cells" aria-hidden="true">
+            <i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i>
+            <i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i><i class="mini-cell"></i>
+          </div>
+          <div><strong>400 个虚拟细胞</strong><span>每行是 18,533 维原始计数，仍需分布与合同审计。</span></div>
+        </div>
+      </div>
+
+      <div class="baseline-ladder">
+        <div class="ladder-label">逐级验收<br>只保留稳定增益</div>
+        <div class="rung b0"><b>B0 · NTC/no-effect</b>只回答“像这个背景”</div>
+        <div class="rung b1"><b>B1 · global target delta</b>先证明目标效应可迁移</div>
+        <div class="rung b2"><b>B2 · similar-context delta</b>再检验 NTC 相似性是否有用</div>
+        <div class="rung b3"><b>B3 · low-rank interaction</b>最后增加受约束的交互容量</div>
+      </div>
+    </main>
+
+    <div class="takeaway">
+      <strong>唯一可信的升级</strong>
+      <span>B1 要在多数留出背景超过 B0；B2/B3 要在不偷看留出扰动真值的 LOCO 中稳定超过 B1。伪批量提升不能替代单细胞分布验收。</span>
+    </div>
+  </section>
+
+  <section class="figure" id="encoders" style="--accent: var(--coral);">
+    <header class="header">
+      <div>
+        <div class="kicker">VC2026 · CONTEXT × TARGET 表示</div>
+        <h1>两条信息流汇合，但不越过它们的证据边界</h1>
+      </div>
+      <p class="subtitle">
+        背景端读一群匿名 NTC；目标端读预先声明的基因特征。<br>
+        <span class="tag coral">观察相似 ≠ 扰动因果</span>
+      </p>
+    </header>
+
+    <main class="encoder-canvas">
+      <div class="encoder-flow">
+        <section class="branch context">
+          <div class="branch-head">
+            <div>
+              <h2>Context encoder</h2>
+              <p>表示“这群细胞现在处于什么状态”</p>
+            </div>
+            <span class="tag blue">只读 NTC</span>
+          </div>
+
+          <div class="context-input">
+            <div class="cell-cloud" aria-hidden="true">
+              <i class="cloud-cell"></i><i class="cloud-cell"></i><i class="cloud-cell"></i><i class="cloud-cell"></i><i class="cloud-cell"></i>
+              <i class="cloud-cell"></i><i class="cloud-cell"></i><i class="cloud-cell"></i><i class="cloud-cell"></i><i class="cloud-cell"></i>
+            </div>
+            <div class="input-copy">
+              <strong>匿名背景的 NTC 细胞集合</strong>
+              <span>同背景细胞仍有状态差异与计数噪声；行顺序没有生物含义。</span>
+            </div>
+          </div>
+
+          <div class="feature-steps">
+            <div class="feature-step"><b>C0 均值</b>伪批量<br>基础表达</div>
+            <div class="feature-step"><b>C1 分布摘要</b>方差、零比例<br>与分位数</div>
+            <div class="feature-step"><b>C2 状态组成</b>细胞周期、应激<br>或软原型</div>
+            <div class="feature-step"><b>C3 集合模型</b>DeepSets /<br>set attention</div>
+          </div>
+
+          <div class="encoder-block">
+            <div>
+              <strong>排列不变聚合</strong>
+              <p>分层抽样、固定 set size；打乱行顺序后表示应保持。</p>
+            </div>
+            <div class="inline-arrow" aria-hidden="true"></div>
+            <div class="latent">z_context</div>
+          </div>
+        </section>
+
+        <section class="branch target">
+          <div class="branch-head">
+            <div>
+              <h2>Target encoder</h2>
+              <p>表示“待敲低基因已知什么”</p>
+            </div>
+            <span class="tag teal">不读留出真值</span>
+          </div>
+
+          <div class="target-input">
+            <div class="gene-badge">GENE T</div>
+            <div class="target-symbol">
+              <strong>标准化 gene symbol / stable ID</strong>
+              <span>别名、物种、数据库版本和基因轴必须可审计。</span>
+            </div>
+          </div>
+
+          <div class="target-features">
+            <div class="target-feature"><i class="feature-icon">ID</i><b>T0 身份 one-hot</b><span>已见 ID；无未见语义</span></div>
+            <div class="target-feature"><i class="feature-icon">RNA</i><b>T1 基础表达</b><span>均值 / 检测率 / 分位数</span></div>
+            <div class="target-feature"><i class="feature-icon">AA</i><b>T2 蛋白嵌入</b><span>仅蛋白编码目标可用</span></div>
+            <div class="target-feature"><i class="feature-icon">NET</i><b>T3 通路 / 网络</b><span>类型 / 方向 / 版本</span></div>
+            <div class="target-feature"><i class="feature-icon">FM</i><b>T4 预训练表示</b><span>登记来源 / 训练暴露</span></div>
+          </div>
+
+          <div class="missing-band">非编码 RNA、异构体冲突、映射失败：保留 missing mask 与预注册 fallback；不伪造蛋白特征。</div>
+
+          <div class="encoder-block">
+            <div>
+              <strong>特征融合与缺失处理</strong>
+              <p>只用当前 fold 可见先验；不读留出扰动摘要。</p>
+            </div>
+            <div class="inline-arrow" aria-hidden="true"></div>
+            <div class="latent">z_target</div>
+          </div>
+        </section>
+
+        <section class="fusion">
+          <h2>融合与残差预测</h2>
+          <p class="fusion-sub">先用同容量 decoder 检验表示，再增加复杂生成层。</p>
+
+          <div class="fusion-inputs">
+            <div class="fusion-chip">z_context</div>
+            <div class="fusion-chip">z_target</div>
+            <div class="fusion-chip">context × target</div>
+            <div class="fusion-chip">basal target RNA</div>
+          </div>
+
+          <div class="delta-head">
+            <strong>预测伪批量 delta</strong>
+            <span>每个 context × target<br>一条全基因变化向量</span>
+          </div>
+          <div class="down-arrow" aria-hidden="true"></div>
+          <div class="count-head">独立 count head<br>深度 + 分散 + 非负整数<br>→ 400 个单细胞</div>
+        </section>
+      </div>
+
+      <div class="boundary-grid">
+        <div class="boundary-title">四条信息<br>边界</div>
+        <div class="boundary obs"><b>NTC 是观察起点</b>包含背景与技术过程，不包含该背景的目标扰动真值。</div>
+        <div class="boundary rna"><b>RNA 不等于蛋白</b>转录、翻译、降解和时间延迟之间没有一步等号。</div>
+        <div class="boundary prior"><b>蛋白 / 网络是先验</b>它们可以缩小猜测空间，但观察相似不是干预因果。</div>
+        <div class="boundary truth"><b>只有干预真值能验收</b>使用 LOCO、LOTO 和联合留出，不用随机细胞分割代替。</div>
+      </div>
+    </main>
+
+    <div class="takeaway">
+      <strong>消融的核心</strong>
+      <span>固定数据分割、decoder 容量与调参预算：C1–C3 要在 LOCO 超过 C0，T2–T4 要在 LOTO 超过 one-hot，关键组合还必须通过 LOCO × LOTO。</span>
+    </div>
+  </section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["delta", "encoders"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      document.getElementById(requested).classList.add("active");
+    }
+  </script>
+</body>
+</html>

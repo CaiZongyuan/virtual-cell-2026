@@ -25,3 +25,9 @@
 | `prompts/vc2025-learning-roadmap.md` | 参考图生成 prompt 与修订记录 | 本仓库生成 | 重建或调整 VC2025 学习路线总览图 |
 | `sources/vc2026-data-contract-figures.html` | HTML/CSS 教程图稿源 | 本仓库生成；无外部运行时资源 | 用 `?figure=contexts|anndata` 选择画面，以 Chromium 1600x900 截图 |
 | `prompts/vc2026-six-contexts.md` | GPT Image 概念插画 prompt 与科学边界 | 本仓库生成 | 重建或调整“同一目标在六个匿名背景中产生不同群体响应”的概念图 |
+| `sources/03-04-figures.html` | 第 3–4 课 HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=metrics|splits` 选择六指标或验证边界图，以 Chromium 1600x900 截图 |
+| `sources/05-06-figures.html` | 第 5–6 课 HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=delta|encoders` 选择统计分解或双编码器图 |
+| `sources/07-08-figures.html` | 第 7–8 课 HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=counts|model-ladder` 选择计数生成或模型升级图 |
+| `sources/09-figures.html` | 第 9 课 HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=final` 渲染最终轮事件驱动流水线 |
+| `prompts/03-metric-inspection.md` 至 `prompts/09-final-control-room-v2.md` | 第 3–9 课 GPT Image 最终 prompt 与定向修订 | 本仓库生成；参考图只作 style/layout reference | 重建七张无文字概念插画；精确事实仍由 HTML 图承载 |
+| `prompts/03-09-imagegen-log.md` | 第 3–9 课 GPT Image 生成、QA 与压缩记录 | 本仓库生成 | 核对模型、参考图角色、母版、最终资产和压缩体积 |

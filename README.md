@@ -4,6 +4,10 @@
 
 比赛规则、数据定义和提交格式以 [`docs/Official-website/`](docs/Official-website/) 为首要依据。论文与候选资料的采用、备选和排除记录见 [`docs/references/INDEX.md`](docs/references/INDEX.md)。
 
+当前竞争性实施建议、验证门和最终轮运行顺序见 [`docs/research/vc2026-completion-strategy-primary.md`](docs/research/vc2026-completion-strategy-primary.md)。
+
+具体数据下载单、模型组合、算力预算与排行榜目标见 [`docs/research/vc2026-data-compute-capacity-sources.md`](docs/research/vc2026-data-compute-capacity-sources.md)。
+
 ## 仓库结构
 
 - `docs/Official-website/`：竞赛官方页面的本地资料。

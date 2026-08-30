@@ -41,6 +41,15 @@
 
 ## 核心方法与直接竞赛关联
 
+### AIDO Cell: A General-Purpose Simulator for Cell Biology
+
+- 摘要：GenBio AI 介绍具备持久细胞状态、连续扰动、分支轨迹、多尺度多模态读出和分子设计能力的 AIDO Cell；v1.0 提供 K-562 与 Hep-G2 原型。此条为技术报告原文概述，不表示本项目已独立验证平台能力或精度。
+- 核心关联：其基因敲除、敲低和过表达接口，以及对可持续更新细胞状态的强调，可作为 VC2026 单步 CRISPRi 原始计数预测之外的长期系统设计参照。
+- 关系：与 Lingshu-Cell、AlphaCell 同属细胞世界模型路线；报告也比较了扰动预测、基础模型与机制模拟器，但其产品级多模态模拟范围明显宽于当前比赛任务。
+- 结论：采用为 AIDO Cell 一手技术资料；具体 benchmark 结果和跨模态能力仍需结合公开数据、代码与独立评估核验。
+- 关键词：AIDO Cell、世界模型、持久细胞状态、连续扰动、多模态读出、K-562、Hep-G2。
+- 来源：[公开 PDF](https://genbio.ai/research/AIDO%20Cell%20V1%20-%20Technical%20Report%20-%2018%20Aug%202026.pdf)；GenBio AI Team；technical report v1.0；2026-08-18；本地 PDF 仅作核验且由 Git 忽略；[MinerU Markdown 阅读版](aido-cell-v1/aido-cell-v1.md)（机器转换，字符、公式、图表和引用以 PDF 为准）；未发现独立 SI，报告附录已包含在正文 PDF；获取与转换日期 2026-08-30。
+
 ### Lingshu-Cell: Generative Cellular World Models for Transcriptomic Modeling
 
 - 摘要：以掩码离散扩散直接学习约 18,000 个基因的转录组状态分布，并在身份和扰动条件下生成细胞；本地材料报告其在 Virtual Cell Challenge H1 基准上的表现。
@@ -64,9 +73,9 @@
 - 摘要：在大规模 CRISPRi Perturb-seq 汇编 X-Atlas/Pisces 上训练扩散语言模型，并融合文本、蛋白、网络、依赖性和形态学先验以预测跨情境扰动响应。
 - 核心关联：直接研究零样本跨细胞背景泛化，并讨论数据量、模型规模与预测性能的缩放关系。
 - 关系：数据驱动规模化路线可与 STATE 的状态转移、Lingshu-Cell 的离散生成路线比较。
-- 结论：采用为核心方法参考；数据和算力可获得性待评估。
+- 结论：采用为核心方法与 NTC-only 测试时适配的论文证据；当前不能作为可运行主线。2026-08-30 核查未发现公开 GitHub 仓库，Hugging Face 模型页只有 README、概览图和属性文件，没有权重或数据。
 - 关键词：CRISPRi、Perturb-seq、扩散语言模型、多模态先验、零样本、缩放律。
-- 来源：原文链接/DOI、版本、年份待核验；[本地材料](<X-Cell：通过扩散语言模型扩展跨多样细胞情境的因果扰动预测.md>)。
+- 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.03.18.712807)；[Hugging Face 占位页](https://huggingface.co/Xaira-Therapeutics/X-Cell)；Wang et al.；bioRxiv 预印本 v1，2026-03-20；[本地中文阅读材料](<X-Cell：通过扩散语言模型扩展跨多样细胞情境的因果扰动预测.md>)（转述材料，不替代原文）；标识与公开资产核验日期 2026-08-30。
 
 ### AlphaCell: Simulating Perturbation-Induced Cellular Dynamics
 
@@ -82,11 +91,76 @@
 - 摘要：使用表格注意力在 1.49 亿个人类单细胞上学习上下文相关表征，让无标签上下文细胞在推理时充当示例，并预测条件对目标细胞群的影响。
 - 核心关联：比赛提供大量未知背景的对照细胞，Stack 的上下文学习思路可能用于从这些细胞中适配背景。
 - 关系：建立在大规模统一处理数据之上，与 scBaseCount 的数据路线、scGPT 的预训练路线相关。
-- 结论：备选为细胞背景适配参考；需验证是否能输出比赛要求的扰动后原始计数分布。
+- 结论：备选为细胞背景适配参考；用于有奖金竞赛前存在明确许可门。官方代码为 CC BY-NC-SA 4.0，模型权重和输出许可把直接或间接 monetary compensation 排除在 Non-Commercial Purpose 之外；VC2026 FAQ 对 STATE 有专项解释，但未对 Stack 给出同样例外，因此须取得 Arc 书面确认后才能把 Stack 纳入提交候选。
 - 关键词：上下文学习、表格注意力、单细胞基础模型、零样本、背景适配。
-- 来源：原文链接/DOI、版本、年份待核验；[本地材料](<Stack_ In-Context Learning of Single-Cell Biology.md>)。
+- 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.01.09.698608)；[官方代码与 README](https://github.com/ArcInstitute/stack)；[模型许可](https://github.com/ArcInstitute/stack/blob/main/MODEL_LICENSE.md)；Dong et al.；bioRxiv 预印本，2026（Crossref 首发标识 2026-01-09，bioRxiv 页面版本日期 2026-06-08）；[本地中文阅读材料](<Stack_ In-Context Learning of Single-Cell Biology.md>)（转述材料，不替代原文）；代码、标识与许可核验日期 2026-08-30。
+
+## 基准与可迁移建模证据
+
+### Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines
+
+- 摘要：作者在 Norman 双扰动以及 Adamson、Replogle K562/RPE1 单扰动数据上，将 5 个单细胞基础模型和 GEARS、CPA 与无变化、均值、加性及低秩线性基线比较；其评测中没有一个深度模型稳定优于相应简单基线。对于未见单基因扰动，使用另一细胞系 Perturb-seq 学得的扰动表示可提高线性模型，观察性单细胞预训练表示的收益则有限。此条来自同行评议原文，不把论文使用的 L2/Pearson 指标等同于 VC2026 六指标。
+- 核心关联：直接支持“先建立均值、线性和跨背景 target-effect 基线，再以冻结的跨背景协议决定是否升级模型”；也说明扰动数据预训练比只用观察性图谱预训练更接近当前任务的信息需求。
+- 关系：与 Csendes et al. 的独立 benchmark 结论一致；Molina and Zhang 进一步把简单模型为何有效拆成共享、目标、背景和交互响应分量；STATE 则报告在其多情境协议下能够超过线性基线，两者应在同一 VC2026-like LOCO 协议中实证比较。
+- 结论：采用为基线设计和复杂度晋级门的核心证据；不能从其同背景未见扰动实验推出匿名新背景表现，也不能直接推出任何模型的 VC2026 排名。
+- 关键词：Perturb-seq、CRISPRi、未见扰动、线性基线、均值基线、基础模型、benchmark。
+- 来源：[DOI](https://doi.org/10.1038/s41592-025-02772-6)；[PubMed Central 全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC12328236/)；Ahlmann-Eltze, Huber and Anders；Nature Methods 22, 1657-1661；2025；本地原文未保存；原文与元数据核验日期 2026-08-30。
+
+### Perturbation response decomposition enables biologically aligned generalization to unseen perturbations and cellular contexts
+
+- 摘要：作者把 CRISPRi 伪批量响应分解为全局、扰动特异、细胞系特异和 `perturbation x cell line` 交互分量，并在 Replogle-Nadig 的四个细胞系中分析各分量的结构和可预测性。论文报告共享模板是低维的，目标与背景特异残差更高维；将 DepMap 共必需性先验直接对齐到响应空间的 Ridge/MLP 可在多种留出设置中匹配或超过更复杂模型。
+- 核心关联：任务形式直接包含未见细胞系和未见目标组合，支持把 VC2026 主模型写成“当前 NTC 基线 + 共享 target effect + 背景模板/幅度 + 低秩交互”，并为每个分量选择与其信息需求相符的输入，而不是端到端增加模型容量。
+- 关系：为本索引中的 STATE、X-Cell 与线性基线提供共同诊断坐标；与 Ahlmann-Eltze et al. 的简单基线结论互补，也与 Shoeibi and Yousefi 对响应幅度应显式建模的结果方向一致。
+- 结论：采用为当前跨背景方案的直接方法证据，但证据级别仍为未同行评议预印本；主要实验是富集必需基因的四个 CRISPRi screen 和伪批量终点，不能证明单细胞计数生成或 VC2026 六指标上的收益。
+- 关键词：响应分解、CRISPRi、未见细胞背景、未见扰动、DepMap、共必需性、Ridge、MLP、伪批量。
+- 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.07.24.740459)；[代码](https://github.com/xinyizhanglab/perturbation-decomposition)；Alexis Molina and Xinyi Zhang；bioRxiv 预印本，2026-07-27；代码仓库未声明 license；PDF 仅在系统临时目录作本次核验，未入库；原文、元数据和代码入口核验日期 2026-08-30。
+
+### PerturbNet predicts single-cell responses to unseen chemical and genetic perturbations
+
+- 摘要：PerturbNet 以条件可逆神经网络生成扰动后的单细胞状态分布，并用化学结构或基因功能注释表示训练中未见的扰动。作者在其化学、CRISPRa/CRISPRi 和编码变异任务中报告相对基线的改进；此处为同行评议原文概述，不把其自报指标迁移成 VC2026 性能。
+- 核心关联：支持测试 GO/功能注释等 target prior，并提供“预测分布而非只预测均值”的生成模型候选。
+- 关系：与 X-Cell、Molina and Zhang 都强调 target prior；与 VC2026 的关键差别是最终轮同时留出 target-context 组合和整个细胞背景。
+- 结论：备选，不作为主模型。作者在 Discussion 中明确指出 PerturbNet 不能预测“未见扰动在未见细胞类型中的效应”，正好是 VC2026 最关键的双重外推；其价值应拆成 target encoder 或 count-generator 消融，而不是直接声称端到端适配。
+- 关键词：PerturbNet、CRISPRi、CRISPRa、未见扰动、功能注释、条件可逆神经网络、单细胞分布。
+- 来源：[DOI](https://doi.org/10.1038/s44320-025-00131-3)；[PubMed Central 全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC12322087/)；Yu, Qian, Song and Welch；Molecular Systems Biology 21, 960-982；正式发表，2025-07-10；本地原文未保存；原文与元数据核验日期 2026-08-30。
+
+### Benchmarking foundation cell models for post-perturbation RNA-seq prediction
+
+- 摘要：作者在 Adamson、Norman、Replogle K562/RPE1 上比较 scGPT、scFoundation 与均值、Elastic Net、kNN、Random Forest 基线；在其未见扰动和 Pearson-delta 协议中，训练集均值优于两个基础模型，带 GO 或文本基因特征的 Random Forest 进一步提高。论文也指出常用数据的扰动间方差偏低会放大 benchmark 误读。
+- 核心关联：支持保留强均值和生物特征基线，并要求先看 delta 与目标区分而不是原始表达相关性；其结果不能直接替代匿名背景留出的验证。
+- 关系：与 Ahlmann-Eltze et al. 独立得到相近结论；与 Palla et al. 的表格模型路线共同提示高维响应可先投影后用强回归器处理。
+- 结论：备选为基线与评估设计证据；实验主要是同一细胞系内留出目标，使用的 Pearson 指标不是 VC2026 六指标，因此不作为跨背景性能的一手证明。
+- 关键词：scGPT、scFoundation、均值基线、Random Forest、Gene Ontology、未见扰动、Pearson delta。
+- 来源：[DOI](https://doi.org/10.1186/s12864-025-11600-2)；[PubMed Central 全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC12016270/)；Csendes et al.；BMC Genomics 26, 393；2025；本地原文未保存；原文与元数据核验日期 2026-08-30。
+
+### Tabular Foundation Models Are Competitive Cellular Perturbation Predictors Across Biological Scales
+
+- 摘要：作者以 PCA/低秩输出表示配合 TabPFN、TabICL 等表格回归器，在细胞级跨细胞类型、五个 Perturb-seq 伪批量未见扰动和其他尺度任务上与专用模型比较，并报告强竞争力。其细胞级跨背景实验使用药物扰动 OpenProblems 数据，伪批量 CRISPR 数据实验主要留出目标，而非 VC2026 的未见 CRISPRi 细胞系与目标双重留出。
+- 核心关联：提供一个成本较低的候选：先预测少量高方差响应分量，再重建全基因响应；适合在 Ridge/GBDT 之后作为相同特征、相同 split 下的受控升级。
+- 关系：与 Molina and Zhang 的低维对齐观点、Csendes et al. 的表格基线结果相呼应；不能据此认为 TabPFN 已在 VC2026 同构任务上优于 STATE。
+- 结论：备选；预印本尚未同行评议且核心 benchmark 与比赛存在扰动模态或留出轴差异，不进入默认主模型。
+- 关键词：TabPFN、TabICL、PCA、表格基础模型、跨细胞类型、Perturb-seq、伪批量。
+- 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.06.28.735106)；Giovanni Palla et al.；bioRxiv 预印本，2026-07-19；PDF 仅在系统临时目录作本次核验，未入库；原文与元数据核验日期 2026-08-30。
+
+### Response Magnitude as a Dominant Signal for Held-Out CRISPRi Perturbation Effect Prediction
+
+- 摘要：作者在 VC2025 H1 的严格目标留出和两个外部 CRISPRi screen 上研究一个标量终点，报告四个确定性响应幅度特征的线性/树模型优于所测试的 MLP 编码器，并强调幅度与方向应分开建模。
+- 核心关联：支持为下游表达方向和效应幅度建立独立预测头，并把幅度校准作为 MSE、差异表达集合和 LFC 指标的受控消融，而不是依赖深层编码器自行恢复尺度。
+- 关系：与 Molina and Zhang 的分量化建模方向一致；其终点是 log Anderson-Darling 距离，不是 18,533 基因原始计数或 VC2026 六指标。
+- 结论：备选为幅度建模假设来源；仅为 arXiv 预印本，模型族和终点范围有限，不作为完整转录组方案的性能证据。
+- 关键词：响应幅度、CRISPRi、目标留出、VC2025、线性回归、Random Forest、跨背景迁移。
+- 来源：[arXiv:2608.00152v1](https://arxiv.org/abs/2608.00152v1)；Mehrdad Shoeibi and Niloofar Yousefi；2026-07-31；PDF 仅在系统临时目录作本次核验，未入库；原文与 arXiv 元数据核验日期 2026-08-30。
 
 ## 数据与基础表征
+
+### Transcript-specific Enrichment Enables Profiling Rare Cell States via scRNA-seq
+
+- 摘要：作者提出 PERFF-seq，用 RNA Flow-FISH 对特定转录本定义的稀有细胞群进行富集，再使用 10x Single Cell Gene Expression Flex 获取单细胞表达；摘要为原文概述。论文的 assay rationale 明确说明 Flex 使用全转录组探针对，通过相邻杂交和随后连接检测、定量固定细胞中的转录本；扩展图进一步展示探针杂交、连接产物和 bead oligo extension。
+- 核心关联：用于核验 VC2026 教程中 10x Flex 的检测信息链，解释比赛原始计数为什么来自探针连接和 UMI 去重，而不能照搬传统 3' scRNA-seq 的 poly(A) 捕获流程。
+- 关系：补充 Arc 官方页面只注明 `10x Flex`、但未展开分子检测过程的缺口；论文研究问题是稀有细胞富集，不是 CRISPRi 扰动预测，也不能证明 Arc 的具体试剂参数或实验批次设置。
+- 结论：采用为 Flex 检测机制参考；仅采用原文明确描述的相邻探针杂交、连接和条形码信息链，不把 PERFF-seq 的富集结论迁移到比赛。
+- 关键词：10x Flex、Fixed RNA Profiling、成对探针、相邻杂交、连接、UMI、PERFF-seq。
+- 来源：[DOI](https://doi.org/10.1101/2024.03.27.587039)；[bioRxiv v1 全文](https://www.biorxiv.org/content/10.1101/2024.03.27.587039v1.full)；Abay et al.；bioRxiv 预印本 v1；2024-03-27；本地原文未保存；检索与核验日期 2026-08-30。
 
 ### scBaseCount
 
@@ -96,6 +170,16 @@
 - 结论：采用为候选观察性数据源；不替代 Perturb-seq 扰动训练数据。
 - 关键词：数据图谱、原始计数、统一预处理、批次效应、训练数据。
 - 来源：原文链接/DOI、版本、年份待核验；[本地材料](scBaseCount.md)。
+
+### The Landscape of Single-Cell Foundation Models: Design Principles, Applications, and Open Challenges
+
+- 摘要：综述单细胞基础模型（single-cell foundation models, scFMs）的数据表示、模型架构、预训练目标、多模态语料、下游任务、评估和工程基础设施，并讨论生物学可信度、泛化、缩放和扰动建模等开放问题。此条为预印本原文概述。
+- 核心关联：可用来建立单细胞基础模型候选、预训练数据和 benchmark 的导航图；补充表集中整理数据集、数据容器、下游任务、评测研究、设计权衡和基础设施。
+- 关系：覆盖 scGPT、Stack、scBaseCount、Tahoe-100M、X-Atlas/Orion 等本项目已关注的模型与资源，但综述不是这些方法性能主张的一手证据。
+- 结论：备选为领域综述和候选发现入口；影响比赛决策的具体数值与结论仍须回到原始论文、数据集或代码核验。
+- 关键词：单细胞基础模型、scFM、预训练、多模态、扰动建模、benchmark、AI virtual cell。
+- 来源：[DOI](https://doi.org/10.20944/preprints202608.1166.v1)；[公开 PDF](https://www.preprints.org/frontend/manuscript/173c8b1a4409ec1eafb48462e5308db9/download_pub)；Jiang et al.；Preprints.org v1；2026-08-18；[MinerU Markdown 阅读版](jiang-et-al-2026-scfm-landscape-v1/jiang-et-al-2026-scfm-landscape-v1.md)；[SI Markdown](jiang-et-al-2026-scfm-landscape-v1/jiang-et-al-2026-scfm-landscape-v1-supplementary.md)（均为机器转换，以正文与 SI PDF 为准）；本地 PDF 由 Git 忽略；获取与转换日期 2026-08-30。
+- 获取记录：为定位 SI，Brave 精确查询 1 次：`"10.20944/preprints202608.1166.v1" supplementary Table S1 S6 file`；查询未直接命中本稿附件，但命中 Preprints.org 官方 `download_pub/supplementary` 路由实例，随后以本稿 ID 取得并核验包含 Table S1-S6 的官方 SI PDF；无未解决附件缺口。
 
 ### scGPT: Toward Building a Foundation Model for Single-Cell Multi-omics
 
@@ -107,6 +191,15 @@
 - 来源：原文链接/DOI、版本、年份待核验；[本地材料](scGPT.md)。
 
 ## 愿景、评估与扩展路线
+
+### What Makes a Virtual Cell a World Model? Three Gaps, Three Experiments, and a Roadmap
+
+- 摘要：作者把虚拟细胞世界模型（virtual cell world model, VCWM）定义为维护细胞状态、结合生物与观测上下文、按干预执行状态转移并表示随时间变化结构的系统，并以三个实验区分“表征不等于动力学、预测不等于干预、多模态不等于多尺度世界模型”。此条为预印本原文概述。
+- 核心关联：为判断比赛模型究竟只是单步终点预测器，还是具备可迭代、干预一致和跨尺度能力的世界模型，提供了明确的诊断维度与能力阶梯。
+- 关系：概念上连接 Bunne et al. 的 AIVC 愿景与 AIDO Cell、Lingshu-Cell、AlphaCell 等具体系统；其三个实验是动机性诊断，不等于完整领域 benchmark。
+- 结论：采用为世界模型术语边界和赛后评估路线参考；不作为 VC2026 直接算法基线。
+- 关键词：虚拟细胞世界模型、动力学、干预、状态空间闭包、多尺度、能力阶梯。
+- 来源：[DOI](https://doi.org/10.21203/rs.3.rs-10404367/v1)；[Research Square 页面](https://www.researchsquare.com/article/rs-10404367/v1)；Yu et al.；Research Square v1；2026-07-21；本地 PDF 仅作核验且由 Git 忽略；[MinerU Markdown 阅读版](yu-et-al-2026-vcwm-roadmap-v1/yu-et-al-2026-vcwm-roadmap-v1.md)（机器转换，以 PDF 为准）；落地页未列独立 SI；获取与转换日期 2026-08-30。
 
 ### Virtual Cells: Predict, Explain, Discover
 
@@ -222,6 +315,23 @@
 - 查询：`zero-shot single-cell perturbation prediction unseen cell context`、用于 SciVerse evidence retrieval 的语义等价自然语言问题，以及 STATE 的完整题名/DOI 精确查找。
 - 来源：Infra Scholar、SciVerse meta/agentic search、Paper Schema、OpenAlex fallback、OpenCLI arXiv/PubMed/Semantic Scholar；调用次数、结果质量和错误见 [基准记录](../research/literature-search-stack-benchmark.md)。
 - 处理：本次只把返回结果用于检索器相关性评估，未据搜索摘要新增项目结论；实际进入后续方案判断的论文仍须按本索引模板逐篇登记。
+
+### 2026-08-30 10x Flex 检测机制检索审计
+
+- 目的：补足 VC2026 教程中 10x Flex 由固定细胞到原始计数的信息链，避免把传统 3' scRNA-seq 的逆转录流程错误套用到 Flex。
+- 查询：Infra Scholar 顺序调用 1 次，唯一查询为 `Chromium Fixed RNA Profiling probe pairs ligation UMI single-cell gene expression Flex`；返回 10 条，未精炼第二次查询，因为首条已经直接命中所需机制。
+- 采用：Abay et al. 位列第 1；回到 bioRxiv v1 HTML 全文核验 assay rationale 和 Extended Data Fig. 1，确认原文明确写出全转录组探针对、相邻杂交、随后连接和 bead oligo extension，已在“数据与基础表征”中登记。
+- 其余命中：仅按题名、摘要或 snippet 做初筛，涵盖 TempO-LINC、固定转录组基因分型、普通 10x Chromium 综述、使用 Flex 的疾病研究和 Visium HD 研究；它们没有进入本次机制判断，未作为项目证据或逐篇全文评估。
+- 失败与缺口：10x 产品页及其只读镜像连续返回 HTTP 429；bioRxiv 原文与 Crossref DOI 元数据可访问。教程仍保留 10x 官方产品页作为厂商入口，并以可访问的 Abay et al. 原文补强机制证据；Arc 2026 具体实验参数仍只能以官方挑战说明和对应版本的 10x 用户指南为准。
+
+### 2026-08-30 VC2026 跨背景方案检索审计
+
+- 目的：检验复杂单细胞模型是否已在“CRISPRi + 未见细胞背景 + 未见目标 + 伪批量/单细胞输出”这一接近 VC2026 的问题上稳定胜过简单基线，并为主方案选择响应分量、目标先验和模型复杂度。
+- 查询：本轮分为两个问题，共顺序调用 Infra Scholar 3 次。方法与可用性问题先查询 `zero-shot single-cell CRISPRi Perturb-seq response prediction unseen cell context`，因未返回本地核心候选 X-Cell，再精炼一次为 `"Scaling Causal Perturbation Prediction across Diverse Cellular Contexts" X-Cell`；两次均返回 10 条。简单基线是否稳健的问题另查询 `CRISPRi Perturb-seq zero-shot perturbation prediction unseen cell context benchmark pseudobulk baseline`，返回 10 条且无需精炼。三次 HTTP 调用均成功。
+- 采用：Molina and Zhang 的跨细胞系响应分解进入核心方法证据；沿其原文引用回到 Ahlmann-Eltze et al. 的 Nature Methods 同行评议全文，作为简单基线和复杂度晋级门的核心证据。PerturbNet、Csendes et al.、Palla et al. 与 Shoeibi and Yousefi 因双重外推能力、留出轴、扰动模态、标量终点或预印本状态存在边界，登记为备选而非直接排名证据。Stack 和 X-Cell 的标识、代码/权重可用性及许可也已更新到对应条目。
+- 其余命中：Miladinovic et al. 的 Large Perturbation Model 和 Li et al. 的综合 benchmark 作为后续多实验/OOD 候选；一篇硕士论文、一篇博士论文、扰动响应评分方法和一篇多模态对齐预印本没有进入本次判断。未查看其原文，不能据题名或 snippet 对方法有效性下结论。
+- 原文核验：bioRxiv、arXiv、PubMed Central、Crossref、官方 GitHub/Hugging Face 入口和许可证均用于核验选中候选；X-Cell 精炼查询仍未直接返回论文记录，最终由结果引文线索定位 DOI 后回到 Crossref/bioRxiv 核实。BMC 出版页 PDF 重定向发生一次 TLS 失败，随后使用 DOI 精确定位的 PubMed Central 开放全文完成核验。另核对 Arc `cell-eval2` commit `5e64833518a6603a0301cbe28185d49c30f4a986`：当前包为 0.16.0、`rule_version=3`，0.16.0 不改变评分数值，但与 0.15.0 bundle 严格不兼容。
+- 未解决缺口：没有公开论文能证明其方法会在保留的 D/E/F 或 VC2026 六项参考缩放总分上获胜；A/B/C 扰动真值不可见，Molina/Palla/Shoeibi 均未同行评议，最终目标面板也尚未发布。因此方案结论只能指导离线 LOCO 实验和候选优先级，不能表述为比赛成绩保证。
 
 ## 新增记录模板
 

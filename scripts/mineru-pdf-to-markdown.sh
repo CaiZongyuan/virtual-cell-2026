@@ -249,7 +249,7 @@ MARKDOWN_PATH=$extracted_dir/full.md node -e '
   process.stdout.write([...paths].join("\n"));
 ' > "$image_manifest"
 
-while IFS= read -r relative_image; do
+while IFS= read -r relative_image || [[ -n $relative_image ]]; do
   [[ -z $relative_image ]] && continue
   source_image=$extracted_dir/$relative_image
   destination_image=$output_dir/$relative_image
