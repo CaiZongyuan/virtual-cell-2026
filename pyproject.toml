@@ -1,0 +1,12 @@
+[project]
+name = "virtual-cell-2026"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+]
