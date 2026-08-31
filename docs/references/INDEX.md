@@ -55,9 +55,9 @@
 - 摘要：以掩码离散扩散直接学习约 18,000 个基因的转录组状态分布，并在身份和扰动条件下生成细胞；本地材料报告其在 Virtual Cell Challenge H1 基准上的表现。
 - 核心关联：直接覆盖全转录组生成、细胞异质性和新“身份-扰动”组合，是比赛建模方案的重要参照。
 - 关系：与 AlphaCell 同属生成式世界模型路线；与 STATE、X-Cell 都处理跨情境扰动泛化。
-- 结论：采用为核心方法参考；复现实验与正式出处待核验。
+- 结论：采用为 raw-count decoder 候选，不作为主效应模型。作者公开 MIT 代码和 85M VCC checkpoint，但 H1 实验使用同一背景的 150 个监督扰动，词表为 18,080 genes，不能证明匿名新背景或直接满足 18,533-gene VC2026 合同。
 - 关键词：离散扩散、全转录组、条件生成、细胞异质性、扰动预测。
-- 来源：原文链接/DOI、版本、年份待核验；[本地材料](<Lingshu-Cell：面向虚拟细胞的转录组建模生成式细胞世界模型.md>)。
+- 来源：[arXiv:2603.25240v1](https://arxiv.org/abs/2603.25240v1)；[MIT 代码](https://github.com/alibaba-damo-academy/Lingshu-Cell)；[85M 权重](https://huggingface.co/bibona/lingshu-cell)；Zhang et al.；arXiv v1，2026-03-26；[本地材料](<Lingshu-Cell：面向虚拟细胞的转录组建模生成式细胞世界模型.md>)（转述材料，不替代原文）；标识、代码、权重入口与许可核验日期 2026-08-31。
 
 ### STATE: Predicting Cellular Responses to Perturbation across Diverse Contexts
 
@@ -77,14 +77,32 @@
 - 关键词：CRISPRi、Perturb-seq、扩散语言模型、多模态先验、零样本、缩放律。
 - 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.03.18.712807)；[Hugging Face 占位页](https://huggingface.co/Xaira-Therapeutics/X-Cell)；Wang et al.；bioRxiv 预印本 v1，2026-03-20；[本地中文阅读材料](<X-Cell：通过扩散语言模型扩展跨多样细胞情境的因果扰动预测.md>)（转述材料，不替代原文）；标识与公开资产核验日期 2026-08-30。
 
+### Learning Adaptive Perturbation-Conditioned Contexts for Robust Transcriptional Response Prediction
+
+- 摘要：AdaPert 从 STRING 蛋白相互作用图中为每个靶基因选择稀疏、扰动特异的子图，并以全局重建、非 DEG 稳健惩罚和 DEG 响应对齐三个目标减少“均值塌缩”。论文在 K562、RPE1、HepG2 和 Jurkat 四个 CRISPRi 数据集上评估未见扰动，并增加了“三个细胞系训练、整个 K562 留出”的跨细胞系实验。
+- 核心关联：这是本轮新候选中与 VC2026 输入最接近的方法：模型同时接收目标背景对照细胞和连续靶基因先验；其稀疏响应门与方向/幅度损失直接对应比赛的 `reach`、`nmae` 和方向 fidelity。论文的 K562 跨细胞系 Systema 评估中，AdaPert 的 perturbation-reference 分数高于 STATE，但在另一组汇总指标中并未全面胜出，且直接跨细胞系 Perturb Mean 在 Pearson-delta 上仍更强。
+- 关系：与 X-Cell 都强调多模态靶基因先验和抗塌缩训练；与 response decomposition 的低秩 target-effect 映射互补。前者可提供“哪些基因应响应”的稀疏残差，后者提供保守的跨背景效应主干。
+- 结论：采用为稀疏靶基因图、响应概率头和抗塌缩 loss 的核心组件证据，不直接采用为端到端主模型。论文只在 3,352/5,000 个 HVG 的 `log1p` 空间评估，没有生成比赛要求的 18,533 基因原始计数；论文未披露参数量、硬件或训练时长，也未链接可明确识别为 AdaPert 的官方代码仓库。
+- 关键词：AdaPert、CRISPRi、未见扰动、未见细胞系、STRING、稀疏子图、均值塌缩、DEG。
+- 来源：[arXiv:2602.18885v2](https://arxiv.org/abs/2602.18885v2)；Piao et al.；ICML 2026；arXiv v2，2026-07-05；PDF 仅在系统临时目录作本次核验，未入库；原文、arXiv 元数据与公开代码入口核验日期 2026-08-31。
+
+### Causal Cellular Context Transfer Learning: An Efficient Architecture for Prediction of Unseen Perturbation Effects
+
+- 摘要：C3TL 将同一扰动在多个背景的伪批量效应聚合为扰动表示，并把同一背景中的多种已测扰动聚合为背景表示，再用轻量解码器预测新的“背景—扰动”组合。论文报告在 Replogle、Parse 和 Tahoe 的 2,000 HVG 伪批量任务上与 STATE 相近或更好，同时训练 epoch 约快 30 倍、显存约 2.1 GB。
+- 核心关联：其“扰动编码与背景编码分离后再组合”的结构值得用于低秩效应模型，但论文的目标背景并非只有 NTC：主实验把目标背景 8% 的真实扰动用于训练、2% 用于验证，余下 90% 才用于测试；数据稀缺实验也至少使用 1% 的目标背景干预结果。
+- 关系：与 response decomposition 都支持把响应拆成可迁移扰动分量和背景分量；与 VC2026 的关键差别是比赛在 D/E/F 中没有任何扰动真值，无法按原方法构造目标背景编码。
+- 结论：备选为轻量分解架构，不作为 VC2026 零样本性能证据。当前作者 GitHub 仓库虽标 MIT，但只有 README、LICENSE 和 `.gitignore`，没有实现代码；参数量和完整训练墙钟时间也未披露。
+- 关键词：C3TL、context transfer、伪批量、轻量模型、目标背景适配、STATE。
+- 来源：[arXiv:2603.13051v1](https://arxiv.org/abs/2603.13051v1)；[作者仓库](https://github.com/mscholkemper/C3TL)；Scholkemper and Mukherjee；arXiv v1，2026-03-13；PDF 仅在系统临时目录作本次核验，未入库；原文、元数据、仓库树与许可核验日期 2026-08-31。
+
 ### AlphaCell: Simulating Perturbation-Induced Cellular Dynamics
 
 - 摘要：以全基因组潜在空间、知识丰富的解码器和条件流匹配统一建模连续细胞状态转移，目标是将扰动动力学迁移到未见细胞情境。
 - 核心关联：覆盖全基因组重建、生成质量和组合泛化，可启发从对照分布到扰动分布的建模。
 - 关系：与 Lingshu-Cell 都以“细胞世界模型”描述生成式模拟；与 STATE 都显式建模状态转移。
-- 结论：采用为核心方法参考；复现成本与比赛格式适配待评估。
+- 结论：排除出端到端比赛主线。原文明确使用离散的已学习 perturbation ID，不能预测训练中未见的 target；主要实验是药物/过表达，输出为 19,253 genes 的 `log1p(CP10K)`，且没有公开代码或权重。保留条件流匹配和潜空间 decoder 为远期参考。
 - 关键词：世界模型、流匹配、全基因组重建、连续状态转移、组合泛化。
-- 来源：原文链接/DOI、版本、年份待核验；[本地材料](<迈向构建 AlphaCell 世界模型：模拟扰动诱导的细胞动力学.md>)。
+- 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.03.02.709176)；Wang et al.；bioRxiv 预印本，2026-03-05；论文为 CC BY-NC-ND 4.0；[本地材料](<迈向构建 AlphaCell 世界模型：模拟扰动诱导的细胞动力学.md>)（转述材料，不替代原文）；原文标识与任务边界核验日期 2026-08-31。
 
 ### Stack: In-Context Learning of Single-Cell Biology
 
@@ -109,11 +127,38 @@
 ### Perturbation response decomposition enables biologically aligned generalization to unseen perturbations and cellular contexts
 
 - 摘要：作者把 CRISPRi 伪批量响应分解为全局、扰动特异、细胞系特异和 `perturbation x cell line` 交互分量，并在 Replogle-Nadig 的四个细胞系中分析各分量的结构和可预测性。论文报告共享模板是低维的，目标与背景特异残差更高维；将 DepMap 共必需性先验直接对齐到响应空间的 Ridge/MLP 可在多种留出设置中匹配或超过更复杂模型。
-- 核心关联：任务形式直接包含未见细胞系和未见目标组合，支持把 VC2026 主模型写成“当前 NTC 基线 + 共享 target effect + 背景模板/幅度 + 低秩交互”，并为每个分量选择与其信息需求相符的输入，而不是端到端增加模型容量。
+- 核心关联：任务形式直接包含未见细胞系和未见目标组合，支持把 VC2026 主模型写成“当前 NTC 基线 + 共享 target effect + 背景模板/幅度 + 强收缩交互”，并为每个分量选择与其信息需求相符的输入，而不是端到端增加模型容量。论文的三源 Ridge/MLP 没有显式 cell-line descriptor，预测的是 source-averaged conserved component；它证明了 target-effect prior 的可迁移性，不是完整匿名背景交互的解决方案。
 - 关系：为本索引中的 STATE、X-Cell 与线性基线提供共同诊断坐标；与 Ahlmann-Eltze et al. 的简单基线结论互补，也与 Shoeibi and Yousefi 对响应幅度应显式建模的结果方向一致。
-- 结论：采用为当前跨背景方案的直接方法证据，但证据级别仍为未同行评议预印本；主要实验是富集必需基因的四个 CRISPRi screen 和伪批量终点，不能证明单细胞计数生成或 VC2026 六指标上的收益。
+- 结论：采用为当前跨背景 target-effect 模块的直接方法证据，但证据级别仍为未同行评议预印本；主要实验是富集必需基因的四个 CRISPRi screen 和伪批量终点。作者明确发现纯零样本方法不能恢复 `cell-line x perturbation` interaction，只有加入目标背景 30% 扰动后才改善，因此不能证明单细胞计数生成或 VC2026 六指标上的完整收益。
 - 关键词：响应分解、CRISPRi、未见细胞背景、未见扰动、DepMap、共必需性、Ridge、MLP、伪批量。
 - 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.07.24.740459)；[代码](https://github.com/xinyizhanglab/perturbation-decomposition)；Alexis Molina and Xinyi Zhang；bioRxiv 预印本，2026-07-27；代码仓库未声明 license；PDF 仅在系统临时目录作本次核验，未入库；原文、元数据和代码入口核验日期 2026-08-30。
+
+### PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis
+
+- 摘要：PerturBench 在六个遗传或化学单细胞扰动数据集上统一比较匹配式、解耦式和简单基线模型，并用 rank 指标诊断不同扰动被预测成近似同一响应的 mode collapse。论文报告没有一种架构在所有数据上占优；数据规模增大时，简单 Latent Additive 或 Decoder-Only 模型往往比复杂 VAE 更稳，而移除 CPA 的 adversarial loss 或 SAMS-VAE 的稀疏机制在多项实验中反而改善性能。
+- 核心关联：支持把 VC2026 方案拆成低秩效应主干、抗塌缩诊断和独立分布生成器，并要求每个新增复杂组件先做消融；也解释了为何不能凭一项平均误差或论文 headline 判断模型优于 STATE。
+- 关系：与 AdaPert 对均值塌缩的诊断一致；与 response decomposition、Ahlmann-Eltze et al. 共同支持强简单基线。其 autoencoder 在 MMD 分布指标上仍可能优于简单均值模型，说明低秩效应预测不能替代单细胞 count emitter。
+- 结论：采用为模型选择、rank/mode-collapse 诊断和消融设计证据；其 cross-covariate split 仍允许模型看到目标背景中的其他扰动，不等于 VC2026 的 NTC-only 整背景留出。官方仓库当前没有可识别的 SPDX 许可或根 LICENSE，代码复用前需另行确认。
+- 关键词：PerturBench、covariate transfer、Latent Additive、mode collapse、rank metric、消融、基线。
+- 来源：[arXiv:2408.10609v4](https://arxiv.org/abs/2408.10609v4)；[作者仓库](https://github.com/altoslabs/perturbench)；Wu et al.；arXiv v4，2025-10-24；PDF 仅在系统临时目录作本次核验，未入库；原文、仓库与许可入口核验日期 2026-08-31。
+
+### MORPH Predicts the Single-Cell Outcome of Genetic Perturbations Across Conditions and Data Modalities
+
+- 摘要：MORPH 将 DepMap 共必需性向量作为连续扰动描述，通过条件生成模型预测未见扰动和背景下的单细胞结果。作者公开 MIT 代码；response decomposition 论文在统一数据与 split 中重新评估了该模型及其内部表征。
+- 核心关联：支持 DepMap 是强 target prior，也提供一个可运行的条件生成对照；但重新评估显示，直接把原始 DepMap profile 通过 response-aligned Ridge/MLP 映射到响应，比 MORPH 的压缩与 attention 表征保留更多 target-specific signal。只用目标 NTC 微调也不能恢复匿名背景的 interaction。
+- 关系：是 response decomposition 的主要复杂模型对照；与 AdaPert 都使用外部生物先验，但 AdaPert强调扰动特异稀疏图，MORPH 强调条件生成和跨模态先验。
+- 结论：排除整模为默认主线，保留 DepMap prior、MIT 实现和条件 count decoder 为受控消融。其作者结果仍是预印本证据，不能替代 VC2026 六指标 LOCO 验证。
+- 关键词：MORPH、DepMap、共必需性、条件生成、未见扰动、跨背景、response alignment。
+- 来源：[DOI/bioRxiv](https://doi.org/10.1101/2025.06.27.661992)；[MIT 代码](https://github.com/uhlerlab/MORPH)；He et al.；bioRxiv 预印本，2025-07-02；原文、代码入口与许可核验日期 2026-08-31。
+
+### In silico biological discovery with large perturbation models
+
+- 摘要：Large Perturbation Model 把 perturbation、readout 和 context 组织为统一的 PRC tuple，以大型多实验训练和检索接口支持未测实验组合的预测，并提供 `perturblib` 数据/建模工具。
+- 核心关联：PRC schema 和多实验数据接口值得用于本项目 canonical data layer；但论文的 “unseen experiment” 是已知词表内 PRC 组合，输出是实验级 z-normalized readout，不是匿名 NTC-only 背景中的 400-cell raw counts。
+- 关系：与本项目的跨研究 effect bank 和 assay-aware harmonization 方向一致；相比 STATE/X-Cell，它更偏多实验统一接口和 experiment-level prediction，而不是完整单细胞分布生成。
+- 结论：备选为数据接口和多实验训练参考，不作为比赛预测主模型。正式论文为 CC BY 4.0，`perturblib` 为 Apache-2.0；任务和输出合同仍需本项目自行重构。
+- 关键词：Large Perturbation Model、PRC tuple、多实验、perturblib、in-silico experiment、readout。
+- 来源：[DOI/Nature Computational Science](https://doi.org/10.1038/s43588-025-00870-1)；[Apache-2.0 代码](https://github.com/perturblib/perturblib)；Miladinovic et al.；正式在线 2025-10-15；原文、正式元数据、代码入口与许可核验日期 2026-08-31。
 
 ### PerturbNet predicts single-cell responses to unseen chemical and genetic perturbations
 
@@ -141,6 +186,33 @@
 - 结论：备选；预印本尚未同行评议且核心 benchmark 与比赛存在扰动模态或留出轴差异，不进入默认主模型。
 - 关键词：TabPFN、TabICL、PCA、表格基础模型、跨细胞类型、Perturb-seq、伪批量。
 - 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.06.28.735106)；Giovanni Palla et al.；bioRxiv 预印本，2026-07-19；PDF 仅在系统临时目录作本次核验，未入库；原文与元数据核验日期 2026-08-30。
+
+### MapPFN: Learning Causal Perturbation Maps in Context
+
+- 摘要：MapPFN 是一个约 25M 参数的 prior-data fitted network，以 SERGIO 生成的合成因果干预数据预训练，再通过多模态 diffusion Transformer 和 flow matching 把观测、干预上下文及查询扰动映射为单细胞分布。作者公开了 MIT 代码、权重和合成数据，并报告预训练约需单张 80 GB A100/H100 10-36 小时。
+- 核心关联：合成因果先验和推理时 in-context distribution mapping 是有价值的长期方向；但当前模型的真实数据实验依赖目标背景中的多组已测干预作为上下文，预训练和评估针对 hard CRISPR knockout，且只处理 50 基因、200 cells 的小问题。
+- 关系：与 Stack 一样在推理时使用上下文样本，但 Stack 可把其他来源的扰动细胞作为 prompt，而 MapPFN 的主要收益明确来自目标背景 interventional context；与 VC2026 只提供 NTC 的合同不一致。
+- 结论：排除出本赛主线；保留为赛后合成先验实验或小基因子图的研究分支。论文自己把扩展到 CRISPRi soft knockdown 和更高维基因空间列为未来工作。
+- 关键词：MapPFN、prior-data fitted network、SERGIO、flow matching、interventional context、CRISPR knockout。
+- 来源：[arXiv:2601.21092v3](https://arxiv.org/abs/2601.21092v3)；[代码与项目页](https://github.com/marvinsxtr/MapPFN)；Sextro, Klos and Dernbach；arXiv v3，2026-05-07；PDF 仅在系统临时目录作本次核验，未入库；原文、代码、权重入口和 MIT 许可核验日期 2026-08-31。
+
+### ScDiVa: Masked Discrete Diffusion for Joint Modeling of Single-Cell Identity and Expression
+
+- 摘要：ScDiVa 用 12 层、约 94.5M 参数的双向 Transformer 做掩码离散扩散，同时恢复基因身份和表达值；每个细胞只序列化熵归一化排名最高的 1,200 个基因。论文称在 5,916 万个内部细胞上用 4 张 A100 40 GB 训练 4 epochs，再在 Adamson 和 Norman 数据上微调扰动预测头。
+- 核心关联：联合建模“基因是否出现”和“表达量大小”的想法可启发 count emitter，但它没有验证整细胞背景留出、未见 CRISPRi 靶点和 18,533 基因原始计数联合生成。
+- 关系：与 Lingshu-Cell 同属 masked discrete generation 路线；与 AdaPert 的直接差别是 ScDiVa 主要学习观察性细胞重建，扰动任务只是下游微调，而不是以跨背景因果数据为主干。
+- 结论：排除出当前比赛实现。预训练数据为不可披露的专有语料，论文未链接公开代码或 checkpoint，扰动实验只在单一数据集内部进行；无法把其自报结果当作超越 STATE 的 VC2026 证据。
+- 关键词：ScDiVa、masked discrete diffusion、观察性预训练、Adamson、Norman、专有数据、count generation。
+- 来源：[arXiv:2602.03477v1](https://arxiv.org/abs/2602.03477v1)；Wang et al.；arXiv v1，2026-02-03；PDF 仅在系统临时目录作本次核验，未入库；原文、arXiv 元数据和公开资产入口核验日期 2026-08-31。
+
+### Predicting the unseen: a diffusion-based debiasing framework for transcriptional response prediction at single-cell resolution
+
+- 摘要：dbDiffusion 用 VAE 潜空间和 classifier-free diffusion 生成未见扰动细胞，再根据相似扰动簇的历史偏差修正预测均值并构造置信区间。论文在 Yao macrophage CRISPR knockout 和 Replogle RPE1 CRISPRi 中留出同一背景内的扰动，使用 1,500 个基因的 `log1p` 表达评估。
+- 核心关联：按相似扰动估计并校正系统偏差，可作为 effect calibration 的独立消融；其扩散生成器不是匿名背景迁移的已验证方案。
+- 关系：与本项目的 empirical-Bayes shrinkage 和 target-effect memory 相近；与 X-Cell、ScDiVa 的区别是它从同一数据集中已测扰动的 effect-size clustering 构造未见靶点嵌入，没有解决整个细胞背景留出。
+- 结论：排除出主线。作者仓库公开了脚本但未声明代码许可，正式论文为 CC BY-NC-ND 4.0；论文未披露模型参数、硬件或训练时长，也没有 full-gene raw-count 评估。
+- 关键词：dbDiffusion、latent diffusion、prediction-powered inference、偏差校正、未见扰动、RPE1。
+- 来源：[正式版 DOI/PNAS](https://doi.org/10.1073/pnas.2525268122)；[bioRxiv 预印本 DOI](https://doi.org/10.1101/2025.09.12.675662)；[作者仓库](https://github.com/ergan-shang/dbDiffusion)；Shang, Wei and Roeder；PNAS 正式在线 2025-12-26、预印本 v1 为 2025-09-16；PDF 仅在系统临时目录作本次核验，未入库；正式元数据、原文、代码入口与许可状态核验日期 2026-08-31。
 
 ### Response Magnitude as a Dominant Signal for Held-Out CRISPRi Perturbation Effect Prediction
 
@@ -332,6 +404,15 @@
 - 其余命中：Miladinovic et al. 的 Large Perturbation Model 和 Li et al. 的综合 benchmark 作为后续多实验/OOD 候选；一篇硕士论文、一篇博士论文、扰动响应评分方法和一篇多模态对齐预印本没有进入本次判断。未查看其原文，不能据题名或 snippet 对方法有效性下结论。
 - 原文核验：bioRxiv、arXiv、PubMed Central、Crossref、官方 GitHub/Hugging Face 入口和许可证均用于核验选中候选；X-Cell 精炼查询仍未直接返回论文记录，最终由结果引文线索定位 DOI 后回到 Crossref/bioRxiv 核实。BMC 出版页 PDF 重定向发生一次 TLS 失败，随后使用 DOI 精确定位的 PubMed Central 开放全文完成核验。另核对 Arc `cell-eval2` commit `5e64833518a6603a0301cbe28185d49c30f4a986`：当前包为 0.16.0、`rule_version=3`，0.16.0 不改变评分数值，但与 0.15.0 bundle 严格不兼容。
 - 未解决缺口：没有公开论文能证明其方法会在保留的 D/E/F 或 VC2026 六项参考缩放总分上获胜；A/B/C 扰动真值不可见，Molina/Palla/Shoeibi 均未同行评议，最终目标面板也尚未发布。因此方案结论只能指导离线 LOCO 实验和候选优先级，不能表述为比赛成绩保证。
+
+### 2026-08-31 STATE 后架构检索审计
+
+- 目的：回答“复现 STATE 后，哪些新架构或组件在 VC2026 的未知背景、未见靶点和原始计数合同下更值得投入”，并区分论文 headline、可迁移组件和完整参赛模型证据。
+- 默认发现：主调查与背景核验顺序调用 Infra Scholar 共 3 次，三个唯一查询分别为 `CRISPRi Perturb-seq zero-shot unseen cell context unseen perturbation STATE benchmark diffusion in-context response decomposition 2026`、`single-cell CRISPRi perturbation prediction unseen cell context unseen target zero-shot generative model 2025 2026` 和 `X-Cell Lingshu-Cell AlphaCell Large Perturbation Model perturbation response decomposition single-cell`。每次只调用一次；首轮已覆盖 benchmark、PerturBench、PerturbNet、dbDiffusion 与表格模型线索，后两轮用于点名候选补全，没有继续精炼。
+- ML 方法补全：Paper Schema 搜索 1 次，查询为 `single-cell perturbation prediction`、年份下限 2024，返回 20 条；对 C3TL、MapPFN、AdaPert、ScDiVa 和 PerturBench 各读取结构化材料并查询方法/实验相关 evidence。该语料只覆盖已解析的 AI 论文，结果仅用于发现和定位，不用空结果推断生命科学文献不存在。
+- 原文核验：回到 arXiv/bioRxiv PDF、arXiv Atom 元数据、出版方/Crossref 元数据、论文声明、作者 GitHub/Hugging Face 入口和仓库树，逐项核对目标背景可见信息、扰动模态、基因空间、输出类型、硬件及许可。新增全文评估为 C3TL、MapPFN、AdaPert、ScDiVa、dbDiffusion 和 PerturBench；response decomposition 也再次核对双重留出和 STATE one-hot vocabulary 边界。SciVerse 全文服务因环境缺少 `SCIVERSE_API_TOKEN` 未能调用；该失败没有被解释为论文未收录。
+- 采用：AdaPert 的扰动特异稀疏图和抗塌缩目标、PerturBench 的 rank/mode-collapse 诊断进入主方案组件；response decomposition 的 DepMap response-aligned Ridge/MLP 保持为核心 target-effect 证据。C3TL 仅保留分解结构，MapPFN、ScDiVa 和 dbDiffusion 排除出本赛主线，理由见对应条目。
+- 失败与缺口：一次 Hugging Face API TLS 连接失败，但 MapPFN 的官方 GitHub README 已提供模型和数据入口，不影响任务边界核验。C3TL 仓库只有占位文件；AdaPert 与 ScDiVa 原文未给出可复现代码/权重；dbDiffusion 代码仓库无 license。仍没有任何方法在 VC2026 六指标、18,533 基因 raw counts、目标背景仅有 NTC 的完整合同上公开胜过 STATE；这些缺口必须由本项目严格 LOCO 实验解决。
 
 ## 新增记录模板
 

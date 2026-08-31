@@ -8,6 +8,10 @@
 
 具体数据下载单、模型组合、算力预算与排行榜目标见 [`docs/research/vc2026-data-compute-capacity-sources.md`](docs/research/vc2026-data-compute-capacity-sources.md)。
 
+STATE 之后的新架构调查、任务对齐矩阵与最小消融顺序见 [`docs/research/vc2026-post-state-architecture-review.md`](docs/research/vc2026-post-state-architecture-review.md)。
+
+分解式模型的领域对象、模块接口、V0 数学定义和首个纵向切片见 [`docs/research/vc2026-model-implementation-spec.md`](docs/research/vc2026-model-implementation-spec.md)。
+
 ## 仓库结构
 
 - `docs/Official-website/`：竞赛官方页面的本地资料。
