@@ -2,6 +2,12 @@
 
 本索引记录已检索或已评估的论文，帮助快速定位证据、方法和论文间关系。摘要为便于检索的中文概述，不替代原文。当前本地材料多数未保留规范出处；其 DOI、正式版本、年份和原文链接均标为待核验。初始盘点日期：2026-08-21。
 
+2026-09-14 的[首个模型提交方案](../research/first-submission-plan.md)复用本索引，并重核响应分解原文、线性基线原文及 STATE 官方代码说明；本轮记录见末尾台账。官方比赛用途对 Stack 的解释已更新，见其条目与[合同核验](../research/submission-contract-check.md)。
+
+同日根据用户补充材料加入 [H1 benchmark 审计](../research/h1-benchmark-audit.md)及[参赛博客/社区审阅](../research/participant-evidence-review.md)。工程材料单独登记；博客自报排名、身份匹配与社区历史分数不作为官方事实。
+
+**当前执行决定：STATE 是必须建立的神经网络基线，首投使用全基因 STATE 适配版；此前 Ridge-first / 无 GPU 方案已撤销。** 论文对线性基线的研究结论仍有效，但不据此降低本项目主模型标准。当前配置及代码边界见[首投方案](../research/first-submission-plan.md)与[STATE 源码审计](../research/state-training-source-audit.md)。
+
 ## 关系图
 
 ```text
@@ -59,14 +65,17 @@
 - 关键词：离散扩散、全转录组、条件生成、细胞异质性、扰动预测。
 - 来源：[arXiv:2603.25240v1](https://arxiv.org/abs/2603.25240v1)；[MIT 代码](https://github.com/alibaba-damo-academy/Lingshu-Cell)；[85M 权重](https://huggingface.co/bibona/lingshu-cell)；Zhang et al.；arXiv v1，2026-03-26；[本地材料](<Lingshu-Cell：面向虚拟细胞的转录组建模生成式细胞世界模型.md>)（转述材料，不替代原文）；标识、代码、权重入口与许可核验日期 2026-08-31。
 
-### STATE: Predicting Cellular Responses to Perturbation across Diverse Contexts
+### Predicting cellular responses to perturbation across diverse contexts with State
 
 - 摘要：结合状态嵌入与集合层面的状态转移模型，从大规模观察性和扰动单细胞数据中学习跨细胞情境的扰动效应，并提出 CELL-EVAL 评估框架。
 - 核心关联：比赛官方推荐背景模型，任务形式与未知细胞情境下的扰动响应预测高度一致。
 - 关系：可作为 X-Cell、Lingshu-Cell、AlphaCell 的直接方法基线；CELL-EVAL 可补充竞赛指标分析。
-- 结论：采用为核心方法与评估参考；优先核验代码、权重和许可。
+- 结论：采用为必须先建立的神经网络主基线及首投主干；训练标准 STATE-ST，并在相同协议下评估全基因适配和后续增量。
 - 关键词：状态转移、跨情境泛化、扰动效应、CELL-EVAL、集合建模。
 - 来源：[DOI/bioRxiv](https://doi.org/10.1101/2025.06.26.661135)；Adduri et al.；bioRxiv 预印本；2025；本地原文未保存；[本地中文阅读材料](<使用 STATE 预测多样化情境下细胞对扰动的响应.md>)（转述材料，不替代原文）；检索日期 2026-08-21。
+- 2026-09-14 复核：采用为首投前的主基线；固定 [STATE commit 9bbfe78a](https://github.com/ArcInstitute/state/tree/9bbfe78a434a55205e4de834e1ea99f85f7a3add) 核实 8 层/768/12 heads、set 512、Energy loss、Adam，以及作者 VCC starter 已使用 ESM2 连续靶点。源码的 bf16、full-gene 参数量、缺失特征回退和浮点 infer 边界详见[审计](../research/state-training-source-audit.md)；未训练或声称复现成绩。此前“STATE 首投后再做”的实施决定已撤销。
+- 同日权重补全：官方 [ST-HVG-Replogle](https://huggingface.co/arcinstitute/ST-HVG-Replogle)、[ST-SE-Replogle](https://huggingface.co/arcinstitute/ST-SE-Replogle)、[st-x-replogle-full](https://huggingface.co/arcinstitute/st-x-replogle-full)、[st-se-replogle-full](https://huggingface.co/arcinstitute/st-se-replogle-full) 已有 checkpoint、config 和映射文件。抽查 HVG/zeroshot/jurkat 与 x-full/k562_0.99 分别输出 2,000 / 6,546 genes，均 328 hidden、set64、one-hot 靶点；不能把 768 宽 ESM2 starter 的默认值套给它们。首选复用/微调，再按必要性重训；本轮只读文件树和 YAML，未加载权重。版本与边界见[权重审计](../research/state-training-source-audit.md#已发布检查点补充不必从零训练)。
+- 正式版本补全：规范题名如本条标题；[Cell DOI](https://doi.org/10.1016/j.cell.2026.07.052)，Adduri, Gautam, Bevilacqua et al.，2026 年 8 月；本轮由博客引文追溯并经 [Crossref](https://api.crossref.org/works/10.1016/j.cell.2026.07.052)核实书目。此前标题 **STATE: Predicting Cellular Responses to Perturbation across Diverse Contexts** 与 DOI `10.1101/2025.06.26.661135` 作为预印本版本保留，不计为独立证据。本轮未读取正式版全文，内容变化及精确 online 日期待核验，不能把 Crossref 登记日或 license 起始日当作出版日。
 
 ### X-Cell: Scaling Causal Perturbation Prediction across Diverse Cellular Contexts
 
@@ -109,7 +118,7 @@
 - 摘要：使用表格注意力在 1.49 亿个人类单细胞上学习上下文相关表征，让无标签上下文细胞在推理时充当示例，并预测条件对目标细胞群的影响。
 - 核心关联：比赛提供大量未知背景的对照细胞，Stack 的上下文学习思路可能用于从这些细胞中适配背景。
 - 关系：建立在大规模统一处理数据之上，与 scBaseCount 的数据路线、scGPT 的预训练路线相关。
-- 结论：备选为细胞背景适配参考；用于有奖金竞赛前存在明确许可门。官方代码为 CC BY-NC-SA 4.0，模型权重和输出许可把直接或间接 monetary compensation 排除在 Non-Commercial Purpose 之外；VC2026 FAQ 对 STATE 有专项解释，但未对 Stack 给出同样例外，因此须取得 Arc 书面确认后才能把 Stack 纳入提交候选。
+- 结论：备选为细胞背景适配参考。2026-09-14 当前[官方 FAQ](https://virtualcellchallenge.org/faq#legal)已对 State 和 Stack 并列给出比赛用途说明：参赛使用代码视为 Non-Commercial Purpose，仍须遵守适用代码许可；非商业参赛者可使用预训练检查点，商业参赛者使用预训练权重需相应商业许可。8 月核查时“FAQ 未给 Stack 例外、须先取书面比赛许可”的判断不再作为统一前置条件；具体 checkpoint、团队身份和适用条款仍需对应核对。首投暂不依赖 Stack，是实施优先级决定。
 - 关键词：上下文学习、表格注意力、单细胞基础模型、零样本、背景适配。
 - 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.01.09.698608)；[官方代码与 README](https://github.com/ArcInstitute/stack)；[模型许可](https://github.com/ArcInstitute/stack/blob/main/MODEL_LICENSE.md)；Dong et al.；bioRxiv 预印本，2026（Crossref 首发标识 2026-01-09，bioRxiv 页面版本日期 2026-06-08）；[本地中文阅读材料](<Stack_ In-Context Learning of Single-Cell Biology.md>)（转述材料，不替代原文）；代码、标识与许可核验日期 2026-08-30。
 
@@ -123,6 +132,7 @@
 - 结论：采用为基线设计和复杂度晋级门的核心证据；不能从其同背景未见扰动实验推出匿名新背景表现，也不能直接推出任何模型的 VC2026 排名。
 - 关键词：Perturb-seq、CRISPRi、未见扰动、线性基线、均值基线、基础模型、benchmark。
 - 来源：[DOI](https://doi.org/10.1038/s41592-025-02772-6)；[PubMed Central 全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC12328236/)；Ahlmann-Eltze, Huber and Anders；Nature Methods 22, 1657-1661；2025；本地原文未保存；原文与元数据核验日期 2026-08-30。
+- 2026-09-14 复核：通过 [Europe PMC 原文 XML](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12328236/fullTextXML)复核原文，继续采用为先测简单基线的依据；本轮全文仅存系统临时目录，未入库。
 
 ### Perturbation response decomposition enables biologically aligned generalization to unseen perturbations and cellular contexts
 
@@ -132,6 +142,7 @@
 - 结论：采用为当前跨背景 target-effect 模块的直接方法证据，但证据级别仍为未同行评议预印本；主要实验是富集必需基因的四个 CRISPRi screen 和伪批量终点。作者明确发现纯零样本方法不能恢复 `cell-line x perturbation` interaction，只有加入目标背景 30% 扰动后才改善，因此不能证明单细胞计数生成或 VC2026 六指标上的完整收益。
 - 关键词：响应分解、CRISPRi、未见细胞背景、未见扰动、DepMap、共必需性、Ridge、MLP、伪批量。
 - 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.07.24.740459)；[代码](https://github.com/xinyizhanglab/perturbation-decomposition)；Alexis Molina and Xinyi Zhang；bioRxiv 预印本，2026-07-27；代码仓库未声明 license；PDF 仅在系统临时目录作本次核验，未入库；原文、元数据和代码入口核验日期 2026-08-30。
+- 2026-09-14 复核：重读 [v1 HTML 原文](https://www.biorxiv.org/content/10.64898/2026.07.24.740459v1.full)的跨细胞系、双重留出、交互分量实验和数据预处理，继续采用为 Ridge/MLP target-effect 组件证据。原文先在合并四背景的表达矩阵选 2,000 HVG；本项目首投验证改为仅从训练背景选择。作者测试过的零样本模型未恢复交互，不应升级为所有模型均不可能从 NTC 学到交互的理论结论。原文和作者 README 临时保存，未入库。
 
 ### PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis
 
@@ -225,6 +236,42 @@
 
 ## 数据与基础表征
 
+### DepMap 24Q4 Public — CRISPRGeneEffect.csv
+
+- 摘要：DepMap 24Q4 公开发布中的基因依赖矩阵。首版选择 corrected `CRISPRGeneEffect.csv`，将每个基因在不同参考细胞系的依赖向量作为输入先验；不使用该发布的表达矩阵来硬猜 A/B/C 身份。
+- 核心关联：为 STATE 增强版提供与 ESM2 互补的基因功能依赖特征；当前计划 PCA 50 维，再经 50→256→768 的 MLP 融入靶点条件。
+- 关系：实现响应分解论文提出的依赖先验与扰动响应对齐思路；这是本项目固定版本选择，不声称逐字复现论文的特征版本或处理。
+- 结论：采用为首投后 S2 的辅助先验；S0/S1 使用作者已有的 ESM2。矩阵缺失、符号映射及下载后实际内容仍须核验，预处理只在训练允许的基因样本中拟合。
+- 关键词：DepMap、24Q4、CRISPRGeneEffect、基因依赖、Ridge、基因先验。
+- 来源：[Figshare DOI v1](https://doi.org/10.25452/figshare.plus.27993248.v1)；DepMap/Broad；24Q4/2024；[直接文件](https://ndownloader.figshare.com/files/51064667)；API 记录文件为 428,678,699 bytes、发布许可 CC BY 4.0；核验日期 2026-09-14；本轮仅查元数据，未下载 CSV；执行设置见[首投方案](../research/first-submission-plan.md)。
+
+### X-Atlas/Orion: Genome-wide Perturb-seq Datasets via a Scalable Fix-Cryopreserve Platform for Training Dose-Dependent Biological Foundation Models
+
+- 摘要：X-Atlas/Orion 的规模化 Perturb-seq 数据与实验平台论文；参赛博客称其使用 HCT116、HEK293T screen。本轮只核对规范书目，未读全文或验证该博客的具体数据处理。
+- 核心关联：补充主方案之外的目标与背景覆盖；需单独确认 raw counts、对照定义、扰动模态、测量基因与许可。
+- 关系：与 X-Cell 同属 Xaira 相关资源，但 Orion 数据与 X-Cell 模型/权重是不同资产，不能用后者的发布状态推断前者不可用。
+- 结论：备选数据候选，暂不加入首投下载单；先核查原始数据合同再决定。
+- 关键词：X-Atlas、Orion、Perturb-seq、HCT116、HEK293T、数据整合。
+- 来源：[DOI/bioRxiv](https://doi.org/10.1101/2025.06.11.659105)；Ann C Huang et al.；2025-06-16 预印本；[Crossref](https://api.crossref.org/works/10.1101/2025.06.11.659105)书目核验 2026-09-14；本地全文未保存；线索与边界见[材料审阅](../research/participant-evidence-review.md)。
+
+### Genome-scale perturb-seq in primary human CD4+ T cells maps context-specific regulators of T cell programs and human immune traits
+
+- 摘要：原代人 CD4+ T 细胞的全基因组 Perturb-seq 研究；参赛博客将其静息与刺激状态列入迁移数据。此处仅据题名、出版元数据及博客线索概述，方法与原始数据尚未核验。
+- 核心关联：可提供免疫细胞状态变化下的扰动数据；不同激活状态不能自动视为多个独立细胞系，扰动模态必须核实后才可与 CRISPRi 混训。
+- 关系：与 Replogle/Orion 形成博客的六个 source screen；其实际覆盖和迁移收益不是本项目已复现结论。
+- 结论：备选，未核实 Methods 和 raw-count 合同前不进入首版训练。一次出版方 XML 请求仅返回 core metadata，没有全文；未确认 CRISPRi/KO 类型。
+- 关键词：CD4 T cells、Perturb-seq、细胞激活、跨状态、免疫。
+- 来源：[Cell DOI](https://doi.org/10.1016/j.cell.2026.08.002)；Ronghui Zhu, Emma Dann, Jun Yan et al.；出版方元数据写明 online 2026-08-28；[出版方 XML](https://api.elsevier.com/content/article/PII:S0092867426009293?httpAccept=text/xml)及 Crossref 核验 2026-09-14；本地全文未保存；[材料审阅](../research/participant-evidence-review.md)。
+
+### Dissecting context-dependent cancer vulnerabilities using Perturb-seq — Data
+
+- 摘要：作者公开的 DepMap 16 细胞系 Perturb-seq 数据记录，包含单细胞矩阵、metadata 和分析产物；Figshare 的 `single_cell_data.zip` 为 3,171,208,158 bytes，记录许可 CC BY 4.0。本轮只读数据 API 和作者 README，未下载矩阵。
+- 核心关联：可用于跨背景及重复测量噪声研究。作者 README 明确写 differential expression between `knockouts and control guides`，不能直接当作同模态 CRISPRi 数据。
+- 关系：博客用其讨论两个 guide 间一致性；本轮未复算该噪声结论，也未验证所有实验参数。
+- 结论：备选为噪声/跨模态研究，排除出首版 CRISPRi 同模态直接混训；不因体积较小而优先替代已有核心数据。
+- 关键词：DepMap、Perturb-seq、16 cell lines、knockout、噪声、数据资源。
+- 来源：[Figshare DOI v1](https://doi.org/10.6084/m9.figshare.33273600.v1)；Lie Ward；2026-08-18；[作者代码与 README](https://github.com/broadinstitute/perturb-seq-depmap-public)；核验日期 2026-09-14；本地仅临时元数据，无矩阵；[材料审阅](../research/participant-evidence-review.md)。
+
 ### Transcript-specific Enrichment Enables Profiling Rare Cell States via scRNA-seq
 
 - 摘要：作者提出 PERFF-seq，用 RNA Flow-FISH 对特定转录本定义的稀有细胞群进行富集，再使用 10x Single Cell Gene Expression Flex 获取单细胞表达；摘要为原文概述。论文的 assay rationale 明确说明 Flex 使用全转录组探针对，通过相邻杂交和随后连接检测、定量固定细胞中的转录本；扩展图进一步展示探针杂交、连接产物和 bead oligo extension。
@@ -308,6 +355,35 @@
 - 结论：备选为知识整合与解释路线；当前不作为核心预测方案。
 - 关键词：生物语言模型、多组学、LoRA、问答、可解释性。
 - 来源：原文链接/DOI、版本、年份待核验；[本地材料](<语言或许是组学所需的一切：利用 CellHermes 协调多模态数据以理解组学.md>)。
+
+## 工程材料与社区证据（非论文）
+
+### The Virtual Cell Challenge — Ilyes Baali
+
+- 摘要：参赛者对 VC2026 数据、source effect 迁移、目标对照模板和评分取舍的实践介绍；作者未公开较优版本全部细节。
+- 核心关联：支持先实现透明的轻量效应基线、统一 raw-count 处理和分布生成消融，补充首投的工程顺序。
+- 关系：引用 Replogle、Orion、CD4 T-cell screen、STATE 与线性基线；与本方案效应/生成解耦思路一致。
+- 结论：采用工程经验，排名、269/300 覆盖、跨背景余弦和 A/B/C 身份均仅为作者自报/推断；简化评分公式、source 5 CPM gate、PCA 距离说法不能覆盖官方代码。
+- 关键词：参赛博客、effect transfer、NTC、计数生成、六指标。
+- 来源：[博客原文](https://ilyesbaali.me/blog/virtual-cell-challenge/)；Ilyes Baali；页面日期 2026-09-01；读取日期 2026-09-14；原始 HTML 只在临时目录，本地审阅见[报告](../research/participant-evidence-review.md)，保留正文 SHA-256；非论文，无 DOI。
+
+### VCC 2026 evaluation on H1
+
+- 摘要：在公开 VC2025 H1 training 数据上构造固定 126 靶点、每靶点 400 细胞的开发 benchmark，以 `cell-eval2 0.16.0` / `pdex 0.3.0` 运行六指标。H1 输出 50,400 × 18,080，参考 NTC 为 38,176 个。
+- 核心关联：采用为首个完整离线评分回路及额外 H1 背景留出；保留四背景 LOCO，不用 H1 单一开发分数替代广泛泛化验证。
+- 关系：复用官方评分组件、Arc H1 原始数据和冻结锚点；训练使用过 H1 扰动的 STATE/其他权重不能用于声称干净的 H1 留出结果。
+- 结论：采用；代码静态核验发现 CLI 漏查 sparse 和额外 obs 列，导出器须补足。作者 control baseline 约 −0.04523 尚未实跑复现，分数不等于 A/B/C 榜单。参考 DE/moments/anchors 都只给 evaluator。
+- 关键词：H1、开发 benchmark、cell-eval2、pdex、零样本、数据泄漏、CPU。
+- 来源：[上游固定版本](https://github.com/forrestsheldon/vcc2026-h1-benchmark/tree/d28dd0496cc9fbf1d0088ce171208c0deb54a268)；GitHub owner `forrestsheldon`；v0.2.0，commit `d28dd049`，2026-09-05；用户本地副本 `references/vcc2026-h1-benchmark` 为 Git 忽略资料；代码 MIT，数据许可独立；核验日期 2026-09-14；[本地审计](../research/h1-benchmark-audit.md)；非论文，无 DOI。
+
+### VC2026 社区：全基因保留、零效应分数与打包内存讨论
+
+- 摘要：用户提供的 2026-09-02—03 讨论摘录。参与者报告恢复完整表达基因后，严重负分回到约 −0.30；之后明确撤回“先前 dense 中间步骤导致 prep OOM”的因果解释。
+- 核心关联：采用为全基因输出和打包资源独立实测的经验依据；把基因计数置零与设置零效应严格区分。
+- 关系：与博客的目标 NTC 模板、H1 工具的全轴合同互补；不同背景/评分版本的 raw 与 scaled 值不可直接混比。
+- 结论：采用经验边界，不采用社区历史分数为本项目验收数值；OOM 原因未解决，不能因 CSR 或 50/64 GB 主机就保证成功。
+- 关键词：社区讨论、基因截断、CSR、OOM、raw/scaled、撤回更正。
+- 来源：用户提供的本地 `references/discuss.md`，原帖 URL/提交 ID 未提供，待核验；发言者包括 Anders Lindström、chax、Giovanni D；日期 2026-09-02—03；读取 2026-09-14；文件由 Git 忽略，必要上下文保存于[审阅](../research/participant-evidence-review.md)；非论文，无 DOI。
 
 ## 检索排除记录
 
@@ -413,6 +489,46 @@
 - 原文核验：回到 arXiv/bioRxiv PDF、arXiv Atom 元数据、出版方/Crossref 元数据、论文声明、作者 GitHub/Hugging Face 入口和仓库树，逐项核对目标背景可见信息、扰动模态、基因空间、输出类型、硬件及许可。新增全文评估为 C3TL、MapPFN、AdaPert、ScDiVa、dbDiffusion 和 PerturBench；response decomposition 也再次核对双重留出和 STATE one-hot vocabulary 边界。SciVerse 全文服务因环境缺少 `SCIVERSE_API_TOKEN` 未能调用；该失败没有被解释为论文未收录。
 - 采用：AdaPert 的扰动特异稀疏图和抗塌缩目标、PerturBench 的 rank/mode-collapse 诊断进入主方案组件；response decomposition 的 DepMap response-aligned Ridge/MLP 保持为核心 target-effect 证据。C3TL 仅保留分解结构，MapPFN、ScDiVa 和 dbDiffusion 排除出本赛主线，理由见对应条目。
 - 失败与缺口：一次 Hugging Face API TLS 连接失败，但 MapPFN 的官方 GitHub README 已提供模型和数据入口，不影响任务边界核验。C3TL 仓库只有占位文件；AdaPert 与 ScDiVa 原文未给出可复现代码/权重；dbDiffusion 代码仓库无 license。仍没有任何方法在 VC2026 六指标、18,533 基因 raw counts、目标背景仅有 NTC 的完整合同上公开胜过 STATE；这些缺口必须由本项目严格 LOCO 实验解决。
+
+### 2026-09-14 首个模型提交方案复核
+
+- 目的：把已有候选收敛成“先可提交，再提分”的首投模型、验证和交付安排，产出[方案](../research/first-submission-plan.md)。
+- 范围与查询：先读本索引及现有实现/容量/架构文档；没有新增主题发现任务，英文主题查询 0、Scholar 调用 0、SciVerse 调用 0。本轮直接追溯已登记来源，不扩搜候选。
+- 方法来源调用：共 5 次 HTTP 请求。PMC 原文页 1 次 TLS 失败，Europe PMC 原文 XML 回退 1 次成功；响应分解 bioRxiv v1 HTML 和作者 README 各 1 次成功；STATE 官方 README 1 次成功。采用结论和本轮新增边界已回写对应条目。
+- 官方合同：独立核验官网 FAQ/Rules/Data/Evaluation 及 CLI，共 16 次顺序 GET，全为 HTTP 200；前端页面壳不足以核验正文，随后沿页面脚本获得实际正文。来源、调用分解、精确截止时间、最终选择规则及 Stack FAQ 时效修正见[合同核验](../research/submission-contract-check.md)。
+- 候选状态：线性基线与 response decomposition 保持采用；STATE 为方法对照；AdaPert/Lingshu/X-Cell 仅复用已有组件评估，本轮未更新其资产可用性；Stack 保持备选并修正比赛许可解释。
+- 缺口：尚未训练、生成或提交模型预测；没有本赛六指标或完整 LOCO 实测增益。原文预处理、目标背景信息和生成器的假设与本赛不同，必须在实施中单独验证，不能根据文献承诺排名。
+
+### 2026-09-14 用户补充博客、H1 benchmark 与社区记录
+
+- 范围：定向读取三份用户材料，并沿实际影响方案的原文链接核验。没有新主题查询，Scholar/SciVerse 调用均为 0。
+- 网络调用：博客 1、固定版本官方指标规范 1、Crossref DOI 元数据 3、Ward Figshare 数据记录 1、作者 README 1、Zhu 出版方 XML 1，共 8 次，全部 HTTP 200。Zhu XML 只有元数据、没有全文，Methods 与扰动模态仍待核实；没有继续扩搜或下载数据。
+- 本地代码核验：H1 clone 的 README、provenance、scorer/bounded/controls、工具和测试；完成 15 个 Python AST、JSON/TOML/锁文件一致性及 4 组 CLI parser 检查。未安装依赖、运行 pytest/真实评分或验证下载资产。
+- 采用与备选：H1 工具和博客/讨论工程经验采用；Orion/CD4 数据候选备选；Ward KO 数据排除直接 CRISPRi 混训、保留研究备选；STATE 新增正式版书目但不重复计证据。每条均已单独登记。
+- 方案更新：优先 H1 开发回路并保留四背景验证；隔离全部 H1 扰动训练信息；两套原生基因轴/输出合同；完整表达保留；全尺寸打包测 RSS。详细来源与限制见[材料审阅](../research/participant-evidence-review.md)、[H1 审计](../research/h1-benchmark-audit.md)和[首投方案](../research/first-submission-plan.md)。
+
+### 2026-09-14 首投环境、数据与架构具体化（已被后续 STATE 主线取代）
+
+- 用户反馈：此前方案的机器、数据与架构候选过多；本轮固定可直接分配的资源与模型默认值。
+- 方法：复用已有证据，定向读取 Zenodo record 13350497 API、DepMap 24Q4 Figshare API、响应分解作者 README 各 1 次，均成功；未做新主题检索，Scholar/SciVerse 调用均为 0。
+- 结果：五个 scPerturb 训练文件合计 13.733 GB；H1 原件 15.482 GB；DepMap corrected CSV 0.429 GB，新增大文件共 29.645 GB。DepMap 新登记为采用，已有论文状态保持；首投采用 50→64 维 Ridge 与固定生成器，STATE/MLP 排到首投后。
+- 当前机器实测：20 逻辑 CPU、约 15.5 GiB RAM、RTX 3070 Ti Laptop 8 GiB、约 756 GiB 可用磁盘；据完整文件打包需求，执行环境请求固定为 16 vCPU / 128 GB RAM / 300 GB SSD，首投不需 GPU。128 GB 为工程资源决定，并非已实测峰值。
+- 交付与缺口：当时提出用户提供服务器入口、Agent 完成下载/开发/评价；该轮 CPU/Ridge 执行配置已被用户否定，当前以 [STATE 方案](../research/first-submission-plan.md)为准。尚未取得新服务器连接、下载大数据或执行训练，运行时间与成绩待实测。
+
+### 2026-09-14 STATE 主基线与 GPU 方案重制
+
+- 触发：用户明确 STATE 是 baseline，要求重新制定方案。保留“先提交再提分”目标，撤销 Ridge 主模型和 STATE 后置的安排。
+- 一手核验：research 分支固定 STATE/cell-load 两个官方仓库和作者 VCC Colab，共 5 个网络操作：两个仓库各一次 ls-remote 与 shallow clone、一次 notebook 下载，均成功。主代理另 GET 官方 H1 gene CSV 一次，与本地 2026 CSV 复核并集 18,536、交集 18,077；SHA 与 H1 registry 一致。无 Scholar/SciVerse 主题搜索。
+- 结果：标准 STATE 已有 ESM2 连续靶点和 full-gene 路径，但默认 FP32、实际 Adam、推理仍为浮点；缺 target 存在静默回退。首投需要实现 bf16 配置、全基因测量 mask、严格覆盖检查、分块推理和原始计数适配。证据见[源码审计](../research/state-training-source-audit.md)。
+- 当前配置：1×A100 80 GB、32 vCPU、128 GB RAM、500 GB SSD；标准 8 层/768/12 heads 主干；S0 项目协议基线、S1 全基因首投、S2 DepMap/辅助损失提分。统计方法保留为诊断而非主模型。
+- 验证政策：H1 先整体留出；结构冻结后可加入其他背景留出及最终训练，但不得将之后的 H1 得分称为未见背景结果。没有训练、GPU 实测或线上成绩，不承诺超过 STATE 或复刻作者名次。
+
+### 2026-09-14 STATE 预训练权重与初始化策略补全
+
+- 用户问题：是否必须重新训练。定向核实官方已发布资产，确认存在 Replogle ST 权重，修正此前默认随机初始化的安排。
+- 调用：HF列表2、模型metadata4、README4、config/hparams YAML4、作者Tahoe推理notebook1，共15次HTTP；11成功、4 README 404。首次按 `search=state` 为空，但官方命名为 ST/SE，完整作者列表命中；不将命名未命中或缺README解释为无权重。
+- 结论：首先冻结既有权重做覆盖/加载/推理核验；需要新靶点和完整基因时微调适配层，只有必要时从零训练。完整GPU预算暂不作为立即采购要求。
+- 未解决：未下载或加载权重，尚未核实所有目标覆盖、训练暴露与具体许可适用性；`full` 的示例仍只有6,546输出，不能直接承诺免训练完成2026提交。[细节](../research/state-training-source-audit.md#已发布检查点补充不必从零训练)
 
 ## 新增记录模板
 

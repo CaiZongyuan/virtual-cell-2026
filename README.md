@@ -4,13 +4,19 @@
 
 比赛规则、数据定义和提交格式以 [`docs/Official-website/`](docs/Official-website/) 为首要依据。论文与候选资料的采用、备选和排除记录见 [`docs/references/INDEX.md`](docs/references/INDEX.md)。
 
-当前竞争性实施建议、验证门和最终轮运行顺序见 [`docs/research/vc2026-completion-strategy-primary.md`](docs/research/vc2026-completion-strategy-primary.md)。
+以 STATE 为基线的模型选择、GPU 训练、10–14 天首投排期与验收步骤见[首投方案](docs/research/first-submission-plan.md)；当前提交格式与精确截止时间见[官方合同核验](docs/research/submission-contract-check.md)。
 
-具体数据下载单、模型组合、算力预算与排行榜目标见 [`docs/research/vc2026-data-compute-capacity-sources.md`](docs/research/vc2026-data-compute-capacity-sources.md)。
+初始化优先复用 Arc 已发布的 Replogle STATE 检查点，先小批推理，再决定哪些层需要微调；从头训练不作为前置要求。已发布权重的结构与当前源码默认值不同，必须继承实际配置。**A100 80 GB / 150 小时是完整训练分支的备选预算，尚非启动采购要求。** 资产、源码与兼容边界见[STATE 审计](docs/research/state-training-source-audit.md)。
 
-STATE 之后的新架构调查、任务对齐矩阵与最小消融顺序见 [`docs/research/vc2026-post-state-architecture-review.md`](docs/research/vc2026-post-state-architecture-review.md)。
+首投先接入 H1 开发评分，再做多背景留出；工具合同、训练泄漏边界和资源要求见[H1 benchmark 审计](docs/research/h1-benchmark-audit.md)。
 
-分解式模型的领域对象、模块接口、V0 数学定义和首个纵向切片见 [`docs/research/vc2026-model-implementation-spec.md`](docs/research/vc2026-model-implementation-spec.md)。
+竞争性实施建议、验证门和最终轮运行顺序见[总体策略](docs/research/completion-strategy-primary.md)。
+
+具体数据下载单、模型组合与历史算力预算见[容量规划](docs/research/data-compute-capacity-sources.md)。
+
+STATE 之后的新架构调查、任务对齐矩阵与最小消融顺序见[架构调查](docs/research/post-state-architecture-review.md)。
+
+此前分解式模型的领域对象和 V0 研究草案见[历史实现规格](docs/research/model-implementation-spec.md)，当前主模型与运行顺序以首投方案为准。
 
 ## 仓库结构
 

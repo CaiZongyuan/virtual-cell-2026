@@ -36,3 +36,5 @@ mlruns/
 .vscode/
 .DS_Store
 Thumbs.db
+
+references/

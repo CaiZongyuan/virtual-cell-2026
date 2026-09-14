@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autoresearch"
+  short_description: "Run bounded autonomous optimization experiments"
+  default_prompt: "Use $autoresearch to set up and run a bounded experiment campaign in this repository, with a fixed evaluation protocol and a reproducible results ledger."

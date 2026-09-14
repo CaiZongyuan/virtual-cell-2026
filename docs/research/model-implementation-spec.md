@@ -1,9 +1,11 @@
 # VC2026 分解式模型实现规格 v0.1
 
+> 当前执行方案已于 2026-09-14 重制为 STATE 主基线及全基因改进版；本文保留为历史研究，资源请求和模型顺序以[首投方案](first-submission-plan.md)为准。
+
 > 日期：2026-08-31
 > 状态：可进入实现的工程规格；尚未经过离线 LOCO 实验验证
-> 上游决策：[STATE 后架构调查](vc2026-post-state-architecture-review.md)
-> 容量依据：[数据与算力容量规划](vc2026-data-compute-capacity-sources.md)
+> 上游决策：[STATE 后架构调查](post-state-architecture-review.md)
+> 容量依据：[数据与算力容量规划](data-compute-capacity-sources.md)
 
 本文把“response-aligned target effect + 保守 context gate + NTC-conditioned count emitter”细化为可编码、可测试和可逐项淘汰的系统。文中明确区分：
 
