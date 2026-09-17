@@ -11,6 +11,21 @@
 
 完整解释与正式实施边界见 [L3-04：State 微调实战与算力预算](../docs/lessons/L3-04-State微调实战与算力预算.md)；源码细节见[检查点审计](../docs/research/state-checkpoint-finetuning-audit.md)。
 
+## 课程 → notebook 映射表
+
+课程完成度校验（`scripts/check-lessons.py`）以本表为准判定「每课都有可运行 notebook」。首列是课号，第二列列出该课的教学 notebook。
+
+| 课号 | notebook | 说明 |
+|---|---|---|
+| L0-01 | `01_vc2026_data.ipynb` | 数据合同与真实数据审计；正文已发布飞书冻结，回指由本表补齐 |
+| L1-02 | `05_noise_floor.ipynb` | 噪声地板的两种口径、背景间距离分母与缩放曲线 |
+| L3-03 | `03_finetuning_counts_and_budget.ipynb` | 原始计数生成与预算 |
+| L3-04 | `02_state_model_and_transfer.ipynb`、`03_finetuning_counts_and_budget.ipynb`、`04_arc_colab_h1_benchmark.ipynb` | State 接口、微调与计数落地、官方流水线与 H1 评分 |
+
+`90_ref_*` / `91_ref_*` 是官方 Colab 的固定副本与中文对照，**不属于课程序列**，见下一节；`test.ipynb` 是环境自检，同样不映射任何课程。
+
+尚未映射的课（L1-01、L3-01、L3-02、L3-05 及待写的 L2 各课）由 issue #12 跟踪；每写完一课，就在本表补一行并同步课文里的回指链接。
+
 ## 官方 Colab 固定副本
 
 `90_ref_arc_vcc2025_colab_official.ipynb` 是 Arc 官方 [STATE for Virtual Cell Challenge Colab](https://colab.research.google.com/drive/1QKOtYP7bMpdgDJEipDxaJqOchv7oQ-_l)（VC2025 版）的逐字节固定副本：22 个 cell，GPU T4 配置，SHA-256 `0b3888b9a36e6fbfc056b9e5585d825aa5a97a92f34d3bc2ff69cba064f21422`（2026-09-15 下载，与[来源审计](../docs/research/state-training-source-audit.md)记录一致）。它不是课程单元，不能在学习环境运行（需 GPU、`arc-state` 与 Python < 3.13）；04 课的 cell 序号映射以它为准。Colab 是可变文档：若 Arc 更新，重新下载后哈希会变，须重新审计再更新 04 课映射，不能沿用旧序号。
