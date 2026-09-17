@@ -24,19 +24,17 @@
 |---|---|---|
 | **科研数据图**（散点、热图、误差棒、多面板结果图） | `.agents/skills/nature-figure` | Python(matplotlib/seaborn) 或 R(ggplot2) 源图脚本 + 导出 PDF/SVG，再转 WebP 入教程 |
 | **模型 / 论文式架构图**（神经网络结构、算法流程这类论文 Figure 风格的示意图） | `.agents/skills/drawio-skill` | 可编辑 `.drawio` 源（入库 `sources/`）+ 渲染截图转 WebP 入教程 |
-| **系统架构 / 数据流 / 时序图 / 状态机 / 泳道** | `.agents/skills/archify` | JSON 规格（入库）+ 交付型独立 HTML（可再生产物，放被忽略的 `output/figures/`）+ 截图转 WebP 入教程 |
+| **系统架构 / 数据流 / 时序图 / 状态机 / 泳道** | 同上，`.agents/skills/drawio-skill` | 同上。**archify 已于 2026-09-17 卸载**，这两类图统一走 drawio |
 | **概念插画 / 封面 / 风格化示意图** | 子代理经浏览器用 ChatGPT 生成，prompt 取自 `prompts/gallery-research-paper-figures.md` | 母版留 `output/imagegen/`（Git 忽略），采用版转 WebP 入教程 |
 | **标签密集、要求数值或机制准确的流程图** | HTML/CSS/canvas 手绘 | 图稿源入 `sources/`，Chromium 截图后转 WebP |
 
 硬性边界：
 
-1. **archify 不适合科研图**（用户 2026-09-17 裁决）：它面向系统架构语汇，画不了 `Linear → GELU → ReLU`、残差跳线、`N×` 重复块这类论文式结构。模型结构图一律走 `drawio-skill`。
-2. **drawio 图必须 light 配色、简体中文标签**；风格参照论文原图，不要自创。
-3. **架构图必须 light 模式、简体中文界面**（archify 的 `meta.locale: "zh-CN"`；截图时 URL 加 `?theme=light`）。
-4. **生成式图片只是解释性插画**，不能作为实验结构、机制或数据证据。
-5. archify 的交付 HTML 约 800 KB 且可确定性重建，**不入库**；入库的是 JSON 规格与最终 WebP。重建命令：
-   `node .agents/skills/archify/bin/archify.mjs deliver architecture <spec.json> output/figures/<name>.html --quality showcase`
-6. archify 交付需要 Chrome。其环境变量探测在本机沙箱内不生效，改用 `--headless=new --screenshot` 直接截图；截图后裁掉浏览器外壳再转 WebP。
+1. **不要拿系统架构语汇的图形工具去画论文式结构图**（用户 2026-09-17 裁决）：archify 面向系统架构，画不了 `Linear → GELU → ReLU`、残差跳线、`N×` 重复块这类结构——当时实测出来的图是错的。现在所有结构图与流程图统一走 `drawio-skill`。
+2. **drawio 图必须 light 配色、简体中文标签**；风格参照论文原图，不要自创。字号、间距、连线避让与体积预算见 `AGENTS.md`「教程图片」第 9/10 条。
+3. **生成式图片只是解释性插画**，不能作为实验结构、机制或数据证据。
+
+**archify 已于 2026-09-17 卸载。** 技能本体与两个 `.claude/skills/` 符号链接都已移除；`skills-lock.json` 里的条目同步删除。只保留一张历史产物的规格 `sources/L1-01-five-bets.architecture.json` 与它的成品 WebP——规格是那张图的来源记录，要重建需先重新安装 archify。
 
 ## drawio-skill 使用约定（2026-09-17 实测）
 

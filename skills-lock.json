@@ -1,18 +1,6 @@
 {
   "version": 1,
   "skills": {
-    "archify": {
-      "source": "tt-a1i/archify",
-      "sourceType": "github",
-      "skillPath": "archify/SKILL.md",
-      "computedHash": "f52b30468fcccabb55357ae19d531059ca460fbbca77727946287413cc5cc027"
-    },
-    "archify-review": {
-      "source": "tt-a1i/archify",
-      "sourceType": "github",
-      "skillPath": ".agents/skills/archify-review/SKILL.md",
-      "computedHash": "ea17fd7a735f2e787defcc35d67f97908ddb7c5817220d6163a32998b4573f8f"
-    },
     "ask-matt": {
       "source": "mattpocock/skills",
       "sourceType": "github",
@@ -48,6 +36,12 @@
       "sourceType": "github",
       "skillPath": "skills/engineering/domain-modeling/SKILL.md",
       "computedHash": "a11713c0ff7870efa3c331b2e273f09116158485246edc89ae5088eefd1b0b48"
+    },
+    "drawio-skill": {
+      "source": "Agents365-ai/drawio-skill",
+      "sourceType": "github",
+      "skillPath": "skills/drawio-skill/SKILL.md",
+      "computedHash": "644a19df7334d726e2afd3596480389728bc5477ab4ba2e462d0f5d8e47f16e1"
     },
     "git-guardrails-claude-code": {
       "source": "mattpocock/skills",

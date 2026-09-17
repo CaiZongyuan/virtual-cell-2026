@@ -64,7 +64,7 @@
 1. **先按图的类型选工具，不要一把锤子。** 四类图分工如下，具体命令、已知坑与回退路径统一记在 `docs/style/README.md`：
    - **科研数据图**（散点、热图、误差棒、多面板结果图）：`.agents/skills/nature-figure/SKILL.md`，Python(matplotlib/seaborn) 或 R(ggplot2) 源脚本 + 导出矢量，再转 WebP。
    - **模型/论文式架构图**（模块自下而上堆叠、残差跳线、`N×` 重复块、注意力头与汇流线）：`.agents/skills/drawio-skill/SKILL.md`。配色沿用 draw.io 默认调色板（即 "Attention Is All You Need" 原图配色）；`.drawio` 作为可编辑源入库。
-   - **系统架构、数据流、时序图、状态机**：`.agents/skills/archify/SKILL.md`，**light 模式 + 简体中文**；只留 JSON 规格与最终 WebP，交付型 HTML 是可再生产物不入库。archify 不适合承载科研/模型图语汇，不要用它画模块堆叠图。
+   - **系统架构、数据流、时序图、状态机**：同样走 `.agents/skills/drawio-skill/SKILL.md`。**archify 已于 2026-09-17 卸载**（它面向系统架构语汇，画不了 `Linear → GELU → ReLU`、残差跳线、`N×` 重复块这类论文式结构，实测出来是错的），两类图现在统一用一个工具，避免再次选错。
    - **概念插画、封面、风格化示意图**：`$imagegen`（或经浏览器用 ChatGPT 生成，prompt 放 `docs/style/prompts/`）。生成式科学图只是解释性插画，不能作为实验结构、机制或数据证据。
    - **标签密集且要求数值或机制准确的流程图**：HTML/CSS/canvas 手绘 + Chromium 截图。
 2. `$imagegen` 优先使用内置 `image_gen`。内置工具不可用且用户已授权 CLI/API 回退时，使用该 skill 自带的 `scripts/image_gen.py`，默认模型为 `gpt-image-2`；通过 `uv run --with openai` 提供依赖，不编写临时 SDK runner，也不修改 skill 脚本。
@@ -80,3 +80,17 @@
    - **连线不得穿过其他面板的边框，也不得压到任何文字**。跨面板的长跳线（例如残差回路）必须改道留在自己的面板内；发现斜线/曲线往往是坐标吸附问题，要查根因而不是接受它。
    - **两类校验都要过**：结构校验（如 drawio 的 `validate.py --score` 必须 0 error 0 warning）与渲染后逐条读 DOM 路径数据（不应出现意外的曲线命令）。校验不过不许交付。
 10. **位图资产有体积预算。** 教程用位图按**实际显示分辨率的 1.2–1.4 倍**导出，不做 2x/4x 满分辨率入库；先高分辨率渲染再用 LANCZOS 超采样降到目标宽度，比直接低分辨率渲染更清晰也更小。单张 WebP 目标 ≤ 300 KB，优先调分辨率而不是一味降 quality（含文字/细线的图 quality 低于约 82 会开始糊）。转换后核对尺寸、体积，并放大确认文字仍清晰。体积上限与例外处理同时遵守上文「Git 文件体积」。
+
+## Agent skills
+
+### Issue tracker
+
+Issues 与 specs 以 GitHub issue 形式存放在 `CaiZongyuan/virtual-cell-2026`，全部操作走 `gh` CLI（本机需先配 git `safe.directory`，见文档）。See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+沿用五个标准 triage 角色名（`needs-triage` / `needs-info` / `ready-for-agent` / `ready-for-human` / `wontfix`），另加 `spec` 与 `tutorial`。See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+single-context：根目录 `CONTEXT.md` 是唯一术语权威，`docs/lessons/README.md` 是教程唯一入口，尚无 `docs/adr/`。See `docs/agents/domain.md`.

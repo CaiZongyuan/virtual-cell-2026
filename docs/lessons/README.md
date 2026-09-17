@@ -161,7 +161,7 @@ L3-04 是当前**实施主线**，其余课都是它的支撑或它的对照。
 
 其他约定：
 
-- **配图。** 科研数据图用 `.agents/skills/nature-figure`；架构图用 `.agents/skills/archify`（light 模式、简体中文界面）。两者的产出按 [docs/style/README.md](../style/README.md) 的流程转 WebP 后放入本目录的 `assets/`，图源与 prompt 存 `docs/style/`。需要概念插画时可派子代理经浏览器用 ChatGPT 生成，prompt 取自 `docs/style/prompts/gallery-research-paper-figures.md`；**生成式图片只作解释性插画，不作机制或数据证据**。
+- **配图。** 科研数据图用 `.agents/skills/nature-figure`；结构图与流程图（模型架构、系统架构、数据流、时序）统一用 `.agents/skills/drawio-skill`（light 配色、简体中文标签）。两者的产出按 [docs/style/README.md](../style/README.md) 的流程转 WebP 后放入本目录的 `assets/`，图源与 prompt 存 `docs/style/`。需要概念插画时可派子代理经浏览器用 ChatGPT 生成，prompt 取自 `docs/style/prompts/gallery-research-paper-figures.md`；**生成式图片只作解释性插画，不作机制或数据证据**。（archify 已于 2026-09-17 卸载，不再使用。）
 - **不重复研究文档。** L2 不复制 `docs/research/` 的内容。研究文档记录的是「本项目的决定和证据」，教材讲的是「这个领域的选择空间」。引用关系单向：**教材 → 研究文档**。
 - **术语。** 首次出现给出中文、英文或缩写及一句话定义；权威定义在 [CONTEXT.md](../../CONTEXT.md)，别处只回指。
 
