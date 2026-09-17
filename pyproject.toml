@@ -10,3 +10,14 @@ dependencies = []
 dev = [
     "ipykernel>=7.3.0",
 ]
+notebook = [
+    "anndata>=0.13,<0.14",
+    "ipywidgets>=8.1,<9",
+    "matplotlib>=3.10,<3.11",
+    "nbclient>=0.10,<0.11",
+    "nbformat>=5.10,<6",
+    "numpy>=2.5,<3",
+    "pandas>=3,<4",
+    "pyyaml>=6,<7",
+    "scipy>=1.18,<2",
+]

@@ -2,6 +2,8 @@
 
 日期：2026-09-14。性质：官方源码与作者 Colab 的静态核验；未安装依赖、未下载训练数据或权重、未运行 GPU 训练。用于修订[首投方案](first-submission-plan.md)，不能把下列配置读取结果当作已复现的成绩或资源实测。
 
+同日后续[检查点微调核验](state-checkpoint-finetuning-audit.md)与[实战教程](../lessons/10-State微调实战与算力预算.md)补充了三项执行细节：原生 `init_from` 可微调；`ckpt_every_n_steps` 在当前 callback 中未使用，实际由 `val_freq` 控制保存；参数总量还可能包含辅助 `gene_decoder`，下文主 forward 路径的手算不等于完整模型参数数目。梯度累积后，验证间隔按训练 batch、checkpoint 间隔按 optimizer steps，正式选模应修正并核验保存逻辑。
+
 **结论：STATE 应是本项目必须复现的神经网络主基线。作者的 VCC starter 已经使用 ESM2 连续靶点特征，支持有特征的未见扰动；不能把“从 one-hot 改为 ESM2”包装为我们超越这个 starter 的新架构。** 当前官方 `model=state` 是 8 层、768 宽的细胞集合 Transformer，并且已经有全基因输出路径。真正需要完成的工作包括符合 2026 合同的数据划分、完整靶点覆盖、原始计数生成、可消融的模型改进，以及相同条件下的六指标比较。
 
 ## 固定来源
@@ -31,7 +33,7 @@ Colab 的数据说明仍然是 **2025 H1、200 个比赛 train/val targets**，�
 | 优化器 | 源码实际 `torch.optim.Adam(..., lr=self.lr)` | 未覆盖 | **不是 AdamW**；YAML 中 `weight_decay=0.0005` 未传入这个优化器；无源码内置 LR schedule |
 | steps | `400000` | `40000` | 40k 是 Colab 的训练覆盖值，不是完整默认值，也不是实测收敛承诺 |
 | batch / accumulation | 16 个集合 / 1 | 未覆盖 | 默认一次前向至多 16×512 个细胞；项目可先用较小 microbatch 和梯度累积测内存 |
-| 验证 / checkpoint | 每 2000 steps；clip=10；seed=42 | checkpoint 每 20000 | 正式记录 best/last/final 的选择规则 |
+| 验证 / checkpoint | val 每 2000 train batches；保存 callback 每 2000 optimizer steps；clip=10；seed=42 | 显式设 `ckpt_every_n_steps=20000`，但当前 callback 忽略该字段 | 累积时两种间隔不同；正式修正并记录 best/last/final 的选择规则 |
 | 精度 | STATE 的 Trainer 未传 `precision`，为 Lightning 默认；另设 float32 matmul precision `medium` | 未覆盖 | **STATE 默认没有自动启用 bf16**。源码中的 `bf16-mixed` 只在 scGPT 分支。项目使用 bf16 必须补 Trainer 配置并验证数值。 |
 
 字段来源：[state.yaml](https://github.com/ArcInstitute/state/blob/9bbfe78a434a55205e4de834e1ea99f85f7a3add/src/state/configs/model/state.yaml)、[training/default.yaml](https://github.com/ArcInstitute/state/blob/9bbfe78a434a55205e4de834e1ea99f85f7a3add/src/state/configs/training/default.yaml)、[data/perturbation.yaml](https://github.com/ArcInstitute/state/blob/9bbfe78a434a55205e4de834e1ea99f85f7a3add/src/state/configs/data/perturbation.yaml)、[优化器](https://github.com/ArcInstitute/state/blob/9bbfe78a434a55205e4de834e1ea99f85f7a3add/src/state/tx/models/base.py#L438)、[Trainer 构造](https://github.com/ArcInstitute/state/blob/9bbfe78a434a55205e4de834e1ea99f85f7a3add/src/state/_cli/_tx/_train.py#L243)。

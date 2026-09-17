@@ -1,0 +1,19 @@
+{
+  "downloaded_at": "2026-09-15",
+  "files": [
+    {
+      "path": "pert_counts_Training.csv",
+      "role": "H1 训练靶点计数表：150 个靶点的 target_gene、n_cells、median_umi_per_cell；n_cells>=400 的 126 个即 H1 benchmark 的评分面板",
+      "bytes": 2824,
+      "sha256": "633d202be221418bdbac16efd8cb169666de0ef6469a4e9bfdfb64666ea81a89",
+      "url": "https://storage.googleapis.com/arc-institute-virtual-cell-atlas/virtual-cell-challenge/2025/train/pert_counts_Training.csv",
+      "registered_by": "references/vcc2026-h1-benchmark/assets/benchmark-v1.json (sources.target_counts)"
+    }
+  ],
+  "related": {
+    "benchmark": "references/vcc2026-h1-benchmark (v0.2.0, d28dd0496cc9fbf1d0088ce171208c0deb54a268)",
+    "colab_copy": "notebook/90_ref_arc_vcc2025_colab_official.ipynb (sha256 0b3888b9a36e6fbfc056b9e5585d825aa5a97a92f34d3bc2ff69cba064f21422)",
+    "audit": "docs/research/h1-benchmark-audit.md"
+  },
+  "notes": "只缓存小于 3 KB 的公开元数据 CSV；H1 训练对象（约 15.48 GB）与参考资产由 vcc-h1 setup 按注册表自行下载与校验，本目录不复制。"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "file": "hvg_jurkat_config.yaml",
+    "url": "https://huggingface.co/arcinstitute/ST-HVG-Replogle/resolve/bb6a9562cbbf1fd152df14cc53b4cc7517c77175/zeroshot/jurkat/config.yaml",
+    "revision": "bb6a9562cbbf1fd152df14cc53b4cc7517c77175",
+    "retrieved_at": "2026-09-15",
+    "bytes": 2766,
+    "sha256": "aa20b36b93987fd9da9d3895c2f33f816b4fb2e854126734e8f8c8232077ec27",
+    "kind": "unaltered official YAML; author-local paths are provenance, not runnable paths"
+  },
+  {
+    "file": "hvg_jurkat_hparams.yaml",
+    "url": "https://huggingface.co/arcinstitute/ST-HVG-Replogle/resolve/bb6a9562cbbf1fd152df14cc53b4cc7517c77175/zeroshot/jurkat/version_0/hparams.yaml",
+    "revision": "bb6a9562cbbf1fd152df14cc53b4cc7517c77175",
+    "retrieved_at": "2026-09-15",
+    "bytes": 18468,
+    "sha256": "ff7ab3a3d1a324986616ea6ccc16f633be220b32b0c01f642a71988787ae57f0",
+    "kind": "unaltered official YAML; author-local paths are provenance, not runnable paths"
+  },
+  {
+    "file": "full_k562_config.yaml",
+    "url": "https://huggingface.co/arcinstitute/st-x-replogle-full/resolve/48ad5f70215ab4c58caa5a68e77d837601d29d35/k562_0.99/config.yaml",
+    "revision": "48ad5f70215ab4c58caa5a68e77d837601d29d35",
+    "retrieved_at": "2026-09-15",
+    "bytes": 2736,
+    "sha256": "8f009aab5165e072c61ac3f582984e15a8733ac002b5e372a8b23ee08be05735",
+    "kind": "unaltered official YAML; author-local paths are provenance, not runnable paths"
+  },
+  {
+    "file": "full_k562_hparams.yaml",
+    "url": "https://huggingface.co/arcinstitute/st-x-replogle-full/resolve/48ad5f70215ab4c58caa5a68e77d837601d29d35/k562_0.99/version_0/hparams.yaml",
+    "revision": "48ad5f70215ab4c58caa5a68e77d837601d29d35",
+    "retrieved_at": "2026-09-15",
+    "bytes": 56363,
+    "sha256": "b19ab9e1a2b07cdee29e7a3865d4c38d0cd66a6489cd8798e8108044c152dc02",
+    "kind": "unaltered official YAML; author-local paths are provenance, not runnable paths"
+  }
+]
