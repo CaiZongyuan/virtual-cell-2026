@@ -20,12 +20,13 @@
 | L0-01 | `01_vc2026_data.ipynb` | 数据合同与真实数据审计；正文已发布飞书冻结，回指由本表补齐 |
 | L1-02 | `05_noise_floor.ipynb` | 噪声地板的两种口径、背景间距离分母与缩放曲线 |
 | L2-01 | `06_state_anatomy.ipynb` | 集合注意力的置换等变性、Energy 距离 vs MSE、残差加回与参数量分解（纯 NumPy，不装 torch） |
+| L2-02 | `07_stack_icl_context.ipynb` | Stack 的窗口切分与查询细胞复制、双轴注意力显存与 8 GiB batch 边界、参数量手算对表、`T=5` 生成计划、上下文敏感性对照（纯 NumPy） |
 | L3-03 | `03_finetuning_counts_and_budget.ipynb` | 原始计数生成与预算 |
 | L3-04 | `02_state_model_and_transfer.ipynb`、`03_finetuning_counts_and_budget.ipynb`、`04_arc_colab_h1_benchmark.ipynb` | State 接口、微调与计数落地、官方流水线与 H1 评分 |
 
 `90_ref_*` / `91_ref_*` 是官方 Colab 的固定副本与中文对照，**不属于课程序列**，见下一节；`test.ipynb` 是环境自检，同样不映射任何课程。
 
-尚未映射的课（L1-01、L3-01、L3-02、L3-05 及待写的 L2-02 至 L2-06）由 issue #12 跟踪；每写完一课，就在本表补一行并同步课文里的回指链接。
+尚未映射的课（L1-01、L3-01、L3-02、L3-05 及待写的 L2-03 至 L2-06）由 issue #12 跟踪；每写完一课，就在本表补一行并同步课文里的回指链接。
 
 ## 官方 Colab 固定副本
 
