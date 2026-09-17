@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "扰动响应预测的五种赌注",
+    "locale": "zh-CN",
+    "output": "L1-01-five-bets.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "cheap-end",
+        "label": "最便宜的一端",
+        "focus": [
+          "fact",
+          "bet-transfer"
+        ],
+        "note": "效应迁移路线只需 CPU 与效应表，天花板由跨背景一致性直接封顶。"
+      },
+      {
+        "id": "expensive-end",
+        "label": "最昂贵的一端",
+        "focus": [
+          "fact",
+          "bet-pretrain",
+          "bet-world"
+        ],
+        "note": "表征预训练与世界模型路线成本最高，但在本任务上都还没有可复核的正收益证据。"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "fact",
+      "type": "external",
+      "label": "同一个经验事实",
+      "sublabel": "扰动效应几乎不跨背景迁移",
+      "pos": [
+        40,
+        300
+      ],
+      "size": [
+        186,
+        96
+      ],
+      "tag": "跨类型一致性 0.016–0.037"
+    },
+    {
+      "id": "bet-transfer",
+      "type": "backend",
+      "label": "效应迁移",
+      "sublabel": "效应比背景更可迁移 · 天花板：跨类型一致性 ≈0.02",
+      "pos": [
+        440,
+        32
+      ],
+      "size": [
+        268,
+        92
+      ],
+      "tag": "天花板：一致性 ≈ 0.02"
+    },
+    {
+      "id": "bet-cond",
+      "type": "backend",
+      "label": "条件化生成",
+      "sublabel": "学 p(表达｜背景,扰动) · 需区分「未测」与「测得零」",
+      "pos": [
+        440,
+        156
+      ],
+      "size": [
+        268,
+        92
+      ],
+      "tag": "需区分「未测」与「测得零」"
+    },
+    {
+      "id": "bet-decomp",
+      "type": "backend",
+      "label": "分解式",
+      "sublabel": "响应 = 共享分量 + 背景特异分量 · 判据：分解可识别吗",
+      "pos": [
+        440,
+        280
+      ],
+      "size": [
+        268,
+        92
+      ],
+      "tag": "分解是否可识别、可验证"
+    },
+    {
+      "id": "bet-pretrain",
+      "type": "backend",
+      "label": "表征预训练",
+      "sublabel": "先学通用细胞表征再迁移 · 基准常不敌线性基线",
+      "pos": [
+        440,
+        404
+      ],
+      "size": [
+        268,
+        92
+      ],
+      "tag": "基准常不敌线性基线"
+    },
+    {
+      "id": "bet-world",
+      "type": "backend",
+      "label": "世界模型 / 动力学",
+      "sublabel": "学状态转移而非某时刻表达 · 本任务尚无可复核证据",
+      "pos": [
+        440,
+        528
+      ],
+      "size": [
+        268,
+        92
+      ],
+      "tag": "本任务上尚无可复核证据"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "对同一个事实的五种回应",
+      "wraps": [
+        "bet-transfer",
+        "bet-cond",
+        "bet-decomp",
+        "bet-pretrain",
+        "bet-world"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "fact-to-transfer",
+      "from": "fact",
+      "to": "bet-transfer"
+    },
+    {
+      "id": "fact-to-cond",
+      "from": "fact",
+      "to": "bet-cond",
+      "variant": "emphasis"
+    },
+    {
+      "id": "fact-to-decomp",
+      "from": "fact",
+      "to": "bet-decomp"
+    },
+    {
+      "id": "fact-to-pretrain",
+      "from": "fact",
+      "to": "bet-pretrain"
+    },
+    {
+      "id": "fact-to-world",
+      "from": "fact",
+      "to": "bet-world"
+    }
+  ]
+}

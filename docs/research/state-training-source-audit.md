@@ -2,7 +2,7 @@
 
 日期：2026-09-14。性质：官方源码与作者 Colab 的静态核验；未安装依赖、未下载训练数据或权重、未运行 GPU 训练。用于修订[首投方案](first-submission-plan.md)，不能把下列配置读取结果当作已复现的成绩或资源实测。
 
-同日后续[检查点微调核验](state-checkpoint-finetuning-audit.md)与[实战教程](../lessons/10-State微调实战与算力预算.md)补充了三项执行细节：原生 `init_from` 可微调；`ckpt_every_n_steps` 在当前 callback 中未使用，实际由 `val_freq` 控制保存；参数总量还可能包含辅助 `gene_decoder`，下文主 forward 路径的手算不等于完整模型参数数目。梯度累积后，验证间隔按训练 batch、checkpoint 间隔按 optimizer steps，正式选模应修正并核验保存逻辑。
+同日后续[检查点微调核验](state-checkpoint-finetuning-audit.md)与[L3-04：State 微调实战与算力预算](../lessons/L3-04-State微调实战与算力预算.md)补充了三项执行细节：原生 `init_from` 可微调；`ckpt_every_n_steps` 在当前 callback 中未使用，实际由 `val_freq` 控制保存；参数总量还可能包含辅助 `gene_decoder`，下文主 forward 路径的手算不等于完整模型参数数目。梯度累积后，验证间隔按训练 batch、checkpoint 间隔按 optimizer steps，正式选模应修正并核验保存逻辑。
 
 **结论：STATE 应是本项目必须复现的神经网络主基线。作者的 VCC starter 已经使用 ESM2 连续靶点特征，支持有特征的未见扰动；不能把“从 one-hot 改为 ESM2”包装为我们超越这个 starter 的新架构。** 当前官方 `model=state` 是 8 层、768 宽的细胞集合 Transformer，并且已经有全基因输出路径。真正需要完成的工作包括符合 2026 合同的数据划分、完整靶点覆盖、原始计数生成、可消融的模型改进，以及相同条件下的六指标比较。
 
