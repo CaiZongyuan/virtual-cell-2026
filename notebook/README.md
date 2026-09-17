@@ -23,12 +23,13 @@
 | L2-02 | `07_stack_icl_context.ipynb` | Stack 的窗口切分与查询细胞复制、双轴注意力显存与 8 GiB batch 边界、参数量手算对表、`T=5` 生成计划、上下文敏感性对照（纯 NumPy） |
 | L2-03 | `08_foundation_model_routes.ipynb` | scGPT 分层参数量与「为什么不给总数」、零表达靶点的接口可区分性、四分量 ANOVA 的 beta_frac 分档、B1 与「完美知道 Γ」上界的机会窗口（合成数据，纯 NumPy） |
 | L2-04 | `09_simple_baselines.ipynb` | B0/B1 手算与课文 §8.1 逐位对表、中位数 vs 均值的稳健性（异常背景）、LOCO 协议骨架与零覆盖回退 B0、B2 相似度加权的权重集中、把「B1 是否真的优于 B0」接到噪声地板的机械判定（合成数据，纯 NumPy） |
+| L2-06 | `10_model_cards.ipynb` | 六张模型卡的可核对表（附录课）：可执行程度矩阵（代码/权重/真值/面板四列机械计数）、训练条件判定（本赛 D/E/F 能否满足「需要目标背景扰动真值」）、面板交集审计（示意集合，演示差集与 patch 边界问题）、靶点身份编码分类器（可外推 vs 查找表，含 B3 的 `b_t`）、分量归因能力判定（零依赖，纯标准库） |
 | L3-03 | `03_finetuning_counts_and_budget.ipynb` | 原始计数生成与预算 |
 | L3-04 | `02_state_model_and_transfer.ipynb`、`03_finetuning_counts_and_budget.ipynb`、`04_arc_colab_h1_benchmark.ipynb` | State 接口、微调与计数落地、官方流水线与 H1 评分 |
 
 `90_ref_*` / `91_ref_*` 是官方 Colab 的固定副本与中文对照，**不属于课程序列**，见下一节；`test.ipynb` 是环境自检，同样不映射任何课程。
 
-尚未映射的课（L1-01、L3-01、L3-02、L3-05 及待写的 L2-05、附录 L2-06）由 issue #12 跟踪；每写完一课，就在本表补一行并同步课文里的回指链接。
+尚未映射的课（L1-01、L3-01、L3-02、L3-05 及待写的 L2-05）由 issue #12 跟踪；每写完一课，就在本表补一行并同步课文里的回指链接。
 
 ## 官方 Colab 固定副本
 
