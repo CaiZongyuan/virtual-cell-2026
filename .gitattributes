@@ -1,0 +1,30 @@
+# 行尾统一为 LF。
+#
+# 背景：本仓库在 WSL 里开发，但经常从 Windows 侧（UNC 路径）跑 git；那一侧的
+# core.autocrlf=true 且此前没有 .gitattributes，导致每次 git add 都刷
+# "LF will be replaced by CRLF" 警告，而且执行位在 9p 挂载上会丢失，
+# 让 .agents/skills/** 与 scripts/*.sh 显示成 mode-only 的 " M"（实际 diff 为 0 行）。
+* text=auto eol=lf
+
+# 二进制：明确声明，避免行尾转换损坏内容。
+*.webp   binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.gz     binary
+*.zip    binary
+*.h5ad   binary
+*.h5     binary
+*.pt     binary
+*.pth    binary
+*.ckpt   binary
+*.zarr   binary
+
+# notebook 是 JSON，按文本处理但强制 LF，避免整文件 diff 噪声。
+*.ipynb  text eol=lf
+
+# 少数必须保留 CRLF 的 Windows 脚本（当前仓库没有，留作显式例外位）。
+# *.bat text eol=crlf
