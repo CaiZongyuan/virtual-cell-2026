@@ -78,6 +78,10 @@ MODEL_SLOTS = {
     "诊断题": r"诊断题|理解检查题|自检问题",
 }
 
+# 使用模型深潜样板的课。L2-05 是方法论课（统计机制替代生物机制），
+# 按 README §2 阶段表走因果单元样板，因此不在本表内。
+MODEL_SLOT_COURSES = {"L2-01", "L2-02", "L2-03", "L2-04", "L2-06"}
+
 # 证据分级出现的写法
 EVIDENCE_TAGS = {
     "[S#] 官方事实": r"\[S\d",
@@ -229,7 +233,10 @@ def check_course(c: dict, nb_map: dict[str, list[str]]) -> dict:
         ("FAIL", "正文里没有任何到 notebook/ 的链接（读者走不到动手材料）")
 
     # ---- 样板槽位（软判定） ---------------------------------------------
-    slots = MODEL_SLOTS if num.startswith("L2") else CAUSAL_SLOTS
+    # 不是所有 L2 课都用模型深潜样板：README §2 阶段表把 L2-05 归为方法论课，
+    # 用的是 L1/L3 的因果单元样板（生物机制换成统计机制）。按课号单独指定，
+    # 不要用 num.startswith("L2") 一刀切。
+    slots = MODEL_SLOTS if num in MODEL_SLOT_COURSES else CAUSAL_SLOTS
     join = " || ".join(hs)
     missing_slots = [k for k, pat in slots.items() if not re.search(pat, join)]
     if missing_slots:
