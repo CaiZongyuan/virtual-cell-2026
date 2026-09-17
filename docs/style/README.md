@@ -23,17 +23,39 @@
 | 图的类型 | 工具 | 交付形态 |
 |---|---|---|
 | **科研数据图**（散点、热图、误差棒、多面板结果图） | `.agents/skills/nature-figure` | Python(matplotlib/seaborn) 或 R(ggplot2) 源图脚本 + 导出 PDF/SVG，再转 WebP 入教程 |
-| **架构图 / 流程图 / 数据流 / 时序图 / 状态机** | `.agents/skills/archify` | JSON 规格（入库）+ 交付型独立 HTML（可再生产物，放被忽略的 `output/figures/`）+ 截图转 WebP 入教程 |
+| **模型 / 论文式架构图**（神经网络结构、算法流程这类论文 Figure 风格的示意图） | `.agents/skills/drawio-skill` | 可编辑 `.drawio` 源（入库 `sources/`）+ 渲染截图转 WebP 入教程 |
+| **系统架构 / 数据流 / 时序图 / 状态机 / 泳道** | `.agents/skills/archify` | JSON 规格（入库）+ 交付型独立 HTML（可再生产物，放被忽略的 `output/figures/`）+ 截图转 WebP 入教程 |
 | **概念插画 / 封面 / 风格化示意图** | 子代理经浏览器用 ChatGPT 生成，prompt 取自 `prompts/gallery-research-paper-figures.md` | 母版留 `output/imagegen/`（Git 忽略），采用版转 WebP 入教程 |
 | **标签密集、要求数值或机制准确的流程图** | HTML/CSS/canvas 手绘 | 图稿源入 `sources/`，Chromium 截图后转 WebP |
 
 硬性边界：
 
-1. **架构图必须 light 模式、简体中文界面**（archify 的 `meta.locale: "zh-CN"`；截图时 URL 加 `?theme=light`）。
-2. **生成式图片只是解释性插画**，不能作为实验结构、机制或数据证据。
-3. archify 的交付 HTML 约 800 KB 且可确定性重建，**不入库**；入库的是 JSON 规格与最终 WebP。重建命令：
+1. **archify 不适合科研图**（用户 2026-09-17 裁决）：它面向系统架构语汇，画不了 `Linear → GELU → ReLU`、残差跳线、`N×` 重复块这类论文式结构。模型结构图一律走 `drawio-skill`。
+2. **drawio 图必须 light 配色、简体中文标签**；风格参照论文原图，不要自创。
+3. **架构图必须 light 模式、简体中文界面**（archify 的 `meta.locale: "zh-CN"`；截图时 URL 加 `?theme=light`）。
+4. **生成式图片只是解释性插画**，不能作为实验结构、机制或数据证据。
+5. archify 的交付 HTML 约 800 KB 且可确定性重建，**不入库**；入库的是 JSON 规格与最终 WebP。重建命令：
    `node .agents/skills/archify/bin/archify.mjs deliver architecture <spec.json> output/figures/<name>.html --quality showcase`
-4. archify 交付需要 Chrome。其环境变量探测在本机沙箱内不生效，改用 `--headless=new --screenshot` 直接截图；截图后裁掉浏览器外壳再转 WebP。
+6. archify 交付需要 Chrome。其环境变量探测在本机沙箱内不生效，改用 `--headless=new --screenshot` 直接截图；截图后裁掉浏览器外壳再转 WebP。
+
+## drawio-skill 使用约定（2026-09-17 实测）
+
+本机**没有 draw.io CLI**（`draw.io.exe` / `drawio` 都不存在），因此走 skill 记录的浏览器回退路径，不要试图安装：
+
+1. **渲染走 CDP，不要走 `chrome --screenshot <url>`。** 本机沙箱下 Chrome 只会渲染 `data:` URI：`file://` 与 `http://127.0.0.1:<port>` 都**退出码 0 但不写文件**（控制组 `data:text/html,<h1>x</h1>` 能出图，说明不是 Chrome 坏了）；解除沙箱后连 `data:` 也失败。而把页面塞进 `data:` URL 又撞上 Windows 命令行 32767 字符上限（render.html 37 KB + viewer 4 MB）。
+   稳定通道是 **DevTools 协议**——监听端口是 bind 不是 connect，不碰沙箱的文件与网络限制：
+   - `chrome.exe --headless=new --disable-gpu --no-first-run --remote-allow-origins='*' --remote-debugging-port=9222 --user-data-dir=<fresh> about:blank`（后台常驻）
+   - Python（需 `websocket-client`）连 `/json` 拿 `webSocketDebuggerUrl`，然后 `Page.enable` → `Emulation.setDeviceMetricsOverride{width,height,deviceScaleFactor}` → `Page.setDocumentContent{frameId, html}` → 轮询 `Runtime.evaluate` 直到 `document.querySelectorAll('svg').length > 0` → `Page.captureScreenshot{format:"png",captureBeyondViewport:true}`。
+   - viewer JS **以 base64 `data:text/javascript` 内联**：`setDocumentContent` 出来的文档没有 base URL，相对路径 `src="viewer-static.min.js"` 解析不了，外部 CDN 也连不上（Chrome 无网络）。`data:` 是绝对 URL，所以可行。
+   - 参考实现已入库：`scripts/drawio-cdp-shot.py`（通用工具）。本机无 draw.io CLI 的替代路径成立，且不再需要 `--force-device-scale-factor`。
+2. **不要用 `--screenshot=` + POSIX 路径**（会静默失败）；旧版记的 `--force-device-scale-factor=2` 那套只在能用 URL 直连时成立，已不适用。
+3. **`perimeter=rectanglePerimeter` 是必需的**，不是可选项。draw.io 默认矩形 perimeter 按 `s=ceil(h/2)` 构造八边形，在扁矩形（例如 2px 高的汇流线）上退化成只有两端点，导致 `entryX/entryY` 的小数被吸附到端点——渲染出来就是一条斜线。扁平件上还应把 `entryY` 取 `0`/`1`（角点），不要取 `0.5`（中心线方向退化，射线直接打到左右端）。
+4. **两条独立校验都要做**：结构用 skill 自带 `validate.py <file> --score`，必须 0 error 0 warning；几何用 `--dump-dom` 抓 DOM 后逐条读 `<path d="…">`。注意本机 viewer 渲染**不输出 `data-cell-id`**，要直接全局解析 `<path>`；正常结果应 0 条含 `C/Q/A/S` 曲线命令（含曲线说明某个 `entryX` 与源 `exitX` 差了 1–2px）。
+5. **中文 DOM 必须用 Python `subprocess`（`encoding="utf-8"`）抓**，不要用 PowerShell 重定向，否则中文被替换成 `?`，标签内容无从核对。
+6. **文字溢出**交给放大的局部截图判断（DOM 里的 `foreignObject` 是 flex 定位，算不出真实文本框）。长段说明**用 `&#xa;` 显式断行**，不要依赖 `whiteSpace=wrap`。
+7. `.drawio` 里的边全部用 `edgeStyle=none` + 显式 `exitX/exitY/entryX/entryY` 或 `<Array as="points">`：几何完全由坐标决定，不依赖 router，渲染可预期。残差跳线这类端点不在形状上的线用浮动边（`sourcePoint`/`targetPoint` + 中间点）。
+8. **图面可读性与体积**（2026-09-17 用户反馈后固化为硬规则，细则见 `AGENTS.md`「教程图片」）：字号只在文件顶部一份 scale 常量里写，最小不低于 12 模型 px；相邻元素垂直间距 ≥ 20 px；图例放在页眉横排，不要挤在正文左下与图注争位；长跳线要留在自己的面板内，**不得穿过其他面板的虚线边框**；导出按「显示分辨率 × 1.2–1.4」超采样后降采样，不要 2x 满分辨率入库。
+
 
 ## 索引
 
@@ -51,3 +73,7 @@
 | `prompts/03-metric-inspection.md` 至 `prompts/09-final-control-room-v2.md` | 原第 3–9 课 GPT Image 最终 prompt 与定向修订 | 本仓库生成；参考图只作 style/layout reference | 重建七张无文字概念插画；精确事实仍由 HTML 图承载 |
 | `prompts/03-09-imagegen-log.md` | 原第 3–9 课 GPT Image 生成、QA 与压缩记录 | 本仓库生成 | 核对模型、参考图角色、母版、最终资产和压缩体积 |
 | `sources/L1-01-five-bets.architecture.json` | [L1-01](../lessons/L1-01-领域地图与五种赌注.md)「五种赌注」架构图规格（archify architecture，showcase，zh-CN） | 本仓库生成；交付 HTML 为可再生产物，不入库 | 重建五种赌注地图。交付产物 `output/figures/L1-01-five-bets.html`（spec sha256 `695573f7…`，artifact sha256 `0cf83f01…`，9/9 检查通过）；教程采用版 `docs/lessons/assets/vc2026-course/L1-01-five-bets.webp`（1560×1296，55 KB） |
+| `sources/L2-01-state-architecture.drawio` | [L2-01](../lessons/README.md) State（ST）架构图，drawio 可编辑源；3 面板（前向路径 / 集合自注意力 / Energy 距离集合损失），配色即 "Attention Is All You Need" 原图配色（draw.io 默认调色板） | 本仓库生成；2026-09-17（r3，字号/间距/体积重做）；108 个 cell，34.7 KB，sha256 `58b313d6…`；`validate.py --score` 0 error 0 warning score 0 | 重建 State 结构图。渲染走 CDP 通道（本机沙箱下 Chrome 只认 `data:` URI，见上文「drawio-skill 使用约定」）；教程采用版 `docs/lessons/assets/vc2026-course/L2-01-state-architecture.webp`（2200×1942，172 KB，WebP q86，sha256 `54cc86c3…`） |
+| `sources/L2-01-state-architecture.gen.py`<br>`sources/L2-01-state-architecture.finalize.py` | 上面那张 `.drawio` 的**生成脚本**与**降采样/压缩脚本**（`.drawio` 是生成物，不要手改） | 本仓库生成；2026-09-17 | 改字号、间距、面板布局只改 gen 脚本顶部的 scale 常量与坐标后重跑；finalize 负责 bbox 裁剪 + 超采样降采样 + WebP q86 |
+| `prompts/L2-01-state-architecture-facts.md` | L2-01 架构图的**事实边界**：图上每个数字的来源与证据等级，以及「两套配置不能混用」的提醒 | 本仓库生成；2026-09-17 | 修图或引用该图前先读；防止把配置读取值/手算值写成实测值，或把 hidden 328 与 hidden 768 两套配置合并 |
+

@@ -61,7 +61,12 @@
 
 ### 教程图片
 
-1. 标签密集、要求数值或机制准确的流程图优先用 HTML/CSS/canvas 绘制并通过 Chromium 导出 PNG；封面、场景插画、纹理或参考图风格迁移使用 `$imagegen`。生成式科学图是解释性插画，不能作为实验结构或机制证据。
+1. **先按图的类型选工具，不要一把锤子。** 四类图分工如下，具体命令、已知坑与回退路径统一记在 `docs/style/README.md`：
+   - **科研数据图**（散点、热图、误差棒、多面板结果图）：`.agents/skills/nature-figure/SKILL.md`，Python(matplotlib/seaborn) 或 R(ggplot2) 源脚本 + 导出矢量，再转 WebP。
+   - **模型/论文式架构图**（模块自下而上堆叠、残差跳线、`N×` 重复块、注意力头与汇流线）：`.agents/skills/drawio-skill/SKILL.md`。配色沿用 draw.io 默认调色板（即 "Attention Is All You Need" 原图配色）；`.drawio` 作为可编辑源入库。
+   - **系统架构、数据流、时序图、状态机**：`.agents/skills/archify/SKILL.md`，**light 模式 + 简体中文**；只留 JSON 规格与最终 WebP，交付型 HTML 是可再生产物不入库。archify 不适合承载科研/模型图语汇，不要用它画模块堆叠图。
+   - **概念插画、封面、风格化示意图**：`$imagegen`（或经浏览器用 ChatGPT 生成，prompt 放 `docs/style/prompts/`）。生成式科学图只是解释性插画，不能作为实验结构、机制或数据证据。
+   - **标签密集且要求数值或机制准确的流程图**：HTML/CSS/canvas 手绘 + Chromium 截图。
 2. `$imagegen` 优先使用内置 `image_gen`。内置工具不可用且用户已授权 CLI/API 回退时，使用该 skill 自带的 `scripts/image_gen.py`，默认模型为 `gpt-image-2`；通过 `uv run --with openai` 提供依赖，不编写临时 SDK runner，也不修改 skill 脚本。
 3. CLI 回退须同时读取 Codex 配置的凭证与 Provider：从 `~/.codex/auth.json` 取得 `OPENAI_API_KEY`，从 `~/.codex/config.toml` 取得当前 provider 的 `base_url`；当前 custom provider 供 OpenAI SDK 使用时在该 URL 后补 `/v1` 并设置 `OPENAI_BASE_URL`。只在子进程环境中注入，不打印、复制、持久化或写入仓库。若只带 Key 直连官方端点，custom-provider Key 会返回 401。
 4. 参考图只作风格、构图或情绪指导时，在 prompt 中明确写 `Image 1: style/layout reference`，不得把它描述成待保留内容的 edit target。CLI 需要传图时使用 `edit --image <reference>` 调用图像输入接口，并要求替换原内容、只继承指定视觉特征；`gpt-image-2` 不设置 `input_fidelity`。
@@ -69,3 +74,9 @@
 6. GPT / `$imagegen` 生成的原始大图、候选图和测试输出先保存到已由 Git 忽略的 `output/imagegen/`，作为本地母版保留，不直接移入或提交到教程目录。
 7. 教程采用的生成式图片默认从本地母版转换为 WebP `quality=90`（如 `cwebp -q 90 -m 6 -mt`），将压缩后的 `.webp` 保存到对应的 `docs/**/assets/` 并就近插入 Markdown。转换后核对尺寸、视觉伪影和压缩前后体积；不要覆盖已有资产，除非用户明确要求。完成时报告模式、模型、最终 prompt、参考图角色、最终路径和压缩结果。
 8. 生成或修改图片前先查看 `docs/style/README.md`。可复用的参考图、HTML/React/CSS 图稿源、prompt 和 UI 规范统一放在 `docs/style/`；供正文消费的最终图片仍放在对应文档的 `assets/` 目录，不把成品与风格素材混在一起。
+9. **图面可读性是交付标准，不是"看着没问题"。** 生成后必须放大局部逐块看，不能只扫全图：
+   - **字号集中定义**在一处（生成脚本顶部的常量、CSS 变量或设计 token），不要散落在每个元素上；正文与标签不低于 12 模型 px，图注与说明同量级，不出现 10 px 这类需要眯眼的小字。
+   - **间距有下限**：同一面板内相邻元素的垂直间距 ≥ 20 px；图注与所在面板/框体边界留 ≥ 25 px；图例不要挤在正文与图注之间争位置（优先做成页眉横排）；图注不得压在框线或连线上。
+   - **连线不得穿过其他面板的边框，也不得压到任何文字**。跨面板的长跳线（例如残差回路）必须改道留在自己的面板内；发现斜线/曲线往往是坐标吸附问题，要查根因而不是接受它。
+   - **两类校验都要过**：结构校验（如 drawio 的 `validate.py --score` 必须 0 error 0 warning）与渲染后逐条读 DOM 路径数据（不应出现意外的曲线命令）。校验不过不许交付。
+10. **位图资产有体积预算。** 教程用位图按**实际显示分辨率的 1.2–1.4 倍**导出，不做 2x/4x 满分辨率入库；先高分辨率渲染再用 LANCZOS 超采样降到目标宽度，比直接低分辨率渲染更清晰也更小。单张 WebP 目标 ≤ 300 KB，优先调分辨率而不是一味降 quality（含文字/细线的图 quality 低于约 82 会开始糊）。转换后核对尺寸、体积，并放大确认文字仍清晰。体积上限与例外处理同时遵守上文「Git 文件体积」。
