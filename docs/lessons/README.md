@@ -224,7 +224,19 @@ L3-04 是当前**实施主线**，其余课都是它的支撑或它的对照。
 
 **2026-08-30 的课号已不再使用。** 本仓库中 `docs/style/` 与 `docs/lessons/assets/` 下的配图、图源和 prompt 文件名仍保留旧课号（例如 `03-metrics-lenses.webp`、`docs/style/sources/05-06-figures.html`），这是有意保留的：这些文件名记录在[生成溯源日志](../style/prompts/03-09-imagegen-log.md)中，改名会破坏溯源。查图时用 [docs/style/README.md](../style/README.md) 的对照说明换算。
 
-配图里**可见的标题文字**也仍写着旧课号（例如 L3-01 引用的 `03-metrics-lenses.webp`，图内 kicker 是「VC2026 第 3 课 · 评分指标」）。这是已知的可见不一致，需要重新导出图片才能修正，见第 11 节。
+配图里**可见的标题文字**已完成修订（2026-09-18）。逐张核对七张曾列出候选图的结果：
+
+| 图 | 图内 kicker | 状态 |
+|---|---|---|
+| `03-metrics-lenses` | `VC2026 L3-01 · 评分指标` | **已修正**（原「第 3 课」） |
+| `04-validation-splits` | `VC2026 L3-02 · 验证边界` | **已修正**（原「第 4 课」） |
+| `05-transferable-delta` | `VC2026 · 跨背景统计基线` | 无课号，无需修 |
+| `06-context-target-encoders` | `VC2026 · CONTEXT × TARGET 表示` | 无课号，无需修 |
+| `07-count-generation` | `COUNT GENERATION · 先固定中心，再比较分布` | 无课号，无需修 |
+| `08-model-ladder` | `MODEL LADDER · 每次升级都要经过新的验证门` | 无课号，无需修 |
+| `09-final-round-pipeline` | （无 kicker） | 无课号，无需修 |
+
+**文件名一律未改**；图内文字与图源 `sources/03-04-figures.html` 的 kicker、页 `<title>` 已同步。修订与导出记录见[溯源日志的附表](../style/prompts/03-09-imagegen-log.md)。另有一处**非配图**的旧课号残留：`docs/style/sources/09-figures.html` 的 `<title>` 仍是「VC2026 第 9 课教学图」，该页无 kicker、不渲染到成品图上，属页面内部标题，未改。
 
 ---
 
@@ -242,7 +254,7 @@ L3-04 是当前**实施主线**，其余课都是它的支撑或它的对照。
 | 1 | ~~**待写课。**~~ **已清零**：L1-02、L2-01、L2-02（2026-09-17 交付），L2-03、L2-04、附录 L2-06、L2-05（2026-09-18 交付）。阶段表与课程总表已无〔待写〕 | — |
 | 2 | **主题级去重未落地。** 第 8 节的归属表已指定权威位置，但各课正文中的重复段落尚未逐段替换为回指链接 | 与对应课的改写同批做，避免二次返工 |
 | 3 | **超长课未拆。** [L0-01](01-数据合同与首个基线.md)（1,052 行）与 [L3-04](L3-04-State微调实战与算力预算.md)（854 行）明显高于 L0-00 的 436 行体量 | L3-04 按「原理 → L2-01，命令 → runbook」拆分；L0-01 因已发布飞书，外移暂缓到结构冻结后 |
-| 4 | **配图与图源仍用旧课号。** 包括文件名和图片内可见的 kicker 文字 | 修正需要按 [docs/style/README.md](../style/README.md) 的流程重新导出受影响图片并同步更新 prompt 与溯源日志。建议与第 3 项合并进行（见 [issue #10](https://github.com/CaiZongyuan/virtual-cell-2026/issues/10)） |
+| 4 | ~~**配图与图源仍用旧课号。**~~ **已修正**（2026-09-18）：逐张核对七张候选图后确认只有两张的 kicker 含课号（`03-metrics-lenses`、`04-validation-splits`），已重新导出为 2200×1238 WebP q86（190.9 / 152.0 KB，均在 300 KB 预算内）；图源 kicker 与页 `<title>` 同步。**文件名按设计保持不变**，溯源记录见 [docs/style/prompts/03-09-imagegen-log.md](../style/prompts/03-09-imagegen-log.md) 附表 | 剩余一处非成品图的页内标题（`sources/09-figures.html` 的 `<title>`）未改，见 §9.2 |
 | 5 | ~~**notebook 与课程编号未完全对齐。**~~ **已清零**（2026-09-18）：`notebook/README.md` 的映射表已覆盖全部 15 门课，其中两门登记为带理由的豁免（`L0-00` 正文冻结、`L1-01` 纯阅读课）。校验脚本里对这两条各有 EXEMPT 记录，课程完成度校验退出码 0 | — |
 
 ---

@@ -64,12 +64,12 @@
 | `prompts/vc2025-learning-roadmap.md` | 参考图生成 prompt 与修订记录 | 本仓库生成 | 重建或调整 VC2025 学习路线总览图 |
 | `sources/vc2026-data-contract-figures.html` | HTML/CSS 教程图稿源 | 本仓库生成；无外部运行时资源 | 用 `?figure=contexts|anndata` 选择画面，以 Chromium 1600x900 截图 |
 | `prompts/vc2026-six-contexts.md` | GPT Image 概念插画 prompt 与科学边界 | 本仓库生成 | 重建或调整“同一目标在六个匿名背景中产生不同群体响应”的概念图 |
-| `sources/03-04-figures.html` | 原第 3–4 课（现 [L3-01](../lessons/L3-01-评分指标与离线评估.md)、[L3-02](../lessons/L3-02-公开扰动数据与跨背景验证.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=metrics|splits` 选择六指标或验证边界图，以 Chromium 1600x900 截图 |
-| `sources/05-06-figures.html` | 原第 5–6 课（现[备选架构附录](../lessons/appendix/非State路线备选架构.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=delta|encoders` 选择统计分解或双编码器图 |
-| `sources/07-08-figures.html` | 原第 7–8 课（现 [L3-03](../lessons/L3-03-单细胞原始计数生成.md)、[备选架构附录](../lessons/appendix/非State路线备选架构.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=counts|model-ladder` 选择计数生成或模型升级图 |
+| `sources/03-04-figures.html` | [L3-01](../lessons/L3-01-评分指标与离线评估.md) / [L3-02](../lessons/L3-02-公开扰动数据与跨背景验证.md) HTML/CSS 精确图源；**文件名保留旧课号（原第 3–4 课），图内 kicker 已于 2026-09-18 改为 `L3-01` / `L3-02`** | 本仓库生成；无外部运行时资源 | 用 `?figure=metrics\|splits` 选择六指标或验证边界图，以 Chromium 1600x900 截图；导出走 `scripts/html-cdp-shot.py` |
+| `sources/05-06-figures.html` | 原第 5–6 课（现[备选架构附录](../lessons/appendix/非State路线备选架构.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=delta\|encoders` 选择统计分解或双编码器图 |
+| `sources/07-08-figures.html` | 原第 7–8 课（现 [L3-03](../lessons/L3-03-单细胞原始计数生成.md)、[备选架构附录](../lessons/appendix/非State路线备选架构.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=counts\|model-ladder` 选择计数生成或模型升级图 |
 | `sources/09-figures.html` | 原第 9 课（现 [L3-05](../lessons/L3-05-消融集成与最终轮.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=final` 渲染最终轮事件驱动流水线 |
 | `prompts/03-metric-inspection.md` 至 `prompts/09-final-control-room-v2.md` | 原第 3–9 课 GPT Image 最终 prompt 与定向修订 | 本仓库生成；参考图只作 style/layout reference | 重建七张无文字概念插画；精确事实仍由 HTML 图承载 |
-| `prompts/03-09-imagegen-log.md` | 原第 3–9 课 GPT Image 生成、QA 与压缩记录 | 本仓库生成 | 核对模型、参考图角色、母版、最终资产和压缩体积 |
+| `prompts/03-09-imagegen-log.md` | 原第 3–9 课 GPT Image 生成、QA 与压缩记录；**附表含两张 HTML 图源的课号修订记录** | 本仓库生成 | 核对模型、参考图角色、母版、最终资产和压缩体积 |
 | `sources/L1-01-five-bets.architecture.json` | [L1-01](../lessons/L1-01-领域地图与五种赌注.md)「五种赌注」架构图规格（archify architecture，showcase，zh-CN） | 本仓库生成；交付 HTML 为可再生产物，不入库 | 重建五种赌注地图。交付产物 `output/figures/L1-01-five-bets.html`（spec sha256 `695573f7…`，artifact sha256 `0cf83f01…`，9/9 检查通过）；教程采用版 `docs/lessons/assets/vc2026-course/L1-01-five-bets.webp`（1560×1296，55 KB） |
 | `sources/L2-01-state-architecture.drawio` | [L2-01](../lessons/README.md) State（ST）架构图，drawio 可编辑源；3 面板（前向路径 / 集合自注意力 / Energy 距离集合损失），配色即 "Attention Is All You Need" 原图配色（draw.io 默认调色板） | 本仓库生成；2026-09-17（r3，字号/间距/体积重做）；108 个 cell，34.7 KB，sha256 `58b313d6…`；`validate.py --score` 0 error 0 warning score 0 | 重建 State 结构图。渲染走 CDP 通道（本机沙箱下 Chrome 只认 `data:` URI，见上文「drawio-skill 使用约定」）；教程采用版 `docs/lessons/assets/vc2026-course/L2-01-state-architecture.webp`（2200×1942，172 KB，WebP q86，sha256 `54cc86c3…`） |
 | `sources/L2-01-state-architecture.gen.py`<br>`sources/L2-01-state-architecture.finalize.py` | 上面那张 `.drawio` 的**生成脚本**与**降采样/压缩脚本**（`.drawio` 是生成物，不要手改） | 本仓库生成；2026-09-17 | 改字号、间距、面板布局只改 gen 脚本顶部的 scale 常量与坐标后重跑；finalize 负责 bbox 裁剪 + 超采样降采样 + WebP q86 |

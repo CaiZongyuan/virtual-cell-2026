@@ -28,3 +28,35 @@ API 对部分 landscape 请求返回了同方向但不同精确尺寸的位图�
 ## 人工 QA
 
 逐张检查了主题、构图、文字、水印、箭头关系、裁切、留白和科学边界。第 3–8 课首版通过；第 9 课首版把质量门画成盾牌，偏离“数据与预测审计”的语义，因此只针对该区域做一次 edit：改为放大检查、矩阵对齐和普通勾选，其他构图保持不变。最终七张图均无可读文字或水印；图中细胞形态、颜色、装置和箭头只作概念辅助，不能作为真实细胞身份、实验机制或模型性能证据。
+
+---
+
+## 附：确定性图源的课号修订（2026-09-18）
+
+上面七张是 GPT 生成的概念插画。同一批课还有一组**由 HTML/CSS 确定性绘制**的图，它们不经过模型，因此不在上表内，但同样受课号重排影响。本轮修订了两张。
+
+### 为什么要改
+
+课号在 2026-09-17 由连续数字改成层前缀（`第 3 课` → `L3-01`，`第 4 课` → `L3-02`）。这两张图的 kicker 里印着旧课号，读者会在图里看到已经不存在的编号。**文件名保持不变**——`03-`/`04-` 前缀记录在本节附表与 `docs/style/README.md` 里，改名会破坏溯源。
+
+### 修订记录
+
+| 图源（未改名） | 图内 kicker 前 → 后 | 现引用它的课 | 导出版本 |
+|---|---|---|---|
+| `sources/03-04-figures.html`（`?figure=metrics`） | `VC2026 第 3 课 · 评分指标` → `VC2026 L3-01 · 评分指标` | [L3-01](../../lessons/L3-01-评分指标与离线评估.md) | `docs/lessons/assets/vc2026-course/03-metrics-lenses.webp`，2200×1238，190.9 KB，WebP q86 |
+| `sources/03-04-figures.html`（`?figure=splits`） | `VC2026 第 4 课 · 验证边界` → `VC2026 L3-02 · 验证边界` | [L3-02](../../lessons/L3-02-公开扰动数据与跨背景验证.md) | `docs/lessons/assets/vc2026-course/04-validation-splits.webp`，2200×1238，152.0 KB，WebP q86 |
+
+页 `<title>` 同步由「VC2026 第 3-4 课教学图」改为「VC2026 L3-01 / L3-02 教学图」。
+
+### 导出方式
+
+新增 `scripts/html-cdp-shot.py`（与 `scripts/drawio-cdp-shot.py` 同一 CDP 通道，理由见 `docs/style/README.md` 的「渲染走 CDP」）。流程：
+
+1. 1600×900、`deviceScaleFactor=2` 渲染到 3200×1800 PNG；
+2. Pillow LANCZOS 超采样降到 2200 px 宽（1600 × 1.375，落在 AGENTS.md「教程图片」第 10 条的 1.2–1.4 倍区间）；
+3. WebP `quality=86`，单张 ≤ 300 KB。
+
+**新脚本的一个坑（已修）**：`Page.setDocumentContent` **复用同一个 JS realm**，所以连续渲染两张图时，上一轮注入的 `URLSearchParams` 补丁仍在，第二次会把补丁再包一层，`?figure=` 静默停止解析（表现为「figure never became active」）。修法是**每次渲染开一个新 target**（`PUT /json/new?about:blank`），拿到干净的 realm；渲染完 `GET /json/close/<id>` 收掉。修后连跑三次产物字节数完全一致。
+
+**没有修订的图（已核对无课号）**：`05-transferable-delta`、`06-context-target-encoders`、`07-count-generation`、`08-model-ladder`、`09-final-round-pipeline` 的 kicker 分别是「VC2026 · 跨背景统计基线」「VC2026 · CONTEXT × TARGET 表示」「COUNT GENERATION · …」「MODEL LADDER · …」与无 kicker，都不含课号。issue #10 把它们一并列出是保守的超集，实际需要重导出的只有上述两张。
+
