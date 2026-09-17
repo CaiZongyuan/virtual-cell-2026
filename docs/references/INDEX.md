@@ -8,7 +8,7 @@
 
 **当前执行决定：STATE 是必须建立的神经网络基线，首投使用全基因 STATE 适配版；此前 Ridge-first / 无 GPU 方案已撤销。** 论文对线性基线的研究结论仍有效，但不据此降低本项目主模型标准。当前配置及代码边界见[首投方案](../research/first-submission-plan.md)与[STATE 源码审计](../research/state-training-source-audit.md)。
 
-2026-09-17 新增两类工程材料：一是 Forrest Sheldon 的 VC2026 系列博客四篇，与既有 Ilyes Baali 博客同列为参赛者自报证据，正文阅读副本见 [docs/blogs/](../blogs/README.md)；二是按「要精读的模型与工具」批量浅克隆的上游仓库索引，见[上游仓库索引](REPOS.md)。两者都只登记入口，不替代原文核验。教材层的重构提案见[模型主线教程提案](../lessons/模型主线教程提案.md)。
+2026-09-17 新增两类工程材料：一是 Forrest Sheldon 的 VC2026 系列博客四篇，与既有 Ilyes Baali 博客同列为参赛者自报证据，正文阅读副本见 [docs/blogs/](../blogs/README.md)；二是按「要精读的模型与工具」批量浅克隆的上游仓库索引，见[上游仓库索引](REPOS.md)。两者都只登记入口，不替代原文核验。教材层的重构提案见[教程三层重构决策记录](../lessons/决策记录-教程三层重构.md)。
 
 ## 关系图
 
@@ -65,7 +65,7 @@
 - 关系：与 AlphaCell 同属生成式世界模型路线；与 STATE、X-Cell 都处理跨情境扰动泛化。
 - 结论：采用为 raw-count decoder 候选，不作为主效应模型。作者公开 MIT 代码和 85M VCC checkpoint，但 H1 实验使用同一背景的 150 个监督扰动，词表为 18,080 genes，不能证明匿名新背景或直接满足 18,533-gene VC2026 合同。
 - 关键词：离散扩散、全转录组、条件生成、细胞异质性、扰动预测。
-- 来源：[arXiv:2603.25240v1](https://arxiv.org/abs/2603.25240v1)；[MIT 代码](https://github.com/alibaba-damo-academy/Lingshu-Cell)；[85M 权重](https://huggingface.co/bibona/lingshu-cell)；Zhang et al.；arXiv v1，2026-03-26；[本地材料](<Lingshu-Cell：面向虚拟细胞的转录组建模生成式细胞世界模型.md>)（转述材料，不替代原文）；标识、代码、权重入口与许可核验日期 2026-08-31。
+- 来源：[arXiv:2603.25240v1](https://arxiv.org/abs/2603.25240v1)；[MIT 代码](https://github.com/alibaba-damo-academy/Lingshu-Cell)；[85M 权重](https://huggingface.co/bibona/lingshu-cell)；Zhang et al.；arXiv v1，2026-03-26；[本地材料](lingshu-cell-v1/lingshu-cell-v1.md)（转述材料，不替代原文）；标识、代码、权重入口与许可核验日期 2026-08-31。
 
 ### Predicting cellular responses to perturbation across diverse contexts with State
 
@@ -78,7 +78,7 @@
 - 2026-09-14 复核：采用为首投前的主基线；固定 [STATE commit 9bbfe78a](https://github.com/ArcInstitute/state/tree/9bbfe78a434a55205e4de834e1ea99f85f7a3add) 核实 8 层/768/12 heads、set 512、Energy loss、Adam，以及作者 VCC starter 已使用 ESM2 连续靶点。源码的 bf16、full-gene 参数量、缺失特征回退和浮点 infer 边界详见[审计](../research/state-training-source-audit.md)；未训练或声称复现成绩。此前“STATE 首投后再做”的实施决定已撤销。
 - 同日权重补全：官方 [ST-HVG-Replogle](https://huggingface.co/arcinstitute/ST-HVG-Replogle)、[ST-SE-Replogle](https://huggingface.co/arcinstitute/ST-SE-Replogle)、[st-x-replogle-full](https://huggingface.co/arcinstitute/st-x-replogle-full)、[st-se-replogle-full](https://huggingface.co/arcinstitute/st-se-replogle-full) 已有 checkpoint、config 和映射文件。抽查 HVG/zeroshot/jurkat 与 x-full/k562_0.99 分别输出 2,000 / 6,546 genes，均 328 hidden、set64、one-hot 靶点；不能把 768 宽 ESM2 starter 的默认值套给它们。首选复用/微调，再按必要性重训；本轮只读文件树和 YAML，未加载权重。版本与边界见[权重审计](../research/state-training-source-audit.md#已发布检查点补充不必从零训练)。
 - 正式版本补全：规范题名如本条标题；[Cell DOI](https://doi.org/10.1016/j.cell.2026.07.052)，Adduri, Gautam, Bevilacqua et al.，2026 年 8 月；本轮由博客引文追溯并经 [Crossref](https://api.crossref.org/works/10.1016/j.cell.2026.07.052)核实书目。此前标题 **STATE: Predicting Cellular Responses to Perturbation across Diverse Contexts** 与 DOI `10.1101/2025.06.26.661135` 作为预印本版本保留，不计为独立证据。本轮未读取正式版全文，内容变化及精确 online 日期待核验，不能把 Crossref 登记日或 license 起始日当作出版日。
-- 同日微调教程：新增[State 微调实战与算力预算](../lessons/05-State微调实战与算力预算.md)及[检查点微调源码审计](../research/state-checkpoint-finetuning-audit.md)。确认原生 `init_from`、resume 优先级、328 主干结构、按名称迁移需求、HVG 元数据、batch 对照匹配、冻结/LoRA 边界及 `ckpt_every_n_steps` 未生效；继承父权重的训练暴露必须纳入 LOCO。只核对小型资产和源码，未加载大权重/训练；24/48 GB 档位和 GPU-hours 是工程预留，待 pilot 测量。
+- 同日微调教程：新增[L3-04 State 微调实战与算力预算](../lessons/L3-04-State微调实战与算力预算.md)及[检查点微调源码审计](../research/state-checkpoint-finetuning-audit.md)。确认原生 `init_from`、resume 优先级、328 主干结构、按名称迁移需求、HVG 元数据、batch 对照匹配、冻结/LoRA 边界及 `ckpt_every_n_steps` 未生效；继承父权重的训练暴露必须纳入 LOCO。只核对小型资产和源码，未加载大权重/训练；24/48 GB 档位和 GPU-hours 是工程预留，待 pilot 测量。
 - 2026-09-15 学习笔记：新增 [三份可运行 ipynb](../../notebook/README.md)，复用既有方法审计。固定上述两组已评估 HF revision，各读取 config/hparams 两份原始 YAML，共 4 次 HTTP、均成功；小型快照与 SHA/URL 保存在 [notebook/assets/state/sources.json](../../notebook/assets/state/sources.json)。无 Scholar/SciVerse 查询、无新增候选；State 保持采用。笔记执行真实 NTC 数据审计与明确标识的 NumPy 数学示例，未加载官方 checkpoint 张量、训练或报告模型成绩。
 - 同轮输入覆盖：对固定 hparams 和本地 2026 基因清单做原始符号逐字比较，HVG 交集 1,877/2,000，full 交集 6,197/6,546；未匹配项可能含别名/版本差异，不能直接当作生物学缺测，更不能静默补零。该比较不代表扰动靶点训练暴露；可复算代码与实际输出见第二份 notebook。
 
@@ -248,7 +248,7 @@
 - 关系：与 Nadig 的 HepG2/Jurkat 共同组成 Replogle-Nadig；scPerturb 为便利副本而非另一组生物实验。
 - 结论：采用为核心 CRISPRi 训练数据；优先四背景核心，再加 GWPS。实际训练行数、目标交集、基因缺测和父权重暴露仍需下载后审计。
 - 关键词：CRISPRi、Perturb-seq、K562、RPE1、GWPS、State、训练数据。
-- 来源：[Cell DOI](https://doi.org/10.1016/j.cell.2022.05.013)；Joseph M. Replogle et al.；Cell，2022；[作者 Figshare](https://plus.figshare.com/articles/dataset/20029387)、[PMC 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9380471/)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/05-State微调实战与算力预算.md)，本地独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据/原文审计。
+- 来源：[Cell DOI](https://doi.org/10.1016/j.cell.2022.05.013)；Joseph M. Replogle et al.；Cell，2022；[作者 Figshare](https://plus.figshare.com/articles/dataset/20029387)、[PMC 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9380471/)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，本地独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据/原文审计。
 
 ### Transcriptome-wide analysis of differential expression in perturbation atlases
 
@@ -257,7 +257,7 @@
 - 关系：与 Replogle 数据组合；被 State 用于跨情境建模。scPerturb 文件名 `NadigOConner2024_*` 保留旧整理命名，不与 2025 正式论文重复计证据。
 - 结论：采用为第一批微调核心数据；`.X` 计数、对照标签、实测基因覆盖与筛选口径在 ETL 时逐项确认。
 - 关键词：CRISPRi、HepG2、Jurkat、差异表达、背景迁移、State。
-- 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-025-02169-3)；Ajay Nadig et al.；正式在线 2025-04-21；[GEO GSE264667](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264667)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/05-State微调实战与算力预算.md)，独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据审计。
+- 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-025-02169-3)；Ajay Nadig et al.；正式在线 2025-04-21；[GEO GSE264667](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264667)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据审计。
 
 ### Systematic reconstruction of molecular pathway signatures using scalable single-cell perturbation screens
 
@@ -266,7 +266,7 @@
 - 关系：补充 Replogle/Nadig；本轮 Scholar 命中的 bioRxiv 2024 版本与 Nature Cell Biology 正式版合并，不作为独立数据证据。
 - 结论：备选为第二阶段背景扩展；四背景流程跑通后再下载，单独评估增益。
 - 关键词：Perturb-seq、信号通路、Mixscale、六细胞系、刺激条件、数据扩展。
-- 来源：[Nature Cell Biology DOI](https://doi.org/10.1038/s41556-025-01622-z)；Longda Jiang et al.；正式在线 2025-02-26；[预印本 DOI](https://doi.org/10.1101/2024.01.29.576933)、[Zenodo 14518762](https://zenodo.org/records/14518762)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)及[微调教程](../lessons/05-State微调实战与算力预算.md)，独立全文未保存；检索与书目核验 2026-09-14，复用既有数据审计。
+- 来源：[Nature Cell Biology DOI](https://doi.org/10.1038/s41556-025-01622-z)；Longda Jiang et al.；正式在线 2025-02-26；[预印本 DOI](https://doi.org/10.1101/2024.01.29.576933)、[Zenodo 14518762](https://zenodo.org/records/14518762)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)及[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，独立全文未保存；检索与书目核验 2026-09-14，复用既有数据审计。
 
 ### scPerturb harmonized datasets — Zenodo record 13350497
 
@@ -275,7 +275,7 @@
 - 关系：对应上面两个研究的整理副本；训练时只选择一份来源，不与作者原件重复计样本。
 - 结论：采用为便利下载源。已核对固定 record 的文件名、size、MD5、CC BY 4.0；矩阵值与来源处理差异未在本轮读取。论文的独立书目不在本次数据记录核验范围内。
 - 关键词：scPerturb、H5AD、raw counts、数据整理、gzip、Replogle、Nadig。
-- 来源：[Zenodo record](https://zenodo.org/records/13350497)、[API](https://zenodo.org/api/records/13350497)、[固定 Replogle 转换代码](https://github.com/sanderlab/scPerturb/blob/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/ReplogleWeissman2022.py)；版本固定为 record 13350497；本地下载单与 MD5 见[微调教程](../lessons/05-State微调实战与算力预算.md)，未下载大矩阵；核验 2026-09-14。
+- 来源：[Zenodo record](https://zenodo.org/records/13350497)、[API](https://zenodo.org/api/records/13350497)、[固定 Replogle 转换代码](https://github.com/sanderlab/scPerturb/blob/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/ReplogleWeissman2022.py)；版本固定为 record 13350497；本地下载单与 MD5 见[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，未下载大矩阵；核验 2026-09-14。
 
 ### DepMap 24Q4 Public — CRISPRGeneEffect.csv
 
@@ -407,7 +407,7 @@
 - 结论：采用工程经验，排名、269/300 覆盖、跨背景余弦和 A/B/C 身份均仅为作者自报/推断；简化评分公式、source 5 CPM gate、PCA 距离说法不能覆盖官方代码。
 - 关键词：参赛博客、effect transfer、NTC、计数生成、六指标。
 - 来源：[博客原文](https://ilyesbaali.me/blog/virtual-cell-challenge/)；Ilyes Baali；页面日期 2026-09-01；读取日期 2026-09-14；2026-09-17 新增[本地 Markdown 阅读副本](../blogs/ilyes-baali-2026-09-01-the-virtual-cell-challenge.md)（机器转换，非原文）；首次审阅见[报告](../research/participant-evidence-review.md)，保留正文 SHA-256；非论文，无 DOI。
-- 2026-09-17 复核补充：该文给出的跨细胞类型效应一致性 **0.016–0.037**（同类型不同状态为 0.25–0.33）被采用为本任务难度上界锚点，用于[教程重构提案](../lessons/模型主线教程提案.md) L1 的判据；A/B/C 身份推断（Jurkat/HeLa/CAL-33）与 Forrest Sheldon 的独立推断一致，但仍属参赛者自报，未采信为事实。作者列出的六项评分公式为简化复述，引用时回核 `ArcInstitute/cell-eval`。
+- 2026-09-17 复核补充：该文给出的跨细胞类型效应一致性 **0.016–0.037**（同类型不同状态为 0.25–0.33）被采用为本任务难度上界锚点，用于[教程三层重构决策记录](../lessons/决策记录-教程三层重构.md) L1 的判据；A/B/C 身份推断（Jurkat/HeLa/CAL-33）与 Forrest Sheldon 的独立推断一致，但仍属参赛者自报，未采信为事实。作者列出的六项评分公式为简化复述，引用时回核 `ArcInstitute/cell-eval`。
 
 ### Virtual Cell Challenge 系列 — Forrest Sheldon
 
@@ -583,7 +583,7 @@
 
 ### 2026-09-14 State 微调教程检索与核验
 
-- 产物：[详细教程](../lessons/05-State微调实战与算力预算.md)、[检查点微调审计](../research/state-checkpoint-finetuning-audit.md)，并在 README/课程路线图加入入口。
+- 产物：[详细教程](../lessons/L3-04-State微调实战与算力预算.md)、[检查点微调审计](../research/state-checkpoint-finetuning-audit.md)，并在 README/课程路线图加入入口。
 - 查询：复用本索引后，Infra Scholar 顺序调用 1 次，完整题名 `Predicting cellular responses to perturbation across diverse contexts with State`；返回并查看前 10 条。State 预印本已命中，不再精炼；Jiang 已有预印本与正式版合并。其他结果只作原始线索，未用于方法性能判断。
 - 一手访问：Crossref 4（State/Replogle/Nadig/Jiang）、Zenodo 1、固定 HF tree 2、小型 data_module 2，共 9 次直接 HTTP；加 Scholar 为 10 次，全部成功。两个本地脚本先因没有 requests 未发出网络请求，改用 urllib 完成。无 SciVerse/Paper Schema 调用，不下载大型模型/数据。
 - 状态：State、Replogle、Nadig 和五文件 scPerturb 来源采用；Jiang 为后续扩展备选。同步补齐此前仅在容量笔记中的独立数据条目，保留一手链接和本地教程路径。

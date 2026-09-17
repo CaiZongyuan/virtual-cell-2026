@@ -8,7 +8,7 @@
 
 今年没有挑战赛训练集。任务为零样本（zero-shot）：给定表达非靶向向导RNA的细胞的表达谱，加上待预测的CRISPRi敲低靶标基因标识符，您的模型必须预测CRISPRi敲低后、经10x Flex单细胞测序所得到的扰动后表达谱。您可以自由使用为2025年挑战赛发布的H1 hESC数据，以及任何您有权使用的公共或专有数据——有关我们推荐的公共数据集，请参见下面的Arc虚拟细胞图谱。
 
-![alt text](./assets/About-the-Data-image01.png)
+> （原始页面此处有一张数据总览插图。本仓库为机器保存的正文副本，未随附该图，原图请见[挑战赛官网 About the Data 页面](https://virtualcellchallenge.org/about-the-data)。）
 
 ---
 

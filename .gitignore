@@ -37,6 +37,9 @@ mlruns/
 .DS_Store
 Thumbs.db
 
-references/
+# 上游仓库浅克隆缓存（约 780 MB，只存本地）。锚定到仓库根，避免连带吃掉
+# docs/references/ 下的阅读材料正文与正文引用图；那部分的排除规则见上方
+# /docs/references/**/*.pdf（PDF 才是本地核验输入，不入库）。
+/references/
 
 .workbuddy

@@ -1,3 +1,7 @@
+> **材料性质声明（2026-09-18 补记）。** 本文件是 Lingshu-Cell 论文的**机器转换中文阅读副本**（转述材料，不替代原文）。正文与数据以 [arXiv:2603.25240v1](https://arxiv.org/abs/2603.25240v1) 及出版方原文为准。
+>
+> `images/` 下的四张图取自论文公开页面，原为 PNG，已转 WebP q90 以控制仓库体积（1.2 MB → 484 KB）。`Figure_2` 与 `architecture-diagram` 两图在源页面未提供可下载副本，正文相应位置已注明；架构图按 `AGENTS.md`「教程图片」的分类应由本地 `drawio-skill` 按事实边界文件重绘，不沿用外部生成图。
+
 【**摘要**】细胞状态建模及其扰动响应预测，是计算生物学和虚拟细胞开发中的核心挑战。**现有单细胞转录组基础模型能够提供强大的静态表征，却未显式建模细胞状态分布以支持生成式模拟。**
 
 
@@ -41,7 +45,7 @@
 
 这种“掩码-预测”范式使 Lingshu-Cell 能够学习复杂的基因调控依赖关系，同时自然适应基因表达谱的无序结构。因此，它既不需要自回归（AR）模型所要求的任意生成顺序，也避开了去噪扩散概率模型（DDPM）使用的全局连续噪声破坏过程（Ho et al., 2020；图 1b）；后者与原始 scRNA-seq 计数离散且通常高度稀疏的特性并不匹配。借助这一设计，我们将 Lingshu-Cell 用于无条件生成，以模拟不同人体组织和物种的转录组表达谱；也将其用于条件生成，以预测细胞对遗传扰动和细胞因子扰动的响应（图 1c），从而向实用的虚拟细胞模型迈进。
 
-![](images/Figure_1.png)
+![](images/Figure_1.webp)
 
 ![](https://cdn.nlark.com/yuque/0/2026/png/1739170/1785842357817-b0215f0c-9573-4416-8a33-f9733c50ec51.png)
 
@@ -64,7 +68,7 @@
 
 为减少生成细胞数量较少可能带来的采样变异，我们进一步将生成规模扩大到 200,000 个细胞。正如预期，标志基因表达模式（补充图 2a）和细胞类型比例（补充图 2b）仍与真实数据高度一致。在这一更大规模上，我们进行了更高分辨率的注释，将 PBMC 进一步划分为 17 个亚型（补充图 2c）。生成数据与真实数据仍然紧密吻合，说明 Lingshu-Cell 在标准规模和超大规模下均能稳健模拟细胞基因表达。
 
-![](images/Figure_2.png)
+> （此处原引用 `images/Figure_2.png`，源文档未提供可下载副本，已移除死链；对应数据见表 1。）
 
 > **表 1｜Lingshu-Cell 在人体组织和非人物种上的无条件生成性能。** ↑ 表示越高越好，↓ 表示越低越好。
 >
@@ -696,7 +700,7 @@ $ \mathbf{x}\leftarrow\mathbf{x}+\mathrm{Attn}(\mathrm{RMSNorm}(\mathbf{x})),\qq
 
 经过最后一个 Transformer 模块后，模型应用最终 RMSNorm；随后，解压缩模块（压缩的逆过程，见第 4.3 节）将序列恢复到原始基因级长度。最后，线性输出头将每个位置映射为表达词表上的 logits。
 
-![](images/architecture-diagram.png)
+> （此处原引用 `images/architecture-diagram.png`。按 `AGENTS.md`「教程图片」的分类，模型架构图应由本地 `drawio-skill` 按事实边界文件重绘，不沿用外部生成图；本页正文已逐部件描述该架构。）
 
 
 
@@ -808,7 +812,7 @@ $ \begin{aligned}
 > **d，** 真实与生成数据中细胞亚型比例的比较，显示更高分辨率下仍具有稳健一致性。
 >
 
-![](images/Extended_Data_Figure_2.png)
+![](images/Extended_Data_Figure_2.webp)
 
 ![](https://cdn.nlark.com/yuque/0/2026/png/1739170/1785842783434-d11ea52e-70aa-42ad-94e9-1665d649139f.png)
 
@@ -823,14 +827,14 @@ $ \begin{aligned}
 > **e，** 各组织检出基因数与总计数之间的密度散点图。
 >
 
-![](images/Extended_Data_Figure_3.png)
+![](images/Extended_Data_Figure_3.webp)
 
 ![](https://cdn.nlark.com/yuque/0/2026/png/1739170/1785842788347-9f925b0b-a25b-4d9f-89d4-9ea7058308f5.png)
 
 > **补充图 3｜其他人体组织的无条件生成结果。** 胸腺、肾、乳腺和肝的真实细胞（上）与生成细胞（下）UMAP 可视化，按细胞类型注释着色。
 >
 
-![](images/Extended_Data_Figure_4.png)
+![](images/Extended_Data_Figure_4.webp)
 
 ![](https://cdn.nlark.com/yuque/0/2026/png/1739170/1785842791794-62332878-8ee8-4ed8-999f-c71ca613eef9.png)
 
