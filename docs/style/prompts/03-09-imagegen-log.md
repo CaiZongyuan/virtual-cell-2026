@@ -44,7 +44,7 @@ API 对部分 landscape 请求返回了同方向但不同精确尺寸的位图�
 | 图源（未改名） | 图内 kicker 前 → 后 | 现引用它的课 | 导出版本 |
 |---|---|---|---|
 | `sources/03-04-figures.html`（`?figure=metrics`） | `VC2026 第 3 课 · 评分指标` → `VC2026 L3-01 · 评分指标` | [L3-01](../../lessons/L3-01-评分指标与离线评估.md) | `docs/lessons/assets/vc2026-course/03-metrics-lenses.webp`，2200×1238，190.9 KB，WebP q86 |
-| `sources/03-04-figures.html`（`?figure=splits`） | `VC2026 第 4 课 · 验证边界` → `VC2026 L3-02 · 验证边界` | [L3-02](../../lessons/L3-02-公开扰动数据与跨背景验证.md) | `docs/lessons/assets/vc2026-course/04-validation-splits.webp`，2200×1238，152.0 KB，WebP q86 |
+| `sources/03-04-figures.html`（`?figure=splits`） | `VC2026 第 4 课 · 验证边界` → `VC2026 L3-02 · 验证边界` | [第 03 课（原 L3-02）](../../lessons/03-State上手.md) | `docs/lessons/assets/vc2026-course/04-validation-splits.webp`，2200×1238，152.0 KB，WebP q86 |
 
 页 `<title>` 同步由「VC2026 第 3-4 课教学图」改为「VC2026 L3-01 / L3-02 教学图」。
 

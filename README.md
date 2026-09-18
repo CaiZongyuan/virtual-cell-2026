@@ -8,7 +8,7 @@
 
 初始化优先复用 Arc 已发布的 Replogle STATE 检查点，先小批推理，再决定哪些层需要微调；从头训练不作为前置要求。已发布权重的结构与当前源码默认值不同，必须继承实际配置。**A100 80 GB / 150 小时是完整训练分支的备选预算，尚非启动采购要求。** 资产、源码与兼容边界见[STATE 审计](docs/research/state-training-source-audit.md)。
 
-课程总览、课号对照与主题归属见[课程索引](docs/lessons/README.md)。按步骤学习与实施见[L3-04：State 微调实战与算力预算](docs/lessons/L3-04-State微调实战与算力预算.md)：包含分批数据下载单、预训练权重选择、`init_from` 微调命令、基因/靶点迁移、原始计数生成、H1 评分、打包，以及从单张 24 GB GPU 起步的资源测量方法。原生命令与需要自行实现的适配部分分别注明，预算尚未经过 GPU 训练实测。
+课程总览、课号对照与主题归属见[课程索引](docs/lessons/README.md)。按步骤学习与实施见[第 03 课：State 上手](docs/lessons/03-State上手.md)：包含分批数据下载单、预训练权重选择、`init_from` 微调命令、基因/靶点迁移、原始计数生成、H1 评分、打包，以及从单张 24 GB GPU 起步的资源测量方法。原生命令与需要自行实现的适配部分分别注明，预算尚未经过 GPU 训练实测。
 
 可运行学习版见 [notebook/](notebook/README.md)：三份 ipynb 依次探索本地 A/B/C 数据、State 配置与集合模型、计数输出与资源预算。运行 `uv sync --group notebook --frozen` 后选择仓库 `.venv` kernel；默认 CPU，已保留真实执行输出。
 

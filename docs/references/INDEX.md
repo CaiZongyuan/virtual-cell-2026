@@ -78,7 +78,7 @@
 - 2026-09-14 复核：采用为首投前的主基线；固定 [STATE commit 9bbfe78a](https://github.com/ArcInstitute/state/tree/9bbfe78a434a55205e4de834e1ea99f85f7a3add) 核实 8 层/768/12 heads、set 512、Energy loss、Adam，以及作者 VCC starter 已使用 ESM2 连续靶点。源码的 bf16、full-gene 参数量、缺失特征回退和浮点 infer 边界详见[审计](../research/state-training-source-audit.md)；未训练或声称复现成绩。此前“STATE 首投后再做”的实施决定已撤销。
 - 同日权重补全：官方 [ST-HVG-Replogle](https://huggingface.co/arcinstitute/ST-HVG-Replogle)、[ST-SE-Replogle](https://huggingface.co/arcinstitute/ST-SE-Replogle)、[st-x-replogle-full](https://huggingface.co/arcinstitute/st-x-replogle-full)、[st-se-replogle-full](https://huggingface.co/arcinstitute/st-se-replogle-full) 已有 checkpoint、config 和映射文件。抽查 HVG/zeroshot/jurkat 与 x-full/k562_0.99 分别输出 2,000 / 6,546 genes，均 328 hidden、set64、one-hot 靶点；不能把 768 宽 ESM2 starter 的默认值套给它们。首选复用/微调，再按必要性重训；本轮只读文件树和 YAML，未加载权重。版本与边界见[权重审计](../research/state-training-source-audit.md#已发布检查点补充不必从零训练)。
 - 正式版本补全：规范题名如本条标题；[Cell DOI](https://doi.org/10.1016/j.cell.2026.07.052)，Adduri, Gautam, Bevilacqua et al.，2026 年 8 月；本轮由博客引文追溯并经 [Crossref](https://api.crossref.org/works/10.1016/j.cell.2026.07.052)核实书目。此前标题 **STATE: Predicting Cellular Responses to Perturbation across Diverse Contexts** 与 DOI `10.1101/2025.06.26.661135` 作为预印本版本保留，不计为独立证据。本轮未读取正式版全文，内容变化及精确 online 日期待核验，不能把 Crossref 登记日或 license 起始日当作出版日。
-- 同日微调教程：新增[L3-04 State 微调实战与算力预算](../lessons/L3-04-State微调实战与算力预算.md)及[检查点微调源码审计](../research/state-checkpoint-finetuning-audit.md)。确认原生 `init_from`、resume 优先级、328 主干结构、按名称迁移需求、HVG 元数据、batch 对照匹配、冻结/LoRA 边界及 `ckpt_every_n_steps` 未生效；继承父权重的训练暴露必须纳入 LOCO。只核对小型资产和源码，未加载大权重/训练；24/48 GB 档位和 GPU-hours 是工程预留，待 pilot 测量。
+- 同日微调教程：新增[第 03 课 State 上手](../lessons/03-State上手.md)及[检查点微调源码审计](../research/state-checkpoint-finetuning-audit.md)。确认原生 `init_from`、resume 优先级、328 主干结构、按名称迁移需求、HVG 元数据、batch 对照匹配、冻结/LoRA 边界及 `ckpt_every_n_steps` 未生效；继承父权重的训练暴露必须纳入 LOCO。只核对小型资产和源码，未加载大权重/训练；24/48 GB 档位和 GPU-hours 是工程预留，待 pilot 测量。
 - 2026-09-15 学习笔记：新增 [三份可运行 ipynb](../../notebook/README.md)，复用既有方法审计。固定上述两组已评估 HF revision，各读取 config/hparams 两份原始 YAML，共 4 次 HTTP、均成功；小型快照与 SHA/URL 保存在 [notebook/assets/state/sources.json](../../notebook/assets/state/sources.json)。无 Scholar/SciVerse 查询、无新增候选；State 保持采用。笔记执行真实 NTC 数据审计与明确标识的 NumPy 数学示例，未加载官方 checkpoint 张量、训练或报告模型成绩。
 - 同轮输入覆盖：对固定 hparams 和本地 2026 基因清单做原始符号逐字比较，HVG 交集 1,877/2,000，full 交集 6,197/6,546；未匹配项可能含别名/版本差异，不能直接当作生物学缺测，更不能静默补零。该比较不代表扰动靶点训练暴露；可复算代码与实际输出见第二份 notebook。
 
@@ -248,7 +248,7 @@
 - 关系：与 Nadig 的 HepG2/Jurkat 共同组成 Replogle-Nadig；scPerturb 为便利副本而非另一组生物实验。
 - 结论：采用为核心 CRISPRi 训练数据；优先四背景核心，再加 GWPS。实际训练行数、目标交集、基因缺测和父权重暴露仍需下载后审计。
 - 关键词：CRISPRi、Perturb-seq、K562、RPE1、GWPS、State、训练数据。
-- 来源：[Cell DOI](https://doi.org/10.1016/j.cell.2022.05.013)；Joseph M. Replogle et al.；Cell，2022；[作者 Figshare](https://plus.figshare.com/articles/dataset/20029387)、[PMC 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9380471/)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，本地独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据/原文审计。
+- 来源：[Cell DOI](https://doi.org/10.1016/j.cell.2022.05.013)；Joseph M. Replogle et al.；Cell，2022；[作者 Figshare](https://plus.figshare.com/articles/dataset/20029387)、[PMC 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9380471/)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/03-State上手.md)，本地独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据/原文审计。
 
 ### Transcriptome-wide analysis of differential expression in perturbation atlases
 
@@ -257,7 +257,7 @@
 - 关系：与 Replogle 数据组合；被 State 用于跨情境建模。scPerturb 文件名 `NadigOConner2024_*` 保留旧整理命名，不与 2025 正式论文重复计证据。
 - 结论：采用为第一批微调核心数据；`.X` 计数、对照标签、实测基因覆盖与筛选口径在 ETL 时逐项确认。
 - 关键词：CRISPRi、HepG2、Jurkat、差异表达、背景迁移、State。
-- 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-025-02169-3)；Ajay Nadig et al.；正式在线 2025-04-21；[GEO GSE264667](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264667)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据审计。
+- 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-025-02169-3)；Ajay Nadig et al.；正式在线 2025-04-21；[GEO GSE264667](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264667)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/03-State上手.md)，独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据审计。
 
 ### Systematic reconstruction of molecular pathway signatures using scalable single-cell perturbation screens
 
@@ -266,7 +266,7 @@
 - 关系：补充 Replogle/Nadig；本轮 Scholar 命中的 bioRxiv 2024 版本与 Nature Cell Biology 正式版合并，不作为独立数据证据。
 - 结论：备选为第二阶段背景扩展；四背景流程跑通后再下载，单独评估增益。
 - 关键词：Perturb-seq、信号通路、Mixscale、六细胞系、刺激条件、数据扩展。
-- 来源：[Nature Cell Biology DOI](https://doi.org/10.1038/s41556-025-01622-z)；Longda Jiang et al.；正式在线 2025-02-26；[预印本 DOI](https://doi.org/10.1101/2024.01.29.576933)、[Zenodo 14518762](https://zenodo.org/records/14518762)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)及[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，独立全文未保存；检索与书目核验 2026-09-14，复用既有数据审计。
+- 来源：[Nature Cell Biology DOI](https://doi.org/10.1038/s41556-025-01622-z)；Longda Jiang et al.；正式在线 2025-02-26；[预印本 DOI](https://doi.org/10.1101/2024.01.29.576933)、[Zenodo 14518762](https://zenodo.org/records/14518762)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)及[微调教程](../lessons/03-State上手.md)，独立全文未保存；检索与书目核验 2026-09-14，复用既有数据审计。
 
 ### scPerturb harmonized datasets — Zenodo record 13350497
 
@@ -275,7 +275,7 @@
 - 关系：对应上面两个研究的整理副本；训练时只选择一份来源，不与作者原件重复计样本。
 - 结论：采用为便利下载源。已核对固定 record 的文件名、size、MD5、CC BY 4.0；矩阵值与来源处理差异未在本轮读取。论文的独立书目不在本次数据记录核验范围内。
 - 关键词：scPerturb、H5AD、raw counts、数据整理、gzip、Replogle、Nadig。
-- 来源：[Zenodo record](https://zenodo.org/records/13350497)、[API](https://zenodo.org/api/records/13350497)、[固定 Replogle 转换代码](https://github.com/sanderlab/scPerturb/blob/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/ReplogleWeissman2022.py)；版本固定为 record 13350497；本地下载单与 MD5 见[微调教程](../lessons/L3-04-State微调实战与算力预算.md)，未下载大矩阵；核验 2026-09-14。
+- 来源：[Zenodo record](https://zenodo.org/records/13350497)、[API](https://zenodo.org/api/records/13350497)、[固定 Replogle 转换代码](https://github.com/sanderlab/scPerturb/blob/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/ReplogleWeissman2022.py)；版本固定为 record 13350497；本地下载单与 MD5 见[微调教程](../lessons/03-State上手.md)，未下载大矩阵；核验 2026-09-14。
 
 ### DepMap 24Q4 Public — CRISPRGeneEffect.csv
 
@@ -583,7 +583,7 @@
 
 ### 2026-09-14 State 微调教程检索与核验
 
-- 产物：[详细教程](../lessons/L3-04-State微调实战与算力预算.md)、[检查点微调审计](../research/state-checkpoint-finetuning-audit.md)，并在 README/课程路线图加入入口。
+- 产物：[详细教程](../lessons/03-State上手.md)、[检查点微调审计](../research/state-checkpoint-finetuning-audit.md)，并在 README/课程路线图加入入口。
 - 查询：复用本索引后，Infra Scholar 顺序调用 1 次，完整题名 `Predicting cellular responses to perturbation across diverse contexts with State`；返回并查看前 10 条。State 预印本已命中，不再精炼；Jiang 已有预印本与正式版合并。其他结果只作原始线索，未用于方法性能判断。
 - 一手访问：Crossref 4（State/Replogle/Nadig/Jiang）、Zenodo 1、固定 HF tree 2、小型 data_module 2，共 9 次直接 HTTP；加 Scholar 为 10 次，全部成功。两个本地脚本先因没有 requests 未发出网络请求，改用 urllib 完成。无 SciVerse/Paper Schema 调用，不下载大型模型/数据。
 - 状态：State、Replogle、Nadig 和五文件 scPerturb 来源采用；Jiang 为后续扩展备选。同步补齐此前仅在容量笔记中的独立数据条目，保留一手链接和本地教程路径。

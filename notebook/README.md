@@ -9,7 +9,7 @@
 | [03：微调、计数与预算](03_finetuning_counts_and_budget.ipynb) | 公共数据清单、防泄漏、原生微调命令、400-cell 输出、评分合同、GPU/内存/费用 | 教学计数生成与 H5AD 写入/读回；格式检查；可拖动的预算计算器 |
 | [04：Colab 流水线 × H1 评分](04_arc_colab_h1_benchmark.ipynb) | 官方 VC2025 Colab 的 22 个 cell 映射、与 `vcc-h1` 的合同差异、126 靶点面板、防泄漏与文件分离边界 | 校验 Colab 固定副本哈希；缓存 CSV ↔ sources.json ↔ benchmark 注册表三方比对；150→126 靶点筛选并生成推理 TSV |
 
-完整解释与正式实施边界见 [L3-04：State 微调实战与算力预算](../docs/lessons/L3-04-State微调实战与算力预算.md)；源码细节见[检查点审计](../docs/research/state-checkpoint-finetuning-audit.md)。
+完整解释与正式实施边界见 [第 03 课：State 上手](../docs/lessons/03-State上手.md)；源码细节见[检查点审计](../docs/research/state-checkpoint-finetuning-audit.md)。
 
 ## 课程 → notebook 映射表
 
