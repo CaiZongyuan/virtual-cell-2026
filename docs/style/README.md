@@ -55,6 +55,31 @@
 8. **图面可读性与体积**（2026-09-17 用户反馈后固化为硬规则，细则见 `AGENTS.md`「教程图片」）：字号只在文件顶部一份 scale 常量里写，最小不低于 12 模型 px；相邻元素垂直间距 ≥ 20 px；图例放在页眉横排，不要挤在正文左下与图注争位；长跳线要留在自己的面板内，**不得穿过其他面板的虚线边框**；导出按「显示分辨率 × 1.2–1.4」超采样后降采样，不要 2x 满分辨率入库。
 
 
+## WSL → Windows Chrome 的 CDP 中转（2026-09-18 补）
+
+上面那套 CDP 通道在**从 WSL 内部**跑时要多一跳：Chrome 装在 Windows 侧，它的调试端口默认只 bind `127.0.0.1`，而 WSL 里的 `localhost` 是**另一台机器**，直连 `127.0.0.1:9222` 会连到 WSL 自己。做法是让 Windows 侧多监听一个对外端口，把它转发给本机 Chrome：
+
+```text
+  WSL 侧渲染脚本 ──→ 127.0.0.1:9222 ──(WSL forwarder)──→ <Windows 主机 IP>:9223
+                                                                  │
+                                                    (Windows 侧 TcpListener 转发)
+                                                                  ↓
+                                                        127.0.0.1:9222  ← Chrome
+```
+
+- **Windows 侧**：起一个 `System.Net.Sockets.TcpListener`，bind **`0.0.0.0:9223`**，对每条进来的连接再开一条到 `127.0.0.1:9222` 的 TCP，做双向字节搬运。`0.0.0.0` 是必需的——只 bind `127.0.0.1` 时 WSL 的包根本到不了这个 listener。
+- **WSL 侧**：把本地的 `127.0.0.1:9222` 转到 `<Windows 主机 IP>:9223`，渲染脚本仍按 `127.0.0.1:9222` 连（脚本不用改）。
+- **`<Windows 主机 IP>` 是机器相关值，不要硬编码进任何脚本或文档。** 在 WSL 里用默认网关拿它：
+
+  ```bash
+  ip route show default | awk '{print $3}'      # 例：172.29.240.1（WSL 的 Windows 主机侧网关）
+  ```
+
+  WSL2 里这个地址就是 Windows 主机在虚拟网络里的地址，重启后可能变，所以每次现取。
+- **它是临时通道**：只在需要渲染时起，用完关掉。不要把 9223 常驻对外监听。
+- 详细命令与已知失败排查见 `scripts/html-cdp-shot.py` 顶部注释与 `scripts/drawio-cdp-shot.py`；两份脚本走的是同一个 CDP 客户端实现，只是输入源不同（HTML 图稿 vs `.drawio`）。
+
+
 ## 索引
 
 | 文件 | 类型与角色 | 来源与状态 | 适用场景 |
@@ -64,6 +89,7 @@
 | `prompts/vc2025-learning-roadmap.md` | 参考图生成 prompt 与修订记录 | 本仓库生成 | 重建或调整 VC2025 学习路线总览图 |
 | `sources/vc2026-data-contract-figures.html` | HTML/CSS 教程图稿源 | 本仓库生成；无外部运行时资源 | 用 `?figure=contexts|anndata` 选择画面，以 Chromium 1600x900 截图 |
 | `prompts/vc2026-six-contexts.md` | GPT Image 概念插画 prompt 与科学边界 | 本仓库生成 | 重建或调整“同一目标在六个匿名背景中产生不同群体响应”的概念图 |
+| `sources/02-state-figures.html` | [第 02 课](../lessons/02-State模型拆解.md)「State 模型拆解」HTML/CSS 精确图源；3 幅（配对不存在 / 一次 forward 的张量形状 / Energy 距离三项） | 本仓库生成；2026-09-18；无外部运行时资源 | 用 `?figure=paired\|shapes\|energy` 选择画面，以 Chromium 1600x900 截图；导出走 `scripts/html-cdp-shot.py`，成品 `docs/lessons/assets/vc2026-course/02-paired-vs-two-clouds.webp`（2200×1238，123.1 KB）、`02-forward-shapes.webp`（183.1 KB）、`02-energy-three-terms.webp`（167.0 KB），均 WebP q86 |
 | `sources/03-04-figures.html` | [L3-01](../lessons/L3-01-评分指标与离线评估.md) / [L3-02](../lessons/L3-02-公开扰动数据与跨背景验证.md) HTML/CSS 精确图源；**文件名保留旧课号（原第 3–4 课），图内 kicker 已于 2026-09-18 改为 `L3-01` / `L3-02`** | 本仓库生成；无外部运行时资源 | 用 `?figure=metrics\|splits` 选择六指标或验证边界图，以 Chromium 1600x900 截图；导出走 `scripts/html-cdp-shot.py` |
 | `sources/05-06-figures.html` | 原第 5–6 课（现[备选架构附录](../lessons/appendix/非State路线备选架构.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=delta\|encoders` 选择统计分解或双编码器图 |
 | `sources/07-08-figures.html` | 原第 7–8 课（现 [L3-03](../lessons/L3-03-单细胞原始计数生成.md)、[备选架构附录](../lessons/appendix/非State路线备选架构.md)）HTML/CSS 精确图源 | 本仓库生成；无外部运行时资源 | 用 `?figure=counts\|model-ladder` 选择计数生成或模型升级图 |

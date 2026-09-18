@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 第 02 课 State 教学图</title>
+  <style>
+    :root {
+      --paper: #f6f8f9;
+      --white: #ffffff;
+      --ink: #172a3a;
+      --muted: #5e707b;
+      --line: #cbd6db;
+      --navy: #244e72;
+      --navy-soft: #e2ebf2;
+      --teal: #16847b;
+      --teal-dark: #0e655f;
+      --teal-soft: #dcefeb;
+      --yellow: #d3a529;
+      --yellow-soft: #f9edbd;
+      --red: #ce594c;
+      --red-dark: #963d35;
+      --red-soft: #f7dfdc;
+      --gray: #8b9aa2;
+      --gray-soft: #edf1f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dfe5e8;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    body.single { width: 1600px; height: 900px; overflow: hidden; }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 12px solid var(--accent, var(--navy));
+      padding: 36px 52px 30px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 520px;
+      gap: 32px;
+      align-items: end;
+      min-height: 104px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 17px;
+    }
+
+    .kicker {
+      margin-bottom: 6px;
+      color: var(--accent, var(--navy));
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    h1 { margin: 0; font-size: 40px; line-height: 1.18; font-weight: 900; }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    code {
+      color: var(--teal-dark);
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-weight: 800;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 29px;
+      padding: 4px 10px;
+      border: 1px solid currentColor;
+      border-radius: 4px;
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tag.navy { color: var(--navy); background: var(--navy-soft); }
+    .tag.teal { color: var(--teal-dark); background: var(--teal-soft); }
+    .tag.yellow { color: #73580d; background: var(--yellow-soft); }
+    .tag.red { color: var(--red-dark); background: var(--red-soft); }
+    .tag.gray { color: #4c5a61; background: var(--gray-soft); }
+
+    .takeaway {
+      position: absolute;
+      left: 52px;
+      right: 52px;
+      bottom: 28px;
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: center;
+      min-height: 72px;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      padding: 11px 16px;
+      background: var(--white);
+      font-size: 19px;
+      line-height: 1.42;
+    }
+
+    .takeaway strong { color: var(--accent, var(--navy)); font-size: 21px; }
+
+    /* ---------- shared panel ---------- */
+    .panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border: 2px solid var(--panel-color, var(--navy));
+      border-radius: 8px;
+      padding: 18px 20px 20px;
+      background: var(--white);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+
+    .panel-title { font-size: 25px; font-weight: 900; color: var(--panel-color, var(--navy)); }
+    .panel-copy { margin-top: 5px; font-size: 17px; line-height: 1.45; color: var(--muted); }
+
+    .note-box {
+      border-left: 5px solid var(--panel-color, var(--navy));
+      background: var(--gray-soft);
+      padding: 10px 14px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    /* ---------- figure: paired ---------- */
+    .pair-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      height: 638px;
+      padding-top: 24px;
+      padding-bottom: 82px;
+    }
+
+    .pairs { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+
+    .pair-hd {
+      display: grid;
+      grid-template-columns: 1fr 74px 1fr;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .pair-row {
+      display: grid;
+      grid-template-columns: 1fr 74px 1fr;
+      align-items: center;
+    }
+
+    .chipbox {
+      border: 2px solid var(--c, var(--navy));
+      border-radius: 6px;
+      background: var(--cs, var(--navy-soft));
+      padding: 11px 0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--c, var(--navy));
+    }
+
+    .link-ok {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--teal-dark);
+    }
+
+    .mech {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .mech-step {
+      flex: 1;
+      border: 2px solid var(--navy);
+      border-radius: 6px;
+      background: var(--navy-soft);
+      padding: 9px 4px;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .mech-step.dead { border-color: var(--red); background: var(--red-soft); color: var(--red-dark); }
+    .mech-arrow { font-size: 14px; font-weight: 800; color: var(--muted); white-space: nowrap; }
+
+    .cloud-wrap { flex: 1; display: flex; align-items: center; justify-content: center; }
+
+    /* ---------- figure: shapes ---------- */
+    .shape-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      height: 638px;
+      padding-top: 22px;
+      padding-bottom: 82px;
+    }
+
+    .lane {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 224px 40px 190px 40px 1fr 40px 224px;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .stage {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 2px solid var(--c, var(--navy));
+      border-radius: 8px;
+      background: var(--white);
+      padding: 13px 14px 14px;
+    }
+
+    .stage-t {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--c, var(--navy));
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 7px;
+    }
+
+    .chip {
+      border: 2px solid var(--c, var(--navy));
+      border-radius: 6px;
+      background: var(--cs, var(--navy-soft));
+      padding: 9px 8px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .chip .sh {
+      display: block;
+      margin-top: 3px;
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-size: 18px;
+      color: var(--ink);
+    }
+
+    .stage-n { font-size: 15px; line-height: 1.4; color: var(--muted); }
+
+    .arr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      font-weight: 900;
+      color: var(--gray);
+    }
+
+    .sband {
+      display: grid;
+      grid-template-columns: 170px repeat(3, 1fr) 1.4fr;
+      gap: 14px;
+      align-items: center;
+      border: 2px solid var(--navy);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 11px 16px;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .sband > b { color: var(--navy); font-size: 20px; }
+
+    .schip {
+      border: 2px solid var(--c, var(--navy));
+      border-radius: 6px;
+      background: var(--cs, var(--navy-soft));
+      padding: 7px 8px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .schip em {
+      display: block;
+      font-style: normal;
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-size: 20px;
+      color: var(--ink);
+    }
+
+    .srail {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 16px;
+      align-items: center;
+      border: 2px dashed var(--teal);
+      border-radius: 8px;
+      background: var(--teal-soft);
+      padding: 11px 16px;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .srail b { color: var(--teal-dark); font-size: 21px; }
+
+    .contrast {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 16px;
+      align-items: center;
+      border: 2px solid var(--red);
+      border-radius: 8px;
+      background: var(--red-soft);
+      padding: 11px 16px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .contrast b { color: var(--red-dark); font-size: 20px; }
+
+    /* ---------- figure: energy ---------- */
+    .energy-layout {
+      display: grid;
+      grid-template-columns: 1fr 470px;
+      gap: 28px;
+      height: 638px;
+      padding-top: 22px;
+      padding-bottom: 82px;
+    }
+
+    .term-list { display: flex; flex-direction: column; gap: 11px; }
+
+    .term {
+      display: grid;
+      grid-template-columns: 38px 208px 1fr;
+      gap: 13px;
+      align-items: center;
+      border: 2px solid var(--c, var(--navy));
+      border-radius: 7px;
+      background: var(--cs, var(--navy-soft));
+      padding: 10px 13px;
+    }
+
+    .term-no {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--c, var(--navy));
+      color: #fff;
+      font-size: 19px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .term-f {
+      font-family: Consolas, "Microsoft YaHei", monospace;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .term-d { font-size: 17px; line-height: 1.42; }
+    .term.dim { --c: var(--gray); --cs: var(--gray-soft); color: #4c5a61; }
+
+    .collapse {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      border: 2px solid var(--red);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 14px 16px 16px;
+    }
+
+    .collapse-t { font-size: 21px; font-weight: 900; color: var(--red-dark); }
+
+    .cchain {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .cchain div { padding-left: 16px; border-left: 4px solid var(--red); }
+  </style>
+</head>
+<body>
+
+<!-- ============================ 图 1 ============================ -->
+<section class="figure" data-figure="paired" style="--accent:var(--navy)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 02 课 · 数据形态</div>
+      <h1>监督学习预设的配对，在 Perturb-seq 里不存在</h1>
+    </div>
+    <div class="subtitle">这不是「配对数据缺失」，是细胞被裂解后扰动前状态从未被测量。这一条直接决定了损失函数不能是 MSE。</div>
+  </header>
+
+  <main class="pair-layout">
+    <section class="panel" style="--panel-color:var(--navy)">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">你习惯的监督数据</div>
+          <div class="panel-copy">每个输入都带着它自己的那个目标。</div>
+        </div>
+        <span class="tag navy">配对存在</span>
+      </div>
+
+      <div class="pairs">
+        <div class="pair-hd"><span>输入 x</span><span></span><span>目标 y</span></div>
+        <div class="pair-row">
+          <div class="chipbox" style="--c:var(--navy);--cs:var(--navy-soft)">x₁</div>
+          <div class="link-ok">──</div>
+          <div class="chipbox" style="--c:var(--teal-dark);--cs:var(--teal-soft)">y₁</div>
+        </div>
+        <div class="pair-row">
+          <div class="chipbox" style="--c:var(--navy);--cs:var(--navy-soft)">x₂</div>
+          <div class="link-ok">──</div>
+          <div class="chipbox" style="--c:var(--teal-dark);--cs:var(--teal-soft)">y₂</div>
+        </div>
+        <div class="pair-row">
+          <div class="chipbox" style="--c:var(--navy);--cs:var(--navy-soft)">x₃</div>
+          <div class="link-ok">──</div>
+          <div class="chipbox" style="--c:var(--teal-dark);--cs:var(--teal-soft)">y₃</div>
+        </div>
+      </div>
+
+      <div class="note-box" style="--panel-color:var(--navy)">
+        第 <b>i</b> 行对第 <b>i</b> 行，<b>i 是已知的</b>。<code>MSE</code> 能写出来，正是因为这个 <b>i</b> 存在。
+      </div>
+    </section>
+
+    <section class="panel" style="--panel-color:var(--teal)">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">Perturb-seq 给你的</div>
+          <div class="panel-copy">两群不同的细胞，行序由测序流程决定。</div>
+        </div>
+        <span class="tag red">配对不存在</span>
+      </div>
+
+      <div class="mech">
+        <span class="mech-step">一个细胞</span>
+        <span class="mech-arrow">CRISPRi →</span>
+        <span class="mech-step">等它响应</span>
+        <span class="mech-arrow">裂解取 RNA →</span>
+        <span class="mech-step dead">一行计数</span>
+      </div>
+      <div class="note-box" style="--panel-color:var(--red)">
+        细胞到这一步就没了。<b>它的「扰动前状态」不曾被测量过</b>——不是丢失，是不存在。
+      </div>
+
+      <div class="cloud-wrap">
+        <svg width="620" height="214" viewBox="0 0 620 214" role="img" aria-label="两群没有对应关系的细胞">
+          <text x="128" y="20" text-anchor="middle" font-size="18" font-weight="800" fill="#244e72" font-family="Microsoft YaHei">对照这一群（NTC）</text>
+          <text x="492" y="20" text-anchor="middle" font-size="18" font-weight="800" fill="#0e655f" font-family="Microsoft YaHei">扰动这一群</text>
+
+          <ellipse cx="128" cy="120" rx="112" ry="76" fill="#e2ebf2" stroke="#244e72" stroke-width="2" stroke-dasharray="7 5"/>
+          <ellipse cx="492" cy="120" rx="112" ry="76" fill="#dcefeb" stroke="#0e655f" stroke-width="2" stroke-dasharray="7 5"/>
+
+          <g fill="#244e72">
+            <circle cx="72" cy="94" r="9"/><circle cx="116" cy="70" r="9"/><circle cx="165" cy="92" r="9"/>
+            <circle cx="90" cy="134" r="9"/><circle cx="134" cy="118" r="9"/><circle cx="178" cy="139" r="9"/>
+            <circle cx="70" cy="166" r="9"/><circle cx="120" cy="164" r="9"/><circle cx="163" cy="172" r="9"/>
+          </g>
+          <g fill="#16847b">
+            <circle cx="438" cy="80" r="9"/><circle cx="488" cy="66" r="9"/><circle cx="536" cy="96" r="9"/>
+            <circle cx="424" cy="126" r="9"/><circle cx="478" cy="118" r="9"/><circle cx="532" cy="140" r="9"/>
+            <circle cx="446" cy="170" r="9"/><circle cx="496" cy="162" r="9"/><circle cx="544" cy="176" r="9"/>
+          </g>
+
+          <g stroke="#8b9aa2" stroke-width="2" stroke-dasharray="6 6">
+            <line x1="165" y1="92" x2="438" y2="80"/>
+            <line x1="178" y1="139" x2="424" y2="126"/>
+            <line x1="163" y1="172" x2="446" y2="170"/>
+          </g>
+          <g fill="#963d35" font-size="26" font-weight="900" text-anchor="middle" font-family="Microsoft YaHei">
+            <text x="301" y="95">✕</text><text x="301" y="141">✕</text><text x="301" y="186">✕</text>
+          </g>
+          <text x="301" y="42" text-anchor="middle" font-size="18" font-weight="800" fill="#963d35" font-family="Microsoft YaHei">两群之间没有 i</text>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <div class="takeaway"><strong>可用的唯一问题</strong><span>不是「第 i 个预测准不准」，而是「这两群细胞的分布像不像」。凡是需要逐细胞对应的量，在这份数据上都没有定义。</span></div>
+</section>
+
+<!-- ============================ 图 2 ============================ -->
+<section class="figure" data-figure="shapes" style="--accent:var(--teal)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 02 课 · 张量契约</div>
+      <h1>一次 forward：S 这一维从头到尾都不被压掉</h1>
+    </div>
+    <div class="subtitle">维数取官方源码默认配置（<code>hidden_dim=768</code>、全基因输出）。已发布权重是另一套（328 / set 64 / 2,000），两套不可混用。</div>
+  </header>
+
+  <main class="shape-layout">
+    <div class="lane">
+      <div class="stage" style="--c:var(--navy);--cs:var(--navy-soft)">
+        <div class="stage-t">输入</div>
+        <div class="chip" style="--c:var(--navy);--cs:var(--navy-soft)">X_ctrl<span class="sh">B × S × 18,533</span></div>
+        <div class="chip" style="--c:var(--yellow);--cs:var(--yellow-soft)">Z_pert<span class="sh">B × S × D_pert</span></div>
+        <div class="stage-n">靶点向量在集合内<b>共享同一份</b>：一次扰动是施加在整群上的条件。</div>
+      </div>
+
+      <div class="arr">→</div>
+
+      <div class="stage" style="--c:var(--teal);--cs:var(--teal-soft)">
+        <div class="stage-t">三个编码器 · 逐元素相加</div>
+        <div class="chip" style="--c:var(--teal);--cs:var(--teal-soft)">H<span class="sh">B × S × 768</span></div>
+        <div class="stage-n">相加而非拼接：三个信息源共享同一批坐标。</div>
+      </div>
+
+      <div class="arr">→</div>
+
+      <div class="stage" style="--c:var(--navy);--cs:var(--navy-soft)">
+        <div class="stage-t">8 层双向集合 Transformer</div>
+        <div class="chip" style="--c:var(--navy);--cs:var(--navy-soft)">残差流<span class="sh">B × S × 768</span></div>
+        <div class="chip" style="--c:var(--gray);--cs:var(--gray-soft)">注意力内部<span class="sh">12 heads × 64 = 768</span></div>
+        <div class="stage-n">双向、无位置编码、无 token 词表 → 对细胞顺序<b>置换等变</b>。注意力学的是细胞与细胞的关系。</div>
+      </div>
+
+      <div class="arr">→</div>
+
+      <div class="stage" style="--c:var(--teal);--cs:var(--teal-soft)">
+        <div class="stage-t">残差加回 · 投影 · ReLU</div>
+        <div class="chip" style="--c:var(--teal);--cs:var(--teal-soft)">输出<span class="sh">B × S × 18,533</span></div>
+        <div class="stage-n">末端实际调用 <code>ReLU</code>，不是配置里写的 <code>softplus</code>。输出仍是 <code>log1p</code> 空间的浮点，不是计数。</div>
+      </div>
+    </div>
+
+    <div class="sband">
+      <b>S 的三个值</b>
+      <div class="schip" style="--c:var(--navy);--cs:var(--navy-soft)">已发布权重训练<em>S = 64</em></div>
+      <div class="schip" style="--c:var(--gray);--cs:var(--gray-soft)">源码默认<em>S = 512</em></div>
+      <div class="schip" style="--c:var(--teal-dark);--cs:var(--teal-soft)">本赛每靶点要求<em>S = 400</em></div>
+      <span>权重形状与 <b>S 无关</b>（没有位置编码），所以这不是「能不能加载」的问题，而是「行为会不会变」——论文报告集合大小会影响验证损失 <code>[P1]</code>。</span>
+    </div>
+
+    <div class="srail">
+      <b>S 从不被压掉</b>
+      <span>这就是「集合到集合」在张量层面的全部含义：进去 S 个细胞，出来 S 个细胞，中间每一层都同时看着这 S 个。</span>
+    </div>
+
+    <div class="contrast">
+      <b>对照：伪批量做法</b>
+      <span>先对 S 取平均 → <code>B × 18,533</code> → 细胞间异质性在<b>第一步</b>就丢了。论文消融里，平均池化版与集合大小为 1 的版本都明显更差 <code>[P1]</code>。</span>
+    </div>
+  </main>
+
+  <div class="takeaway"><strong>两套配置</strong><span>本图为源码默认的全基因路径。引用任何一个数字时必须说明是哪一套——「State 是 328 宽」这类无主语句子一定是错的。</span></div>
+</section>
+
+<!-- ============================ 图 3 ============================ -->
+<section class="figure" data-figure="energy" style="--accent:var(--yellow)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 02 课 · 训练目标</div>
+      <h1>能量距离的三项：一边拉近，一边撑开</h1>
+    </div>
+    <div class="subtitle">本图画的是标准 Energy 距离定义的几何含义，不是官方实现的逐行复刻。官方配置项为 <code>loss=energy</code>。</div>
+  </header>
+
+  <main class="energy-layout">
+    <section class="panel" style="--panel-color:var(--yellow)">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">D² = 2·E‖p−q‖ − E‖p−p′‖ − E‖q−q′‖</div>
+          <div class="panel-copy">三个方向相反的力，作用在预测集合 P 与真实集合 Q 上。</div>
+        </div>
+      </div>
+
+      <svg width="100%" height="232" viewBox="0 0 660 232" role="img" aria-label="能量距离三项的作用方向">
+        <ellipse cx="160" cy="118" rx="116" ry="78" fill="#dcefeb" stroke="#0e655f" stroke-width="2"/>
+        <ellipse cx="500" cy="118" rx="116" ry="78" fill="#e2ebf2" stroke="#244e72" stroke-width="2"/>
+        <text x="160" y="24" text-anchor="middle" font-size="19" font-weight="900" fill="#0e655f" font-family="Microsoft YaHei">预测集合 P</text>
+        <text x="500" y="24" text-anchor="middle" font-size="19" font-weight="900" fill="#244e72" font-family="Microsoft YaHei">真实集合 Q</text>
+
+        <g fill="#16847b">
+          <circle cx="112" cy="90" r="8"/><circle cx="160" cy="74" r="8"/><circle cx="206" cy="98" r="8"/>
+          <circle cx="126" cy="140" r="8"/><circle cx="176" cy="132" r="8"/><circle cx="212" cy="152" r="8"/>
+          <circle cx="146" cy="176" r="8"/>
+        </g>
+        <g fill="#244e72">
+          <circle cx="452" cy="86" r="8"/><circle cx="500" cy="72" r="8"/><circle cx="548" cy="96" r="8"/>
+          <circle cx="440" cy="136" r="8"/><circle cx="496" cy="130" r="8"/><circle cx="552" cy="148" r="8"/>
+          <circle cx="486" cy="176" r="8"/>
+        </g>
+
+        <!-- 1) pull together -->
+        <g stroke="#d3a529" stroke-width="5">
+          <line x1="248" y1="118" x2="392" y2="118"/>
+        </g>
+        <polygon points="392,118 372,108 372,128" fill="#d3a529"/>
+        <polygon points="248,118 268,108 268,128" fill="#d3a529"/>
+        <circle cx="320" cy="118" r="17" fill="#d3a529"/>
+        <text x="320" y="125" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" font-family="Microsoft YaHei">1</text>
+        <text x="320" y="95" text-anchor="middle" font-size="17" font-weight="800" fill="#73580d" font-family="Microsoft YaHei">拉近</text>
+
+        <!-- 2) push apart inside P: four diagonals, so nothing collides with the horizontal term-1 arrow -->
+        <g stroke="#0e655f" stroke-width="4">
+          <line x1="148" y1="106" x2="100" y2="62"/>
+          <line x1="172" y1="106" x2="220" y2="62"/>
+          <line x1="148" y1="130" x2="100" y2="174"/>
+          <line x1="172" y1="130" x2="220" y2="174"/>
+        </g>
+        <g fill="#0e655f">
+          <polygon points="94,56 118,64 106,76"/>
+          <polygon points="226,56 214,76 202,64"/>
+          <polygon points="94,180 106,160 118,172"/>
+          <polygon points="226,180 202,172 214,160"/>
+        </g>
+        <circle cx="160" cy="118" r="17" fill="#0e655f"/>
+        <text x="160" y="125" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" font-family="Microsoft YaHei">2</text>
+        <text x="160" y="214" text-anchor="middle" font-size="17" font-weight="800" fill="#0e655f" font-family="Microsoft YaHei">撑开 · 负号奖励离散度</text>
+
+        <!-- 3) constant -->
+        <circle cx="500" cy="118" r="17" fill="#8b9aa2"/>
+        <text x="500" y="125" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" font-family="Microsoft YaHei">3</text>
+        <text x="500" y="214" text-anchor="middle" font-size="17" font-weight="800" fill="#4c5a61" font-family="Microsoft YaHei">常数 · 梯度恒为 0</text>
+      </svg>
+
+      <div class="term-list">
+        <div class="term" style="--c:var(--yellow);--cs:var(--yellow-soft)">
+          <div class="term-no">1</div>
+          <div class="term-f">+ 2·E‖p − q‖</div>
+          <div class="term-d">两团云要靠近。<b>降低它就是降低损失。</b></div>
+        </div>
+        <div class="term" style="--c:var(--teal-dark);--cs:var(--teal-soft)">
+          <div class="term-no">2</div>
+          <div class="term-f">− E‖p − p′‖</div>
+          <div class="term-d">预测这团云要自己散开。<b>负号 = 奖励散开</b>，这是不塌缩的唯一来源。</div>
+        </div>
+        <div class="term dim">
+          <div class="term-no">3</div>
+          <div class="term-f">− E‖q − q′‖</div>
+          <div class="term-d">只含真实数据，<b>不含模型输出</b>，求导后消失。训练中它不起作用。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collapse">
+      <div class="collapse-t">如果预测塌缩成一点</div>
+      <div class="cchain">
+        <div><code>E‖p − p′‖ = 0</code></div>
+        <div>第 ② 项这份奖励<b>拿不到</b></div>
+        <div>损失被<b>抬高</b></div>
+        <div>梯度把预测<b>推开</b></div>
+      </div>
+      <div class="note-box" style="--panel-color:var(--red)">
+        所以它<b>在结构上</b>就不会退化成「输出一个均值」——不是靠调权重压住的，是那个负号把这条路堵死的。
+      </div>
+
+      <div class="panel-title" style="--panel-color:var(--navy);font-size:21px;margin-top:4px">一维手算对照</div>
+      <div class="panel-copy" style="margin-top:0">真值 <code>Q = {0, 2}</code>；<code>P₁ = {0, 2}</code> 分布正确，<code>P₂ = {1, 1}</code> 塌缩到均值。</div>
+
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.35">
+        <div style="display:grid;grid-template-columns:1fr 78px 78px 54px;gap:8px;font-weight:900;color:#5e707b;border-bottom:1px solid #cbd6db;padding-bottom:6px">
+          <span>判据</span><span style="text-align:center">P₁</span><span style="text-align:center">P₂</span><span style="text-align:center">选谁</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 78px 78px 54px;gap:8px;align-items:center">
+          <span>MSE · 行序凑巧对齐</span><span style="text-align:center">0</span><span style="text-align:center">1</span>
+          <span style="text-align:center;color:#0e655f;font-weight:900">P₁ ✔</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 78px 78px 54px;gap:8px;align-items:center;background:#f7dfdc;border-radius:5px;padding:5px 4px">
+          <span><b>MSE · 行序被打乱</b></span><span style="text-align:center"><b>4</b></span><span style="text-align:center"><b>1</b></span>
+          <span style="text-align:center;color:#963d35;font-weight:900">P₂ ✘</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 78px 78px 54px;gap:8px;align-items:center;background:#dcefeb;border-radius:5px;padding:5px 4px">
+          <span><b>D² · 任意行序</b></span><span style="text-align:center"><b>0</b></span><span style="text-align:center"><b>1</b></span>
+          <span style="text-align:center;color:#0e655f;font-weight:900">P₁ ✔</span>
+        </div>
+      </div>
+
+      <div class="note-box" style="--panel-color:var(--red);font-size:16px">
+        同一份预测、同一个真值，<b>换个排列 MSE 就换答案</b>。这不是算错，是它依赖了数据里不存在的前提。
+      </div>
+    </section>
+  </main>
+
+  <div class="takeaway"><strong>它不保证什么</strong><span>能保证两群像、不塌缩；<b>不</b>保证单细胞层面「哪个对哪个」，<b>不</b>直接优化单个基因的方向与幅度。计数生成必须另做并单独审计。</span></div>
+</section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["paired", "shapes", "energy"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      const selected = document.querySelector(`[data-figure="${requested}"]`);
+      selected.classList.add("active");
+    }
+  </script>
+</body>
+</html>
