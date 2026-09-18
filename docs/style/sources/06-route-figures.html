@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 第 06 课 其余路线全景教学图</title>
+  <style>
+    :root {
+      --paper: #f6f8f9;
+      --white: #ffffff;
+      --ink: #172a3a;
+      --muted: #5e707b;
+      --line: #cbd6db;
+      --navy: #244e72;
+      --navy-soft: #e2ebf2;
+      --teal: #16847b;
+      --teal-dark: #0e655f;
+      --teal-soft: #dcefeb;
+      --yellow: #d3a529;
+      --yellow-soft: #f9edbd;
+      --red: #ce594c;
+      --red-dark: #963d35;
+      --red-soft: #f7dfdc;
+      --gray: #8b9aa2;
+      --gray-soft: #edf1f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dfe5e8;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    body.single { width: 1600px; height: 840px; overflow: hidden; }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 840px;
+      margin: 28px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 12px solid var(--accent, var(--navy));
+      padding: 34px 50px 28px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 30px;
+      align-items: end;
+      min-height: 96px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .kicker {
+      margin-bottom: 6px;
+      color: var(--accent, var(--navy));
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    h1 { margin: 0; font-size: 40px; line-height: 1.18; font-weight: 900; }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .subtitle code, .note-box code, .takeaway code {
+      font-size: 0.94em;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--ink);
+    }
+
+    .takeaway {
+      position: absolute;
+      left: 50px;
+      right: 50px;
+      bottom: 26px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      align-items: center;
+      background: var(--white);
+      border-left: 8px solid var(--accent, var(--navy));
+      border-radius: 6px;
+      padding: 14px 20px;
+      font-size: 18px;
+      line-height: 1.45;
+      box-shadow: 0 1px 3px rgba(23, 42, 58, .13);
+    }
+
+    .takeaway strong { font-size: 19px; font-weight: 900; line-height: 1.3; }
+    .takeaway span { color: var(--muted); }
+
+    .panel {
+      background: var(--white);
+      border: 2px solid var(--panel-color, var(--line));
+      border-radius: 9px;
+      padding: 18px 22px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .panel-title { font-size: 23px; font-weight: 900; }
+    .panel-copy { margin-top: 5px; color: var(--muted); font-size: 17px; line-height: 1.45; }
+
+    .tag {
+      flex: none;
+      border-radius: 999px;
+      padding: 5px 13px;
+      font-size: 15px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .tag.navy { background: var(--navy-soft); color: var(--navy); }
+    .tag.teal { background: var(--teal-soft); color: var(--teal-dark); }
+    .tag.red  { background: var(--red-soft);  color: var(--red-dark); }
+    .tag.gray { background: var(--gray-soft); color: #4d5b63; }
+    .tag.gold { background: var(--yellow-soft); color: #7a5c05; }
+
+    .note-box {
+      border-left: 5px solid var(--panel-color, var(--gray));
+      background: var(--gray-soft);
+      border-radius: 5px;
+      padding: 10px 14px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .note-box + .note-box { margin-top: 10px; }
+
+    .warn-strip {
+      background: var(--red-soft);
+      border-left: 6px solid var(--red-dark);
+      border-radius: 6px;
+      padding: 11px 15px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .warn-strip b { color: var(--red-dark); }
+
+    table.bt { width: 100%; border-collapse: collapse; font-size: 18px; }
+    table.bt th, table.bt td { padding: 8px 12px; text-align: right; border-bottom: 1px solid var(--line); }
+    table.bt th { font-size: 16px; font-weight: 900; color: var(--muted); }
+    table.bt td:first-child, table.bt th:first-child { text-align: left; }
+    table.bt td:not(:first-child) { text-align: left; }
+    table.bt tr:last-child td { border-bottom: none; }
+    table.bt tr.hi td { background: var(--yellow-soft); font-weight: 900; }
+
+    .formula-block {
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 17.5px;
+      line-height: 1.55;
+      font-weight: 700;
+      background: #10222f;
+      color: #d9e6ee;
+      border-radius: 7px;
+      padding: 14px 18px;
+      white-space: pre;
+      overflow: hidden;
+    }
+    .formula-block .cmt { color: #8fb3c6; font-weight: 400; }
+
+    /* ---------- 图：靶点算力分档决策 ---------- */
+    .dec-layout {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1.16fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .edge-box {
+      border: 2px solid var(--line);
+      border-radius: 7px;
+      padding: 10px 14px;
+      font-size: 16.5px;
+      line-height: 1.45;
+      background: var(--gray-soft);
+    }
+    .edge-box b { font-size: 17.5px; }
+    .edge-box + .edge-box { margin-top: 12px; }
+    .edge-box .eb-no { color: var(--red-dark); font-weight: 900; }
+  </style>
+</head>
+<body>
+
+<!-- 图：靶点算力分档与投入决策 -->
+<section class="figure" data-figure="decision" style="--accent:var(--teal)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 06 课 · 其余路线全景</div>
+      <h1>靶点算力分档：从 beta_frac 到「该往哪儿投」</h1>
+    </div>
+    <div class="subtitle">
+      拿到 300 个靶点，先剔零覆盖，再分档。<br>
+      阈值 0.70 / 0.50 是工程假设，不是物理常数；<br>
+      判据永远是第 04 课的噪声地板。
+    </div>
+  </header>
+
+  <main class="dec-layout">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">分量口径：β 共享、Γ 特异，B1 只建模 β</div>
+        <span class="tag teal">anova.py:68-72 转写</span>
+      </div>
+      <div class="formula-block">Δ(c,t,g) = β̄(t,g)  +  Γ(c,t,g)  +  ε
+              └共享·可迁移┘   └背景特异·交互┘
+
+beta_frac(t) = Var(β_t) / [ Var(β_t) + mean_c Var(Γ_(c,t)) ]</div>
+      <div class="note-box" style="margin-top: 14px;">
+        <b>β 是跨背景共享分量</b>——B1 一个纯查找表就能估准；<b>Γ 稀疏、难学、易被噪声淹没</b>。一个高容量模型要赢，必须证明它的额外收益来自 Γ。
+      </div>
+      <table class="bt" style="margin-top: 16px;">
+        <tr><th>情形</th><th>该用哪一级</th><th>理由</th></tr>
+        <tr class="hi"><td>目标在所有训练背景<b>零覆盖</b></td><td><b>B0</b></td><td>无干预证据；名字相似 ≠ 效应相似</td></tr>
+        <tr><td><code>beta_frac</code> ≥ 0.70（β 主导）</td><td><b>B1 就够</b></td><td>查找表已吃到共享分量大头</td></tr>
+        <tr><td>0.50–0.70（中间档）</td><td>先 B1 再试 B2/B3</td><td>必须有外层 fold 证据才升级</td></tr>
+        <tr><td>&lt; 0.50（Γ 主导）</td><td><b>B2/B3 或 State</b></td><td>高容量唯一可能回本的档</td></tr>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">匿名背景强加的三条边界</div>
+        <span class="tag red">A–F 只有字母标签</span>
+      </div>
+      <div class="edge-box">
+        <b>① B2 的相似性只能盲猜。</b>无法预先知道哪个公开细胞系与目标背景相似；B2 反例：跨实验室/跨平台留出上比 B1 差 <span class="eb-no">0.054</span>，是它同平台赢到 0.003 的十倍以上。
+      </div>
+      <div class="edge-box">
+        <b>② 覆盖未知。</b>300 个靶点里零覆盖的比例直接决定 B0 回退比例，而这个比例在 A–F 上<b>无法预先测量</b>。
+      </div>
+      <div class="edge-box">
+        <b>③ B3 的 a_c 必须可外推。</b>只能是 NTC 摘要的函数，不能是背景 ID 的 embedding——否则在测试背景上没有定义（scGPT / AlphaCell 同栽在这类「不可外推的靶点身份」上）。
+      </div>
+      <div class="warn-strip" style="margin-top: 14px;">
+        <b>阈值要自己找拐点。</b>在公开真值面板上同时记录 <code>beta_frac</code> 与 B1 的实测分数，按分数曲线定分档线；0.70 / 0.50 只是本课的占位假设。
+      </div>
+    </div>
+  </main>
+
+  <div class="takeaway">
+    <strong>先剔零覆盖，再按 beta_frac 分档</strong>
+    <span>分数差不超过第 04 课噪声地板就不算改进；读平均分之前先读分档——平均分抬不动一次跨平台失败。复现：notebook 08 单元 5、notebook 09 单元 4。</span>
+  </div>
+</section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["decision"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      const selected = document.querySelector(`[data-figure="${requested}"]`);
+      selected.classList.add("active");
+    }
+  </script>
+</body>
+</html>
