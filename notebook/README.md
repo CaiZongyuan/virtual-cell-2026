@@ -22,7 +22,6 @@
 | 02 | `06_state_anatomy.ipynb` | State 架构解剖：集合注意力的置换等变性、Energy 距离 vs MSE、残差加回与参数量分解（纯 NumPy，不装 torch）。正文 §7.3 已回指本 notebook |
 | L1-01 | —（豁免） | 纯阅读课：§6 的「可复现实践」是**填一张赌注对照表**（材料 × 赌注 × 核心假设 × 天花板判据 × 本赛可用性），产物是读者自己的判断表，不存在需要 kernel 执行的计算。本课零算力，见 `docs/lessons/README.md` 阶段表第 1 阶段「纯阅读，零算力」 |
 | L1-02 | `05_noise_floor.ipynb` | 噪声地板的两种口径、背景间距离分母与缩放曲线 |
-| L2-01 | `06_state_anatomy.ipynb` | 集合注意力的置换等变性、Energy 距离 vs MSE、残差加回与参数量分解（纯 NumPy，不装 torch） |
 | L2-02 | `07_stack_icl_context.ipynb` | Stack 的窗口切分与查询细胞复制、双轴注意力显存与 8 GiB batch 边界、参数量手算对表、`T=5` 生成计划、上下文敏感性对照（纯 NumPy） |
 | L2-03 | `08_foundation_model_routes.ipynb` | scGPT 分层参数量与「为什么不给总数」、零表达靶点的接口可区分性、四分量 ANOVA 的 beta_frac 分档、B1 与「完美知道 Γ」上界的机会窗口（合成数据，纯 NumPy） |
 | L2-04 | `09_simple_baselines.ipynb` | B0/B1 手算与课文 §8.1 逐位对表、中位数 vs 均值的稳健性（异常背景）、LOCO 协议骨架与零覆盖回退 B0、B2 相似度加权的权重集中、把「B1 是否真的优于 B0」接到噪声地板的机械判定（合成数据，纯 NumPy） |
