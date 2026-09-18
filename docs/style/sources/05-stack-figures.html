@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 第 05 课 Stack 上下文机制教学图</title>
+  <style>
+    :root {
+      --paper: #f6f8f9;
+      --white: #ffffff;
+      --ink: #172a3a;
+      --muted: #5e707b;
+      --line: #cbd6db;
+      --navy: #244e72;
+      --navy-soft: #e2ebf2;
+      --teal: #16847b;
+      --teal-dark: #0e655f;
+      --teal-soft: #dcefeb;
+      --yellow: #d3a529;
+      --yellow-soft: #f9edbd;
+      --red: #ce594c;
+      --red-dark: #963d35;
+      --red-soft: #f7dfdc;
+      --gray: #8b9aa2;
+      --gray-soft: #edf1f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dfe5e8;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    body.single { width: 1600px; height: 900px; overflow: hidden; }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 12px solid var(--accent, var(--navy));
+      padding: 34px 50px 28px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 520px;
+      gap: 30px;
+      align-items: end;
+      min-height: 96px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .kicker {
+      margin-bottom: 6px;
+      color: var(--accent, var(--navy));
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    h1 { margin: 0; font-size: 40px; line-height: 1.18; font-weight: 900; }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .subtitle code, .note-box code, .takeaway code, .panel-copy code {
+      font-size: 0.94em;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--ink);
+    }
+
+    .takeaway {
+      position: absolute;
+      left: 50px;
+      right: 50px;
+      bottom: 26px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      align-items: center;
+      background: var(--white);
+      border-left: 8px solid var(--accent, var(--navy));
+      border-radius: 6px;
+      padding: 14px 20px;
+      font-size: 18px;
+      line-height: 1.45;
+      box-shadow: 0 1px 3px rgba(23, 42, 58, .13);
+    }
+
+    .takeaway strong { font-size: 19px; font-weight: 900; line-height: 1.3; }
+    .takeaway span { color: var(--muted); }
+
+    .panel {
+      background: var(--white);
+      border: 2px solid var(--panel-color, var(--line));
+      border-radius: 9px;
+      padding: 18px 22px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .panel-title { font-size: 23px; font-weight: 900; }
+    .panel-copy { margin-top: 5px; color: var(--muted); font-size: 17px; line-height: 1.45; }
+
+    .tag {
+      flex: none;
+      border-radius: 999px;
+      padding: 5px 13px;
+      font-size: 15px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .tag.navy { background: var(--navy-soft); color: var(--navy); }
+    .tag.teal { background: var(--teal-soft); color: var(--teal-dark); }
+    .tag.red  { background: var(--red-soft);  color: var(--red-dark); }
+    .tag.gray { background: var(--gray-soft); color: #4d5b63; }
+    .tag.gold { background: var(--yellow-soft); color: #7a5c05; }
+
+    .note-box {
+      border-left: 5px solid var(--panel-color, var(--gray));
+      background: var(--gray-soft);
+      border-radius: 5px;
+      padding: 10px 14px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .note-box + .note-box { margin-top: 10px; }
+
+    .warn-strip {
+      background: var(--red-soft);
+      border-left: 6px solid var(--red-dark);
+      border-radius: 6px;
+      padding: 11px 15px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .warn-strip b { color: var(--red-dark); }
+
+    table.bt { width: 100%; border-collapse: collapse; font-size: 18px; }
+    table.bt th, table.bt td { padding: 8px 12px; text-align: right; border-bottom: 1px solid var(--line); }
+    table.bt th { font-size: 16px; font-weight: 900; color: var(--muted); }
+    table.bt td:first-child, table.bt th:first-child { text-align: left; }
+    table.bt tr:last-child td { border-bottom: none; }
+    table.bt tr.hi td { background: var(--yellow-soft); font-weight: 900; }
+
+    .formula-block {
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 17.5px;
+      line-height: 1.55;
+      font-weight: 700;
+      background: #10222f;
+      color: #d9e6ee;
+      border-radius: 7px;
+      padding: 14px 18px;
+      white-space: pre;
+      overflow: hidden;
+    }
+    .formula-block .cmt { color: #8fb3c6; font-weight: 400; }
+
+    /* ---------- 图 1：T=5 生成计划 ---------- */
+    .genplan-layout {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1.06fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .step-row {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .step-row:last-child { margin-bottom: 0; }
+    .step-label { font-size: 17px; font-weight: 900; color: var(--muted); }
+    .step-track {
+      display: flex;
+      height: 36px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .seg {
+      display: flex;
+      align-items: center;
+      padding-left: 11px;
+      font-size: 15.5px;
+      font-weight: 900;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .seg.prompt { background: var(--teal); }
+    .seg.query { background: var(--navy); }
+
+    /* ---------- 图 2：窗口切分与复制行 ---------- */
+    .win-layout {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1.04fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .qbar {
+      display: flex;
+      height: 44px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      margin-bottom: 6px;
+    }
+    .qbar .q {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15.5px;
+      font-weight: 900;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .qbar .q1 { background: var(--teal); }
+    .qbar .q2 { background: var(--navy); }
+    .qbar .q3 { background: var(--teal-dark); }
+
+    .qbar-ticks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-family: "Consolas", "Courier New", monospace;
+    }
+
+    .win-chips { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .chip {
+      border: 2px solid var(--line);
+      border-radius: 7px;
+      padding: 9px 12px;
+      font-size: 16px;
+      line-height: 1.4;
+      background: var(--gray-soft);
+    }
+    .chip b { font-size: 17px; }
+    .chip .copy-note { color: var(--red-dark); font-weight: 900; }
+  </style>
+</head>
+<body>
+
+<!-- 图 1：T=5 迭代生成计划 -->
+<section class="figure" data-figure="genplan" style="--accent:var(--teal)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 05 课 · Stack 上下文学习</div>
+      <h1>先粗后细：T=5 的迭代生成计划</h1>
+    </div>
+    <div class="subtitle">
+      这是推理时的循环，不是训练：权重全程不动。每步用同一个窗口切分公式<br>
+      （<code>prompt_ratio = 0.25</code> 固定，<code>context_ratio</code> 逐步递增），<code>K = 512</code>。<br>
+      数字全部来自源码 <code>get_incontext_generation</code> 静态核验，非实测。
+    </div>
+  </header>
+
+  <main class="genplan-layout">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">两张表决定每一步的窗口</div>
+        <span class="tag teal">源码默认 num_steps = 5</span>
+      </div>
+      <div class="formula-block">t  = (arange(T)+1)/T   → [0.2,  0.4,  0.6,  0.8,  1.0 ]
+mr = 1 − t            → [0.8,  0.6,  0.4,  0.2,  0.0 ]  <span class="cmt">还剩多少待预测</span>
+cr = linspace(0.2,0.4,T) → [0.2, 0.25, 0.3, 0.35, 0.4 ]  <span class="cmt">提示占比递增</span></div>
+      <div style="margin-top: 18px;">
+        <div class="step-row">
+          <div class="step-label">步 1</div>
+          <div class="step-track"><div class="seg prompt" style="width:45.1%">提示 231</div><div class="seg query" style="width:54.9%">查询 281</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-label">步 2</div>
+          <div class="step-track"><div class="seg prompt" style="width:50%">提示 256</div><div class="seg query" style="width:50%">查询 256</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-label">步 3</div>
+          <div class="step-track"><div class="seg prompt" style="width:55.1%">提示 282</div><div class="seg query" style="width:44.9%">查询 230</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-label">步 4</div>
+          <div class="step-track"><div class="seg prompt" style="width:60.2%">提示 308</div><div class="seg query" style="width:39.8%">查询 204</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-label">步 5</div>
+          <div class="step-track"><div class="seg prompt" style="width:65%">提示 333</div><div class="seg query" style="width:35%">查询 179</div></div>
+        </div>
+      </div>
+      <div class="note-box" style="margin-top: 18px;">
+        <b>先粗后细</b>：早期大部分细胞还没赋值（<code>mask_rate</code> 高），模型用少量提示做粗推断；后期把已生成的细胞回填进上下文，逐步细化。
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">五个步骤</div>
+        <span class="tag gray">K = 512，prompt_ratio = 0.25</span>
+      </div>
+      <table class="bt">
+        <tr><th>步</th><th>mask_rate</th><th>context_ratio</th><th>提示细胞</th><th>查询细胞</th></tr>
+        <tr><td>1</td><td>0.80</td><td>0.20</td><td>231</td><td>281</td></tr>
+        <tr><td>2</td><td>0.60</td><td>0.25</td><td>256</td><td>256</td></tr>
+        <tr><td>3</td><td>0.40</td><td>0.30</td><td>282</td><td>230</td></tr>
+        <tr><td>4</td><td>0.20</td><td>0.35</td><td>308</td><td>204</td></tr>
+        <tr class="hi"><td>5</td><td>0.00</td><td>0.40</td><td>333</td><td>179</td></tr>
+      </table>
+      <div class="note-box" style="margin-top: 16px; --panel-color: var(--yellow);">
+        <b>第 5 步 <code>mask_rate = 0</code></b>：最后一步不再掩码，是对完整窗口做的一次<b>一致性前向</b>——生成已经完成，这一步让全部细胞（含回填的）互相看一遍。
+      </div>
+      <div class="note-box" style="margin-top: 12px;">
+        提示细胞从哪来？源码取模回绕复用 base 池——<b>提示侧永远是那批已知的细胞，不会用生成结果冒充提示</b>；回填只发生在查询侧。
+      </div>
+    </div>
+  </main>
+
+  <div class="takeaway">
+    <strong>提示 231 → 333，查询 281 → 179</strong>
+    <span>同一个权重，五步从「少提示粗推断」走到「多提示细生成」。想复现这张表，跑 notebook 07 单元四；窗口怎么切出来 231/281，见第二幅图。</span>
+  </div>
+</section>
+
+<!-- 图 2：窗口切分与 137 个复制行 -->
+<section class="figure" data-figure="windows" style="--accent:var(--red)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 05 课 · Stack 上下文学习</div>
+      <h1>窗口切分与 137 个重复行</h1>
+    </div>
+    <div class="subtitle">
+      每靶点恰好 400 个细胞，几乎不可能被窗口整除。<br>
+      尾组不足时源码用 <code>test_indices[:need]</code> 从头补齐——<br>
+      这是既定行为，不是 bug；后果必须自己处理。
+    </div>
+  </header>
+
+  <main class="win-layout">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">决定切分的四行源码</div>
+        <span class="tag navy">inference.py · get_incontext_prediction</span>
+      </div>
+      <div class="formula-block">ratio  = prompt_ratio + context_ratio   <span class="cmt"># 默认 0.25 + 0.4 = 0.65</span>
+n_test = int(n_cells * (1 - ratio))     <span class="cmt"># 查询侧 35%</span>
+n_base = n_cells - n_test</div>
+      <div class="warn-strip" style="margin-top: 14px;">
+        <b>论文和源码在这里不一致。</b>论文正文说提示条件占 25%；源码里决定比例的是<b>两者之和</b>（0.65）。照论文理解会把查询侧算多一倍（35% vs 25%）。
+      </div>
+      <div class="note-box" style="margin-top: 12px;">
+        另一个按源码读的行为：<b>base 池用尽会取模回绕</b>，复用提示细胞。提示/查询比例随 <code>context_ratio</code> 可调，<code>K</code> 是运行时窗口，不是结构约束。
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">本赛 400 个细胞的三档切分</div>
+        <span class="tag gray">K = 512，prompt_ratio = 0.25</span>
+      </div>
+      <table class="bt">
+        <tr><th>context_ratio</th><th>提示侧</th><th>查询侧</th><th>窗口数</th><th>被复制的查询细胞</th></tr>
+        <tr><td>0.20</td><td>231</td><td>281</td><td>2</td><td>162 / 400</td></tr>
+        <tr><td>0.25</td><td>256</td><td>256</td><td>2</td><td>112 / 400</td></tr>
+        <tr class="hi"><td>0.40</td><td>333</td><td>179</td><td>3</td><td>137 / 400</td></tr>
+      </table>
+      <div class="note-box" style="margin-top: 14px;">
+        预训练档 <code>K=256</code>：cr=0.25 → 128 / 128 / 4 窗口 / 复制 112；cr=0.40 → 167 / 89 / 5 窗口 / 复制 45。
+      </div>
+    </div>
+  </main>
+
+  <div class="panel" style="margin-top: 18px;">
+    <div class="panel-head">
+      <div class="panel-title">137 个重复行是怎么来的（cr = 0.40，查询侧 179）</div>
+      <span class="tag red">输出里同一个细胞被算两次</span>
+    </div>
+    <div class="qbar">
+      <div class="q q1" style="width:44.75%">查询 0–179</div>
+      <div class="q q2" style="width:44.75%">查询 179–358</div>
+      <div class="q q3" style="width:10.5%">358–400（剩 42）</div>
+    </div>
+    <div class="qbar-ticks"><span>0</span><span>179</span><span>358</span><span>400</span></div>
+    <div class="win-chips">
+      <div class="chip"><b>窗口 1</b><br>179 个真实查询细胞</div>
+      <div class="chip"><b>窗口 2</b><br>179 个真实查询细胞</div>
+      <div class="chip"><b>窗口 3</b><br>42 个真实 + <span class="copy-note">137 个复制</span><br><span class="copy-note">↩ test_indices[:137]，复制开头的查询细胞 0–136</span></div>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <strong>合同线全绿，分布线已经错了</strong>
+    <span>重复行对方差的贡献是 0，群体分布线被拉偏，而格式检查发现不了。修法：保留每个查询细胞第一次出现的行、按原顺序输出——不依赖整除性这个巧合。复现数字：notebook 07 单元一（SEED=20260917）。</span>
+  </div>
+</section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["genplan", "windows"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      const selected = document.querySelector(`[data-figure="${requested}"]`);
+      selected.classList.add("active");
+    }
+  </script>
+</body>
+</html>
