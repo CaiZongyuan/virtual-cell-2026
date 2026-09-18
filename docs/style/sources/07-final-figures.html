@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>VC2026 第 07 课 · 最终轮</title>
+<style>
+  :root {
+    --paper: #f7f8fa;
+    --ink: #1a2332;
+    --muted: #5b6b7f;
+    --line: #dde3ea;
+    --teal: #0f766e;
+    --teal-soft: #e0f2f0;
+    --navy: #16324f;
+    --red: #b91c1c;
+    --red-dark: #8a2b2b;
+    --red-soft: #fdeaea;
+    --yellow-soft: #fdf3d7;
+    --amber-dark: #92600a;
+    --box: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+  body.single { width: 1600px; height: 840px; overflow: hidden; }
+
+  .figure {
+    position: relative;
+    width: 1600px;
+    height: 840px;
+    margin: 28px auto;
+    overflow: hidden;
+    background: var(--paper);
+    border-top: 12px solid var(--accent, var(--navy));
+    padding: 34px 50px 28px;
+  }
+  body.single .figure { display: none; margin: 0; }
+  body.single .figure.active { display: block; }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 30px;
+    align-items: end;
+    min-height: 96px;
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 14px;
+  }
+  .kicker {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: var(--accent, var(--teal));
+    line-height: 1.2;
+  }
+  h1 { margin: 0; font-size: 40px; line-height: 1.18; font-weight: 900; }
+  .header-note {
+    text-align: right;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .cols {
+    display: grid;
+    grid-template-columns: 900px 1fr;
+    gap: 28px;
+    margin-top: 26px;
+  }
+
+  .panel {
+    background: var(--box);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .panel-title { font-size: 23px; font-weight: 900; }
+  .panel-copy { margin-top: 4px; color: var(--muted); font-size: 16px; line-height: 1.4; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 40px 1fr 185px;
+    gap: 12px;
+    align-items: start;
+    padding: 8px 0 7px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-no {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--accent, var(--teal));
+    color: #ffffff;
+    font-size: 19px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step-body b { font-size: 17px; }
+  .step-body .sd { color: var(--muted); font-size: 14.5px; margin-top: 2px; line-height: 1.4; }
+  .step-out {
+    font-size: 14px; color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 7px 10px;
+    line-height: 1.4;
+  }
+  .step-out .so-k { color: var(--accent, var(--teal)); font-weight: 900; }
+
+  .edge-box {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--red);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15.5px;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+  .edge-box .eb-no { color: var(--red-dark); font-weight: 900; }
+
+  .warn-strip {
+    margin-top: 16px;
+    background: var(--red-soft);
+    border: 1px solid #efc4c4;
+    border-left: 5px solid var(--red);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .warn-strip b { color: var(--red-dark); }
+
+  .takeaway {
+    position: absolute;
+    left: 50px; right: 50px; bottom: 26px;
+    background: var(--teal-soft);
+    border: 1px solid #b8dcd8;
+    border-left: 6px solid var(--teal);
+    border-radius: 10px;
+    padding: 15px 22px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: center;
+    min-height: 96px;
+  }
+  .takeaway strong { font-size: 19px; font-weight: 900; line-height: 1.3; }
+  .takeaway p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--ink); }
+  .takeaway code {
+    font-family: Consolas, monospace;
+    background: rgba(15, 118, 110, 0.08);
+    border-radius: 4px;
+    padding: 0 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="figure" id="timeline" style="--accent: var(--teal);">
+  <div class="header">
+    <div>
+      <div class="kicker">VC2026 第 07 课 · 最终轮</div>
+      <h1>14 天作战板：D/E/F 到达后每一步都预先排好</h1>
+    </div>
+    <div class="header-note">
+      D/E/F 于 2026-10-22 发布，截止 2026-11-05 23:59 UTC（北京 11-06 07:59）。<br>
+      五步只执行 §4 冻结清单里写过的决定；任何临场新想法都进不了这 14 天。
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="panel">
+      <div class="panel-title">固定执行顺序：五步，只执行不决策</div>
+      <div class="panel-copy">每步的输入与产物都在冻结清单里预先声明；产物必须带指纹（哈希、种子、配置）。</div>
+
+      <div class="step">
+        <div class="step-no">1</div>
+        <div class="step-body"><b>确认数据身份</b>
+          <div class="sd">记录哈希；读 <code>manifest.json</code>；确认是 final/test 包而不是 validation 缓存。</div>
+        </div>
+        <div class="step-out"><span class="so-k">产物</span><br>机器可读合同审计报告</div>
+      </div>
+
+      <div class="step">
+        <div class="step-no">2</div>
+        <div class="step-body"><b>审计 D/E/F NTC</b>
+          <div class="sd">复用 A/B/C 已验证的 QC 代码：总 UMI、检测基因、稀疏项、相对训练背景的距离。</div>
+        </div>
+        <div class="step-out"><span class="so-k">产物</span><br>NTC 审计 + 分布漂移诊断</div>
+      </div>
+
+      <div class="step">
+        <div class="step-no">3</div>
+        <div class="step-body"><b>执行冻结的 NTC-only 适配</b>
+          <div class="sd">只更新冻结清单允许的统计量（context 表示、归一化统计）；规则已在公开 LOCO 验证。</div>
+        </div>
+        <div class="step-out"><span class="so-k">产物</span><br>带指纹的适配工件</div>
+      </div>
+
+      <div class="step">
+        <div class="step-no">4</div>
+        <div class="step-body"><b>生成 360,000 行 + 双层审计</b>
+          <div class="sd">模型审计（delta 范数、成员分歧、种子稳定性）与合同审计（行数、基因轴、CSR）分开跑。</div>
+        </div>
+        <div class="step-out"><span class="so-k">产物</span><br>prediction.h5ad + 两份审计摘要</div>
+      </div>
+
+      <div class="step">
+        <div class="step-no">5</div>
+        <div class="step-body"><b>预检、打包、归档</b>
+          <div class="sd"><code>vcc prep --dry-run</code> 通过后出 <code>.vcc</code>；配置、种子、哈希与选择理由归档。</div>
+        </div>
+        <div class="step-out"><span class="so-k">产物</span><br>最终 .vcc + 完整审计包</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">三条红线：14 天里不许做的事</div>
+      <div class="edge-box"><span class="eb-no">① 不调集成权重。</span>权重在 A/B/C 的冻结 LOCO 验证里定死；D/E/F 没有扰动真值，任何「再配一次」都无法检查。</div>
+      <div class="edge-box"><span class="eb-no">② 不换验证划分或模型结构。</span>此时改动等于在没有考卷的考场上换答案；代码修复只许纠实现错误并记录前后差异。</div>
+      <div class="edge-box"><span class="eb-no">③ 不手工改任何 target 的矩阵。</span>异常只能走自动流水线的可复现规则；手改一个数，整条证据链作废。</div>
+      <div class="warn-strip"><b>背景标签错位是最危险的静默故障。</b>交换 B/C 后文件依然合法，官方 FAQ 明确提醒它会让所有指标接近随机 [S2]——项目检查器必须把每个输出 context 绑定到来源 NTC 文件。</div>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <strong>全部决策在 10-22 之前做完</strong>
+    <p>14 天只做执行、审计与归档。验证划分、模型结构、集成权重、生成器若此时还没冻结——不是「来不及补」，而是<b>没有真值可以补</b>。复现：notebook 11 的判定函数与 notebook 03 的预算复算。</p>
+  </div>
+</div>
+
+<script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["timeline"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error("Unknown figure: " + requested);
+      document.body.classList.add("single");
+      const selected = document.getElementById(requested);
+      selected.classList.add("active");
+    }
+</script>
+</body>
+</html>
