@@ -81,6 +81,18 @@ LIMIT_CHARS = 30_000
 MIN_FIGURES = 3      # 正文以 ![...](path) 引用 assets 下图片的计数
 MIN_ASCII = 8        # ``` 围栏块且语言标注为 text 的计数
 
+# 单课行数上限覆盖：**每条都必须给理由**。
+#
+# 背景：D3 的 700 行标尺取自 02 课，而 02 只吸收了一门旧课（L2-01）。
+# #16 要求 03 吸收**三门**旧课（L3-04 849 行 + L3-03 438 行 + L3-02 419 行
+# = 1706 行 / 61,124 字），三合一后 700 行意味着再砍 34%，只能靠删除实质内容。
+# 2026-09-18 用户裁决：本课以**字数**（≤30,000）作主约束，行数放宽。
+# 判定逻辑与 EXEMPT 不同：这是**放宽阈值**，不是豁免检查——超限仍会 FAIL。
+LINE_LIMIT_OVERRIDE: dict[str, tuple[int, str]] = {
+    "03": (1100, "吸收三门旧课（L3-04/L3-03/L3-02 合计 1706 行），"
+                 "D3 的 700 行标尺按「一课吸收一课」定；用户裁决以字数作主约束"),
+}
+
 # 诊断题的不同写法（各课历史上用过不同标题）
 DIAG_RE = re.compile(r"诊断题|理解检查题|自检问题|检查题")
 
@@ -403,15 +415,21 @@ def check_course(c: dict, nb_map: dict[str, list[str]]) -> dict:
                       "figures": figs, "ascii": ascii_blocks}
 
     if c.get("continuous"):
+        # 单课行数上限覆盖（已给理由的放宽，不是豁免：超限仍 FAIL）。
+        lim_lines, lim_note = LINE_LIMIT_OVERRIDE.get(
+            c["num"], (LIMIT_LINES, None))
         over = []
-        if lines > LIMIT_LINES:
-            over.append("%d 行 > %d" % (lines, LIMIT_LINES))
+        if lines > lim_lines:
+            over.append("%d 行 > %d" % (lines, lim_lines))
         if chars > LIMIT_CHARS:
             over.append("%d 字 > %d" % (chars, LIMIT_CHARS))
         if over:
             res["checks"]["LIMITS"] = ("FAIL", "篇幅超限：" + "；".join(over))
         else:
-            res["checks"]["LIMITS"] = ("PASS", "%d 行 / %d 字" % (lines, chars))
+            detail = "%d 行 / %d 字" % (lines, chars)
+            if lim_note:
+                detail += "（行数上限放宽至 %d：%s）" % (lim_lines, lim_note)
+            res["checks"]["LIMITS"] = ("PASS", detail)
 
         if figs < MIN_FIGURES:
             res["checks"]["FIGURES"] = ("FAIL", "正式配图 %d 张 < %d"

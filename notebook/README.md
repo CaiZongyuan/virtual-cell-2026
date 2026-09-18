@@ -20,6 +20,7 @@
 | 00 | —（豁免） | 纯阅读课：正文已发布飞书并冻结，且早于完成度契约。官方 Colab 固定副本 `90_ref_*`/`91_ref_*` 已在下方单独声明，不属于课程序列 |
 | 01 | `01_vc2026_data.ipynb` | 数据合同与真实数据审计；正文已发布飞书冻结，回指由本表补齐 |
 | 02 | `06_state_anatomy.ipynb` | State 架构解剖：集合注意力的置换等变性、Energy 距离 vs MSE、残差加回与参数量分解（纯 NumPy，不装 torch）。正文 §7.3 已回指本 notebook |
+| 03 | `02_state_model_and_transfer.ipynb`、`03_finetuning_counts_and_budget.ipynb` | State 接口迁移与微调落地：02 读固定官方 YAML 核对两套配置（328/2,000 vs 768/18,533）、按基因名称迁移的权重错位实验；03 做教学计数生成、H5AD 写入/读回、400-cell 输出合同检查与可拖动的预算计算器。**边界**：两个 notebook 都是纯 NumPy 教学复现，不在本机跑 `arc-state` 微调（本机装不了，正文 §6 已说明） |
 | L1-01 | —（豁免） | 纯阅读课：§6 的「可复现实践」是**填一张赌注对照表**（材料 × 赌注 × 核心假设 × 天花板判据 × 本赛可用性），产物是读者自己的判断表，不存在需要 kernel 执行的计算。本课零算力，见 `docs/lessons/README.md` 阶段表第 1 阶段「纯阅读，零算力」 |
 | L1-02 | `05_noise_floor.ipynb` | 噪声地板的两种口径、背景间距离分母与缩放曲线 |
 | L2-02 | `07_stack_icl_context.ipynb` | Stack 的窗口切分与查询细胞复制、双轴注意力显存与 8 GiB batch 边界、参数量手算对表、`T=5` 生成计划、上下文敏感性对照（纯 NumPy） |

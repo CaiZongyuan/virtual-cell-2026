@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 第 03 课 State 上手教学图</title>
+  <style>
+    :root {
+      --paper: #f6f8f9;
+      --white: #ffffff;
+      --ink: #172a3a;
+      --muted: #5e707b;
+      --line: #cbd6db;
+      --navy: #244e72;
+      --navy-soft: #e2ebf2;
+      --teal: #16847b;
+      --teal-dark: #0e655f;
+      --teal-soft: #dcefeb;
+      --yellow: #d3a529;
+      --yellow-soft: #f9edbd;
+      --red: #ce594c;
+      --red-dark: #963d35;
+      --red-soft: #f7dfdc;
+      --gray: #8b9aa2;
+      --gray-soft: #edf1f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dfe5e8;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    body.single { width: 1600px; height: 900px; overflow: hidden; }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 12px solid var(--accent, var(--navy));
+      padding: 34px 50px 28px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 500px;
+      gap: 30px;
+      align-items: end;
+      min-height: 100px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 15px;
+    }
+
+    .kicker {
+      margin-bottom: 6px;
+      color: var(--accent, var(--navy));
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    h1 { margin: 0; font-size: 40px; line-height: 1.18; font-weight: 900; }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .subtitle code, .note-box code, .takeaway code, .stage-n code, .panel-copy code {
+      font-size: 0.94em;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--ink);
+    }
+
+    .takeaway {
+      position: absolute;
+      left: 50px;
+      right: 50px;
+      bottom: 26px;
+      display: grid;
+      grid-template-columns: 236px 1fr;
+      gap: 20px;
+      align-items: center;
+      background: var(--white);
+      border-left: 8px solid var(--accent, var(--navy));
+      border-radius: 6px;
+      padding: 15px 20px;
+      font-size: 19px;
+      line-height: 1.45;
+      box-shadow: 0 1px 3px rgba(23, 42, 58, .13);
+    }
+
+    .takeaway strong { font-size: 20px; font-weight: 900; line-height: 1.3; }
+    .takeaway span { color: var(--muted); }
+
+    /* ---------- 通用零件 ---------- */
+    .panel {
+      background: var(--white);
+      border: 2px solid var(--panel-color, var(--line));
+      border-radius: 9px;
+      padding: 20px 22px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .panel-title { font-size: 23px; font-weight: 900; }
+    .panel-copy { margin-top: 5px; color: var(--muted); font-size: 17px; line-height: 1.45; }
+
+    .tag {
+      flex: none;
+      border-radius: 999px;
+      padding: 5px 13px;
+      font-size: 15px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .tag.navy { background: var(--navy-soft); color: var(--navy); }
+    .tag.teal { background: var(--teal-soft); color: var(--teal-dark); }
+    .tag.red  { background: var(--red-soft);  color: var(--red-dark); }
+    .tag.gray { background: var(--gray-soft); color: #4d5b63; }
+    .tag.gold { background: var(--yellow-soft); color: #7a5c05; }
+
+    .note-box {
+      border-left: 5px solid var(--panel-color, var(--gray));
+      background: var(--gray-soft);
+      border-radius: 5px;
+      padding: 11px 14px;
+      font-size: 17px;
+      line-height: 1.46;
+    }
+
+    /* ---------- 图 1：换接口 ---------- */
+    .swap-layout {
+      display: grid;
+      grid-template-columns: 1fr 62px 1fr;
+      gap: 10px;
+      align-items: start;
+      margin-top: 24px;
+    }
+
+    .stack { display: flex; flex-direction: column; gap: 12px; }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 14px;
+      border-radius: 7px;
+      padding: 20px 18px;
+      border: 2px solid var(--c, var(--line));
+      background: var(--cs, #fff);
+      font-size: 18px;
+      line-height: 1.34;
+    }
+    .layer b { font-size: 19px; font-weight: 900; }
+    .layer .shape { font-size: 16px; color: var(--muted); font-weight: 700; }
+
+    .verdict {
+      font-size: 16px;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 4px 12px;
+      white-space: nowrap;
+    }
+    .v-keep { background: #d8f0e6; color: #14603f; }
+    .v-copy { background: var(--yellow-soft); color: #7a5c05; }
+    .v-new  { background: var(--red-soft);  color: var(--red-dark); }
+    .v-off  { background: var(--gray-soft); color: #4d5b63; }
+
+    .mid-arrow {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--gray);
+      line-height: 1;
+    }
+
+    .lane-title {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--accent, var(--navy));
+    }
+    .lane-title span { color: var(--muted); font-size: 17px; font-weight: 700; }
+
+    .ratio {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .ratio .r-item {
+      border-radius: 7px;
+      padding: 11px 14px;
+      font-size: 17px;
+      line-height: 1.4;
+      border: 2px dashed var(--line);
+      background: var(--white);
+    }
+    .ratio .r-item b { display: block; font-size: 19px; margin-bottom: 3px; }
+
+    /* ---------- 图 2：计数生成缺口 ---------- */
+    .pipe {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 48px 1fr 48px 1fr;
+      align-items: stretch;
+      gap: 4px;
+    }
+
+    .pnode {
+      border-radius: 9px;
+      border: 2px solid var(--c, var(--line));
+      background: var(--cs, #fff);
+      padding: 20px 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .pnode .pt { font-size: 20px; font-weight: 900; }
+    .pnode .pd { font-size: 16.5px; line-height: 1.45; color: var(--muted); }
+    .pnode .pnum {
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--gray-soft);
+      border-radius: 4px;
+      padding: 5px 8px;
+      line-height: 1.35;
+    }
+    .pnode.gap { border-style: dashed; border-color: var(--red); background: var(--red-soft); }
+    .pnode.gap .pt { color: var(--red-dark); }
+
+    .parrow { display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 900; color: var(--gray); }
+
+    .math-strip {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .math-card {
+      background: var(--white);
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+    .math-card .mt { font-size: 19px; font-weight: 900; margin-bottom: 11px; }
+    .math-card .mline {
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .math-card .mnote { margin-top: 9px; font-size: 16px; line-height: 1.45; color: var(--muted); }
+
+    .steps {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 9px;
+    }
+    .step {
+      background: var(--white);
+      border: 2px solid var(--line);
+      border-top: 6px solid var(--c, var(--navy));
+      border-radius: 7px;
+      padding: 11px 12px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .step b { display: block; font-size: 17px; margin-bottom: 4px; font-weight: 900; }
+    .step.key { background: var(--teal-soft); border-color: var(--teal); border-top-color: var(--teal); }
+    .step.key b { color: var(--teal-dark); }
+
+    /* ---------- 图 3：预算 ---------- */
+    .budget-layout {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1.06fr 1fr;
+      gap: 22px;
+    }
+
+    table.bt { width: 100%; border-collapse: collapse; font-size: 18px; }
+    table.bt th, table.bt td { padding: 9px 12px; text-align: right; border-bottom: 1px solid var(--line); }
+    table.bt th { font-size: 16px; font-weight: 900; color: var(--muted); }
+    table.bt td:first-child, table.bt th:first-child { text-align: left; }
+    table.bt tr:last-child td { border-bottom: none; }
+    table.bt tr.hi td { background: var(--yellow-soft); font-weight: 900; }
+
+    .loop { display: flex; flex-direction: column; gap: 11px; }
+    .loop-step {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 13px;
+      align-items: center;
+      background: var(--white);
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 15px;
+    }
+    .loop-step .n {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--c, var(--navy));
+      color: #fff;
+      font-size: 21px;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .loop-step .lt { font-size: 18px; line-height: 1.4; }
+    .loop-step .lt b { font-size: 19px; }
+    .loop-step.hard { border-color: var(--red); background: var(--red-soft); }
+    .loop-step.hard .n { background: var(--red-dark); }
+
+    .warn-strip {
+      margin-top: 14px;
+      background: var(--red-soft);
+      border-left: 6px solid var(--red-dark);
+      border-radius: 6px;
+      padding: 12px 15px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .warn-strip b { color: var(--red-dark); }
+  </style>
+</head>
+<body>
+
+<!-- ============================ 图 1 ============================ -->
+<section class="figure" data-figure="swap" style="--accent:var(--navy)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 03 课 · 迁移范围</div>
+      <h1>只换两个接口，主干是继承来的</h1>
+    </div>
+    <div class="subtitle">父权重 <code>ST-HVG-Replogle/zeroshot/jurkat</code>：8 层 / 328 / set 64 / 2,000 基因 / one-hot 2,024。换成 VC2026 的 18,533 基因轴与未见靶点。</div>
+  </header>
+
+  <main class="swap-layout">
+    <div>
+      <div class="lane-title">父权重 · 它认识的接口 <span>（Replogle 2,000 HVG）</span></div>
+      <div class="stack">
+        <div class="layer" style="--c:var(--gray);--cs:var(--gray-soft)">
+          <span><b>pert_encoder</b><br><span class="shape">靶点 → 隐空间 · one-hot 2,024</span></span>
+          <span class="verdict v-new">重训</span>
+        </div>
+        <div class="layer" style="--c:var(--teal);--cs:var(--teal-soft)">
+          <span><b>Transformer 主干 8 层</b><br><span class="shape">328 宽 · 约 3,232 万元素</span></span>
+          <span class="verdict v-keep">完整继承</span>
+        </div>
+        <div class="layer" style="--c:var(--yellow);--cs:var(--yellow-soft)">
+          <span><b>basal_encoder / project_out</b><br><span class="shape">2,000 基因进 · 2,000 基因出</span></span>
+          <span class="verdict v-copy">按符号复制交集</span>
+        </div>
+        <div class="layer" style="--c:var(--gray);--cs:var(--gray-soft)">
+          <span><b>batch_encoder</b><br><span class="shape">旧 run 的批次坐标</span></span>
+          <span class="verdict v-off">关闭</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mid-arrow">→</div>
+
+    <div>
+      <div class="lane-title">VC2026 · 它需要的新接口 <span>（18,533 基因 + 未见靶点）</span></div>
+      <div class="stack">
+        <div class="layer" style="--c:var(--red);--cs:var(--red-soft)">
+          <span><b>pert_encoder</b><br><span class="shape">靶点 → 蛋白序列 → ESM2 稠密向量</span></span>
+          <span class="verdict v-new">必须重训</span>
+        </div>
+        <div class="layer" style="--c:var(--teal);--cs:var(--teal-soft)">
+          <span><b>Transformer 主干 8 层</b><br><span class="shape">328 宽不变</span></span>
+          <span class="verdict v-keep">原样保留</span>
+        </div>
+        <div class="layer" style="--c:var(--yellow);--cs:var(--yellow-soft)">
+          <span><b>basal_encoder / project_out</b><br><span class="shape">18,533 基因进 · 18,533 基因出</span></span>
+          <span class="verdict v-copy">交集复制 + 新列初始化</span>
+        </div>
+        <div class="layer" style="--c:var(--red);--cs:var(--red-soft)">
+          <span><b>final_down_then_up</b><br><span class="shape">18,533 → 2,317 → 18,533</span></span>
+          <span class="verdict v-new">随 G² 增长</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="ratio" style="position:absolute;left:50px;right:50px;bottom:112px">
+    <div class="r-item" style="border-color:var(--teal);border-style:solid;background:var(--teal-soft)">
+      <b>主干：约 3,232 万参数</b>能按名字继承 —— 前提是命名对齐、形状匹配。
+    </div>
+    <div class="r-item" style="border-color:var(--red);border-style:solid;background:var(--red-soft)">
+      <b>末端混合层：85,865,705 参数</b>两头都挂 18,533，比整个主干还大两倍多。
+    </div>
+  </div>
+
+  <div class="takeaway"><strong>为什么不能按行号对齐</strong><span>基因与靶点都是<b>有名字的</b>。类别数从 10 变 100 可以沿用旧 embedding 行；这里必须按基因符号取交集，<code>init_from</code> 不会替你按名字复制。</span></div>
+</section>
+
+<!-- ============================ 图 2 ============================ -->
+<section class="figure" data-figure="counts" style="--accent:var(--teal)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 03 课 · 输出合同</div>
+      <h1>模型吐出的不是计数，而且填不回去</h1>
+    </div>
+    <div class="subtitle">这一步不需要 GPU，本机可跑；也是本课最容易翻车的一处。提交合同要求非负<b>整数</b>原始计数。</div>
+  </header>
+
+  <main class="pipe">
+    <div class="pnode" style="--c:var(--navy);--cs:var(--navy-soft)">
+      <div class="pt">① 模型输出</div>
+      <div class="pd"><code>state tx infer</code> 在基因空间给出浮点，并裁剪到 <code>[0,14]</code>。</div>
+      <div class="pnum">z_ig = log1p(CP10K)</div>
+    </div>
+    <div class="parrow">→</div>
+    <div class="pnode gap">
+      <div class="pt">② 空白格</div>
+      <div class="pd"><b>没有任何官方步骤</b>把这里的浮点还原成原始计数。</div>
+      <div class="pnum">❓</div>
+    </div>
+    <div class="parrow">→</div>
+    <div class="pnode" style="--c:var(--teal);--cs:var(--teal-soft)">
+      <div class="pt">③ 提交要求</div>
+      <div class="pd">每 <code>context × target</code> 400 行<b>非负整数</b>，基因轴顺序与 <code>gene_names.csv</code> 完全一致。</div>
+      <div class="pnum">Y_ig ∈ ℤ, Y_ig ≥ 0</div>
+    </div>
+  </main>
+
+  <div class="math-strip">
+    <div class="math-card">
+      <div class="mt">为什么 <code>round(expm1(z))</code> 不对</div>
+      <div class="mline">z_ig = log(1 + 10000 · x_ig / L_i)</div>
+      <div class="mnote">归一化把每个细胞的深度 <code>L_i</code> <b>除掉了</b>。<code>L_i</code> 一旦丢失，<code>expm1</code> 只能还给你「10,000 尺度下的相对表达」，不是「这个细胞实际测到多少 UMI」。产出的数字看起来像计数，但不是任何东西的计数。</div>
+    </div>
+    <div class="math-card">
+      <div class="mt">正确的两层分解</div>
+      <div class="mline">p_ig = r_ig / Σ_g r_ig        ← 组成<br>L_i  ← 同背景 NTC 深度分布<br>Y_i ~ Multinomial(L_i, p_i)</div>
+      <div class="mnote">先定组成、再定深度，然后<b>一次多项式抽样</b>：保证非负整数，且行和精确等于 <code>L_i</code>。第 ④ 步用 NTC 深度是<b>工程选择不是生物学定律</b>，需做消融。</div>
+    </div>
+  </div>
+
+  <div class="steps" style="position:absolute;left:50px;right:50px;bottom:112px">
+    <div class="step"><b>① 采样背景细胞</b>从 NTC 分层抽样</div>
+    <div class="step key"><b>② 预测全基因 rate</b>上游出问题，下游修不了</div>
+    <div class="step"><b>③ 归一成组成</b>先检查总和 &gt; 0</div>
+    <div class="step"><b>④ 采样深度 L_i</b>从 NTC 总计数分布取</div>
+    <div class="step key"><b>⑤ 生成整数</b>Multinomial 采样</div>
+    <div class="step"><b>⑥ 比较分布</b>零比例、均值方差再评分</div>
+  </div>
+
+  <div class="takeaway"><strong>采样器不能修复错的 rate</strong><span>400 次重复同一个均值只会给你 400 行近似副本 —— <code>vcc prep</code> 会照常通过，因为它只检查格式、不检查差异。</span></div>
+</section>
+
+<!-- ============================ 图 3 ============================ -->
+<section class="figure" data-figure="budget" style="--accent:var(--yellow)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 03 课 · 算力预算</div>
+      <h1>先测出 t_step，再决定租多少卡</h1>
+    </div>
+    <div class="subtitle">固定 10,000 个 optimizer step 的敏感性表。表中数字是<b>手算</b>，不是实跑 —— 本机没装成 <code>arc-state</code>。</div>
+  </header>
+
+  <main class="budget-layout">
+    <div>
+      <table class="bt">
+        <thead>
+          <tr><th>实测每更新耗时</th><th>单 run</th><th>+30% 预留</th><th>6 个 run</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0.25 s</td><td>0.69 h</td><td>0.90 h</td><td>5.42 GPU-h</td></tr>
+          <tr class="hi"><td>1 s</td><td>2.78 h</td><td>3.61 h</td><td>21.67 GPU-h</td></tr>
+          <tr><td>3 s</td><td>8.33 h</td><td>10.83 h</td><td>65.00 GPU-h</td></tr>
+          <tr><td>10 s</td><td>27.78 h</td><td>36.11 h</td><td>216.67 GPU-h</td></tr>
+        </tbody>
+      </table>
+      <div class="warn-strip">
+        <b>t_step 从 0.25 s 变到 10 s，预算差 40 倍。</b>所以「微调大概要十小时」在测出 t_step 之前没有任何依据。
+      </div>
+    </div>
+
+    <div class="loop">
+      <div class="loop-step" style="--c:var(--navy)">
+        <div class="n">1</div>
+        <div class="lt"><b>先租 4–8 GPU-h</b><br>只为了把 pilot 跑起来</div>
+      </div>
+      <div class="loop-step" style="--c:var(--teal)">
+        <div class="n">2</div>
+        <div class="lt"><b>跑 100–200 步</b><br>目的只有一个：排查内存是否爆</div>
+      </div>
+      <div class="loop-step" style="--c:var(--teal)">
+        <div class="n">3</div>
+        <div class="lt"><b>跑 2,000-step pilot</b><br>排除前 20–50 步热身，记录稳态 t_step</div>
+      </div>
+      <div class="loop-step hard">
+        <div class="n">4</div>
+        <div class="lt"><b>用加载报告当硬门</b><br>主干继承比例对不上，后面的钱一分都不该花</div>
+      </div>
+      <div class="loop-step" style="--c:var(--yellow)">
+        <div class="n">5</div>
+        <div class="lt"><b>用实测 t_step 代进公式</b><br>反着读这张表，才得到真正需要的 GPU-h</div>
+      </div>
+    </div>
+  </main>
+
+  <div class="takeaway"><strong>把它反过来读</strong><span>打算花 60 GPU-h ÷ 6 个 run = 10 GPU-h/run，留 30% 余量 ⇒ 单 run 3.61 h ⇒ 10,000 步<b>每步必须 ≤ 1.0 s</b>。所以 60 GPU-h 够不够，等价于「你的 t_step 是多少」。</span></div>
+</section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["swap", "counts", "budget"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      const selected = document.querySelector(`[data-figure="${requested}"]`);
+      selected.classList.add("active");
+    }
+  </script>
+</body>
+</html>
