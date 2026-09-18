@@ -40,7 +40,7 @@
 - **Preliminaries**：明确的研究顺序是「数据探索 → 基线 → 超越线性 → 现代模型」。只有两人、资源有限，因此优先找**便宜的新想法**。这段对L0-00的学习动机和方法论有参考价值。
 - **Exploring the Data I**：今年的实验栈（细胞系培养 → CRISPRi → 10x Flex scRNA-seq）；细胞系分类（干细胞系 H1/iPSC、工程化永生化 RPE1/HEK293、癌源 HeLa）；独立给出 A/B/C 猜测（Jurkat E6.1 / HeLa / CAL-33），与 Ilyes 的结论一致。**报告了一个采样对照细胞的负基线总分 −0.304，其中 DE 方向保真度为 −1.721**。
 - **Exploring the Data II**：Cas9、guide RNA、CRISPRi 与 knockout 的区别、Perturb-seq 的实验流程。是第 0/1 课生物学机制部分最好的补充读物，讲得比大多数教材细。
-- **Exploring the Data III**：把测序当作采样过程、批次效应的真实含义、以及哪些公共扰动数据集之间**可以比较**。这一篇最直接服务于L3-02「跨背景验证」和L3-04「多来源数据统一」——因为多来源统一流水线正是本项目的核心工程难点。
+- **Exploring the Data III**：把测序当作采样过程、批次效应的真实含义、以及哪些公共扰动数据集之间**可以比较**。这一篇最直接服务于[第 03 课](../lessons/03-State上手.md)的「跨背景验证」与「多来源数据统一」主题（原 L3-02/L3-04，均已并入该课）——因为多来源统一流水线正是本项目的核心工程难点。
 - 该作者同时维护 [`references/vcc2026-h1-benchmark`](../../references/vcc2026-h1-benchmark)（本项目已采用为 H1 开发基准，见 `docs/research/h1-benchmark-audit.md`）与 [`references/virtual-cell-challenge-2026`](../../references/virtual-cell-challenge-2026)。
 
 ## 转换与溯源

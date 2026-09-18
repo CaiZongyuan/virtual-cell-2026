@@ -24,16 +24,26 @@
 课程体系从三层 `L<层>-<序号>` 重构为 **8 课连续编号 `DD`**（00–07）。本脚本随之做
 三件事，其余判定逻辑保持原样：
 
-1. **课程发现改为目录扫描。** 此前课号表只从 README §3 课程总表解析，新课先于总表
-   存在时会被整个跳过。现在 `docs/lessons/` 下的 `DD-*.md` 与历史 `L*-*.md` 都被
-   扫描并进统计（「先于索引存在」不再等于「不被检查」）。
-2. **三条硬指标**（D3 前三行）对**连续编号课**生效：篇幅上限、正式配图下限、行内
-   ASCII 因果链下限。历史层编号课暂不判（它们正在被逐课删除），但会打印原始数值，
-   便于删除前对比。
-3. **旧课号残留判定改向。** 连续编号课正文里出现 `L\\d-\\d\\d` 视为 STALE（迁移期
-   应改用文字指路；改造完成后应指向已存在的新课）。历史课维持原判定。
+1. **课程发现改为目录扫描。** 此前课号表只从 README 课程总表解析，新课先于总表
+   存在时会被整个跳过。现在 `docs/lessons/` 下的 `DD-*.md` 都被扫描并进统计
+   （「先于索引存在」不再等于「不被检查」）。
+2. **三条硬指标**（D3 前三行）对全部主线课生效：篇幅上限、正式配图下限、行内
+   ASCII 因果链下限。
+3. **旧课号残留判定。** 主线课正文里出现 `L\\d-\\d\\d` 视为 STALE。
 
 「第 0X 课」在新体系里是合法写法（它就是新课号），不再误报。
+
+2026-09-18 收敛（issue #21，教程完成）
+--------------------------------------
+迁移期分支全部移除：
+
+1. **课程发现只认连续编号。** `COURSE_RE` / `COURSE_FILE_RE` 不再匹配 `L*-*.md`；
+   全部 15 门层前缀课已吸收删除，附录 `L2-06` 由 `check-links.py` 的可达性检查兜底，
+   不再逐课校验。
+2. **全仓 STALE 扫描。** 除逐课判定外，对 `docs/**`、`notebook/README.md`、
+   `CONTEXT.md` 等做一次裸历史课号扫描；归档文件（决策记录、lessons/README 的
+   归档节、style/ 溯源材料、blogs/）在白名单内。结果作 WARN（信息性），不影响
+   退出码——验收标准是「WARN 列表为空」。
 
 其中 1 的「样板」部分用关键词覆盖做**软判定**（报 WARN，不判 FAIL）：小节标题的措辞
 本来就有差异，强行严格匹配会把「写得好但标题不同」判成失败，那是假的准确性。
@@ -66,13 +76,13 @@ NOTEBOOK = ROOT / "notebook"
 COURSE_INDEX = LESSONS / "README.md"
 NB_INDEX = NOTEBOOK / "README.md"
 
-# 连续编号课（2026-09-18 新体系）与历史层编号课。迁移期内两种并存：
-# 连续编号是现状主线，层编号课正在被逐课吸收删除。
-COURSE_RE = re.compile(r"^(?:\d\d|L\d-\d\d)$")
-CONTINUOUS_RE = re.compile(r"^\d\d$")
-# 发现用的文件名模式：`DD-标题.md`（连续编号）与 `L*-标题.md`（历史）。
+# 连续编号课（2026-09-18 收敛后唯一体系）。
+# 全部 15 门层前缀课已被吸收删除；附录课（appendix/ 子目录）不进主线编号，
+# 其文件可达性由 check-links.py 兜底。
+COURSE_RE = re.compile(r"^\d\d$")
+# 发现用的文件名模式：`DD-标题.md`。
 # 排除 appendix/（附录不进主线编号）与 assets/。
-COURSE_FILE_RE = re.compile(r"^(?:(?P<cont>\d\d)|(?P<legacy>L\d-\d\d))-[^/]+\.md$")
+COURSE_FILE_RE = re.compile(r"^(\d\d)-[^/]+\.md$")
 
 # 三条硬指标（spec D3 前三行，以 02 课的实测现状为标尺）。
 # 只对**连续编号课**生效；历史课正在被删除，判它没有意义。
@@ -119,11 +129,10 @@ MODEL_SLOTS = {
     "诊断题": r"诊断题|理解检查题|自检问题",
 }
 
-# 使用模型深潜样板的课。L2-05 是方法论课（统计机制替代生物机制），
-# 按 README §2 阶段表走因果单元样板，因此不在本表内。
-# 2026-09-18：新课号体系下，05（Stack）与 06（其余路线全景）走模型深潜样板。
-# L2-01 已于 2026-09-18 被 02 课吸收删除；02 走模型深潜样板（与 02 正文 §9.1 一致）。
-MODEL_SLOT_COURSES = {"02", "L2-06", "05", "06"}
+# 使用模型深潜样板的课。04 是方法论课（统计机制替代生物机制），
+# 走因果单元样板，因此不在本表内。07 同理（最终轮是操作题）。
+# 2026-09-18：02（State）、05（Stack）、06（其余路线全景）走模型深潜样板。
+MODEL_SLOT_COURSES = {"02", "05", "06"}
 
 # 证据分级出现的写法
 EVIDENCE_TAGS = {
@@ -135,16 +144,17 @@ EVIDENCE_TAGS = {
 
 # 已经不在使用的旧编号体系。配图文件名是有意保留的例外，
 # 因此只查正文里的「第 N 课 / 第N课」写法，且「原第 N 课」是允许的历史标注。
+# 2026-09-18 收敛：全部主线课都是连续编号，「第 0X 课」是合法写法；
+# 本正则只剩对 STALE_LEGACY_RE 的历史意义，保留供归档说明引用。
 STALE_RE = re.compile(r"(?<!原)第\s?(0[2-9]|10)\s?课")
 
-# 连续编号课正文里的历史课号提及。迁移期内应使用文字指路（「第 03 课」），
-# 不给指向不存在文件的链接；改造完成后这些提及应全部消除。
+# 主线课正文里的历史课号提及。
 #
 # **例外：资产与图源的既定文件名。** `L2-01-state-architecture.webp`、
-# `L2-01-state-architecture-facts.md` 这类名字记录在生成溯源日志里，改名会破坏溯源，
-# 是 spec 明确保留的（同 README §9.2 的约定）。因此只在**非路径上下文**里判 STALE：
+# `L2-03-foundation-routes-facts.md` 这类名字记录在生成溯源日志里，改名会破坏溯源，
+# 是 spec 明确保留的。因此只在**非路径上下文**里判 STALE：
 # 先剔掉行内的 `路径/文件名.ext`、行内代码 `...` 与 Markdown 链接目标，
-# 剩下的裸 `L\\d-\\d\\d` 才算真的在说「旧课号」。
+# 剩下的裸 `L\d-\d\d` 才算真的在说「旧课号」。
 STALE_LEGACY_RE = re.compile(r"L\d-\d\d")
 _PATHLIKE_RE = re.compile(r"`[^`]*`|\]\([^)]*\)|[\w./-]*L\d-\d\d[\w./-]*\.\w+")
 
@@ -154,6 +164,52 @@ def stale_legacy_hits(text: str) -> list[str]:
     stripped = _PATHLIKE_RE.sub(" ", text)
     return sorted(set(STALE_LEGACY_RE.findall(stripped)))
 
+
+# 全仓 STALE 扫描的白名单：这些文件承担**归档或溯源**职责，旧课号是内容的一部分。
+# - 决策记录：记录两轮编号裁决本身，旧课号是历史事实
+# - lessons/README：归档节（课号对照表）按设计保留旧课号
+# - docs/style/**：图源 / prompt / 溯源日志的文件名与叙述按设计保留旧课号
+# - docs/blogs/**：参赛者博客导读的历史叙述
+# - docs/Official-website/**：官方页面存档，不是课程文件
+STALE_GLOBAL_WHITELIST = (
+    "docs/lessons/决策记录-教程三层重构.md",
+    "docs/教程与竞赛方向规划.md",
+    "docs/lessons/README.md",
+    "docs/style/",
+    "docs/blogs/",
+    "docs/Official-website/",
+)
+
+
+def scan_stale_global() -> list[str]:
+    """全仓扫描裸历史课号（白名单外）。WARN 级：验收标准是列表为空。"""
+    hits: list[str] = []
+    scan_roots = [ROOT / "docs", ROOT / "notebook", ROOT / "scripts"]
+    files: list[Path] = []
+    for root in scan_roots:
+        if not root.exists():
+            continue
+        if root.name == "scripts":
+            files.extend(p for p in root.glob("*.py"))
+        else:
+            files.extend(p for p in root.rglob("*.md"))
+    for extra in (ROOT / "CONTEXT.md", ROOT / "README.md", ROOT / "AGENTS.md",
+                  NOTEBOOK / "README.md"):
+        if extra.exists():
+            files.append(extra)
+    for f in sorted(set(files)):
+        rel = f.relative_to(ROOT).as_posix()
+        if rel.startswith(STALE_GLOBAL_WHITELIST):
+            continue
+        try:
+            text = f.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        legacy = stale_legacy_hits(text)
+        if legacy:
+            hits.append("%s: %s" % (rel, "、".join(legacy)))
+    return hits
+
 NB_WHITELIST = "test.ipynb"
 
 # --------------------------------------------------------------------------
@@ -161,7 +217,7 @@ NB_WHITELIST = "test.ipynb"
 # --------------------------------------------------------------------------
 EXEMPT: dict[tuple[str, str], str] = {
     # ---- 冻结的锚点课 00 / 01 --------------------------------------------
-    # 2026-09-18：课号由 L0-00 / L0-01 收敛为 00 / 01（连续编号体系）。
+    # 2026-09-18：课号由层前缀收敛为两位连续编号（连续编号体系）。
     # 正文一个字都不许动（已发布飞书并被精读），因此下列缺口只能豁免。
     ("00", "DIAG"): "早于完成度契约；已发布飞书并被精读，正文冻结（spec Out of Scope）。",
     ("00", "NB_DECL"): "90/91 号 notebook 是官方 Colab 逐字节固定副本，"
@@ -170,7 +226,7 @@ EXEMPT: dict[tuple[str, str], str] = {
     ("00", "ASCII"): "冻结前写的课，早于 D3 的「ASCII ≥ 8」密度契约；"
                      "已有 4 个 ASCII 块。正文不许改动，故不追补。",
     ("01", "NB_DECL"): "notebook/README.md 已声明本课映射 01_vc2026_data.ipynb；"
-                       "正文不许改动，缺口在 notebook 侧补齐（原 L0-01 的同一处理）。",
+                       "正文不许改动，缺口在 notebook 侧补齐（原层前缀课号的同一处理）。",
     ("01", "NB_BACKREF"): "正文已发布飞书并冻结，不允许加链接；"
                           "缺口改在 notebook/README.md 侧补齐映射。",
     # ---- 连续编号课的篇幅豁免（2026-09-18） ------------------------------
@@ -187,7 +243,7 @@ EXEMPT: dict[tuple[str, str], str] = {
 SLOT_ALIAS: dict[tuple[str, str], str] = {
     # 00 / 01 已发布飞书、正文冻结。00 用「先建立生物学直觉」讲机制、
     # 用「当前尚未解决的问题」讲失败与噪声、用「应该学到什么」讲实践。
-    # （2026-09-18 课号由 L0-00 / L0-01 收敛为 00 / 01。）
+    # （2026-09-18 课号由层前缀收敛为两位连续编号。）
     ("00", "机制或数学对象"): r"|生物学直觉|建立.*直觉|什么是",
     ("00", "失败与噪声"): r"|尚未解决|容易误读|暴露的问题|边界",
     ("00", "对模型的影响"): r"|关键差异|学到什么|工程判断",
@@ -222,30 +278,29 @@ PENDING_COURSES: list[tuple[str, str]] = []
 for _num, _ticket in PENDING_COURSES:
     KNOWN_GAPS[(_num, "FILE")] = _ticket
 
-# 附录课（在 README §10 声明，不在 §3 的课程总表里）
-EXTRA_COURSES = [
-    ("L2-06", "appendix/L2-06-模型卡.md"),
-]
-
 
 def read(p: Path) -> str:
     return p.read_text(encoding="utf-8")
 
 
 def parse_course_table() -> list[dict]:
-    """从 README §3 课程总表解析课号 → 文件路径。
+    """从 README 课程总表解析课号 → 文件路径。
 
     2026-09-18 起本函数只作**补充**：课程主体由 `discover_courses()` 目录扫描得到。
     这里保留的原因有两个——(1) 在索引里被标为〔待写〕而文件已存在的矛盾仍要报出来；
     (2) 索引声明的路径与磁盘实际路径不一致时要能发现。
     索引里出现但磁盘上没有的行，不再**制造**一个课程条目（现实是文件为准），
     但仍会作为索引问题记录。
+
+    2026-09-18 收敛：节标题按「课程总表」关键词定位（不再绑定节号，
+    README 重排不影响解析）。附录行（首格非连续课号）不再解析，
+    其可达性由 check-links.py 兜底。
     """
     text = read(COURSE_INDEX)
     try:
-        sec = text.split("## 3. 课程总表", 1)[1].split("\n## ", 1)[0]
+        sec = text.split("课程总表", 1)[1].split("\n## ", 1)[0]
     except IndexError:
-        sys.exit("找不到 README 的「## 3. 课程总表」小节")
+        sys.exit("找不到 README 的「课程总表」小节")
 
     rows = []
     for line in sec.splitlines():
@@ -262,9 +317,9 @@ def parse_course_table() -> list[dict]:
 
 
 def discover_courses() -> tuple[list[dict], list[str]]:
-    """扫描 `docs/lessons/` 得到全部课程（不含 appendix/）。
+    """扫描 `docs/lessons/` 得到全部主线课程（不含 appendix/）。
 
-    返回 (课程列表, 索引问题列表)。课程条目按课号排序，连续编号在前。
+    返回 (课程列表, 索引问题列表)。课程条目按课号排序。
     这样做的理由见模块 docstring 第 1 条：新课先于索引存在时也必须进统计，
     否则新写的课会在「课数」里凭空消失，所有检查形同虚设。
     """
@@ -277,13 +332,13 @@ def discover_courses() -> tuple[list[dict], list[str]]:
         m = COURSE_FILE_RE.match(f.name)
         if not m:
             continue
-        num = m.group("cont") or m.group("legacy")
+        num = m.group(1)
         found[num] = {
             "num": num,
             "path": f.name,
             "pending": False,
             "in_table": False,
-            "continuous": bool(m.group("cont")),
+            "continuous": True,
         }
 
     # 用索引里的行补「待写」与「路径不一致」两类信息；不新建课程。
@@ -292,15 +347,12 @@ def discover_courses() -> tuple[list[dict], list[str]]:
         if num in found:
             found[num]["in_table"] = True
             if row["path"] and row["path"] != found[num]["path"]:
-                problems.append("README §3 的 %s 指向 %s，磁盘上是 %s"
+                problems.append("README 课程总表的 %s 指向 %s，磁盘上是 %s"
                                 % (num, row["path"], found[num]["path"]))
             if row["pending"]:
-                problems.append("README §3 把 %s 标为〔待写〕，但文件已存在" % num)
+                problems.append("README 课程总表把 %s 标为〔待写〕，但文件已存在" % num)
             continue
-        # 附录课在 appendix/ 子目录里，按声明路径直接确认存在性，不进编号主线。
-        if row["path"] and (LESSONS / row["path"]).exists():
-            continue
-        problems.append("README §3 声明了 %s（%s），磁盘上找不到对应文件"
+        problems.append("README 课程总表声明了 %s（%s），磁盘上找不到对应文件"
                         % (num, row["path"] or "无路径"))
 
     courses = sorted(found.values(),
@@ -374,9 +426,8 @@ def check_course(c: dict, nb_map: dict[str, list[str]]) -> dict:
         ("FAIL", "正文里没有任何到 notebook/ 的链接（读者走不到动手材料）")
 
     # ---- 样板槽位（软判定） ---------------------------------------------
-    # 不是所有 L2 课都用模型深潜样板：README §2 阶段表把 L2-05 归为方法论课，
-    # 用的是 L1/L3 的因果单元样板（生物机制换成统计机制）。按课号单独指定，
-    # 不要用 num.startswith("L2") 一刀切。
+    # 不是所有课都用模型深潜样板：方法论课（04）与操作课（07）走因果单元样板。
+    # 按课号单独指定，不要按层号或主题猜。
     slots = MODEL_SLOTS if num in MODEL_SLOT_COURSES else CAUSAL_SLOTS
     # 冻结课（正文已发布飞书、不许改动）的标题措辞与本样板不同，但它们用
     # 自己的话覆盖了同样的语义。逐槽位补一条「本课实际使用的措辞」，
@@ -394,7 +445,7 @@ def check_course(c: dict, nb_map: dict[str, list[str]]) -> dict:
     res["ev"] = {name: len(re.findall(pat, text))
                  for name, pat in EVIDENCE_TAGS.items()}
 
-    # ---- 三条硬指标（spec D3 前三行，只判连续编号课） --------------------
+    # ---- 三条硬指标（spec D3 前三行） ------------------------------------
     # 判的是「写够了没有」，不判写作内部实现。数值一律打印出来，
     # 即使 PASS 或 EXEMPT 也照常可见——否则豁免会掩盖真实体量。
     lines = len(text.splitlines())
@@ -404,7 +455,7 @@ def check_course(c: dict, nb_map: dict[str, list[str]]) -> dict:
     res["metrics"] = {"lines": lines, "chars": chars,
                       "figures": figs, "ascii": ascii_blocks}
 
-    if c.get("continuous"):
+    if True:  # 2026-09-18 收敛：全部主线课都判，不再有历史课分支
         # 单课行数上限覆盖（已给理由的放宽，不是豁免：超限仍 FAIL）。
         lim_lines, lim_note = LINE_LIMIT_OVERRIDE.get(
             c["num"], (LIMIT_LINES, None))
@@ -434,23 +485,14 @@ def check_course(c: dict, nb_map: dict[str, list[str]]) -> dict:
             res["checks"]["ASCII"] = ("PASS", "%d 个 ASCII 块" % ascii_blocks)
 
     # ---- 旧课号残留 ------------------------------------------------------
-    # 连续编号课：正文里出现 `L\\d-\\d\\d` 即为 STALE——迁移期应改用文字指路
-    # （「第 03 课」），改造完成后应指向真实存在的新课。
-    # 历史层编号课：维持原判定（「第 N 课」这种旧写法），它们正在被逐课删除。
-    if c.get("continuous"):
-        legacy = stale_legacy_hits(text)
-        if legacy:
-            res["checks"]["STALE"] = ("WARN", "正文里出现历史课号：%s"
-                                      % "、".join(legacy))
-        else:
-            res["checks"]["STALE"] = ("PASS", None)
+    # 主线课正文里出现裸 `L\d-\d\d` 即为 STALE——应改用真链接指向新课，
+    # 或用反引号包裹的文件名引用资产。
+    legacy = stale_legacy_hits(text)
+    if legacy:
+        res["checks"]["STALE"] = ("WARN", "正文里出现历史课号：%s"
+                                  % "、".join(legacy))
     else:
-        stale = STALE_RE.findall(text)
-        if stale:
-            res["checks"]["STALE"] = ("WARN", "出现旧编号写法（非「原第 N 课」）：%s"
-                                      % "、".join("第 %s 课" % s for s in sorted(set(stale))))
-        else:
-            res["checks"]["STALE"] = ("PASS", None)
+        res["checks"]["STALE"] = ("PASS", None)
     return res
 
 
@@ -458,7 +500,7 @@ def check_links() -> list[str]:
     """`docs/lessons/**` 正文里的相对链接是否都指向真实文件。
 
     范围刻意限定在教程自己的表面（含它到 CONTEXT.md / docs/style 的回指）；
-    全仓链接检查是 #10 的事。
+    全仓链接检查由 `scripts/check-links.py` 负责。
     """
     bad = []
     pat = re.compile(r"\]\(([^)#][^)]*)\)")
@@ -513,6 +555,7 @@ def main() -> int:
     results = [check_course(c, nb_map) for c in courses]
     links = check_links()
     nb_problems = check_notebook_index() + index_problems
+    stale_global = scan_stale_global()
 
     tally = {"PASS": 0, "EXEMPT": 0, "KNOWN_GAP": 0, "FAIL": 0, "WARN": 0}
     untracked: list[str] = []
@@ -565,6 +608,7 @@ def main() -> int:
     if args.json:
         print(json.dumps({"tally": tally, "courses": results, "links": links,
                           "notebook_index": nb_problems,
+                          "stale_global": stale_global,
                           "untracked": untracked, "tracked": tracked,
                           "exempt": exempted, "exit": rc},
                          ensure_ascii=False, indent=2))
@@ -650,6 +694,13 @@ def main() -> int:
         print("\n" + "=" * 78)
         print("退出码 1：没有未跟踪的失败，但仍有 %d 个已归票缺口待清。"
               % tally["KNOWN_GAP"])
+
+    if stale_global:
+        print("\n" + "=" * 78)
+        print("全仓历史课号残留（WARN，验收标准：本列表为空；"
+              "白名单 = 归档节与溯源材料）")
+        for t in stale_global:
+            print("  - %s" % t)
 
     print("\n怎么用它验收后续每张 ticket：")
     print("  改完一课跑一次本脚本；该课不得出现 untracked 失败，")
