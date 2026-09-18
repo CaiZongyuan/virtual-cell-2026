@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VC2026 第 04 课 噪声地板与消融阶梯教学图</title>
+  <style>
+    :root {
+      --paper: #f6f8f9;
+      --white: #ffffff;
+      --ink: #172a3a;
+      --muted: #5e707b;
+      --line: #cbd6db;
+      --navy: #244e72;
+      --navy-soft: #e2ebf2;
+      --teal: #16847b;
+      --teal-dark: #0e655f;
+      --teal-soft: #dcefeb;
+      --yellow: #d3a529;
+      --yellow-soft: #f9edbd;
+      --red: #ce594c;
+      --red-dark: #963d35;
+      --red-soft: #f7dfdc;
+      --gray: #8b9aa2;
+      --gray-soft: #edf1f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #dfe5e8;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    body.single { width: 1600px; height: 900px; overflow: hidden; }
+
+    .figure {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: 28px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-top: 12px solid var(--accent, var(--navy));
+      padding: 34px 50px 28px;
+    }
+
+    body.single .figure { display: none; margin: 0; }
+    body.single .figure.active { display: block; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 500px;
+      gap: 30px;
+      align-items: end;
+      min-height: 100px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 15px;
+    }
+
+    .kicker {
+      margin-bottom: 6px;
+      color: var(--accent, var(--navy));
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    h1 { margin: 0; font-size: 40px; line-height: 1.18; font-weight: 900; }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .subtitle code, .note-box code, .takeaway code, .panel-copy code {
+      font-size: 0.94em;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--ink);
+    }
+
+    .takeaway {
+      position: absolute;
+      left: 50px;
+      right: 50px;
+      bottom: 26px;
+      display: grid;
+      grid-template-columns: 236px 1fr;
+      gap: 20px;
+      align-items: center;
+      background: var(--white);
+      border-left: 8px solid var(--accent, var(--navy));
+      border-radius: 6px;
+      padding: 15px 20px;
+      font-size: 19px;
+      line-height: 1.45;
+      box-shadow: 0 1px 3px rgba(23, 42, 58, .13);
+    }
+
+    .takeaway strong { font-size: 20px; font-weight: 900; line-height: 1.3; }
+    .takeaway span { color: var(--muted); }
+
+    .panel {
+      background: var(--white);
+      border: 2px solid var(--panel-color, var(--line));
+      border-radius: 9px;
+      padding: 20px 22px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .panel-title { font-size: 23px; font-weight: 900; }
+    .panel-copy { margin-top: 5px; color: var(--muted); font-size: 17px; line-height: 1.45; }
+
+    .tag {
+      flex: none;
+      border-radius: 999px;
+      padding: 5px 13px;
+      font-size: 15px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .tag.navy { background: var(--navy-soft); color: var(--navy); }
+    .tag.teal { background: var(--teal-soft); color: var(--teal-dark); }
+    .tag.red  { background: var(--red-soft);  color: var(--red-dark); }
+    .tag.gray { background: var(--gray-soft); color: #4d5b63; }
+    .tag.gold { background: var(--yellow-soft); color: #7a5c05; }
+
+    .note-box {
+      border-left: 5px solid var(--panel-color, var(--gray));
+      background: var(--gray-soft);
+      border-radius: 5px;
+      padding: 11px 14px;
+      font-size: 17px;
+      line-height: 1.46;
+    }
+
+    table.bt { width: 100%; border-collapse: collapse; font-size: 18px; }
+    table.bt th, table.bt td { padding: 9px 12px; text-align: right; border-bottom: 1px solid var(--line); }
+    table.bt th { font-size: 16px; font-weight: 900; color: var(--muted); }
+    table.bt td:first-child, table.bt th:first-child { text-align: left; }
+    table.bt tr:last-child td { border-bottom: none; }
+    table.bt tr.hi td { background: var(--yellow-soft); font-weight: 900; }
+
+    .warn-strip {
+      background: var(--red-soft);
+      border-left: 6px solid var(--red-dark);
+      border-radius: 6px;
+      padding: 12px 15px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .warn-strip b { color: var(--red-dark); }
+
+    /* ---------- 图 1：噪声地板 ---------- */
+    .floor-layout {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .scale-row { margin-bottom: 21px; }
+    .scale-row:last-child { margin-bottom: 0; }
+    .scale-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 7px;
+      font-size: 18px;
+    }
+    .scale-label b { font-size: 19px; }
+    .scale-label .val { font-family: "Consolas", "Courier New", monospace; font-size: 17px; font-weight: 700; }
+    .scale-bar-track {
+      position: relative;
+      height: 34px;
+      background: var(--gray-soft);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .scale-bar {
+      height: 100%;
+      border-radius: 5px 0 0 5px;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      font-size: 15.5px;
+      font-weight: 900;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .scale-note { margin-top: 6px; font-size: 16px; color: var(--muted); line-height: 1.4; }
+
+    .machine { display: flex; flex-direction: column; gap: 12px; }
+    .m-item {
+      background: var(--white);
+      border: 2px solid var(--line);
+      border-left: 6px solid var(--c, var(--navy));
+      border-radius: 7px;
+      padding: 13px 16px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .m-item b { font-size: 18px; }
+    .m-item .mono { font-family: "Consolas", "Courier New", monospace; font-size: 16px; font-weight: 700; }
+
+    /* ---------- 图 2：消融阶梯 ---------- */
+    .ladder-layout {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1.18fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .rung {
+      display: grid;
+      grid-template-columns: 40px 1fr 84px;
+      gap: 13px;
+      align-items: center;
+      background: var(--white);
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 14px;
+      margin-bottom: 9px;
+    }
+    .rung:last-child { margin-bottom: 0; }
+    .rung .n {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--c, var(--navy));
+      color: #fff;
+      font-size: 19px;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .rung .rt { font-size: 17px; line-height: 1.35; }
+    .rung .rt b { font-size: 18px; }
+    .rung .rt span { color: var(--muted); font-size: 15.5px; }
+    .rung .cost {
+      text-align: center;
+      border-radius: 999px;
+      padding: 5px 6px;
+      font-size: 14.5px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .cost.free  { background: #d8f0e6; color: #14603f; }
+    .cost.cheap { background: var(--teal-soft); color: var(--teal-dark); }
+    .cost.mid   { background: var(--yellow-soft); color: #7a5c05; }
+    .cost.dear  { background: var(--red-soft); color: var(--red-dark); }
+    .rung.gate { border-color: var(--red); border-style: dashed; }
+  </style>
+</head>
+<body>
+
+<!-- ============================ 图 1：噪声地板 ============================ -->
+<section class="figure" data-figure="floor" style="--accent:var(--navy)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 04 课 · 噪声地板</div>
+      <h1>先测出「什么都不改时，分数自己会动多少」</h1>
+    </div>
+    <div class="subtitle">本机实测：<code>scripts/vc2026_noise_floor.py --n-cells 400 --repeats 200</code>，三个背景的 NTC 细胞，纯 CPU。表内数字是<b>本机实测</b>，不是论文数字。</div>
+  </header>
+
+  <main class="floor-layout">
+    <div class="panel" style="--panel-color:var(--navy)">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">三个尺度：噪声远小于背景差异</div>
+          <div class="panel-copy">群体表达谱平方距离（400 细胞/组，背景 A/B/C）。横条长度按数量级画。</div>
+        </div>
+        <span class="tag navy">log 尺度</span>
+      </div>
+
+      <div class="scale-row">
+        <div class="scale-label"><b>抽样噪声（地板）</b><span class="val">28.8 / 29.7 / 32.9</span></div>
+        <div class="scale-bar-track"><div class="scale-bar" style="width:37%;background:var(--teal)">RMS ≈ 0.04 / 基因</div></div>
+        <div class="scale-note">两次独立的 400 细胞抽样之间：平均每个基因的 <code>log(1+x)</code> 相差约 0.04。</div>
+      </div>
+
+      <div class="scale-row">
+        <div class="scale-label"><b>判定阈值（置换 99% 分位）</b><span class="val">31.4 / 33.9 / 38.6</span></div>
+        <div class="scale-bar-track"><div class="scale-bar" style="width:38%;background:var(--navy)">观测差超过它才算真</div></div>
+        <div class="scale-note">口径 B 给的判据：低于它，「有差别」无法与抽样噪声区分。</div>
+      </div>
+
+      <div class="scale-row">
+        <div class="scale-label"><b>背景间距离（分母）</b><span class="val">中位 7848</span></div>
+        <div class="scale-bar-track"><div class="scale-bar" style="width:100%;background:var(--gray)">RMS ≈ 0.65 / 基因</div></div>
+        <div class="scale-note">噪声 ≈ 从一个细胞背景走到另一个背景的 <b>0.37%–0.42%</b>（6% 按平方根口径）。</div>
+      </div>
+
+      <div class="scale-row">
+        <div class="scale-label"><b style="color:var(--red-dark)">扰动效应量级</b><span class="val" style="color:var(--red-dark)">未测</span></div>
+        <div class="scale-bar-track"><div class="scale-bar" style="width:60%;background:repeating-linear-gradient(45deg,var(--red-soft),var(--red-soft) 10px,#f2c9c4 10px,#f2c9c4 20px);color:var(--red-dark)">没有真值，测不了</div></div>
+        <div class="scale-note">A/B/C 无扰动真值。「噪声 / 扰动效应」这个决定性的比值要等公开面板（本课 §3 的硬边界）。</div>
+      </div>
+    </div>
+
+    <div class="machine">
+      <div class="m-item" style="--c:var(--teal)">
+        <b>口径 A · 半集重复 + jackknife</b><br>
+        抽 <span class="mono">2n</span> 个细胞分两组 → 记录 <span class="mono">‖b₁−b₂‖²</span>；同时删一重算得 <span class="mono">2·VarTrace</span>。直接观测量 vs 无偏估计量，实测相差 <b>0.0%–0.3%</b> —— 这本身就是实现自检。
+      </div>
+      <div class="m-item" style="--c:var(--navy)">
+        <b>口径 B · 置换零分布 → 判据</b><br>
+        同一细胞池随机分两组，「两组有系统差异」在构造上不成立 → 分布就是纯噪声。取 <b>95% / 99% 分位</b>当判定阈值。口径 A 答「噪声多大」，口径 B 答「多大才算超出噪声」，<b>不能互相替代</b>。
+      </div>
+      <div class="m-item" style="--c:var(--red)">
+        <b>陷阱 · 朴素 Pearson = 0.999 的假安心</b><br>
+        相关系数被高表达基因主导：三个背景的地板明明差 14%，Pearson 只在小数点后第五位动。必须在<b>差值空间</b>里看平方距离。
+      </div>
+      <div class="m-item" style="--c:var(--yellow)">
+        <b>1/n 律 · 压地板很慢</b><br>
+        细胞数 100 → 400 → 1600，平方距离 4.00× → 1.00× → 0.249×，实测与 <span class="mono">1/n</span> 吻合到小数点后两位。翻倍细胞数只降 <span class="mono">1/√2</span>；官方 1 分参考是半深度（200 细胞档），地板约是完整深度的 <b>2 倍</b>（实测 1.996）。
+      </div>
+    </div>
+  </main>
+
+  <div class="takeaway"><strong>地板是测量仪器的属性</strong><span>它属于「400 细胞抽样 + 这把评分尺」，<b>换个模型它不变</b>。任何「改进 0.003」在与换算后的阈值比较之前，既可能是真实增益，也可能只是又一次抽样波动。</span></div>
+</section>
+
+<!-- ============================ 图 2：消融阶梯 ============================ -->
+<section class="figure" data-figure="ladder" style="--accent:var(--teal)">
+  <header class="header">
+    <div>
+      <div class="kicker">VC2026 第 04 课 · 消融与基线</div>
+      <h1>便宜实验排前面，每级单独跨过地板</h1>
+    </div>
+    <div class="subtitle">成本列是<b>工程假设</b>（租卡后回填实耗时）。右侧 B0–B3 的完整形式化与推导见附录《非 State 路线备选架构》，正文只引用口径。</div>
+  </header>
+
+  <main class="ladder-layout">
+    <div>
+      <div class="rung" style="--c:var(--gray)">
+        <div class="n">0</div>
+        <div class="rt"><b>无变化 / 不预测</b><br><span>基准线本身</span></div>
+        <div class="cost free">免费</div>
+      </div>
+      <div class="rung" style="--c:var(--navy)">
+        <div class="n">1</div>
+        <div class="rt"><b>B0 · 预测零扰动效应</b><br><span>排除「评分或输出合同没对上」</span></div>
+        <div class="cost free">免费</div>
+      </div>
+      <div class="rung" style="--c:var(--teal)">
+        <div class="n">2</div>
+        <div class="rt"><b>B1 查找表 / B3 低秩</b><br><span>跨背景共享分量能被统计量吃掉多少</span></div>
+        <div class="cost cheap">便宜</div>
+      </div>
+      <div class="rung" style="--c:var(--teal)">
+        <div class="n">3</div>
+        <div class="rt"><b>B2 · 相似背景加权</b><br><span>NTC 相似度是否携带因果信息</span></div>
+        <div class="cost cheap">便宜</div>
+      </div>
+      <div class="rung" style="--c:var(--teal)">
+        <div class="n">4</div>
+        <div class="rt"><b>公共接口修正</b><br><span>面板 / 基因顺序 / 归一化没对齐 ⇒ 后面全部不可信</span></div>
+        <div class="cost cheap">便宜</div>
+      </div>
+      <div class="rung" style="--c:var(--teal)">
+        <div class="n">5</div>
+        <div class="rt"><b>计数生成器</b><br><span>群体均值能否变成合法细胞（DE 三项会崩在它身上）</span></div>
+        <div class="cost cheap">便宜</div>
+      </div>
+      <div class="rung" style="--c:var(--yellow)">
+        <div class="n">6</div>
+        <div class="rt"><b>冻结主干的轻量适配</b><br><span>已发布权重能不能直接用</span></div>
+        <div class="cost mid">中等</div>
+      </div>
+      <div class="rung gate" style="--c:var(--red)">
+        <div class="n">7</div>
+        <div class="rt"><b>微调 / 增容量 / 改架构</b><br><span>准入条件：前 6 步至少一项跨过地板且符号稳定</span></div>
+        <div class="cost dear">昂贵</div>
+      </div>
+    </div>
+
+    <div class="machine">
+      <div class="m-item" style="--c:var(--navy)">
+        <b>B0–B3 一眼版</b><br>
+        <span class="mono">B0</span> 输出 NTC 本底（身份 PDS 必为 <b>0.5</b>）·
+        <span class="mono">B1</span> NTC + 跨背景 delta 中位数（<b>零参数查找表</b>）·
+        <span class="mono">B2</span> 按 NTC 相似度加权（观察性相似 ≠ 因果相似）·
+        <span class="mono">B3</span> 低秩 context × target × gene 交互（必须在外层 fold 改进）。
+      </div>
+      <div class="m-item" style="--c:var(--teal)">
+        <b>每级记三行</b><br>
+        假设：这一步在验证什么 ／ <b>证伪条件：如果它没用我会看到什么（动手前写）</b> ／ 结果：Δ 与阈值 T 的比较（动手后写）。写不出可观测的证伪条件，就不要开始。
+      </div>
+      <div class="m-item" style="--c:var(--red)">
+        <b>两条硬规则</b><br>
+        ① 每步只改一件事；② <b>只报总分的消融不算完成</b> —— 至少同时报逐指标成绩单与逐留出背景成绩。换损失、相似加权、缩方差这三类改动在总分上看不出来。
+      </div>
+    </div>
+  </main>
+
+  <div class="takeaway"><strong>为什么顺序不能换</strong><span>昂贵实验通常也是「看起来最有希望」的那个，而便宜实验往往能提前把它否掉 —— 输出合同的基因顺序错了，微调一周也得不到可解释的结果。</span></div>
+</section>
+
+  <script>
+    const requested = new URLSearchParams(window.location.search).get("figure");
+    const allowed = new Set(["floor", "ladder"]);
+    if (requested !== null) {
+      if (!allowed.has(requested)) throw new Error(`Unknown figure: ${requested}`);
+      document.body.classList.add("single");
+      const selected = document.querySelector(`[data-figure="${requested}"]`);
+      selected.classList.add("active");
+    }
+  </script>
+</body>
+</html>

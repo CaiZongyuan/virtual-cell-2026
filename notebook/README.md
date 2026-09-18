@@ -21,28 +21,23 @@
 | 01 | `01_vc2026_data.ipynb` | 数据合同与真实数据审计；正文已发布飞书冻结，回指由本表补齐 |
 | 02 | `06_state_anatomy.ipynb` | State 架构解剖：集合注意力的置换等变性、Energy 距离 vs MSE、残差加回与参数量分解（纯 NumPy，不装 torch）。正文 §7.3 已回指本 notebook |
 | 03 | `02_state_model_and_transfer.ipynb`、`03_finetuning_counts_and_budget.ipynb` | State 接口迁移与微调落地：02 读固定官方 YAML 核对两套配置（328/2,000 vs 768/18,533）、按基因名称迁移的权重错位实验；03 做教学计数生成、H5AD 写入/读回、400-cell 输出合同检查与可拖动的预算计算器。**边界**：两个 notebook 都是纯 NumPy 教学复现，不在本机跑 `arc-state` 微调（本机装不了，正文 §6 已说明） |
+| 04 | `05_noise_floor.ipynb`、`11_ablation_and_falsification.ipynb`、`09_simple_baselines.ipynb`、`04_arc_colab_h1_benchmark.ipynb` | 验证与证伪的动手材料（本课吸收了原 L1-02/L2-05/L3-01 与 L2-04 的 B0–B3）：05 测噪声地板的两种口径与缩放曲线；11 演示三类自欺机制、k 选最大虚高、判据三与「总分涨 DE 跌」的构造；09 手算 B0–B3 并把「B1 是否优于 B0」接到地板的机械判定；04 校验官方 Colab 的评分输入合同（126 靶点面板、推理 TSV、三方 SHA-256）。**边界**：四份均为离线教学，不在本地跑六指标数值评分或正式微调 |
 | L1-01 | —（豁免） | 纯阅读课：§6 的「可复现实践」是**填一张赌注对照表**（材料 × 赌注 × 核心假设 × 天花板判据 × 本赛可用性），产物是读者自己的判断表，不存在需要 kernel 执行的计算。本课零算力，见 `docs/lessons/README.md` 阶段表第 1 阶段「纯阅读，零算力」 |
-| L1-02 | `05_noise_floor.ipynb` | 噪声地板的两种口径、背景间距离分母与缩放曲线 |
 | L2-02 | `07_stack_icl_context.ipynb` | Stack 的窗口切分与查询细胞复制、双轴注意力显存与 8 GiB batch 边界、参数量手算对表、`T=5` 生成计划、上下文敏感性对照（纯 NumPy） |
 | L2-03 | `08_foundation_model_routes.ipynb` | scGPT 分层参数量与「为什么不给总数」、零表达靶点的接口可区分性、四分量 ANOVA 的 beta_frac 分档、B1 与「完美知道 Γ」上界的机会窗口（合成数据，纯 NumPy） |
-| L2-04 | `09_simple_baselines.ipynb` | B0/B1 手算与课文 §8.1 逐位对表、中位数 vs 均值的稳健性（异常背景）、LOCO 协议骨架与零覆盖回退 B0、B2 相似度加权的权重集中、把「B1 是否真的优于 B0」接到噪声地板的机械判定（合成数据，纯 NumPy） |
-| L2-05 | `11_ablation_and_falsification.ipynb` | 三类自欺的机制：种子噪声下「两两比较」的虚假改进分布、扫 k 个候选取最大值的虚高（k=6 约 +1.27σ）、把地板套到具体改动上的机械判定（含跨尺度误用演示）、真值侧重抽 vs 模型侧重抽的判据三演示、「总分涨 DE 三项跌」的构造、消融顺序的成本模型、13 条证伪清单的可观测性自检（合成数据，纯 NumPy） |
+| L2-04 | `09_simple_baselines.ipynb` | B0/B1 手算与 B2 相似度加权、LOCO 协议骨架与零覆盖回退 B0（合成数据，纯 NumPy）。**注**：B0–B3 的权威解释与手算口径已移至第 04 课 §6.3，本课正文只保留效应迁移族；notebook 09 由第 04 课与本课共用 |
 | L2-06 | `10_model_cards.ipynb` | 六张模型卡的可核对表（附录课）：可执行程度矩阵（代码/权重/真值/面板四列机械计数）、训练条件判定（本赛 D/E/F 能否满足「需要目标背景扰动真值」）、面板交集审计（示意集合，演示差集与 patch 边界问题）、靶点身份编码分类器（可外推 vs 查找表，含 B3 的 `b_t`）、分量归因能力判定（零依赖，纯标准库） |
-| L3-01 | `04_arc_colab_h1_benchmark.ipynb` | 六项指标的评分回路：官方 Colab 的 22 cell 映射、与 `vcc-h1` 的合同差异、126 靶点面板筛选与推理 TSV 生成、缓存 CSV ↔ sources.json ↔ benchmark 注册表三方 SHA-256 比对。**边界**：本 notebook 校验评分**输入合同的正确性**，不在本地跑六项指标的数值评分 |
-| L3-02 | `01_vc2026_data.ipynb`、`03_finetuning_counts_and_budget.ipynb` | 跨背景验证的数据侧：01 做 A/B/C 三背景的真实结构审计（细胞/基因/靶点、NTC guide、CSR、raw/CP10K/log1p），03 做公共数据统一接口、预训练暴露与划分泄漏的检查清单 |
-| L3-03 | `03_finetuning_counts_and_budget.ipynb` | 原始计数生成与预算：教学计数生成、H5AD 写入/读回、400-cell 输出合同检查、可拖动预算计算器 |
-| L3-04 | `02_state_model_and_transfer.ipynb`、`03_finetuning_counts_and_budget.ipynb`、`04_arc_colab_h1_benchmark.ipynb` | State 接口、微调与计数落地、官方流水线与 H1 评分 |
 | L3-05 | `11_ablation_and_falsification.ipynb`、`03_finetuning_counts_and_budget.ipynb` | 最终轮的判据与彩排：11 提供消融顺序表、证伪清单与「地板当阈值」的机械判定（稳定性优先于单次最高分，§2.3）；03 提供冻结清单里的输出合同与预算复算 |
 
 `90_ref_*` / `91_ref_*` 是官方 Colab 的固定副本与中文对照，**不属于课程序列**，见下一节；`test.ipynb` 是环境自检，同样不映射任何课程。
 
-**至此全部 15 门课（含附录 L2-06）的映射已齐**，本表可直接被 `scripts/check-lessons.py` 解析。两门课标为「—（豁免）」并写明理由：`L0-00`（正文冻结 + 早于完成度契约）与 `L1-01`（纯阅读课，产物是读者自己的填表，无计算）。豁免是**登记在案的判断**，不是放宽判定——校验脚本里对这两条各有一条带理由的 EXEMPT 记录。
+**至此当前全部 11 门课（含附录 L2-06）的映射已齐**，本表可直接被 `scripts/check-lessons.py` 解析。两门课标为「—（豁免）」并写明理由：`00`（正文冻结 + 早于完成度契约）与 `L1-01`（纯阅读课，产物是读者自己的填表，无计算）。豁免是**登记在案的判断**，不是放宽判定——校验脚本里对这两条各有一条带理由的 EXEMPT 记录。
 
-一门课可以映射多份 notebook（如 `L3-04` 从接口到微调到评分三段），也可以多门课共用一份（如 `L3-03` 与 `L3-05` 共用 `03`）。本表只声明「这门课的动手材料在哪里」，不要求一一对应。
+一门课可以映射多份 notebook（如第 04 课从噪声地板、证伪判据、B0–B3 手算到评分合同四段），也可以多门课共用一份（如第 03 课与 L3-05 共用 `03`）。本表只声明「这门课的动手材料在哪里」，不要求一一对应。
 
 ## 官方 Colab 固定副本
 
-`90_ref_arc_vcc2025_colab_official.ipynb` 是 Arc 官方 [STATE for Virtual Cell Challenge Colab](https://colab.research.google.com/drive/1QKOtYP7bMpdgDJEipDxaJqOchv7oQ-_l)（VC2025 版）的逐字节固定副本：22 个 cell，GPU T4 配置，SHA-256 `0b3888b9a36e6fbfc056b9e5585d825aa5a97a92f34d3bc2ff69cba064f21422`（2026-09-15 下载，与[来源审计](../docs/research/state-training-source-audit.md)记录一致）。它不是课程单元，不能在学习环境运行（需 GPU、`arc-state` 与 Python < 3.13）；04 课的 cell 序号映射以它为准。Colab 是可变文档：若 Arc 更新，重新下载后哈希会变，须重新审计再更新 04 课映射，不能沿用旧序号。
+`90_ref_arc_vcc2025_colab_official.ipynb` 是 Arc 官方 [STATE for Virtual Cell Challenge Colab](https://colab.research.google.com/drive/1QKOtYP7bMpdgDJEipDxaJqOchv7oQ-_l)（VC2025 版）的逐字节固定副本：22 个 cell，GPU T4 配置，SHA-256 `0b3888b9a36e6fbfc056b9e5585d825aa5a97a92f34d3bc2ff69cba064f21422`（2026-09-15 下载，与[来源审计](../docs/research/state-training-source-audit.md)记录一致）。它不是课程单元，不能在学习环境运行（需 GPU、`arc-state` 与 Python < 3.13）；`04_arc_colab_h1_benchmark` 的 cell 序号映射以它为准。Colab 是可变文档：若 Arc 更新，重新下载后哈希会变，须重新审计再更新 notebook 04 的映射，不能沿用旧序号。
 
 `91_ref_arc_vcc2025_colab_zh.ipynb` 是它的**中文对照翻译版**（非官方翻译）：markdown 译为简体中文，代码命令未改动、仅译 `#` 注释，内嵌图片逐字节保留；cell 序号与 90 副本一一对应。翻译仅供阅读辅助，两种文本有出入时以英文原文为准。
 
