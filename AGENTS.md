@@ -65,8 +65,9 @@
    - **科研数据图**（散点、热图、误差棒、多面板结果图）：`.agents/skills/nature-figure/SKILL.md`，Python(matplotlib/seaborn) 或 R(ggplot2) 源脚本 + 导出矢量，再转 WebP。
    - **模型/论文式架构图**（模块自下而上堆叠、残差跳线、`N×` 重复块、注意力头与汇流线）：`.agents/skills/drawio-skill/SKILL.md`。配色沿用 draw.io 默认调色板（即 "Attention Is All You Need" 原图配色）；`.drawio` 作为可编辑源入库。
    - **系统架构、数据流、时序图、状态机**：同样走 `.agents/skills/drawio-skill/SKILL.md`。**archify 已于 2026-09-17 卸载**（它面向系统架构语汇，画不了 `Linear → GELU → ReLU`、残差跳线、`N×` 重复块这类论文式结构，实测出来是错的），两类图现在统一用一个工具，避免再次选错。
+   - **复杂架构必须拆成多张聚焦图，不要堆进一张大图。** 当架构涉及多个子系统、阶段或层级（例如 State 的 hidden/先验分支、训练 vs 推理、数据流水各阶段）时，拆成多张独立 `.drawio`，每张只讲清一个关注点，并在正文不同小节就近引用。单张图节点过多会撞上 §9/§10 的可读性与校验红线（连线穿框、斜线吸附、字号过小、`validate.py --score` 不过）；拆分后每张都更可控、更易维护，也便于单独改某条链路而不牵动全局。
    - **概念插画、封面、风格化示意图**：`$imagegen`（或经浏览器用 ChatGPT 生成，prompt 放 `docs/style/prompts/`）。生成式科学图只是解释性插画，不能作为实验结构、机制或数据证据。
-   - **标签密集且要求数值或机制准确的流程图**：HTML/CSS/canvas 手绘 + Chromium 截图。
+   - **标签密集、要求数值或机制准确、或重在逐步讲清概念的内容：HTML/CSS/canvas 手绘 + Chromium 截图。** 不仅限流程图——概念对比、分步机制示意、指标/判据的直观解释、时间线、决策树、数据流水线概览等"非架构类但需要精确文字/数值"的图都用它。图稿源与渲染脚本见 `docs/style/sources/03-04-figures.html` 与 `scripts/html-cdp-shot.py`（CDP 通道，每次渲染开新 target 避免 JS realm 污染；先 1600×900 @ `deviceScaleFactor=2` 渲染，再用 LANCZOS 降到目标宽度，转 WebP q86）。这类图仍是解释性插图：实验结构/机制证据走 drawio，数据结果走 nature-figure，不要混用。
 2. `$imagegen` 优先使用内置 `image_gen`。内置工具不可用且用户已授权 CLI/API 回退时，使用该 skill 自带的 `scripts/image_gen.py`，默认模型为 `gpt-image-2`；通过 `uv run --with openai` 提供依赖，不编写临时 SDK runner，也不修改 skill 脚本。
 3. CLI 回退须同时读取 Codex 配置的凭证与 Provider：从 `~/.codex/auth.json` 取得 `OPENAI_API_KEY`，从 `~/.codex/config.toml` 取得当前 provider 的 `base_url`；当前 custom provider 供 OpenAI SDK 使用时在该 URL 后补 `/v1` 并设置 `OPENAI_BASE_URL`。只在子进程环境中注入，不打印、复制、持久化或写入仓库。若只带 Key 直连官方端点，custom-provider Key 会返回 401。
 4. 参考图只作风格、构图或情绪指导时，在 prompt 中明确写 `Image 1: style/layout reference`，不得把它描述成待保留内容的 edit target。CLI 需要传图时使用 `edit --image <reference>` 调用图像输入接口，并要求替换原内容、只继承指定视觉特征；`gpt-image-2` 不设置 `input_fidelity`。
