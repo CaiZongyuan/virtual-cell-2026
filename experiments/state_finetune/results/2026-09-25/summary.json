@@ -1,0 +1,227 @@
+{
+  "date": "2026-09-25",
+  "official": {
+    "entry_id": "2TvmhHnxpkc8hhjCSWcG",
+    "model_name": "state-ft-20260925-unfrozen-v1",
+    "is_final": false,
+    "final_status": "published",
+    "bytes_uploaded": 2627901440,
+    "md5_verified": true,
+    "scores": {
+      "rank": 1140,
+      "score_avg": -0.992407445228847,
+      "score_pds": 0.00703193915819459,
+      "score_mse": 0,
+      "score_nmae": -6,
+      "score_fid": -0.03705835186180883,
+      "score_reach": 0.07386654622167142,
+      "score_jac": 0.001715195108860262,
+      "partition": "val",
+      "panel_id": "vcc2026-val-1",
+      "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4"
+    },
+    "artifact_sha256": "e7af36757d7fdb1ce26ddc6f6cfd8f3eef89dd823d750c29b48590e4aba1c4dc",
+    "recorded_at": "2026-09-25T14:28:03.840893+00:00"
+  },
+  "h1": {
+    "control": {
+      "label": "control",
+      "panel": "H1 canonical 126 targets",
+      "scaled_column": "from_replicate",
+      "scaled": {
+        "PDS": -0.0455439674454958,
+        "MSE": 0.0,
+        "NMAE": -0.0762629274689801,
+        "FID": -0.0835845798838572,
+        "REACH": -0.0610437366453585,
+        "JAC": -0.0049489144697353,
+        "avg_score": -0.0452306876522378
+      },
+      "raw": {
+        "PDS": 0.4853333333333333,
+        "MSE": 1.0022423529338131,
+        "NMAE": 1.0050449965582289,
+        "FID": 3.67214926595e-05,
+        "REACH": 0.0271469705195904,
+        "JAC": 1.1278254848e-06
+      },
+      "scores_sha256": "ba43552639a2640f4497151d18fee5c6c2cb39113630da6d512575dd937cbc43",
+      "official_leaderboard_score": false
+    },
+    "frozen-seed42": {
+      "label": "frozen-seed42",
+      "panel": "H1 canonical 126 targets",
+      "scaled_column": "from_replicate",
+      "scaled": {
+        "PDS": -0.0095669280728709,
+        "MSE": 0.0,
+        "NMAE": -6.0,
+        "FID": 0.542357203765273,
+        "REACH": 0.0011107661436615,
+        "JAC": 0.3236696308581767,
+        "avg_score": -0.8570715545509598
+      },
+      "raw": {
+        "PDS": 0.5022857142857142,
+        "MSE": 382.1314777988752,
+        "NMAE": 25.15213127490976,
+        "FID": 0.5011647833907023,
+        "REACH": 0.0832332222841921,
+        "JAC": 0.1400586341026816
+      },
+      "scores_sha256": "4575f1fbc4894d1bbac7e32888644cdc1764ff57e047b8ac90cd8951990d31d0",
+      "official_leaderboard_score": false
+    },
+    "unfrozen-seed42": {
+      "label": "unfrozen-seed42",
+      "panel": "H1 canonical 126 targets",
+      "scaled_column": "from_replicate",
+      "scaled": {
+        "PDS": -0.0037728730428223,
+        "MSE": 0.0,
+        "NMAE": -6.0,
+        "FID": 0.5439706853249215,
+        "REACH": 0.0023240503163487,
+        "JAC": 0.3227783383411368,
+        "avg_score": -0.8557832998434024
+      },
+      "raw": {
+        "PDS": 0.5050158730158731,
+        "MSE": 325.18731320465616,
+        "NMAE": 20.701354784187888,
+        "FID": 0.5024565343298728,
+        "REACH": 0.0843280514360289,
+        "JAC": 0.1396787644663664
+      },
+      "scores_sha256": "437ea8bc8aef6035bad7651c9042bc983f394c42852816995ececc4b509e0cca",
+      "official_leaderboard_score": false
+    }
+  },
+  "training_coverage": {
+    "sources": [
+      {
+        "source": "gwps",
+        "rows": 184222,
+        "conditions": 603,
+        "measured_genes": 7679
+      },
+      {
+        "source": "hepg2",
+        "rows": 14069,
+        "conditions": 82,
+        "measured_genes": 9023
+      },
+      {
+        "source": "rpe1",
+        "rows": 35598,
+        "conditions": 189,
+        "measured_genes": 8259
+      },
+      {
+        "source": "k562",
+        "rows": 42558,
+        "conditions": 209,
+        "measured_genes": 7938
+      }
+    ],
+    "abc_targets_trained": 254,
+    "abc_targets_without_direct_supervision": [
+      "ABCD1",
+      "ANKRD52",
+      "CAND1",
+      "CAPRIN2",
+      "DLAT",
+      "DMTF1",
+      "EPHB2",
+      "HEATR6",
+      "KIF21B",
+      "MAPK12",
+      "MAPK7",
+      "MLKL",
+      "NICN1",
+      "PAPOLA",
+      "PARP3",
+      "PBLD",
+      "PDK3",
+      "PHF11",
+      "PHF19",
+      "PI4KB",
+      "PIN1",
+      "PSMB9",
+      "RAB11FIP5",
+      "RFK",
+      "SEMA4F",
+      "SLC44A1",
+      "SLIRP",
+      "SNN",
+      "SOCS5",
+      "SPATA20",
+      "STAT6",
+      "TAF4",
+      "TBC1D19",
+      "TDRD7",
+      "TESK2",
+      "TIMM50",
+      "TMEM104",
+      "TMEM41B",
+      "TMEM79",
+      "TTBK2",
+      "TXNDC16",
+      "ZC2HC1A",
+      "ZNF174",
+      "ZNF324",
+      "ZNF397",
+      "ZRANB3"
+    ],
+    "h1_targets_trained": 129
+  },
+  "preflight": {
+    "input": "abc-unfrozen-seed42.h5ad",
+    "output": "state-ft-20260925.vcc",
+    "n_cells": 360000,
+    "nnz": 1545580220,
+    "n_genes": 18533,
+    "encoding": 32,
+    "pert_col": "target_gene",
+    "output_pert_col": "target_gene",
+    "celltype_col": null,
+    "normalization": "counts-preserved",
+    "context_col": "context",
+    "cells_per_context": {
+      "A": 120000,
+      "B": 120000,
+      "C": 120000
+    },
+    "verified_targets": true,
+    "dropped": [],
+    "reordered_genes": false,
+    "dry_run": false,
+    "vcc_member": "pred.h5ad.zst",
+    "notes": []
+  },
+  "parent_target_order": {
+    "targets": 2024,
+    "map_keys": 2024,
+    "order_mismatches": [],
+    "sha256": "f5621cab243a5135014af3867f63f8bf75cff19aee06d0f29a1bdecd2dbf47d0"
+  },
+  "vcc_memory_patch": {
+    "package": "vcc-cli",
+    "version": "0.1.0",
+    "original_sha256": "27368ef2876100d2e806dd6c4e91c52f3cae786c8c4a803f66c3ba08afc3ec25",
+    "patched_sha256": "4a93e7d267379a32b661f7f9bd4de6543bb372816362a2a85e6f70e437240ad3",
+    "changes": [
+      "chunk integer-value checks",
+      "reuse owned CSR indices/indptr during float encoding",
+      "bounded FP64 row totals preserving exact integer sums"
+    ],
+    "validation_guards_removed": []
+  },
+  "vcc_memory_patch_verification": {
+    "counts_equal": true,
+    "obs_equal": true,
+    "genes_equal": true,
+    "fractional_tail_rejected": true,
+    "row_sum_boundary_and_invalid_input_parity": true
+  }
+}

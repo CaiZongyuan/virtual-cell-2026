@@ -1,0 +1,16 @@
+# Separate Python 3.12 environment; install CUDA torch from the official cu126 index.
+torch==2.7.1
+transformers==4.53.3
+lightning==2.5.2
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.15.3
+anndata==0.11.4
+h5py==3.14.0
+geomloss==0.2.6
+omegaconf==2.3.0
+pyyaml==6.0.2
+pytest==8.4.1
+swanlab[dashboard]==0.10.1
+# Explicitly opt into the dashboard prerelease required by SwanLab 0.10.1.
+swanboard==0.1.10b2
