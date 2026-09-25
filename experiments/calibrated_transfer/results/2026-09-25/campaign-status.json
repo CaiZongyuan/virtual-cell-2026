@@ -1,6 +1,6 @@
 {
-  "status": "blocked_on_server_ssh",
-  "recorded_at_utc": "2026-09-25T19:25:03.393346+00:00",
+  "status": "recovering_after_server_reboot",
+  "recorded_at_utc": "2026-09-25T22:01:47.593176+00:00",
   "control": {
     "score": -0.04523068765223785,
     "raw_mse": 1.0022423529338134,
@@ -20,19 +20,23 @@
     "training_complete": true,
     "steps": 1000,
     "prediction_complete": true,
-    "score_status": "unconfirmed_after_ssh_disconnect"
+    "score_status": "verified",
+    "score": 0.06249687082968269,
+    "raw_mse": 1.4469090420697237,
+    "raw_nmae": 1.023922455037391,
+    "exit_code": 0
   },
   "limited": {
     "training_complete": true,
     "steps": 1000,
     "prediction_complete": true,
-    "score_status": "unconfirmed_after_ssh_disconnect"
+    "score_status": "resuming_same_prediction_after_timeout"
   },
   "jurkat_confirmation": "not_run; labels not used for tuning",
   "official_submissions": "paused",
-  "last_storage_bytes": 85618807895,
+  "last_storage_bytes": 85617671673,
   "storage_scope": "server project directories and uv cache",
-  "remote_process_state": "unknown after connection loss",
+  "remote_process_state": "one resident scorer in tmux; training not repeated",
   "recovery_entry": "experiments/calibrated_transfer/recover_campaign.py",
-  "recovery_validation": "syntax checked; end-to-end recovery not run"
+  "recovery_validation": "baseline, empirical and frozen verified; limited scoring in progress"
 }
