@@ -1,0 +1,299 @@
+{
+  "scope": "First 3 sorted targets per context, 400 saved cells each; no new official score",
+  "seed": 42,
+  "saved_predictions": [
+    {
+      "context": "H1",
+      "arm": "frozen",
+      "records": [
+        {
+          "target": "ACAT2",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.0672088770697095,
+          "prediction_fallback_fraction": 0.038607622371239034,
+          "fallback_mass_ratio": 0.5744423066493872,
+          "mean_profile_total_variation": 0.6232581120874939
+        },
+        {
+          "target": "ACVR1B",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.06712431581475051,
+          "prediction_fallback_fraction": 0.039047208362812134,
+          "fallback_mass_ratio": 0.5817148061601776,
+          "mean_profile_total_variation": 0.6205712850574201
+        },
+        {
+          "target": "AKT2",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.06744440526140934,
+          "prediction_fallback_fraction": 0.03907510885323613,
+          "fallback_mass_ratio": 0.5793676836764148,
+          "mean_profile_total_variation": 0.6211105805272356
+        }
+      ],
+      "pairwise_effect_cosines": [
+        0.9839984802102266,
+        0.9877670467674147,
+        0.9895679052246431
+      ],
+      "prediction_file": "h1-frozen-seed42.h5ad",
+      "export_contract": null
+    },
+    {
+      "context": "H1",
+      "arm": "unfrozen",
+      "records": [
+        {
+          "target": "ACAT2",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.0672088770697095,
+          "prediction_fallback_fraction": 0.056613919533177175,
+          "fallback_mass_ratio": 0.8423577658418074,
+          "mean_profile_total_variation": 0.5461658608782789
+        },
+        {
+          "target": "ACVR1B",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.06712431581475051,
+          "prediction_fallback_fraction": 0.055944704034748716,
+          "fallback_mass_ratio": 0.8334491511115696,
+          "mean_profile_total_variation": 0.5501840872884223
+        },
+        {
+          "target": "AKT2",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.06744440526140934,
+          "prediction_fallback_fraction": 0.05557264488578189,
+          "fallback_mass_ratio": 0.8239770915079847,
+          "mean_profile_total_variation": 0.5474390712581079
+        }
+      ],
+      "pairwise_effect_cosines": [
+        0.9872331253319359,
+        0.9889892687272921,
+        0.9938353722362395
+      ],
+      "prediction_file": "h1-unfrozen-seed42.h5ad",
+      "export_contract": null
+    },
+    {
+      "context": "A",
+      "arm": "unfrozen",
+      "records": [
+        {
+          "target": "ABCD1",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.06543950137921965,
+          "prediction_fallback_fraction": 0.04344702858177028,
+          "fallback_mass_ratio": 0.6639266447034223,
+          "mean_profile_total_variation": 0.5605651176645094
+        },
+        {
+          "target": "ACLY",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.06529758955279581,
+          "prediction_fallback_fraction": 0.040176965113006585,
+          "fallback_mass_ratio": 0.6152901720900714,
+          "mean_profile_total_variation": 0.5722446509074441
+        },
+        {
+          "target": "ADNP",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.06533182921762486,
+          "prediction_fallback_fraction": 0.043196742188470236,
+          "fallback_mass_ratio": 0.6611898473648868,
+          "mean_profile_total_variation": 0.5634085399712178
+        }
+      ],
+      "pairwise_effect_cosines": [
+        0.9865576483203478,
+        0.9905486740605955,
+        0.9857337874515959
+      ],
+      "prediction_file": "abc-unfrozen-seed42.h5ad",
+      "export_contract": null
+    },
+    {
+      "context": "B",
+      "arm": "unfrozen",
+      "records": [
+        {
+          "target": "ABCD1",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.04350803132113813,
+          "prediction_fallback_fraction": 0.03430092276866955,
+          "fallback_mass_ratio": 0.788381402860778,
+          "mean_profile_total_variation": 0.5882010644079145
+        },
+        {
+          "target": "ACLY",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.043638696799343485,
+          "prediction_fallback_fraction": 0.02994793585035087,
+          "fallback_mass_ratio": 0.6862701695253516,
+          "mean_profile_total_variation": 0.6089462696043783
+        },
+        {
+          "target": "ADNP",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.04348952972743127,
+          "prediction_fallback_fraction": 0.03316184153431851,
+          "fallback_mass_ratio": 0.7625247212871444,
+          "mean_profile_total_variation": 0.5955917528044667
+        }
+      ],
+      "pairwise_effect_cosines": [
+        0.9607805991180756,
+        0.9825265312330634,
+        0.9757847078730348
+      ],
+      "prediction_file": "abc-unfrozen-seed42.h5ad",
+      "export_contract": null
+    },
+    {
+      "context": "C",
+      "arm": "unfrozen",
+      "records": [
+        {
+          "target": "ABCD1",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.059195190857291115,
+          "prediction_fallback_fraction": 0.04492169750908351,
+          "fallback_mass_ratio": 0.7588741054553162,
+          "mean_profile_total_variation": 0.5694816216610815
+        },
+        {
+          "target": "ACLY",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.05932741591942482,
+          "prediction_fallback_fraction": 0.03802671314187437,
+          "fallback_mass_ratio": 0.6409635840792413,
+          "mean_profile_total_variation": 0.5878195705903487
+        },
+        {
+          "target": "ADNP",
+          "cells": 400,
+          "exact_template_depth_match": true,
+          "ntc_fallback_fraction": 0.05917368838786401,
+          "prediction_fallback_fraction": 0.04201158647045449,
+          "fallback_mass_ratio": 0.7099707254190816,
+          "mean_profile_total_variation": 0.5744074411932898
+        }
+      ],
+      "pairwise_effect_cosines": [
+        0.9670888479070399,
+        0.9794337318989834,
+        0.9755740296473361
+      ],
+      "prediction_file": "abc-unfrozen-seed42.h5ad",
+      "export_contract": null
+    }
+  ],
+  "ntc_probe": [
+    {
+      "context": "H1",
+      "cells": 64,
+      "precision": "CPU FP32",
+      "ntc_fallback_fraction": 0.06693384836182843,
+      "prediction_fallback_fraction": 0.06065531044570288,
+      "fallback_mass_ratio": 0.9061978644618598,
+      "mean_profile_total_variation": 0.5381882246819293,
+      "control_split_half_profile_total_variation": 0.05396049293595835,
+      "fallback_expected_multiplier_quantiles": [
+        0.4253358937892344,
+        0.9327947734623471,
+        1.1557097114452075
+      ],
+      "control_mass_on_source_panel": {
+        "gwps": 0.8246999886925781,
+        "hepg2": 0.8734101459621462,
+        "rpe1": 0.858730116459612,
+        "k562": 0.8325006129258123
+      }
+    },
+    {
+      "context": "A",
+      "cells": 64,
+      "precision": "CPU FP32",
+      "ntc_fallback_fraction": 0.06441713973630334,
+      "prediction_fallback_fraction": 0.042629324440948774,
+      "fallback_mass_ratio": 0.661769904957831,
+      "mean_profile_total_variation": 0.5659448933043674,
+      "control_split_half_profile_total_variation": 0.07657971449281942,
+      "fallback_expected_multiplier_quantiles": [
+        0.17202061971135937,
+        0.671322297419569,
+        1.173598367348808
+      ],
+      "control_mass_on_source_panel": {
+        "gwps": 0.8651548086085004,
+        "hepg2": 0.8650573171722553,
+        "rpe1": 0.8629540076258062,
+        "k562": 0.8732996332839654
+      }
+    },
+    {
+      "context": "B",
+      "cells": 64,
+      "precision": "CPU FP32",
+      "ntc_fallback_fraction": 0.043275086136097866,
+      "prediction_fallback_fraction": 0.03526546362535826,
+      "fallback_mass_ratio": 0.8149137708114603,
+      "mean_profile_total_variation": 0.5913333244947355,
+      "control_split_half_profile_total_variation": 0.09594720638096683,
+      "fallback_expected_multiplier_quantiles": [
+        0.21546857052232102,
+        0.8417125622953363,
+        1.6983709608962838
+      ],
+      "control_mass_on_source_panel": {
+        "gwps": 0.8194563812587499,
+        "hepg2": 0.8779082093734207,
+        "rpe1": 0.9030892776676988,
+        "k562": 0.830727637704019
+      }
+    },
+    {
+      "context": "C",
+      "cells": 64,
+      "precision": "CPU FP32",
+      "ntc_fallback_fraction": 0.0599118596773327,
+      "prediction_fallback_fraction": 0.03909899492199177,
+      "fallback_mass_ratio": 0.6526086009108585,
+      "mean_profile_total_variation": 0.5851517580070759,
+      "control_split_half_profile_total_variation": 0.0835172493676594,
+      "fallback_expected_multiplier_quantiles": [
+        0.19037848664420184,
+        0.6728624543607137,
+        1.2777658620765477
+      ],
+      "control_mass_on_source_panel": {
+        "gwps": 0.7948463504973289,
+        "hepg2": 0.8802722137563985,
+        "rpe1": 0.8674632875529653,
+        "k562": 0.8037778313881574
+      }
+    }
+  ],
+  "limitations": [
+    "Small target sample, not the whole submission",
+    "Composition audit cannot apportion the official score loss",
+    "NTC CPU FP32 probe is not a GPU bf16 replay"
+  ],
+  "ntc_probe_checkpoint_step": 1250,
+  "ntc_probe_checkpoint_sha256": "d9e17261e9b5ea86d63c52835db22e6a305612906d2e39fbc8f82c133ac25fff"
+}

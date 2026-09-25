@@ -110,7 +110,8 @@ def build_model(upstream: Path, parent: Path, genes, features, parent_targets, s
 
     positions = {name: index for index, name in enumerate(genes)}
     old_positions, new_positions = zip(*[(i, positions[name]) for i, name in enumerate(old_genes) if name in positions])
-    # Keep the father's single-linear input/output modules and residual branch.
+    # Keep the parent's single-linear interfaces and hidden-space residual.
+    # The gene-space branch does not add the original expression back directly.
     if "basal_encoder.0.weight" not in old or "project_out.0.weight" not in old:
         raise ValueError("Unsupported parent interface; expected one-layer encoders")
     with torch.no_grad():
@@ -172,7 +173,7 @@ def expression_from_counts(counts):
 
 
 def integer_counts(prediction, control_counts, supervised, rng):
-    """Fixed count adapter; genes without supervision retain NTC weights."""
+    """Retain NTC weights before normalization, not final NTC proportions."""
     prediction = np.asarray(prediction, dtype=np.float64)
     control_counts = np.asarray(control_counts)
     if prediction.shape != control_counts.shape:

@@ -68,3 +68,5 @@ uv run --no-project --python "$run_dir/.venv/bin/python" \
 H1 `TAZ` 的 `gene_id` 为 `ENSG00000102125`，对应 [HGNC:11577 / TAFAZZIN](https://rest.genenames.org/fetch/symbol/TAFAZZIN)。它与 H1 中独立的 `WWTR1`（`ENSG00000018408`）不同。只将特征查找映射到 `TAFAZZIN`，官方预测标签与基因轴仍保留 `TAZ`。原始核查证据在本地 `output/state-asset-audit/h1-taz-alias-resolution.json`。
 
 首轮结果见[执行记录](../../docs/research/state-first-run-2026-09-25.md)与[精简机器可读证据](results/2026-09-25/summary.json)。
+
+首轮模型显著差于 NTC 基线；后续实验先看[失败复盘与校准门槛](../../docs/research/state-first-run-postmortem-2026-09-25.md)。`diagnose_first_run.py` 读取旧预测并可对旧 checkpoint 做无扰动探针，结果归档在 [postmortem-diagnostics.json](results/2026-09-25/postmortem-diagnostics.json)。服务器连接、环境与看板操作见 [server/README.md](../../server/README.md)。
