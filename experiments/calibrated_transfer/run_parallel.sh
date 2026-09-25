@@ -20,7 +20,7 @@ pids=()
 for arm in empirical frozen limited; do
     (
         set +e
-        /usr/bin/time -v timeout 3600 bash -s -- "$python" "$script" "$previous" "$work" "$root" "$arm" > "$work/logs/$arm.log" 2>&1 <<'TRIAL'
+        /usr/bin/time -v timeout 14400 bash -s -- "$python" "$script" "$previous" "$work" "$root" "$arm" > "$work/logs/$arm.log" 2>&1 <<'TRIAL'
 set -euo pipefail
 python=$1 script=$2 previous=$3 work=$4 root=$5 arm=$6
 # Training and neural export are serialized; scoring is CPU-only.
@@ -31,13 +31,26 @@ python=$1 script=$2 previous=$3 work=$4 root=$5 arm=$6
     fi
     "$python" "$script" export --previous "$previous" --work "$work" --root "$root" --arm "$arm"
 ) 9> "$work/gpu.lock"
+score_slot_locked=false
+while [ "$score_slot_locked" = false ]; do
+    for slot in 0 1; do
+        # While training/exports are active, reserve RAM by using only slot 0.
+        if [ "$slot" -eq 1 ] && { [ ! -f "$work/predictions/empirical.json" ] || [ ! -f "$work/predictions/frozen.json" ] || [ ! -f "$work/predictions/limited.json" ]; }; then
+            continue
+        fi
+        exec {score_fd}> "$work/score-slot-$slot.lock"
+        if flock -n "$score_fd"; then score_slot_locked=true; break; fi
+        exec {score_fd}>&-
+    done
+    if [ "$score_slot_locked" = false ]; then sleep 5; fi
+done
 "$previous/.eval-venv/bin/vcc-h1" validate "$work/predictions/$arm.h5ad" --data-dir "$previous/h1-benchmark"
-"$previous/.eval-venv/bin/python" "$work/code/experiments/state_finetune/score_cached_controls.py" score \
+"$previous/.eval-venv/bin/python" "$work/code/experiments/calibrated_transfer/score_cached_inputs.py" score \
     "$work/predictions/$arm.h5ad" --data-dir "$previous/h1-benchmark" \
     --gene-chunk 512 --de-threads 8 --output "$work/evaluation/$arm"
 TRIAL
         status=$?
-        "$python" -c 'import json,sys,time; print(json.dumps({"attempt":sys.argv[1],"exit_code":int(sys.argv[2]),"finished_at_unix":time.time(),"execution":"GPU serialized, CPU scores overlap"}))' "$arm" "$status" > "$work/status/$arm.json"
+        "$python" -c 'import json,sys,time; print(json.dumps({"attempt":sys.argv[1],"exit_code":int(sys.argv[2]),"finished_at_unix":time.time(),"execution":"GPU serialized, at most two resident CPU scores"}))' "$arm" "$status" > "$work/status/$arm.json"
     ) &
     pids+=("$!")
 done

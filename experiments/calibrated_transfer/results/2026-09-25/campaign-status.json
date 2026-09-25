@@ -1,0 +1,38 @@
+{
+  "status": "blocked_on_server_ssh",
+  "recorded_at_utc": "2026-09-25T19:25:03.393346+00:00",
+  "control": {
+    "score": -0.04523068765223785,
+    "raw_mse": 1.0022423529338134,
+    "raw_nmae": 1.0050449965582289,
+    "artifact_status": "verified"
+  },
+  "empirical": {
+    "score": 0.16387417225775552,
+    "delta_vs_control": 0.2091048599099934,
+    "raw_mse": 1.3036115079004935,
+    "raw_nmae": 0.9861595229404151,
+    "artifact_status": "verified",
+    "exit_code": 0,
+    "single_seed": true
+  },
+  "frozen": {
+    "training_complete": true,
+    "steps": 1000,
+    "prediction_complete": true,
+    "score_status": "unconfirmed_after_ssh_disconnect"
+  },
+  "limited": {
+    "training_complete": true,
+    "steps": 1000,
+    "prediction_complete": true,
+    "score_status": "unconfirmed_after_ssh_disconnect"
+  },
+  "jurkat_confirmation": "not_run; labels not used for tuning",
+  "official_submissions": "paused",
+  "last_storage_bytes": 85618807895,
+  "storage_scope": "server project directories and uv cache",
+  "remote_process_state": "unknown after connection loss",
+  "recovery_entry": "experiments/calibrated_transfer/recover_campaign.py",
+  "recovery_validation": "syntax checked; end-to-end recovery not run"
+}

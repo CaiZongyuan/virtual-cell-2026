@@ -65,6 +65,17 @@ Large arrays, weights, logs and predictions stay outside Git. Results summaries,
 all attempt outcomes, exact commands, code hashes, timings and data receipts are
 copied into the repository only after completion. Training logs use local SwanLab.
 
+For the next fresh campaign, copy both source directories into
+`$work/code/experiments/`, record the source Git revision, then run
+`bash run_campaign.sh "$previous" "$work" "$root"`. The final runner validates
+and reuses the archived baseline, serializes GPU work, uses one resident CPU
+scorer while training is active and at most two after all exports finish.
+Observed evaluation costs exceeded the initial guard estimates: the final runner
+therefore allows four hours per complete candidate (including lock waits), and
+the evaluation-only resume helper allows three hours. The scientific training
+budget remains 1,000 updates per State arm. Earlier guard values below describe
+this campaign's actual execution history, not the current recommended launcher.
+
 Execution amendment before any candidate: the baseline recheck was stopped after
 verifying that the archived baseline's actual control file, benchmark, scale,
 configuration, evaluator package files and all result hashes still match. The

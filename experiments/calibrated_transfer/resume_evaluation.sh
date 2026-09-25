@@ -17,7 +17,7 @@ for arm in empirical frozen limited; do
     fi
     (
         set +e
-        /usr/bin/time -v timeout 5400 "$previous/.eval-venv/bin/python" \
+        /usr/bin/time -v timeout 10800 "$previous/.eval-venv/bin/python" \
             "$work/code/experiments/calibrated_transfer/score_cached_inputs.py" score \
             "$work/predictions/$arm.h5ad" --data-dir "$previous/h1-benchmark" \
             --gene-chunk 512 --de-threads 8 --output "$work/evaluation/$arm" \
