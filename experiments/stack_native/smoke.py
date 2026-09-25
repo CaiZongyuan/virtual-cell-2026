@@ -84,8 +84,9 @@ def run(args):
             pred = model.get_incontext_prediction(base, query, str(genelist), prompt_ratio=0.25,
                     context_ratio=0.25, mode="predict", batch_size=1, num_workers=0,
                     random_seed=42, filter_organism=False)
-        counts = sparse.csr_matrix(pred.X)
-        if pred.var_names.tolist() != list(genes) or counts.shape != (64,len(genes)):
+        # Native API returns a CSR matrix in test_adata's gene order, not AnnData.
+        counts = sparse.csr_matrix(pred)
+        if query.var_names.tolist() != list(genes) or counts.shape != (64,len(genes)):
             raise ValueError("Unexpected output axis")
         if not np.isfinite(counts.data).all() or np.any(counts.data < 0) or not np.equal(counts.data,np.floor(counts.data)).all():
             raise ValueError("Output is not finite nonnegative integer-valued counts")
