@@ -74,3 +74,17 @@ CPU scoring. This changes scheduling only; scoring remains 512 genes / 8 threads
 with unchanged data and metrics. Wall times therefore include resource contention
 and, where applicable, waiting for the GPU lock. It requires at least 24 GB free
 RAM at launch and reserves 50 GB storage headroom.
+
+The real 1,024-cell reading probe subsequently found repeated backed reads about
+16× slower than resident reads, with identical counts and row order. The
+`score_cached_inputs.py` wrapper caches the prediction as well as controls, checks
+shuffled/repeated-row parity, and retains every upstream hash/count/axis/metric
+check. Each prediction is bounded to 4 GiB of CSR storage. `cache_probe.py` is the
+regression probe; the fixture is the first 1,024 cells of an actual prediction.
+
+The first scoring segment is archived as interrupted for this storage fix.
+`resume_evaluation.sh` resumes valid upstream DE chunks for the **same prediction
+files**, with a separate 90-minute scoring timeout and at least 21 GB available
+RAM at launch. This is an execution repair; training remains exactly 1,000 steps
+per State arm and no candidate parameters were changed after scoring began.
+All interrupted and resumed exit statuses must be retained in the final audit.
