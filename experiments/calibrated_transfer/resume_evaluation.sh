@@ -11,6 +11,10 @@ test "$available" -gt 21000000
 mkdir -p "$work/status-resumed"
 pids=()
 for arm in empirical frozen limited; do
+    if [ "${#pids[@]}" -eq 2 ]; then
+        wait "${pids[0]}"
+        pids=("${pids[1]}")
+    fi
     (
         set +e
         /usr/bin/time -v timeout 5400 "$previous/.eval-venv/bin/python" \

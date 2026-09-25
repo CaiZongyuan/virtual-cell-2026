@@ -91,11 +91,19 @@ def run(args):
             raise ValueError("Unexpected output axis")
         if not np.isfinite(counts.data).all() or np.any(counts.data < 0) or not np.equal(counts.data,np.floor(counts.data)).all():
             raise ValueError("Output is not finite nonnegative integer-valued counts")
+        observed = np.isin(genes, query_raw.var_names)
+        observed_tv = 0.5*np.abs(mean_proportion(counts[:, observed])-mean_proportion(query.X[:, observed])).sum()
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        sparse.save_npz(args.output.with_name(args.output.stem+"-"+label+".npz"), counts)
+        sparse.save_npz(args.output.with_name(args.output.stem+"-query.npz"), query.X.tocsr())
         report = {"condition":label,"shape":list(counts.shape),
                   "source_measured_model_genes":len(set(raw_base.var_names)&set(genes)),
                   "target_measured_model_genes":len(set(query_raw.var_names)&set(genes)),
                   "mean_depth_ratio":float(counts.sum()/query.X.sum()),
                   "composition_tv":float(0.5*np.abs(mean_proportion(counts)-null_proportion).sum()),
+                  "observed_gene_conditional_tv":float(observed_tv),
+                  "predicted_mass_on_unmeasured_target_genes":float(counts[:,~observed].sum()/counts.sum()),
+                  "observed_gene_depth_ratio":float(counts[:,observed].sum()/query.X.sum()),
                   "ntc_split_tv":float(split_tv),"integer_finite_nonnegative":True}
         outputs.append(report)
         print(json.dumps(report),flush=True)

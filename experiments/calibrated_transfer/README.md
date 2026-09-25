@@ -88,3 +88,6 @@ files**, with a separate 90-minute scoring timeout and at least 21 GB available
 RAM at launch. This is an execution repair; training remains exactly 1,000 steps
 per State arm and no candidate parameters were changed after scoring began.
 All interrupted and resumed exit statuses must be retained in the final audit.
+Resident scoring is limited to two concurrent processes: the first three-process
+run reached about 8 GiB swap during overlapping loads. The limited-unfreeze arm
+was deferred and resumed after a slot became available, retaining its audit.
