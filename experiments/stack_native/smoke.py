@@ -65,18 +65,19 @@ def run(args):
     model = load_model_from_checkpoint(str(checkpoint), model_class="ICL_FinetunedModel",
                                        device=torch.device("cpu"), strict=True).float().to("cuda").eval()
     native_cells = model.n_cells
-    model.n_cells = 64
+    model.n_cells = args.cells
     genes = load_gene_list(str(genelist))
     if len(genes) != model.n_genes:
         raise ValueError("Checkpoint/gene-list width mismatch")
-    h1, h1_rows = read_ntc(args.previous / "h1-benchmark/h1_controls.h5ad", 128, 42, "h1", True)
-    external, source_rows = read_ntc(args.root / "raw/gwps.h5ad", 64, 43, "k562")
-    query_raw = h1[64:].copy()
+    h1, h1_rows = read_ntc(args.previous / "h1-benchmark/h1_controls.h5ad", 2*args.cells, 42, "h1", True)
+    external, source_rows = read_ntc(args.root / "raw/gwps.h5ad", args.cells, 43, "k562")
+    query_raw = h1[args.cells:].copy()
     query = _align_genes_to_target_list(query_raw, genes, None)
     null_proportion = mean_proportion(query.X)
-    split_tv = 0.5*np.abs(mean_proportion(query.X[:32])-mean_proportion(query.X[32:])).sum()
+    half = args.cells // 2
+    split_tv = 0.5*np.abs(mean_proportion(query.X[:half])-mean_proportion(query.X[half:])).sum()
     outputs = []
-    for label, raw_base in [("same_context_ntc", h1[:64].copy()), ("cross_context_ntc", external)]:
+    for label, raw_base in [("same_context_ntc", h1[:args.cells].copy()), ("cross_context_ntc", external)]:
         base = _align_genes_to_target_list(raw_base, genes, None)
         torch.manual_seed(42)
         np.random.seed(42)
@@ -86,7 +87,7 @@ def run(args):
                     random_seed=42, filter_organism=False)
         # Native API returns a CSR matrix in test_adata's gene order, not AnnData.
         counts = sparse.csr_matrix(pred)
-        if query.var_names.tolist() != list(genes) or counts.shape != (64,len(genes)):
+        if query.var_names.tolist() != list(genes) or counts.shape != (args.cells,len(genes)):
             raise ValueError("Unexpected output axis")
         if not np.isfinite(counts.data).all() or np.any(counts.data < 0) or not np.equal(counts.data,np.floor(counts.data)).all():
             raise ValueError("Output is not finite nonnegative integer-valued counts")
@@ -99,7 +100,7 @@ def run(args):
         outputs.append(report)
         print(json.dumps(report),flush=True)
     report = {"checkpoint_sha256":EXPECTED[checkpoint.name],"code_revision":"cacc2e4b09435c3e536d46237d10b50f222dd144",
-              "native_cells":native_cells,"diagnostic_cells":64,"precision":"FP32","batch_size":1,
+              "native_cells":native_cells,"diagnostic_cells":args.cells,"precision":"FP32","batch_size":1,
               "trainable_updates":0,"parameters":sum(p.numel() for p in model.parameters()),
               "elapsed_seconds":time.monotonic()-started,"gpu_peak_bytes":torch.cuda.max_memory_allocated(),
               "host_peak_bytes":resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,
@@ -116,4 +117,5 @@ if __name__ == "__main__":
     p.add_argument("--root",type=Path,required=True)
     p.add_argument("--assets",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
+    p.add_argument("--cells",type=int,choices=[64,512],default=64)
     run(p.parse_args())
