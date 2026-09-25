@@ -4,15 +4,15 @@
 
 比赛规则、数据定义和提交格式以 [`docs/Official-website/`](docs/Official-website/) 为首要依据。论文与候选资料的采用、备选和排除记录见 [`docs/references/INDEX.md`](docs/references/INDEX.md)。
 
-以 STATE 为基线的模型选择、GPU 训练、10–14 天首投排期与验收步骤见[首投方案](docs/research/first-submission-plan.md)；当前提交格式与精确截止时间见[官方合同核验](docs/research/submission-contract-check.md)。
+**当前方向：复用文献公开预训练权重微调，完善数据，在本地比较 State、Stack 等模型；暂停官方提交。** 分阶段执行与评价边界见[本地微调方案](docs/research/pretrained-finetuning-local-plan.md)，服务器与 SwanLab 操作见 [server/README.md](server/README.md)。
 
-初始化优先复用 Arc 已发布的 Replogle STATE 检查点，先小批推理，再决定哪些层需要微调；从头训练不作为前置要求。已发布权重的结构与当前源码默认值不同，必须继承实际配置。**A100 80 GB / 150 小时是完整训练分支的备选预算，尚非启动采购要求。** 资产、源码与兼容边界见[STATE 审计](docs/research/state-training-source-audit.md)。
+首轮已完成 State 微调、H1 六指标评价和一次有效提交，但模型显著差于 NTC 对照；结果与新增诊断见[失败复盘](docs/research/state-first-run-postmortem-2026-09-25.md)。后续先验证原生接口和表达校准，不从零预训练基础模型。未来恢复提交后使用随机公开名称，内部保留模型来源与结果映射。
 
-课程总览、课号对照与主题归属见[课程索引](docs/lessons/README.md)。按步骤学习与实施见[第 03 课：State 上手](docs/lessons/03-State上手.md)：包含分批数据下载单、预训练权重选择、`init_from` 微调命令、基因/靶点迁移、原始计数生成、H1 评分、打包，以及从单张 24 GB GPU 起步的资源测量方法。原生命令与需要自行实现的适配部分分别注明，预算尚未经过 GPU 训练实测。
+课程总览、课号对照与主题归属见[课程索引](docs/lessons/README.md)。学习材料见[第 03 课：State 上手](docs/lessons/03-State上手.md)；历史预算和首投安排以当前本地方案、真实运行记录为准，不直接作为启动命令。
 
 可运行学习版见 [notebook/](notebook/README.md)：三份 ipynb 依次探索本地 A/B/C 数据、State 配置与集合模型、计数输出与资源预算。运行 `uv sync --group notebook --frozen` 后选择仓库 `.venv` kernel；默认 CPU，已保留真实执行输出。
 
-首投先接入 H1 开发评分，再做多背景留出；工具合同、训练泄漏边界和资源要求见[H1 benchmark 审计](docs/research/h1-benchmark-audit.md)。
+H1 本地评分已经跑通，后续保留开发背景并增加其他整背景留出；工具合同与训练泄漏边界见[H1 benchmark 审计](docs/research/h1-benchmark-audit.md)。
 
 竞争性实施建议、验证门和最终轮运行顺序见[总体策略](docs/research/completion-strategy-primary.md)。
 
@@ -20,7 +20,7 @@
 
 STATE 之后的新架构调查、任务对齐矩阵与最小消融顺序见[架构调查](docs/research/post-state-architecture-review.md)。
 
-此前分解式模型的领域对象和 V0 研究草案见[历史实现规格](docs/research/model-implementation-spec.md)，当前主模型与运行顺序以首投方案为准。
+此前分解式模型的领域对象和 V0 研究草案见[历史实现规格](docs/research/model-implementation-spec.md)；[首投方案](docs/research/first-submission-plan.md)保留作历史记录，当前主模型与运行顺序以本地微调方案为准。
 
 ## 仓库结构
 

@@ -1,5 +1,7 @@
 # State 首次微调实验
 
+此目录保留首轮实现与负结果。**官方提交现已暂停**，下一阶段遵循[公开权重微调与本地比较方案](../../docs/research/pretrained-finetuning-local-plan.md)。`submit.py` 暂停时提前退出；恢复后自动生成随机公开名称，不接受手写架构名称。
+
 目标：在相同数据与输入/输出适配下，比较冻结与解冻官方 State 主干的效果，并生成第一次 VC2026 官方提交。方案与证据见 [执行方案](../../docs/research/state-finetuning-replan.md)。
 
 使用独立 Python 3.12 环境，通过 **uv** 安装依赖。用户级 `~/.config/uv/uv.toml`：

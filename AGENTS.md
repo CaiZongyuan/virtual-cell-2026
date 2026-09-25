@@ -8,6 +8,10 @@
 - 科研检索遵循下文的分层流程；接口合同见 `docs/Infra-Agent-Research-Search-Guide.md`，当前路由依据见 `docs/research/literature-search-stack-benchmark.md`。
 - 明确区分已验证事实、论文结论、工程假设和待验证猜想，并保留来源与不确定性。
 
+### 当前实验方向
+
+复用文献公开预训练权重做微调，不从零预训练基础模型；先完善扰动数据与本地验证，再比较 State、Stack 等候选。执行入口见 [本地微调方案](docs/research/pretrained-finetuning-local-plan.md)。官方提交已暂停，直到用户重新指示恢复；恢复后公开名称随机生成，不含架构信息，内部保留完整来源和映射。
+
 ## 科研检索
 
 先查 `docs/references/INDEX.md`，复用已评估材料并识别缺口；再把问题改写为包含生物对象、任务、细胞背景和方法的高信号英文查询。每个检索任务先执行一个查询，只在结果明显缺失时精炼一次，并记录来源、查询词、调用次数、失败和未解决缺口。

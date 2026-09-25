@@ -1,0 +1,277 @@
+{
+  "date": "2026-09-25",
+  "scope": "Local/LAN assets for pretrained fine-tuning; metadata audit only today",
+  "official_submissions": "paused",
+  "data": [
+    {
+      "id": "gwps",
+      "filename": "gwps.h5ad",
+      "bytes": 8805466154,
+      "shape": [
+        1989578,
+        8248
+      ],
+      "storage": "dense",
+      "obs_columns": [
+        "UMI_count",
+        "age",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "core_adjusted_UMI_count",
+        "core_scale_factor",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "sex",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "availability": "downloaded_on_training_server",
+      "source_url": "https://zenodo.org/records/13350497/files/ReplogleWeissman2022_K562_gwps.h5ad?download=1",
+      "checksums": {
+        "md5": "13db594f8f1d2ccb88fec44a13e414dc"
+      },
+      "checksum_status": "previous_download_receipt_verified; not rehashed in this metadata audit",
+      "role": "candidate_finetuning_source"
+    },
+    {
+      "id": "h1",
+      "filename": "h1.h5ad",
+      "bytes": 15482497461,
+      "shape": [
+        221273,
+        18080
+      ],
+      "storage": "csr_matrix",
+      "obs_columns": [
+        "_index",
+        "batch",
+        "guide_id",
+        "target_gene"
+      ],
+      "availability": "downloaded_on_training_server",
+      "source_url": "https://storage.googleapis.com/arc-institute-virtual-cell-atlas/virtual-cell-challenge/2025/train/adata_Training.h5ad",
+      "checksums": {
+        "sha256": "a09977104fefb622368ca74b50c9d3c1e891733e6c83db07acfca49b0219c02b"
+      },
+      "checksum_status": "previous_download_receipt_verified; not rehashed in this metadata audit",
+      "role": "held_out_development_background"
+    },
+    {
+      "id": "hepg2",
+      "filename": "hepg2.h5ad",
+      "bytes": 850590740,
+      "shape": [
+        145473,
+        9624
+      ],
+      "storage": "dense",
+      "obs_columns": [
+        "UMI_count",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "availability": "downloaded_on_training_server",
+      "source_url": "https://zenodo.org/records/13350497/files/NadigOConner2024_hepg2.h5ad?download=1",
+      "checksums": {
+        "md5": "af2be47f7477cf32fa6e4bec1c6a4868"
+      },
+      "checksum_status": "previous_download_receipt_verified; not rehashed in this metadata audit",
+      "role": "candidate_finetuning_source"
+    },
+    {
+      "id": "k562",
+      "filename": "k562.h5ad",
+      "bytes": 1546729675,
+      "shape": [
+        310385,
+        8563
+      ],
+      "storage": "dense",
+      "obs_columns": [
+        "UMI_count",
+        "age",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "core_adjusted_UMI_count",
+        "core_scale_factor",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "sex",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "availability": "downloaded_on_training_server",
+      "source_url": "https://zenodo.org/records/13350497/files/ReplogleWeissman2022_K562_essential.h5ad?download=1",
+      "checksums": {
+        "md5": "d8cba17576d1a8afc0f7d71b79cad0f7"
+      },
+      "checksum_status": "previous_download_receipt_verified; not rehashed in this metadata audit",
+      "role": "candidate_finetuning_source"
+    },
+    {
+      "id": "rpe1",
+      "filename": "rpe1.h5ad",
+      "bytes": 1236886900,
+      "shape": [
+        247914,
+        8749
+      ],
+      "storage": "dense",
+      "obs_columns": [
+        "UMI_count",
+        "age",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "celltype",
+        "core_adjusted_UMI_count",
+        "core_scale_factor",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "sex",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "availability": "downloaded_on_training_server",
+      "source_url": "https://zenodo.org/records/13350497/files/ReplogleWeissman2022_rpe1.h5ad?download=1",
+      "checksums": {
+        "md5": "cc7f1ec50aeb3a3e1b4a6cfa713d80fa"
+      },
+      "checksum_status": "previous_download_receipt_verified; not rehashed in this metadata audit",
+      "role": "candidate_finetuning_source"
+    }
+  ],
+  "models": [
+    {
+      "id": "arcinstitute/Stack-Large",
+      "revision": "6e1f352e8cc7f8718c74fe1d20b95c42e0942d9b",
+      "gated": false,
+      "files": [
+        {
+          "path": "basecount_1000per_15000max.pkl",
+          "bytes": 925039,
+          "sha256": "d8761dfda955b9897d3251798b72361ddd0171ef707119eaf65381bed2d85dcc"
+        },
+        {
+          "path": "bc_large.ckpt",
+          "bytes": 2610004146,
+          "sha256": "d388c75891fb26618e6e36054c9819b6a82d6f5bc608baac75994e33ddc8bb81"
+        }
+      ],
+      "status": "metadata_verified; weights_not_downloaded_or_executed",
+      "code_commit": "cacc2e4b09435c3e536d46237d10b50f222dd144",
+      "initialization": "published_pretrained_weights",
+      "holdout_pretraining_exposure": "unresolved"
+    },
+    {
+      "id": "arcinstitute/Stack-Large-Aligned",
+      "revision": "b09f085dac03d170b078a5c72f550ae93686e544",
+      "gated": false,
+      "files": [
+        {
+          "path": "basecount_1000per_15000max.pkl",
+          "bytes": 925039,
+          "sha256": "d8761dfda955b9897d3251798b72361ddd0171ef707119eaf65381bed2d85dcc"
+        },
+        {
+          "path": "bc_large_aligned.ckpt",
+          "bytes": 2613863242,
+          "sha256": "f93cf6f42f36c8a85dc570d92e801c1fc3e1f45d55741e6bb250d178a6b6ad36"
+        }
+      ],
+      "status": "metadata_verified; weights_not_downloaded_or_executed",
+      "code_commit": "cacc2e4b09435c3e536d46237d10b50f222dd144",
+      "initialization": "published_pretrained_weights",
+      "holdout_pretraining_exposure": "unresolved"
+    },
+    {
+      "id": "arcinstitute/ST-HVG-Replogle",
+      "revision": "bb6a9562cbbf1fd152df14cc53b4cc7517c77175",
+      "checkpoint": "zeroshot/jurkat/checkpoints/best.ckpt",
+      "sha256": "6fa4fe9a1c8a267d88d519d335e367b80594db64d2005abf1407260afccbfa6b",
+      "status": "downloaded; first_adaptation_failed_calibration",
+      "code_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+      "initialization": "published_pretrained_weights",
+      "holdout_pretraining_exposure": "release/config evidence; no complete cell manifest"
+    }
+  ],
+  "primary_source_calls": [
+    {
+      "url": "https://huggingface.co/api/models/arcinstitute/Stack-Large?blobs=true",
+      "status": 200,
+      "sha256": "c0ba7d2334bcff983426d486a2661acbec5a31b4bd2ad0938790f1e3e2545a8b"
+    },
+    {
+      "url": "https://huggingface.co/api/models/arcinstitute/Stack-Large-Aligned?blobs=true",
+      "status": 200,
+      "sha256": "b9cdbaf1f4939a8e37ab0b3a123c10510b0ce067f945fca21b6745621148fbf3"
+    },
+    {
+      "url": "https://huggingface.co/arcinstitute/Stack-Large/resolve/6e1f352e8cc7f8718c74fe1d20b95c42e0942d9b/README.md",
+      "status": 200
+    },
+    {
+      "url": "https://huggingface.co/arcinstitute/Stack-Large-Aligned/resolve/b09f085dac03d170b078a5c72f550ae93686e544/README.md",
+      "status": 200
+    }
+  ]
+}

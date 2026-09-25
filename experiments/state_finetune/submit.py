@@ -5,16 +5,28 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import secrets
 import subprocess
 import sys
+
+
+# User decision, 2026-09-25: run local evaluations until submissions are resumed.
+OFFICIAL_SUBMISSIONS_ENABLED = False
+
+
+def new_public_name():
+    """Use an opaque public label; keep model provenance in the local manifest."""
+    return f"entry-{secrets.token_hex(8)}"
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--work", type=Path, required=True)
     parser.add_argument("--artifact", type=Path, required=True)
-    parser.add_argument("--model-name", required=True)
     args = parser.parse_args()
+    if not OFFICIAL_SUBMISSIONS_ENABLED:
+        raise SystemExit("Official submissions are paused by the user; use local evaluation.")
+    model_name = new_public_name()
     prep = json.loads((args.work / "audit/submission-prep.json").read_text())
     if (prep.get("n_cells") != 360000 or prep.get("n_genes") != 18533
             or prep.get("dry_run") is not False or prep.get("verified_targets") is not True
@@ -27,7 +39,7 @@ def main():
     with args.artifact.open("rb") as stream:
         checksum = hashlib.file_digest(stream, "sha256").hexdigest()
     manifest = {"path": str(args.artifact), "bytes": args.artifact.stat().st_size,
-                "sha256": checksum, "model_name": args.model_name, "preflight": prep}
+                "sha256": checksum, "model_name": model_name, "preflight": prep}
     (args.work / "audit/submission-artifact.json").write_text(json.dumps(manifest, indent=2)+"\n")
 
     credentials = json.loads(sys.stdin.readline())
@@ -44,9 +56,9 @@ def main():
     status = json.loads(identity.stdout)
     if not status.get("identity", {}).get("can_submit"):
         raise RuntimeError("Submission account is not ready")
-    print(json.dumps({"stage": "upload", "artifact_sha256": checksum, "model_name": args.model_name}), flush=True)
+    print(json.dumps({"stage": "upload", "artifact_sha256": checksum, "model_name": model_name}), flush=True)
     process = subprocess.Popen([vcc, "--json", "submit", str(args.artifact),
-                                "--model-name", args.model_name, "--wait"],
+                                "--model-name", model_name, "--wait"],
                                env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     for line in process.stdout:
         print(line.rstrip("\n").replace(token, "<REDACTED>"), flush=True)

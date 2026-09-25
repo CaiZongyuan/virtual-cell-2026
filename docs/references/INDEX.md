@@ -276,6 +276,7 @@
 - 结论：采用为便利下载源。已核对固定 record 的文件名、size、MD5、CC BY 4.0；矩阵值与来源处理差异未在本轮读取。论文的独立书目不在本次数据记录核验范围内。
 - 关键词：scPerturb、H5AD、raw counts、数据整理、gzip、Replogle、Nadig。
 - 来源：[Zenodo record](https://zenodo.org/records/13350497)、[API](https://zenodo.org/api/records/13350497)、[固定 Replogle 转换代码](https://github.com/sanderlab/scPerturb/blob/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/ReplogleWeissman2022.py)；版本固定为 record 13350497；本地下载单与 MD5 见[微调教程](../lessons/03-State上手.md)，未下载大矩阵；核验 2026-09-14。
+- 2026-09-23 数据目录复核：该固定 Zenodo 记录列 54 个 RNA/蛋白 H5AD，共 43,042,767,207 bytes，CC BY 4.0；除已选五文件外，还列 Adamson、Norman、sci-Plex、CRISPRa 等便利副本。它们不是 54 个新的独立实验，逐文件模态与计数层仍需回原论文和矩阵核查。详见[数据清单](../research/perturbation-dataset-catalog.md)。
 
 ### DepMap 24Q4 Public — CRISPRGeneEffect.csv
 
@@ -294,6 +295,7 @@
 - 结论：备选数据候选，暂不加入首投下载单；先核查原始数据合同再决定。
 - 关键词：X-Atlas、Orion、Perturb-seq、HCT116、HEK293T、数据整合。
 - 来源：[DOI/bioRxiv](https://doi.org/10.1101/2025.06.11.659105)；Ann C Huang et al.；2025-06-16 预印本；[Crossref](https://api.crossref.org/works/10.1101/2025.06.11.659105)书目核验 2026-09-14；本地全文未保存；线索与边界见[材料审阅](../research/participant-evidence-review.md)。
+- 2026-09-23 数据更新：作者 [Figshare v3](https://doi.org/10.25452/figshare.plus.29190726.v3) 已发布 HCT116/HEK293T 两个处理后 H5AD（合计 559,518,282,173 bytes）；[Hugging Face Parquet 副本](https://huggingface.co/datasets/Xaira-Therapeutics/X-Atlas-Orion)文件树约 126.26 GB，数据卡声明稀疏表达为 raw counts。两个入口均标 CC BY-NC-SA 4.0；奖金竞赛用途许可、对照标签和矩阵内容未核实。维持备选，不将其与 X-Cell 模型页或 X-Atlas/Pisces 汇编混为一项。详见[数据清单](../research/perturbation-dataset-catalog.md)。
 
 ### Genome-scale perturb-seq in primary human CD4+ T cells maps context-specific regulators of T cell programs and human immune traits
 
@@ -589,6 +591,59 @@
 - 状态：State、Replogle、Nadig 和五文件 scPerturb 来源采用；Jiang 为后续扩展备选。同步补齐此前仅在容量笔记中的独立数据条目，保留一手链接和本地教程路径。
 - 关键边界：公开 checkpoint 不是当前默认 768 模型；微调有原生入口，但基因、靶点、batch 语义和父权重暴露必须审计；HVG/full 都需要正确缺测处理；`ckpt_every_n_steps` 未生效；计数与打包是额外步骤。资源档位为工程预算，不声称完成训练或比赛增益。
 
+## 2026-09-23 扰动数据源补充
+
+### Arc Virtual Cell Challenge 2025 H1 dataset
+
+- 摘要：Arc 发布的 H1 人胚胎干细胞 CRISPRi/10x Flex 单细胞计数数据，含 train、validation、test 三个 split；属于官方数据资源，不是新增论文。
+- 核心关联：与 VC2026 使用相同测序化学，适合计数生成与方法校准；H1 不是匿名新背景，且基因面板与 2026 不完全相同。
+- 关系：与 Replogle/Nadig 的跨背景 CRISPRi 数据互补；不能把 2025 各 split 与 2026 隐藏测试集视为同一评估协议。
+- 结论：采用为既定训练/验证候选；GCS Requester Pays 和 split 隔离仍要遵守。
+- 关键词：H1、CRISPRi、10x Flex、raw counts、VC2025。
+- 来源：[作者 Atlas README](https://github.com/ArcInstitute/arc-virtual-cell-atlas/tree/main/virtual-cell-challenge)、[官网数据页](https://virtualcellchallenge.org/about-the-data)、[GCS Marketplace](https://console.cloud.google.com/marketplace/product/bigquery-public-data/arc-institute?project=gcp-public-data-arc-institute)；2025 发布、2026-09-23 复核；本地未下载矩阵，文件体积与基因对齐见[容量审计](../research/data-compute-capacity-sources.md)。
+
+### PerturbDB for unraveling gene functions and regulatory networks
+
+- 摘要：作者汇编 66 个公开 Perturb-seq 数据集、约 451 万单细胞和 19 个细胞系，并用 Mixscape 统一识别有效扰动；此处据正式论文原文 XML 概述。
+- 核心关联：可发现新来源和对照已知效应；不能把筛选后的数据库矩阵直接当成未筛选 CRISPRi 原始计数训练集。
+- 关系：与 scPerturb 都是汇编入口；与其收录的 Replogle 等原始实验存在样本重叠。
+- 结论：备选为数据发现与效应查询；逐项检查原实验、模态、raw-count 层和可下载性后才可训练。
+- 关键词：PerturbDB、Perturb-seq 汇编、Mixscape、数据去重。
+- 来源：[正式论文 DOI](https://doi.org/10.1093/nar/gkae777)、[PMC 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC11701683/)、[作者数据库](http://research.gzsys.org.cn/perturbdb)；Yang et al.；Nucleic Acids Research 53, D1120-D1131，2025；本地全文未保存；原文与元数据核验 2026-09-23。
+
+### Tahoe-100M: A Giga-Scale Single-Cell Perturbation Atlas for Context-Dependent Gene Function and Cellular Modeling
+
+- 摘要：约 1.006 亿细胞的药物扰动图谱；Arc 作者数据说明列 H5AD 计数矩阵、Parquet 元数据和癌症细胞系处理信息。论文方法/结果本轮未精读。
+- 核心关联：可用于化学扰动和细胞背景表征，但药物处理不提供 CRISPRi 靶基因效应的同模态监督。
+- 关系：属于 Arc Virtual Cell Atlas；与 H1 同在 GCS Marketplace，但为独立药物实验。
+- 结论：备选为跨模态预训练，不进入首投 CRISPRi 训练清单。
+- 关键词：Tahoe-100M、药物扰动、单细胞、跨背景。
+- 来源：[预印本 DOI](https://doi.org/10.1101/2025.02.20.639398)、[作者 Atlas README](https://github.com/ArcInstitute/arc-virtual-cell-atlas/tree/main/tahoe-100M)；Tahoe 团队，2025；本地论文未保存、矩阵未下载；作者数据说明核验 2026-09-23。
+
+### Massively multiplex chemical transcriptomics at single-cell resolution
+
+- 摘要：sci-Plex 在三个癌细胞系测量 188 种化合物的单细胞转录响应；本轮采用比赛官网数据说明，未重新读取 GEO 文件和论文 Methods。
+- 核心关联：提供药物响应与细胞背景变化样本，不是基因 CRISPRi 的直接训练标签。
+- 关系：scPerturb 有该实验整理副本；原 GEO、scPerturb 不作为两个独立实验。
+- 结论：备选为化学扰动或跨模态研究，排除出首版同模态训练。
+- 关键词：sci-Plex、化学扰动、单细胞、癌细胞系。
+- 来源：[Science DOI](https://doi.org/10.1126/science.aax6234)、[GEO GSE139944](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE139944)、[比赛官网数据页](https://virtualcellchallenge.org/about-the-data)；Srivatsan et al.，2020；本地原文未保存；官网说明复核 2026-09-23，NCBI 直连 TLS 失败，文件与许可待核验。
+
+### sci-Plex-Gene-by-Environment 数据记录（规范论文题名待核验）
+
+- 摘要：胶质母细胞瘤模型中的遗传与化学组合扰动单细胞筛选；本轮仅采用比赛官网简介及其给出的 Cell Genomics/GEO 入口，规范题名和具体遗传模态待原文核验。
+- 核心关联：可研究组合响应，但不能默认转换为单基因 CRISPRi 原始计数标签。
+- 关系：补充 sci-Plex 的化学扰动路线；不与纯基因 screen 混同。
+- 结论：备选为组合/跨模态研究，排除出首版同模态训练。
+- 关键词：sci-Plex-Gene-by-Environment、遗传-药物组合、胶质母细胞瘤。
+- 来源：[Cell Genomics 原文入口](https://www.cell.com/cell-genomics/fulltext/S2666-979X(23)00339-7)、[GEO GSE225775](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE225775)、[比赛官网数据页](https://virtualcellchallenge.org/about-the-data)；McFaline-Figuero et al.，2024；DOI 待核验，本地原文未保存；官网说明复核 2026-09-23，NCBI 直连 TLS 失败，文件与许可待核验。
+
+### 2026-09-23 公开扰动数据检索审计
+
+- 查询：先复用本索引和官方数据页；Infra Scholar 顺序调用两次，分别为 `public single-cell genetic perturbation CRISPRi Perturb-seq raw counts multi cell line dataset 2025 2026`、`X-Atlas Orion genome-wide Perturb-seq primary CD4 T cell CRISPRi public data accession 2025 2026`，各返回 10 条。第二次是首次结果缺少可取得的新多背景数据后的唯一精炼。
+- 一手核验：Arc 作者 README、Replogle/Orion/Ward Figshare API、Orion Hugging Face 数据卡与文件树、scPerturb/Jiang Zenodo API、PerturbDB PMC XML、CD4 Crossref/Europe PMC 元数据；未下载大型矩阵。未用 Scholar snippet 证明原始计数或许可。细节与完整候选状态见[数据清单](../research/perturbation-dataset-catalog.md)。
+- 失败与缺口：NCBI 直连 TLS 失败；CD4 全文和原始矩阵入口未取得；Jiang 模态、Orion 对照/竞赛许可、化学/组合筛选具体文件尚待核验。未命中不解释为不存在。
+
 ## 新增记录模板
 
 新增或重新评估论文时，复制以下字段并补全；即使排除也保留记录和理由。
@@ -603,3 +658,11 @@
 - 关键词：
 - 来源：原文 URL；DOI；版本/年份；本地原文；检索日期 YYYY-MM-DD。
 ```
+
+### 2026-09-25 转向公开权重微调与本地比较
+
+- 用户决定：复用现有论文公开权重微调，不从零预训练基础模型；完善数据并比较 State、Stack；暂停官方提交。执行协议见[本地微调方案](../research/pretrained-finetuning-local-plan.md)。
+- 复用本索引，没有新发现查询、Scholar/SciVerse 调用或新论文。核对官方 Stack 代码 commit `cacc2e4b09435c3e536d46237d10b50f222dd144` 的 README、`stack-finetune`、generation 和负二项计数推理路径。
+- 顺序直接 HTTP 4 次，全部成功：Stack-Large 与 Stack-Large-Aligned 各 1 次 HF metadata、1 次固定 revision README。对应 [Large](https://huggingface.co/arcinstitute/Stack-Large/tree/6e1f352e8cc7f8718c74fe1d20b95c42e0942d9b) / [Aligned](https://huggingface.co/arcinstitute/Stack-Large-Aligned/tree/b09f085dac03d170b078a5c72f550ae93686e544)，checkpoint 分别 2,610,004,146 / 2,613,863,242 bytes，SHA 与请求记录见[资产清单](../../experiments/local_benchmark/asset-inventory-2026-09-25.json)。仅核验元数据，未下载或执行权重。
+- State：保留为微调主候选，首轮适配失败与 State 方法整体有效性分开判断。Stack：由仅作背景适配参考提升为首批本地实测候选；原生冻结教师微调入口存在，但 CRISPRi 条件示例迁移、完整输出基因轴和 24 GB 资源可行性待实测。Lingshu-Cell 继续备选，其 H1 监督暴露使该权重不能直接作为严格未见 H1 背景的对照。
+- 数据核对：服务器已有 H1 training 全矩阵及四份 scPerturb 来源；H1 canonical 126-target / 2026 六指标开发回路已实际跑通，修正早期条目“尚未下载/运行”的历史状态。作者训练来源清单、Stack 效果和 Jurkat/全基因原件补充仍有缺口。

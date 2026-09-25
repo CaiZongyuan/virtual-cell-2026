@@ -168,6 +168,8 @@ prediction="$data_dir/predictions/h1-next-seed42.h5ad"
 
 ## 7. 打包、提交与成绩查询
 
+**当前官方提交已暂停。** `submit.py` 的 `OFFICIAL_SUBMISSIONS_ENABLED=False` 会在读取资产和凭证前退出；不要通过直调 `vcc submit` 绕过。用户明确恢复后再修改此状态。未来公开名称自动随机生成，已移除手写 `--model-name` 参数，名称与文件哈希保存在内部审计记录。当前工作转向[本地微调与比较](../docs/research/pretrained-finetuning-local-plan.md)，只读查分仍可用。
+
 `prep_submission.sh` 是首轮固定文件名脚本；`patch_vcc_memory.py` 只适配已核验的 `vcc-cli==0.1.0` 源码版本。新预测先指定新的输入、输出和预检记录路径，再打包。不能拿旧 `audit/submission-prep.json` 为新文件背书。补丁保留整数、总计数和字段检查；记录位于 `audit/vcc-memory-patch*.json`。
 
 `submit.py` 会向外上传，接收标准输入的一行 JSON 凭证（`token` 和可选 `https_proxy`），不接收命令行 Token。读取本地 `.env` 后由调用进程在内存构造 stdin；不要手工把 Token 拼进 shell 命令或 heredoc。提交前完成全量预检，并按当前任务授权执行；这份操作文档不自动发起新提交。
