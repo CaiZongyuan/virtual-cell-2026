@@ -1,0 +1,1 @@
+{"attempt": "frozen", "exit_code": 124, "finished_at_unix": 1790362158.8342059, "evaluation_resumed": true, "training_repeated": false, "resume_reason": "90-minute evaluation timeout; continue validated DE chunks", "log": "logs/frozen-final.log"}

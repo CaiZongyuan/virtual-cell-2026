@@ -1,0 +1,24 @@
+{
+  "confirmation_prepared_conditions": 202,
+  "selected_supported_conditions": 198,
+  "excluded_without_training_effect": [
+    "FDPS",
+    "RPAP3",
+    "RPS15",
+    "RRP15"
+  ],
+  "overlap_public_h1_targets": 32,
+  "overlap_official_targets": 0,
+  "min_cells_per_target": 64,
+  "max_cells_per_target": 256,
+  "preparation_seed": 42,
+  "control_and_decoding_seed": 991,
+  "gene_axis_sha256": "9d5e2d98bbe62247181002e1ebcbcd7456a5893458211efcc54fb5149de3f2fc",
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "torch": "2.7.1+cu126"
+  },
+  "no_retuning_after_confirmation": true
+}

@@ -49,7 +49,10 @@ def run(work):
                     continue
                 direction = -1 if metric in {"MSE_uncapped", "NMAE"} else 1
                 improved = [t for t,c,b in pairs if direction*(c-b)>1e-12]
+                worsened = [t for t,c,b in pairs if direction*(c-b)<-1e-12]
                 metrics[metric] = {"valid_targets":len(pairs), "improved_targets":len(improved),
+                                   "worsened_targets":len(worsened),
+                                   "unchanged_targets":len(pairs)-len(improved)-len(worsened),
                                    "baseline_raw_mean":sum(b for _,_,b in pairs)/len(pairs),
                                    "candidate_raw_mean":sum(c for _,c,_ in pairs)/len(pairs)}
             groups[group] = metrics

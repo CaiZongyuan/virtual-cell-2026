@@ -102,3 +102,44 @@ All interrupted and resumed exit statuses must be retained in the final audit.
 Resident scoring is limited to two concurrent processes: the first three-process
 run reached about 8 GiB swap during overlapping loads. The limited-unfreeze arm
 was deferred and resumed after a slot became available, retaining its audit.
+
+## Completed results and recovery
+
+The reboot recovery completed successfully (exit 0), reusing unchanged predictions
+and 20 valid DE chunks for `limited`. No training was repeated. Final H1 scores:
+
+| Arm | Average scaled score | Raw normalized MSE | Raw NMAE |
+|---|---:|---:|---:|
+| Control | -0.045231 | 1.002242 | 1.005045 |
+| Empirical (keep) | **0.163874** | 1.303612 | 0.986160 |
+| Frozen State | 0.062497 | 1.446909 | 1.023922 |
+| Limited State | 0.056925 | 1.479596 | 1.023833 |
+
+All candidates passed the predetermined acceptance gate; empirical had the highest
+score. Its H1 MSE worsened despite the composite improvement. The one-shot Jurkat
+confirmation, performed only after freezing the selection, produced a pooled
+normalized mean-expression error ratio of **0.575856** against NTC=1, with 148/198
+targets improved. This uses 24,865 cells and 8,283 measured project-axis genes; it
+is not the canonical six-metric score. The actual confirmation targets overlap
+32 public H1 targets and zero current official targets. There was no retuning.
+
+See [results](results/2026-09-25/summary.json),
+[confirmation](results/2026-09-25/confirmation/summary.json),
+[artifact checks](results/2026-09-25/audit/final-verification.json), and the
+[full report](../../docs/research/calibrated-transfer-run-2026-09-26.md).
+The H1 result remains provisional with one generation seed. All job processes
+have exited. Server project storage is 87.03 GB, below the 500 GB cap; official
+submissions remain paused. Do not rerun confirmation in this completed directory.
+
+The reporting utilities can be rerun on the small archived results without model
+weights or datasets:
+
+```bash
+python experiments/calibrated_transfer/summarize.py experiments/calibrated_transfer/results/2026-09-25
+python experiments/calibrated_transfer/compare_targets.py experiments/calibrated_transfer/results/2026-09-25
+```
+
+Historical `status-limited-final.json` records exit 124 before recovery. The final
+recovery exit is 0; original statuses and interrupted ledgers remain in the audit.
+The recovery ledger's original-process-exit placeholder is supplemented by the
+original status artifacts in `audit/final-verification.json`.

@@ -1,42 +1,74 @@
 {
-  "status": "recovering_after_server_reboot",
-  "recorded_at_utc": "2026-09-25T22:01:47.593176+00:00",
-  "control": {
-    "score": -0.04523068765223785,
-    "raw_mse": 1.0022423529338134,
-    "raw_nmae": 1.0050449965582289,
-    "artifact_status": "verified"
+  "status": "complete",
+  "recorded_at_utc": "2026-09-25T22:17:30.637814+00:00",
+  "best": "empirical",
+  "official_score": false,
+  "provisional_single_seed": true,
+  "candidates": {
+    "control": {
+      "score": -0.04523068765223785,
+      "raw_mse": 1.0022423529338134,
+      "raw_nmae": 1.0050449965582289,
+      "artifact_status": "verified",
+      "acceptance_gate_passed": null,
+      "outcome": "discard"
+    },
+    "empirical": {
+      "score": 0.16387417225775552,
+      "raw_mse": 1.3036115079004935,
+      "raw_nmae": 0.9861595229404151,
+      "artifact_status": "verified",
+      "acceptance_gate_passed": true,
+      "outcome": "keep"
+    },
+    "frozen": {
+      "score": 0.06249687082968269,
+      "raw_mse": 1.4469090420697237,
+      "raw_nmae": 1.023922455037391,
+      "artifact_status": "verified",
+      "acceptance_gate_passed": true,
+      "outcome": "discard"
+    },
+    "limited": {
+      "score": 0.05692541701052182,
+      "raw_mse": 1.47959555175473,
+      "raw_nmae": 1.0238334303303136,
+      "artifact_status": "verified",
+      "acceptance_gate_passed": true,
+      "outcome": "discard"
+    }
   },
-  "empirical": {
-    "score": 0.16387417225775552,
-    "delta_vs_control": 0.2091048599099934,
-    "raw_mse": 1.3036115079004935,
-    "raw_nmae": 0.9861595229404151,
-    "artifact_status": "verified",
-    "exit_code": 0,
-    "single_seed": true
+  "state_training": {
+    "frozen": {
+      "complete": true,
+      "steps": 1000
+    },
+    "limited": {
+      "complete": true,
+      "steps": 1000
+    }
   },
-  "frozen": {
-    "training_complete": true,
-    "steps": 1000,
-    "prediction_complete": true,
-    "score_status": "verified",
-    "score": 0.06249687082968269,
-    "raw_mse": 1.4469090420697237,
-    "raw_nmae": 1.023922455037391,
-    "exit_code": 0
+  "jurkat_confirmation": {
+    "arm": "empirical",
+    "targets": 198,
+    "cells": 24865,
+    "measured_project_axis_genes": 8283,
+    "target_gene_excluded_per_condition": true,
+    "baseline": 1.0,
+    "pooled_error_ratio": 0.5758562333532025,
+    "median_target_ratio": 0.8414972308288124,
+    "targets_improved": 148,
+    "metric_scope": "Jurkat normalized mean-expression error; not H1 canonical six-metric score"
   },
-  "limited": {
-    "training_complete": true,
-    "steps": 1000,
-    "prediction_complete": true,
-    "score_status": "resuming_same_prediction_after_timeout"
-  },
-  "jurkat_confirmation": "not_run; labels not used for tuning",
   "official_submissions": "paused",
-  "last_storage_bytes": 85617671673,
+  "last_storage_bytes": 87030826690,
   "storage_scope": "server project directories and uv cache",
-  "remote_process_state": "one resident scorer in tmux; training not repeated",
+  "remote_process_state": "no training, scoring or confirmation processes remain; recovery tmux session exited",
   "recovery_entry": "experiments/calibrated_transfer/recover_campaign.py",
-  "recovery_validation": "baseline, empirical and frozen verified; limited scoring in progress"
+  "recovery_validation": "end-to-end recovery and one-shot confirmation completed; exit 0; input and output hashes verified",
+  "recovery_exit_code": 0,
+  "candidate_source_revision": "06eedf5",
+  "recovery_source_revision": "a160b84",
+  "training_repeated_after_disconnect": false,
+  "confirmation_runs": 1
 }

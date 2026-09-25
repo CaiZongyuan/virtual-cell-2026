@@ -1,6 +1,6 @@
 # 校准迁移首轮实验记录（2026-09-25–26）
 
-**已核验的完整候选是经验效应迁移：H1 综合分由 −0.045231 提高到 0.163874，增加 0.209105；均值误差同时变差。** 两组 State 继续微调均完成 1,000 步和完整预测导出；服务器重启后已核验冻结组综合分为 0.062497，有限解冻组正在续算同一预测的评分。Jurkat 独立背景验证尚未执行，不能称为已经确认跨背景稳定收益。
+**本轮已全部完成：经验效应迁移的 H1 综合分由对照的 −0.045231 提高到 0.163874（+0.209105），超过两组 State 微调。** Jurkat（人 T 细胞白血病细胞系）独立背景确认的汇总均值表达误差为对照的 0.575856 倍，198 个靶点中 148 个改善。H1 的均值误差却变差，因此这是特定综合指标与一个确认背景上的收益，不能概括为所有表达预测均改善。全部结果通过哈希核验，恢复程序退出码为 0。
 
 这里使用固定 H1 benchmark v0.2.0、126 targets × 400 cells、18,080 genes，以及 cell-eval2 0.16.0 / pdex 0.3.0。它是开发评分，不是官方 A/B/C 排行榜。官方提交仍暂停。
 
@@ -11,7 +11,9 @@
 | canonical NTC 重采样 | −0.045231 | 1.002242 | 1.005045 | 既有完整基线经实际数据、配置、评分包与结果哈希复核后复用 |
 | 经验效应迁移 | **0.163874** | 1.303612 | **0.986160** | 完整评分成功，退出码 0，结果哈希已核验 |
 | State：主干冻结 | 0.062497 | 1.446909 | 1.023922 | 完整评分退出码 0；预测、配置、评价器与结果哈希已核验 |
-| State：解冻最后两层 | 待确认 | 待确认 | 待确认 | 训练和导出完成；上次评分退出码 124，重启后续算 |
+| State：解冻最后两层 | 0.056925 | 1.479596 | 1.023833 | 同一预测按缓存续算完成，退出码 0；全部结果哈希已核验 |
+
+预定接受门槛为综合分至少超过对照 0.01，且原始 MSE/NMAE 均小于对照的两倍；三组均通过门槛，按最高综合分保留 **empirical**。这是一个种子的暂定候选。两组 State 的可复现代码、检查点和负结果保留，均未被选中；源内开发损失更低的有限解冻组，也没有带来更高 H1 综合分。
 
 NTC（non-targeting control，非靶向对照）指携带不针对任何基因的向导的细胞。NTC 基线预测“没有额外扰动效应”。经验迁移则用其他背景中测到的扰动/对照变化，改变 H1 对照细胞的计数。
 
@@ -21,7 +23,27 @@ NTC（non-targeting control，非靶向对照）指携带不针对任何基因�
 
 16 个无准备数据监督的靶点回退到固定 NTC，未截断 MSE、PDS 和 DE 指标均与基线相同。截断 MSE 有约 3×10⁻⁶ 的变化，这是评分器使用整个扰动面板的共享噪声校正所致；不是回退细胞被模型改写。已对照固定源码核实该行为。[逐靶点审计](../../experiments/calibrated_transfer/results/2026-09-25/audit/empirical-fallback-parity.json)
 
-完整数值与验证清单见[基线](../../experiments/calibrated_transfer/results/2026-09-25/evaluation/control/scores.csv)、[经验迁移](../../experiments/calibrated_transfer/results/2026-09-25/evaluation/empirical/scores.csv)及各目录内 aggregates / per_target / manifest。尚只有一个生成种子，不声称统计显著性或隐藏背景的同等收益。
+两组 State 的 PDS（perturbation discrimination score，扰动区分分数，用于衡量预测能否区分不同靶点的响应）分别为原始 0.489968 / 0.482984，对照为 0.485333，经验迁移为 0.751429。冻结/有限解冻组虽提高了方向保真度，却分别在 122/123 个靶点上使未截断 MSE 变差。当前数据支持“这套适配没有超过经验效应表”，不足以归因于预训练方法本身无效或证明更长训练能解决问题。
+
+完整数值见[汇总](../../experiments/calibrated_transfer/results/2026-09-25/summary.json)、[逐靶点对照](../../experiments/calibrated_transfer/results/2026-09-25/target-comparison.json)及 `evaluation/{control,empirical,frozen,limited}` 中的 CSV / manifest。所有六项均使用 `from_replicate`，不是 `from_baseline`。H1 尚只有一个生成种子，不声称统计显著性。
+
+## Jurkat 一次性确认
+
+在读取 Jurkat 扰动表达前，先写入选定候选与效应文件哈希的[selection.json](../../experiments/calibrated_transfer/results/2026-09-25/confirmation/selection.json)。随后只运行 **empirical** 一次，未根据确认结果调参、改候选或重新训练。
+
+| 指标 | 实测 |
+|---|---:|
+| 准备协议接纳的条件 | 202 |
+| 有外部训练效应、实际计分的靶点 | 198 |
+| 扰动细胞 | 24,865；每靶点 64–256 |
+| 测到且位于模型轴上的基因 | 8,283 |
+| 汇总归一化均值误差 / NTC 误差 | **0.575856**（降低 42.414%） |
+| 逐靶点误差比的中位数 | 0.841497 |
+| 改善靶点数 | 148/198 |
+
+计分为各条件归一化平均表达的平方误差求和，再除以同批次抽样 NTC 的误差；每个条件排除被直接靶向的基因。准备采样种子为 42，控制抽样与计数解码种子为 991。FDPS、RPAP3、RPS15、RRP15 因外部训练效应表中无数据而未进入这个确认指标，不根据预测表现删选。
+
+实际确认靶点与公开 H1 重叠 32 个、与当前官方 300 靶点重叠 0 个。该结果支持一个额外细胞背景上的均值效应迁移，不是隐藏竞赛背景的六指标复现，也不是未见靶点泛化实验。Jurkat 在本轮训练和 H1 选模中留出；父权重历史暴露仍按未知记录，不能把这种留出扩展为整个预训练历史的严格零样本证明。[完整确认结果](../../experiments/calibrated_transfer/results/2026-09-25/confirmation/summary.json)、[范围与环境审计](../../experiments/calibrated_transfer/results/2026-09-25/confirmation/audit.json)。
 
 ## 本轮微调方案与数据
 
@@ -43,7 +65,7 @@ State 两组都从同一个已归档 `unfrozen/best.pt` 出发，初始 SHA-256 
 
 覆盖口径为：公开 H1 面板 150 个靶点中训练覆盖 129 个；实际 canonical 126 个中覆盖 **110 个**。官方 300 个中准备数据覆盖 **254 个**，其直接监督均来自 GWPS；GWPS 原始文件本来覆盖 272 个，旧筛选阈值丢掉了其中一部分。[覆盖审计](../../experiments/calibrated_transfer/results/2026-09-25/audit-target-coverage.json)
 
-新增 Jurkat（人 T 细胞白血病细胞系）数据已下载并校验：262,956 cells × 8,882 genes，含 12,013 个 NTC，文件 1,293,665,804 bytes，MD5 `d8b05d00bfbd686d37ffdd4293bc6c8c`。本轮预留作独立确认背景，不参加训练或选模；它覆盖 50 个公开 H1 靶点，但不覆盖当前官方 300 靶点。确认将另报测量基因交集上的均值误差，不能冒称 canonical 六指标复现。[文件审计](../../experiments/calibrated_transfer/results/2026-09-25/audit-jurkat-inventory.json)
+新增 Jurkat 数据已下载并校验：262,956 cells × 8,882 genes，含 12,013 个 NTC，文件 1,293,665,804 bytes，MD5 `d8b05d00bfbd686d37ffdd4293bc6c8c`。本轮用作独立确认背景，不参加训练或选模；原始文件覆盖 50 个公开 H1 靶点，但不覆盖当前官方 300 靶点。准备阈值及外部效应可用性进一步筛选后，实际确认集合覆盖 32 个公开 H1 靶点，详见上节。[文件审计](../../experiments/calibrated_transfer/results/2026-09-25/audit-jurkat-inventory.json)
 
 科研检索共两次 Scholar 查询、14 次一手来源 HTTP 核验，20 个已查看候选均已登记，包括备选和排除项。作者 Replogle 大文件不能补回缺测基因；Jiang 数据确认是 CRISPRi，可增加背景但须保留刺激条件；Orion 完整 H5AD 超过存储上限，后续只能考虑筛选子集。[文献与数据依据](autonomous-finetuning-data-review-2026-09-25.md)
 
@@ -55,22 +77,16 @@ NTC 组成 TV 约 0.35；64-cell 中仅在已测基因上重新计算仍约 0.33
 
 ## 执行、存储与恢复
 
-最近一次服务器存储盘点为 **85,618,807,895 bytes（约 85.6 GB）**，包括旧运行目录、新实验、Stack 环境、原始数据/权重/预测及 uv 缓存，低于 500 GB 限制。大文件均在外部运行目录或 Git 忽略目录，Git 只保留代码和小型结果。
+最终服务器存储盘点为 **87,030,826,690 bytes（约 87.0 GB）**，包括既有运行目录、本轮实验、Stack 环境、原始数据/权重/预测、Jurkat 准备矩阵及 uv 缓存，低于 500 GB 限制。大文件留在外部运行目录或 Git 忽略目录，Git 只保留代码和小型结果。全部训练、评分、确认进程已退出，tmux 恢复会话已结束；没有后台继续调参。
 
-完整 DE 评分远慢于训练。读缓存的 1,024-cell 复现显示磁盘后端约为内存读的 16 倍；新增预测缓存后仍保持同样的计数、行顺序和上游公式。三组同时缓存导致交换区占用上升，后改为最多两组。较短的运行上限导致多次按分块续算，所有中断和最终退出码保存在服务器 audit/logs 中。最终推荐脚本已采用更充足的运行时间和受限并发；此次实际候选仍对应原始固定训练配置，没有在看见评分后改参数。
+完整差异表达评分远慢于训练。读缓存的 1,024-cell 复现显示磁盘后端约为内存读的 16 倍；新增预测缓存仍保持同样的计数、行顺序和上游公式。三组同时缓存造成交换区占用上升，后改为最多两组。较短运行上限导致多次按分块续算；本次重启后仅运行一个评分器，未使用交换区。所有候选仍对应固定的原始训练配置，未在看见评分后改参数。
 
-2026-09-26 03:09（北京时间）的连接核验出现 SSH 故障。旧复用连接与独立新连接均失败；TCP 22 会被立即关闭，没有正常 SSH banner。尚不能判断主机、WSL、端口转发或网络的具体原因，也不能确认远程进程是否继续运行。完整经验迁移结果已取回本地；两组微调评分和 Jurkat 确认必须恢复连接后继续核验。
+执行历史保留以下事实：基线在实际文件和环境核验后复用；初始评分为修复重复磁盘读取而中断；并发内存争用后推迟有限解冻组；经验迁移评分完成；冻结组的 30 分钟续算段超时，后续段在断连期间成功完成；有限解冻组 90 分钟段超时，服务器重启后使用同一预测与已完成的 20 个 DE 分块继续。新的恢复程序实际验证 empirical/frozen 成品，仅续算 limited；完成全部 22 块后核验分数、重建汇总，再运行一次 Jurkat 确认。
 
-运行目录：`~/vcc2026-calibrated-20260925`；既有环境/benchmark：`~/vcc2026-run`；原始数据和权重：`/mnt/e/vcc2026-data`。恢复 SSH 后先检查现有进程，避免重复启动。新的恢复入口会拒绝与正在运行的评分器重叠，验证已完成结果的实际文件哈希，续算不完整的同一预测文件，再汇总和按预定规则选模：
+[恢复退出记录](../../experiments/calibrated_transfer/results/2026-09-25/recovery.exit)为 `0`。[最终验证清单](../../experiments/calibrated_transfer/results/2026-09-25/audit/final-verification.json)记录实际输入与结果 SHA-256、执行源码、原始进程状态和存储占用。`status-limited-final.json` 的 `124` 是恢复前的历史超时，不能误读为最终失败；恢复汇总中的“原进程退出码未知”由归档原始状态补全，empirical/frozen 实际原退出码均为 0。[当前四组台账](../../experiments/calibrated_transfer/results/2026-09-25/attempts.jsonl)、`audit/attempts-*.jsonl`、`status/` 和 `status-resumed/` 一并保留先前失败，原始长日志保留在服务器。
 
-```bash
-# 先把仓库中的最新 calibrated_transfer 源码同步到该运行目录的 code 中。
-prior_run="$HOME/vcc2026-run"
-run_work="$HOME/vcc2026-calibrated-20260925"
-tmux new-session -d -s vcc2026-recover \
-  "PYTHONPATH='$run_work/code/experiments/calibrated_transfer:$run_work/code/experiments/state_finetune' '$prior_run/.eval-venv/bin/python' '$run_work/code/experiments/calibrated_transfer/recover_campaign.py' --previous '$prior_run' --work '$run_work' --root /mnt/e/vcc2026-data --confirm > '$run_work/recovery.log' 2>&1"
-```
+运行目录：`~/vcc2026-calibrated-20260925`；既有环境/benchmark：`~/vcc2026-run`；原始数据和权重：`/mnt/e/vcc2026-data`。科学候选修订为 `06eedf5`，缓存适配入口修订为 `4b7b676`，重启恢复入口为 `a160b84`；逐靶点报告后来补充了变差/不变计数，不改变评分结果。恢复入口拒绝已有评分进程与重复确认目录；本轮既已完成，不应重新对该目录运行 `--confirm`。
 
-使用 tmux 使有界任务不依赖本地 SSH 会话。`--confirm` 仅在完整比较选出优于控制的候选后执行 Jurkat 确认；已有确认目录会触发明确停止，防止不加记录地重复使用确认集。恢复入口及最终启动器已通过语法检查，因连接中断尚未实际执行端到端恢复。官方提交不在该入口中。
+## 后续工程假设
 
-2026-09-26 重启后续记：SSH 已恢复，确认没有残留训练/评分进程。冻结组在断连期间完成并留下退出码 0，有限解冻组留下超时退出码 124；均已取回原始状态文件。恢复入口实际通过了基线与 empirical/frozen 的完整验证，现在 tmux 会话 `vcc2026-recover` 中仅运行有限解冻组评分，3 小时超时保护。已有 DE 分块保留，未重新训练或改写预测。重启后目录盘点约 85.62 GB。尚未到达最终选模和 Jurkat 确认阶段。
+本轮保留经验迁移作为后续比较基线，State 暂不替代它。下一轮应先在训练来源之间做细胞背景留出，检验效应幅度校准和背景交互，再决定是否扩大微调；仅增加 1,000 步的训练预算尚无收益依据。当前计数解码不能在零计数处新增表达，也应作为独立变化验证。Jiang TGFB 原始计数与匹配刺激条件的审计可提供额外背景，但本轮尚未下载或声称训练收益。上述均为下一轮候选假设，本轮未追加试验，也未再次使用 Jurkat 调参。官方提交继续暂停。

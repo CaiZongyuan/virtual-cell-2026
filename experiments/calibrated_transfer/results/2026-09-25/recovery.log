@@ -1,0 +1,6 @@
+{"origin": "/home/caii/vcc2026-run/evaluation/control", "reused_measured_baseline": true, "score": -0.04523068765223785, "benchmark_check_passed": true, "validation": "actual controls, scale, benchmark, config, installed evaluator packages and result hashes"}
+{"source": "jurkat", "rows_scanned": 121304, "total_rows": 262956, "selected": 17172}
+{"source": "jurkat", "rows_scanned": 250832, "total_rows": 262956, "selected": 35493}
+{"source": "jurkat", "state": "prepared", "shape": [37232, 18536], "conditions": 202}
+{"arm": "empirical", "targets": 198, "cells": 24865, "measured_project_axis_genes": 8283, "target_gene_excluded_per_condition": true, "baseline": 1.0, "pooled_error_ratio": 0.5758562333532025, "median_target_ratio": 0.8414972308288124, "targets_improved": 148, "metric_scope": "Jurkat normalized mean-expression error; not H1 canonical six-metric score"}
+{"best": "empirical", "score": 0.16387417225775552}

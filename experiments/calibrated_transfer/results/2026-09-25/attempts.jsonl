@@ -1,0 +1,4 @@
+{"attempt": "control", "exit_code": null, "reused_measured_baseline": true, "origin": "/home/caii/vcc2026-run/evaluation/control"}
+{"attempt": "empirical", "exit_code": 0, "action": "verify existing complete artifacts", "original_process_exit": "unknown after disconnect", "training_repeated": false, "verified_at_unix": 1790373608.260865}
+{"attempt": "frozen", "exit_code": 0, "action": "verify existing complete artifacts", "original_process_exit": "unknown after disconnect", "training_repeated": false, "verified_at_unix": 1790373610.7178907}
+{"attempt": "limited", "exit_code": 0, "action": "resume scoring", "original_process_exit": 0, "training_repeated": false, "verified_at_unix": 1790374334.1670358}
