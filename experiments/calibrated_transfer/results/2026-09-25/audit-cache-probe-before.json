@@ -1,0 +1,11 @@
+{
+  "seconds": {
+    "backed": 0.8779950540010759,
+    "memory": 0.053995034999388736
+  },
+  "backed_over_memory": 16.260662744472995,
+  "all_counts_and_row_order_equal": true,
+  "cells": 1024,
+  "row_requests": 4,
+  "rows_per_request": 256
+}

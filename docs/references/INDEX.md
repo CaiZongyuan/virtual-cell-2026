@@ -696,3 +696,5 @@
 
 - 无新论文或主题查询，Scholar/SciVerse/HTTP 调用均为 0；仅阅读固定 Stack commit `cacc2e4b09435c3e536d46237d10b50f222dd144` 的推理、基因映射、计数解码、微调源码和既有 HF metadata/model card。
 - 产物：[原生迁移可执行性记录](../research/stack-native-transfer-readiness-2026-09-26.md)。确认外部示例+目标 NTC 的合法输入操作；未下载权重、安装依赖或运行 GPU。State 当前比较不变，Stack 的基因轴、原生计数预处理、CLI device 未传递、模型轴外零填充及教师 EMA 等限制已记录，原生接口可用不等于本赛精度已验证。
+
+- 2026-09-26 原生实跑补充（工程证据，非论文结论）：Stack-Large-Aligned 严格加载成功，3090 上 FP32、batch=1 的 64/512-cell 推理峰值显存约 0.90/1.35 GiB；H1 NTC 组成 TV 约 0.35，剔除未测基因后仍约 0.33，未通过本轮校准门槛。保留为后续适配候选，不直接晋级完整 H1 预测；未读取 H1 扰动真值，未更新权重。见[实跑记录](../../experiments/stack_native/README.md)。

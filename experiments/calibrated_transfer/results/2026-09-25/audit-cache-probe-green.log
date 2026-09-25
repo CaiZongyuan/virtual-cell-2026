@@ -1,0 +1,2 @@
+Cached verified prediction: 71535876 CSR bytes; evaluator math unchanged
+{"cached": true, "seconds": {"candidate": 0.1128441879991442, "memory": 0.05326595099904807}, "ratio": 2.1185050840669466, "counts_and_order_equal": true}

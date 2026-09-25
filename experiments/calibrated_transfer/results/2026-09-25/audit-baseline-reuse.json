@@ -1,0 +1,7 @@
+{
+  "origin": "/home/caii/vcc2026-run/evaluation/control",
+  "reused_measured_baseline": true,
+  "validation": "all score artifact hashes, actual controls, benchmark manifest, scale, config and installed evaluator package files match",
+  "score": -0.04523068765223785,
+  "benchmark_check_passed": true
+}

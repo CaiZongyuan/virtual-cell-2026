@@ -1,0 +1,12 @@
+{
+  "native_strict_load": "<All keys matched successfully>",
+  "native_probe_finite": true,
+  "input_mean": 0.4807930886745453,
+  "output_mean": 0.3512406647205353,
+  "mean_gene_rmse": 0.45913732051849365,
+  "native_genes_on_project_axis": 1877,
+  "preprocessing": "project CP10000, not verified parent training scale",
+  "batch": "index 0 diagnostic fallback; original batch mapping absent",
+  "scope": "interface smoke only; no native biological reproduction claimed",
+  "adapted_ntc_contrast_max_abs": 0.0
+}

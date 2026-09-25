@@ -1,0 +1,47 @@
+{
+  "training_conditions": 1083,
+  "training_perturbed_cells": 139586,
+  "unique_targets": 619,
+  "sources": [
+    "gwps",
+    "k562",
+    "rpe1",
+    "hepg2"
+  ],
+  "gene_count": 18536,
+  "supervised_genes": 10480,
+  "finite_effects": true,
+  "official_300_target_coverage": 254,
+  "raw_receipts": {
+    "gwps": {
+      "url": "https://zenodo.org/records/13350497/files/ReplogleWeissman2022_K562_gwps.h5ad?download=1",
+      "bytes": 8805466154,
+      "md5": "13db594f8f1d2ccb88fec44a13e414dc",
+      "verified_at_unix": 1790338582.4056919,
+      "expected_hash_verified": true
+    },
+    "k562": {
+      "url": "https://zenodo.org/records/13350497/files/ReplogleWeissman2022_K562_essential.h5ad?download=1",
+      "bytes": 1546729675,
+      "md5": "d8cba17576d1a8afc0f7d71b79cad0f7",
+      "verified_at_unix": 1790339539.8489566,
+      "expected_hash_verified": true
+    },
+    "rpe1": {
+      "url": "https://zenodo.org/records/13350497/files/ReplogleWeissman2022_rpe1.h5ad?download=1",
+      "bytes": 1236886900,
+      "md5": "cc7f1ec50aeb3a3e1b4a6cfa713d80fa",
+      "verified_at_unix": 1790339329.6469114,
+      "expected_hash_verified": true
+    },
+    "hepg2": {
+      "url": "https://zenodo.org/records/13350497/files/NadigOConner2024_hepg2.h5ad?download=1",
+      "bytes": 850590740,
+      "md5": "af2be47f7477cf32fa6e4bec1c6a4868",
+      "verified_at_unix": 1790338890.015413,
+      "expected_hash_verified": true
+    }
+  },
+  "h1_public_public_target_coverage": 129,
+  "h1_public_panel_targets": 150
+}
