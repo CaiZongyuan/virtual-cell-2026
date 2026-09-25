@@ -249,6 +249,8 @@
 - 结论：采用为核心 CRISPRi 训练数据；优先四背景核心，再加 GWPS。实际训练行数、目标交集、基因缺测和父权重暴露仍需下载后审计。
 - 关键词：CRISPRi、Perturb-seq、K562、RPE1、GWPS、State、训练数据。
 - 来源：[Cell DOI](https://doi.org/10.1016/j.cell.2022.05.013)；Joseph M. Replogle et al.；Cell，2022；[作者 Figshare](https://plus.figshare.com/articles/dataset/20029387)、[PMC 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9380471/)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/03-State上手.md)，本地独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据/原文审计。
+- 2026-09-25 再核：作者 Figshare 明确 raw single-cell 已过滤至平均 >0.01 UMI/cell；固定 scPerturb 转换脚本保留 X，未做表达归一化或基因子集。继续采用压缩副本，排除为补基因而重复下载约 85 GB 原件的做法。[本轮核验与实验建议](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+
 
 ### Transcriptome-wide analysis of differential expression in perturbation atlases
 
@@ -258,6 +260,8 @@
 - 结论：采用为第一批微调核心数据；`.X` 计数、对照标签、实测基因覆盖与筛选口径在 ETL 时逐项确认。
 - 关键词：CRISPRi、HepG2、Jurkat、差异表达、背景迁移、State。
 - 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-025-02169-3)；Ajay Nadig et al.；正式在线 2025-04-21；[GEO GSE264667](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264667)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/03-State上手.md)，独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据审计。
+- 2026-09-25 补充：固定 Zenodo API 再核 Jurkat 压缩 H5AD 为 1,293,665,804 bytes、MD5 `d8b05d00bfbd686d37ffdd4293bc6c8c`。采用为本轮独立确认背景；其全部扰动标签不得进入微调和配置选择。矩阵下载后的覆盖另行核验。[下载合同与隔离方案](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+
 
 ### Systematic reconstruction of molecular pathway signatures using scalable single-cell perturbation screens
 
@@ -267,6 +271,8 @@
 - 结论：备选为第二阶段背景扩展；四背景流程跑通后再下载，单独评估增益。
 - 关键词：Perturb-seq、信号通路、Mixscale、六细胞系、刺激条件、数据扩展。
 - 来源：[Nature Cell Biology DOI](https://doi.org/10.1038/s41556-025-01622-z)；Longda Jiang et al.；正式在线 2025-02-26；[预印本 DOI](https://doi.org/10.1101/2024.01.29.576933)、[Zenodo 14518762](https://zenodo.org/records/14518762)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)及[微调教程](../lessons/03-State上手.md)，独立全文未保存；检索与书目核验 2026-09-14，复用既有数据审计。
+- 2026-09-25 模态缺口已解决：PMC 作者稿正文确认六细胞系均使用 dCas9-KRAB-MeCP2 CRISPRi，分别为 A549/MCF7/HT29/HAP1/BxPC3/K562，五种刺激 24 h。约 1,500 是靶基因×细胞系×刺激组合，不是约 1,500 个独立靶基因；每通路 44–61 targets。正式版指向 Zenodo 14518762，五 RDS 共 20,141,612,637 bytes，CC BY 4.0；继续备选，先做单通路 counts/NTC 审计，未读取大矩阵或证明训练增益。[核验记录](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+
 
 ### scPerturb harmonized datasets — Zenodo record 13350497
 
@@ -666,3 +672,20 @@
 - 顺序直接 HTTP 4 次，全部成功：Stack-Large 与 Stack-Large-Aligned 各 1 次 HF metadata、1 次固定 revision README。对应 [Large](https://huggingface.co/arcinstitute/Stack-Large/tree/6e1f352e8cc7f8718c74fe1d20b95c42e0942d9b) / [Aligned](https://huggingface.co/arcinstitute/Stack-Large-Aligned/tree/b09f085dac03d170b078a5c72f550ae93686e544)，checkpoint 分别 2,610,004,146 / 2,613,863,242 bytes，SHA 与请求记录见[资产清单](../../experiments/local_benchmark/asset-inventory-2026-09-25.json)。仅核验元数据，未下载或执行权重。
 - State：保留为微调主候选，首轮适配失败与 State 方法整体有效性分开判断。Stack：由仅作背景适配参考提升为首批本地实测候选；原生冻结教师微调入口存在，但 CRISPRi 条件示例迁移、完整输出基因轴和 24 GB 资源可行性待实测。Lingshu-Cell 继续备选，其 H1 监督暴露使该权重不能直接作为严格未见 H1 背景的对照。
 - 数据核对：服务器已有 H1 training 全矩阵及四份 scPerturb 来源；H1 canonical 126-target / 2026 六指标开发回路已实际跑通，修正早期条目“尚未下载/运行”的历史状态。作者训练来源清单、Stack 效果和 Jurkat/全基因原件补充仍有缺口。
+
+### Iterative, multimodal, and scalable single-cell profiling for discovery and characterization of signaling regulators
+
+- 摘要：搜索返回的作者摘要描述以 mTOR/pRPS6 为示例的蛋白、RNA 与 CRISPR 联合单细胞测量及计算筛选，使用 10x Flex；本轮原文未成功读取，摘要线索不等于已核实原始数据合同。
+- 核心关联：若确有公开 CRISPRi 原始计数，可补充与 VC2026 相同 10x Flex 化学方法的外部背景；当前不能确认模态、细胞系、靶点规模及矩阵可下载性。
+- 关系：与 Jiang 同属 Satija 实验/计算筛选路线；不是 H1 数据的已验证独立替代品，不与已有 genome-wide 参考数据重复计数。
+- 结论：备选，排除出本轮直接训练；需要原文 Data Availability、模态、许可和原始计数证据后才能采用。
+- 关键词：10x Flex、CRISPR、多模态、mTOR、pRPS6、扰动数据候选。
+- 来源：[bioRxiv DOI](https://doi.org/10.1101/2025.08.27.672635)；[Europe PMC 书目](https://europepmc.org/article/PPR/PPR1074298)；John D. Blair, Alexandra Bradu, Carol Dalgarno, Isabella N. Grabski, Rahul Satija；预印本 2025-08-30，同行评议版本待核验；本地原文未保存，bioRxiv HTML 返回 403；检索日期 2026-09-25；[本轮记录](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+
+### 2026-09-25 自主微调的数据与证据复核
+
+- 目标：在总存储不超过 500 GB、复用公开权重、H1 本地开发和官方提交暂停的条件下，确定下一批可执行数据及一个基线加三个候选。产物：[研究记录](../research/autonomous-finetuning-data-review-2026-09-25.md)。此条记录建议与来源，实际训练和评分另有实验记录。
+- 默认发现：Infra Scholar 顺序 2 次，查询 `cross cell type CRISPRi Perturb-seq raw count public dataset Jiang 2025 transcriptional responses signal pathways multi cell lines finetuning State`；因 Jiang 模态缺口再精炼一次为精确题名 `"Systematic reconstruction of molecular pathway signatures using scalable single-cell perturbation screens"`。各看前 10 条，无继续扩搜。其余未用于决策的题名/摘要线索不当作已全文评估候选。
+- 一手核验：直接 HTTP 14 次，10 次取得可用元数据、正文或作者代码；Jiang Europe PMC XML 500、Blair HTML 403、补充 XLSX 达到 10 MB 小文件限额后中止、PMC 向导 XLSX 返回过渡 HTML，均未声称读取成功。完整 URL、请求与缺口见研究记录；无 SciVerse/Paper Schema 调用，不下载训练大矩阵。
+- 数据状态：Replogle 与 Nadig 继续采用；Jurkat 安排为确认背景。Jiang 模态由未知更新为确认 CRISPRi，仍为待 counts/覆盖核验的训练备选。Orion 作者数据卡再核为可流式原始计数，但许可适用性与读取成本仍待解决，保持备选。Blair 新增备选，未找到可直接采用的矩阵合同。
+- 方法状态：State 继续采用为公开权重微调主候选；Stack 保持后续独立原生校准/微调候选，沿用同日已固定的官方资产。响应分解与线性基线继续采用为经验效应参考和背景/靶点分离的依据；本轮未重读这些论文原文，不升级其证据范围。差分 State、未监督基因计数保持及 thinning/Poisson 解码均为待验证工程假设，无文献或本轮得分保证。
