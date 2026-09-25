@@ -87,6 +87,8 @@ def run(args):
                             "candidate_sse": candidate_sse, "ratio": candidate_sse/base_sse if base_sse else None})
     ratios = [r["ratio"] for r in results if r["ratio"] is not None]
     summary = {"arm": args.arm, "targets": len(results), "cells": sum(r["cells"] for r in results),
+               "measured_project_axis_genes": int(source.measured.sum()),
+               "target_gene_excluded_per_condition": True,
                "baseline": 1.0,
                "pooled_error_ratio": sum(r["candidate_sse"] for r in results)/sum(r["baseline_sse"] for r in results),
                "median_target_ratio": float(np.median(ratios)), "targets_improved": sum(r < 1 for r in ratios),
