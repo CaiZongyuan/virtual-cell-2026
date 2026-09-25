@@ -698,3 +698,31 @@
 - 产物：[原生迁移可执行性记录](../research/stack-native-transfer-readiness-2026-09-26.md)。确认外部示例+目标 NTC 的合法输入操作；未下载权重、安装依赖或运行 GPU。State 当前比较不变，Stack 的基因轴、原生计数预处理、CLI device 未传递、模型轴外零填充及教师 EMA 等限制已记录，原生接口可用不等于本赛精度已验证。
 
 - 2026-09-26 原生实跑补充（工程证据，非论文结论）：Stack-Large-Aligned 严格加载成功，3090 上 FP32、batch=1 的 64/512-cell 推理峰值显存约 0.90/1.35 GiB；H1 NTC 组成 TV 约 0.35，剔除未测基因后仍约 0.33，未通过本轮校准门槛。保留为后续适配候选，不直接晋级完整 H1 预测；未读取 H1 扰动真值，未更新权重。见[实跑记录](../../experiments/stack_native/README.md)。
+
+### 2026-09-26 补齐 9 月 25 日 Scholar 前十条筛选台账
+
+离线恢复上述 Q1/Q2 的完整缓存响应（各 10 条），按规范 DOI 和题名合并版本，共 20 个不同候选：5 个复用已有条目，另 15 个列于下表。初次 Q2 工具展示曾截断第 5–8 条之间的内容；本次才完整补读该段，不把本次判断倒填为 9 月 25 日的全文核验。两份完整响应留在 Git 忽略目录 `output/autonomous-data-review-2026-09-25/scholar-query-{1,2}.cached.json`；本次 Scholar/HTTP 调用均为 0。
+
+已登记的 5 条：Q1-1 → [X-Cell](#x-cell-scaling-causal-perturbation-prediction-across-diverse-cellular-contexts)（检索题名带 “via diffusion language models”，对应同一已登记预印本）；Q1-2 → [Replogle](#mapping-information-rich-genotype-phenotype-landscapes-with-genome-scale-perturb-seq)；Q2-1 → [VC Challenge 评论](#virtual-cell-challenge-toward-a-turing-test-for-the-virtual-cell)；Q2-3 → [Jiang](#systematic-reconstruction-of-molecular-pathway-signatures-using-scalable-single-cell-perturbation-screens)（`10.1101/2024.01.29.576933` 与 `10.1038/s41556-025-01622-z` 合并，采用正式版）；Q2-4 → [Blair](#iterative-multimodal-and-scalable-single-cell-profiling-for-discovery-and-characterization-of-signaling-regulators)。沿用原条目的采用/备选状态，不重复建项。
+
+下表全部只是**题名、摘要或 snippet 级初筛**；简介与排除理由据返回内容，不表示全文结论已核验。“排除本轮”只针对当前公开权重 CRISPRi 微调 campaign，不判断论文整体价值。作者/年份/期刊均为搜索返回字段，完整书目、精确发表日、后续正式版本与方法资产仍待核验；未提供摘要者明确标出。各项本地原文均未保存；检索日 2026-09-25，补审日 2026-09-26。题名及简介兼作关键词和与本项目关系。
+
+| 序号 | 题名与返回来源 | 返回书目（未交叉核验） | 状态、简要内容与实际筛选理由 |
+|---|---|---|---|
+| Q1-3 | [A versatile information retrieval framework for evaluating profile strength and similarity](https://doi.org/10.1038/s41467-025-60306-2) | Alexandr A. Kalinin et al.; 2025; Nature Communications | **排除本轮**：用 mAP/copairs 评价高维表型强度与相似性；本轮已固定 VC2026 六指标，不替换评价目标，未核实可新增的独立训练数据。 |
+| Q1-4 | [Learning Cellular States with Generalist Transformer Architectures](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2026/EECS-2026-210.pdf) | D Gautam; 索引年 2026；DOI、出版类型待核验；无摘要 | **排除本轮**：题名/snippet 指向通用 Transformer 与扰动模型，但未建立可直接复用的 checkpoint 或新增 raw-count 数据合同；继续优先已核资产的 State/Stack。 |
+| Q1-5 | [Bidirectional epigenetic editing reveals hierarchies in gene regulation](https://doi.org/10.1038/s41587-024-02213-3) | Naomi M. Pacalin et al.; 2024; Nature Biotechnology | **备选**：CRISPRai 同时包含激活、抑制与双扰动；可能提取单 CRISPRi 子集，但不能把混合干预直接并入单靶点 CRISPRi 标签，矩阵/对照尚未核验。 |
+| Q1-6 | [Unsupervised Deep Disentangled Representation of Single-Cell Omics](https://doi.org/10.1101/2024.11.06.622266) | Amir Ali Moinfar, Fabian J. Theis; 2024; bioRxiv | **排除本轮**：DRVI 为无监督可解耦表征与整合方法；返回摘要未建立目标 NTC-only 跨背景 CRISPRi 预测或可复用扰动权重，不新增一个表征训练项目。 |
+| Q1-7 | [Mapping transcriptional responses to cellular perturbation dictionaries with RNA fingerprinting](https://doi.org/10.1101/2025.09.19.676866) | Isabella N. Grabski et al.; 2025; bioRxiv | **备选**：把已观测细胞映射到扰动字典，方向不同于前向表达预测；snippet 提及两背景 CPA-Perturb-seq，可作为后续数据线索，但原始来源/计数/许可未核验。 |
+| Q1-8 | [Predicting how perturbations reshape cellular trajectories with PerturbGen](https://www.biorxiv.org/content/10.64898/2026.03.04.709254.abstract) | K Chi Hao Ly et al.（返回作者不完整）；索引年 2026；DOI 字段空，URL 内标识待核验；无摘要 | **排除本轮**：题名/snippet 指向轨迹预测与 TF knockout，多背景 CRISPRi 原始计数/公开权重合同未建立；不据 snippet 把整篇方法确定为 KO-only。 |
+| Q1-9 | [Towards Expression Forecasting](https://dspace.cuni.cz/handle/20.500.11956/209521) | J Bruthans; 索引年 2026；DOI、文献类型待核验；无摘要 | **排除本轮**：只有题名和关于 Perturb-seq 模型的 snippet，没有已核实的新增权重或数据入口，暂不扩展精读范围。 |
+| Q1-10 | [LazyNet: Interpretable ODE Modeling of Sparse CRISPR Single-Cell Screens Reveals New Biological Insights](https://www.mdpi.com/2079-7737/15/1/62) | Z Yi, N Ma, Y Ao；返回年 2025，年份/卷期待核验；DOI 未提供；无摘要 | **排除本轮**：题名为稀疏 CRISPR 的可解释 ODE 建模，尚未核实可用于本轮的预训练权重或新背景数据；不由标题推断其性能。 |
+| Q2-2 | [PerturBase: a comprehensive database for single-cell perturbation data analysis and visualization](https://doi.org/10.1093/nar/gkae858) | Zhiting Wei et al.; 2024; Nucleic Acids Research（正式卷年待核验） | **备选**：公开单细胞扰动数据汇编与分析入口；与已采用 scPerturb 功能互补，但必须回溯每项原实验并去重。不同于 DOI 为 `gkae777` 的 PerturbDB，不合并两数据库论文。 |
+| Q2-5 | [SIGNAL-seq: Multimodal Single-cell Inter- and Intra-cellular Signalling Analysis](https://doi.org/10.1101/2024.02.23.581433) | James W. Opzoomer et al.; 2024; bioRxiv | **排除本轮**：摘要介绍 3D 模型中的 RNA/蛋白翻译后修饰联合测量，不提供本轮已核的 CRISPRi 靶点—计数合同；保留为多模态测量线索。 |
+| Q2-6 | [Regulators of Interferon-Responsive Microglia Uncovered by Genome-wide CRISPRi Screening](https://doi.org/10.1101/2025.06.05.658176) | Amanda McQuade et al.; 2025; bioRxiv | **备选**：人 iPSC 衍生小胶质细胞的 CRISPRi 为新背景候选；摘要以 IFIT1 标志物筛选描述实验，不能据 “genome-wide” 推断有 genome-wide Perturb-seq 原始转录组矩阵。全文/矩阵/许可待核验。 |
+| Q2-7 | [Transcription factor networks disproportionately enrich for heritability of blood cell phenotypes](https://doi.org/10.1101/2024.09.09.611392) | Jorge Diego Martin-Rufino et al.; 2024; bioRxiv；返回 [PMC 入口](https://www.ncbi.nlm.nih.gov/pmc/articles/11419094) | **备选**：Perturb-multiome 同时测 TF 扰动后的染色质可及性和表达，可能补充造血分化背景；CRISPRi/KO 模态、raw counts、匹配对照与公开许可未核验，暂不混训。 |
+| Q2-8 | [Guide assignment in single-cell CRISPR screens using crispat](https://doi.org/10.1101/2024.05.06.592692) | Jana M. Braunger, Britta Velten; 2024; bioRxiv | **备选**：guide 分配软件与策略比较，摘要称重分析两研究的四个 CRISPRi screen；可用于后续标签质量审计，不作为四组新独立数据，也不重写本轮已固定标签。 |
+| Q2-9 | [A heterogeneous pharmaco-transcriptomic landscape induced by targeting a single oncogenic kinase](https://doi.org/10.1101/2024.04.08.587960) | Ross M. Giglio et al.; 2024; bioRxiv | **排除本轮**：胶质母细胞瘤 EGFR 抑制剂的化学扰动转录组；与现有化学数据一样，不能不加干预模态地当作 CRISPRi 标签。 |
+| Q2-10 | [Analyzing the functional effects of DNA variants with gene editing](https://doi.org/10.1016/j.crmeth.2024.100776) | Sarah Cooper et al.; 2024; Cell Reports Methods | **排除本轮**：讨论饱和、碱基及 prime editing 的变异功能分析方法；是编辑方法综述性质的摘要内容，未给本轮直接可用的 CRISPRi 训练矩阵。 |
+
+补审完成度：20/20 条已映射到完整条目或本表；新增 15 条中 6 条备选、9 条排除本轮。缓存中有重复作者字符串，表中只保留第一作者 et al. 或明确的两/三作者，不以重复字符串构造作者名单；缺 DOI/摘要及上述原文/资产问题保持未解决。此表仅补台账，不新增训练候选、网络调用或模型成绩结论。

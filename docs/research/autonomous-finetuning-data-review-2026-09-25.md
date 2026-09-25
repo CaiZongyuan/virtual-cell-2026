@@ -93,3 +93,5 @@ Infra Scholar 顺序调用 **2 次**，每次查看前 10 条；首轮缺少 Jia
 直接 HTTP 共 **14 次**：Jiang Europe PMC 元数据、Jiang Zenodo API、Replogle Figshare API、scPerturb Zenodo API、Jiang Europe PMC 全文 XML、Jiang README、固定 scPerturb 转换脚本、Orion HF README、Blair bioRxiv HTML、Jiang 出版页、Blair Europe PMC 元数据、Jiang PMC 正文、Jiang 出版方补充 XLSX、Jiang PMC 向导表。10 次得到可用内容；4 次未完成证据读取：Jiang XML HTTP 500，Blair HTML HTTP 403，出版方补充 XLSX 达到本次小文件 10 MB 读取上限后停止，PMC XLSX 返回下载过渡 HTML。补充表失败后停止，不把 HTML 冒充 XLSX，也不从未读文件推断靶点覆盖。无 SciVerse/Paper Schema 调用。
 
 实际用于判断的 Replogle、Nadig、Jiang、Orion、State、Stack、响应分解与线性基线均已在索引登记，本轮补充复核状态；Blair 新增为备选。缺口为 Jiang RDS 真实 counts/基因与靶点覆盖、Orion 许可与子集读取成本、Blair 全文/矩阵入口、父权重原生尺度与预训练暴露，以及所有新候选的真实六指标收益。未命中和访问失败均不等于数据不存在。
+
+2026-09-26 台账补审：两次 API 各返回 10 条，但 Q2 初次工具展示中段有截断。已从本次会话缓存恢复完整响应并补读，以 [INDEX 的补充筛选表](../references/INDEX.md#2026-09-26-补齐-9-月-25-日-scholar-前十条筛选台账)覆盖全部 20 个候选（5 个已有条目、15 个新增初筛记录）；这是本次补审，不是补做全文核验。没有新搜索或 HTTP 请求。
