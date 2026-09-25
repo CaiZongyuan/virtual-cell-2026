@@ -1,0 +1,4 @@
+interface:
+  display_name: "Virtual Cell 教程制作"
+  short_description: "按需加载教程教学、科学配图、图像生成、可读性与资产交付规范"
+  default_prompt: "使用 $tutorial-authoring 编写或修改本项目教程，并按图的类型制作和检查配图。"
