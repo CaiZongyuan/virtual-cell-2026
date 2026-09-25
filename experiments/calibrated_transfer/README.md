@@ -64,3 +64,13 @@ Repeat train/export for `limited`; export `frozen` after its training finishes.
 Large arrays, weights, logs and predictions stay outside Git. Results summaries,
 all attempt outcomes, exact commands, code hashes, timings and data receipts are
 copied into the repository only after completion. Training logs use local SwanLab.
+
+Execution amendment before any candidate: the baseline recheck was stopped after
+verifying that the archived baseline's actual control file, benchmark, scale,
+configuration, evaluator package files and all result hashes still match. The
+interrupted log and status remain in the run audit. `run_parallel.sh` resumes from
+that measured baseline, serializes training/export with a GPU lock, and overlaps
+CPU scoring. This changes scheduling only; scoring remains 512 genes / 8 threads,
+with unchanged data and metrics. Wall times therefore include resource contention
+and, where applicable, waiting for the GPU lock. It requires at least 24 GB free
+RAM at launch and reserves 50 GB storage headroom.

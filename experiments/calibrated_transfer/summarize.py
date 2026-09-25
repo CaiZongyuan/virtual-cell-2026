@@ -34,7 +34,7 @@ def summarize(work):
         arm = attempt["attempt"]
         directory = work / "evaluation" / arm
         result = {**attempt, "status": "crash", "metric": None, "log": f"logs/{arm}.log"}
-        if attempt["exit_code"] == 0:
+        if attempt["exit_code"] == 0 or attempt.get("reused_measured_baseline", False):
             scaled = read_metrics(directory / "scores.csv", "from_replicate")
             raw = read_metrics(directory / "aggregates.csv", "raw_value")
             if len(scaled) != 7 or len(raw) != 6 or not all(math.isfinite(x) for x in [*scaled.values(), *raw.values()]):
