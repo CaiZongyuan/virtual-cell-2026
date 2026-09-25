@@ -126,6 +126,8 @@
 - 结论：备选为细胞背景适配参考。2026-09-14 当前[官方 FAQ](https://virtualcellchallenge.org/faq#legal)已对 State 和 Stack 并列给出比赛用途说明：参赛使用代码视为 Non-Commercial Purpose，仍须遵守适用代码许可；非商业参赛者可使用预训练检查点，商业参赛者使用预训练权重需相应商业许可。8 月核查时“FAQ 未给 Stack 例外、须先取书面比赛许可”的判断不再作为统一前置条件；具体 checkpoint、团队身份和适用条款仍需对应核对。首投暂不依赖 Stack，是实施优先级决定。
 - 关键词：上下文学习、表格注意力、单细胞基础模型、零样本、背景适配。
 - 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.01.09.698608)；[官方代码与 README](https://github.com/ArcInstitute/stack)；[模型许可](https://github.com/ArcInstitute/stack/blob/main/MODEL_LICENSE.md)；Dong et al.；bioRxiv 预印本，2026（Crossref 首发标识 2026-01-09，bioRxiv 页面版本日期 2026-06-08）；[本地中文阅读材料](<Stack_ In-Context Learning of Single-Cell Biology.md>)（转述材料，不替代原文）；代码、标识与许可核验日期 2026-08-30。
+- 2026-09-26 原生推理核查：固定官方源码与预测教程确认可将外部同条件扰动示例作为 base、目标背景 NTC 作为 query，无需目标背景扰动真值或一一配对细胞。输入为 raw counts→模型轴映射→log1p；NB 均值使用模型轴内库大小，抽样总量不固定；缺源基因补零、test-only 输出默认零，完整比赛轴仍需独立适配。标准 torch attention 无 flash-attn 要求；64-cell/batch1/FP32 的 3090 可行性待实测。所谓 frozen teacher 是无梯度但每 500 steps 做 EMA 更新。保持本地候选，未宣称 CRISPRi 收益或排除 H1 预训练暴露。[可执行入口与边界](../research/stack-native-transfer-readiness-2026-09-26.md)。
+
 
 ## 基准与可迁移建模证据
 
@@ -689,3 +691,8 @@
 - 一手核验：直接 HTTP 14 次，10 次取得可用元数据、正文或作者代码；Jiang Europe PMC XML 500、Blair HTML 403、补充 XLSX 达到 10 MB 小文件限额后中止、PMC 向导 XLSX 返回过渡 HTML，均未声称读取成功。完整 URL、请求与缺口见研究记录；无 SciVerse/Paper Schema 调用，不下载训练大矩阵。
 - 数据状态：Replogle 与 Nadig 继续采用；Jurkat 安排为确认背景。Jiang 模态由未知更新为确认 CRISPRi，仍为待 counts/覆盖核验的训练备选。Orion 作者数据卡再核为可流式原始计数，但许可适用性与读取成本仍待解决，保持备选。Blair 新增备选，未找到可直接采用的矩阵合同。
 - 方法状态：State 继续采用为公开权重微调主候选；Stack 保持后续独立原生校准/微调候选，沿用同日已固定的官方资产。响应分解与线性基线继续采用为经验效应参考和背景/靶点分离的依据；本轮未重读这些论文原文，不升级其证据范围。差分 State、未监督基因计数保持及 thinning/Poisson 解码均为待验证工程假设，无文献或本轮得分保证。
+
+### 2026-09-26 Stack 原生迁移就绪核查
+
+- 无新论文或主题查询，Scholar/SciVerse/HTTP 调用均为 0；仅阅读固定 Stack commit `cacc2e4b09435c3e536d46237d10b50f222dd144` 的推理、基因映射、计数解码、微调源码和既有 HF metadata/model card。
+- 产物：[原生迁移可执行性记录](../research/stack-native-transfer-readiness-2026-09-26.md)。确认外部示例+目标 NTC 的合法输入操作；未下载权重、安装依赖或运行 GPU。State 当前比较不变，Stack 的基因轴、原生计数预处理、CLI device 未传递、模型轴外零填充及教师 EMA 等限制已记录，原生接口可用不等于本赛精度已验证。
