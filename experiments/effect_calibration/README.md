@@ -18,8 +18,7 @@ provenance. No foundation model is pretrained from scratch.
   against its outcomes in this round. All fitting uses K562/GWPS/RPE1/HepG2.
 - Three new candidate slots: conservative multiplicative transfer (fixed strength
   0.2 instead of 0.5); additive mean transfer with strength chosen by source
-  context exclusion; one public-pretrained State residual candidate whose exact
-  specification will be committed before training or H1 evaluation.
+  context exclusion; the public-pretrained State residual candidate below.
 - Source calibration grid: 0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.75, 1.0.
   Exclude *both* K562 files together when predicting K562. Fit effects from
   other contexts' training cells; score the held context's development cells
@@ -78,3 +77,41 @@ a count-generation model; it is not a claim that every zero should be filled.
 
 Large arrays/checkpoints/predictions stay on the server. Git retains source,
 small reports, all trial statuses and reproducible metadata.
+
+## Frozen State residual specification
+
+Continue the same public-State descendant `unfrozen/best.pt` (SHA-256
+`d9e17261e9b5ea86d63c52835db22e6a305612906d2e39fbc8f82c133ac25fff`).
+Replace its output ReLU with Identity and zero-initialize its single linear head.
+Freeze basal/missingness encoders; train the perturbation encoder, signed head
+(lr 1e-4), and last two Transformer layers (lr 1e-5). AdamW weight decay 0,
+gradient norm cap 10, dropout disabled, BF16 forward and FP32 difference/loss.
+Fixed 6,000 updates, seed 42; no early stopping. A two-step integration smoke run
+precedes the full run and never contributes a candidate score.
+
+For each of the 600 eligible source-target conditions (201 distinct targets),
+training supervision is clipped source log effect minus 0.2 times the clipped
+prior from other biological contexts, only on mutually measured genes. Four
+anchor targets are drawn without replacement with seed 42 from the 41 targets
+present in all four source files. Labels and model predictions both subtract
+the same masked anchor mean; the source-specific anchor masks are used in
+training, their per-anchor union and the supervised-gene union in inference.
+This explicit anchor rule replaces the evidence note's preliminary proposal to
+center labels over all eligible targets, making training/inference definitions
+consistent. Anchors are frozen before H1 results and independent of test panels.
+
+Each step samples two distinct targets from one source, with source probabilities
+1/6 GWPS, 1/6 K562 essential, 1/3 RPE1, 1/3 HepG2. Each target and its anchors
+receive the same 64 matched NTC cells; the two targets retain their own matched
+batches. Loss = weighted centered-residual MSE + 0.5 times pairwise difference
+MSE. Weights use sqrt(source control mean + 0.1), measured masks and per-vector
+normalization. The four anchors add forward passes; steps do not imply equal
+compute to the previous models.
+
+Inference applies `0.2 * clip(empirical, ±ln4) + 0.1 * clip(residual, ±ln2)`
+through the existing multiplicative decoder with decoder strength **1** (no
+second shrink). Targets without external supervision retain NTC predictions;
+genes without residual supervision receive no residual. An NTC query is exact
+identity. The correction weight 0.1 is fixed, not selected with source-context
+validation: the initialization already saw all training sources. Source
+development-cell diagnostics measure fitting only, and never select a checkpoint.
