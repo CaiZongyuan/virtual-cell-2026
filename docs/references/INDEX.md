@@ -726,3 +726,9 @@
 | Q2-10 | [Analyzing the functional effects of DNA variants with gene editing](https://doi.org/10.1016/j.crmeth.2024.100776) | Sarah Cooper et al.; 2024; Cell Reports Methods | **排除本轮**：讨论饱和、碱基及 prime editing 的变异功能分析方法；是编辑方法综述性质的摘要内容，未给本轮直接可用的 CRISPRi 训练矩阵。 |
 
 补审完成度：20/20 条已映射到完整条目或本表；新增 15 条中 6 条备选、9 条排除本轮。缓存中有重复作者字符串，表中只保留第一作者 et al. 或明确的两/三作者，不以重复字符串构造作者名单；缺 DOI/摘要及上述原文/资产问题保持未解决。此表仅补台账，不新增训练候选、网络调用或模型成绩结论。
+
+### 2026-09-26 下一组 State 残差候选的证据复核
+
+- 产物：[候选证据记录](../research/state-next-candidate-evidence-2026-09-26.md)。复用 State 与响应分解论文条目；State 保持采用为公开预训练主干，响应分解保持采用为分量诊断依据，Stack 保持备选。本轮没有新论文或主题发现，Scholar/SciVerse/HTTP 均 0 次，未重读论文全文，不升级既有论文结论。
+- 一手代码：State `9bbfe78a434a55205e4de834e1ea99f85f7a3add` 的 gene-space 输出/ReLU、分布损失；响应分解 `a15214780619736d393f40240e56ba992fd416a3` 的 ANOVA。确认 ReLU 后差分可为负、当前损失与原生 State 不同；公共响应仅解释当前来源加权训练效应平方量的 2.2%–14.2%，不足以断言公共效应占优导致模型塌缩。
+- 新建议属于工程假设：既有公开权重后代继续微调 6000 步，零初始化 signed residual head、靶点中心化、pairwise response loss、固定保守经验先验加 0.1 修正；不作为已验证收益。旧 all-source 后代权重不能充当未见来源证据，State 修正权重固定，不声称 source-LOCO 选模；公开父权重历史暴露仍未完整核验。服务器只读查询两次，第一次 ESM 别名错误后修正完成；没有远程写入、数据下载或 GPU 训练。
