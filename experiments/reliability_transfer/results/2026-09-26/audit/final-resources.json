@@ -1,0 +1,68 @@
+{
+  "checked_at_utc": "2026-09-26T16:47:59.499077+00:00",
+  "project_storage": [
+    {
+      "path": "/home/caii/vcc2026-calibrated-20260925",
+      "bytes": 9393472686
+    },
+    {
+      "path": "/home/caii/vcc2026-effect-calibration-20260926",
+      "bytes": 37538651317
+    },
+    {
+      "path": "/home/caii/vcc2026-rds-audit",
+      "bytes": 1798513579
+    },
+    {
+      "path": "/home/caii/vcc2026-reliability-20260926",
+      "bytes": 37847813092
+    },
+    {
+      "path": "/home/caii/vcc2026-run",
+      "bytes": 23365662550
+    },
+    {
+      "path": "/home/caii/vcc2026-stack-smoke",
+      "bytes": 505938168
+    },
+    {
+      "path": "/mnt/e/vcc2026-data",
+      "bytes": 55885278109
+    },
+    {
+      "path": "/home/caii/.cache/uv",
+      "bytes": 522525139
+    }
+  ],
+  "project_storage_bytes": 166857854640,
+  "storage_limit_bytes": 500000000000,
+  "project_jobs": [],
+  "tmux_sessions": [],
+  "gpu_query_exit": 0,
+  "gpu_processes": [],
+  "local_owned_network_processes": [
+    {
+      "role": "supervisor_pid",
+      "pid": 1643037,
+      "pid_exists": false,
+      "matches_owned_command": false
+    },
+    {
+      "role": "proxy_pid",
+      "pid": 1643038,
+      "pid_exists": false,
+      "matches_owned_command": false
+    },
+    {
+      "role": "tunnel_pid",
+      "pid": 1643040,
+      "pid_exists": false,
+      "matches_owned_command": false
+    }
+  ],
+  "submission_supervisor_cleanup": {
+    "checked_at_utc": "2026-09-26T16:46:50.616944+00:00",
+    "network_supervisor_stopped": true,
+    "scope": "Supervisor reaps its own proxy and SSH tunnel; final process audit follows."
+  }
+}

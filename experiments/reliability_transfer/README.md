@@ -116,4 +116,14 @@ The official exporter reproduced every H1 count exactly, then generated all
 360,000 ABC cells using the predetermined seed 42. Full native preparation
 passed with counts preserved; the 3,301,201,920-byte artifact has SHA-256
 `3a568acaa5f88ed92dc5e38f4650238ecd5413653a010306baa8c27e8ce1d33c`.
-After the official result, only report/commit and resource cleanup remain.
+The one official entry `FVHFoFT9o5DH5tKeyfmT` (`entry-f0aa6306733a37c4`)
+was published with score **0.007441514322745357**, versus the previous best
+**-0.006956916763307641**, a gain of **0.014398431086052998** on the same
+validation panel and anchors. Rank was 724 at the 2026-09-26 16:46:49 UTC check.
+This is a small gain; the score remains near the official mean baseline.
+
+This campaign is complete and stopped under the user's final instruction.
+The final audit found no project jobs, tmux sessions, GPU compute processes or
+owned network helpers. Total server project storage including prior runs,
+datasets and uv cache is 166,857,854,640 bytes, below 500 GB. Safe receipts,
+comparison and resource checks are in `results/2026-09-26/audit/`.

@@ -1,0 +1,24 @@
+{
+  "previous_entry_id": "wwojQdFnxb0tiobhyPe3",
+  "current_entry_id": "FVHFoFT9o5DH5tKeyfmT",
+  "same_partition_panel_and_anchors": true,
+  "partition": "val",
+  "panel_id": "vcc2026-val-1",
+  "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4",
+  "previous_score": -0.006956916763307641,
+  "current_score": 0.007441514322745357,
+  "change": {
+    "avg": 0.014398431086052998,
+    "pds": 0.013040860090649087,
+    "mse": 0,
+    "nmae": 0.002982327087834774,
+    "fid": 0.05979102321161511,
+    "reach": 0.003920398493753821,
+    "jac": 0.006655977632465268
+  },
+  "higher_scoring_entry": "FVHFoFT9o5DH5tKeyfmT",
+  "rank_at_current_check": 724,
+  "checked_at_utc": "2026-09-26T16:46:49.575197+00:00",
+  "rank_is_time_dependent": true,
+  "h1_scores_not_compared_to_official": true
+}
