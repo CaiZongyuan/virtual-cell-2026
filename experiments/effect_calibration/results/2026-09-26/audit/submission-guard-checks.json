@@ -1,0 +1,6 @@
+{
+  "unreleased_upload_rejected_before_credentials": true,
+  "ambiguous_create_not_repeated": true,
+  "status_and_scores_redact_unapproved_fields": true,
+  "no_network_requests_in_guard_checks": true
+}

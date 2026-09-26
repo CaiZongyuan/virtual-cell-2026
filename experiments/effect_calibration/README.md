@@ -133,3 +133,34 @@ it is not selected. Additive and State residual evaluations are still running.
 [Source calibration and complete score artifacts](results/2026-09-26/).
 Live noncached account/allowance checks passed through the established SSH
 forward; no official upload has occurred at this stage.
+
+State completed all 6,000 updates and the full H1 export. Its fixed source
+development-cell loss was 0.152172 versus zero-correction 0.171487; these are
+diagnostics, not H1 scores. Peak allocated GPU memory was about 1.13 GB.
+
+## Official artifact workflow
+
+`select_candidate.py select` verifies actual prediction hashes, evaluator identity,
+score hashes, recorded process exits and generation metadata before freezing a
+candidate. After exporting/scoring decoding seed 43,
+`select_candidate.py release` checks the predeclared confirmation gate and the
+unchanged predictor. A release still requires a complete new ABC artifact.
+
+`prepare_submission.py` first checks that ABC export against the release. It
+creates an independent float32 storage copy, verifies every integer value and
+every sparse index/pointer against the original, then runs both native
+`vcc prep --dry-run` and full prep with all target/count/context checks enabled.
+The storage change is exact for the allowed integer range; scored predictions
+stay immutable. A fixture comparison through native packing/unpacking verified
+identical counts/obs/genes, the 1,000,000-count boundary, and rejection of a
+fractional value beyond the first conversion chunk. Native packing runs alone,
+with its temporary files under this campaign and measured peak RSS recorded.
+
+`official_submission.py` receives credentials only on stdin, rechecks live
+eligibility/allowance, generates one opaque public name, and records the entry ID
+immediately on creation. A failed/ambiguous create is never blindly repeated.
+Existing entries are polled or resumed using the original ID. The private resume
+file can contain an upload URL and remains server-only with mode 0600; audit
+records contain only permitted IDs/statuses/numeric scores. No API token or
+private upload URL is copied into Git. Credential access before release and
+duplicate creation after an ambiguous attempt are covered by integration checks.

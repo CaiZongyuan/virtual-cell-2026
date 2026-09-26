@@ -64,6 +64,13 @@ def select(args):
             results[arm]={"status":"rejected","reason":json.loads(rejected.read_text())}
             continue
         status=require_stage(args.work,stage)
+        generated=json.loads((args.work / "predictions" / f"{arm}.json").read_text())
+        checkpoint=sha(args.work / "state/final.pt") if arm=="state_residual" else None
+        if (generated["arm"]!=arm or generated["decoding_seed"]!=42 or generated["panel"]!="h1"
+                or generated["effects_sha256"]!=sha(args.work / "effects.npz")
+                or generated["fit_sha256"]!=sha(args.work / "fit.json")
+                or generated.get("checkpoint_sha256")!=checkpoint):
+            raise ValueError(f"Scored candidate and current predictor differ: {arm}")
         result=read_result(args.work / "evaluation" / arm,baseline,args.work / "predictions" / f"{arm}.h5ad")
         result.update(stage=status["stage"],score_elapsed_seconds=status["elapsed_seconds"])
         result["gate_passed"]=(result["score"]>=incumbent["score"]+0.01 and

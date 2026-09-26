@@ -1,0 +1,7 @@
+{
+  "steps": 6000,
+  "development_loss": 0.15217214357107878,
+  "zero_correction_development_loss": 0.17148695839568973,
+  "scope": "source held-cell diagnostics, not held-background validation or early stopping",
+  "elapsed_seconds": 709.0201356589996
+}
