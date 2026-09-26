@@ -1,0 +1,26 @@
+{
+  "stage": "conservative-export",
+  "trial": "conservative",
+  "source_revision": "925f45f",
+  "started_at_utc": "2026-09-25T22:39:39.647918+00:00",
+  "command": [
+    "/home/caii/vcc2026-run/.venv/bin/python",
+    "/home/caii/vcc2026-effect-calibration-20260926/code/experiments/effect_calibration/predict.py",
+    "--previous",
+    "/home/caii/vcc2026-run",
+    "--work",
+    "/home/caii/vcc2026-effect-calibration-20260926",
+    "--arm",
+    "conservative",
+    "--output",
+    "/home/caii/vcc2026-effect-calibration-20260926/predictions/conservative.h5ad",
+    "--revision",
+    "925f45f"
+  ],
+  "log": "logs/conservative-export-1790375979647914019.log",
+  "exit_code": 0,
+  "project_storage_bytes_before_stage": 87226852334,
+  "timeout_seconds": 1800,
+  "elapsed_seconds": 111.64100623130798,
+  "finished_at_unix": 1790376091.2884943
+}

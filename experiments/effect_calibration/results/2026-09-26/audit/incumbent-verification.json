@@ -1,0 +1,7 @@
+{
+  "source_revision": "2aeebb2",
+  "verified_at_unix": 1790375632.832069,
+  "incumbent": "/home/caii/vcc2026-calibrated-20260925/predictions/empirical.h5ad",
+  "actual_prediction_and_output_hashes_verified": true,
+  "actual_controls_benchmark_scale_packages_verified": true
+}

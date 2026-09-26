@@ -115,3 +115,21 @@ genes without residual supervision receive no residual. An NTC query is exact
 identity. The correction weight 0.1 is fixed, not selected with source-context
 validation: the initialization already saw all training sources. Source
 development-cell diagnostics measure fitting only, and never select a checkpoint.
+
+## Interim results
+
+Source fitting completed on 600 conditions / 201 targets. Additive strength 0.5
+minimized the declared context-balanced mean-error surrogate (ratio 0.727812).
+All 619 aggregated logarithmic effect vectors exactly match the incumbent before
+applying candidate-specific strength. The four count-decoder checks passed.
+
+| Completed H1 candidate | Composite | Raw MSE | Raw NMAE |
+|---|---:|---:|---:|
+| Incumbent, strength 0.5 | 0.163874 | 1.303612 | 0.986160 |
+| Conservative, strength 0.2 | 0.080502 | 1.018687 | 0.987548 |
+
+Conservative transfer reduced mean error but failed to improve the composite;
+it is not selected. Additive and State residual evaluations are still running.
+[Source calibration and complete score artifacts](results/2026-09-26/).
+Live noncached account/allowance checks passed through the established SSH
+forward; no official upload has occurred at this stage.
