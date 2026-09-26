@@ -37,6 +37,10 @@ def run(args):
     baseline = read(args.baseline)
     results = {}
     for name in ["expanded", "shrunk", "state"]:
+        status_path = args.work / "status" / f"{name}-score-42.json"
+        if not status_path.exists() or json.loads(status_path.read_text())["exit_code"] != 0:
+            results[name] = {"status": "no_valid_completed_score"}
+            continue
         candidate = read(args.work / "evaluation" / f"{name}-seed42")
         results[name] = {}
         for group, targets in definition["groups"].items():
@@ -44,12 +48,19 @@ def run(args):
                 continue
             results[name][group] = {"targets": len(targets), "metrics": {}}
             for metric, (label, maximize) in METRICS.items():
-                old = [baseline[t, metric] for t in targets]
-                new = [candidate[t, metric] for t in targets]
+                # Native NMAE legitimately omits some targets. Compare the same
+                # observed targets on both sides and expose every omission.
+                paired = [t for t in targets if (t, metric) in baseline and (t, metric) in candidate]
+                old = [baseline[t, metric] for t in paired]
+                new = [candidate[t, metric] for t in paired]
                 delta = [n-o for n, o in zip(new, old)]
                 results[name][group]["metrics"][label] = {
-                    "incumbent_mean": sum(old)/len(old), "candidate_mean": sum(new)/len(new),
-                    "paired_mean_change": sum(delta)/len(delta),
+                    "paired_targets": len(paired),
+                    "missing_incumbent_targets": [t for t in targets if (t, metric) not in baseline],
+                    "missing_candidate_targets": [t for t in targets if (t, metric) not in candidate],
+                    "incumbent_mean": sum(old)/len(old) if old else None,
+                    "candidate_mean": sum(new)/len(new) if new else None,
+                    "paired_mean_change": sum(delta)/len(delta) if delta else None,
                     "targets_improved": sum(d > 0 if maximize else d < 0 for d in delta)}
     args.output.write_text(json.dumps({"group_definition": definition, "results": results,
         "scope": "Unweighted means over fixed H1 target strata, using original per-target raw values. Not official scaled scores or a new selection gate. Source coverage does not make H1 equivalent to official backgrounds."}, indent=2)+"\n")
