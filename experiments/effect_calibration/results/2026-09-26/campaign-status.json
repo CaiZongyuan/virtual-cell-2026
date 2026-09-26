@@ -1,12 +1,12 @@
 {
-  "recorded_at_utc": "2026-09-26T02:51:44.910935+00:00",
-  "status": "confirmation_running",
+  "recorded_at_utc": "2026-09-26T03:32:12.938618+00:00",
+  "status": "official_export_running",
   "environment_blocker": null,
   "authorization": "Continue optimization and submit once the fixed local gates pass; no new submission approval required",
   "last_verified_git_commit": "2820de6e6b1da42621ea2cd12f2a629b1befc6cf",
   "branch": "autoresearch/20260926-effect-calibration",
   "remote_run": "/home/caii/vcc2026-effect-calibration-20260926",
-  "remote_live_status": "SSH restored; all candidate scores complete; seed43 confirmation running; one scoring process",
+  "remote_live_status": "seed43 confirmed; official ABC export launched",
   "verified_h1": {
     "control": -0.04523068765223785,
     "incumbent": 0.16387417225775552,
@@ -25,9 +25,7 @@
     "elapsed_seconds": 709.0201356589996
   },
   "state_prediction_export_exit_code": 0,
-  "last_observed_remaining_scores": [
-    "confirmation"
-  ],
+  "last_observed_remaining_scores": [],
   "local_controller": "finish_local.py: selection -> one decoding-seed confirmation -> release -> ABC export -> native prep; no credentials or upload",
   "official_upload_performed_this_round": false,
   "previous_official_entry_id": "2TvmhHnxpkc8hhjCSWcG",
@@ -63,5 +61,29 @@
   "last_storage_before_jiang_download_bytes": 95445946493,
   "final_storage_recheck": "pending remote access; all stages reserve 50 GB headroom",
   "record_scope": "Consolidated from verified local artifacts and prior tool outputs. This is not a new live server check.",
-  "selected_arm": "incumbent"
+  "selected_arm": "incumbent",
+  "submission_gate_passed": true,
+  "confirmation": {
+    "score": 0.1648077509661463,
+    "scaled": {
+      "NMAE": -0.0460506467563857,
+      "MSE": 0.0,
+      "FID": 0.38095146508193833,
+      "REACH": -0.00655177136291655,
+      "JAC": 0.13835877880082398,
+      "PDS": 0.5221386800334178,
+      "avg_score": 0.1648077509661463
+    },
+    "raw": {
+      "PDS": 0.7528253968253974,
+      "MSE": 1.303669930382105,
+      "NMAE": 0.9862007595050359,
+      "FID": 0.371943588834786,
+      "REACH": 0.07631879149534888,
+      "JAC": 0.06107898978785153
+    },
+    "scores_sha256": "60db6132107dec337d6de5102fddd2778cbce913b6be66227872863e70a0d8d1",
+    "prediction_sha256": "1889d8eeb017350749f06aece32432bd77c0c8f75dd5a43bd506b1d5be539aaf",
+    "status": "valid"
+  }
 }

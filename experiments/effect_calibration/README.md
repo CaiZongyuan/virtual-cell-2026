@@ -135,7 +135,9 @@ it is not selected. All three new candidates have completed scoring and failed
 the declared improvement gate. State residual gains only 0.001194 over the
 conservative predictor, and the additive candidate worsens H1 mean error despite
 its favorable source-context surrogate. The incumbent remains selected; its
-second decoding-seed score is now running.
+second decoding-seed score completed at **0.164808**, versus **0.163874**
+for seed 42. Both passed the fixed release gate. This confirms decoding stability
+with fixed controls, not independent retraining. Official ABC export is running.
 [Source calibration and complete score artifacts](results/2026-09-26/).
 Live noncached account/allowance checks passed through the established SSH
 forward; no official upload has occurred at this stage.
