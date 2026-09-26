@@ -1,0 +1,17 @@
+{
+  "path": "/home/caii/vcc2026-reliability-20260926/predictions/shrunk-seed42.h5ad",
+  "rows": 50400,
+  "stored_entries": 440519571,
+  "bytes": 2567473559,
+  "arm": "shrunk",
+  "panel": "h1",
+  "seed": 42,
+  "effects_sha256": "43bfe1e327ea5c30a0a4b6903a26b9908c55b0630ebda9aaf85e6ac0f2155cc9",
+  "fit_sha256": "92a9bd309130062beaad35089097825ee55ff72de5ba864d9d733c37edaa280b",
+  "protocol_sha256": "7185df9969d690f7ebe93e1a2a17e821e3bf71181902c0f1992aebb55a086f8e",
+  "controls_sha256": "bdd0020ff43afcb02e7025b4e01cbeb4d4c0738b266f7f3e0778a4128bc2acbd",
+  "source_revision": "4a4913ee2c10c058cb415ef4fc1d95d33d41d461",
+  "prior_strength": 0.5,
+  "residual_strength": 0,
+  "sha256": "e1820b39952409e016fbb2d47d1a75ae21ecd2282921489fa90d423055a0ed58"
+}

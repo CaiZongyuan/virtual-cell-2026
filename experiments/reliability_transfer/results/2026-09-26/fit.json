@@ -1,0 +1,6755 @@
+{
+  "source_priors": {
+    "gwps": {
+      "fit_observations": 200000,
+      "scales": [
+        0.0,
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.4,
+        0.8,
+        1.6
+      ],
+      "weights": [
+        0.3053005404975397,
+        0.2779106856570159,
+        0.2256909579739692,
+        0.1353234201787322,
+        0.04194560696212118,
+        0.013077224906416012,
+        0.0007515638241952887,
+        1.072322188667345e-14
+      ],
+      "iterations": 100,
+      "log_likelihood_initial": 235164.72020750676,
+      "log_likelihood_final": 286879.46877111006
+    },
+    "k562": {
+      "fit_observations": 200000,
+      "scales": [
+        0.0,
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.4,
+        0.8,
+        1.6
+      ],
+      "weights": [
+        0.13854780339547398,
+        0.15548096061433173,
+        0.1981617146992798,
+        0.29617999907948894,
+        0.19620826379675516,
+        0.013983266317392384,
+        0.0013723362433284247,
+        6.565585394952361e-05
+      ],
+      "iterations": 100,
+      "log_likelihood_initial": 214656.18161117233,
+      "log_likelihood_final": 255053.05804434564
+    },
+    "rpe1": {
+      "fit_observations": 200000,
+      "scales": [
+        0.0,
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.4,
+        0.8,
+        1.6
+      ],
+      "weights": [
+        0.13350670919147573,
+        0.15739349910038714,
+        0.18311233391665363,
+        0.18840854604457927,
+        0.2025267957641711,
+        0.12156176201087575,
+        0.01348944886394861,
+        9.051079087893782e-07
+      ],
+      "iterations": 100,
+      "log_likelihood_initial": 168708.97102358498,
+      "log_likelihood_final": 192309.96558456903
+    },
+    "hepg2": {
+      "fit_observations": 200000,
+      "scales": [
+        0.0,
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.4,
+        0.8,
+        1.6
+      ],
+      "weights": [
+        0.13807116052363114,
+        0.15157391480177201,
+        0.17254376290488074,
+        0.20599471682045656,
+        0.23690745821617976,
+        0.08715181461713789,
+        0.0077188246886403505,
+        3.834742730155607e-05
+      ],
+      "iterations": 100,
+      "log_likelihood_initial": 170364.33166420244,
+      "log_likelihood_final": 197321.0021336727
+    }
+  },
+  "source_diagnostics": {
+    "gwps": {
+      "raw_effect_rms": 0.1675034761428833,
+      "posterior_effect_rms": 0.0550810806453228
+    },
+    "k562": {
+      "raw_effect_rms": 0.1838660091161728,
+      "posterior_effect_rms": 0.0920129120349884
+    },
+    "rpe1": {
+      "raw_effect_rms": 0.268839031457901,
+      "posterior_effect_rms": 0.1653272956609726
+    },
+    "hepg2": {
+      "raw_effect_rms": 0.24766962230205536,
+      "posterior_effect_rms": 0.14011387526988983
+    }
+  },
+  "entries": 1378,
+  "targets": 643,
+  "training_cells": 178589,
+  "neural_conditions": 1083,
+  "source_context_error_ratios": {
+    "HepG2": {
+      "incumbent": 0.7571099152573593,
+      "expanded": 0.7728637057429291,
+      "shrunk": 0.7674486459394945
+    },
+    "K562": {
+      "incumbent": 0.5725036045046508,
+      "expanded": 0.535246358751722,
+      "shrunk": 0.530549173336832
+    },
+    "RPE1": {
+      "incumbent": 0.8021629003653821,
+      "expanded": 0.8114026327443256,
+      "shrunk": 0.8058328962383785
+    }
+  },
+  "source_context_equal_mean": {
+    "incumbent": 0.710592140042464,
+    "expanded": 0.7065042324129922,
+    "shrunk": 0.7012769051715683
+  },
+  "scope": "Source biological-context exclusion on old held development cells; moment surrogate, not H1 score. Both K562 sources excluded together. Independent of H1 and Jurkat response labels.",
+  "records": [
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ACSS2",
+      "errors": {
+        "NTC": 155268.79998275734,
+        "incumbent": 49842.562650335654,
+        "expanded": 82525.23386929605,
+        "shrunk": 87902.00158687838
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ALG14",
+      "errors": {
+        "NTC": 1692.4059660028242,
+        "incumbent": 2950.047961892382,
+        "expanded": 2950.047961892382,
+        "shrunk": 2250.3355139779205
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ANAPC13",
+      "errors": {
+        "NTC": 1107.3903879078998,
+        "incumbent": 2348.4509891635626,
+        "expanded": 1805.5476253575268,
+        "shrunk": 1535.577920624009
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ARFRP1",
+      "errors": {
+        "NTC": 753.449341253942,
+        "incumbent": 1100.5653272566426,
+        "expanded": 701.1849256771416,
+        "shrunk": 698.9527769378361
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ARPC4",
+      "errors": {
+        "NTC": 957.3425292101127,
+        "incumbent": 4332.881856652672,
+        "expanded": 4332.881856652672,
+        "shrunk": 3443.84871069013
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATP2A2",
+      "errors": {
+        "NTC": 640.1060188870664,
+        "incumbent": 913.4834206515037,
+        "expanded": 913.4834206515037,
+        "shrunk": 838.8868371301278
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATP5ME",
+      "errors": {
+        "NTC": 10684.691103998393,
+        "incumbent": 5724.876386273372,
+        "expanded": 5643.942415578093,
+        "shrunk": 5523.463415958238
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATP6V0B",
+      "errors": {
+        "NTC": 1185.7469965113964,
+        "incumbent": 1374.7728704564706,
+        "expanded": 1162.9225759397532,
+        "shrunk": 1170.6998577334014
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BCL2L1",
+      "errors": {
+        "NTC": 746.3132502318542,
+        "incumbent": 916.1020313788612,
+        "expanded": 904.839761138289,
+        "shrunk": 850.4894604601607
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BCS1L",
+      "errors": {
+        "NTC": 2131.06309431518,
+        "incumbent": 2346.443219327766,
+        "expanded": 2998.6555230757895,
+        "shrunk": 2575.577384636478
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BPTF",
+      "errors": {
+        "NTC": 1655.4324342965842,
+        "incumbent": 1595.6521131959669,
+        "expanded": 1595.6521131959669,
+        "shrunk": 1525.9695006531929
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "C7orf50",
+      "errors": {
+        "NTC": 1504.773543791507,
+        "incumbent": 1801.5912964516192,
+        "expanded": 1801.5912964516192,
+        "shrunk": 1665.504020306225
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CA5A",
+      "errors": {
+        "NTC": 1603.0915998496303,
+        "incumbent": 1570.5043491939066,
+        "expanded": 1655.088656415889,
+        "shrunk": 1595.719664968732
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CALR",
+      "errors": {
+        "NTC": 1752.60225870787,
+        "incumbent": 2177.503979103837,
+        "expanded": 2177.503979103837,
+        "shrunk": 1677.4403078795833
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CBX1",
+      "errors": {
+        "NTC": 858.0763748475331,
+        "incumbent": 1267.996408458618,
+        "expanded": 1209.3444187523387,
+        "shrunk": 1040.628417578773
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCAR1",
+      "errors": {
+        "NTC": 1807.708596857035,
+        "incumbent": 2273.755495706707,
+        "expanded": 1974.0512229912429,
+        "shrunk": 1927.9265314339145
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCDC6",
+      "errors": {
+        "NTC": 1815.0023523246118,
+        "incumbent": 3438.52622279722,
+        "expanded": 3230.1116807278404,
+        "shrunk": 3111.668636440377
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCNC",
+      "errors": {
+        "NTC": 2873.0152592682607,
+        "incumbent": 2583.8358026873398,
+        "expanded": 2765.4952695696893,
+        "shrunk": 2740.683069292749
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CDC16",
+      "errors": {
+        "NTC": 2801.9215899097826,
+        "incumbent": 8260.304268724234,
+        "expanded": 4474.850872184231,
+        "shrunk": 4089.9212626428834
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CDC20",
+      "errors": {
+        "NTC": 1097.7301712009169,
+        "incumbent": 1426.7658566293721,
+        "expanded": 1426.7658566293721,
+        "shrunk": 1239.3068190221381
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CENPN",
+      "errors": {
+        "NTC": 1753.8133009365026,
+        "incumbent": 3330.8502647711366,
+        "expanded": 2676.5855305994246,
+        "shrunk": 2154.153197843736
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHCHD4",
+      "errors": {
+        "NTC": 15331.627655615293,
+        "incumbent": 3230.0698644456425,
+        "expanded": 5626.48486907282,
+        "shrunk": 5452.070069141
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHMP6",
+      "errors": {
+        "NTC": 46040.15182765895,
+        "incumbent": 34159.639342353265,
+        "expanded": 34159.639342353265,
+        "shrunk": 34947.795274693824
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHTOP",
+      "errors": {
+        "NTC": 628.9214094413296,
+        "incumbent": 720.144688362842,
+        "expanded": 821.0533924302451,
+        "shrunk": 719.2604981032897
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CLPB",
+      "errors": {
+        "NTC": 1209.280060905296,
+        "incumbent": 1727.7491763752969,
+        "expanded": 1418.158638924106,
+        "shrunk": 1319.6806636979113
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CNN2",
+      "errors": {
+        "NTC": 607.913098295196,
+        "incumbent": 719.7949719416742,
+        "expanded": 719.7949719416742,
+        "shrunk": 666.1789132931614
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CNOT10",
+      "errors": {
+        "NTC": 1503.5443006235769,
+        "incumbent": 1604.2993866640338,
+        "expanded": 1604.2993866640338,
+        "shrunk": 1531.176127367487
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COX5B",
+      "errors": {
+        "NTC": 5002.311180011588,
+        "incumbent": 2297.7876137706676,
+        "expanded": 2297.7876137706676,
+        "shrunk": 2720.3728437556265
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COX7C",
+      "errors": {
+        "NTC": 13780.448568584503,
+        "incumbent": 10747.28681105652,
+        "expanded": 9115.963623668425,
+        "shrunk": 10032.970199136944
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CSTF3",
+      "errors": {
+        "NTC": 13062.489361490074,
+        "incumbent": 21270.61393264422,
+        "expanded": 21270.61393264422,
+        "shrunk": 18866.686171576224
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DAXX",
+      "errors": {
+        "NTC": 1384.6202163151274,
+        "incumbent": 1416.732582574492,
+        "expanded": 1594.847388978587,
+        "shrunk": 1385.979990375157
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDX18",
+      "errors": {
+        "NTC": 44140.48873883399,
+        "incumbent": 40028.550189415415,
+        "expanded": 40028.550189415415,
+        "shrunk": 38943.72342026135
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDX19A",
+      "errors": {
+        "NTC": 1538.0802035629065,
+        "incumbent": 2255.485528256322,
+        "expanded": 2144.974104610995,
+        "shrunk": 2111.2665505093414
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDX42",
+      "errors": {
+        "NTC": 1542.9916277731413,
+        "incumbent": 1393.4455587612028,
+        "expanded": 1393.4455587612028,
+        "shrunk": 1420.9475988967947
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DENR",
+      "errors": {
+        "NTC": 3491.426468220396,
+        "incumbent": 3390.7910539229474,
+        "expanded": 2878.9601193965236,
+        "shrunk": 3078.9613804134174
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DHX15",
+      "errors": {
+        "NTC": 14043.910852497593,
+        "incumbent": 42746.84142562516,
+        "expanded": 32399.981960565252,
+        "shrunk": 28581.32504709862
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DHX36",
+      "errors": {
+        "NTC": 30582.59726441065,
+        "incumbent": 23369.053431000924,
+        "expanded": 25537.827931125415,
+        "shrunk": 27077.772431978126
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DNAJA3",
+      "errors": {
+        "NTC": 187606.87387234278,
+        "incumbent": 22720.87103175843,
+        "expanded": 27354.396154581398,
+        "shrunk": 30979.841427300023
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DNMT1",
+      "errors": {
+        "NTC": 3095.482371853239,
+        "incumbent": 1576.7835521786237,
+        "expanded": 1576.7835521786237,
+        "shrunk": 1693.8486872901688
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF2B2",
+      "errors": {
+        "NTC": 29575.252016835675,
+        "incumbent": 15215.71208605981,
+        "expanded": 15215.71208605981,
+        "shrunk": 15173.853797155054
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF2B4",
+      "errors": {
+        "NTC": 35255.268757849844,
+        "incumbent": 13968.817485952552,
+        "expanded": 13536.258145304448,
+        "shrunk": 13610.714906325611
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF3M",
+      "errors": {
+        "NTC": 17915.181644342636,
+        "incumbent": 5687.208082848403,
+        "expanded": 5687.208082848403,
+        "shrunk": 5963.922620227024
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF4B",
+      "errors": {
+        "NTC": 5126.379271955708,
+        "incumbent": 2099.624202774506,
+        "expanded": 2124.0101849506004,
+        "shrunk": 2229.430922739374
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF4G1",
+      "errors": {
+        "NTC": 20680.309439099594,
+        "incumbent": 19220.927245238192,
+        "expanded": 13472.58026212161,
+        "shrunk": 13117.450148186774
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EPB41L2",
+      "errors": {
+        "NTC": 1278.327570137655,
+        "incumbent": 1548.657527810095,
+        "expanded": 1548.657527810095,
+        "shrunk": 1405.043975340171
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ETV4",
+      "errors": {
+        "NTC": 15965.008230963756,
+        "incumbent": 11362.170634304392,
+        "expanded": 11362.170634304392,
+        "shrunk": 12342.986976558117
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EWSR1",
+      "errors": {
+        "NTC": 1556.133135699065,
+        "incumbent": 1401.0081362127735,
+        "expanded": 1264.3509359545085,
+        "shrunk": 1291.4418852566246
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FASTKD5",
+      "errors": {
+        "NTC": 88088.74782843672,
+        "incumbent": 24983.415179802745,
+        "expanded": 20420.163116324955,
+        "shrunk": 20708.83877396479
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FNBP4",
+      "errors": {
+        "NTC": 7413.8299150166185,
+        "incumbent": 8513.673793527612,
+        "expanded": 8513.673793527612,
+        "shrunk": 8096.8117563770475
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GNL2",
+      "errors": {
+        "NTC": 42231.192321546565,
+        "incumbent": 28572.971380272185,
+        "expanded": 39651.82863440762,
+        "shrunk": 37157.02712020173
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GPS2",
+      "errors": {
+        "NTC": 2306.057714207663,
+        "incumbent": 1971.3596025587115,
+        "expanded": 2019.8878964259611,
+        "shrunk": 2034.4689293915678
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GSK3B",
+      "errors": {
+        "NTC": 3010.315623275212,
+        "incumbent": 2860.9181987509714,
+        "expanded": 3049.8112738328687,
+        "shrunk": 3063.4750897201598
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GTF2A1",
+      "errors": {
+        "NTC": 2860.4840389130427,
+        "incumbent": 8558.638607123165,
+        "expanded": 6871.511156939232,
+        "shrunk": 5942.751844029663
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GTF3C3",
+      "errors": {
+        "NTC": 10558.855287952987,
+        "incumbent": 6589.681323596968,
+        "expanded": 6589.681323596968,
+        "shrunk": 7005.910035270577
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HIRA",
+      "errors": {
+        "NTC": 581.4297228355301,
+        "incumbent": 1295.3400947764328,
+        "expanded": 1295.3400947764328,
+        "shrunk": 1262.1687556799045
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HLA-C",
+      "errors": {
+        "NTC": 833.843899656781,
+        "incumbent": 900.1159399689816,
+        "expanded": 900.1159399689816,
+        "shrunk": 800.8591714879406
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSCB",
+      "errors": {
+        "NTC": 4461.95166876078,
+        "incumbent": 5495.655574281711,
+        "expanded": 5495.655574281711,
+        "shrunk": 5370.218048235412
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSD17B10",
+      "errors": {
+        "NTC": 118296.8320354497,
+        "incumbent": 42263.06499307374,
+        "expanded": 41377.11432051726,
+        "shrunk": 41435.19044623153
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSD17B12",
+      "errors": {
+        "NTC": 4193.72253752233,
+        "incumbent": 5118.9940827344535,
+        "expanded": 5005.98901831625,
+        "shrunk": 4770.546591992275
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSPA8",
+      "errors": {
+        "NTC": 4846.343217463722,
+        "incumbent": 5870.529241738617,
+        "expanded": 5085.806502231725,
+        "shrunk": 5022.657927432721
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSPA9",
+      "errors": {
+        "NTC": 144716.10881356086,
+        "incumbent": 8529.707828775801,
+        "expanded": 8529.707828775801,
+        "shrunk": 9214.732928544645
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HUWE1",
+      "errors": {
+        "NTC": 3246.542730704371,
+        "incumbent": 3045.153930156247,
+        "expanded": 2138.145338243833,
+        "shrunk": 2368.5735317694553
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "JMJD6",
+      "errors": {
+        "NTC": 770.2977360980788,
+        "incumbent": 1000.5120963495108,
+        "expanded": 719.0978269832799,
+        "shrunk": 699.5847823165086
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KDM1A",
+      "errors": {
+        "NTC": 9215.635200648081,
+        "incumbent": 11652.233160039326,
+        "expanded": 10894.005244949089,
+        "shrunk": 10159.117328179178
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KPNB1",
+      "errors": {
+        "NTC": 2580.403063184619,
+        "incumbent": 7170.504964094239,
+        "expanded": 7170.504964094239,
+        "shrunk": 6436.352668201061
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LAMTOR1",
+      "errors": {
+        "NTC": 1348.9247386555026,
+        "incumbent": 2013.8645875351972,
+        "expanded": 1883.1403215914293,
+        "shrunk": 1800.1250695926453
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LONP1",
+      "errors": {
+        "NTC": 179367.61844765022,
+        "incumbent": 26073.317437246285,
+        "expanded": 62008.06928331167,
+        "shrunk": 64671.830842455005
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LRPPRC",
+      "errors": {
+        "NTC": 268075.21132834454,
+        "incumbent": 45061.730082345886,
+        "expanded": 45061.730082345886,
+        "shrunk": 47265.26976989075
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LTBP4",
+      "errors": {
+        "NTC": 1196.9641300799983,
+        "incumbent": 5050.150709976616,
+        "expanded": 4174.290326390874,
+        "shrunk": 3508.2862920749744
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LZTR1",
+      "errors": {
+        "NTC": 17014.34416356808,
+        "incumbent": 9684.548368420934,
+        "expanded": 10299.685476479368,
+        "shrunk": 10295.99078831115
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAD2L1",
+      "errors": {
+        "NTC": 3032.9000753601613,
+        "incumbent": 3627.9748158135285,
+        "expanded": 3627.9748158135285,
+        "shrunk": 3323.5350712652926
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MANF",
+      "errors": {
+        "NTC": 675.9019926752428,
+        "incumbent": 692.7635667708283,
+        "expanded": 692.7635667708283,
+        "shrunk": 673.1343299216763
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAT2A",
+      "errors": {
+        "NTC": 24646.032128121053,
+        "incumbent": 25167.419739469464,
+        "expanded": 25167.419739469464,
+        "shrunk": 25020.159621760373
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MBTPS1",
+      "errors": {
+        "NTC": 1344.0104858257837,
+        "incumbent": 1549.960031274527,
+        "expanded": 1549.960031274527,
+        "shrunk": 1467.7877689420652
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED4",
+      "errors": {
+        "NTC": 6900.30951403003,
+        "incumbent": 14304.273608236394,
+        "expanded": 14304.273608236394,
+        "shrunk": 13099.603352437398
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED8",
+      "errors": {
+        "NTC": 17174.33499623745,
+        "incumbent": 8312.719332671732,
+        "expanded": 6114.679071809363,
+        "shrunk": 7708.941459251282
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MEN1",
+      "errors": {
+        "NTC": 1746.7552314539535,
+        "incumbent": 1808.3623330210653,
+        "expanded": 1556.5110760180867,
+        "shrunk": 1584.4261670968826
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "METTL14",
+      "errors": {
+        "NTC": 7001.333455059192,
+        "incumbent": 3424.690920700642,
+        "expanded": 2973.4030295639495,
+        "shrunk": 3411.330774148515
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "METTL17",
+      "errors": {
+        "NTC": 8810.372103494541,
+        "incumbent": 14872.980228285953,
+        "expanded": 14872.980228285953,
+        "shrunk": 14496.537750961123
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "METTL3",
+      "errors": {
+        "NTC": 12755.15841167934,
+        "incumbent": 7156.7027794526475,
+        "expanded": 7156.7027794526475,
+        "shrunk": 7569.892425385784
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MIPEP",
+      "errors": {
+        "NTC": 6555.202330852739,
+        "incumbent": 2999.1834611977133,
+        "expanded": 2185.154106830012,
+        "shrunk": 2321.2570009000183
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MON1A",
+      "errors": {
+        "NTC": 6522.471583677186,
+        "incumbent": 6010.240639763836,
+        "expanded": 6010.240639763836,
+        "shrunk": 6267.356042789092
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL10",
+      "errors": {
+        "NTC": 30980.87343002067,
+        "incumbent": 28187.312279633297,
+        "expanded": 9531.392361089429,
+        "shrunk": 10509.059788283757
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL14",
+      "errors": {
+        "NTC": 17394.640215451458,
+        "incumbent": 8328.126726659448,
+        "expanded": 4712.598469566005,
+        "shrunk": 5380.379577352335
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL17",
+      "errors": {
+        "NTC": 20796.76137386498,
+        "incumbent": 10941.508243776472,
+        "expanded": 3418.0339139919643,
+        "shrunk": 3606.8890592433363
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL28",
+      "errors": {
+        "NTC": 7219.8523445917,
+        "incumbent": 13356.480824060114,
+        "expanded": 2327.6843763995307,
+        "shrunk": 2341.4552475741066
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL35",
+      "errors": {
+        "NTC": 31913.55392992864,
+        "incumbent": 8852.028551583537,
+        "expanded": 9091.10096322355,
+        "shrunk": 9432.947478262971
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL36",
+      "errors": {
+        "NTC": 17467.954748069165,
+        "incumbent": 2544.8559291633273,
+        "expanded": 2625.2543279730617,
+        "shrunk": 2644.7687175122655
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL37",
+      "errors": {
+        "NTC": 19268.356277276696,
+        "incumbent": 16137.787186493644,
+        "expanded": 5149.968954046437,
+        "shrunk": 5868.430976846854
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL43",
+      "errors": {
+        "NTC": 26670.463098471322,
+        "incumbent": 24611.429680433193,
+        "expanded": 24611.429680433193,
+        "shrunk": 24668.185655722416
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL50",
+      "errors": {
+        "NTC": 16234.714412181484,
+        "incumbent": 6600.865476524138,
+        "expanded": 3178.012619630127,
+        "shrunk": 3305.29636826585
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL54",
+      "errors": {
+        "NTC": 14295.871641746535,
+        "incumbent": 12087.18735204608,
+        "expanded": 2351.1873935046788,
+        "shrunk": 2592.120103147962
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS10",
+      "errors": {
+        "NTC": 33139.648517652364,
+        "incumbent": 19155.763251274784,
+        "expanded": 19879.3040259913,
+        "shrunk": 19955.128426316118
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS16",
+      "errors": {
+        "NTC": 35081.49371008764,
+        "incumbent": 18787.59769230815,
+        "expanded": 19807.842570991215,
+        "shrunk": 20065.21875788849
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS30",
+      "errors": {
+        "NTC": 15123.091133234168,
+        "incumbent": 12866.919898448734,
+        "expanded": 3241.889207917226,
+        "shrunk": 3304.5689081617475
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS5",
+      "errors": {
+        "NTC": 29978.5555937874,
+        "incumbent": 16996.3527635652,
+        "expanded": 19264.089796216307,
+        "shrunk": 19369.493412998505
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MYC",
+      "errors": {
+        "NTC": 3860.1554004519057,
+        "incumbent": 3818.6658310455177,
+        "expanded": 3567.3737837029157,
+        "shrunk": 3556.206812537238
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NAGLU",
+      "errors": {
+        "NTC": 376.17634395532394,
+        "incumbent": 445.0901787796583,
+        "expanded": 445.7201591238638,
+        "shrunk": 407.81541387221193
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NASP",
+      "errors": {
+        "NTC": 782.4919820587085,
+        "incumbent": 716.7623249602822,
+        "expanded": 716.7623249602822,
+        "shrunk": 638.4964135045984
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NBAS",
+      "errors": {
+        "NTC": 3287.62906673204,
+        "incumbent": 7652.016490522795,
+        "expanded": 3498.4628993799097,
+        "shrunk": 3484.834575880571
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFAF3",
+      "errors": {
+        "NTC": 2079.242011785831,
+        "incumbent": 1762.7421410531254,
+        "expanded": 1754.1908071029075,
+        "shrunk": 1820.3479693803174
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFB3",
+      "errors": {
+        "NTC": 1558.1889404607682,
+        "incumbent": 1358.425432665525,
+        "expanded": 1065.8738849984234,
+        "shrunk": 1144.2471496625526
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFB4",
+      "errors": {
+        "NTC": 4389.012817883827,
+        "incumbent": 3497.2140294697965,
+        "expanded": 1648.1935710524383,
+        "shrunk": 1936.1126201752297
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFB6",
+      "errors": {
+        "NTC": 949.415202160117,
+        "incumbent": 850.9676113371836,
+        "expanded": 850.9676113371836,
+        "shrunk": 842.6376380940201
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NISCH",
+      "errors": {
+        "NTC": 1360.7101677508533,
+        "incumbent": 1397.5399033295212,
+        "expanded": 1397.5399033295212,
+        "shrunk": 1367.4504768708318
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NOL8",
+      "errors": {
+        "NTC": 19226.09685189319,
+        "incumbent": 14200.055067937607,
+        "expanded": 20410.778712022307,
+        "shrunk": 18257.88941241259
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NOM1",
+      "errors": {
+        "NTC": 3169.3719678143443,
+        "incumbent": 6115.671025479789,
+        "expanded": 7770.227565126383,
+        "shrunk": 6370.13746608981
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NUDCD3",
+      "errors": {
+        "NTC": 4360.308597409478,
+        "incumbent": 4784.635163859003,
+        "expanded": 4784.635163859003,
+        "shrunk": 4856.496651189424
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NUDT15",
+      "errors": {
+        "NTC": 1953.8565896005082,
+        "incumbent": 2254.698089540882,
+        "expanded": 2038.3796920674695,
+        "shrunk": 1967.3350359027966
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NVL",
+      "errors": {
+        "NTC": 31569.126241405425,
+        "incumbent": 27930.410369964113,
+        "expanded": 32283.882338542626,
+        "shrunk": 29191.539469118914
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "OLFML3",
+      "errors": {
+        "NTC": 1347.3282267798195,
+        "incumbent": 1457.5548282704428,
+        "expanded": 1457.5548282704428,
+        "shrunk": 1373.7042723561804
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PFDN4",
+      "errors": {
+        "NTC": 1379.1797757737747,
+        "incumbent": 2491.874750796467,
+        "expanded": 2136.9580587889986,
+        "shrunk": 1775.573826721929
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PGS1",
+      "errors": {
+        "NTC": 5678.975120946392,
+        "incumbent": 2553.5919416374595,
+        "expanded": 1290.1630102296572,
+        "shrunk": 1408.2882607895385
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PHF10",
+      "errors": {
+        "NTC": 3363.9714523072735,
+        "incumbent": 4390.36478112136,
+        "expanded": 4390.36478112136,
+        "shrunk": 4014.1543284530776
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PIAS1",
+      "errors": {
+        "NTC": 4310.778854524987,
+        "incumbent": 5835.391157199577,
+        "expanded": 5892.087766353427,
+        "shrunk": 5560.636488564172
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PIK3C3",
+      "errors": {
+        "NTC": 509.54133334018445,
+        "incumbent": 1660.585942635229,
+        "expanded": 835.2490444261235,
+        "shrunk": 631.350964878717
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POLR2C",
+      "errors": {
+        "NTC": 6265.155639687233,
+        "incumbent": 9454.159923233121,
+        "expanded": 9454.159923233121,
+        "shrunk": 8151.743466521541
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPP2CB",
+      "errors": {
+        "NTC": 4285.8311684935225,
+        "incumbent": 2801.955697767559,
+        "expanded": 2801.955697767559,
+        "shrunk": 3086.328866624731
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPP2R1A",
+      "errors": {
+        "NTC": 1334.3036949291713,
+        "incumbent": 3571.5560604429397,
+        "expanded": 3635.5146881490564,
+        "shrunk": 3294.5904597613144
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPP2R3C",
+      "errors": {
+        "NTC": 11136.148443165765,
+        "incumbent": 24975.17407547489,
+        "expanded": 7728.490010586096,
+        "shrunk": 7228.684632762342
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRRC2A",
+      "errors": {
+        "NTC": 2360.6755167282654,
+        "incumbent": 2797.8223375144075,
+        "expanded": 2690.7724164946544,
+        "shrunk": 2396.3494009272713
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSMB5",
+      "errors": {
+        "NTC": 1244.6497953660023,
+        "incumbent": 13888.602031559047,
+        "expanded": 13888.602031559047,
+        "shrunk": 13466.143937122266
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSMB6",
+      "errors": {
+        "NTC": 2230.854533918404,
+        "incumbent": 15458.972640849322,
+        "expanded": 8346.590973686803,
+        "shrunk": 7114.136262882088
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PTCD1",
+      "errors": {
+        "NTC": 27684.57902343807,
+        "incumbent": 8722.78390204326,
+        "expanded": 9003.577997479431,
+        "shrunk": 9006.591453646217
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PTPN1",
+      "errors": {
+        "NTC": 3270.160028639616,
+        "incumbent": 3202.823992694543,
+        "expanded": 3202.823992694543,
+        "shrunk": 3125.7264572903896
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PUF60",
+      "errors": {
+        "NTC": 9371.056085632139,
+        "incumbent": 9036.926752334944,
+        "expanded": 4043.4875860965913,
+        "shrunk": 3833.019991041154
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM10",
+      "errors": {
+        "NTC": 1354.896093366914,
+        "incumbent": 1196.4666901439825,
+        "expanded": 1196.4666901439825,
+        "shrunk": 1215.0469055310018
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM12",
+      "errors": {
+        "NTC": 5590.302236252228,
+        "incumbent": 11776.864129312702,
+        "expanded": 11776.864129312702,
+        "shrunk": 11072.070412958521
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM42",
+      "errors": {
+        "NTC": 22079.583149089543,
+        "incumbent": 17749.569431479427,
+        "expanded": 25157.52035102253,
+        "shrunk": 23076.141615244615
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBMX2",
+      "errors": {
+        "NTC": 14591.673645362327,
+        "incumbent": 5754.43047109368,
+        "expanded": 5754.43047109368,
+        "shrunk": 5957.513599655362
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RCL1",
+      "errors": {
+        "NTC": 17849.97315123869,
+        "incumbent": 18827.069897505044,
+        "expanded": 23918.796003478554,
+        "shrunk": 21358.99820621794
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RCOR1",
+      "errors": {
+        "NTC": 2279.6004937302223,
+        "incumbent": 2446.6941520176456,
+        "expanded": 2446.6941520176456,
+        "shrunk": 2349.4167375182465
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RFC2",
+      "errors": {
+        "NTC": 13906.49970457178,
+        "incumbent": 6409.684317503766,
+        "expanded": 6405.1567292515665,
+        "shrunk": 7265.156822765563
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RNF20",
+      "errors": {
+        "NTC": 6587.120629429491,
+        "incumbent": 4550.964412261279,
+        "expanded": 4550.964412261279,
+        "shrunk": 4945.391343583724
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPL11",
+      "errors": {
+        "NTC": 11571.883357465369,
+        "incumbent": 3059.9554210633933,
+        "expanded": 1885.4638840139335,
+        "shrunk": 1489.4086632274075
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPL7",
+      "errors": {
+        "NTC": 61408.76941203787,
+        "incumbent": 20327.2021757616,
+        "expanded": 20327.2021757616,
+        "shrunk": 20306.295899763194
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPLP0",
+      "errors": {
+        "NTC": 25551.782433326396,
+        "incumbent": 4170.524866813483,
+        "expanded": 4170.524866813483,
+        "shrunk": 4306.774438365004
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPP21",
+      "errors": {
+        "NTC": 3027.352306400803,
+        "incumbent": 3149.8189793063557,
+        "expanded": 3149.8189793063557,
+        "shrunk": 2947.727647317375
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RRM1",
+      "errors": {
+        "NTC": 6011.3505783486235,
+        "incumbent": 6335.409416795007,
+        "expanded": 6335.409416795007,
+        "shrunk": 5713.4840560491775
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RRM2",
+      "errors": {
+        "NTC": 1363.9004815140445,
+        "incumbent": 2755.4620947634694,
+        "expanded": 1624.840873399402,
+        "shrunk": 1194.3975079305733
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RRP7A",
+      "errors": {
+        "NTC": 48334.54100277074,
+        "incumbent": 58904.581719852154,
+        "expanded": 58904.581719852154,
+        "shrunk": 54914.711185012675
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RTRAF",
+      "errors": {
+        "NTC": 2078.3539411115203,
+        "incumbent": 2095.982350385061,
+        "expanded": 2095.982350385061,
+        "shrunk": 1971.8548514462238
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SAMD4B",
+      "errors": {
+        "NTC": 74630.64850748223,
+        "incumbent": 18221.93494649419,
+        "expanded": 30174.313049919238,
+        "shrunk": 31213.53500718117
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SARS2",
+      "errors": {
+        "NTC": 6372.049542014407,
+        "incumbent": 8514.187654123749,
+        "expanded": 2459.847259835914,
+        "shrunk": 2447.0658885486523
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SBDS",
+      "errors": {
+        "NTC": 945.6372564472584,
+        "incumbent": 1214.1160519280786,
+        "expanded": 1214.1160519280786,
+        "shrunk": 1026.639035295802
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SDAD1",
+      "errors": {
+        "NTC": 27670.79154332431,
+        "incumbent": 19085.904621155794,
+        "expanded": 29232.502447181978,
+        "shrunk": 26578.22650494615
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SDC1",
+      "errors": {
+        "NTC": 6860.148565663333,
+        "incumbent": 2468.457888989432,
+        "expanded": 2468.457888989432,
+        "shrunk": 2842.123599849777
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SEC63",
+      "errors": {
+        "NTC": 1694.4525186244978,
+        "incumbent": 3027.4138013064403,
+        "expanded": 3027.4138013064403,
+        "shrunk": 2347.4683424626746
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SEPHS2",
+      "errors": {
+        "NTC": 1277.591297875718,
+        "incumbent": 908.4866177830886,
+        "expanded": 775.6060409501993,
+        "shrunk": 931.4301961913824
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SEPSECS",
+      "errors": {
+        "NTC": 494.4330812848742,
+        "incumbent": 772.5278854585858,
+        "expanded": 468.776091925925,
+        "shrunk": 447.48608013112755
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SETX",
+      "errors": {
+        "NTC": 3438.8575074936466,
+        "incumbent": 2890.790088115813,
+        "expanded": 2890.790088115813,
+        "shrunk": 2907.3286524749506
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SHQ1",
+      "errors": {
+        "NTC": 909.6758770349146,
+        "incumbent": 1026.373875076252,
+        "expanded": 1026.373875076252,
+        "shrunk": 979.1513356657985
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMAGP",
+      "errors": {
+        "NTC": 618.3926436737711,
+        "incumbent": 767.473438273797,
+        "expanded": 732.2892897681362,
+        "shrunk": 663.5910734963321
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMC5",
+      "errors": {
+        "NTC": 725.7883805985027,
+        "incumbent": 628.4548064856533,
+        "expanded": 1194.6758665426494,
+        "shrunk": 954.4371772973384
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMG8",
+      "errors": {
+        "NTC": 782.6992938760475,
+        "incumbent": 825.3184129753845,
+        "expanded": 825.3184129753845,
+        "shrunk": 741.8127114172069
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SPG7",
+      "errors": {
+        "NTC": 1542.1394210953804,
+        "incumbent": 1916.763613052131,
+        "expanded": 1979.1265803584263,
+        "shrunk": 1735.0897848812303
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SRP68",
+      "errors": {
+        "NTC": 7947.127164000765,
+        "incumbent": 6928.536660164868,
+        "expanded": 6516.796899330253,
+        "shrunk": 5987.287113532218
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SRPRB",
+      "errors": {
+        "NTC": 2904.0582322450327,
+        "incumbent": 2177.811569962749,
+        "expanded": 2177.811569962749,
+        "shrunk": 2332.1763741266336
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STAG2",
+      "errors": {
+        "NTC": 1482.667071844888,
+        "incumbent": 2069.65275008201,
+        "expanded": 1811.8010519944119,
+        "shrunk": 1637.8911571811987
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STARD7",
+      "errors": {
+        "NTC": 15108.147462260189,
+        "incumbent": 7289.170677844686,
+        "expanded": 7289.170677844686,
+        "shrunk": 7387.434675141467
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TADA1",
+      "errors": {
+        "NTC": 3367.697427678164,
+        "incumbent": 1458.4452970201478,
+        "expanded": 869.4704382300918,
+        "shrunk": 915.4614257158503
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TAF13",
+      "errors": {
+        "NTC": 6449.869934917193,
+        "incumbent": 4996.591673874069,
+        "expanded": 4996.591673874069,
+        "shrunk": 5045.985739917944
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TARS2",
+      "errors": {
+        "NTC": 48871.49681862661,
+        "incumbent": 33888.56986510905,
+        "expanded": 22622.88359570838,
+        "shrunk": 24114.81062342865
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TAZ",
+      "errors": {
+        "NTC": 1158.5494920924207,
+        "incumbent": 1831.48636690746,
+        "expanded": 1463.9638717339253,
+        "shrunk": 1345.5482064271316
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TFAM",
+      "errors": {
+        "NTC": 257123.92850860898,
+        "incumbent": 101969.28081269027,
+        "expanded": 97475.86240108991,
+        "shrunk": 98509.65687741581
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TFB1M",
+      "errors": {
+        "NTC": 24313.971785372065,
+        "incumbent": 16599.766392098893,
+        "expanded": 17604.095824456832,
+        "shrunk": 18313.408787035914
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TIGD1",
+      "errors": {
+        "NTC": 2505.861519715786,
+        "incumbent": 2091.3531168346885,
+        "expanded": 2348.4728405545934,
+        "shrunk": 2405.090642801303
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TIMM10",
+      "errors": {
+        "NTC": 1977.2768573665203,
+        "incumbent": 2488.103461784459,
+        "expanded": 2488.103461784459,
+        "shrunk": 2260.8502492707935
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TM7SF2",
+      "errors": {
+        "NTC": 782.1762292998603,
+        "incumbent": 781.0757246392131,
+        "expanded": 779.6988638269389,
+        "shrunk": 768.7487171679636
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMSB10",
+      "errors": {
+        "NTC": 931.2107564250864,
+        "incumbent": 1973.8574729194413,
+        "expanded": 888.9598090426897,
+        "shrunk": 801.5307156909146
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TOX4",
+      "errors": {
+        "NTC": 1074.6457902476154,
+        "incumbent": 983.8337795022414,
+        "expanded": 983.8337795022414,
+        "shrunk": 930.488013504119
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TPR",
+      "errors": {
+        "NTC": 8136.172783057583,
+        "incumbent": 7627.093294778697,
+        "expanded": 7627.093294778697,
+        "shrunk": 7651.658080602858
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TTC4",
+      "errors": {
+        "NTC": 13561.115026805213,
+        "incumbent": 7862.979928197662,
+        "expanded": 11129.958262143049,
+        "shrunk": 10943.453145985797
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBA2",
+      "errors": {
+        "NTC": 2825.540900267799,
+        "incumbent": 3146.6712113911512,
+        "expanded": 3146.6712113911512,
+        "shrunk": 3145.2701885444976
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBE3C",
+      "errors": {
+        "NTC": 1772.2990198836474,
+        "incumbent": 11026.768820945945,
+        "expanded": 11026.768820945945,
+        "shrunk": 9722.537776302768
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBE3D",
+      "errors": {
+        "NTC": 2582.1939624400743,
+        "incumbent": 8386.566503495676,
+        "expanded": 4732.466345112295,
+        "shrunk": 4418.855718463365
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBL5",
+      "errors": {
+        "NTC": 2377.0334640105125,
+        "incumbent": 1829.4361742870647,
+        "expanded": 1829.4361742870647,
+        "shrunk": 1637.9143209691292
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UCHL5",
+      "errors": {
+        "NTC": 1434.870438304903,
+        "incumbent": 3112.1054358853526,
+        "expanded": 2470.269089353653,
+        "shrunk": 2127.5441411721995
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UQCRB",
+      "errors": {
+        "NTC": 5347.922346379495,
+        "incumbent": 7779.6472394846805,
+        "expanded": 7779.6472394846805,
+        "shrunk": 7517.722904300655
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UQCRQ",
+      "errors": {
+        "NTC": 8125.53385368128,
+        "incumbent": 6653.4317620880265,
+        "expanded": 6653.4317620880265,
+        "shrunk": 6847.977415134571
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "URB2",
+      "errors": {
+        "NTC": 12375.60706933441,
+        "incumbent": 12364.12693369751,
+        "expanded": 19255.432212383526,
+        "shrunk": 16605.387731657902
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "USF2",
+      "errors": {
+        "NTC": 813.977060940357,
+        "incumbent": 2060.9759830044404,
+        "expanded": 1107.0768802073042,
+        "shrunk": 1014.872023829229
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "USP19",
+      "errors": {
+        "NTC": 2304.276888157062,
+        "incumbent": 4491.848345010226,
+        "expanded": 3255.6845699242544,
+        "shrunk": 3082.447031010576
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VBP1",
+      "errors": {
+        "NTC": 1621.3975830134484,
+        "incumbent": 874.4943521761929,
+        "expanded": 874.4943521761929,
+        "shrunk": 1064.4128990577492
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS13D",
+      "errors": {
+        "NTC": 21757.45062069054,
+        "incumbent": 6891.763272697493,
+        "expanded": 12997.540491282494,
+        "shrunk": 13816.757933170837
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS29",
+      "errors": {
+        "NTC": 2009.1631828251889,
+        "incumbent": 3146.211609101826,
+        "expanded": 2376.1561771322577,
+        "shrunk": 2168.4793015438463
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS54",
+      "errors": {
+        "NTC": 1568.9752083258606,
+        "incumbent": 1364.6102520929746,
+        "expanded": 1364.6102520929746,
+        "shrunk": 1377.8077612716938
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS72",
+      "errors": {
+        "NTC": 5981.432037226499,
+        "incumbent": 4758.272033560596,
+        "expanded": 4758.272033560596,
+        "shrunk": 4822.002819360816
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WDR4",
+      "errors": {
+        "NTC": 1161.980196663744,
+        "incumbent": 1704.4258430918203,
+        "expanded": 1704.4258430918203,
+        "shrunk": 1461.4599610686737
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WDR44",
+      "errors": {
+        "NTC": 2190.0513966701183,
+        "incumbent": 2778.299532873388,
+        "expanded": 2045.3022796145283,
+        "shrunk": 2099.5396187353253
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WNK1",
+      "errors": {
+        "NTC": 1194.0901331604077,
+        "incumbent": 2444.3445420695016,
+        "expanded": 2734.90843062393,
+        "shrunk": 2134.4077202605063
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YARS2",
+      "errors": {
+        "NTC": 13508.428459644965,
+        "incumbent": 10563.944790020118,
+        "expanded": 3980.988745471118,
+        "shrunk": 4597.442635818978
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YPEL5",
+      "errors": {
+        "NTC": 5119.894208099988,
+        "incumbent": 5947.963601262129,
+        "expanded": 4209.415498010971,
+        "shrunk": 4370.290497030764
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YTHDC1",
+      "errors": {
+        "NTC": 5670.720593188244,
+        "incumbent": 9216.252121822781,
+        "expanded": 6611.788397884807,
+        "shrunk": 6534.707511034061
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YY1",
+      "errors": {
+        "NTC": 1662.9786320211228,
+        "incumbent": 1829.331802241942,
+        "expanded": 1274.3662071088715,
+        "shrunk": 1328.9871445881083
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZC3H3",
+      "errors": {
+        "NTC": 5635.654178630913,
+        "incumbent": 3905.4891589925865,
+        "expanded": 3905.4891589925865,
+        "shrunk": 4353.081614302722
+      }
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF292",
+      "errors": {
+        "NTC": 2537.6269528354446,
+        "incumbent": 3119.7042475328726,
+        "expanded": 3119.7042475328726,
+        "shrunk": 3166.3906615816186
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ALG14",
+      "errors": {
+        "NTC": 675.2746192772585,
+        "incumbent": 1846.1593822432974,
+        "expanded": 1846.1593822432974,
+        "shrunk": 1294.7542972151548
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ANAPC13",
+      "errors": {
+        "NTC": 1303.8513314649244,
+        "incumbent": 1643.4745242157053,
+        "expanded": 1401.573851929094,
+        "shrunk": 1341.739246063943
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ARFRP1",
+      "errors": {
+        "NTC": 1001.3533317846723,
+        "incumbent": 1487.2001971634454,
+        "expanded": 1037.2075911084141,
+        "shrunk": 1003.2118812609601
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ARPC4",
+      "errors": {
+        "NTC": 677.4802020921326,
+        "incumbent": 1926.030338034001,
+        "expanded": 1926.030338034001,
+        "shrunk": 1449.9684268528904
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ATP2A2",
+      "errors": {
+        "NTC": 722.0770626307027,
+        "incumbent": 1294.095531598827,
+        "expanded": 1294.095531598827,
+        "shrunk": 1235.6712174825443
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ATP6V0B",
+      "errors": {
+        "NTC": 2347.166432733345,
+        "incumbent": 2188.1872414929358,
+        "expanded": 2007.4742365455545,
+        "shrunk": 2091.537432615542
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "BCL2L1",
+      "errors": {
+        "NTC": 1080.4242875265568,
+        "incumbent": 1261.8128219439845,
+        "expanded": 1193.7077454507257,
+        "shrunk": 1153.7854377581252
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "BCS1L",
+      "errors": {
+        "NTC": 6314.786332429293,
+        "incumbent": 7084.012998988588,
+        "expanded": 8098.547219752549,
+        "shrunk": 7348.123669247458
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "C7orf50",
+      "errors": {
+        "NTC": 1747.6772135528145,
+        "incumbent": 1826.4603511128012,
+        "expanded": 1826.4603511128012,
+        "shrunk": 1788.0766411796944
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CA5A",
+      "errors": {
+        "NTC": 578.0766455751071,
+        "incumbent": 593.5733382572819,
+        "expanded": 594.8125944415483,
+        "shrunk": 556.9890927707659
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CBX1",
+      "errors": {
+        "NTC": 785.8677348455209,
+        "incumbent": 946.4179132806928,
+        "expanded": 719.9873418196651,
+        "shrunk": 727.5555922192693
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CDC16",
+      "errors": {
+        "NTC": 1984.5957864025177,
+        "incumbent": 1953.4083878473539,
+        "expanded": 1633.8934330651432,
+        "shrunk": 1632.6881868014316
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CDC20",
+      "errors": {
+        "NTC": 1919.1521750422653,
+        "incumbent": 2050.9515908221465,
+        "expanded": 2050.9515908221465,
+        "shrunk": 1983.4627197080404
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CENPN",
+      "errors": {
+        "NTC": 1304.987879152569,
+        "incumbent": 1292.7275716160866,
+        "expanded": 948.4205024327339,
+        "shrunk": 956.289004382767
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHCHD4",
+      "errors": {
+        "NTC": 4370.301441890819,
+        "incumbent": 4716.9969577005,
+        "expanded": 3292.934604370983,
+        "shrunk": 3122.1477969045927
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHMP6",
+      "errors": {
+        "NTC": 10303.942698074607,
+        "incumbent": 8593.04042190481,
+        "expanded": 8593.04042190481,
+        "shrunk": 8771.146985521718
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHTOP",
+      "errors": {
+        "NTC": 858.7242685196392,
+        "incumbent": 723.7708135949376,
+        "expanded": 984.897286119676,
+        "shrunk": 894.135078610221
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CNN2",
+      "errors": {
+        "NTC": 668.5512794174016,
+        "incumbent": 821.9294318709306,
+        "expanded": 821.9294318709306,
+        "shrunk": 748.8452350404497
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "COX5B",
+      "errors": {
+        "NTC": 1856.3154166774634,
+        "incumbent": 3088.165877518546,
+        "expanded": 3088.165877518546,
+        "shrunk": 2501.6502111506584
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "COX7C",
+      "errors": {
+        "NTC": 8534.53693490143,
+        "incumbent": 6103.523686144106,
+        "expanded": 6002.868595378799,
+        "shrunk": 6517.607778276757
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CSTF3",
+      "errors": {
+        "NTC": 21225.39258648431,
+        "incumbent": 14481.86331644014,
+        "expanded": 14481.86331644014,
+        "shrunk": 15690.966012596844
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CWC15",
+      "errors": {
+        "NTC": 8625.763438692731,
+        "incumbent": 17343.002435823644,
+        "expanded": 13573.979303951448,
+        "shrunk": 12218.725194465758
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DDX18",
+      "errors": {
+        "NTC": 9146.22521038221,
+        "incumbent": 8766.855990165652,
+        "expanded": 8766.855990165652,
+        "shrunk": 8113.45007470672
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DDX19A",
+      "errors": {
+        "NTC": 1332.7381266358527,
+        "incumbent": 1359.133634286266,
+        "expanded": 1321.2448234261142,
+        "shrunk": 1307.6702020434498
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DENR",
+      "errors": {
+        "NTC": 1276.451486694903,
+        "incumbent": 1437.2645668328905,
+        "expanded": 1071.7115844433797,
+        "shrunk": 1130.789149761964
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DHX15",
+      "errors": {
+        "NTC": 26102.311003946987,
+        "incumbent": 9175.246660924831,
+        "expanded": 8421.120687843302,
+        "shrunk": 9953.918409005637
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DHX36",
+      "errors": {
+        "NTC": 21210.13461503641,
+        "incumbent": 15811.41323049846,
+        "expanded": 17538.68023114213,
+        "shrunk": 18674.500892525306
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DNAJA3",
+      "errors": {
+        "NTC": 101865.96527202669,
+        "incumbent": 18343.232512600174,
+        "expanded": 17694.238211106705,
+        "shrunk": 18806.43586507771
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DNMT1",
+      "errors": {
+        "NTC": 795.8024478261725,
+        "incumbent": 2357.8140882264133,
+        "expanded": 2357.8140882264133,
+        "shrunk": 1793.2523548516035
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF2B2",
+      "errors": {
+        "NTC": 8329.179244706213,
+        "incumbent": 8601.407518957058,
+        "expanded": 8601.407518957058,
+        "shrunk": 8636.359876792922
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF2B4",
+      "errors": {
+        "NTC": 7037.976169640996,
+        "incumbent": 12629.343032696077,
+        "expanded": 10283.542498609746,
+        "shrunk": 10269.473062995665
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF3M",
+      "errors": {
+        "NTC": 6787.154424742517,
+        "incumbent": 9007.120011749565,
+        "expanded": 9007.120011749565,
+        "shrunk": 8671.68832808332
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF4G1",
+      "errors": {
+        "NTC": 4335.623124614798,
+        "incumbent": 3072.9221732237547,
+        "expanded": 2334.8465457993448,
+        "shrunk": 2260.357412621297
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FASTKD5",
+      "errors": {
+        "NTC": 64562.40966718856,
+        "incumbent": 11284.316184620093,
+        "expanded": 18156.23411186729,
+        "shrunk": 18433.09663266771
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FNBP4",
+      "errors": {
+        "NTC": 9479.102255412083,
+        "incumbent": 10609.137038953335,
+        "expanded": 10609.137038953335,
+        "shrunk": 10203.874553359985
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GNL2",
+      "errors": {
+        "NTC": 17118.390061411486,
+        "incumbent": 10527.795619973625,
+        "expanded": 15545.672587118213,
+        "shrunk": 14159.284694214119
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GTF2A1",
+      "errors": {
+        "NTC": 5949.368194087736,
+        "incumbent": 3566.9509994949,
+        "expanded": 2601.7811569561873,
+        "shrunk": 2513.2785124028637
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GTF3C3",
+      "errors": {
+        "NTC": 1547.8757870047077,
+        "incumbent": 3247.4958286484407,
+        "expanded": 3247.4958286484407,
+        "shrunk": 2899.6337832152094
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HIRA",
+      "errors": {
+        "NTC": 1697.3899072813133,
+        "incumbent": 1527.2818798427834,
+        "expanded": 1527.2818798427834,
+        "shrunk": 1523.4875807825697
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSCB",
+      "errors": {
+        "NTC": 3516.490109174333,
+        "incumbent": 2696.8192531747445,
+        "expanded": 2696.8192531747445,
+        "shrunk": 2677.9629858337426
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSD17B12",
+      "errors": {
+        "NTC": 3048.66099760096,
+        "incumbent": 2926.97181978561,
+        "expanded": 2907.7508889229966,
+        "shrunk": 2964.6311450203193
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSPA8",
+      "errors": {
+        "NTC": 23870.31629444994,
+        "incumbent": 24768.671302178613,
+        "expanded": 23730.891371462087,
+        "shrunk": 23782.135955809532
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSPA9",
+      "errors": {
+        "NTC": 95617.90053297278,
+        "incumbent": 6894.462423672005,
+        "expanded": 6894.462423672005,
+        "shrunk": 6985.708280004103
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HUWE1",
+      "errors": {
+        "NTC": 5582.502915227875,
+        "incumbent": 4864.556106594484,
+        "expanded": 3751.0583845015967,
+        "shrunk": 4228.328836428488
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "JMJD6",
+      "errors": {
+        "NTC": 1723.5915673419238,
+        "incumbent": 1082.3545347557667,
+        "expanded": 1694.7970455743873,
+        "shrunk": 1659.0448458639376
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "KPNB1",
+      "errors": {
+        "NTC": 2366.7463065647053,
+        "incumbent": 2670.199588794631,
+        "expanded": 2670.199588794631,
+        "shrunk": 2449.3030064993163
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "LONP1",
+      "errors": {
+        "NTC": 66520.95582225786,
+        "incumbent": 83634.70099519545,
+        "expanded": 43777.593597792555,
+        "shrunk": 44135.04327160545
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "LRPPRC",
+      "errors": {
+        "NTC": 266529.84947602084,
+        "incumbent": 57559.362002563874,
+        "expanded": 57559.362002563874,
+        "shrunk": 59815.24958295167
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "LSM4",
+      "errors": {
+        "NTC": 9459.594513853877,
+        "incumbent": 10245.585573704167,
+        "expanded": 5427.232558495163,
+        "shrunk": 5453.6994446313065
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MAD2L1",
+      "errors": {
+        "NTC": 1570.3983724048373,
+        "incumbent": 1530.3854765331967,
+        "expanded": 1530.3854765331967,
+        "shrunk": 1462.5851362972235
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MANF",
+      "errors": {
+        "NTC": 1793.1131160488897,
+        "incumbent": 1831.4769133097134,
+        "expanded": 1831.4769133097134,
+        "shrunk": 1798.9503039993558
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MBTPS1",
+      "errors": {
+        "NTC": 1594.0664896047074,
+        "incumbent": 2377.099409025867,
+        "expanded": 2377.099409025867,
+        "shrunk": 2220.5363211064114
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MED4",
+      "errors": {
+        "NTC": 30145.107229565296,
+        "incumbent": 15746.482953730969,
+        "expanded": 15746.482953730969,
+        "shrunk": 16855.13071640404
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MED8",
+      "errors": {
+        "NTC": 17612.333738117948,
+        "incumbent": 10047.594679911892,
+        "expanded": 8347.982292664443,
+        "shrunk": 9749.017869872903
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "METTL14",
+      "errors": {
+        "NTC": 16620.07987932818,
+        "incumbent": 11552.629728573964,
+        "expanded": 9865.145075594219,
+        "shrunk": 10811.903498446982
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "METTL17",
+      "errors": {
+        "NTC": 5567.297892324609,
+        "incumbent": 10872.457554176577,
+        "expanded": 10872.457554176577,
+        "shrunk": 10594.452235972134
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "METTL3",
+      "errors": {
+        "NTC": 3460.2798409701027,
+        "incumbent": 1797.9171415244382,
+        "expanded": 1797.9171415244382,
+        "shrunk": 1819.7841438162432
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MIPEP",
+      "errors": {
+        "NTC": 3538.445826352185,
+        "incumbent": 3203.3750839980316,
+        "expanded": 2588.67386831151,
+        "shrunk": 2333.7460139485756
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL10",
+      "errors": {
+        "NTC": 40166.833527477975,
+        "incumbent": 35802.87591467145,
+        "expanded": 16812.41316008258,
+        "shrunk": 18106.326147583837
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL14",
+      "errors": {
+        "NTC": 11861.614987696994,
+        "incumbent": 5032.058166812477,
+        "expanded": 2903.576452434664,
+        "shrunk": 3248.7792843600337
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL17",
+      "errors": {
+        "NTC": 18179.31205255027,
+        "incumbent": 6740.778978060751,
+        "expanded": 3547.743234492572,
+        "shrunk": 3527.988909216752
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL35",
+      "errors": {
+        "NTC": 31282.538506995857,
+        "incumbent": 12024.65644264762,
+        "expanded": 12395.57392197265,
+        "shrunk": 12813.017025934992
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL36",
+      "errors": {
+        "NTC": 19391.446631689007,
+        "incumbent": 4740.078776868579,
+        "expanded": 4877.512635035146,
+        "shrunk": 5050.046095939589
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL37",
+      "errors": {
+        "NTC": 42323.38639834021,
+        "incumbent": 39740.44403552921,
+        "expanded": 23047.524105578224,
+        "shrunk": 24483.407970698685
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL43",
+      "errors": {
+        "NTC": 61406.37727910684,
+        "incumbent": 66365.60649521023,
+        "expanded": 66365.60649521023,
+        "shrunk": 66581.23506422057
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL50",
+      "errors": {
+        "NTC": 6916.048113835148,
+        "incumbent": 5820.673484295372,
+        "expanded": 1423.4253265050081,
+        "shrunk": 1347.310510312746
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL54",
+      "errors": {
+        "NTC": 8292.218097397332,
+        "incumbent": 12010.63115700338,
+        "expanded": 2465.530503796854,
+        "shrunk": 2556.8682831910673
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPS10",
+      "errors": {
+        "NTC": 10800.414111619788,
+        "incumbent": 6316.311346050243,
+        "expanded": 5683.613415224304,
+        "shrunk": 5585.365972604758
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPS5",
+      "errors": {
+        "NTC": 13029.186437756733,
+        "incumbent": 8148.321160844748,
+        "expanded": 8984.711112836947,
+        "shrunk": 8896.5432671072
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MYC",
+      "errors": {
+        "NTC": 2975.761903977035,
+        "incumbent": 2636.8787725983293,
+        "expanded": 3170.79743954497,
+        "shrunk": 2716.171067737857
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NAGLU",
+      "errors": {
+        "NTC": 437.53135776145143,
+        "incumbent": 446.2083897783958,
+        "expanded": 449.09675076370263,
+        "shrunk": 434.8961564687472
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NASP",
+      "errors": {
+        "NTC": 614.7442819174844,
+        "incumbent": 1617.998767953043,
+        "expanded": 1617.998767953043,
+        "shrunk": 1270.5765456165177
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NBAS",
+      "errors": {
+        "NTC": 3007.070125898209,
+        "incumbent": 15600.691811764464,
+        "expanded": 8932.112319823807,
+        "shrunk": 8694.009114402015
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFAF3",
+      "errors": {
+        "NTC": 1400.9040073677118,
+        "incumbent": 1336.7738387438685,
+        "expanded": 1192.1816578971172,
+        "shrunk": 1243.6565312925152
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFB3",
+      "errors": {
+        "NTC": 774.1077167832885,
+        "incumbent": 875.569234528101,
+        "expanded": 635.3320029496518,
+        "shrunk": 653.2673703766988
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFB4",
+      "errors": {
+        "NTC": 2781.9955895798644,
+        "incumbent": 2259.054555128458,
+        "expanded": 1249.3335755142373,
+        "shrunk": 1364.495021400892
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFB6",
+      "errors": {
+        "NTC": 1470.614496245438,
+        "incumbent": 1472.3600783405695,
+        "expanded": 1472.3600783405695,
+        "shrunk": 1380.4351928598644
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NISCH",
+      "errors": {
+        "NTC": 973.2594992190715,
+        "incumbent": 1012.0879658673177,
+        "expanded": 1012.0879658673177,
+        "shrunk": 981.4313875511274
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NOL8",
+      "errors": {
+        "NTC": 16370.074281702391,
+        "incumbent": 13060.55083457633,
+        "expanded": 18201.63493372219,
+        "shrunk": 16416.9724338058
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NOM1",
+      "errors": {
+        "NTC": 3145.754566159871,
+        "incumbent": 3127.083588467153,
+        "expanded": 3740.233100160306,
+        "shrunk": 3386.8196412128364
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NUDCD3",
+      "errors": {
+        "NTC": 4104.866376826942,
+        "incumbent": 3652.015765101589,
+        "expanded": 3652.015765101589,
+        "shrunk": 3735.223683549988
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NVL",
+      "errors": {
+        "NTC": 5650.761786955798,
+        "incumbent": 5544.489035840096,
+        "expanded": 7157.5599937631905,
+        "shrunk": 5793.519776892543
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "OLFML3",
+      "errors": {
+        "NTC": 734.4870709024142,
+        "incumbent": 841.0309188750152,
+        "expanded": 841.0309188750152,
+        "shrunk": 784.5552732171684
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PGS1",
+      "errors": {
+        "NTC": 2409.543837614775,
+        "incumbent": 3459.199590881699,
+        "expanded": 1203.7208218757983,
+        "shrunk": 1090.5439766760787
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PIK3C3",
+      "errors": {
+        "NTC": 782.1095123917391,
+        "incumbent": 1659.0733734189146,
+        "expanded": 949.4898433948257,
+        "shrunk": 791.3791833833463
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "POLR2C",
+      "errors": {
+        "NTC": 19876.599793875583,
+        "incumbent": 10286.443429181538,
+        "expanded": 10286.443429181538,
+        "shrunk": 11407.789493673
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PPP2R1A",
+      "errors": {
+        "NTC": 527.8815567512652,
+        "incumbent": 1389.4818682024465,
+        "expanded": 1422.644136745565,
+        "shrunk": 1250.990709772046
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PRRC2A",
+      "errors": {
+        "NTC": 6256.642780407865,
+        "incumbent": 9493.846635648702,
+        "expanded": 10416.733120604647,
+        "shrunk": 9043.094141794993
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PSMB5",
+      "errors": {
+        "NTC": 10635.598356252714,
+        "incumbent": 13880.866372632237,
+        "expanded": 13880.866372632237,
+        "shrunk": 13667.574118115836
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PSMB6",
+      "errors": {
+        "NTC": 19338.769947425462,
+        "incumbent": 5546.126427693498,
+        "expanded": 8023.846105912822,
+        "shrunk": 8671.392599088893
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PTCD1",
+      "errors": {
+        "NTC": 3706.26021313149,
+        "incumbent": 11080.770405411313,
+        "expanded": 8091.375100648947,
+        "shrunk": 6637.450843669695
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PUF60",
+      "errors": {
+        "NTC": 16278.799285855039,
+        "incumbent": 14384.730726487182,
+        "expanded": 7277.864507184703,
+        "shrunk": 7127.650738059642
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RBM10",
+      "errors": {
+        "NTC": 1229.1576650312104,
+        "incumbent": 2348.4601625425476,
+        "expanded": 2348.4601625425476,
+        "shrunk": 2156.709100234631
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RBM42",
+      "errors": {
+        "NTC": 12757.208157452536,
+        "incumbent": 10312.91432923208,
+        "expanded": 16105.611235916935,
+        "shrunk": 14375.748019676237
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RBMX2",
+      "errors": {
+        "NTC": 4366.200220331102,
+        "incumbent": 4792.07319857727,
+        "expanded": 4792.07319857727,
+        "shrunk": 4398.717756164615
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RCL1",
+      "errors": {
+        "NTC": 7072.270858826113,
+        "incumbent": 8251.690431166884,
+        "expanded": 10809.044006765736,
+        "shrunk": 9299.353638368479
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RFC2",
+      "errors": {
+        "NTC": 12131.750204100203,
+        "incumbent": 5015.383395191316,
+        "expanded": 5108.271547781136,
+        "shrunk": 6030.676092225965
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RNF20",
+      "errors": {
+        "NTC": 8124.748940451331,
+        "incumbent": 6213.297388154968,
+        "expanded": 6213.297388154968,
+        "shrunk": 6713.00102439262
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPL11",
+      "errors": {
+        "NTC": 22222.866347499126,
+        "incumbent": 7203.944761379558,
+        "expanded": 2606.9476986212153,
+        "shrunk": 2994.0492080196163
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPL7",
+      "errors": {
+        "NTC": 32120.954216449216,
+        "incumbent": 8233.721721613747,
+        "expanded": 8233.721721613747,
+        "shrunk": 8131.1080695721375
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPLP0",
+      "errors": {
+        "NTC": 16959.174573092525,
+        "incumbent": 2962.7810240789895,
+        "expanded": 2962.7810240789895,
+        "shrunk": 2955.372404876233
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RRM1",
+      "errors": {
+        "NTC": 17908.970770613934,
+        "incumbent": 7186.340814405572,
+        "expanded": 7186.340814405572,
+        "shrunk": 8208.743887352222
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RRM2",
+      "errors": {
+        "NTC": 2904.242725232378,
+        "incumbent": 6569.328580496296,
+        "expanded": 3976.1475312714133,
+        "shrunk": 3491.174277505992
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SARS2",
+      "errors": {
+        "NTC": 1842.9160284463894,
+        "incumbent": 5967.609457962189,
+        "expanded": 3331.5058219883467,
+        "shrunk": 2994.382151169079
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SBDS",
+      "errors": {
+        "NTC": 1290.365523548941,
+        "incumbent": 4482.741521277364,
+        "expanded": 4482.741521277364,
+        "shrunk": 4187.172866082611
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SDAD1",
+      "errors": {
+        "NTC": 15419.113351960037,
+        "incumbent": 10396.07927774107,
+        "expanded": 16672.773962295676,
+        "shrunk": 14728.274062272165
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SDC1",
+      "errors": {
+        "NTC": 11241.711267041903,
+        "incumbent": 5150.180541801905,
+        "expanded": 5150.180541801905,
+        "shrunk": 6010.678945854222
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SEC63",
+      "errors": {
+        "NTC": 2238.8590540478417,
+        "incumbent": 2026.8850911140921,
+        "expanded": 2026.8850911140921,
+        "shrunk": 1979.3962995310046
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SEPHS2",
+      "errors": {
+        "NTC": 605.7524588481135,
+        "incumbent": 1135.9884041825885,
+        "expanded": 870.2545324986689,
+        "shrunk": 733.1725740011044
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SEPSECS",
+      "errors": {
+        "NTC": 2427.79511228759,
+        "incumbent": 3771.088025201983,
+        "expanded": 2988.759713879056,
+        "shrunk": 2840.282460121838
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SHQ1",
+      "errors": {
+        "NTC": 2228.7396041410366,
+        "incumbent": 2767.4482967222766,
+        "expanded": 2767.4482967222766,
+        "shrunk": 2643.602434351749
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SMAGP",
+      "errors": {
+        "NTC": 811.6282014842498,
+        "incumbent": 897.8316823367816,
+        "expanded": 876.8291933572139,
+        "shrunk": 838.1712509534526
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SMC5",
+      "errors": {
+        "NTC": 886.2375569335464,
+        "incumbent": 955.8910439060394,
+        "expanded": 1806.3457539043034,
+        "shrunk": 1449.827765947673
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SRP68",
+      "errors": {
+        "NTC": 3439.5510519942113,
+        "incumbent": 2878.7801182886788,
+        "expanded": 2910.4172003864455,
+        "shrunk": 2976.7876615921723
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SRPRB",
+      "errors": {
+        "NTC": 2290.170587632069,
+        "incumbent": 1462.6425961870164,
+        "expanded": 1462.6425961870164,
+        "shrunk": 1630.1681882245111
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "STARD7",
+      "errors": {
+        "NTC": 24474.337577715512,
+        "incumbent": 11004.510427565398,
+        "expanded": 11004.510427565398,
+        "shrunk": 11360.91636786048
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TARS2",
+      "errors": {
+        "NTC": 7933.562493317283,
+        "incumbent": 23946.779911608297,
+        "expanded": 6424.609438653899,
+        "shrunk": 6732.5291985218355
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TFAM",
+      "errors": {
+        "NTC": 69039.40615101726,
+        "incumbent": 12492.077958275882,
+        "expanded": 11434.524661391886,
+        "shrunk": 11655.073706038129
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TM7SF2",
+      "errors": {
+        "NTC": 1923.6825089885513,
+        "incumbent": 2083.8457499646825,
+        "expanded": 2171.97785211771,
+        "shrunk": 2045.8542120435773
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TMSB10",
+      "errors": {
+        "NTC": 1640.5499827936846,
+        "incumbent": 1722.324710867273,
+        "expanded": 1030.9256684840384,
+        "shrunk": 1087.2071416732974
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TPR",
+      "errors": {
+        "NTC": 5947.774330175329,
+        "incumbent": 5207.559233168492,
+        "expanded": 5207.559233168492,
+        "shrunk": 5308.95184586785
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TTC4",
+      "errors": {
+        "NTC": 2025.9529384766045,
+        "incumbent": 1242.2262231552622,
+        "expanded": 1459.0737259565708,
+        "shrunk": 1329.7934168834688
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UBA2",
+      "errors": {
+        "NTC": 2231.8924080704564,
+        "incumbent": 2743.9818749546375,
+        "expanded": 2743.9818749546375,
+        "shrunk": 2700.8510308108
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UBL5",
+      "errors": {
+        "NTC": 5178.006466812369,
+        "incumbent": 3232.9522140469976,
+        "expanded": 3232.9522140469976,
+        "shrunk": 3181.1690910846164
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UQCRB",
+      "errors": {
+        "NTC": 20617.842822978404,
+        "incumbent": 16459.239250695548,
+        "expanded": 16459.239250695548,
+        "shrunk": 16514.13784112302
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UQCRQ",
+      "errors": {
+        "NTC": 11023.614022904503,
+        "incumbent": 5780.985765636747,
+        "expanded": 5780.985765636747,
+        "shrunk": 6552.379748928675
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "URB2",
+      "errors": {
+        "NTC": 1508.433521148917,
+        "incumbent": 1779.6803594163491,
+        "expanded": 4537.769172003217,
+        "shrunk": 3386.627276124864
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "USF2",
+      "errors": {
+        "NTC": 1591.013537263594,
+        "incumbent": 2641.944188269379,
+        "expanded": 1724.414655888975,
+        "shrunk": 1683.020572893495
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "USP19",
+      "errors": {
+        "NTC": 2494.9325508373863,
+        "incumbent": 4575.431121103609,
+        "expanded": 3329.110545934512,
+        "shrunk": 3232.0320021078705
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VBP1",
+      "errors": {
+        "NTC": 3228.239000629768,
+        "incumbent": 2146.484670397498,
+        "expanded": 2146.484670397498,
+        "shrunk": 2509.139273840516
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS13D",
+      "errors": {
+        "NTC": 1347.929132224917,
+        "incumbent": 3825.876658676598,
+        "expanded": 1587.8849863709831,
+        "shrunk": 1389.8038929815652
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS29",
+      "errors": {
+        "NTC": 6345.831488579108,
+        "incumbent": 4160.853190551725,
+        "expanded": 4783.865199715532,
+        "shrunk": 5287.839376494378
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS54",
+      "errors": {
+        "NTC": 668.789384448236,
+        "incumbent": 542.0580096799447,
+        "expanded": 542.0580096799447,
+        "shrunk": 531.6841718597402
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS72",
+      "errors": {
+        "NTC": 8062.2020145622355,
+        "incumbent": 6692.5973270217755,
+        "expanded": 6692.5973270217755,
+        "shrunk": 6785.015287755541
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "WDR4",
+      "errors": {
+        "NTC": 423.45637700838734,
+        "incumbent": 510.0402864042338,
+        "expanded": 510.0402864042338,
+        "shrunk": 453.6321238665817
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "WNK1",
+      "errors": {
+        "NTC": 1165.9436859309694,
+        "incumbent": 1905.0955470323247,
+        "expanded": 1981.4921799209378,
+        "shrunk": 1605.2264148350935
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YARS2",
+      "errors": {
+        "NTC": 4758.57195317959,
+        "incumbent": 8647.447642892705,
+        "expanded": 1918.3869330299553,
+        "shrunk": 1980.479045220296
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YPEL5",
+      "errors": {
+        "NTC": 2890.4126913284226,
+        "incumbent": 2629.3583650475543,
+        "expanded": 3379.0319905824817,
+        "shrunk": 3236.0062063205833
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YTHDC1",
+      "errors": {
+        "NTC": 7038.771707160615,
+        "incumbent": 13851.794245698882,
+        "expanded": 9580.87420628083,
+        "shrunk": 9503.087989442753
+      }
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YY1",
+      "errors": {
+        "NTC": 1697.484225051316,
+        "incumbent": 2422.2089696732173,
+        "expanded": 1568.0804437098755,
+        "shrunk": 1560.7639662665838
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ACSS2",
+      "errors": {
+        "NTC": 24824.284289562816,
+        "incumbent": 7113.481381526687,
+        "expanded": 12367.633448796383,
+        "shrunk": 13715.453772676228
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ALG14",
+      "errors": {
+        "NTC": 8959.558983689854,
+        "incumbent": 8248.94295159725,
+        "expanded": 8294.609327530075,
+        "shrunk": 8279.940201114914
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ANAPC13",
+      "errors": {
+        "NTC": 3701.676767560925,
+        "incumbent": 3816.3087132269407,
+        "expanded": 3750.144688679238,
+        "shrunk": 3703.974357300106
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ARFRP1",
+      "errors": {
+        "NTC": 1349.669112867799,
+        "incumbent": 1245.0112172263202,
+        "expanded": 1490.8864415281357,
+        "shrunk": 1410.1326049398394
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ARPC4",
+      "errors": {
+        "NTC": 19213.411536544572,
+        "incumbent": 17346.624041562838,
+        "expanded": 17326.3835140984,
+        "shrunk": 17684.71590324071
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ATP2A2",
+      "errors": {
+        "NTC": 13964.565166195502,
+        "incumbent": 13033.76179895001,
+        "expanded": 13143.133229383502,
+        "shrunk": 13606.190491689926
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ATP5ME",
+      "errors": {
+        "NTC": 2494.6060258680186,
+        "incumbent": 2351.550958581404,
+        "expanded": 3182.1790396597817,
+        "shrunk": 2175.022894417926
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ATP6V0B",
+      "errors": {
+        "NTC": 2251.525121078902,
+        "incumbent": 2118.3247659910685,
+        "expanded": 2415.6530167625874,
+        "shrunk": 2218.021641397783
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "BCL2L1",
+      "errors": {
+        "NTC": 741.586902157919,
+        "incumbent": 934.2933764343858,
+        "expanded": 892.425671287256,
+        "shrunk": 842.3708227017225
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "BCS1L",
+      "errors": {
+        "NTC": 1004.4206321826875,
+        "incumbent": 1145.6230737556343,
+        "expanded": 1240.9168606926319,
+        "shrunk": 932.4105295361475
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "BPTF",
+      "errors": {
+        "NTC": 3566.6163120008982,
+        "incumbent": 4216.289370658337,
+        "expanded": 3853.4940230925395,
+        "shrunk": 3594.385856310525
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "C7orf50",
+      "errors": {
+        "NTC": 1219.4730877892666,
+        "incumbent": 1274.5613954334433,
+        "expanded": 1274.5613954334433,
+        "shrunk": 1233.3110231212434
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CA5A",
+      "errors": {
+        "NTC": 904.1368691726337,
+        "incumbent": 968.7005748395198,
+        "expanded": 1001.46737343541,
+        "shrunk": 919.5666474572912
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CALR",
+      "errors": {
+        "NTC": 15790.377253939736,
+        "incumbent": 14319.465574885313,
+        "expanded": 14319.465574885313,
+        "shrunk": 14337.093552117487
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CBX1",
+      "errors": {
+        "NTC": 1052.3815913164763,
+        "incumbent": 1110.6120449152572,
+        "expanded": 1129.5952898552425,
+        "shrunk": 1087.857924361853
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CCAR1",
+      "errors": {
+        "NTC": 1722.7804116165391,
+        "incumbent": 1652.7775976660287,
+        "expanded": 1244.3375323772589,
+        "shrunk": 1369.8862800619277
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CCDC6",
+      "errors": {
+        "NTC": 9681.722858109522,
+        "incumbent": 10654.121892107716,
+        "expanded": 10482.655670513026,
+        "shrunk": 10235.135766802747
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CCNC",
+      "errors": {
+        "NTC": 5245.144662225399,
+        "incumbent": 7357.2062058949705,
+        "expanded": 6162.777412682995,
+        "shrunk": 6084.376166201178
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CDC16",
+      "errors": {
+        "NTC": 14357.593023900894,
+        "incumbent": 14013.478858502434,
+        "expanded": 16601.823119120618,
+        "shrunk": 15478.012115123145
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CENPN",
+      "errors": {
+        "NTC": 7703.687281161281,
+        "incumbent": 7472.435298757723,
+        "expanded": 7028.346762073747,
+        "shrunk": 7229.115237031967
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHCHD4",
+      "errors": {
+        "NTC": 17648.325605862057,
+        "incumbent": 12570.968378152538,
+        "expanded": 12002.196724428724,
+        "shrunk": 12993.628173073981
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHMP6",
+      "errors": {
+        "NTC": 24111.779743365343,
+        "incumbent": 35536.92171203186,
+        "expanded": 36728.3733798454,
+        "shrunk": 35601.40028398642
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHTOP",
+      "errors": {
+        "NTC": 1071.5003684136811,
+        "incumbent": 1153.4363696459297,
+        "expanded": 1235.2055418627795,
+        "shrunk": 1088.191148183851
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CLPB",
+      "errors": {
+        "NTC": 1418.471880124862,
+        "incumbent": 4646.435899163396,
+        "expanded": 4734.322931809775,
+        "shrunk": 4446.79613102203
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CNN2",
+      "errors": {
+        "NTC": 922.0890712263694,
+        "incumbent": 875.8769634101102,
+        "expanded": 944.0511388384654,
+        "shrunk": 904.1201381948453
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CNOT10",
+      "errors": {
+        "NTC": 4985.064866001394,
+        "incumbent": 4214.980994003967,
+        "expanded": 4193.181503782934,
+        "shrunk": 3933.075416535498
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "COX5B",
+      "errors": {
+        "NTC": 7738.317704480149,
+        "incumbent": 6147.147606447873,
+        "expanded": 6147.147606447873,
+        "shrunk": 6182.987077842688
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "COX7C",
+      "errors": {
+        "NTC": 1566.9498207017402,
+        "incumbent": 1131.3730087083252,
+        "expanded": 1753.8154256420057,
+        "shrunk": 1354.6896196317123
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CSTF3",
+      "errors": {
+        "NTC": 13658.798793211608,
+        "incumbent": 13875.398655575806,
+        "expanded": 13875.398655575806,
+        "shrunk": 11875.947738877887
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CWC15",
+      "errors": {
+        "NTC": 16902.21740207636,
+        "incumbent": 14676.614590321864,
+        "expanded": 13645.310975808652,
+        "shrunk": 13297.628921237369
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DAXX",
+      "errors": {
+        "NTC": 4265.029381225818,
+        "incumbent": 3857.909059306758,
+        "expanded": 4679.864355716538,
+        "shrunk": 4194.618238377524
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DDX19A",
+      "errors": {
+        "NTC": 4324.104896723445,
+        "incumbent": 4139.020998140602,
+        "expanded": 4139.020998140602,
+        "shrunk": 4252.278434931013
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DDX42",
+      "errors": {
+        "NTC": 1340.286405378833,
+        "incumbent": 1968.241121681308,
+        "expanded": 1564.2120811667155,
+        "shrunk": 1287.682040602438
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DENR",
+      "errors": {
+        "NTC": 2274.067116533734,
+        "incumbent": 2136.3350331400907,
+        "expanded": 2355.974259270597,
+        "shrunk": 2121.2579124782364
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DHX15",
+      "errors": {
+        "NTC": 60194.330144460975,
+        "incumbent": 46587.25203831023,
+        "expanded": 49306.58765950314,
+        "shrunk": 49579.614424295265
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DHX36",
+      "errors": {
+        "NTC": 10646.589240594914,
+        "incumbent": 7282.517027615737,
+        "expanded": 7483.880547615562,
+        "shrunk": 8277.612964993199
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DNAJA3",
+      "errors": {
+        "NTC": 57654.8407906952,
+        "incumbent": 20335.431139309723,
+        "expanded": 21885.828383728596,
+        "shrunk": 23230.680464573314
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DNMT1",
+      "errors": {
+        "NTC": 10593.112571810383,
+        "incumbent": 7983.526805826236,
+        "expanded": 7886.764523948886,
+        "shrunk": 8597.932075229108
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF2B2",
+      "errors": {
+        "NTC": 69823.57842023217,
+        "incumbent": 55235.22425763345,
+        "expanded": 55187.6191211444,
+        "shrunk": 55459.31655733799
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF2B4",
+      "errors": {
+        "NTC": 68744.39236086082,
+        "incumbent": 57303.22457985974,
+        "expanded": 55429.70832877316,
+        "shrunk": 55961.50037891227
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF3M",
+      "errors": {
+        "NTC": 11580.866607754704,
+        "incumbent": 9563.830676022433,
+        "expanded": 9563.830676022433,
+        "shrunk": 9691.804921720512
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF4B",
+      "errors": {
+        "NTC": 5545.489664219506,
+        "incumbent": 3665.7050696437677,
+        "expanded": 3751.0884628379563,
+        "shrunk": 3830.9044192515275
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF4G1",
+      "errors": {
+        "NTC": 13070.401215407432,
+        "incumbent": 9475.589201595536,
+        "expanded": 9639.502766690137,
+        "shrunk": 10075.10111390948
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EPB41L2",
+      "errors": {
+        "NTC": 3680.3036008622375,
+        "incumbent": 5289.395858141395,
+        "expanded": 5276.197909290403,
+        "shrunk": 4683.262771410338
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ETV4",
+      "errors": {
+        "NTC": 10443.321160784346,
+        "incumbent": 12436.606238612892,
+        "expanded": 12436.606238612892,
+        "shrunk": 11961.809312851114
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EWSR1",
+      "errors": {
+        "NTC": 1486.8099540442279,
+        "incumbent": 1788.9253585140286,
+        "expanded": 1894.6756064582466,
+        "shrunk": 1705.922164048462
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FASTKD5",
+      "errors": {
+        "NTC": 37674.14097993777,
+        "incumbent": 16568.59224041839,
+        "expanded": 22269.96318173808,
+        "shrunk": 22228.541783812118
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FNBP4",
+      "errors": {
+        "NTC": 5101.859330869471,
+        "incumbent": 5355.597950773437,
+        "expanded": 5350.275936089492,
+        "shrunk": 5334.900225665557
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GPS2",
+      "errors": {
+        "NTC": 2009.27967774089,
+        "incumbent": 1818.1021935009899,
+        "expanded": 1560.853089788069,
+        "shrunk": 1461.487810857599
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GSK3B",
+      "errors": {
+        "NTC": 8065.940316961162,
+        "incumbent": 14731.174693738933,
+        "expanded": 10008.020855253597,
+        "shrunk": 9829.739599900597
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GTF3C3",
+      "errors": {
+        "NTC": 10556.777530017414,
+        "incumbent": 8193.675193519593,
+        "expanded": 8193.675193519593,
+        "shrunk": 8295.820821760048
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HIRA",
+      "errors": {
+        "NTC": 5614.662508223912,
+        "incumbent": 5776.780506063697,
+        "expanded": 5891.364291362291,
+        "shrunk": 5669.510267460774
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HLA-C",
+      "errors": {
+        "NTC": 1603.4302765773264,
+        "incumbent": 2147.3825227470043,
+        "expanded": 1896.8842460986666,
+        "shrunk": 1648.3470010940719
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSCB",
+      "errors": {
+        "NTC": 11306.758567283987,
+        "incumbent": 11482.609261537671,
+        "expanded": 11482.609261537671,
+        "shrunk": 11173.7241798745
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSD17B10",
+      "errors": {
+        "NTC": 39586.62544095116,
+        "incumbent": 18172.792365323192,
+        "expanded": 18172.792365323192,
+        "shrunk": 18792.839429415184
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSD17B12",
+      "errors": {
+        "NTC": 1176.3863597779177,
+        "incumbent": 2561.3754535357402,
+        "expanded": 2561.3754535357402,
+        "shrunk": 1724.3693788698047
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSPA8",
+      "errors": {
+        "NTC": 1339.4356710303682,
+        "incumbent": 2171.034785464345,
+        "expanded": 1478.1232213790718,
+        "shrunk": 1367.0901589399843
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSPA9",
+      "errors": {
+        "NTC": 101546.69666880164,
+        "incumbent": 40322.65592328866,
+        "expanded": 40426.0019705669,
+        "shrunk": 40670.78486888409
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSPE1",
+      "errors": {
+        "NTC": 72232.37052457008,
+        "incumbent": 63764.68893571219,
+        "expanded": 32608.777382032244,
+        "shrunk": 35662.545960080526
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HUWE1",
+      "errors": {
+        "NTC": 12750.153492471565,
+        "incumbent": 12470.443814021324,
+        "expanded": 12024.050780207797,
+        "shrunk": 12517.51904563255
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "JMJD6",
+      "errors": {
+        "NTC": 1793.688274932129,
+        "incumbent": 1822.4297238694849,
+        "expanded": 1833.0725322579553,
+        "shrunk": 1752.7502236635137
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "KDM1A",
+      "errors": {
+        "NTC": 2863.0567962729874,
+        "incumbent": 19485.365065668266,
+        "expanded": 17791.282091991707,
+        "shrunk": 16916.126376644566
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "KPNB1",
+      "errors": {
+        "NTC": 12799.828903169548,
+        "incumbent": 11782.48977214714,
+        "expanded": 11671.9662074868,
+        "shrunk": 11760.723425571821
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LAMTOR1",
+      "errors": {
+        "NTC": 5143.187665487192,
+        "incumbent": 4361.802984547604,
+        "expanded": 4361.802984547604,
+        "shrunk": 4446.688795264061
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LONP1",
+      "errors": {
+        "NTC": 70367.17428706813,
+        "incumbent": 45369.410951357255,
+        "expanded": 57642.98216134154,
+        "shrunk": 58378.96180842841
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LRPPRC",
+      "errors": {
+        "NTC": 94002.88225322796,
+        "incumbent": 22452.09279012598,
+        "expanded": 22452.09279012598,
+        "shrunk": 23828.034882610886
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LSM4",
+      "errors": {
+        "NTC": 17271.921369691314,
+        "incumbent": 18982.003958415677,
+        "expanded": 17878.12463912083,
+        "shrunk": 16628.012653476006
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LTBP4",
+      "errors": {
+        "NTC": 3325.9145128066602,
+        "incumbent": 3117.738050276124,
+        "expanded": 3114.094888748478,
+        "shrunk": 3117.3456132318815
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LZTR1",
+      "errors": {
+        "NTC": 14461.776677799264,
+        "incumbent": 11302.456599750329,
+        "expanded": 11891.129985982745,
+        "shrunk": 12013.157945129587
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MAD2L1",
+      "errors": {
+        "NTC": 15129.13644917176,
+        "incumbent": 13934.889811216055,
+        "expanded": 13934.889811216055,
+        "shrunk": 14132.490029409899
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MANF",
+      "errors": {
+        "NTC": 1286.6668304673988,
+        "incumbent": 1727.9731221489997,
+        "expanded": 1713.3046503146556,
+        "shrunk": 1296.5939448096183
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MAT2A",
+      "errors": {
+        "NTC": 2530.609816414836,
+        "incumbent": 2720.9360594749583,
+        "expanded": 2331.701587485641,
+        "shrunk": 2054.7926863984712
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MBTPS1",
+      "errors": {
+        "NTC": 666.1461791505644,
+        "incumbent": 1161.030040060773,
+        "expanded": 1161.030040060773,
+        "shrunk": 763.1421406135998
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MED4",
+      "errors": {
+        "NTC": 6416.402808141002,
+        "incumbent": 4685.011792907046,
+        "expanded": 4685.011792907046,
+        "shrunk": 5623.625943740561
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MEN1",
+      "errors": {
+        "NTC": 2259.5142206018677,
+        "incumbent": 2303.3131003360545,
+        "expanded": 2298.288089892159,
+        "shrunk": 2226.0901791041456
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "METTL14",
+      "errors": {
+        "NTC": 5022.5016498323785,
+        "incumbent": 2766.1762599620365,
+        "expanded": 3233.3670032826017,
+        "shrunk": 3530.4989019171107
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "METTL17",
+      "errors": {
+        "NTC": 12839.185503542223,
+        "incumbent": 9908.105954128474,
+        "expanded": 9908.105954128474,
+        "shrunk": 9960.179250597692
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "METTL3",
+      "errors": {
+        "NTC": 4925.41266769894,
+        "incumbent": 3210.202967384969,
+        "expanded": 3206.0576621588734,
+        "shrunk": 3781.0930374934496
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MIPEP",
+      "errors": {
+        "NTC": 11125.420730805026,
+        "incumbent": 9019.209595074695,
+        "expanded": 10227.987283282711,
+        "shrunk": 9306.17168539112
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MON1A",
+      "errors": {
+        "NTC": 3122.9222873096337,
+        "incumbent": 5140.046680760219,
+        "expanded": 5078.243917490787,
+        "shrunk": 4264.547686650385
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL10",
+      "errors": {
+        "NTC": 34100.89779158383,
+        "incumbent": 27499.64204474631,
+        "expanded": 30127.78968842266,
+        "shrunk": 29492.855314897595
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL14",
+      "errors": {
+        "NTC": 13233.409987242338,
+        "incumbent": 8808.802340144623,
+        "expanded": 9862.440104373258,
+        "shrunk": 9643.221100764596
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL17",
+      "errors": {
+        "NTC": 35379.74951339536,
+        "incumbent": 26399.21847661237,
+        "expanded": 28257.32904998078,
+        "shrunk": 27782.79090227171
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL28",
+      "errors": {
+        "NTC": 29005.78897825509,
+        "incumbent": 23327.37401049477,
+        "expanded": 25592.680311602893,
+        "shrunk": 25231.21444954416
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL35",
+      "errors": {
+        "NTC": 31161.267301783715,
+        "incumbent": 26571.862675877615,
+        "expanded": 26586.57576013522,
+        "shrunk": 26366.96858962861
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL36",
+      "errors": {
+        "NTC": 29836.893023053137,
+        "incumbent": 25068.496362324033,
+        "expanded": 24967.679635761586,
+        "shrunk": 24812.14197192231
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL37",
+      "errors": {
+        "NTC": 30513.32638820333,
+        "incumbent": 23759.270704087816,
+        "expanded": 24624.761698147104,
+        "shrunk": 24401.785027507256
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL43",
+      "errors": {
+        "NTC": 19393.29409839315,
+        "incumbent": 19109.483700388402,
+        "expanded": 19109.483700388402,
+        "shrunk": 18250.961827587253
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL50",
+      "errors": {
+        "NTC": 22628.121324604665,
+        "incumbent": 16119.127281201647,
+        "expanded": 18638.497564366127,
+        "shrunk": 18363.73871130096
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL54",
+      "errors": {
+        "NTC": 30236.79515366939,
+        "incumbent": 24378.587934684965,
+        "expanded": 26376.751392233822,
+        "shrunk": 26005.218910408268
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS10",
+      "errors": {
+        "NTC": 10918.086411112212,
+        "incumbent": 6985.959124964971,
+        "expanded": 7751.885116727961,
+        "shrunk": 7177.033318076617
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS16",
+      "errors": {
+        "NTC": 10126.732776317145,
+        "incumbent": 6699.534711864077,
+        "expanded": 6430.0039880943905,
+        "shrunk": 6617.651571168574
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS30",
+      "errors": {
+        "NTC": 30080.83770056476,
+        "incumbent": 22527.534898174217,
+        "expanded": 25446.864863235525,
+        "shrunk": 24773.75470580488
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS5",
+      "errors": {
+        "NTC": 14947.41168454767,
+        "incumbent": 9914.631263172712,
+        "expanded": 11892.400157808323,
+        "shrunk": 11201.910895686082
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MYC",
+      "errors": {
+        "NTC": 11734.695941005572,
+        "incumbent": 11952.753562071011,
+        "expanded": 10594.687013764713,
+        "shrunk": 10330.227761133141
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NAGLU",
+      "errors": {
+        "NTC": 512.8310775406643,
+        "incumbent": 601.7005408895438,
+        "expanded": 596.5181436742045,
+        "shrunk": 538.4664098264835
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NASP",
+      "errors": {
+        "NTC": 3450.8177160047376,
+        "incumbent": 2937.38838530028,
+        "expanded": 3011.533018727161,
+        "shrunk": 3144.8733715969393
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NBAS",
+      "errors": {
+        "NTC": 38291.806691436715,
+        "incumbent": 39755.58358399668,
+        "expanded": 38641.25947233928,
+        "shrunk": 38405.83650325835
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFAF3",
+      "errors": {
+        "NTC": 1865.3820172828043,
+        "incumbent": 1762.9884798760665,
+        "expanded": 1771.138447314993,
+        "shrunk": 1781.3646219239185
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFB3",
+      "errors": {
+        "NTC": 1361.4704987837583,
+        "incumbent": 1432.6255115260979,
+        "expanded": 1805.2258592637338,
+        "shrunk": 1536.7145362661322
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFB4",
+      "errors": {
+        "NTC": 1099.2789019578213,
+        "incumbent": 1157.3934428437185,
+        "expanded": 3371.543537163365,
+        "shrunk": 1934.0903678467885
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFB6",
+      "errors": {
+        "NTC": 2703.3932865425445,
+        "incumbent": 2558.143969090707,
+        "expanded": 2607.1063733795354,
+        "shrunk": 2461.4772745249543
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NISCH",
+      "errors": {
+        "NTC": 1100.5451583133993,
+        "incumbent": 1151.8897225706544,
+        "expanded": 1120.8358443639675,
+        "shrunk": 1065.941487185632
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NUDCD3",
+      "errors": {
+        "NTC": 9775.276158452045,
+        "incumbent": 8400.780862257912,
+        "expanded": 8400.780862257912,
+        "shrunk": 8470.969221600097
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NUDT15",
+      "errors": {
+        "NTC": 4662.144407578923,
+        "incumbent": 3518.537184620279,
+        "expanded": 3429.7680641405414,
+        "shrunk": 3885.770948496019
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "OLFML3",
+      "errors": {
+        "NTC": 1266.3550939464515,
+        "incumbent": 1395.0507767885886,
+        "expanded": 1354.3776541388547,
+        "shrunk": 1290.657348021551
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PFDN4",
+      "errors": {
+        "NTC": 1906.810338395647,
+        "incumbent": 2014.773035521062,
+        "expanded": 2448.895421937194,
+        "shrunk": 1837.0214395973667
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PGS1",
+      "errors": {
+        "NTC": 15872.185021946929,
+        "incumbent": 13466.918227550792,
+        "expanded": 13878.704147842638,
+        "shrunk": 14264.511803085363
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PHF10",
+      "errors": {
+        "NTC": 3093.2070955382096,
+        "incumbent": 3257.2200135857274,
+        "expanded": 3257.2200135857274,
+        "shrunk": 2885.13346836667
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PIAS1",
+      "errors": {
+        "NTC": 4318.718050779661,
+        "incumbent": 3928.9238247672442,
+        "expanded": 3647.6676909652037,
+        "shrunk": 3881.8006454968945
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PIK3C3",
+      "errors": {
+        "NTC": 6515.136045525763,
+        "incumbent": 7759.321612194297,
+        "expanded": 7066.8038179806235,
+        "shrunk": 6688.682817608225
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PPP2CB",
+      "errors": {
+        "NTC": 13394.676103203825,
+        "incumbent": 13222.47524442168,
+        "expanded": 13071.885441320495,
+        "shrunk": 13080.528402569595
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PPP2R1A",
+      "errors": {
+        "NTC": 5412.960396283889,
+        "incumbent": 5368.178492979721,
+        "expanded": 5234.887577715688,
+        "shrunk": 5225.358791196552
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PPP2R3C",
+      "errors": {
+        "NTC": 40923.261892830225,
+        "incumbent": 35257.8206574469,
+        "expanded": 38708.45749473812,
+        "shrunk": 38924.78674010345
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PRRC2A",
+      "errors": {
+        "NTC": 2791.5818810235264,
+        "incumbent": 3022.441349951623,
+        "expanded": 2779.171452507861,
+        "shrunk": 2679.9105069912516
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMB2",
+      "errors": {
+        "NTC": 90125.05960399336,
+        "incumbent": 72719.95526019346,
+        "expanded": 84836.84957301145,
+        "shrunk": 84248.2939016936
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMB5",
+      "errors": {
+        "NTC": 139553.07716143323,
+        "incumbent": 121597.12485104208,
+        "expanded": 121491.38003420646,
+        "shrunk": 122340.62253464552
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMB6",
+      "errors": {
+        "NTC": 101925.52164817021,
+        "incumbent": 103486.36177568298,
+        "expanded": 97763.3328851067,
+        "shrunk": 98569.00397120242
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PTCD1",
+      "errors": {
+        "NTC": 37435.539778615566,
+        "incumbent": 28809.2305914069,
+        "expanded": 28712.91079993553,
+        "shrunk": 28559.09862195679
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PTPN1",
+      "errors": {
+        "NTC": 3012.7878121090494,
+        "incumbent": 4697.172561223638,
+        "expanded": 4644.776601242888,
+        "shrunk": 3933.9346969790145
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RBM10",
+      "errors": {
+        "NTC": 7109.720621416434,
+        "incumbent": 6390.190449865118,
+        "expanded": 6390.190449865118,
+        "shrunk": 6487.778572846357
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RBM12",
+      "errors": {
+        "NTC": 5004.87799233286,
+        "incumbent": 5741.4712950336225,
+        "expanded": 5741.4712950336225,
+        "shrunk": 5270.87900362527
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RBMX2",
+      "errors": {
+        "NTC": 42007.32715248489,
+        "incumbent": 39097.95117074756,
+        "expanded": 39097.95117074756,
+        "shrunk": 38648.687595580916
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RCOR1",
+      "errors": {
+        "NTC": 1932.9542589713328,
+        "incumbent": 2044.901612615488,
+        "expanded": 1959.4995379909142,
+        "shrunk": 1913.870634395706
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RFC2",
+      "errors": {
+        "NTC": 13631.696941060449,
+        "incumbent": 12262.32662491588,
+        "expanded": 11707.558429624889,
+        "shrunk": 11445.232827963526
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RNF20",
+      "errors": {
+        "NTC": 5522.723038648294,
+        "incumbent": 7806.682408758123,
+        "expanded": 7806.682408758123,
+        "shrunk": 6676.043887974745
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPL11",
+      "errors": {
+        "NTC": 40634.44150610903,
+        "incumbent": 31714.404995268702,
+        "expanded": 30225.25366695245,
+        "shrunk": 31833.577937620263
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPL7",
+      "errors": {
+        "NTC": 59337.80937038188,
+        "incumbent": 41966.52497323373,
+        "expanded": 42196.06967923506,
+        "shrunk": 42639.78317269788
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPLP0",
+      "errors": {
+        "NTC": 68707.23823920469,
+        "incumbent": 53292.81542211297,
+        "expanded": 53292.81542211297,
+        "shrunk": 54094.86621815611
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPP21",
+      "errors": {
+        "NTC": 12296.959255557043,
+        "incumbent": 10116.373700009197,
+        "expanded": 10460.228761438126,
+        "shrunk": 11398.769585616961
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RRM1",
+      "errors": {
+        "NTC": 6326.6769726011835,
+        "incumbent": 4976.1369871284005,
+        "expanded": 4976.1369871284005,
+        "shrunk": 5450.259260495323
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RRM2",
+      "errors": {
+        "NTC": 6303.411860037214,
+        "incumbent": 5846.009384371095,
+        "expanded": 5683.761654126759,
+        "shrunk": 5521.6825934471435
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RTRAF",
+      "errors": {
+        "NTC": 5747.837070048063,
+        "incumbent": 5176.831936777936,
+        "expanded": 5084.424458401552,
+        "shrunk": 5087.801486492081
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SAMD4B",
+      "errors": {
+        "NTC": 36128.40456748829,
+        "incumbent": 17114.265260439865,
+        "expanded": 22103.3594299214,
+        "shrunk": 22051.008676816702
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SARS2",
+      "errors": {
+        "NTC": 14631.212947120306,
+        "incumbent": 14533.599050542096,
+        "expanded": 15706.637534563606,
+        "shrunk": 15204.443627377475
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SBDS",
+      "errors": {
+        "NTC": 5940.868050852263,
+        "incumbent": 5410.877642633499,
+        "expanded": 5407.157503066079,
+        "shrunk": 5763.498525852766
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SDC1",
+      "errors": {
+        "NTC": 10357.842029865822,
+        "incumbent": 7718.604348984907,
+        "expanded": 7724.258052949941,
+        "shrunk": 7911.5097007512495
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SEC63",
+      "errors": {
+        "NTC": 3447.125677710494,
+        "incumbent": 3115.9143147806176,
+        "expanded": 3115.9143147806176,
+        "shrunk": 3209.097392918361
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SEPHS2",
+      "errors": {
+        "NTC": 4413.083903943997,
+        "incumbent": 4547.292648935422,
+        "expanded": 4593.504338985118,
+        "shrunk": 4497.860752057274
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SEPSECS",
+      "errors": {
+        "NTC": 4798.3080254673605,
+        "incumbent": 4426.5468997079015,
+        "expanded": 4368.467577956284,
+        "shrunk": 4495.095364621293
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SETX",
+      "errors": {
+        "NTC": 3302.7850353536055,
+        "incumbent": 2541.579006479499,
+        "expanded": 2531.5735377964843,
+        "shrunk": 2552.6730000217544
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SHQ1",
+      "errors": {
+        "NTC": 8519.446347224552,
+        "incumbent": 8528.471684164115,
+        "expanded": 8528.471684164115,
+        "shrunk": 8547.682667487876
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SMAGP",
+      "errors": {
+        "NTC": 1624.363303175974,
+        "incumbent": 1693.9054763410777,
+        "expanded": 1828.6775172069708,
+        "shrunk": 1731.8654882594676
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SMG8",
+      "errors": {
+        "NTC": 1335.6523846257503,
+        "incumbent": 1607.9921863346779,
+        "expanded": 1607.9921863346779,
+        "shrunk": 1321.8880806388702
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SPG7",
+      "errors": {
+        "NTC": 1085.9567024463238,
+        "incumbent": 1375.685300547018,
+        "expanded": 1383.305191595618,
+        "shrunk": 1228.8875284544636
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SRPRB",
+      "errors": {
+        "NTC": 5874.255317322562,
+        "incumbent": 4206.695369948662,
+        "expanded": 4206.695369948662,
+        "shrunk": 4650.089307906481
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "STAG2",
+      "errors": {
+        "NTC": 2159.8310255146434,
+        "incumbent": 2799.4977073852724,
+        "expanded": 2511.56518225342,
+        "shrunk": 2309.438902613767
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "STARD7",
+      "errors": {
+        "NTC": 8756.546334210312,
+        "incumbent": 5682.169963859576,
+        "expanded": 5682.169963859576,
+        "shrunk": 5984.70069518069
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TADA1",
+      "errors": {
+        "NTC": 9190.343103853216,
+        "incumbent": 8953.445176743042,
+        "expanded": 7855.783205477098,
+        "shrunk": 8172.453908016078
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TAF13",
+      "errors": {
+        "NTC": 5827.920002071231,
+        "incumbent": 5875.852212556889,
+        "expanded": 5875.852212556889,
+        "shrunk": 5038.692326814786
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TARS2",
+      "errors": {
+        "NTC": 41685.041628091574,
+        "incumbent": 33988.261895410644,
+        "expanded": 36708.96242504888,
+        "shrunk": 35237.086068352044
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TAZ",
+      "errors": {
+        "NTC": 1428.7057764193335,
+        "incumbent": 2199.209935438125,
+        "expanded": 1525.7945297211488,
+        "shrunk": 1406.317888880978
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TFAM",
+      "errors": {
+        "NTC": 47440.92560350872,
+        "incumbent": 19140.32000314183,
+        "expanded": 17957.404618446293,
+        "shrunk": 19071.210534400954
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TFB1M",
+      "errors": {
+        "NTC": 7936.216114293853,
+        "incumbent": 5391.678030995943,
+        "expanded": 5976.65582726125,
+        "shrunk": 5856.625630114866
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TIGD1",
+      "errors": {
+        "NTC": 945.8836254212925,
+        "incumbent": 1203.607129785437,
+        "expanded": 1050.3128748159997,
+        "shrunk": 924.7561727627807
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TIMM10",
+      "errors": {
+        "NTC": 14820.456082276318,
+        "incumbent": 15697.5106494246,
+        "expanded": 15345.670409474551,
+        "shrunk": 14768.138517679597
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TM7SF2",
+      "errors": {
+        "NTC": 837.3891267339471,
+        "incumbent": 936.9874512661625,
+        "expanded": 891.0447092956656,
+        "shrunk": 851.2946121528772
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TMSB10",
+      "errors": {
+        "NTC": 8063.083781505554,
+        "incumbent": 7547.849867150042,
+        "expanded": 9920.488606584848,
+        "shrunk": 8308.26290403392
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TOX4",
+      "errors": {
+        "NTC": 2667.4439416550013,
+        "incumbent": 1717.2496960897467,
+        "expanded": 1717.2496960897467,
+        "shrunk": 1999.7881797810064
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TPR",
+      "errors": {
+        "NTC": 4716.776577290999,
+        "incumbent": 4649.333958205526,
+        "expanded": 4649.333958205526,
+        "shrunk": 4488.330503013054
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TTC4",
+      "errors": {
+        "NTC": 4895.4863503203205,
+        "incumbent": 3609.608897194495,
+        "expanded": 4343.497389679695,
+        "shrunk": 4319.396267410155
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBA2",
+      "errors": {
+        "NTC": 10244.484041352265,
+        "incumbent": 11467.365399443508,
+        "expanded": 11467.365399443508,
+        "shrunk": 10168.77400765065
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBE3C",
+      "errors": {
+        "NTC": 8083.611611204942,
+        "incumbent": 7599.112248862665,
+        "expanded": 7599.112248862665,
+        "shrunk": 7729.600755724182
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBE3D",
+      "errors": {
+        "NTC": 2969.259040617579,
+        "incumbent": 3686.875791649827,
+        "expanded": 2842.7732201708745,
+        "shrunk": 2776.3296324509
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBL5",
+      "errors": {
+        "NTC": 18297.326737518106,
+        "incumbent": 16855.298542758403,
+        "expanded": 16855.298542758403,
+        "shrunk": 16589.17283470342
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UCHL5",
+      "errors": {
+        "NTC": 1684.4573339671167,
+        "incumbent": 2412.4511565129405,
+        "expanded": 2784.668352251293,
+        "shrunk": 1954.2982478210474
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UQCRB",
+      "errors": {
+        "NTC": 1977.5092165330705,
+        "incumbent": 2004.5100471528494,
+        "expanded": 2004.5100471528494,
+        "shrunk": 1867.2260368620225
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UQCRQ",
+      "errors": {
+        "NTC": 7344.245898287356,
+        "incumbent": 5665.005293935408,
+        "expanded": 5665.005293935408,
+        "shrunk": 6245.285649041746
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "USF2",
+      "errors": {
+        "NTC": 2501.471575412723,
+        "incumbent": 2545.3829144323554,
+        "expanded": 2512.322895767862,
+        "shrunk": 2484.840434810697
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "USP19",
+      "errors": {
+        "NTC": 1864.7191929972053,
+        "incumbent": 2012.2557676593585,
+        "expanded": 2066.9386036051205,
+        "shrunk": 1931.648201904399
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VBP1",
+      "errors": {
+        "NTC": 2022.3333508743983,
+        "incumbent": 1937.4633812400052,
+        "expanded": 1937.4633812400052,
+        "shrunk": 1971.399606377946
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS13D",
+      "errors": {
+        "NTC": 19180.69852142701,
+        "incumbent": 15099.943121161106,
+        "expanded": 17045.58515032765,
+        "shrunk": 17287.94079719629
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS29",
+      "errors": {
+        "NTC": 2920.25239446739,
+        "incumbent": 2866.1165793156742,
+        "expanded": 2790.7080880640046,
+        "shrunk": 2681.1164032045053
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS54",
+      "errors": {
+        "NTC": 1652.1640991445563,
+        "incumbent": 3280.517195468395,
+        "expanded": 3383.6659603948606,
+        "shrunk": 2381.9112700724772
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS72",
+      "errors": {
+        "NTC": 5767.657306674956,
+        "incumbent": 5596.606018925349,
+        "expanded": 5596.606018925349,
+        "shrunk": 5086.411654633728
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "WDR4",
+      "errors": {
+        "NTC": 868.7786833526521,
+        "incumbent": 965.0626447385075,
+        "expanded": 981.7197769186978,
+        "shrunk": 897.6475050600037
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "WDR44",
+      "errors": {
+        "NTC": 5759.0361148094435,
+        "incumbent": 7932.996874493358,
+        "expanded": 6441.760919347816,
+        "shrunk": 5999.741994560631
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "WNK1",
+      "errors": {
+        "NTC": 4701.44103951406,
+        "incumbent": 4322.784374937202,
+        "expanded": 3108.3178179398337,
+        "shrunk": 3644.6112024991958
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YARS2",
+      "errors": {
+        "NTC": 18972.23334002094,
+        "incumbent": 16506.026064696845,
+        "expanded": 17356.65267470437,
+        "shrunk": 16963.251469584877
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YPEL5",
+      "errors": {
+        "NTC": 3119.4703396736368,
+        "incumbent": 3476.0463792627347,
+        "expanded": 3291.7153305040065,
+        "shrunk": 3106.3895367679675
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YTHDC1",
+      "errors": {
+        "NTC": 14893.250380435018,
+        "incumbent": 13341.387209320426,
+        "expanded": 13775.882574290143,
+        "shrunk": 13624.845033780446
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YY1",
+      "errors": {
+        "NTC": 4183.8384588250865,
+        "incumbent": 3972.168388170726,
+        "expanded": 4555.365929903479,
+        "shrunk": 4034.6962948810383
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ZC3H3",
+      "errors": {
+        "NTC": 4134.787310883075,
+        "incumbent": 3761.6120273913816,
+        "expanded": 3761.6120273913816,
+        "shrunk": 3510.379553899305
+      }
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ZNF292",
+      "errors": {
+        "NTC": 4755.316993325478,
+        "incumbent": 5952.009861948916,
+        "expanded": 5873.4194626479275,
+        "shrunk": 5123.74399640667
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ARPC4",
+      "errors": {
+        "NTC": 11181.347325505163,
+        "incumbent": 11639.970981754257,
+        "expanded": 11411.999008885354,
+        "shrunk": 11329.336678764375
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ATP2A2",
+      "errors": {
+        "NTC": 3104.381344024124,
+        "incumbent": 2573.851438711078,
+        "expanded": 2569.445521308917,
+        "shrunk": 2575.3060737922624
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "BCL2L1",
+      "errors": {
+        "NTC": 4209.026874478413,
+        "incumbent": 4171.990989435645,
+        "expanded": 4219.765520725494,
+        "shrunk": 4221.554205179775
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "BPTF",
+      "errors": {
+        "NTC": 3259.3360625200703,
+        "incumbent": 4421.100347073939,
+        "expanded": 4479.504429431605,
+        "shrunk": 4104.540349002986
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CALR",
+      "errors": {
+        "NTC": 2648.2127638355105,
+        "incumbent": 3359.3420219736827,
+        "expanded": 3359.3420219736827,
+        "shrunk": 3094.131146682984
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CCDC6",
+      "errors": {
+        "NTC": 2995.2073715676192,
+        "incumbent": 2428.2267178609786,
+        "expanded": 2291.467717810537,
+        "shrunk": 2362.0166360663216
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CDC20",
+      "errors": {
+        "NTC": 5271.079067005811,
+        "incumbent": 5508.176859471279,
+        "expanded": 5508.176859471279,
+        "shrunk": 5301.413002004238
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CHMP6",
+      "errors": {
+        "NTC": 16904.622471703336,
+        "incumbent": 11803.876646118964,
+        "expanded": 11720.708287935662,
+        "shrunk": 11464.647540548835
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CNN2",
+      "errors": {
+        "NTC": 1668.3081323104461,
+        "incumbent": 1710.6614065358308,
+        "expanded": 1706.0978381125892,
+        "shrunk": 1700.230411956332
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CNOT10",
+      "errors": {
+        "NTC": 11185.989480017171,
+        "incumbent": 11354.490422083898,
+        "expanded": 11357.609797295301,
+        "shrunk": 11240.644369126043
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CSTF3",
+      "errors": {
+        "NTC": 9338.860209065337,
+        "incumbent": 7328.660356298109,
+        "expanded": 7328.660356298109,
+        "shrunk": 7265.332353326247
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DDX18",
+      "errors": {
+        "NTC": 21839.511916704458,
+        "incumbent": 18667.38138108742,
+        "expanded": 18667.38138108742,
+        "shrunk": 18469.74624276624
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DDX19A",
+      "errors": {
+        "NTC": 1523.3792785830233,
+        "incumbent": 1365.8566574972979,
+        "expanded": 1314.8944725671602,
+        "shrunk": 1360.8304944329284
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DNMT1",
+      "errors": {
+        "NTC": 5617.862758439335,
+        "incumbent": 6372.986076665689,
+        "expanded": 6380.57933165441,
+        "shrunk": 6298.751658996893
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EIF2B2",
+      "errors": {
+        "NTC": 31827.641552729598,
+        "incumbent": 26667.291854925832,
+        "expanded": 26666.581698152622,
+        "shrunk": 26949.175415537946
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EIF4B",
+      "errors": {
+        "NTC": 4263.426878152422,
+        "incumbent": 1410.9676223820024,
+        "expanded": 1432.8138825861474,
+        "shrunk": 1612.6670154529604
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "FNBP4",
+      "errors": {
+        "NTC": 2824.226429580749,
+        "incumbent": 3034.703833181563,
+        "expanded": 3032.044603776701,
+        "shrunk": 2892.310575864452
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GNL2",
+      "errors": {
+        "NTC": 41173.44491811851,
+        "incumbent": 30924.705603560233,
+        "expanded": 31587.734168473933,
+        "shrunk": 31880.015450324332
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GTF2A1",
+      "errors": {
+        "NTC": 12968.221777523366,
+        "incumbent": 10628.858110300705,
+        "expanded": 10877.828325335107,
+        "shrunk": 11110.13794127327
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HIRA",
+      "errors": {
+        "NTC": 1615.649394101181,
+        "incumbent": 2734.8813311740546,
+        "expanded": 2716.240257733711,
+        "shrunk": 2555.1400999947537
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSCB",
+      "errors": {
+        "NTC": 6228.8944280484975,
+        "incumbent": 5891.866987253992,
+        "expanded": 5891.866987253992,
+        "shrunk": 5893.25335947694
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSD17B10",
+      "errors": {
+        "NTC": 30177.78795779204,
+        "incumbent": 27248.885927480424,
+        "expanded": 27761.86526338126,
+        "shrunk": 26278.552941718754
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSD17B12",
+      "errors": {
+        "NTC": 612.8081746089017,
+        "incumbent": 952.5427183281455,
+        "expanded": 969.0912440823324,
+        "shrunk": 797.4100074755265
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSPA9",
+      "errors": {
+        "NTC": 128234.40587382158,
+        "incumbent": 39706.09465180729,
+        "expanded": 39701.62326735802,
+        "shrunk": 41477.606744191224
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSPE1",
+      "errors": {
+        "NTC": 25848.437694164684,
+        "incumbent": 39406.68581352757,
+        "expanded": 37413.54495407253,
+        "shrunk": 34968.777692864984
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "KPNB1",
+      "errors": {
+        "NTC": 9797.449847100306,
+        "incumbent": 11252.824411319187,
+        "expanded": 11392.581150988965,
+        "shrunk": 11285.676561232562
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "LAMTOR1",
+      "errors": {
+        "NTC": 2009.4316908917895,
+        "incumbent": 1495.1770764705907,
+        "expanded": 1457.9806312241765,
+        "shrunk": 1398.2042702612948
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MAD2L1",
+      "errors": {
+        "NTC": 3840.173033944252,
+        "incumbent": 3524.2466908696147,
+        "expanded": 3524.2466908696147,
+        "shrunk": 3428.4164910531226
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MANF",
+      "errors": {
+        "NTC": 2300.891148026771,
+        "incumbent": 2171.2436903042717,
+        "expanded": 2120.843388756713,
+        "shrunk": 2198.0752075448854
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MAT2A",
+      "errors": {
+        "NTC": 1826.1912199081269,
+        "incumbent": 1826.9063911930648,
+        "expanded": 1833.0488489888503,
+        "shrunk": 1658.0131036348791
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MBTPS1",
+      "errors": {
+        "NTC": 4162.496459402982,
+        "incumbent": 3509.273025034263,
+        "expanded": 3509.273025034263,
+        "shrunk": 3506.136507658027
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MED4",
+      "errors": {
+        "NTC": 15617.313936503837,
+        "incumbent": 17042.79566770383,
+        "expanded": 17042.79566770383,
+        "shrunk": 16566.61359786276
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MED8",
+      "errors": {
+        "NTC": 13045.333515597611,
+        "incumbent": 11282.350378714083,
+        "expanded": 10941.660787716466,
+        "shrunk": 10932.844688804267
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "METTL3",
+      "errors": {
+        "NTC": 3757.141025564688,
+        "incumbent": 2141.771274175421,
+        "expanded": 2142.0916814695265,
+        "shrunk": 2173.2134535620758
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MON1A",
+      "errors": {
+        "NTC": 3416.9628023745645,
+        "incumbent": 4939.064714888096,
+        "expanded": 4961.493940304691,
+        "shrunk": 4609.068744693979
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL35",
+      "errors": {
+        "NTC": 53380.441545648086,
+        "incumbent": 37279.271551494014,
+        "expanded": 37383.04349646963,
+        "shrunk": 38129.16770892499
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL36",
+      "errors": {
+        "NTC": 48582.54776616534,
+        "incumbent": 36677.77254403264,
+        "expanded": 36331.42735062538,
+        "shrunk": 36882.74230440482
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NAGLU",
+      "errors": {
+        "NTC": 2976.311354628984,
+        "incumbent": 2926.959526345885,
+        "expanded": 2924.19767013012,
+        "shrunk": 2948.2069018714383
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NISCH",
+      "errors": {
+        "NTC": 2169.1284682095447,
+        "incumbent": 2112.3493078202837,
+        "expanded": 2113.501730314569,
+        "shrunk": 2134.292693904212
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NOL8",
+      "errors": {
+        "NTC": 27387.595903668534,
+        "incumbent": 20515.364554313957,
+        "expanded": 19301.28586068297,
+        "shrunk": 19690.587328845777
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NOM1",
+      "errors": {
+        "NTC": 8641.030942130546,
+        "incumbent": 8037.775886239289,
+        "expanded": 9829.246971457267,
+        "shrunk": 9472.607468682601
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NUDCD3",
+      "errors": {
+        "NTC": 9617.284628419025,
+        "incumbent": 4086.7998084856836,
+        "expanded": 4086.7998084856836,
+        "shrunk": 4088.057768402041
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NVL",
+      "errors": {
+        "NTC": 26594.920741575927,
+        "incumbent": 21254.62816606506,
+        "expanded": 21008.54316080538,
+        "shrunk": 21341.69457340704
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "OLFML3",
+      "errors": {
+        "NTC": 4246.174475582075,
+        "incumbent": 4623.4055199362865,
+        "expanded": 4601.7740556031,
+        "shrunk": 4455.121354410434
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PHF10",
+      "errors": {
+        "NTC": 15206.984930498991,
+        "incumbent": 14234.976600893762,
+        "expanded": 14234.976600893762,
+        "shrunk": 14494.004698002616
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "POLR2C",
+      "errors": {
+        "NTC": 8898.020510754886,
+        "incumbent": 8832.793388303371,
+        "expanded": 8832.793388303371,
+        "shrunk": 8685.989146892089
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PPP2CB",
+      "errors": {
+        "NTC": 3721.702569392497,
+        "incumbent": 3962.6710283653156,
+        "expanded": 3955.9734930726013,
+        "shrunk": 3720.242413212778
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PPP2R1A",
+      "errors": {
+        "NTC": 2219.584967564716,
+        "incumbent": 2569.147923932697,
+        "expanded": 2529.6766346053355,
+        "shrunk": 2513.5955834902848
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PSMB2",
+      "errors": {
+        "NTC": 54205.8302961789,
+        "incumbent": 43669.480326655204,
+        "expanded": 37267.747028905185,
+        "shrunk": 37149.81637922339
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PSMB5",
+      "errors": {
+        "NTC": 49610.30763443209,
+        "incumbent": 33034.17780652079,
+        "expanded": 33050.27172509863,
+        "shrunk": 32761.37127710465
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PTPN1",
+      "errors": {
+        "NTC": 2594.5866162153243,
+        "incumbent": 2565.3933989214975,
+        "expanded": 2602.0265632364744,
+        "shrunk": 2477.1784414744193
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PUF60",
+      "errors": {
+        "NTC": 4746.273742654397,
+        "incumbent": 4019.436108911341,
+        "expanded": 9981.508863162968,
+        "shrunk": 8960.851025755437
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RBM10",
+      "errors": {
+        "NTC": 9191.561726740247,
+        "incumbent": 5575.101821092261,
+        "expanded": 5575.101821092261,
+        "shrunk": 5678.795869966316
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RBM42",
+      "errors": {
+        "NTC": 10049.081011011956,
+        "incumbent": 9481.822282869043,
+        "expanded": 13385.343103676678,
+        "shrunk": 12934.064062593108
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RBMX2",
+      "errors": {
+        "NTC": 8993.661504084688,
+        "incumbent": 6984.877253321707,
+        "expanded": 6984.877253321707,
+        "shrunk": 6996.003116632398
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RCL1",
+      "errors": {
+        "NTC": 27419.24264783783,
+        "incumbent": 24892.18340406773,
+        "expanded": 25131.60237273996,
+        "shrunk": 25119.925795795254
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPL7",
+      "errors": {
+        "NTC": 86343.00523649887,
+        "incumbent": 58918.51250952074,
+        "expanded": 59244.16780049799,
+        "shrunk": 60195.93596475436
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPLP0",
+      "errors": {
+        "NTC": 50949.21404220212,
+        "incumbent": 35983.66845372972,
+        "expanded": 35983.66845372972,
+        "shrunk": 37029.37046754228
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPP21",
+      "errors": {
+        "NTC": 1108.098625144031,
+        "incumbent": 2219.180384932645,
+        "expanded": 1956.2990336680166,
+        "shrunk": 1738.8819318787089
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RRP7A",
+      "errors": {
+        "NTC": 7971.522180122183,
+        "incumbent": 12190.4145752443,
+        "expanded": 10886.981209127189,
+        "shrunk": 9876.081857439334
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RTRAF",
+      "errors": {
+        "NTC": 3477.6956359801634,
+        "incumbent": 3184.9150645190543,
+        "expanded": 3154.46894986356,
+        "shrunk": 3148.5015090019433
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SDAD1",
+      "errors": {
+        "NTC": 28600.690708291408,
+        "incumbent": 20297.58221260496,
+        "expanded": 18294.28449962407,
+        "shrunk": 18907.55697694354
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SDC1",
+      "errors": {
+        "NTC": 16142.506943155895,
+        "incumbent": 13053.112950289062,
+        "expanded": 13031.68302667795,
+        "shrunk": 13640.24083754711
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SETX",
+      "errors": {
+        "NTC": 10742.199833538827,
+        "incumbent": 4399.469391478728,
+        "expanded": 4415.586117235016,
+        "shrunk": 4430.797589700549
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SHQ1",
+      "errors": {
+        "NTC": 1787.956370738445,
+        "incumbent": 1530.7696773728758,
+        "expanded": 1530.7696773728758,
+        "shrunk": 1529.8903121295552
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SMC5",
+      "errors": {
+        "NTC": 3944.496252269736,
+        "incumbent": 3686.7406049100523,
+        "expanded": 6624.022612663449,
+        "shrunk": 6208.163973023291
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SRP68",
+      "errors": {
+        "NTC": 6298.769106771535,
+        "incumbent": 7535.357268708199,
+        "expanded": 18175.44894586988,
+        "shrunk": 16789.666844849686
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SRPRB",
+      "errors": {
+        "NTC": 5288.770983297315,
+        "incumbent": 5405.948561101693,
+        "expanded": 5405.948561101693,
+        "shrunk": 5335.014847142773
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TAF13",
+      "errors": {
+        "NTC": 10387.26354157324,
+        "incumbent": 6413.5669985371605,
+        "expanded": 6413.5669985371605,
+        "shrunk": 6990.189407026706
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TFAM",
+      "errors": {
+        "NTC": 27191.554632177747,
+        "incumbent": 2394.3639188551206,
+        "expanded": 2376.6732398512795,
+        "shrunk": 2062.7748218796905
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TIMM10",
+      "errors": {
+        "NTC": 5734.755063445849,
+        "incumbent": 4130.590933300718,
+        "expanded": 4702.305180662121,
+        "shrunk": 4614.779868660256
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TPR",
+      "errors": {
+        "NTC": 3432.563946070464,
+        "incumbent": 5300.618078270143,
+        "expanded": 5300.618078270143,
+        "shrunk": 5010.347556693432
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "UBA2",
+      "errors": {
+        "NTC": 3978.3027956767746,
+        "incumbent": 3245.4052808653123,
+        "expanded": 3245.4052808653123,
+        "shrunk": 3290.545381081316
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "UBL5",
+      "errors": {
+        "NTC": 9210.848432400217,
+        "incumbent": 10438.688298147077,
+        "expanded": 10438.688298147077,
+        "shrunk": 9969.014064689733
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "URB2",
+      "errors": {
+        "NTC": 10738.043267360545,
+        "incumbent": 7770.087087490803,
+        "expanded": 12175.77369930431,
+        "shrunk": 11612.684012153033
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "VPS54",
+      "errors": {
+        "NTC": 1441.479507930138,
+        "incumbent": 1604.0724694012358,
+        "expanded": 1570.4327418110906,
+        "shrunk": 1517.7439221794127
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "WDR4",
+      "errors": {
+        "NTC": 1636.5854381294052,
+        "incumbent": 1599.6800388341026,
+        "expanded": 1620.3270841730748,
+        "shrunk": 1601.4875124082942
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ZC3H3",
+      "errors": {
+        "NTC": 4831.321396860161,
+        "incumbent": 4262.4772594603355,
+        "expanded": 4262.4772594603355,
+        "shrunk": 4042.7100293713543
+      }
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ZNF292",
+      "errors": {
+        "NTC": 2282.2219421405543,
+        "incumbent": 2335.482522146911,
+        "expanded": 2328.602993653779,
+        "shrunk": 2285.8484513788612
+      }
+    }
+  ]
+}

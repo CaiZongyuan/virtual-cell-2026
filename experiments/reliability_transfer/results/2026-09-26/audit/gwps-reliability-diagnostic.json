@@ -1,0 +1,3623 @@
+{
+  "scope": "Existing GWPS training cells only; H1/official labels never accessed. Cosine on control mean >0.1 CP10K, excluding direct target. Shared controls can inflate reliability; descriptive diagnostic only.",
+  "rows": [
+    {
+      "target": "ACAT2",
+      "training_cells": 122,
+      "split_half_cosine": 0.04025306552648544,
+      "effect_rms": 0.14875248074531555
+    },
+    {
+      "target": "ACLY",
+      "training_cells": 72,
+      "split_half_cosine": 0.05987129360437393,
+      "effect_rms": 0.21193476021289825
+    },
+    {
+      "target": "ACSS2",
+      "training_cells": 106,
+      "split_half_cosine": 0.1221400797367096,
+      "effect_rms": 0.19200260937213898
+    },
+    {
+      "target": "ACVR1B",
+      "training_cells": 170,
+      "split_half_cosine": 0.001688375836238265,
+      "effect_rms": 0.11697373539209366
+    },
+    {
+      "target": "ADNP",
+      "training_cells": 125,
+      "split_half_cosine": 0.12167926877737045,
+      "effect_rms": 0.1599467545747757
+    },
+    {
+      "target": "AGO1",
+      "training_cells": 132,
+      "split_half_cosine": 0.0955108106136322,
+      "effect_rms": 0.14652173221111298
+    },
+    {
+      "target": "AKAP1",
+      "training_cells": 101,
+      "split_half_cosine": 0.01210917066782713,
+      "effect_rms": 0.16018623113632202
+    },
+    {
+      "target": "AKIRIN1",
+      "training_cells": 101,
+      "split_half_cosine": 0.05054779723286629,
+      "effect_rms": 0.16289988160133362
+    },
+    {
+      "target": "AKT2",
+      "training_cells": 84,
+      "split_half_cosine": 0.09526237845420837,
+      "effect_rms": 0.18905720114707947
+    },
+    {
+      "target": "ALG12",
+      "training_cells": 135,
+      "split_half_cosine": 0.050289370119571686,
+      "effect_rms": 0.14507196843624115
+    },
+    {
+      "target": "ALG14",
+      "training_cells": 205,
+      "split_half_cosine": 0.11627459526062012,
+      "effect_rms": 0.1295674592256546
+    },
+    {
+      "target": "ANAPC13",
+      "training_cells": 205,
+      "split_half_cosine": 0.05577178671956062,
+      "effect_rms": 0.1187802255153656
+    },
+    {
+      "target": "ANKZF1",
+      "training_cells": 202,
+      "split_half_cosine": 0.004615114536136389,
+      "effect_rms": 0.10607010126113892
+    },
+    {
+      "target": "ANP32B",
+      "training_cells": 205,
+      "split_half_cosine": 0.19091781973838806,
+      "effect_rms": 0.12555478513240814
+    },
+    {
+      "target": "AP2A2",
+      "training_cells": 155,
+      "split_half_cosine": 0.0202652495354414,
+      "effect_rms": 0.12508757412433624
+    },
+    {
+      "target": "API5",
+      "training_cells": 165,
+      "split_half_cosine": 0.06710802763700485,
+      "effect_rms": 0.12744197249412537
+    },
+    {
+      "target": "ARFRP1",
+      "training_cells": 205,
+      "split_half_cosine": 0.04145793989300728,
+      "effect_rms": 0.11254122853279114
+    },
+    {
+      "target": "ARID1A",
+      "training_cells": 205,
+      "split_half_cosine": 0.1712329387664795,
+      "effect_rms": 0.12758737802505493
+    },
+    {
+      "target": "ARL14EP",
+      "training_cells": 187,
+      "split_half_cosine": 0.06003493070602417,
+      "effect_rms": 0.11897671967744827
+    },
+    {
+      "target": "ARL6IP6",
+      "training_cells": 169,
+      "split_half_cosine": 0.07453475892543793,
+      "effect_rms": 0.12961940467357635
+    },
+    {
+      "target": "ARPC4",
+      "training_cells": 205,
+      "split_half_cosine": 0.15925173461437225,
+      "effect_rms": 0.12828567624092102
+    },
+    {
+      "target": "ASCC2",
+      "training_cells": 146,
+      "split_half_cosine": 0.051742784678936005,
+      "effect_rms": 0.13707797229290009
+    },
+    {
+      "target": "ATM",
+      "training_cells": 126,
+      "split_half_cosine": 0.044394806027412415,
+      "effect_rms": 0.139786496758461
+    },
+    {
+      "target": "ATP2A2",
+      "training_cells": 205,
+      "split_half_cosine": 0.034805361181497574,
+      "effect_rms": 0.11046210676431656
+    },
+    {
+      "target": "ATP5ME",
+      "training_cells": 147,
+      "split_half_cosine": 0.1364220231771469,
+      "effect_rms": 0.15543736517429352
+    },
+    {
+      "target": "ATP6V0B",
+      "training_cells": 205,
+      "split_half_cosine": 0.05894029513001442,
+      "effect_rms": 0.11477366089820862
+    },
+    {
+      "target": "BCKDK",
+      "training_cells": 205,
+      "split_half_cosine": 0.028935657814145088,
+      "effect_rms": 0.10844656080007553
+    },
+    {
+      "target": "BCL2L1",
+      "training_cells": 205,
+      "split_half_cosine": 0.04583881422877312,
+      "effect_rms": 0.10694907605648041
+    },
+    {
+      "target": "BCL6",
+      "training_cells": 124,
+      "split_half_cosine": 0.023507749661803246,
+      "effect_rms": 0.144486665725708
+    },
+    {
+      "target": "BCL7C",
+      "training_cells": 96,
+      "split_half_cosine": 0.047420620918273926,
+      "effect_rms": 0.16404776275157928
+    },
+    {
+      "target": "BCS1L",
+      "training_cells": 168,
+      "split_half_cosine": 0.045732319355010986,
+      "effect_rms": 0.1276196986436844
+    },
+    {
+      "target": "BIRC2",
+      "training_cells": 205,
+      "split_half_cosine": 0.043849848210811615,
+      "effect_rms": 0.10912901908159256
+    },
+    {
+      "target": "BPTF",
+      "training_cells": 84,
+      "split_half_cosine": 0.02883981354534626,
+      "effect_rms": 0.16637179255485535
+    },
+    {
+      "target": "BRD1",
+      "training_cells": 197,
+      "split_half_cosine": 0.10369572788476944,
+      "effect_rms": 0.12259459495544434
+    },
+    {
+      "target": "BRD9",
+      "training_cells": 61,
+      "split_half_cosine": 0.08783525228500366,
+      "effect_rms": 0.22359605133533478
+    },
+    {
+      "target": "BRPF1",
+      "training_cells": 184,
+      "split_half_cosine": 0.05180453136563301,
+      "effect_rms": 0.12256989628076553
+    },
+    {
+      "target": "BUD13",
+      "training_cells": 98,
+      "split_half_cosine": 0.07552754878997803,
+      "effect_rms": 0.17369584739208221
+    },
+    {
+      "target": "C1QBP",
+      "training_cells": 205,
+      "split_half_cosine": 0.22544020414352417,
+      "effect_rms": 0.14574305713176727
+    },
+    {
+      "target": "C5orf22",
+      "training_cells": 167,
+      "split_half_cosine": 0.1254696249961853,
+      "effect_rms": 0.1313411444425583
+    },
+    {
+      "target": "C7orf50",
+      "training_cells": 156,
+      "split_half_cosine": -0.006414450705051422,
+      "effect_rms": 0.12686389684677124
+    },
+    {
+      "target": "CA5A",
+      "training_cells": 205,
+      "split_half_cosine": -0.014859198592603207,
+      "effect_rms": 0.10452361404895782
+    },
+    {
+      "target": "CALM3",
+      "training_cells": 60,
+      "split_half_cosine": 0.03909832239151001,
+      "effect_rms": 0.20345096290111542
+    },
+    {
+      "target": "CALR",
+      "training_cells": 152,
+      "split_half_cosine": 0.1556982398033142,
+      "effect_rms": 0.1478954702615738
+    },
+    {
+      "target": "CARM1",
+      "training_cells": 125,
+      "split_half_cosine": 0.07859688997268677,
+      "effect_rms": 0.16464348137378693
+    },
+    {
+      "target": "CASP2",
+      "training_cells": 125,
+      "split_half_cosine": 0.04450450465083122,
+      "effect_rms": 0.1406504362821579
+    },
+    {
+      "target": "CASP3",
+      "training_cells": 188,
+      "split_half_cosine": 0.07994111627340317,
+      "effect_rms": 0.12336934357881546
+    },
+    {
+      "target": "CAST",
+      "training_cells": 110,
+      "split_half_cosine": 0.13051630556583405,
+      "effect_rms": 0.17521356046199799
+    },
+    {
+      "target": "CAT",
+      "training_cells": 176,
+      "split_half_cosine": 0.02985304407775402,
+      "effect_rms": 0.12385013699531555
+    },
+    {
+      "target": "CBX1",
+      "training_cells": 205,
+      "split_half_cosine": 0.08821626752614975,
+      "effect_rms": 0.11244089901447296
+    },
+    {
+      "target": "CCAR1",
+      "training_cells": 134,
+      "split_half_cosine": 0.14109021425247192,
+      "effect_rms": 0.16041460633277893
+    },
+    {
+      "target": "CCDC112",
+      "training_cells": 73,
+      "split_half_cosine": 0.10274886339902878,
+      "effect_rms": 0.20395757257938385
+    },
+    {
+      "target": "CCDC174",
+      "training_cells": 79,
+      "split_half_cosine": 0.13853275775909424,
+      "effect_rms": 0.22149060666561127
+    },
+    {
+      "target": "CCDC6",
+      "training_cells": 202,
+      "split_half_cosine": 0.2783827781677246,
+      "effect_rms": 0.1474233716726303
+    },
+    {
+      "target": "CCNC",
+      "training_cells": 190,
+      "split_half_cosine": 0.21992219984531403,
+      "effect_rms": 0.1406092643737793
+    },
+    {
+      "target": "CCP110",
+      "training_cells": 53,
+      "split_half_cosine": 0.014652742072939873,
+      "effect_rms": 0.20469501614570618
+    },
+    {
+      "target": "CDC16",
+      "training_cells": 64,
+      "split_half_cosine": 0.05765541270375252,
+      "effect_rms": 0.20742902159690857
+    },
+    {
+      "target": "CDC20",
+      "training_cells": 101,
+      "split_half_cosine": -0.011882618069648743,
+      "effect_rms": 0.1610661745071411
+    },
+    {
+      "target": "CDCA2",
+      "training_cells": 103,
+      "split_half_cosine": 0.04697052389383316,
+      "effect_rms": 0.16392335295677185
+    },
+    {
+      "target": "CDK8",
+      "training_cells": 145,
+      "split_half_cosine": 0.0224001482129097,
+      "effect_rms": 0.12355269491672516
+    },
+    {
+      "target": "CENPN",
+      "training_cells": 179,
+      "split_half_cosine": 0.07423670589923859,
+      "effect_rms": 0.13139250874519348
+    },
+    {
+      "target": "CENPO",
+      "training_cells": 158,
+      "split_half_cosine": 0.027319321408867836,
+      "effect_rms": 0.12378370761871338
+    },
+    {
+      "target": "CHAF1B",
+      "training_cells": 69,
+      "split_half_cosine": 0.42734983563423157,
+      "effect_rms": 0.28586235642433167
+    },
+    {
+      "target": "CHCHD4",
+      "training_cells": 111,
+      "split_half_cosine": 0.2350204735994339,
+      "effect_rms": 0.21188950538635254
+    },
+    {
+      "target": "CHD3",
+      "training_cells": 140,
+      "split_half_cosine": 0.035030122846364975,
+      "effect_rms": 0.13179618120193481
+    },
+    {
+      "target": "CHD6",
+      "training_cells": 148,
+      "split_half_cosine": 0.07902931421995163,
+      "effect_rms": 0.13253135979175568
+    },
+    {
+      "target": "CHKB",
+      "training_cells": 158,
+      "split_half_cosine": 0.1489850878715515,
+      "effect_rms": 0.14307919144630432
+    },
+    {
+      "target": "CHMP6",
+      "training_cells": 166,
+      "split_half_cosine": 0.7061128616333008,
+      "effect_rms": 0.3273457884788513
+    },
+    {
+      "target": "CHTOP",
+      "training_cells": 205,
+      "split_half_cosine": 0.04291253164410591,
+      "effect_rms": 0.11009075492620468
+    },
+    {
+      "target": "CLCN6",
+      "training_cells": 189,
+      "split_half_cosine": 0.018832959234714508,
+      "effect_rms": 0.11926231533288956
+    },
+    {
+      "target": "CLDN6",
+      "training_cells": 81,
+      "split_half_cosine": 0.009047390893101692,
+      "effect_rms": 0.16978517174720764
+    },
+    {
+      "target": "CLDN7",
+      "training_cells": 106,
+      "split_half_cosine": 0.02671148255467415,
+      "effect_rms": 0.14913637936115265
+    },
+    {
+      "target": "CLPB",
+      "training_cells": 184,
+      "split_half_cosine": 0.17103274166584015,
+      "effect_rms": 0.14038115739822388
+    },
+    {
+      "target": "CNN2",
+      "training_cells": 205,
+      "split_half_cosine": 0.039714161306619644,
+      "effect_rms": 0.11189249902963638
+    },
+    {
+      "target": "CNOT10",
+      "training_cells": 205,
+      "split_half_cosine": 0.1695466786623001,
+      "effect_rms": 0.12481822073459625
+    },
+    {
+      "target": "COIL",
+      "training_cells": 119,
+      "split_half_cosine": 0.014730552211403847,
+      "effect_rms": 0.1495601087808609
+    },
+    {
+      "target": "COMMD8",
+      "training_cells": 126,
+      "split_half_cosine": 0.057545725256204605,
+      "effect_rms": 0.14180950820446014
+    },
+    {
+      "target": "COPS5",
+      "training_cells": 114,
+      "split_half_cosine": 0.17502900958061218,
+      "effect_rms": 0.1786785125732422
+    },
+    {
+      "target": "COPS6",
+      "training_cells": 163,
+      "split_half_cosine": 0.30263030529022217,
+      "effect_rms": 0.1781233698129654
+    },
+    {
+      "target": "COQ10B",
+      "training_cells": 128,
+      "split_half_cosine": 0.15219032764434814,
+      "effect_rms": 0.1575646698474884
+    },
+    {
+      "target": "COX5B",
+      "training_cells": 200,
+      "split_half_cosine": 0.036081712692976,
+      "effect_rms": 0.11717034131288528
+    },
+    {
+      "target": "COX7C",
+      "training_cells": 180,
+      "split_half_cosine": 0.1527336835861206,
+      "effect_rms": 0.13590669631958008
+    },
+    {
+      "target": "CPNE1",
+      "training_cells": 99,
+      "split_half_cosine": 0.18553315103054047,
+      "effect_rms": 0.1926974505186081
+    },
+    {
+      "target": "CREG1",
+      "training_cells": 205,
+      "split_half_cosine": 0.0027885236777365208,
+      "effect_rms": 0.10945917665958405
+    },
+    {
+      "target": "CSNK2A1",
+      "training_cells": 123,
+      "split_half_cosine": 0.06337619572877884,
+      "effect_rms": 0.16025644540786743
+    },
+    {
+      "target": "CSTF3",
+      "training_cells": 88,
+      "split_half_cosine": 0.2904370427131653,
+      "effect_rms": 0.2641248404979706
+    },
+    {
+      "target": "CYTH2",
+      "training_cells": 163,
+      "split_half_cosine": 0.020601635798811913,
+      "effect_rms": 0.12912262976169586
+    },
+    {
+      "target": "DAXX",
+      "training_cells": 205,
+      "split_half_cosine": 0.09654980152845383,
+      "effect_rms": 0.11866531521081924
+    },
+    {
+      "target": "DBF4B",
+      "training_cells": 127,
+      "split_half_cosine": 0.018836649134755135,
+      "effect_rms": 0.13416408002376556
+    },
+    {
+      "target": "DBN1",
+      "training_cells": 150,
+      "split_half_cosine": 0.05316349118947983,
+      "effect_rms": 0.1259714961051941
+    },
+    {
+      "target": "DCAF16",
+      "training_cells": 68,
+      "split_half_cosine": 0.05234502628445625,
+      "effect_rms": 0.18658539652824402
+    },
+    {
+      "target": "DCP2",
+      "training_cells": 193,
+      "split_half_cosine": 0.22903621196746826,
+      "effect_rms": 0.13019120693206787
+    },
+    {
+      "target": "DDHD1",
+      "training_cells": 101,
+      "split_half_cosine": 0.027064833790063858,
+      "effect_rms": 0.1800030916929245
+    },
+    {
+      "target": "DDOST",
+      "training_cells": 140,
+      "split_half_cosine": 0.20829489827156067,
+      "effect_rms": 0.17868712544441223
+    },
+    {
+      "target": "DDX18",
+      "training_cells": 56,
+      "split_half_cosine": 0.19684268534183502,
+      "effect_rms": 0.2527264356613159
+    },
+    {
+      "target": "DDX19A",
+      "training_cells": 171,
+      "split_half_cosine": 0.034468747675418854,
+      "effect_rms": 0.12101175636053085
+    },
+    {
+      "target": "DDX20",
+      "training_cells": 87,
+      "split_half_cosine": 0.30901455879211426,
+      "effect_rms": 0.2619309723377228
+    },
+    {
+      "target": "DDX42",
+      "training_cells": 80,
+      "split_half_cosine": 0.0331956185400486,
+      "effect_rms": 0.1860019862651825
+    },
+    {
+      "target": "DEAF1",
+      "training_cells": 80,
+      "split_half_cosine": 0.025504162535071373,
+      "effect_rms": 0.169563427567482
+    },
+    {
+      "target": "DEK",
+      "training_cells": 112,
+      "split_half_cosine": 0.03973127156496048,
+      "effect_rms": 0.148613840341568
+    },
+    {
+      "target": "DENR",
+      "training_cells": 205,
+      "split_half_cosine": 0.22040113806724548,
+      "effect_rms": 0.13463976979255676
+    },
+    {
+      "target": "DHCR24",
+      "training_cells": 119,
+      "split_half_cosine": 0.002708988031372428,
+      "effect_rms": 0.14165979623794556
+    },
+    {
+      "target": "DHRS1",
+      "training_cells": 101,
+      "split_half_cosine": -0.0112173892557621,
+      "effect_rms": 0.15747471153736115
+    },
+    {
+      "target": "DHX15",
+      "training_cells": 81,
+      "split_half_cosine": 0.5167521238327026,
+      "effect_rms": 0.34989941120147705
+    },
+    {
+      "target": "DHX35",
+      "training_cells": 57,
+      "split_half_cosine": 0.029946569353342056,
+      "effect_rms": 0.22927403450012207
+    },
+    {
+      "target": "DHX36",
+      "training_cells": 205,
+      "split_half_cosine": 0.3635803461074829,
+      "effect_rms": 0.16235226392745972
+    },
+    {
+      "target": "DLG5",
+      "training_cells": 176,
+      "split_half_cosine": 0.023725764825940132,
+      "effect_rms": 0.11895976960659027
+    },
+    {
+      "target": "DNAJA3",
+      "training_cells": 128,
+      "split_half_cosine": 0.39415663480758667,
+      "effect_rms": 0.24105995893478394
+    },
+    {
+      "target": "DNMT1",
+      "training_cells": 205,
+      "split_half_cosine": 0.4273238480091095,
+      "effect_rms": 0.1709909588098526
+    },
+    {
+      "target": "DNTTIP1",
+      "training_cells": 205,
+      "split_half_cosine": 0.13525710999965668,
+      "effect_rms": 0.12370042502880096
+    },
+    {
+      "target": "DNTTIP2",
+      "training_cells": 88,
+      "split_half_cosine": 0.3089216649532318,
+      "effect_rms": 0.21428892016410828
+    },
+    {
+      "target": "DPAGT1",
+      "training_cells": 205,
+      "split_half_cosine": 0.0011290814727544785,
+      "effect_rms": 0.10442105680704117
+    },
+    {
+      "target": "DPH3",
+      "training_cells": 90,
+      "split_half_cosine": 0.0333283469080925,
+      "effect_rms": 0.16186533868312836
+    },
+    {
+      "target": "DRG2",
+      "training_cells": 151,
+      "split_half_cosine": 0.010951623320579529,
+      "effect_rms": 0.1312028169631958
+    },
+    {
+      "target": "DSN1",
+      "training_cells": 67,
+      "split_half_cosine": 0.13543957471847534,
+      "effect_rms": 0.23866811394691467
+    },
+    {
+      "target": "DTNBP1",
+      "training_cells": 205,
+      "split_half_cosine": 0.037862494587898254,
+      "effect_rms": 0.10958515852689743
+    },
+    {
+      "target": "DVL3",
+      "training_cells": 205,
+      "split_half_cosine": -0.026586517691612244,
+      "effect_rms": 0.11023008823394775
+    },
+    {
+      "target": "E2F1",
+      "training_cells": 181,
+      "split_half_cosine": 0.08441077917814255,
+      "effect_rms": 0.12201361358165741
+    },
+    {
+      "target": "E2F4",
+      "training_cells": 127,
+      "split_half_cosine": 0.03729501739144325,
+      "effect_rms": 0.14282844960689545
+    },
+    {
+      "target": "EAPP",
+      "training_cells": 173,
+      "split_half_cosine": 0.06776165217161179,
+      "effect_rms": 0.12328258901834488
+    },
+    {
+      "target": "EEF1A2",
+      "training_cells": 205,
+      "split_half_cosine": 0.014053339138627052,
+      "effect_rms": 0.10805738717317581
+    },
+    {
+      "target": "EID2",
+      "training_cells": 100,
+      "split_half_cosine": 0.019570471718907356,
+      "effect_rms": 0.15462400019168854
+    },
+    {
+      "target": "EIF2B2",
+      "training_cells": 99,
+      "split_half_cosine": 0.4303490221500397,
+      "effect_rms": 0.31004610657691956
+    },
+    {
+      "target": "EIF2B4",
+      "training_cells": 148,
+      "split_half_cosine": 0.4511202275753021,
+      "effect_rms": 0.25591662526130676
+    },
+    {
+      "target": "EIF3M",
+      "training_cells": 100,
+      "split_half_cosine": 0.22335600852966309,
+      "effect_rms": 0.20226268470287323
+    },
+    {
+      "target": "EIF4B",
+      "training_cells": 86,
+      "split_half_cosine": 0.07589845359325409,
+      "effect_rms": 0.18635264039039612
+    },
+    {
+      "target": "EIF4G1",
+      "training_cells": 179,
+      "split_half_cosine": 0.39611485600471497,
+      "effect_rms": 0.18287035822868347
+    },
+    {
+      "target": "ELK1",
+      "training_cells": 115,
+      "split_half_cosine": 0.011633147485554218,
+      "effect_rms": 0.14917443692684174
+    },
+    {
+      "target": "EPB41L2",
+      "training_cells": 205,
+      "split_half_cosine": 0.22383850812911987,
+      "effect_rms": 0.1291908174753189
+    },
+    {
+      "target": "EPC2",
+      "training_cells": 205,
+      "split_half_cosine": 0.12866859138011932,
+      "effect_rms": 0.12008076906204224
+    },
+    {
+      "target": "EPHB4",
+      "training_cells": 205,
+      "split_half_cosine": 0.0564272366464138,
+      "effect_rms": 0.11235261708498001
+    },
+    {
+      "target": "EPM2AIP1",
+      "training_cells": 70,
+      "split_half_cosine": 0.04328203201293945,
+      "effect_rms": 0.19278734922409058
+    },
+    {
+      "target": "ETV4",
+      "training_cells": 77,
+      "split_half_cosine": 0.43401750922203064,
+      "effect_rms": 0.32238391041755676
+    },
+    {
+      "target": "EWSR1",
+      "training_cells": 127,
+      "split_half_cosine": 0.07756831496953964,
+      "effect_rms": 0.14698944985866547
+    },
+    {
+      "target": "EXOC3",
+      "training_cells": 205,
+      "split_half_cosine": 0.04156775400042534,
+      "effect_rms": 0.10721827298402786
+    },
+    {
+      "target": "EZH2",
+      "training_cells": 159,
+      "split_half_cosine": 0.13215908408164978,
+      "effect_rms": 0.14192217588424683
+    },
+    {
+      "target": "FAM120A",
+      "training_cells": 183,
+      "split_half_cosine": 0.11510679125785828,
+      "effect_rms": 0.126759871840477
+    },
+    {
+      "target": "FAM133B",
+      "training_cells": 69,
+      "split_half_cosine": 0.0445484034717083,
+      "effect_rms": 0.20094962418079376
+    },
+    {
+      "target": "FARS2",
+      "training_cells": 72,
+      "split_half_cosine": 0.04254266992211342,
+      "effect_rms": 0.1867721825838089
+    },
+    {
+      "target": "FASTKD5",
+      "training_cells": 205,
+      "split_half_cosine": 0.12718698382377625,
+      "effect_rms": 0.11925776302814484
+    },
+    {
+      "target": "FCGRT",
+      "training_cells": 180,
+      "split_half_cosine": 0.16838692128658295,
+      "effect_rms": 0.13835014402866364
+    },
+    {
+      "target": "FHL3",
+      "training_cells": 205,
+      "split_half_cosine": 0.0218997523188591,
+      "effect_rms": 0.11156171560287476
+    },
+    {
+      "target": "FNBP4",
+      "training_cells": 205,
+      "split_half_cosine": 0.12434086948633194,
+      "effect_rms": 0.12138056010007858
+    },
+    {
+      "target": "FOXH1",
+      "training_cells": 205,
+      "split_half_cosine": 0.027533570304512978,
+      "effect_rms": 0.10903690755367279
+    },
+    {
+      "target": "FOXN2",
+      "training_cells": 186,
+      "split_half_cosine": 0.13681042194366455,
+      "effect_rms": 0.1326880007982254
+    },
+    {
+      "target": "FOXO4",
+      "training_cells": 205,
+      "split_half_cosine": 0.05137684568762779,
+      "effect_rms": 0.11366800218820572
+    },
+    {
+      "target": "FTSJ3",
+      "training_cells": 52,
+      "split_half_cosine": 0.09355103224515915,
+      "effect_rms": 0.2639240026473999
+    },
+    {
+      "target": "FUBP3",
+      "training_cells": 95,
+      "split_half_cosine": 0.0677570328116417,
+      "effect_rms": 0.15817850828170776
+    },
+    {
+      "target": "FXYD5",
+      "training_cells": 205,
+      "split_half_cosine": -0.02389543503522873,
+      "effect_rms": 0.10897544026374817
+    },
+    {
+      "target": "FZD2",
+      "training_cells": 150,
+      "split_half_cosine": 0.007828931324183941,
+      "effect_rms": 0.1223573312163353
+    },
+    {
+      "target": "GIGYF2",
+      "training_cells": 201,
+      "split_half_cosine": 0.09599696844816208,
+      "effect_rms": 0.12194685637950897
+    },
+    {
+      "target": "GINS2",
+      "training_cells": 52,
+      "split_half_cosine": 0.15635952353477478,
+      "effect_rms": 0.25733470916748047
+    },
+    {
+      "target": "GLI3",
+      "training_cells": 205,
+      "split_half_cosine": 0.04980901628732681,
+      "effect_rms": 0.11146208643913269
+    },
+    {
+      "target": "GLYR1",
+      "training_cells": 190,
+      "split_half_cosine": 0.0179577749222517,
+      "effect_rms": 0.1204606369137764
+    },
+    {
+      "target": "GMEB2",
+      "training_cells": 112,
+      "split_half_cosine": 0.03838891535997391,
+      "effect_rms": 0.15392673015594482
+    },
+    {
+      "target": "GNL2",
+      "training_cells": 164,
+      "split_half_cosine": 0.33000892400741577,
+      "effect_rms": 0.16655845940113068
+    },
+    {
+      "target": "GPATCH8",
+      "training_cells": 205,
+      "split_half_cosine": 0.06676597893238068,
+      "effect_rms": 0.10983060300350189
+    },
+    {
+      "target": "GPS2",
+      "training_cells": 205,
+      "split_half_cosine": 0.23439288139343262,
+      "effect_rms": 0.12613438069820404
+    },
+    {
+      "target": "GRAMD1A",
+      "training_cells": 204,
+      "split_half_cosine": 0.04416252672672272,
+      "effect_rms": 0.11358422785997391
+    },
+    {
+      "target": "GSK3B",
+      "training_cells": 182,
+      "split_half_cosine": 0.2206800878047943,
+      "effect_rms": 0.15076294541358948
+    },
+    {
+      "target": "GTF2A1",
+      "training_cells": 116,
+      "split_half_cosine": 0.2047225683927536,
+      "effect_rms": 0.19793252646923065
+    },
+    {
+      "target": "GTF2IRD1",
+      "training_cells": 75,
+      "split_half_cosine": 0.027552803978323936,
+      "effect_rms": 0.1920068860054016
+    },
+    {
+      "target": "GTF3A",
+      "training_cells": 106,
+      "split_half_cosine": 0.05767175182700157,
+      "effect_rms": 0.1594584882259369
+    },
+    {
+      "target": "GTF3C3",
+      "training_cells": 128,
+      "split_half_cosine": 0.2659496068954468,
+      "effect_rms": 0.1856745481491089
+    },
+    {
+      "target": "HARS2",
+      "training_cells": 84,
+      "split_half_cosine": 0.16751261055469513,
+      "effect_rms": 0.21430809795856476
+    },
+    {
+      "target": "HDAC1",
+      "training_cells": 132,
+      "split_half_cosine": 0.062037721276283264,
+      "effect_rms": 0.1465887427330017
+    },
+    {
+      "target": "HDAC8",
+      "training_cells": 107,
+      "split_half_cosine": 0.03343561664223671,
+      "effect_rms": 0.14890174567699432
+    },
+    {
+      "target": "HIRA",
+      "training_cells": 205,
+      "split_half_cosine": 0.09996917843818665,
+      "effect_rms": 0.11730960756540298
+    },
+    {
+      "target": "HLA-C",
+      "training_cells": 100,
+      "split_half_cosine": 0.02151564136147499,
+      "effect_rms": 0.1623971164226532
+    },
+    {
+      "target": "HMGB2",
+      "training_cells": 205,
+      "split_half_cosine": 0.05146306753158569,
+      "effect_rms": 0.11016140133142471
+    },
+    {
+      "target": "HMGN1",
+      "training_cells": 148,
+      "split_half_cosine": -0.00547031220048666,
+      "effect_rms": 0.12970945239067078
+    },
+    {
+      "target": "HMGN3",
+      "training_cells": 104,
+      "split_half_cosine": -0.008404731750488281,
+      "effect_rms": 0.14951513707637787
+    },
+    {
+      "target": "HMGN4",
+      "training_cells": 142,
+      "split_half_cosine": 0.07122081518173218,
+      "effect_rms": 0.14479514956474304
+    },
+    {
+      "target": "HMGXB3",
+      "training_cells": 205,
+      "split_half_cosine": 0.1115693598985672,
+      "effect_rms": 0.12351663410663605
+    },
+    {
+      "target": "HMX3",
+      "training_cells": 139,
+      "split_half_cosine": 0.18201665580272675,
+      "effect_rms": 0.15520764887332916
+    },
+    {
+      "target": "HOMEZ",
+      "training_cells": 159,
+      "split_half_cosine": 0.049974843859672546,
+      "effect_rms": 0.12649783492088318
+    },
+    {
+      "target": "HSBP1",
+      "training_cells": 135,
+      "split_half_cosine": 0.0872233510017395,
+      "effect_rms": 0.14301110804080963
+    },
+    {
+      "target": "HSCB",
+      "training_cells": 134,
+      "split_half_cosine": 0.12630805373191833,
+      "effect_rms": 0.16217322647571564
+    },
+    {
+      "target": "HSD17B10",
+      "training_cells": 56,
+      "split_half_cosine": 0.06944845616817474,
+      "effect_rms": 0.23874300718307495
+    },
+    {
+      "target": "HSD17B12",
+      "training_cells": 110,
+      "split_half_cosine": 0.3660867214202881,
+      "effect_rms": 0.24741367995738983
+    },
+    {
+      "target": "HSP90AB1",
+      "training_cells": 60,
+      "split_half_cosine": 0.05921950191259384,
+      "effect_rms": 0.1902950406074524
+    },
+    {
+      "target": "HSPA8",
+      "training_cells": 186,
+      "split_half_cosine": 0.20871976017951965,
+      "effect_rms": 0.14953204989433289
+    },
+    {
+      "target": "HSPA9",
+      "training_cells": 170,
+      "split_half_cosine": 0.6120159029960632,
+      "effect_rms": 0.3156164288520813
+    },
+    {
+      "target": "HUWE1",
+      "training_cells": 178,
+      "split_half_cosine": 0.20838719606399536,
+      "effect_rms": 0.1393098533153534
+    },
+    {
+      "target": "IDE",
+      "training_cells": 205,
+      "split_half_cosine": 0.02878531999886036,
+      "effect_rms": 0.10907825827598572
+    },
+    {
+      "target": "IFI27L2",
+      "training_cells": 72,
+      "split_half_cosine": 0.02174069918692112,
+      "effect_rms": 0.18018171191215515
+    },
+    {
+      "target": "IFITM2",
+      "training_cells": 205,
+      "split_half_cosine": -0.016017844900488853,
+      "effect_rms": 0.10633642226457596
+    },
+    {
+      "target": "IFNAR2",
+      "training_cells": 147,
+      "split_half_cosine": -0.013903769664466381,
+      "effect_rms": 0.13361629843711853
+    },
+    {
+      "target": "IFNGR2",
+      "training_cells": 205,
+      "split_half_cosine": 0.022119317203760147,
+      "effect_rms": 0.10734950751066208
+    },
+    {
+      "target": "IGF2R",
+      "training_cells": 196,
+      "split_half_cosine": -0.004974578972905874,
+      "effect_rms": 0.10871302336454391
+    },
+    {
+      "target": "IKBKG",
+      "training_cells": 152,
+      "split_half_cosine": 0.025669315829873085,
+      "effect_rms": 0.128616601228714
+    },
+    {
+      "target": "IL10RB",
+      "training_cells": 193,
+      "split_half_cosine": 0.008682313375175,
+      "effect_rms": 0.10942594707012177
+    },
+    {
+      "target": "INSIG1",
+      "training_cells": 97,
+      "split_half_cosine": 0.09133036434650421,
+      "effect_rms": 0.17037436366081238
+    },
+    {
+      "target": "IREB2",
+      "training_cells": 126,
+      "split_half_cosine": 0.0363008975982666,
+      "effect_rms": 0.14128723740577698
+    },
+    {
+      "target": "IRF3",
+      "training_cells": 205,
+      "split_half_cosine": 0.022077200934290886,
+      "effect_rms": 0.10865102708339691
+    },
+    {
+      "target": "JMJD6",
+      "training_cells": 205,
+      "split_half_cosine": 0.051679737865924835,
+      "effect_rms": 0.11581296473741531
+    },
+    {
+      "target": "KANSL2",
+      "training_cells": 128,
+      "split_half_cosine": 0.5287669897079468,
+      "effect_rms": 0.299657940864563
+    },
+    {
+      "target": "KAT2A",
+      "training_cells": 84,
+      "split_half_cosine": 0.03097120113670826,
+      "effect_rms": 0.17314358055591583
+    },
+    {
+      "target": "KDM1A",
+      "training_cells": 120,
+      "split_half_cosine": 0.5432342886924744,
+      "effect_rms": 0.33019202947616577
+    },
+    {
+      "target": "KDM2B",
+      "training_cells": 205,
+      "split_half_cosine": 0.005407785996794701,
+      "effect_rms": 0.11141885817050934
+    },
+    {
+      "target": "KDM5A",
+      "training_cells": 148,
+      "split_half_cosine": 0.04393051937222481,
+      "effect_rms": 0.12727759778499603
+    },
+    {
+      "target": "KHDRBS1",
+      "training_cells": 104,
+      "split_half_cosine": 0.032225459814071655,
+      "effect_rms": 0.16737525165081024
+    },
+    {
+      "target": "KHSRP",
+      "training_cells": 81,
+      "split_half_cosine": 0.07235470414161682,
+      "effect_rms": 0.1820572465658188
+    },
+    {
+      "target": "KIF1B",
+      "training_cells": 205,
+      "split_half_cosine": 0.01640396937727928,
+      "effect_rms": 0.10520798712968826
+    },
+    {
+      "target": "KIF20A",
+      "training_cells": 115,
+      "split_half_cosine": 0.2617628872394562,
+      "effect_rms": 0.18639574944972992
+    },
+    {
+      "target": "KIF2A",
+      "training_cells": 205,
+      "split_half_cosine": 0.07914096862077713,
+      "effect_rms": 0.11268006265163422
+    },
+    {
+      "target": "KLF10",
+      "training_cells": 205,
+      "split_half_cosine": 0.010594981722533703,
+      "effect_rms": 0.11110378801822662
+    },
+    {
+      "target": "KMT2A",
+      "training_cells": 164,
+      "split_half_cosine": 0.07458177208900452,
+      "effect_rms": 0.12312887609004974
+    },
+    {
+      "target": "KPNB1",
+      "training_cells": 180,
+      "split_half_cosine": 0.14600040018558502,
+      "effect_rms": 0.127961203455925
+    },
+    {
+      "target": "LAMTOR1",
+      "training_cells": 132,
+      "split_half_cosine": 0.11755114048719406,
+      "effect_rms": 0.15372411906719208
+    },
+    {
+      "target": "LDLR",
+      "training_cells": 140,
+      "split_half_cosine": 0.06659471243619919,
+      "effect_rms": 0.13999329507350922
+    },
+    {
+      "target": "LENG1",
+      "training_cells": 53,
+      "split_half_cosine": 0.029641160741448402,
+      "effect_rms": 0.226642444729805
+    },
+    {
+      "target": "LMAN1",
+      "training_cells": 196,
+      "split_half_cosine": 0.04839959368109703,
+      "effect_rms": 0.11470985412597656
+    },
+    {
+      "target": "LMBRD2",
+      "training_cells": 136,
+      "split_half_cosine": 0.07458291947841644,
+      "effect_rms": 0.13362537324428558
+    },
+    {
+      "target": "LONP1",
+      "training_cells": 125,
+      "split_half_cosine": 0.2145393043756485,
+      "effect_rms": 0.20310744643211365
+    },
+    {
+      "target": "LPCAT3",
+      "training_cells": 104,
+      "split_half_cosine": 0.037550341337919235,
+      "effect_rms": 0.15921923518180847
+    },
+    {
+      "target": "LRPPRC",
+      "training_cells": 105,
+      "split_half_cosine": 0.2802053689956665,
+      "effect_rms": 0.2183295339345932
+    },
+    {
+      "target": "LTBP4",
+      "training_cells": 205,
+      "split_half_cosine": 0.058407045900821686,
+      "effect_rms": 0.11557990312576294
+    },
+    {
+      "target": "LZTR1",
+      "training_cells": 205,
+      "split_half_cosine": 0.27308976650238037,
+      "effect_rms": 0.14328999817371368
+    },
+    {
+      "target": "MAD2L1",
+      "training_cells": 156,
+      "split_half_cosine": 0.24145643413066864,
+      "effect_rms": 0.18123790621757507
+    },
+    {
+      "target": "MAN2A1",
+      "training_cells": 157,
+      "split_half_cosine": 0.014009654521942139,
+      "effect_rms": 0.12426977604627609
+    },
+    {
+      "target": "MANF",
+      "training_cells": 205,
+      "split_half_cosine": 0.006436533760279417,
+      "effect_rms": 0.10578344762325287
+    },
+    {
+      "target": "MAP1B",
+      "training_cells": 174,
+      "split_half_cosine": 0.01077068131417036,
+      "effect_rms": 0.1305423527956009
+    },
+    {
+      "target": "MAP2K2",
+      "training_cells": 148,
+      "split_half_cosine": 0.012927213683724403,
+      "effect_rms": 0.13090570271015167
+    },
+    {
+      "target": "MAP3K7",
+      "training_cells": 140,
+      "split_half_cosine": 0.008352438919246197,
+      "effect_rms": 0.13300493359565735
+    },
+    {
+      "target": "MAPKAPK2",
+      "training_cells": 106,
+      "split_half_cosine": 0.03604752570390701,
+      "effect_rms": 0.15846224129199982
+    },
+    {
+      "target": "MARCKSL1",
+      "training_cells": 120,
+      "split_half_cosine": 0.10366559028625488,
+      "effect_rms": 0.1499149054288864
+    },
+    {
+      "target": "MAST2",
+      "training_cells": 115,
+      "split_half_cosine": 0.02343856170773506,
+      "effect_rms": 0.14334239065647125
+    },
+    {
+      "target": "MAT2A",
+      "training_cells": 61,
+      "split_half_cosine": 0.11786267161369324,
+      "effect_rms": 0.2346683293581009
+    },
+    {
+      "target": "MAU2",
+      "training_cells": 96,
+      "split_half_cosine": 0.2364463210105896,
+      "effect_rms": 0.21196745336055756
+    },
+    {
+      "target": "MBD4",
+      "training_cells": 160,
+      "split_half_cosine": 0.011364657431840897,
+      "effect_rms": 0.12189646065235138
+    },
+    {
+      "target": "MBTPS1",
+      "training_cells": 120,
+      "split_half_cosine": 0.07619193941354752,
+      "effect_rms": 0.15586964786052704
+    },
+    {
+      "target": "MCM10",
+      "training_cells": 125,
+      "split_half_cosine": 0.24990220367908478,
+      "effect_rms": 0.17924384772777557
+    },
+    {
+      "target": "MCM4",
+      "training_cells": 132,
+      "split_half_cosine": 0.29910722374916077,
+      "effect_rms": 0.18616701662540436
+    },
+    {
+      "target": "MCM5",
+      "training_cells": 136,
+      "split_half_cosine": 0.16190889477729797,
+      "effect_rms": 0.15615403652191162
+    },
+    {
+      "target": "MED1",
+      "training_cells": 145,
+      "split_half_cosine": 0.27654480934143066,
+      "effect_rms": 0.2048768699169159
+    },
+    {
+      "target": "MED12",
+      "training_cells": 149,
+      "split_half_cosine": 0.6962255835533142,
+      "effect_rms": 0.44059157371520996
+    },
+    {
+      "target": "MED13",
+      "training_cells": 205,
+      "split_half_cosine": 0.08387124538421631,
+      "effect_rms": 0.11961778253316879
+    },
+    {
+      "target": "MED13L",
+      "training_cells": 127,
+      "split_half_cosine": 0.09755710512399673,
+      "effect_rms": 0.15614493191242218
+    },
+    {
+      "target": "MED15",
+      "training_cells": 205,
+      "split_half_cosine": 0.029068421572446823,
+      "effect_rms": 0.11401832848787308
+    },
+    {
+      "target": "MED25",
+      "training_cells": 149,
+      "split_half_cosine": 0.07702775299549103,
+      "effect_rms": 0.13808774948120117
+    },
+    {
+      "target": "MED4",
+      "training_cells": 56,
+      "split_half_cosine": 0.05523781105875969,
+      "effect_rms": 0.2687804400920868
+    },
+    {
+      "target": "MED8",
+      "training_cells": 57,
+      "split_half_cosine": 0.12011236697435379,
+      "effect_rms": 0.24371656775474548
+    },
+    {
+      "target": "MEN1",
+      "training_cells": 205,
+      "split_half_cosine": 0.2111775279045105,
+      "effect_rms": 0.13049903512001038
+    },
+    {
+      "target": "METTL14",
+      "training_cells": 205,
+      "split_half_cosine": 0.32664915919303894,
+      "effect_rms": 0.15405501425266266
+    },
+    {
+      "target": "METTL17",
+      "training_cells": 196,
+      "split_half_cosine": 0.11690226942300797,
+      "effect_rms": 0.12001583725214005
+    },
+    {
+      "target": "METTL3",
+      "training_cells": 205,
+      "split_half_cosine": 0.2747756838798523,
+      "effect_rms": 0.13838838040828705
+    },
+    {
+      "target": "MIPEP",
+      "training_cells": 146,
+      "split_half_cosine": 0.05265595018863678,
+      "effect_rms": 0.1351802945137024
+    },
+    {
+      "target": "MIS18A",
+      "training_cells": 156,
+      "split_half_cosine": 0.05614577606320381,
+      "effect_rms": 0.14792075753211975
+    },
+    {
+      "target": "MKI67",
+      "training_cells": 169,
+      "split_half_cosine": 0.01244481559842825,
+      "effect_rms": 0.1197008565068245
+    },
+    {
+      "target": "MLLT10",
+      "training_cells": 159,
+      "split_half_cosine": 0.021507689729332924,
+      "effect_rms": 0.12527021765708923
+    },
+    {
+      "target": "MON1A",
+      "training_cells": 205,
+      "split_half_cosine": 0.21594509482383728,
+      "effect_rms": 0.13726890087127686
+    },
+    {
+      "target": "MPG",
+      "training_cells": 164,
+      "split_half_cosine": 0.09723664075136185,
+      "effect_rms": 0.13042418658733368
+    },
+    {
+      "target": "MRPL10",
+      "training_cells": 130,
+      "split_half_cosine": 0.1514199674129486,
+      "effect_rms": 0.16517920792102814
+    },
+    {
+      "target": "MRPL14",
+      "training_cells": 205,
+      "split_half_cosine": 0.13991989195346832,
+      "effect_rms": 0.12533624470233917
+    },
+    {
+      "target": "MRPL17",
+      "training_cells": 113,
+      "split_half_cosine": 0.15564227104187012,
+      "effect_rms": 0.17954032123088837
+    },
+    {
+      "target": "MRPL28",
+      "training_cells": 83,
+      "split_half_cosine": 0.028805166482925415,
+      "effect_rms": 0.18708157539367676
+    },
+    {
+      "target": "MRPL35",
+      "training_cells": 205,
+      "split_half_cosine": 0.2809060513973236,
+      "effect_rms": 0.1510990709066391
+    },
+    {
+      "target": "MRPL36",
+      "training_cells": 205,
+      "split_half_cosine": 0.23469410836696625,
+      "effect_rms": 0.14463801681995392
+    },
+    {
+      "target": "MRPL37",
+      "training_cells": 179,
+      "split_half_cosine": 0.17230097949504852,
+      "effect_rms": 0.14469899237155914
+    },
+    {
+      "target": "MRPL43",
+      "training_cells": 114,
+      "split_half_cosine": 0.15003053843975067,
+      "effect_rms": 0.17070399224758148
+    },
+    {
+      "target": "MRPL50",
+      "training_cells": 178,
+      "split_half_cosine": 0.12262783199548721,
+      "effect_rms": 0.1320170909166336
+    },
+    {
+      "target": "MRPL54",
+      "training_cells": 168,
+      "split_half_cosine": 0.07694459706544876,
+      "effect_rms": 0.13085739314556122
+    },
+    {
+      "target": "MRPS10",
+      "training_cells": 96,
+      "split_half_cosine": 0.07593422383069992,
+      "effect_rms": 0.17546848952770233
+    },
+    {
+      "target": "MRPS16",
+      "training_cells": 56,
+      "split_half_cosine": 0.03656507283449173,
+      "effect_rms": 0.22509387135505676
+    },
+    {
+      "target": "MRPS30",
+      "training_cells": 114,
+      "split_half_cosine": 0.13420429825782776,
+      "effect_rms": 0.16405192017555237
+    },
+    {
+      "target": "MRPS5",
+      "training_cells": 111,
+      "split_half_cosine": 0.08441338688135147,
+      "effect_rms": 0.17002713680267334
+    },
+    {
+      "target": "MSANTD4",
+      "training_cells": 112,
+      "split_half_cosine": 0.07532118260860443,
+      "effect_rms": 0.16604308784008026
+    },
+    {
+      "target": "MSI2",
+      "training_cells": 109,
+      "split_half_cosine": 0.045464448630809784,
+      "effect_rms": 0.15996044874191284
+    },
+    {
+      "target": "MTA1",
+      "training_cells": 116,
+      "split_half_cosine": 0.05421093478798866,
+      "effect_rms": 0.14808981120586395
+    },
+    {
+      "target": "MTF1",
+      "training_cells": 135,
+      "split_half_cosine": 0.18292894959449768,
+      "effect_rms": 0.15385720133781433
+    },
+    {
+      "target": "MTHFSD",
+      "training_cells": 151,
+      "split_half_cosine": 0.0034018591977655888,
+      "effect_rms": 0.12905871868133545
+    },
+    {
+      "target": "MTM1",
+      "training_cells": 151,
+      "split_half_cosine": 0.061294082552194595,
+      "effect_rms": 0.12700311839580536
+    },
+    {
+      "target": "MYC",
+      "training_cells": 80,
+      "split_half_cosine": 0.08717838674783707,
+      "effect_rms": 0.20323005318641663
+    },
+    {
+      "target": "MYD88",
+      "training_cells": 205,
+      "split_half_cosine": 0.03099578060209751,
+      "effect_rms": 0.10529472678899765
+    },
+    {
+      "target": "MYPOP",
+      "training_cells": 116,
+      "split_half_cosine": 0.0359761007130146,
+      "effect_rms": 0.14640098810195923
+    },
+    {
+      "target": "MYRF",
+      "training_cells": 205,
+      "split_half_cosine": 0.03912564739584923,
+      "effect_rms": 0.10692445933818817
+    },
+    {
+      "target": "NABP2",
+      "training_cells": 205,
+      "split_half_cosine": 0.059516578912734985,
+      "effect_rms": 0.11171700805425644
+    },
+    {
+      "target": "NAGLU",
+      "training_cells": 205,
+      "split_half_cosine": 0.016735494136810303,
+      "effect_rms": 0.10493665933609009
+    },
+    {
+      "target": "NAIF1",
+      "training_cells": 205,
+      "split_half_cosine": 0.07254461944103241,
+      "effect_rms": 0.11335276067256927
+    },
+    {
+      "target": "NASP",
+      "training_cells": 205,
+      "split_half_cosine": 0.022850489243865013,
+      "effect_rms": 0.1110825464129448
+    },
+    {
+      "target": "NBAS",
+      "training_cells": 114,
+      "split_half_cosine": 0.22271879017353058,
+      "effect_rms": 0.2025391012430191
+    },
+    {
+      "target": "NCAPD3",
+      "training_cells": 170,
+      "split_half_cosine": 0.01833539828658104,
+      "effect_rms": 0.11936529725790024
+    },
+    {
+      "target": "NCK2",
+      "training_cells": 205,
+      "split_half_cosine": 0.008783120661973953,
+      "effect_rms": 0.10762996971607208
+    },
+    {
+      "target": "NCLN",
+      "training_cells": 60,
+      "split_half_cosine": 0.041675519198179245,
+      "effect_rms": 0.20511984825134277
+    },
+    {
+      "target": "NDUFA2",
+      "training_cells": 129,
+      "split_half_cosine": 0.0297024454921484,
+      "effect_rms": 0.14552243053913116
+    },
+    {
+      "target": "NDUFAF3",
+      "training_cells": 125,
+      "split_half_cosine": 0.05201392248272896,
+      "effect_rms": 0.1407042145729065
+    },
+    {
+      "target": "NDUFB3",
+      "training_cells": 205,
+      "split_half_cosine": 0.06369118392467499,
+      "effect_rms": 0.11897587031126022
+    },
+    {
+      "target": "NDUFB4",
+      "training_cells": 205,
+      "split_half_cosine": 0.11475484818220139,
+      "effect_rms": 0.12271993607282639
+    },
+    {
+      "target": "NDUFB6",
+      "training_cells": 205,
+      "split_half_cosine": 0.04670209437608719,
+      "effect_rms": 0.11575166136026382
+    },
+    {
+      "target": "NFE2L1",
+      "training_cells": 75,
+      "split_half_cosine": 0.04039105400443077,
+      "effect_rms": 0.18876977264881134
+    },
+    {
+      "target": "NGLY1",
+      "training_cells": 170,
+      "split_half_cosine": 0.10917796939611435,
+      "effect_rms": 0.132971853017807
+    },
+    {
+      "target": "NIPAL3",
+      "training_cells": 107,
+      "split_half_cosine": 0.00026523839915171266,
+      "effect_rms": 0.15254884958267212
+    },
+    {
+      "target": "NIPSNAP3A",
+      "training_cells": 99,
+      "split_half_cosine": 0.032457757741212845,
+      "effect_rms": 0.16902218759059906
+    },
+    {
+      "target": "NISCH",
+      "training_cells": 205,
+      "split_half_cosine": 0.021131161600351334,
+      "effect_rms": 0.1086682602763176
+    },
+    {
+      "target": "NIT1",
+      "training_cells": 190,
+      "split_half_cosine": -0.011535748839378357,
+      "effect_rms": 0.11133597046136856
+    },
+    {
+      "target": "NOL8",
+      "training_cells": 85,
+      "split_half_cosine": 0.2625371217727661,
+      "effect_rms": 0.22678901255130768
+    },
+    {
+      "target": "NOM1",
+      "training_cells": 97,
+      "split_half_cosine": 0.08162138611078262,
+      "effect_rms": 0.17958588898181915
+    },
+    {
+      "target": "NOP9",
+      "training_cells": 110,
+      "split_half_cosine": 0.002923474181443453,
+      "effect_rms": 0.15121972560882568
+    },
+    {
+      "target": "NRAS",
+      "training_cells": 188,
+      "split_half_cosine": 0.014110134914517403,
+      "effect_rms": 0.11397040635347366
+    },
+    {
+      "target": "NSRP1",
+      "training_cells": 120,
+      "split_half_cosine": 0.050426773726940155,
+      "effect_rms": 0.171019047498703
+    },
+    {
+      "target": "NT5DC1",
+      "training_cells": 166,
+      "split_half_cosine": -0.015215865336358547,
+      "effect_rms": 0.1204395592212677
+    },
+    {
+      "target": "NUDCD3",
+      "training_cells": 111,
+      "split_half_cosine": 0.29699578881263733,
+      "effect_rms": 0.21596184372901917
+    },
+    {
+      "target": "NUDT15",
+      "training_cells": 144,
+      "split_half_cosine": 0.2586289644241333,
+      "effect_rms": 0.18389955163002014
+    },
+    {
+      "target": "NUF2",
+      "training_cells": 205,
+      "split_half_cosine": 0.04003288969397545,
+      "effect_rms": 0.1174614205956459
+    },
+    {
+      "target": "NUP37",
+      "training_cells": 108,
+      "split_half_cosine": 0.03589972108602524,
+      "effect_rms": 0.15547245740890503
+    },
+    {
+      "target": "NVL",
+      "training_cells": 120,
+      "split_half_cosine": 0.29096439480781555,
+      "effect_rms": 0.2027277648448944
+    },
+    {
+      "target": "OLFML3",
+      "training_cells": 205,
+      "split_half_cosine": 0.01736600510776043,
+      "effect_rms": 0.11061929911375046
+    },
+    {
+      "target": "OXA1L",
+      "training_cells": 197,
+      "split_half_cosine": 0.46071022748947144,
+      "effect_rms": 0.20240207016468048
+    },
+    {
+      "target": "OXCT1",
+      "training_cells": 205,
+      "split_half_cosine": 0.12852473556995392,
+      "effect_rms": 0.12365346401929855
+    },
+    {
+      "target": "PAGR1",
+      "training_cells": 187,
+      "split_half_cosine": 0.032481368631124496,
+      "effect_rms": 0.11157268285751343
+    },
+    {
+      "target": "PAN2",
+      "training_cells": 172,
+      "split_half_cosine": 0.11753987520933151,
+      "effect_rms": 0.12972253561019897
+    },
+    {
+      "target": "PATL1",
+      "training_cells": 90,
+      "split_half_cosine": 0.0691409558057785,
+      "effect_rms": 0.18083441257476807
+    },
+    {
+      "target": "PBX1",
+      "training_cells": 205,
+      "split_half_cosine": 0.03671104088425636,
+      "effect_rms": 0.11610941588878632
+    },
+    {
+      "target": "PCGF1",
+      "training_cells": 205,
+      "split_half_cosine": 0.12980638444423676,
+      "effect_rms": 0.12426773458719254
+    },
+    {
+      "target": "PCGF6",
+      "training_cells": 144,
+      "split_half_cosine": 0.03212244436144829,
+      "effect_rms": 0.1280018389225006
+    },
+    {
+      "target": "PDCD4",
+      "training_cells": 152,
+      "split_half_cosine": -0.0038211133796721697,
+      "effect_rms": 0.12859086692333221
+    },
+    {
+      "target": "PDE6D",
+      "training_cells": 205,
+      "split_half_cosine": 0.029356824234128,
+      "effect_rms": 0.11102481931447983
+    },
+    {
+      "target": "PDK1",
+      "training_cells": 56,
+      "split_half_cosine": 0.00326871988363564,
+      "effect_rms": 0.2120596319437027
+    },
+    {
+      "target": "PFDN4",
+      "training_cells": 100,
+      "split_half_cosine": 0.055362947285175323,
+      "effect_rms": 0.16701990365982056
+    },
+    {
+      "target": "PGLS",
+      "training_cells": 185,
+      "split_half_cosine": 0.05311938002705574,
+      "effect_rms": 0.11585945636034012
+    },
+    {
+      "target": "PGS1",
+      "training_cells": 184,
+      "split_half_cosine": 0.25634878873825073,
+      "effect_rms": 0.15046830475330353
+    },
+    {
+      "target": "PHF10",
+      "training_cells": 117,
+      "split_half_cosine": 0.21805307269096375,
+      "effect_rms": 0.17573153972625732
+    },
+    {
+      "target": "PHF12",
+      "training_cells": 205,
+      "split_half_cosine": 0.15545475482940674,
+      "effect_rms": 0.12767276167869568
+    },
+    {
+      "target": "PHF14",
+      "training_cells": 129,
+      "split_half_cosine": 0.059674154967069626,
+      "effect_rms": 0.1469486802816391
+    },
+    {
+      "target": "PHF23",
+      "training_cells": 205,
+      "split_half_cosine": 0.17200428247451782,
+      "effect_rms": 0.12695156037807465
+    },
+    {
+      "target": "PHF8",
+      "training_cells": 151,
+      "split_half_cosine": 0.0883307158946991,
+      "effect_rms": 0.132232666015625
+    },
+    {
+      "target": "PIAS1",
+      "training_cells": 205,
+      "split_half_cosine": 0.16008825600147247,
+      "effect_rms": 0.12274745106697083
+    },
+    {
+      "target": "PIK3C3",
+      "training_cells": 194,
+      "split_half_cosine": 0.02638605609536171,
+      "effect_rms": 0.11831718683242798
+    },
+    {
+      "target": "PIM2",
+      "training_cells": 173,
+      "split_half_cosine": -0.00610204366967082,
+      "effect_rms": 0.11857494711875916
+    },
+    {
+      "target": "PINK1",
+      "training_cells": 205,
+      "split_half_cosine": 0.01637500710785389,
+      "effect_rms": 0.1124052107334137
+    },
+    {
+      "target": "PKN3",
+      "training_cells": 158,
+      "split_half_cosine": 0.1417006105184555,
+      "effect_rms": 0.1377892941236496
+    },
+    {
+      "target": "PLAGL2",
+      "training_cells": 205,
+      "split_half_cosine": 0.055915363132953644,
+      "effect_rms": 0.116181880235672
+    },
+    {
+      "target": "PLCB3",
+      "training_cells": 79,
+      "split_half_cosine": 0.022612888365983963,
+      "effect_rms": 0.19287137687206268
+    },
+    {
+      "target": "PLCG1",
+      "training_cells": 171,
+      "split_half_cosine": 0.011674141511321068,
+      "effect_rms": 0.12084696441888809
+    },
+    {
+      "target": "PMS1",
+      "training_cells": 79,
+      "split_half_cosine": 0.03270824998617172,
+      "effect_rms": 0.19553151726722717
+    },
+    {
+      "target": "PNP",
+      "training_cells": 205,
+      "split_half_cosine": 0.0028531698044389486,
+      "effect_rms": 0.11462751775979996
+    },
+    {
+      "target": "POLA2",
+      "training_cells": 111,
+      "split_half_cosine": 0.1584160029888153,
+      "effect_rms": 0.17122799158096313
+    },
+    {
+      "target": "POLB",
+      "training_cells": 60,
+      "split_half_cosine": 0.023523639887571335,
+      "effect_rms": 0.211276113986969
+    },
+    {
+      "target": "POLD4",
+      "training_cells": 205,
+      "split_half_cosine": 0.023115655407309532,
+      "effect_rms": 0.10890422016382217
+    },
+    {
+      "target": "POLR1B",
+      "training_cells": 87,
+      "split_half_cosine": 0.46024075150489807,
+      "effect_rms": 0.29242122173309326
+    },
+    {
+      "target": "POLR2C",
+      "training_cells": 69,
+      "split_half_cosine": 0.13829143345355988,
+      "effect_rms": 0.23242266476154327
+    },
+    {
+      "target": "POLR3D",
+      "training_cells": 160,
+      "split_half_cosine": 0.04866267368197441,
+      "effect_rms": 0.1349848061800003
+    },
+    {
+      "target": "POR",
+      "training_cells": 205,
+      "split_half_cosine": -0.0048710061237216,
+      "effect_rms": 0.10559018701314926
+    },
+    {
+      "target": "PPIF",
+      "training_cells": 205,
+      "split_half_cosine": 0.03951602429151535,
+      "effect_rms": 0.11336340010166168
+    },
+    {
+      "target": "PPIP5K2",
+      "training_cells": 97,
+      "split_half_cosine": 0.03137783333659172,
+      "effect_rms": 0.1596972942352295
+    },
+    {
+      "target": "PPP1R15B",
+      "training_cells": 205,
+      "split_half_cosine": 0.06634844094514847,
+      "effect_rms": 0.12018493562936783
+    },
+    {
+      "target": "PPP2CB",
+      "training_cells": 205,
+      "split_half_cosine": 0.14903518557548523,
+      "effect_rms": 0.12710799276828766
+    },
+    {
+      "target": "PPP2R1A",
+      "training_cells": 205,
+      "split_half_cosine": 0.037857867777347565,
+      "effect_rms": 0.11525391042232513
+    },
+    {
+      "target": "PPP2R3C",
+      "training_cells": 110,
+      "split_half_cosine": 0.039476487785577774,
+      "effect_rms": 0.1562376469373703
+    },
+    {
+      "target": "PQBP1",
+      "training_cells": 108,
+      "split_half_cosine": 0.12837691605091095,
+      "effect_rms": 0.16359983384609222
+    },
+    {
+      "target": "PRCP",
+      "training_cells": 205,
+      "split_half_cosine": 0.008103842847049236,
+      "effect_rms": 0.11060922592878342
+    },
+    {
+      "target": "PRDM14",
+      "training_cells": 164,
+      "split_half_cosine": 0.04637472331523895,
+      "effect_rms": 0.12816105782985687
+    },
+    {
+      "target": "PRDX3",
+      "training_cells": 174,
+      "split_half_cosine": 0.03815321624279022,
+      "effect_rms": 0.12070129811763763
+    },
+    {
+      "target": "PRELID1",
+      "training_cells": 205,
+      "split_half_cosine": 0.133149653673172,
+      "effect_rms": 0.13106024265289307
+    },
+    {
+      "target": "PRKAB2",
+      "training_cells": 205,
+      "split_half_cosine": 0.0064603709615767,
+      "effect_rms": 0.11041615903377533
+    },
+    {
+      "target": "PRKACA",
+      "training_cells": 52,
+      "split_half_cosine": 0.04047165811061859,
+      "effect_rms": 0.21987226605415344
+    },
+    {
+      "target": "PRMT2",
+      "training_cells": 174,
+      "split_half_cosine": 0.02190803550183773,
+      "effect_rms": 0.11794808506965637
+    },
+    {
+      "target": "PRMT6",
+      "training_cells": 91,
+      "split_half_cosine": 0.09422626346349716,
+      "effect_rms": 0.1783994734287262
+    },
+    {
+      "target": "PRMT7",
+      "training_cells": 126,
+      "split_half_cosine": 0.02514970302581787,
+      "effect_rms": 0.1412104070186615
+    },
+    {
+      "target": "PRNP",
+      "training_cells": 155,
+      "split_half_cosine": 0.03891048580408096,
+      "effect_rms": 0.1259254515171051
+    },
+    {
+      "target": "PRPF40A",
+      "training_cells": 108,
+      "split_half_cosine": 0.35954028367996216,
+      "effect_rms": 0.23201106488704681
+    },
+    {
+      "target": "PRR12",
+      "training_cells": 127,
+      "split_half_cosine": 0.062393639236688614,
+      "effect_rms": 0.14139562845230103
+    },
+    {
+      "target": "PRRC2A",
+      "training_cells": 148,
+      "split_half_cosine": 0.10901015996932983,
+      "effect_rms": 0.14385122060775757
+    },
+    {
+      "target": "PSKH1",
+      "training_cells": 88,
+      "split_half_cosine": 0.07350179553031921,
+      "effect_rms": 0.17913056910037994
+    },
+    {
+      "target": "PSMA3",
+      "training_cells": 162,
+      "split_half_cosine": 0.09276764839887619,
+      "effect_rms": 0.1358385980129242
+    },
+    {
+      "target": "PSMB5",
+      "training_cells": 164,
+      "split_half_cosine": 0.07826358824968338,
+      "effect_rms": 0.12897644937038422
+    },
+    {
+      "target": "PSMB6",
+      "training_cells": 152,
+      "split_half_cosine": 0.0789262130856514,
+      "effect_rms": 0.13860367238521576
+    },
+    {
+      "target": "PSMD13",
+      "training_cells": 125,
+      "split_half_cosine": 0.3711782991886139,
+      "effect_rms": 0.2247881293296814
+    },
+    {
+      "target": "PTCD1",
+      "training_cells": 156,
+      "split_half_cosine": 0.19253885746002197,
+      "effect_rms": 0.1503671407699585
+    },
+    {
+      "target": "PTMS",
+      "training_cells": 149,
+      "split_half_cosine": 0.03190897777676582,
+      "effect_rms": 0.13442383706569672
+    },
+    {
+      "target": "PTOV1",
+      "training_cells": 64,
+      "split_half_cosine": 0.016353217884898186,
+      "effect_rms": 0.20274032652378082
+    },
+    {
+      "target": "PTPN1",
+      "training_cells": 205,
+      "split_half_cosine": 0.6133778095245361,
+      "effect_rms": 0.22837090492248535
+    },
+    {
+      "target": "PUF60",
+      "training_cells": 80,
+      "split_half_cosine": 0.12981122732162476,
+      "effect_rms": 0.21965746581554413
+    },
+    {
+      "target": "PYCR1",
+      "training_cells": 205,
+      "split_half_cosine": 0.030734481289982796,
+      "effect_rms": 0.10851439833641052
+    },
+    {
+      "target": "PYURF",
+      "training_cells": 92,
+      "split_half_cosine": 0.14800436794757843,
+      "effect_rms": 0.20076674222946167
+    },
+    {
+      "target": "R3HCC1L",
+      "training_cells": 108,
+      "split_half_cosine": 0.032153502106666565,
+      "effect_rms": 0.15623238682746887
+    },
+    {
+      "target": "RAB5A",
+      "training_cells": 131,
+      "split_half_cosine": 0.021458350121974945,
+      "effect_rms": 0.13839349150657654
+    },
+    {
+      "target": "RABEP2",
+      "training_cells": 204,
+      "split_half_cosine": 0.03694913536310196,
+      "effect_rms": 0.11038976162672043
+    },
+    {
+      "target": "RAD17",
+      "training_cells": 205,
+      "split_half_cosine": 0.05935228615999222,
+      "effect_rms": 0.11393922567367554
+    },
+    {
+      "target": "RAF1",
+      "training_cells": 108,
+      "split_half_cosine": 0.02562635764479637,
+      "effect_rms": 0.1524691879749298
+    },
+    {
+      "target": "RANBP2",
+      "training_cells": 159,
+      "split_half_cosine": 0.03157852590084076,
+      "effect_rms": 0.1252395361661911
+    },
+    {
+      "target": "RBM10",
+      "training_cells": 204,
+      "split_half_cosine": 0.18499062955379486,
+      "effect_rms": 0.1315673440694809
+    },
+    {
+      "target": "RBM12",
+      "training_cells": 120,
+      "split_half_cosine": 0.23838895559310913,
+      "effect_rms": 0.18444223701953888
+    },
+    {
+      "target": "RBM18",
+      "training_cells": 135,
+      "split_half_cosine": 0.09644228219985962,
+      "effect_rms": 0.15020915865898132
+    },
+    {
+      "target": "RBM26",
+      "training_cells": 135,
+      "split_half_cosine": 0.08206931501626968,
+      "effect_rms": 0.14172925055027008
+    },
+    {
+      "target": "RBM42",
+      "training_cells": 69,
+      "split_half_cosine": 0.16399015486240387,
+      "effect_rms": 0.22948963940143585
+    },
+    {
+      "target": "RBM4B",
+      "training_cells": 160,
+      "split_half_cosine": 0.03073318675160408,
+      "effect_rms": 0.13081437349319458
+    },
+    {
+      "target": "RBM5",
+      "training_cells": 80,
+      "split_half_cosine": 0.0805533304810524,
+      "effect_rms": 0.1847037822008133
+    },
+    {
+      "target": "RBMX2",
+      "training_cells": 101,
+      "split_half_cosine": 0.2288774698972702,
+      "effect_rms": 0.20734566450119019
+    },
+    {
+      "target": "RC3H2",
+      "training_cells": 133,
+      "split_half_cosine": 0.022231772541999817,
+      "effect_rms": 0.13527163863182068
+    },
+    {
+      "target": "RCL1",
+      "training_cells": 86,
+      "split_half_cosine": 0.29603931307792664,
+      "effect_rms": 0.21790900826454163
+    },
+    {
+      "target": "RCOR1",
+      "training_cells": 53,
+      "split_half_cosine": 0.02872740663588047,
+      "effect_rms": 0.23199236392974854
+    },
+    {
+      "target": "REV1",
+      "training_cells": 118,
+      "split_half_cosine": 0.056969054043293,
+      "effect_rms": 0.14404776692390442
+    },
+    {
+      "target": "RFC2",
+      "training_cells": 107,
+      "split_half_cosine": 0.23819488286972046,
+      "effect_rms": 0.1822647750377655
+    },
+    {
+      "target": "RFC5",
+      "training_cells": 116,
+      "split_half_cosine": 0.24826252460479736,
+      "effect_rms": 0.17789986729621887
+    },
+    {
+      "target": "RNF10",
+      "training_cells": 205,
+      "split_half_cosine": 0.05673559755086899,
+      "effect_rms": 0.11198993027210236
+    },
+    {
+      "target": "RNF113A",
+      "training_cells": 70,
+      "split_half_cosine": 0.10200078040361404,
+      "effect_rms": 0.22160778939723969
+    },
+    {
+      "target": "RNF141",
+      "training_cells": 205,
+      "split_half_cosine": 0.019528541713953018,
+      "effect_rms": 0.10995814204216003
+    },
+    {
+      "target": "RNF168",
+      "training_cells": 135,
+      "split_half_cosine": 0.009038299322128296,
+      "effect_rms": 0.13620911538600922
+    },
+    {
+      "target": "RNF2",
+      "training_cells": 92,
+      "split_half_cosine": 0.022177541628479958,
+      "effect_rms": 0.16183172166347504
+    },
+    {
+      "target": "RNF20",
+      "training_cells": 80,
+      "split_half_cosine": 0.3342870771884918,
+      "effect_rms": 0.2563588321208954
+    },
+    {
+      "target": "RPAP2",
+      "training_cells": 122,
+      "split_half_cosine": 0.3742918372154236,
+      "effect_rms": 0.2499506175518036
+    },
+    {
+      "target": "RPE",
+      "training_cells": 165,
+      "split_half_cosine": 0.02652812749147415,
+      "effect_rms": 0.1214476153254509
+    },
+    {
+      "target": "RPL11",
+      "training_cells": 164,
+      "split_half_cosine": 0.18638940155506134,
+      "effect_rms": 0.14715872704982758
+    },
+    {
+      "target": "RPL29",
+      "training_cells": 114,
+      "split_half_cosine": 0.1344676911830902,
+      "effect_rms": 0.18177007138729095
+    },
+    {
+      "target": "RPL31",
+      "training_cells": 95,
+      "split_half_cosine": 0.3692987263202667,
+      "effect_rms": 0.2149827629327774
+    },
+    {
+      "target": "RPL7",
+      "training_cells": 104,
+      "split_half_cosine": 0.23780933022499084,
+      "effect_rms": 0.19638629257678986
+    },
+    {
+      "target": "RPLP0",
+      "training_cells": 70,
+      "split_half_cosine": 0.061568815261125565,
+      "effect_rms": 0.1958368569612503
+    },
+    {
+      "target": "RPP21",
+      "training_cells": 89,
+      "split_half_cosine": 0.10463961213827133,
+      "effect_rms": 0.18987087905406952
+    },
+    {
+      "target": "RPS15A",
+      "training_cells": 140,
+      "split_half_cosine": 0.23509559035301208,
+      "effect_rms": 0.16319848597049713
+    },
+    {
+      "target": "RPS17",
+      "training_cells": 104,
+      "split_half_cosine": 0.07068946957588196,
+      "effect_rms": 0.16688445210456848
+    },
+    {
+      "target": "RPS25",
+      "training_cells": 60,
+      "split_half_cosine": 0.02800496481359005,
+      "effect_rms": 0.21544429659843445
+    },
+    {
+      "target": "RRM1",
+      "training_cells": 60,
+      "split_half_cosine": 0.11000688374042511,
+      "effect_rms": 0.21123720705509186
+    },
+    {
+      "target": "RRM2",
+      "training_cells": 205,
+      "split_half_cosine": 0.04414892569184303,
+      "effect_rms": 0.1091398298740387
+    },
+    {
+      "target": "RRP7A",
+      "training_cells": 56,
+      "split_half_cosine": 0.1675940901041031,
+      "effect_rms": 0.2375190556049347
+    },
+    {
+      "target": "RSL24D1",
+      "training_cells": 63,
+      "split_half_cosine": 0.11369798332452774,
+      "effect_rms": 0.2355722337961197
+    },
+    {
+      "target": "RSRC1",
+      "training_cells": 56,
+      "split_half_cosine": 0.04629337787628174,
+      "effect_rms": 0.22909311950206757
+    },
+    {
+      "target": "RTRAF",
+      "training_cells": 205,
+      "split_half_cosine": 0.38007989525794983,
+      "effect_rms": 0.17431271076202393
+    },
+    {
+      "target": "S100A11",
+      "training_cells": 160,
+      "split_half_cosine": 0.09324386715888977,
+      "effect_rms": 0.13054153323173523
+    },
+    {
+      "target": "SAFB",
+      "training_cells": 90,
+      "split_half_cosine": 0.08267179876565933,
+      "effect_rms": 0.17935878038406372
+    },
+    {
+      "target": "SALL4",
+      "training_cells": 54,
+      "split_half_cosine": 0.05483623966574669,
+      "effect_rms": 0.23307566344738007
+    },
+    {
+      "target": "SAMD4B",
+      "training_cells": 141,
+      "split_half_cosine": 0.16732582449913025,
+      "effect_rms": 0.16807591915130615
+    },
+    {
+      "target": "SAMM50",
+      "training_cells": 83,
+      "split_half_cosine": 0.3361915349960327,
+      "effect_rms": 0.2797400951385498
+    },
+    {
+      "target": "SAP30L",
+      "training_cells": 120,
+      "split_half_cosine": 0.0184644628316164,
+      "effect_rms": 0.1506589949131012
+    },
+    {
+      "target": "SARS2",
+      "training_cells": 205,
+      "split_half_cosine": 0.09839747101068497,
+      "effect_rms": 0.12525008618831635
+    },
+    {
+      "target": "SBDS",
+      "training_cells": 205,
+      "split_half_cosine": 0.020787280052900314,
+      "effect_rms": 0.10944145917892456
+    },
+    {
+      "target": "SCAF8",
+      "training_cells": 145,
+      "split_half_cosine": 0.12199801951646805,
+      "effect_rms": 0.1537354290485382
+    },
+    {
+      "target": "SDAD1",
+      "training_cells": 112,
+      "split_half_cosine": 0.31310272216796875,
+      "effect_rms": 0.20467066764831543
+    },
+    {
+      "target": "SDC1",
+      "training_cells": 205,
+      "split_half_cosine": 0.17307023704051971,
+      "effect_rms": 0.13164874911308289
+    },
+    {
+      "target": "SEC63",
+      "training_cells": 92,
+      "split_half_cosine": 0.07443556189537048,
+      "effect_rms": 0.16491276025772095
+    },
+    {
+      "target": "SENP6",
+      "training_cells": 136,
+      "split_half_cosine": 0.06499311327934265,
+      "effect_rms": 0.14317592978477478
+    },
+    {
+      "target": "SEPHS2",
+      "training_cells": 204,
+      "split_half_cosine": 0.03310326859354973,
+      "effect_rms": 0.11292441934347153
+    },
+    {
+      "target": "SEPSECS",
+      "training_cells": 183,
+      "split_half_cosine": 0.018161702901124954,
+      "effect_rms": 0.11609920114278793
+    },
+    {
+      "target": "SETX",
+      "training_cells": 205,
+      "split_half_cosine": 0.13589200377464294,
+      "effect_rms": 0.11948283016681671
+    },
+    {
+      "target": "SFXN4",
+      "training_cells": 120,
+      "split_half_cosine": 0.0760442391037941,
+      "effect_rms": 0.14734186232089996
+    },
+    {
+      "target": "SH2D3A",
+      "training_cells": 140,
+      "split_half_cosine": 0.024086836725473404,
+      "effect_rms": 0.13458403944969177
+    },
+    {
+      "target": "SHOC2",
+      "training_cells": 205,
+      "split_half_cosine": 0.26847702264785767,
+      "effect_rms": 0.14787903428077698
+    },
+    {
+      "target": "SHPRH",
+      "training_cells": 180,
+      "split_half_cosine": 0.052618883550167084,
+      "effect_rms": 0.12805724143981934
+    },
+    {
+      "target": "SHQ1",
+      "training_cells": 194,
+      "split_half_cosine": 0.0021059054415673018,
+      "effect_rms": 0.11197789013385773
+    },
+    {
+      "target": "SIN3B",
+      "training_cells": 74,
+      "split_half_cosine": 0.08762628585100174,
+      "effect_rms": 0.20346276462078094
+    },
+    {
+      "target": "SIX4",
+      "training_cells": 192,
+      "split_half_cosine": 0.017433632165193558,
+      "effect_rms": 0.11452759802341461
+    },
+    {
+      "target": "SLC25A13",
+      "training_cells": 122,
+      "split_half_cosine": 0.04064840078353882,
+      "effect_rms": 0.14009469747543335
+    },
+    {
+      "target": "SLC25A3",
+      "training_cells": 140,
+      "split_half_cosine": 0.017944367602467537,
+      "effect_rms": 0.13935671746730804
+    },
+    {
+      "target": "SLC39A1",
+      "training_cells": 163,
+      "split_half_cosine": 0.027245638892054558,
+      "effect_rms": 0.12020964175462723
+    },
+    {
+      "target": "SLC39A6",
+      "training_cells": 176,
+      "split_half_cosine": 0.09949271380901337,
+      "effect_rms": 0.12993957102298737
+    },
+    {
+      "target": "SMAGP",
+      "training_cells": 205,
+      "split_half_cosine": 0.03596049174666405,
+      "effect_rms": 0.11198563128709793
+    },
+    {
+      "target": "SMARCA4",
+      "training_cells": 106,
+      "split_half_cosine": 0.10894310474395752,
+      "effect_rms": 0.1690691113471985
+    },
+    {
+      "target": "SMARCA5",
+      "training_cells": 112,
+      "split_half_cosine": 0.17273148894309998,
+      "effect_rms": 0.16748467087745667
+    },
+    {
+      "target": "SMARCC2",
+      "training_cells": 205,
+      "split_half_cosine": 0.03068387508392334,
+      "effect_rms": 0.11089269816875458
+    },
+    {
+      "target": "SMC5",
+      "training_cells": 201,
+      "split_half_cosine": 0.014656086452305317,
+      "effect_rms": 0.11801969259977341
+    },
+    {
+      "target": "SMG8",
+      "training_cells": 140,
+      "split_half_cosine": 0.07732424885034561,
+      "effect_rms": 0.13721336424350739
+    },
+    {
+      "target": "SMYD2",
+      "training_cells": 164,
+      "split_half_cosine": 0.03645075112581253,
+      "effect_rms": 0.12106398493051529
+    },
+    {
+      "target": "SND1",
+      "training_cells": 166,
+      "split_half_cosine": 0.031152885407209396,
+      "effect_rms": 0.12846532464027405
+    },
+    {
+      "target": "SNRK",
+      "training_cells": 180,
+      "split_half_cosine": 0.026772702112793922,
+      "effect_rms": 0.11797485500574112
+    },
+    {
+      "target": "SNRPA",
+      "training_cells": 135,
+      "split_half_cosine": 0.13938815891742706,
+      "effect_rms": 0.15339718759059906
+    },
+    {
+      "target": "SNRPA1",
+      "training_cells": 94,
+      "split_half_cosine": 0.051239948719739914,
+      "effect_rms": 0.16964766383171082
+    },
+    {
+      "target": "SNX4",
+      "training_cells": 60,
+      "split_half_cosine": 0.01902157813310623,
+      "effect_rms": 0.20599694550037384
+    },
+    {
+      "target": "SPAG7",
+      "training_cells": 67,
+      "split_half_cosine": 0.10274875909090042,
+      "effect_rms": 0.21200570464134216
+    },
+    {
+      "target": "SPG7",
+      "training_cells": 164,
+      "split_half_cosine": 0.15335237979888916,
+      "effect_rms": 0.1417291909456253
+    },
+    {
+      "target": "SRP68",
+      "training_cells": 89,
+      "split_half_cosine": 0.4142766296863556,
+      "effect_rms": 0.312272846698761
+    },
+    {
+      "target": "SRPRB",
+      "training_cells": 196,
+      "split_half_cosine": 0.3412991166114807,
+      "effect_rms": 0.18002355098724365
+    },
+    {
+      "target": "SRSF5",
+      "training_cells": 161,
+      "split_half_cosine": 0.062387168407440186,
+      "effect_rms": 0.12721048295497894
+    },
+    {
+      "target": "SSBP1",
+      "training_cells": 176,
+      "split_half_cosine": 0.2970699369907379,
+      "effect_rms": 0.1798122227191925
+    },
+    {
+      "target": "SSR4",
+      "training_cells": 103,
+      "split_half_cosine": 0.008223564364016056,
+      "effect_rms": 0.16525152325630188
+    },
+    {
+      "target": "STAG2",
+      "training_cells": 205,
+      "split_half_cosine": 0.18086515367031097,
+      "effect_rms": 0.12066527456045151
+    },
+    {
+      "target": "STARD7",
+      "training_cells": 202,
+      "split_half_cosine": 0.04694676771759987,
+      "effect_rms": 0.12094195187091827
+    },
+    {
+      "target": "STAT1",
+      "training_cells": 102,
+      "split_half_cosine": 0.004021371249109507,
+      "effect_rms": 0.14991024136543274
+    },
+    {
+      "target": "STK3",
+      "training_cells": 148,
+      "split_half_cosine": 0.030190272256731987,
+      "effect_rms": 0.1369207799434662
+    },
+    {
+      "target": "STT3A",
+      "training_cells": 53,
+      "split_half_cosine": 0.031302060931921005,
+      "effect_rms": 0.2331114411354065
+    },
+    {
+      "target": "STX4",
+      "training_cells": 109,
+      "split_half_cosine": 0.02889903075993061,
+      "effect_rms": 0.148305281996727
+    },
+    {
+      "target": "SUGT1",
+      "training_cells": 72,
+      "split_half_cosine": 0.24729162454605103,
+      "effect_rms": 0.23395761847496033
+    },
+    {
+      "target": "SUPT4H1",
+      "training_cells": 117,
+      "split_half_cosine": 0.14290866255760193,
+      "effect_rms": 0.1880684792995453
+    },
+    {
+      "target": "SUPT7L",
+      "training_cells": 102,
+      "split_half_cosine": 0.057649876922369,
+      "effect_rms": 0.15554116666316986
+    },
+    {
+      "target": "SYVN1",
+      "training_cells": 136,
+      "split_half_cosine": 0.06080597639083862,
+      "effect_rms": 0.13332056999206543
+    },
+    {
+      "target": "TADA1",
+      "training_cells": 205,
+      "split_half_cosine": 0.16077938675880432,
+      "effect_rms": 0.12730316817760468
+    },
+    {
+      "target": "TAF13",
+      "training_cells": 57,
+      "split_half_cosine": 0.1382579803466797,
+      "effect_rms": 0.2507050037384033
+    },
+    {
+      "target": "TAF15",
+      "training_cells": 205,
+      "split_half_cosine": 0.024332745000720024,
+      "effect_rms": 0.1137571856379509
+    },
+    {
+      "target": "TARBP2",
+      "training_cells": 74,
+      "split_half_cosine": 0.009791573509573936,
+      "effect_rms": 0.17425794899463654
+    },
+    {
+      "target": "TARS2",
+      "training_cells": 125,
+      "split_half_cosine": 0.2080976516008377,
+      "effect_rms": 0.16933171451091766
+    },
+    {
+      "target": "TAZ",
+      "training_cells": 104,
+      "split_half_cosine": 0.12016648799180984,
+      "effect_rms": 0.18227635324001312
+    },
+    {
+      "target": "TBC1D13",
+      "training_cells": 160,
+      "split_half_cosine": 0.0422818548977375,
+      "effect_rms": 0.12353090196847916
+    },
+    {
+      "target": "TBCK",
+      "training_cells": 151,
+      "split_half_cosine": 0.028093162924051285,
+      "effect_rms": 0.1327633261680603
+    },
+    {
+      "target": "TCF3",
+      "training_cells": 76,
+      "split_half_cosine": 0.09014730900526047,
+      "effect_rms": 0.20688727498054504
+    },
+    {
+      "target": "TEAD4",
+      "training_cells": 116,
+      "split_half_cosine": 0.041994620114564896,
+      "effect_rms": 0.1605784147977829
+    },
+    {
+      "target": "TELO2",
+      "training_cells": 64,
+      "split_half_cosine": 0.29431238770484924,
+      "effect_rms": 0.2986118793487549
+    },
+    {
+      "target": "TET1",
+      "training_cells": 128,
+      "split_half_cosine": 0.03465091064572334,
+      "effect_rms": 0.14690794050693512
+    },
+    {
+      "target": "TEX2",
+      "training_cells": 205,
+      "split_half_cosine": 0.0385025255382061,
+      "effect_rms": 0.10751365125179291
+    },
+    {
+      "target": "TFAM",
+      "training_cells": 118,
+      "split_half_cosine": 0.23051714897155762,
+      "effect_rms": 0.18667307496070862
+    },
+    {
+      "target": "TFB1M",
+      "training_cells": 146,
+      "split_half_cosine": 0.09219405800104141,
+      "effect_rms": 0.14283230900764465
+    },
+    {
+      "target": "TFCP2",
+      "training_cells": 205,
+      "split_half_cosine": 0.026233356446027756,
+      "effect_rms": 0.10943876951932907
+    },
+    {
+      "target": "THAP3",
+      "training_cells": 117,
+      "split_half_cosine": 0.03081616945564747,
+      "effect_rms": 0.14267997443675995
+    },
+    {
+      "target": "THAP7",
+      "training_cells": 205,
+      "split_half_cosine": 0.024184484034776688,
+      "effect_rms": 0.1118764653801918
+    },
+    {
+      "target": "TIGD1",
+      "training_cells": 107,
+      "split_half_cosine": 0.024017350748181343,
+      "effect_rms": 0.15403629839420319
+    },
+    {
+      "target": "TIMM10",
+      "training_cells": 112,
+      "split_half_cosine": 0.021584179252386093,
+      "effect_rms": 0.14733216166496277
+    },
+    {
+      "target": "TIMM17B",
+      "training_cells": 111,
+      "split_half_cosine": 0.09898904711008072,
+      "effect_rms": 0.1637897938489914
+    },
+    {
+      "target": "TIMM9",
+      "training_cells": 205,
+      "split_half_cosine": 0.14383557438850403,
+      "effect_rms": 0.12923745810985565
+    },
+    {
+      "target": "TM7SF2",
+      "training_cells": 200,
+      "split_half_cosine": 0.024934405460953712,
+      "effect_rms": 0.11053687334060669
+    },
+    {
+      "target": "TMBIM6",
+      "training_cells": 107,
+      "split_half_cosine": 0.007788423914462328,
+      "effect_rms": 0.1572926789522171
+    },
+    {
+      "target": "TMCO6",
+      "training_cells": 91,
+      "split_half_cosine": 0.013917392119765282,
+      "effect_rms": 0.1678701639175415
+    },
+    {
+      "target": "TMED3",
+      "training_cells": 205,
+      "split_half_cosine": 0.06067068874835968,
+      "effect_rms": 0.11162911355495453
+    },
+    {
+      "target": "TMEM147",
+      "training_cells": 75,
+      "split_half_cosine": 0.04294676333665848,
+      "effect_rms": 0.1805194616317749
+    },
+    {
+      "target": "TMEM186",
+      "training_cells": 64,
+      "split_half_cosine": 0.06247251480817795,
+      "effect_rms": 0.19135862588882446
+    },
+    {
+      "target": "TMEM209",
+      "training_cells": 158,
+      "split_half_cosine": 0.044268496334552765,
+      "effect_rms": 0.12778402864933014
+    },
+    {
+      "target": "TMF1",
+      "training_cells": 115,
+      "split_half_cosine": -0.00916567537933588,
+      "effect_rms": 0.15021032094955444
+    },
+    {
+      "target": "TMSB10",
+      "training_cells": 205,
+      "split_half_cosine": 0.12211465835571289,
+      "effect_rms": 0.11786892265081406
+    },
+    {
+      "target": "TMSB4X",
+      "training_cells": 139,
+      "split_half_cosine": -0.005121632944792509,
+      "effect_rms": 0.12681953608989716
+    },
+    {
+      "target": "TOX4",
+      "training_cells": 205,
+      "split_half_cosine": 0.1472756564617157,
+      "effect_rms": 0.1254885494709015
+    },
+    {
+      "target": "TPR",
+      "training_cells": 74,
+      "split_half_cosine": 0.3071647882461548,
+      "effect_rms": 0.2659554183483124
+    },
+    {
+      "target": "TRAM2",
+      "training_cells": 203,
+      "split_half_cosine": 0.02265487238764763,
+      "effect_rms": 0.10787638276815414
+    },
+    {
+      "target": "TRAPPC6A",
+      "training_cells": 131,
+      "split_half_cosine": 0.0912090316414833,
+      "effect_rms": 0.1470567286014557
+    },
+    {
+      "target": "TRIB3",
+      "training_cells": 134,
+      "split_half_cosine": 0.02882443554699421,
+      "effect_rms": 0.1349177211523056
+    },
+    {
+      "target": "TRIM35",
+      "training_cells": 205,
+      "split_half_cosine": 0.026610536500811577,
+      "effect_rms": 0.10828834027051926
+    },
+    {
+      "target": "TRIP4",
+      "training_cells": 110,
+      "split_half_cosine": 0.045945558696985245,
+      "effect_rms": 0.1487295925617218
+    },
+    {
+      "target": "TRMT1",
+      "training_cells": 142,
+      "split_half_cosine": 0.034782007336616516,
+      "effect_rms": 0.1316220909357071
+    },
+    {
+      "target": "TRPC4AP",
+      "training_cells": 80,
+      "split_half_cosine": 0.053833525627851486,
+      "effect_rms": 0.1865469366312027
+    },
+    {
+      "target": "TSC22D4",
+      "training_cells": 205,
+      "split_half_cosine": 0.041557904332876205,
+      "effect_rms": 0.11499481648206711
+    },
+    {
+      "target": "TTC4",
+      "training_cells": 138,
+      "split_half_cosine": 0.2679351568222046,
+      "effect_rms": 0.1732322871685028
+    },
+    {
+      "target": "TUBGCP6",
+      "training_cells": 205,
+      "split_half_cosine": 0.03334186226129532,
+      "effect_rms": 0.11595409363508224
+    },
+    {
+      "target": "TWF2",
+      "training_cells": 205,
+      "split_half_cosine": 0.0341394878923893,
+      "effect_rms": 0.10481010377407074
+    },
+    {
+      "target": "TYK2",
+      "training_cells": 116,
+      "split_half_cosine": 0.1052432507276535,
+      "effect_rms": 0.17152737081050873
+    },
+    {
+      "target": "UBA2",
+      "training_cells": 183,
+      "split_half_cosine": 0.3366573750972748,
+      "effect_rms": 0.17559996247291565
+    },
+    {
+      "target": "UBE3C",
+      "training_cells": 143,
+      "split_half_cosine": 0.18533658981323242,
+      "effect_rms": 0.15961985290050507
+    },
+    {
+      "target": "UBE3D",
+      "training_cells": 195,
+      "split_half_cosine": 0.13293565809726715,
+      "effect_rms": 0.14007391035556793
+    },
+    {
+      "target": "UBL5",
+      "training_cells": 96,
+      "split_half_cosine": 0.10869370400905609,
+      "effect_rms": 0.18740296363830566
+    },
+    {
+      "target": "UCHL5",
+      "training_cells": 191,
+      "split_half_cosine": 0.15684537589550018,
+      "effect_rms": 0.13178960978984833
+    },
+    {
+      "target": "UNK",
+      "training_cells": 180,
+      "split_half_cosine": 0.043689269572496414,
+      "effect_rms": 0.12174664437770844
+    },
+    {
+      "target": "UPF3B",
+      "training_cells": 155,
+      "split_half_cosine": 0.057874783873558044,
+      "effect_rms": 0.1280200034379959
+    },
+    {
+      "target": "UQCRB",
+      "training_cells": 167,
+      "split_half_cosine": 0.11954594403505325,
+      "effect_rms": 0.14233966171741486
+    },
+    {
+      "target": "UQCRFS1",
+      "training_cells": 135,
+      "split_half_cosine": 0.2172045111656189,
+      "effect_rms": 0.18169444799423218
+    },
+    {
+      "target": "UQCRQ",
+      "training_cells": 152,
+      "split_half_cosine": 0.16657763719558716,
+      "effect_rms": 0.15859335660934448
+    },
+    {
+      "target": "URB2",
+      "training_cells": 200,
+      "split_half_cosine": 0.21737930178642273,
+      "effect_rms": 0.13497990369796753
+    },
+    {
+      "target": "UROS",
+      "training_cells": 174,
+      "split_half_cosine": 0.04833190515637398,
+      "effect_rms": 0.12332306802272797
+    },
+    {
+      "target": "USF2",
+      "training_cells": 205,
+      "split_half_cosine": 0.026877732947468758,
+      "effect_rms": 0.11357972025871277
+    },
+    {
+      "target": "USP19",
+      "training_cells": 150,
+      "split_half_cosine": 0.012263379991054535,
+      "effect_rms": 0.1307649165391922
+    },
+    {
+      "target": "USP22",
+      "training_cells": 205,
+      "split_half_cosine": 0.07908056676387787,
+      "effect_rms": 0.11804036796092987
+    },
+    {
+      "target": "USP28",
+      "training_cells": 144,
+      "split_half_cosine": 0.013748322613537312,
+      "effect_rms": 0.12893794476985931
+    },
+    {
+      "target": "VAPB",
+      "training_cells": 119,
+      "split_half_cosine": 0.049959585070610046,
+      "effect_rms": 0.14379869401454926
+    },
+    {
+      "target": "VBP1",
+      "training_cells": 200,
+      "split_half_cosine": 0.009805082343518734,
+      "effect_rms": 0.11229357123374939
+    },
+    {
+      "target": "VIM",
+      "training_cells": 80,
+      "split_half_cosine": 0.024791350588202477,
+      "effect_rms": 0.17086848616600037
+    },
+    {
+      "target": "VPS13D",
+      "training_cells": 205,
+      "split_half_cosine": 0.1295183300971985,
+      "effect_rms": 0.13351529836654663
+    },
+    {
+      "target": "VPS29",
+      "training_cells": 150,
+      "split_half_cosine": 0.2394631952047348,
+      "effect_rms": 0.18127897381782532
+    },
+    {
+      "target": "VPS54",
+      "training_cells": 156,
+      "split_half_cosine": 0.061209991574287415,
+      "effect_rms": 0.1271081119775772
+    },
+    {
+      "target": "VPS72",
+      "training_cells": 160,
+      "split_half_cosine": 0.5554009675979614,
+      "effect_rms": 0.24980974197387695
+    },
+    {
+      "target": "WBP4",
+      "training_cells": 188,
+      "split_half_cosine": 0.03134270757436752,
+      "effect_rms": 0.1231742650270462
+    },
+    {
+      "target": "WDR25",
+      "training_cells": 205,
+      "split_half_cosine": 0.021751239895820618,
+      "effect_rms": 0.10666343569755554
+    },
+    {
+      "target": "WDR4",
+      "training_cells": 205,
+      "split_half_cosine": 0.0056545021943748,
+      "effect_rms": 0.11016403138637543
+    },
+    {
+      "target": "WDR44",
+      "training_cells": 160,
+      "split_half_cosine": 0.1474897414445877,
+      "effect_rms": 0.1496705561876297
+    },
+    {
+      "target": "WDR82",
+      "training_cells": 121,
+      "split_half_cosine": 0.4643002152442932,
+      "effect_rms": 0.26553237438201904
+    },
+    {
+      "target": "WNK1",
+      "training_cells": 205,
+      "split_half_cosine": 0.09287472069263458,
+      "effect_rms": 0.12380429357290268
+    },
+    {
+      "target": "WSB2",
+      "training_cells": 125,
+      "split_half_cosine": 0.038115739822387695,
+      "effect_rms": 0.1507849544286728
+    },
+    {
+      "target": "XRCC4",
+      "training_cells": 172,
+      "split_half_cosine": 0.02072693407535553,
+      "effect_rms": 0.11877983063459396
+    },
+    {
+      "target": "XRCC5",
+      "training_cells": 63,
+      "split_half_cosine": 0.24324332177639008,
+      "effect_rms": 0.25879910588264465
+    },
+    {
+      "target": "YARS2",
+      "training_cells": 205,
+      "split_half_cosine": 0.1498299241065979,
+      "effect_rms": 0.13372518122196198
+    },
+    {
+      "target": "YIPF6",
+      "training_cells": 65,
+      "split_half_cosine": 0.03146684169769287,
+      "effect_rms": 0.1992635279893875
+    },
+    {
+      "target": "YPEL5",
+      "training_cells": 131,
+      "split_half_cosine": 0.05335794389247894,
+      "effect_rms": 0.1405816227197647
+    },
+    {
+      "target": "YTHDC1",
+      "training_cells": 110,
+      "split_half_cosine": 0.05726439878344536,
+      "effect_rms": 0.16223996877670288
+    },
+    {
+      "target": "YY1",
+      "training_cells": 142,
+      "split_half_cosine": 0.08771179616451263,
+      "effect_rms": 0.13980069756507874
+    },
+    {
+      "target": "ZBTB34",
+      "training_cells": 124,
+      "split_half_cosine": 0.016022464260458946,
+      "effect_rms": 0.13875025510787964
+    },
+    {
+      "target": "ZBTB41",
+      "training_cells": 124,
+      "split_half_cosine": 0.012006359174847603,
+      "effect_rms": 0.1420385092496872
+    },
+    {
+      "target": "ZBTB48",
+      "training_cells": 67,
+      "split_half_cosine": 0.034215088933706284,
+      "effect_rms": 0.202130526304245
+    },
+    {
+      "target": "ZC3H3",
+      "training_cells": 137,
+      "split_half_cosine": 0.24074797332286835,
+      "effect_rms": 0.1666058748960495
+    },
+    {
+      "target": "ZC3HAV1",
+      "training_cells": 147,
+      "split_half_cosine": 0.0447632260620594,
+      "effect_rms": 0.13136586546897888
+    },
+    {
+      "target": "ZDHHC12",
+      "training_cells": 205,
+      "split_half_cosine": 0.04489060863852501,
+      "effect_rms": 0.11455947905778885
+    },
+    {
+      "target": "ZDHHC4",
+      "training_cells": 100,
+      "split_half_cosine": 0.05493510887026787,
+      "effect_rms": 0.1625106930732727
+    },
+    {
+      "target": "ZFP62",
+      "training_cells": 105,
+      "split_half_cosine": -0.008063080720603466,
+      "effect_rms": 0.15617531538009644
+    },
+    {
+      "target": "ZHX3",
+      "training_cells": 205,
+      "split_half_cosine": 0.04128508269786835,
+      "effect_rms": 0.11095443367958069
+    },
+    {
+      "target": "ZKSCAN1",
+      "training_cells": 205,
+      "split_half_cosine": 0.030461853370070457,
+      "effect_rms": 0.10915634036064148
+    },
+    {
+      "target": "ZKSCAN2",
+      "training_cells": 109,
+      "split_half_cosine": 0.053531307727098465,
+      "effect_rms": 0.15273810923099518
+    },
+    {
+      "target": "ZKSCAN3",
+      "training_cells": 74,
+      "split_half_cosine": 0.04797789081931114,
+      "effect_rms": 0.19247998297214508
+    },
+    {
+      "target": "ZNF16",
+      "training_cells": 71,
+      "split_half_cosine": 0.045670051127672195,
+      "effect_rms": 0.19643907248973846
+    },
+    {
+      "target": "ZNF219",
+      "training_cells": 60,
+      "split_half_cosine": 0.13330809772014618,
+      "effect_rms": 0.24645143747329712
+    },
+    {
+      "target": "ZNF22",
+      "training_cells": 120,
+      "split_half_cosine": 0.013005606830120087,
+      "effect_rms": 0.14970353245735168
+    },
+    {
+      "target": "ZNF25",
+      "training_cells": 148,
+      "split_half_cosine": 0.0216594859957695,
+      "effect_rms": 0.12888124585151672
+    },
+    {
+      "target": "ZNF251",
+      "training_cells": 176,
+      "split_half_cosine": 0.03443378955125809,
+      "effect_rms": 0.12171517312526703
+    },
+    {
+      "target": "ZNF280C",
+      "training_cells": 52,
+      "split_half_cosine": 0.051720816642045975,
+      "effect_rms": 0.2190055251121521
+    },
+    {
+      "target": "ZNF282",
+      "training_cells": 205,
+      "split_half_cosine": 0.0467657595872879,
+      "effect_rms": 0.10877104103565216
+    },
+    {
+      "target": "ZNF286A",
+      "training_cells": 104,
+      "split_half_cosine": -0.008297855034470558,
+      "effect_rms": 0.15916341543197632
+    },
+    {
+      "target": "ZNF292",
+      "training_cells": 205,
+      "split_half_cosine": 0.168759286403656,
+      "effect_rms": 0.12613056600093842
+    },
+    {
+      "target": "ZNF32",
+      "training_cells": 87,
+      "split_half_cosine": 0.027831779792904854,
+      "effect_rms": 0.16069544851779938
+    },
+    {
+      "target": "ZNF410",
+      "training_cells": 100,
+      "split_half_cosine": 0.06418249011039734,
+      "effect_rms": 0.1677653044462204
+    },
+    {
+      "target": "ZNF426",
+      "training_cells": 159,
+      "split_half_cosine": 0.05529806390404701,
+      "effect_rms": 0.13036353886127472
+    },
+    {
+      "target": "ZNF444",
+      "training_cells": 159,
+      "split_half_cosine": 0.034350860863924026,
+      "effect_rms": 0.12555482983589172
+    },
+    {
+      "target": "ZNF462",
+      "training_cells": 205,
+      "split_half_cosine": 0.11590062826871872,
+      "effect_rms": 0.12108047306537628
+    },
+    {
+      "target": "ZNF496",
+      "training_cells": 119,
+      "split_half_cosine": 0.13864172995090485,
+      "effect_rms": 0.17159174382686615
+    },
+    {
+      "target": "ZNF507",
+      "training_cells": 205,
+      "split_half_cosine": 0.07282637804746628,
+      "effect_rms": 0.11324790865182877
+    },
+    {
+      "target": "ZNF514",
+      "training_cells": 205,
+      "split_half_cosine": 0.03174200654029846,
+      "effect_rms": 0.1075340062379837
+    },
+    {
+      "target": "ZNF526",
+      "training_cells": 170,
+      "split_half_cosine": -0.006309488322585821,
+      "effect_rms": 0.11896035820245743
+    },
+    {
+      "target": "ZNF530",
+      "training_cells": 205,
+      "split_half_cosine": 0.0034865455236285925,
+      "effect_rms": 0.10929017513990402
+    },
+    {
+      "target": "ZNF543",
+      "training_cells": 169,
+      "split_half_cosine": 0.04192403331398964,
+      "effect_rms": 0.12163446098566055
+    },
+    {
+      "target": "ZNF562",
+      "training_cells": 88,
+      "split_half_cosine": 0.03676487132906914,
+      "effect_rms": 0.16181537508964539
+    },
+    {
+      "target": "ZNF593",
+      "training_cells": 205,
+      "split_half_cosine": -0.019868552684783936,
+      "effect_rms": 0.11272773146629333
+    },
+    {
+      "target": "ZNF627",
+      "training_cells": 120,
+      "split_half_cosine": 0.023905277252197266,
+      "effect_rms": 0.13612763583660126
+    },
+    {
+      "target": "ZNF628",
+      "training_cells": 118,
+      "split_half_cosine": 0.047241341322660446,
+      "effect_rms": 0.1556861847639084
+    },
+    {
+      "target": "ZNF641",
+      "training_cells": 116,
+      "split_half_cosine": 0.02066534198820591,
+      "effect_rms": 0.1423940807580948
+    },
+    {
+      "target": "ZNF670",
+      "training_cells": 81,
+      "split_half_cosine": 0.006179350893944502,
+      "effect_rms": 0.1769699901342392
+    },
+    {
+      "target": "ZNF714",
+      "training_cells": 54,
+      "split_half_cosine": 0.024638323113322258,
+      "effect_rms": 0.20828209817409515
+    },
+    {
+      "target": "ZNF740",
+      "training_cells": 121,
+      "split_half_cosine": 0.036999523639678955,
+      "effect_rms": 0.14388875663280487
+    },
+    {
+      "target": "ZNF768",
+      "training_cells": 135,
+      "split_half_cosine": 0.01514675933867693,
+      "effect_rms": 0.13808366656303406
+    },
+    {
+      "target": "ZNF777",
+      "training_cells": 56,
+      "split_half_cosine": 0.054175008088350296,
+      "effect_rms": 0.2109617441892624
+    },
+    {
+      "target": "ZNF783",
+      "training_cells": 133,
+      "split_half_cosine": 0.035205740481615067,
+      "effect_rms": 0.1456245630979538
+    },
+    {
+      "target": "ZNF784",
+      "training_cells": 146,
+      "split_half_cosine": 0.04902186989784241,
+      "effect_rms": 0.13551363348960876
+    },
+    {
+      "target": "ZNF786",
+      "training_cells": 122,
+      "split_half_cosine": 0.09863154590129852,
+      "effect_rms": 0.15647372603416443
+    },
+    {
+      "target": "ZNF821",
+      "training_cells": 205,
+      "split_half_cosine": 0.02860347181558609,
+      "effect_rms": 0.11001694947481155
+    }
+  ]
+}

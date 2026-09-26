@@ -306,6 +306,8 @@
 - 来源：[DOI/bioRxiv](https://doi.org/10.1101/2025.06.11.659105)；Ann C Huang et al.；2025-06-16 预印本；[Crossref](https://api.crossref.org/works/10.1101/2025.06.11.659105)书目核验 2026-09-14；本地全文未保存；线索与边界见[材料审阅](../research/participant-evidence-review.md)。
 - 2026-09-23 数据更新：作者 [Figshare v3](https://doi.org/10.25452/figshare.plus.29190726.v3) 已发布 HCT116/HEK293T 两个处理后 H5AD（合计 559,518,282,173 bytes）；[Hugging Face Parquet 副本](https://huggingface.co/datasets/Xaira-Therapeutics/X-Atlas-Orion)文件树约 126.26 GB，数据卡声明稀疏表达为 raw counts。两个入口均标 CC BY-NC-SA 4.0；奖金竞赛用途许可、对照标签和矩阵内容未核实。维持备选，不将其与 X-Cell 模型页或 X-Atlas/Pisces 汇编混为一项。详见[数据清单](../research/perturbation-dataset-catalog.md)。
 
+- 2026-09-26 标签试点：固定 HF revision `53a5bc98d49247bcf967500292575c3d3602de31`。仅取 HCT116/HEK293T 各 Batch1 的四列标签与页脚，共 704,911 bytes，验证批次内 `Non-Targeting` 对照；两批分别有 168/160 个官方靶点标签、270/296 个对应细胞。基因元数据覆盖 18,106 个官方符号，存在 22 个重复符号；矩阵原始计数、全批次覆盖与竞赛许可适用性仍未解决，维持备选，未进入训练/提交。[可复核试点](../research/orion-metadata-pilot-2026-09-26.md)。
+
 ### Genome-scale perturb-seq in primary human CD4+ T cells maps context-specific regulators of T cell programs and human immune traits
 
 - 摘要：原代人 CD4+ T 细胞的全基因组 Perturb-seq 研究；参赛博客将其静息与刺激状态列入迁移数据。此处仅据题名、出版元数据及博客线索概述，方法与原始数据尚未核验。
@@ -733,3 +735,26 @@
 - 产物：[候选证据记录](../research/state-next-candidate-evidence-2026-09-26.md)。复用 State 与响应分解论文条目；State 保持采用为公开预训练主干，响应分解保持采用为分量诊断依据，Stack 保持备选。本轮没有新论文或主题发现，Scholar/SciVerse/HTTP 均 0 次，未重读论文全文，不升级既有论文结论。
 - 一手代码：State `9bbfe78a434a55205e4de834e1ea99f85f7a3add` 的 gene-space 输出/ReLU、分布损失；响应分解 `a15214780619736d393f40240e56ba992fd416a3` 的 ANOVA。确认 ReLU 后差分可为负、当前损失与原生 State 不同；公共响应仅解释当前来源加权训练效应平方量的 2.2%–14.2%，不足以断言公共效应占优导致模型塌缩。
 - 新建议属于工程假设：既有公开权重后代继续微调 6000 步，零初始化 signed residual head、靶点中心化、pairwise response loss、固定保守经验先验加 0.1 修正；不作为已验证收益。旧 all-source 后代权重不能充当未见来源证据，State 修正权重固定，不声称 source-LOCO 选模；公开父权重历史暴露仍未完整核验。服务器只读查询两次，第一次 ESM 别名错误后修正完成；没有远程写入、数据下载或 GPU 训练。
+
+
+## 2026-09-26：效应可信度、收缩估计与候选审计
+
+### ashr — Adaptive Shrinkage（作者软件与方法说明）
+
+- 摘要：作者 README 描述以效应估计和对应标准误为输入，从数据估计收缩程度；高标准误观测收缩更多，使用以零为中心的单峰先验及正态/可选 t 观测模型。
+- 来源：[作者仓库](https://github.com/stephens999/ashr)、[已读 README](https://github.com/stephens999/ashr/blob/master/README.md)；软件包具体 release 待核验，本轮仅核验作者说明的内容与文件 SHA-256。
+- 本地：[检索与原文核验记录](../research/reliability-transfer-literature-2026-09-26.md)。原始 README 仅在忽略目录留作核验输入。
+- 核心关联与决定：**采用方法原则**，用于区分扰动效应和估计噪声；项目自定义 normal-mixture posterior 不等同于 ashr 的完整实现，不继承其 FDR 或可信区间保证。
+- 相关材料：与下述 Urbut 等的跨条件收缩属于同一方法脉络；本轮采用一元估计器，未实现 mash 的条件相关性模型。
+- 关键词：empirical Bayes、standard error、shrinkage、normal means；核验日期 2026-09-26；论文 DOI 与软件版本关系未在本轮独立核验，不补造。
+
+### Flexible statistical methods for estimating and testing effects in genomic studies with multiple conditions
+
+- 摘要：Urbut 等提出跨多条件联合估计大量效应的方法，通过效应相关性增加信息共享；出版页摘要以 44 个人体组织的 cis-eQTL 作示例，强调效应可共享但幅度仍可随组织变化。
+- 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-018-0268-8)；Sarah M. Urbut、Gao Wang、Peter Carbonetto、Matthew Stephens；在线 2018-11-26，Nature Genetics 51:187–195 (2019)。出版页书目/摘要已核，全文正文未取得。
+- 本地：[检索与核验记录](../research/reliability-transfer-literature-2026-09-26.md)、[原始候选元数据](../research/reliability-transfer-sources-2026-09-26/search-results.json)。
+- 核心关联与决定：**采用效应及不确定性联合建模的问题意识**；多变量 mash 实现为备选，本轮不会把自定义一元混合估计器称为 mash 复现，也不把 eQTL 结果等同于 CRISPRi 跨背景预测收益。
+- 相关论文：与既有 response decomposition 的共享/背景特异响应结构互补；与 ashr 的一元收缩相关，应用领域及统计目标不同。
+- 关键词：mash、effect estimation、multivariate shrinkage、eQTL、跨条件；检索与核验日期 2026-09-26。
+
+本次两个 Scholar 查询的 20 个已查看命中均在[逐候选表](../research/reliability-transfer-literature-2026-09-26.md#候选收敛)登记采用、备选或排除及理由；题名、摘要、作者、原文链接、年份和版本线索保存在上述 JSON。BuDDI 预印本/正式版合并，既有 dbDiffusion 不重复建项。其余仅作题名/摘要筛选，未取得摘要或核实书目的项明确待核，不用于具体方法性能判断。2 次 Scholar、7 次一手 HTTP（含 3 个 404）的完整台账、修正入口和未取得全文的范围见记录；没有继续扩搜。

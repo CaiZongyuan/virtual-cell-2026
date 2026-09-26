@@ -1,0 +1,10 @@
+{
+  "actual_source_revision": "16ea351",
+  "runner_revision_argument": "SOURCE_REVISION",
+  "explanation": "Launch accidentally passed a literal placeholder; this receipt records the actual committed bytes. The original stage record remains unchanged.",
+  "files": {
+    "experiments/reliability_transfer/aggregate.py": "67ca11ff11f2bfabc39befd74d47d6d404a01c1170d7927d52cf70c306d42ec0",
+    "experiments/calibrated_transfer/campaign.py": "cfaa116fbacbb24069d22d7febaee34d996e112218b085363a3c860bd74d7c90",
+    "experiments/state_finetune/data.py": "b73d4d5bded53b19ae97e4832a674fd8241fe60881419312e96c32f9aa2886ca"
+  }
+}

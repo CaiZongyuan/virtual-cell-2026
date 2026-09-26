@@ -1,0 +1,30 @@
+{
+  "stage": "state-smoke",
+  "trial": "state",
+  "source_revision": "4a4913ee2c10c058cb415ef4fc1d95d33d41d461",
+  "started_at_utc": "2026-09-26T04:57:19.234774+00:00",
+  "command": [
+    "/home/caii/vcc2026-run/.venv/bin/python",
+    "/home/caii/vcc2026-reliability-20260926/code/experiments/effect_calibration/residual.py",
+    "--previous",
+    "/home/caii/vcc2026-run",
+    "--campaign",
+    "/home/caii/vcc2026-reliability-20260926/denoised-training",
+    "--work",
+    "/home/caii/vcc2026-reliability-20260926",
+    "--prior-strength",
+    "0.5",
+    "--revision",
+    "4a4913ee2c10c058cb415ef4fc1d95d33d41d461",
+    "--steps",
+    "2",
+    "--output-subdir",
+    "state-smoke"
+  ],
+  "log": "logs/state-smoke-1790398639234770236.log",
+  "exit_code": 0,
+  "project_storage_bytes_before_stage": 134667055323,
+  "timeout_seconds": 600,
+  "elapsed_seconds": 49.9953989982605,
+  "finished_at_unix": 1790398689.2300448
+}

@@ -1,0 +1,8922 @@
+{
+  "targets": [
+    "ACAT2",
+    "ACLY",
+    "ACSS2",
+    "ACVR1B",
+    "ADNP",
+    "AGO1",
+    "AKAP1",
+    "AKIRIN1",
+    "AKT2",
+    "ALG12",
+    "ALG14",
+    "ANAPC13",
+    "ANKZF1",
+    "ANP32B",
+    "AP2A2",
+    "API5",
+    "ARFRP1",
+    "ARID1A",
+    "ARL14EP",
+    "ARL6IP6",
+    "ARPC4",
+    "ASCC2",
+    "ATM",
+    "ATP2A2",
+    "ATP5ME",
+    "ATP6V0B",
+    "ATP6V0C",
+    "BCKDK",
+    "BCL2L1",
+    "BCL6",
+    "BCL7C",
+    "BCS1L",
+    "BIRC2",
+    "BPTF",
+    "BRD1",
+    "BRD9",
+    "BRPF1",
+    "BUD13",
+    "C1QBP",
+    "C5orf22",
+    "C7orf50",
+    "CA5A",
+    "CALM3",
+    "CALR",
+    "CAND1",
+    "CARM1",
+    "CASP2",
+    "CASP3",
+    "CAST",
+    "CAT",
+    "CBX1",
+    "CCAR1",
+    "CCDC112",
+    "CCDC174",
+    "CCDC6",
+    "CCNC",
+    "CCP110",
+    "CDC16",
+    "CDC20",
+    "CDCA2",
+    "CDK12",
+    "CDK8",
+    "CENPN",
+    "CENPO",
+    "CHAF1B",
+    "CHCHD4",
+    "CHD3",
+    "CHD6",
+    "CHKB",
+    "CHMP3",
+    "CHMP6",
+    "CHTOP",
+    "CLCN6",
+    "CLDN6",
+    "CLDN7",
+    "CLPB",
+    "CNN2",
+    "CNOT10",
+    "COIL",
+    "COMMD8",
+    "COPS5",
+    "COPS6",
+    "COQ10B",
+    "COX5B",
+    "COX7C",
+    "CPNE1",
+    "CREG1",
+    "CSNK2A1",
+    "CSTF3",
+    "CUL7",
+    "CWC15",
+    "CWC22",
+    "CYTH2",
+    "DAXX",
+    "DBF4B",
+    "DBN1",
+    "DCAF16",
+    "DCP2",
+    "DDHD1",
+    "DDOST",
+    "DDX18",
+    "DDX19A",
+    "DDX20",
+    "DDX42",
+    "DEAF1",
+    "DEK",
+    "DENR",
+    "DHCR24",
+    "DHRS1",
+    "DHX15",
+    "DHX35",
+    "DHX36",
+    "DLG5",
+    "DMTF1",
+    "DNAJA3",
+    "DNMT1",
+    "DNTTIP1",
+    "DNTTIP2",
+    "DPAGT1",
+    "DPH3",
+    "DRG2",
+    "DSN1",
+    "DTNBP1",
+    "DVL3",
+    "E2F1",
+    "E2F4",
+    "EAPP",
+    "EEF1A2",
+    "EID2",
+    "EIF2B2",
+    "EIF2B4",
+    "EIF3M",
+    "EIF4B",
+    "EIF4G1",
+    "ELK1",
+    "EPB41L2",
+    "EPC2",
+    "EPHB4",
+    "EPM2AIP1",
+    "ETV4",
+    "EWSR1",
+    "EXOC3",
+    "EZH2",
+    "FAM120A",
+    "FAM133B",
+    "FAM50A",
+    "FARS2",
+    "FASTKD5",
+    "FBL",
+    "FCGRT",
+    "FDPS",
+    "FHL3",
+    "FNBP4",
+    "FOXH1",
+    "FOXN2",
+    "FOXO4",
+    "FTSJ3",
+    "FUBP3",
+    "FXYD5",
+    "FZD2",
+    "GIGYF2",
+    "GINS2",
+    "GLI3",
+    "GLYR1",
+    "GMEB2",
+    "GNL2",
+    "GNL3",
+    "GPATCH8",
+    "GPS2",
+    "GRAMD1A",
+    "GSK3B",
+    "GTF2A1",
+    "GTF2IRD1",
+    "GTF3A",
+    "GTF3C3",
+    "HARS2",
+    "HAT1",
+    "HAUS1",
+    "HDAC1",
+    "HDAC8",
+    "HIRA",
+    "HLA-C",
+    "HMGB2",
+    "HMGN1",
+    "HMGN3",
+    "HMGN4",
+    "HMGXB3",
+    "HMX3",
+    "HOMEZ",
+    "HSBP1",
+    "HSCB",
+    "HSD17B10",
+    "HSD17B12",
+    "HSP90AB1",
+    "HSPA8",
+    "HSPA9",
+    "HSPE1",
+    "HUWE1",
+    "IDE",
+    "IFI27L2",
+    "IFITM2",
+    "IFNAR2",
+    "IFNGR2",
+    "IGF2R",
+    "IKBKG",
+    "IL10RB",
+    "INSIG1",
+    "IPO13",
+    "IREB2",
+    "IRF3",
+    "JMJD6",
+    "KANSL2",
+    "KAT2A",
+    "KDM1A",
+    "KDM2B",
+    "KDM5A",
+    "KHDRBS1",
+    "KHSRP",
+    "KIF1B",
+    "KIF20A",
+    "KIF2A",
+    "KLF10",
+    "KMT2A",
+    "KPNB1",
+    "LAMTOR1",
+    "LDLR",
+    "LENG1",
+    "LMAN1",
+    "LMBRD2",
+    "LONP1",
+    "LPCAT3",
+    "LRPPRC",
+    "LSM4",
+    "LTBP4",
+    "LZTR1",
+    "MAD2L1",
+    "MAN2A1",
+    "MANF",
+    "MAP1B",
+    "MAP2K2",
+    "MAP3K7",
+    "MAPK12",
+    "MAPKAPK2",
+    "MARCKSL1",
+    "MAST2",
+    "MAT2A",
+    "MAU2",
+    "MBD4",
+    "MBTPS1",
+    "MCM10",
+    "MCM4",
+    "MCM5",
+    "MED1",
+    "MED12",
+    "MED13",
+    "MED13L",
+    "MED15",
+    "MED24",
+    "MED25",
+    "MED4",
+    "MED8",
+    "MEN1",
+    "METTL14",
+    "METTL16",
+    "METTL17",
+    "METTL3",
+    "MIPEP",
+    "MIS18A",
+    "MKI67",
+    "MLLT10",
+    "MON1A",
+    "MPG",
+    "MRPL10",
+    "MRPL14",
+    "MRPL17",
+    "MRPL28",
+    "MRPL35",
+    "MRPL36",
+    "MRPL37",
+    "MRPL43",
+    "MRPL50",
+    "MRPL54",
+    "MRPS10",
+    "MRPS16",
+    "MRPS30",
+    "MRPS5",
+    "MSANTD4",
+    "MSI2",
+    "MTA1",
+    "MTF1",
+    "MTHFSD",
+    "MTM1",
+    "MYC",
+    "MYD88",
+    "MYPOP",
+    "MYRF",
+    "NABP2",
+    "NAGLU",
+    "NAIF1",
+    "NASP",
+    "NBAS",
+    "NCAPD3",
+    "NCK2",
+    "NCLN",
+    "NDUFA2",
+    "NDUFAF3",
+    "NDUFAF5",
+    "NDUFB3",
+    "NDUFB4",
+    "NDUFB6",
+    "NFE2L1",
+    "NGLY1",
+    "NIPAL3",
+    "NIPSNAP3A",
+    "NISCH",
+    "NIT1",
+    "NOL8",
+    "NOM1",
+    "NOP9",
+    "NRAS",
+    "NSRP1",
+    "NT5DC1",
+    "NUDCD3",
+    "NUDT15",
+    "NUF2",
+    "NUP37",
+    "NVL",
+    "OLFML3",
+    "OXA1L",
+    "OXCT1",
+    "PAGR1",
+    "PAN2",
+    "PAPOLA",
+    "PATL1",
+    "PBX1",
+    "PCGF1",
+    "PCGF6",
+    "PDCD4",
+    "PDE6D",
+    "PDK1",
+    "PFDN4",
+    "PGLS",
+    "PGS1",
+    "PHF10",
+    "PHF12",
+    "PHF14",
+    "PHF23",
+    "PHF8",
+    "PI4KB",
+    "PIAS1",
+    "PIK3C3",
+    "PIM2",
+    "PIN1",
+    "PINK1",
+    "PKN3",
+    "PLAGL2",
+    "PLCB3",
+    "PLCG1",
+    "PLRG1",
+    "PMS1",
+    "PNP",
+    "POLA2",
+    "POLB",
+    "POLD4",
+    "POLR1B",
+    "POLR2C",
+    "POLR3D",
+    "POR",
+    "PPIF",
+    "PPIP5K2",
+    "PPP1R15B",
+    "PPP2CB",
+    "PPP2R1A",
+    "PPP2R3C",
+    "PQBP1",
+    "PRCP",
+    "PRDM14",
+    "PRDX3",
+    "PRELID1",
+    "PRKAB2",
+    "PRKACA",
+    "PRMT2",
+    "PRMT6",
+    "PRMT7",
+    "PRNP",
+    "PRPF40A",
+    "PRR12",
+    "PRRC2A",
+    "PSKH1",
+    "PSMA3",
+    "PSMB2",
+    "PSMB5",
+    "PSMB6",
+    "PSMD13",
+    "PTCD1",
+    "PTMS",
+    "PTOV1",
+    "PTPN1",
+    "PUF60",
+    "PYCR1",
+    "PYURF",
+    "R3HCC1L",
+    "RAB5A",
+    "RABEP2",
+    "RAD17",
+    "RAF1",
+    "RANBP2",
+    "RBM10",
+    "RBM12",
+    "RBM18",
+    "RBM26",
+    "RBM42",
+    "RBM4B",
+    "RBM5",
+    "RBMX2",
+    "RC3H2",
+    "RCL1",
+    "RCOR1",
+    "REV1",
+    "RFC2",
+    "RFC5",
+    "RFK",
+    "RNF10",
+    "RNF113A",
+    "RNF141",
+    "RNF168",
+    "RNF2",
+    "RNF20",
+    "RPAP2",
+    "RPAP3",
+    "RPE",
+    "RPL11",
+    "RPL18A",
+    "RPL29",
+    "RPL31",
+    "RPL7",
+    "RPLP0",
+    "RPP21",
+    "RPS15",
+    "RPS15A",
+    "RPS17",
+    "RPS19BP1",
+    "RPS25",
+    "RRM1",
+    "RRM2",
+    "RRP15",
+    "RRP7A",
+    "RSL24D1",
+    "RSRC1",
+    "RTRAF",
+    "S100A11",
+    "SAFB",
+    "SALL4",
+    "SAMD4B",
+    "SAMM50",
+    "SAP30L",
+    "SARS2",
+    "SBDS",
+    "SCAF8",
+    "SDAD1",
+    "SDC1",
+    "SEC63",
+    "SENP6",
+    "SEPHS2",
+    "SEPSECS",
+    "SETX",
+    "SFXN4",
+    "SH2D3A",
+    "SHOC2",
+    "SHPRH",
+    "SHQ1",
+    "SIN3B",
+    "SIX4",
+    "SLC25A13",
+    "SLC25A3",
+    "SLC2A8",
+    "SLC39A1",
+    "SLC39A6",
+    "SLIRP",
+    "SMAGP",
+    "SMARCA4",
+    "SMARCA5",
+    "SMARCC2",
+    "SMC5",
+    "SMG8",
+    "SMYD2",
+    "SND1",
+    "SNRK",
+    "SNRPA",
+    "SNRPA1",
+    "SNX4",
+    "SPAG7",
+    "SPG7",
+    "SRP68",
+    "SRPRB",
+    "SRSF5",
+    "SSBP1",
+    "SSR4",
+    "STAG2",
+    "STARD7",
+    "STAT1",
+    "STK3",
+    "STT3A",
+    "STX4",
+    "SUGT1",
+    "SUPT4H1",
+    "SUPT7L",
+    "SYVN1",
+    "TADA1",
+    "TAF13",
+    "TAF15",
+    "TARBP2",
+    "TARS2",
+    "TAZ",
+    "TBC1D13",
+    "TBCK",
+    "TCF3",
+    "TEAD4",
+    "TELO2",
+    "TET1",
+    "TEX2",
+    "TFAM",
+    "TFB1M",
+    "TFCP2",
+    "THAP3",
+    "THAP7",
+    "TIGD1",
+    "TIMM10",
+    "TIMM17B",
+    "TIMM50",
+    "TIMM9",
+    "TM7SF2",
+    "TMBIM6",
+    "TMCO6",
+    "TMED3",
+    "TMEM147",
+    "TMEM186",
+    "TMEM209",
+    "TMEM41B",
+    "TMF1",
+    "TMSB10",
+    "TMSB4X",
+    "TOX4",
+    "TPR",
+    "TRAM2",
+    "TRAPPC6A",
+    "TRIB3",
+    "TRIM35",
+    "TRIP4",
+    "TRMT1",
+    "TRPC4AP",
+    "TSC22D4",
+    "TTC4",
+    "TUBGCP6",
+    "TWF2",
+    "TYK2",
+    "UBA2",
+    "UBE3C",
+    "UBE3D",
+    "UBL5",
+    "UBR4",
+    "UCHL5",
+    "UNK",
+    "UPF3B",
+    "UQCRB",
+    "UQCRFS1",
+    "UQCRQ",
+    "URB2",
+    "UROS",
+    "USF2",
+    "USP19",
+    "USP22",
+    "USP28",
+    "VAPB",
+    "VBP1",
+    "VIM",
+    "VPS13D",
+    "VPS29",
+    "VPS54",
+    "VPS72",
+    "WBP4",
+    "WDR25",
+    "WDR4",
+    "WDR44",
+    "WDR82",
+    "WNK1",
+    "WSB2",
+    "XRCC4",
+    "XRCC5",
+    "YARS2",
+    "YIPF6",
+    "YPEL5",
+    "YTHDC1",
+    "YY1",
+    "ZBTB34",
+    "ZBTB41",
+    "ZBTB48",
+    "ZC3H3",
+    "ZC3HAV1",
+    "ZDHHC12",
+    "ZDHHC4",
+    "ZFP62",
+    "ZHX3",
+    "ZKSCAN1",
+    "ZKSCAN2",
+    "ZKSCAN3",
+    "ZNF16",
+    "ZNF219",
+    "ZNF22",
+    "ZNF25",
+    "ZNF251",
+    "ZNF280C",
+    "ZNF282",
+    "ZNF286A",
+    "ZNF292",
+    "ZNF32",
+    "ZNF324",
+    "ZNF397",
+    "ZNF410",
+    "ZNF426",
+    "ZNF444",
+    "ZNF462",
+    "ZNF496",
+    "ZNF507",
+    "ZNF514",
+    "ZNF526",
+    "ZNF530",
+    "ZNF543",
+    "ZNF562",
+    "ZNF593",
+    "ZNF627",
+    "ZNF628",
+    "ZNF641",
+    "ZNF670",
+    "ZNF714",
+    "ZNF740",
+    "ZNF768",
+    "ZNF777",
+    "ZNF783",
+    "ZNF784",
+    "ZNF786",
+    "ZNF821",
+    "ZRANB3"
+  ],
+  "entries": [
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ACAT2",
+      "cells": 122
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ACLY",
+      "cells": 72
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ACSS2",
+      "cells": 106
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ACVR1B",
+      "cells": 170
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ADNP",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "AGO1",
+      "cells": 132
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "AKAP1",
+      "cells": 101
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "AKIRIN1",
+      "cells": 101
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "AKT2",
+      "cells": 84
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ALG12",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ALG14",
+      "cells": 234
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ANAPC13",
+      "cells": 206
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ANKZF1",
+      "cells": 202
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ANP32B",
+      "cells": 209
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "AP2A2",
+      "cells": 155
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "API5",
+      "cells": 165
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ARFRP1",
+      "cells": 340
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ARID1A",
+      "cells": 220
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ARL14EP",
+      "cells": 187
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ARL6IP6",
+      "cells": 169
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ARPC4",
+      "cells": 330
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ASCC2",
+      "cells": 146
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATM",
+      "cells": 126
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATP2A2",
+      "cells": 246
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATP5ME",
+      "cells": 147
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATP6V0B",
+      "cells": 243
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ATP6V0C",
+      "cells": 42
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BCKDK",
+      "cells": 242
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BCL2L1",
+      "cells": 324
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BCL6",
+      "cells": 124
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BCL7C",
+      "cells": 96
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BCS1L",
+      "cells": 168
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BIRC2",
+      "cells": 219
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BPTF",
+      "cells": 84
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BRD1",
+      "cells": 197
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BRD9",
+      "cells": 61
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BRPF1",
+      "cells": 184
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "BUD13",
+      "cells": 98
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "C1QBP",
+      "cells": 255
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "C5orf22",
+      "cells": 167
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "C7orf50",
+      "cells": 156
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CA5A",
+      "cells": 431
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CALM3",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CALR",
+      "cells": 152
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CAND1",
+      "cells": 59
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CARM1",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CASP2",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CASP3",
+      "cells": 188
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CAST",
+      "cells": 110
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CAT",
+      "cells": 176
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CBX1",
+      "cells": 258
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCAR1",
+      "cells": 134
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCDC112",
+      "cells": 73
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCDC174",
+      "cells": 79
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCDC6",
+      "cells": 202
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCNC",
+      "cells": 190
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CCP110",
+      "cells": 53
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CDC16",
+      "cells": 64
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CDC20",
+      "cells": 101
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CDCA2",
+      "cells": 103
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CDK12",
+      "cells": 58
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CDK8",
+      "cells": 145
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CENPN",
+      "cells": 179
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CENPO",
+      "cells": 158
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHAF1B",
+      "cells": 69
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHCHD4",
+      "cells": 111
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHD3",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHD6",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHKB",
+      "cells": 158
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHMP3",
+      "cells": 51
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHMP6",
+      "cells": 166
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CHTOP",
+      "cells": 220
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CLCN6",
+      "cells": 189
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CLDN6",
+      "cells": 81
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CLDN7",
+      "cells": 106
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CLPB",
+      "cells": 184
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CNN2",
+      "cells": 445
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CNOT10",
+      "cells": 220
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COIL",
+      "cells": 119
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COMMD8",
+      "cells": 126
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COPS5",
+      "cells": 114
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COPS6",
+      "cells": 163
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COQ10B",
+      "cells": 128
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COX5B",
+      "cells": 200
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "COX7C",
+      "cells": 180
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CPNE1",
+      "cells": 99
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CREG1",
+      "cells": 226
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CSNK2A1",
+      "cells": 123
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CSTF3",
+      "cells": 88
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CUL7",
+      "cells": 51
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CWC15",
+      "cells": 58
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "CYTH2",
+      "cells": 163
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DAXX",
+      "cells": 244
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DBF4B",
+      "cells": 127
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DBN1",
+      "cells": 150
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DCAF16",
+      "cells": 68
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DCP2",
+      "cells": 193
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDHD1",
+      "cells": 101
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDOST",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDX18",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDX19A",
+      "cells": 171
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDX20",
+      "cells": 87
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DDX42",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DEAF1",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DEK",
+      "cells": 112
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DENR",
+      "cells": 349
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DHCR24",
+      "cells": 119
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DHRS1",
+      "cells": 101
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DHX15",
+      "cells": 81
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DHX35",
+      "cells": 57
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DHX36",
+      "cells": 384
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DLG5",
+      "cells": 176
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DMTF1",
+      "cells": 40
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DNAJA3",
+      "cells": 128
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DNMT1",
+      "cells": 458
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DNTTIP1",
+      "cells": 216
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DNTTIP2",
+      "cells": 88
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DPAGT1",
+      "cells": 222
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DPH3",
+      "cells": 90
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DRG2",
+      "cells": 151
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DSN1",
+      "cells": 67
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DTNBP1",
+      "cells": 276
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "DVL3",
+      "cells": 287
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "E2F1",
+      "cells": 181
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "E2F4",
+      "cells": 127
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EAPP",
+      "cells": 173
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EEF1A2",
+      "cells": 222
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EID2",
+      "cells": 100
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF2B2",
+      "cells": 99
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF2B4",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF3M",
+      "cells": 100
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF4B",
+      "cells": 86
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EIF4G1",
+      "cells": 179
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ELK1",
+      "cells": 115
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EPB41L2",
+      "cells": 248
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EPC2",
+      "cells": 208
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EPHB4",
+      "cells": 220
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EPM2AIP1",
+      "cells": 70
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ETV4",
+      "cells": 77
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EWSR1",
+      "cells": 127
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EXOC3",
+      "cells": 399
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "EZH2",
+      "cells": 159
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FAM120A",
+      "cells": 183
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FAM133B",
+      "cells": 69
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FAM50A",
+      "cells": 42
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FARS2",
+      "cells": 72
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FASTKD5",
+      "cells": 266
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FBL",
+      "cells": 48
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FCGRT",
+      "cells": 180
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FHL3",
+      "cells": 269
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FNBP4",
+      "cells": 306
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FOXH1",
+      "cells": 235
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FOXN2",
+      "cells": 186
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FOXO4",
+      "cells": 242
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FTSJ3",
+      "cells": 52
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FUBP3",
+      "cells": 95
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FXYD5",
+      "cells": 267
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "FZD2",
+      "cells": 150
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GIGYF2",
+      "cells": 201
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GINS2",
+      "cells": 52
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GLI3",
+      "cells": 273
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GLYR1",
+      "cells": 190
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GMEB2",
+      "cells": 112
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GNL2",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GPATCH8",
+      "cells": 233
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GPS2",
+      "cells": 254
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GRAMD1A",
+      "cells": 204
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GSK3B",
+      "cells": 182
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GTF2A1",
+      "cells": 116
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GTF2IRD1",
+      "cells": 75
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GTF3A",
+      "cells": 106
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "GTF3C3",
+      "cells": 128
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HARS2",
+      "cells": 84
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HAT1",
+      "cells": 32
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HDAC1",
+      "cells": 132
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HDAC8",
+      "cells": 107
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HIRA",
+      "cells": 557
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HLA-C",
+      "cells": 100
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HMGB2",
+      "cells": 212
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HMGN1",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HMGN3",
+      "cells": 104
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HMGN4",
+      "cells": 142
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HMGXB3",
+      "cells": 291
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HMX3",
+      "cells": 139
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HOMEZ",
+      "cells": 159
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSBP1",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSCB",
+      "cells": 134
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSD17B10",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSD17B12",
+      "cells": 110
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSP90AB1",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSPA8",
+      "cells": 186
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSPA9",
+      "cells": 170
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HSPE1",
+      "cells": 39
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "HUWE1",
+      "cells": 178
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IDE",
+      "cells": 232
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IFI27L2",
+      "cells": 72
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IFITM2",
+      "cells": 211
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IFNAR2",
+      "cells": 147
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IFNGR2",
+      "cells": 244
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IGF2R",
+      "cells": 196
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IKBKG",
+      "cells": 152
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IL10RB",
+      "cells": 193
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "INSIG1",
+      "cells": 97
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IPO13",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IREB2",
+      "cells": 126
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "IRF3",
+      "cells": 291
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "JMJD6",
+      "cells": 361
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KANSL2",
+      "cells": 128
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KAT2A",
+      "cells": 84
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KDM1A",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KDM2B",
+      "cells": 275
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KDM5A",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KHDRBS1",
+      "cells": 104
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KHSRP",
+      "cells": 81
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KIF1B",
+      "cells": 239
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KIF20A",
+      "cells": 115
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KIF2A",
+      "cells": 250
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KLF10",
+      "cells": 438
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KMT2A",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "KPNB1",
+      "cells": 180
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LAMTOR1",
+      "cells": 132
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LDLR",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LENG1",
+      "cells": 53
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LMAN1",
+      "cells": 196
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LMBRD2",
+      "cells": 136
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LONP1",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LPCAT3",
+      "cells": 104
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LRPPRC",
+      "cells": 105
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LSM4",
+      "cells": 51
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LTBP4",
+      "cells": 623
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "LZTR1",
+      "cells": 248
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAD2L1",
+      "cells": 156
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAN2A1",
+      "cells": 157
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MANF",
+      "cells": 351
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAP1B",
+      "cells": 174
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAP2K2",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAP3K7",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAPK12",
+      "cells": 46
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAPKAPK2",
+      "cells": 106
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MARCKSL1",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAST2",
+      "cells": 115
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAT2A",
+      "cells": 61
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MAU2",
+      "cells": 96
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MBD4",
+      "cells": 160
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MBTPS1",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MCM10",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MCM4",
+      "cells": 132
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MCM5",
+      "cells": 136
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED1",
+      "cells": 145
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED12",
+      "cells": 149
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED13",
+      "cells": 217
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED13L",
+      "cells": 127
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED15",
+      "cells": 255
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED24",
+      "cells": 58
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED25",
+      "cells": 149
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED4",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MED8",
+      "cells": 57
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MEN1",
+      "cells": 208
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "METTL14",
+      "cells": 231
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "METTL16",
+      "cells": 41
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "METTL17",
+      "cells": 196
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "METTL3",
+      "cells": 274
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MIPEP",
+      "cells": 146
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MIS18A",
+      "cells": 156
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MKI67",
+      "cells": 169
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MLLT10",
+      "cells": 159
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MON1A",
+      "cells": 209
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MPG",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL10",
+      "cells": 130
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL14",
+      "cells": 213
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL17",
+      "cells": 113
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL28",
+      "cells": 83
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL35",
+      "cells": 209
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL36",
+      "cells": 296
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL37",
+      "cells": 179
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL43",
+      "cells": 114
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL50",
+      "cells": 178
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPL54",
+      "cells": 168
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS10",
+      "cells": 96
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS16",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS30",
+      "cells": 114
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MRPS5",
+      "cells": 111
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MSANTD4",
+      "cells": 112
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MSI2",
+      "cells": 109
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MTA1",
+      "cells": 116
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MTF1",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MTHFSD",
+      "cells": 151
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MTM1",
+      "cells": 151
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MYC",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MYD88",
+      "cells": 304
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MYPOP",
+      "cells": 116
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "MYRF",
+      "cells": 399
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NABP2",
+      "cells": 613
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NAGLU",
+      "cells": 430
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NAIF1",
+      "cells": 213
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NASP",
+      "cells": 353
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NBAS",
+      "cells": 114
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NCAPD3",
+      "cells": 170
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NCK2",
+      "cells": 236
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NCLN",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFA2",
+      "cells": 129
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFAF3",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFAF5",
+      "cells": 34
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFB3",
+      "cells": 250
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFB4",
+      "cells": 262
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NDUFB6",
+      "cells": 338
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NFE2L1",
+      "cells": 75
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NGLY1",
+      "cells": 170
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NIPAL3",
+      "cells": 107
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NIPSNAP3A",
+      "cells": 99
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NISCH",
+      "cells": 361
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NIT1",
+      "cells": 190
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NOL8",
+      "cells": 85
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NOM1",
+      "cells": 97
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NOP9",
+      "cells": 110
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NRAS",
+      "cells": 188
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NSRP1",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NT5DC1",
+      "cells": 166
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NUDCD3",
+      "cells": 111
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NUDT15",
+      "cells": 144
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NUF2",
+      "cells": 261
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NUP37",
+      "cells": 108
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "NVL",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "OLFML3",
+      "cells": 417
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "OXA1L",
+      "cells": 197
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "OXCT1",
+      "cells": 283
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PAGR1",
+      "cells": 187
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PAN2",
+      "cells": 172
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PAPOLA",
+      "cells": 48
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PATL1",
+      "cells": 90
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PBX1",
+      "cells": 234
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PCGF1",
+      "cells": 209
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PCGF6",
+      "cells": 144
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PDCD4",
+      "cells": 152
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PDE6D",
+      "cells": 260
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PDK1",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PFDN4",
+      "cells": 100
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PGLS",
+      "cells": 185
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PGS1",
+      "cells": 184
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PHF10",
+      "cells": 117
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PHF12",
+      "cells": 279
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PHF14",
+      "cells": 129
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PHF23",
+      "cells": 210
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PHF8",
+      "cells": 151
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PI4KB",
+      "cells": 63
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PIAS1",
+      "cells": 268
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PIK3C3",
+      "cells": 194
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PIM2",
+      "cells": 173
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PIN1",
+      "cells": 37
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PINK1",
+      "cells": 1694
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PKN3",
+      "cells": 158
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PLAGL2",
+      "cells": 227
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PLCB3",
+      "cells": 79
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PLCG1",
+      "cells": 171
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PLRG1",
+      "cells": 49
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PMS1",
+      "cells": 79
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PNP",
+      "cells": 219
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POLA2",
+      "cells": 111
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POLB",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POLD4",
+      "cells": 301
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POLR1B",
+      "cells": 87
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POLR2C",
+      "cells": 69
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POLR3D",
+      "cells": 160
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "POR",
+      "cells": 209
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPIF",
+      "cells": 205
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPIP5K2",
+      "cells": 97
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPP1R15B",
+      "cells": 265
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPP2CB",
+      "cells": 208
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPP2R1A",
+      "cells": 1010
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PPP2R3C",
+      "cells": 110
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PQBP1",
+      "cells": 108
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRCP",
+      "cells": 321
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRDM14",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRDX3",
+      "cells": 174
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRELID1",
+      "cells": 212
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRKAB2",
+      "cells": 221
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRKACA",
+      "cells": 52
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRMT2",
+      "cells": 174
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRMT6",
+      "cells": 91
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRMT7",
+      "cells": 126
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRNP",
+      "cells": 155
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRPF40A",
+      "cells": 108
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRR12",
+      "cells": 127
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PRRC2A",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSKH1",
+      "cells": 88
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSMA3",
+      "cells": 162
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSMB2",
+      "cells": 59
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSMB5",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSMB6",
+      "cells": 152
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PSMD13",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PTCD1",
+      "cells": 156
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PTMS",
+      "cells": 149
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PTOV1",
+      "cells": 64
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PTPN1",
+      "cells": 320
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PUF60",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PYCR1",
+      "cells": 304
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "PYURF",
+      "cells": 92
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "R3HCC1L",
+      "cells": 108
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RAB5A",
+      "cells": 131
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RABEP2",
+      "cells": 204
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RAD17",
+      "cells": 244
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RAF1",
+      "cells": 108
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RANBP2",
+      "cells": 159
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM10",
+      "cells": 204
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM12",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM18",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM26",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM42",
+      "cells": 69
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM4B",
+      "cells": 160
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBM5",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RBMX2",
+      "cells": 101
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RC3H2",
+      "cells": 133
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RCL1",
+      "cells": 86
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RCOR1",
+      "cells": 53
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "REV1",
+      "cells": 118
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RFC2",
+      "cells": 107
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RFC5",
+      "cells": 116
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RFK",
+      "cells": 46
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RNF10",
+      "cells": 230
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RNF113A",
+      "cells": 70
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RNF141",
+      "cells": 263
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RNF168",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RNF2",
+      "cells": 92
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RNF20",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPAP2",
+      "cells": 122
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPAP3",
+      "cells": 34
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPE",
+      "cells": 165
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPL11",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPL18A",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPL29",
+      "cells": 114
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPL31",
+      "cells": 95
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPL7",
+      "cells": 104
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPLP0",
+      "cells": 70
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPP21",
+      "cells": 89
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPS15A",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPS17",
+      "cells": 104
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPS19BP1",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RPS25",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RRM1",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RRM2",
+      "cells": 442
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RRP15",
+      "cells": 36
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RRP7A",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RSL24D1",
+      "cells": 63
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RSRC1",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "RTRAF",
+      "cells": 247
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "S100A11",
+      "cells": 160
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SAFB",
+      "cells": 90
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SALL4",
+      "cells": 54
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SAMD4B",
+      "cells": 141
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SAMM50",
+      "cells": 83
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SAP30L",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SARS2",
+      "cells": 266
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SBDS",
+      "cells": 210
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SCAF8",
+      "cells": 145
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SDAD1",
+      "cells": 112
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SDC1",
+      "cells": 232
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SEC63",
+      "cells": 92
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SENP6",
+      "cells": 136
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SEPHS2",
+      "cells": 204
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SEPSECS",
+      "cells": 183
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SETX",
+      "cells": 358
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SFXN4",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SH2D3A",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SHOC2",
+      "cells": 216
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SHPRH",
+      "cells": 180
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SHQ1",
+      "cells": 194
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SIN3B",
+      "cells": 74
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SIX4",
+      "cells": 192
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SLC25A13",
+      "cells": 122
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SLC25A3",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SLC2A8",
+      "cells": 53
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SLC39A1",
+      "cells": 163
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SLC39A6",
+      "cells": 176
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SLIRP",
+      "cells": 49
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMAGP",
+      "cells": 230
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMARCA4",
+      "cells": 106
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMARCA5",
+      "cells": 112
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMARCC2",
+      "cells": 221
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMC5",
+      "cells": 201
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMG8",
+      "cells": 140
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SMYD2",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SND1",
+      "cells": 166
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SNRK",
+      "cells": 180
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SNRPA",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SNRPA1",
+      "cells": 94
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SNX4",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SPAG7",
+      "cells": 67
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SPG7",
+      "cells": 164
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SRP68",
+      "cells": 89
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SRPRB",
+      "cells": 196
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SRSF5",
+      "cells": 161
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SSBP1",
+      "cells": 176
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SSR4",
+      "cells": 103
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STAG2",
+      "cells": 217
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STARD7",
+      "cells": 202
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STAT1",
+      "cells": 102
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STK3",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STT3A",
+      "cells": 53
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "STX4",
+      "cells": 109
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SUGT1",
+      "cells": 72
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SUPT4H1",
+      "cells": 117
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SUPT7L",
+      "cells": 102
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "SYVN1",
+      "cells": 136
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TADA1",
+      "cells": 229
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TAF13",
+      "cells": 57
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TAF15",
+      "cells": 231
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TARBP2",
+      "cells": 74
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TARS2",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TAZ",
+      "cells": 104
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TBC1D13",
+      "cells": 160
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TBCK",
+      "cells": 151
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TCF3",
+      "cells": 76
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TEAD4",
+      "cells": 116
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TELO2",
+      "cells": 64
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TET1",
+      "cells": 128
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TEX2",
+      "cells": 239
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TFAM",
+      "cells": 118
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TFB1M",
+      "cells": 146
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TFCP2",
+      "cells": 279
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "THAP3",
+      "cells": 117
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "THAP7",
+      "cells": 248
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TIGD1",
+      "cells": 107
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TIMM10",
+      "cells": 112
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TIMM17B",
+      "cells": 111
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TIMM50",
+      "cells": 53
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TIMM9",
+      "cells": 263
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TM7SF2",
+      "cells": 200
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMBIM6",
+      "cells": 107
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMCO6",
+      "cells": 91
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMED3",
+      "cells": 207
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMEM147",
+      "cells": 75
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMEM186",
+      "cells": 64
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMEM209",
+      "cells": 158
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMEM41B",
+      "cells": 41
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMF1",
+      "cells": 115
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMSB10",
+      "cells": 382
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TMSB4X",
+      "cells": 139
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TOX4",
+      "cells": 205
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TPR",
+      "cells": 74
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TRAM2",
+      "cells": 203
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TRAPPC6A",
+      "cells": 131
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TRIB3",
+      "cells": 134
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TRIM35",
+      "cells": 331
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TRIP4",
+      "cells": 110
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TRMT1",
+      "cells": 142
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TRPC4AP",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TSC22D4",
+      "cells": 249
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TTC4",
+      "cells": 138
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TUBGCP6",
+      "cells": 327
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TWF2",
+      "cells": 233
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "TYK2",
+      "cells": 116
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBA2",
+      "cells": 183
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBE3C",
+      "cells": 143
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBE3D",
+      "cells": 195
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBL5",
+      "cells": 96
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UBR4",
+      "cells": 50
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UCHL5",
+      "cells": 191
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UNK",
+      "cells": 180
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UPF3B",
+      "cells": 155
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UQCRB",
+      "cells": 167
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UQCRFS1",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UQCRQ",
+      "cells": 152
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "URB2",
+      "cells": 200
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "UROS",
+      "cells": 174
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "USF2",
+      "cells": 358
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "USP19",
+      "cells": 150
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "USP22",
+      "cells": 235
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "USP28",
+      "cells": 144
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VAPB",
+      "cells": 119
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VBP1",
+      "cells": 200
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VIM",
+      "cells": 80
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS13D",
+      "cells": 283
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS29",
+      "cells": 150
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS54",
+      "cells": 156
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "VPS72",
+      "cells": 160
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WBP4",
+      "cells": 188
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WDR25",
+      "cells": 403
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WDR4",
+      "cells": 680
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WDR44",
+      "cells": 160
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WDR82",
+      "cells": 121
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WNK1",
+      "cells": 253
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "WSB2",
+      "cells": 125
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "XRCC4",
+      "cells": 172
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "XRCC5",
+      "cells": 63
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YARS2",
+      "cells": 221
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YIPF6",
+      "cells": 65
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YPEL5",
+      "cells": 131
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YTHDC1",
+      "cells": 110
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "YY1",
+      "cells": 142
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZBTB34",
+      "cells": 124
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZBTB41",
+      "cells": 124
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZBTB48",
+      "cells": 67
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZC3H3",
+      "cells": 137
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZC3HAV1",
+      "cells": 147
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZDHHC12",
+      "cells": 231
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZDHHC4",
+      "cells": 100
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZFP62",
+      "cells": 105
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZHX3",
+      "cells": 210
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZKSCAN1",
+      "cells": 272
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZKSCAN2",
+      "cells": 109
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZKSCAN3",
+      "cells": 74
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF16",
+      "cells": 71
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF219",
+      "cells": 60
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF22",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF25",
+      "cells": 148
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF251",
+      "cells": 176
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF280C",
+      "cells": 52
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF282",
+      "cells": 311
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF286A",
+      "cells": 104
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF292",
+      "cells": 292
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF32",
+      "cells": 87
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF324",
+      "cells": 47
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF397",
+      "cells": 63
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF410",
+      "cells": 100
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF426",
+      "cells": 159
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF444",
+      "cells": 159
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF462",
+      "cells": 249
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF496",
+      "cells": 119
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF507",
+      "cells": 228
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF514",
+      "cells": 249
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF526",
+      "cells": 170
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF530",
+      "cells": 213
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF543",
+      "cells": 169
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF562",
+      "cells": 88
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF593",
+      "cells": 225
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF627",
+      "cells": 120
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF628",
+      "cells": 118
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF641",
+      "cells": 116
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF670",
+      "cells": 81
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF714",
+      "cells": 54
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF740",
+      "cells": 121
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF768",
+      "cells": 135
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF777",
+      "cells": 56
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF783",
+      "cells": 133
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF784",
+      "cells": 146
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF786",
+      "cells": 122
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZNF821",
+      "cells": 285
+    },
+    {
+      "source": "gwps",
+      "context": "K562",
+      "target": "ZRANB3",
+      "cells": 45
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ALG14",
+      "cells": 147
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ANAPC13",
+      "cells": 90
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ARFRP1",
+      "cells": 111
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ARPC4",
+      "cells": 176
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ATP2A2",
+      "cells": 127
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ATP6V0B",
+      "cells": 118
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "ATP6V0C",
+      "cells": 53
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "BCL2L1",
+      "cells": 139
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "BCS1L",
+      "cells": 56
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "BPTF",
+      "cells": 56
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "BUD13",
+      "cells": 140
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "C1QBP",
+      "cells": 168
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "C7orf50",
+      "cells": 75
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CA5A",
+      "cells": 152
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CBX1",
+      "cells": 121
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CCAR1",
+      "cells": 48
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CCDC174",
+      "cells": 84
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CCP110",
+      "cells": 47
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CDC16",
+      "cells": 132
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CDC20",
+      "cells": 92
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CENPN",
+      "cells": 118
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHAF1B",
+      "cells": 68
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHCHD4",
+      "cells": 112
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHMP3",
+      "cells": 104
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHMP6",
+      "cells": 573
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CHTOP",
+      "cells": 120
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CNN2",
+      "cells": 158
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "COPS5",
+      "cells": 79
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "COPS6",
+      "cells": 188
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "COX5B",
+      "cells": 95
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "COX7C",
+      "cells": 132
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CSTF3",
+      "cells": 53
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CUL7",
+      "cells": 33
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CWC15",
+      "cells": 148
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "CWC22",
+      "cells": 34
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DDOST",
+      "cells": 69
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DDX18",
+      "cells": 110
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DDX19A",
+      "cells": 83
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DDX20",
+      "cells": 92
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DDX42",
+      "cells": 44
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DENR",
+      "cells": 201
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DHX15",
+      "cells": 308
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DHX36",
+      "cells": 218
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DNAJA3",
+      "cells": 102
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DNMT1",
+      "cells": 136
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DNTTIP2",
+      "cells": 213
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DPAGT1",
+      "cells": 108
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DPH3",
+      "cells": 60
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "DSN1",
+      "cells": 196
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF2B2",
+      "cells": 268
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF2B4",
+      "cells": 273
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF3M",
+      "cells": 197
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF4B",
+      "cells": 41
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EIF4G1",
+      "cells": 321
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EWSR1",
+      "cells": 48
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "EXOC3",
+      "cells": 198
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FAM50A",
+      "cells": 38
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FARS2",
+      "cells": 40
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FASTKD5",
+      "cells": 150
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FBL",
+      "cells": 106
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FNBP4",
+      "cells": 128
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "FTSJ3",
+      "cells": 166
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GINS2",
+      "cells": 119
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GNL2",
+      "cells": 300
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GNL3",
+      "cells": 38
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GTF2A1",
+      "cells": 91
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GTF3A",
+      "cells": 71
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "GTF3C3",
+      "cells": 106
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HARS2",
+      "cells": 62
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HAUS1",
+      "cells": 53
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HIRA",
+      "cells": 290
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HLA-C",
+      "cells": 44
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSCB",
+      "cells": 69
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSD17B12",
+      "cells": 114
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSPA8",
+      "cells": 204
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HSPA9",
+      "cells": 369
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "HUWE1",
+      "cells": 76
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "IFITM2",
+      "cells": 120
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "IPO13",
+      "cells": 51
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "JMJD6",
+      "cells": 155
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "KANSL2",
+      "cells": 127
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "KIF20A",
+      "cells": 77
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "KPNB1",
+      "cells": 315
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "LONP1",
+      "cells": 103
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "LRPPRC",
+      "cells": 88
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "LSM4",
+      "cells": 68
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MAD2L1",
+      "cells": 124
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MANF",
+      "cells": 114
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MAT2A",
+      "cells": 52
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MAU2",
+      "cells": 53
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MBTPS1",
+      "cells": 55
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MCM10",
+      "cells": 176
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MCM4",
+      "cells": 70
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MCM5",
+      "cells": 72
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MED1",
+      "cells": 204
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MED12",
+      "cells": 522
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MED4",
+      "cells": 53
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MED8",
+      "cells": 90
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "METTL14",
+      "cells": 97
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "METTL16",
+      "cells": 42
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "METTL17",
+      "cells": 98
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "METTL3",
+      "cells": 111
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MIPEP",
+      "cells": 72
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MIS18A",
+      "cells": 104
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL10",
+      "cells": 82
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL14",
+      "cells": 169
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL17",
+      "cells": 80
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL28",
+      "cells": 52
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL35",
+      "cells": 137
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL36",
+      "cells": 152
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL37",
+      "cells": 93
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL43",
+      "cells": 76
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL50",
+      "cells": 137
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPL54",
+      "cells": 114
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPS10",
+      "cells": 97
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPS16",
+      "cells": 41
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MRPS5",
+      "cells": 59
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "MYC",
+      "cells": 60
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NAGLU",
+      "cells": 214
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NASP",
+      "cells": 148
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NBAS",
+      "cells": 86
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NCAPD3",
+      "cells": 65
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFA2",
+      "cells": 150
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFAF3",
+      "cells": 65
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFB3",
+      "cells": 113
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFB4",
+      "cells": 133
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NDUFB6",
+      "cells": 152
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NISCH",
+      "cells": 116
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NOL8",
+      "cells": 64
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NOM1",
+      "cells": 64
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NOP9",
+      "cells": 63
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NSRP1",
+      "cells": 190
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NUDCD3",
+      "cells": 90
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NUF2",
+      "cells": 452
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "NVL",
+      "cells": 88
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "OLFML3",
+      "cells": 139
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "OXA1L",
+      "cells": 293
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PFDN4",
+      "cells": 34
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PGS1",
+      "cells": 84
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PHF12",
+      "cells": 88
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PIK3C3",
+      "cells": 92
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PLRG1",
+      "cells": 76
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "POLA2",
+      "cells": 188
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "POLR1B",
+      "cells": 145
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "POLR2C",
+      "cells": 148
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "POLR3D",
+      "cells": 95
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PPP1R15B",
+      "cells": 108
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PPP2R1A",
+      "cells": 404
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PPP2R3C",
+      "cells": 52
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PRELID1",
+      "cells": 122
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PRPF40A",
+      "cells": 95
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PRRC2A",
+      "cells": 72
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PSMA3",
+      "cells": 321
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PSMB2",
+      "cells": 53
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PSMB5",
+      "cells": 219
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PSMB6",
+      "cells": 160
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PSMD13",
+      "cells": 98
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PTCD1",
+      "cells": 216
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "PUF60",
+      "cells": 72
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RAD17",
+      "cells": 104
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RANBP2",
+      "cells": 68
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RBM10",
+      "cells": 104
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RBM42",
+      "cells": 64
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RBMX2",
+      "cells": 196
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RCL1",
+      "cells": 85
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RCOR1",
+      "cells": 35
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RFC2",
+      "cells": 78
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RFC5",
+      "cells": 89
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RNF113A",
+      "cells": 141
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RNF168",
+      "cells": 61
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RNF20",
+      "cells": 100
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPAP2",
+      "cells": 347
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPE",
+      "cells": 95
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPL11",
+      "cells": 336
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPL18A",
+      "cells": 52
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPL29",
+      "cells": 71
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPL31",
+      "cells": 243
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPL7",
+      "cells": 250
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPLP0",
+      "cells": 148
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPP21",
+      "cells": 60
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPS15A",
+      "cells": 263
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPS17",
+      "cells": 179
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPS19BP1",
+      "cells": 54
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RPS25",
+      "cells": 40
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RRM1",
+      "cells": 83
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RRM2",
+      "cells": 526
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RRP15",
+      "cells": 32
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RRP7A",
+      "cells": 46
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "RSL24D1",
+      "cells": 144
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SAMM50",
+      "cells": 82
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SARS2",
+      "cells": 131
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SBDS",
+      "cells": 76
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SDAD1",
+      "cells": 192
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SDC1",
+      "cells": 136
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SEC63",
+      "cells": 63
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SENP6",
+      "cells": 76
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SEPHS2",
+      "cells": 127
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SEPSECS",
+      "cells": 66
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SHQ1",
+      "cells": 76
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SLC25A3",
+      "cells": 92
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SMAGP",
+      "cells": 94
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SMC5",
+      "cells": 97
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SNRPA1",
+      "cells": 128
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SRP68",
+      "cells": 137
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SRPRB",
+      "cells": 132
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SSBP1",
+      "cells": 96
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "STARD7",
+      "cells": 94
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SUGT1",
+      "cells": 86
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "SUPT4H1",
+      "cells": 60
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TARS2",
+      "cells": 60
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TELO2",
+      "cells": 60
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TFAM",
+      "cells": 66
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TIGD1",
+      "cells": 59
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TIMM10",
+      "cells": 54
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TIMM9",
+      "cells": 161
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TM7SF2",
+      "cells": 80
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TMSB10",
+      "cells": 183
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TPR",
+      "cells": 62
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TTC4",
+      "cells": 87
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "TUBGCP6",
+      "cells": 123
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UBA2",
+      "cells": 138
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UBL5",
+      "cells": 186
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UQCRB",
+      "cells": 77
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UQCRFS1",
+      "cells": 96
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "UQCRQ",
+      "cells": 133
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "URB2",
+      "cells": 159
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "USF2",
+      "cells": 148
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "USP19",
+      "cells": 52
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VBP1",
+      "cells": 93
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS13D",
+      "cells": 112
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS29",
+      "cells": 132
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS54",
+      "cells": 270
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "VPS72",
+      "cells": 79
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "WDR25",
+      "cells": 128
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "WDR4",
+      "cells": 296
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "WDR82",
+      "cells": 80
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "WNK1",
+      "cells": 110
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "XRCC5",
+      "cells": 71
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YARS2",
+      "cells": 152
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YPEL5",
+      "cells": 61
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YTHDC1",
+      "cells": 190
+    },
+    {
+      "source": "k562",
+      "context": "K562",
+      "target": "YY1",
+      "cells": 66
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ACSS2",
+      "cells": 65
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ALG14",
+      "cells": 92
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ANAPC13",
+      "cells": 93
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ARFRP1",
+      "cells": 93
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ARPC4",
+      "cells": 68
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ATP2A2",
+      "cells": 116
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ATP5ME",
+      "cells": 109
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ATP6V0B",
+      "cells": 92
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ATP6V0C",
+      "cells": 201
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "BCL2L1",
+      "cells": 363
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "BCS1L",
+      "cells": 85
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "BPTF",
+      "cells": 81
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "BUD13",
+      "cells": 36
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "C7orf50",
+      "cells": 75
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CA5A",
+      "cells": 92
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CALR",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CAST",
+      "cells": 56
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CBX1",
+      "cells": 100
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CCAR1",
+      "cells": 96
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CCDC6",
+      "cells": 1035
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CCNC",
+      "cells": 103
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CCP110",
+      "cells": 50
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CDC16",
+      "cells": 85
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CDK12",
+      "cells": 52
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CENPN",
+      "cells": 63
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHAF1B",
+      "cells": 58
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHCHD4",
+      "cells": 110
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHMP3",
+      "cells": 36
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHMP6",
+      "cells": 86
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CHTOP",
+      "cells": 118
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CLPB",
+      "cells": 66
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CNN2",
+      "cells": 189
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CNOT10",
+      "cells": 73
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "COPS5",
+      "cells": 32
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "COPS6",
+      "cells": 55
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "COX5B",
+      "cells": 68
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "COX7C",
+      "cells": 141
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CPNE1",
+      "cells": 58
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CSTF3",
+      "cells": 54
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CUL7",
+      "cells": 36
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "CWC15",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DAXX",
+      "cells": 99
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DDOST",
+      "cells": 58
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DDX19A",
+      "cells": 349
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DDX20",
+      "cells": 44
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DDX42",
+      "cells": 95
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DENR",
+      "cells": 64
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DHX15",
+      "cells": 66
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DHX36",
+      "cells": 58
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DNAJA3",
+      "cells": 127
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DNMT1",
+      "cells": 91
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DPAGT1",
+      "cells": 62
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DPH3",
+      "cells": 63
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "DSN1",
+      "cells": 40
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF2B2",
+      "cells": 119
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF2B4",
+      "cells": 54
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF3M",
+      "cells": 66
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF4B",
+      "cells": 346
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EIF4G1",
+      "cells": 62
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EPB41L2",
+      "cells": 104
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ETV4",
+      "cells": 57
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EWSR1",
+      "cells": 93
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "EXOC3",
+      "cells": 54
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FAM133B",
+      "cells": 33
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FAM50A",
+      "cells": 99
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FASTKD5",
+      "cells": 96
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FDPS",
+      "cells": 63
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FNBP4",
+      "cells": 93
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "FTSJ3",
+      "cells": 45
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GINS2",
+      "cells": 59
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GNL2",
+      "cells": 57
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GNL3",
+      "cells": 46
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GPS2",
+      "cells": 102
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GSK3B",
+      "cells": 76
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GTF2A1",
+      "cells": 40
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GTF3A",
+      "cells": 37
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "GTF3C3",
+      "cells": 57
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HAUS1",
+      "cells": 49
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HIRA",
+      "cells": 196
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HLA-C",
+      "cells": 54
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HMX3",
+      "cells": 54
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSCB",
+      "cells": 190
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSD17B10",
+      "cells": 797
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSD17B12",
+      "cells": 284
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSPA8",
+      "cells": 119
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSPA9",
+      "cells": 91
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HSPE1",
+      "cells": 82
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "HUWE1",
+      "cells": 62
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "IFITM2",
+      "cells": 43
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "IPO13",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "JMJD6",
+      "cells": 148
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "KDM1A",
+      "cells": 149
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "KPNB1",
+      "cells": 168
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LAMTOR1",
+      "cells": 320
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LONP1",
+      "cells": 66
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LRPPRC",
+      "cells": 72
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LSM4",
+      "cells": 64
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LTBP4",
+      "cells": 94
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "LZTR1",
+      "cells": 166
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MAD2L1",
+      "cells": 87
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MANF",
+      "cells": 143
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MAT2A",
+      "cells": 128
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MBTPS1",
+      "cells": 152
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MCM10",
+      "cells": 58
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MCM4",
+      "cells": 40
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MCM5",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MED1",
+      "cells": 56
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MED12",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MED24",
+      "cells": 35
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MED4",
+      "cells": 61
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MED8",
+      "cells": 40
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MEN1",
+      "cells": 80
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "METTL14",
+      "cells": 61
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "METTL16",
+      "cells": 42
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "METTL17",
+      "cells": 95
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "METTL3",
+      "cells": 173
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MIPEP",
+      "cells": 66
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MIS18A",
+      "cells": 53
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MON1A",
+      "cells": 140
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MPG",
+      "cells": 39
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL10",
+      "cells": 95
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL14",
+      "cells": 102
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL17",
+      "cells": 77
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL28",
+      "cells": 89
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL35",
+      "cells": 1440
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL36",
+      "cells": 1635
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL37",
+      "cells": 72
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL43",
+      "cells": 73
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL50",
+      "cells": 112
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPL54",
+      "cells": 132
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS10",
+      "cells": 111
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS16",
+      "cells": 183
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS30",
+      "cells": 95
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MRPS5",
+      "cells": 135
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "MYC",
+      "cells": 69
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NAGLU",
+      "cells": 208
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NASP",
+      "cells": 83
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NBAS",
+      "cells": 56
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFA2",
+      "cells": 35
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFAF3",
+      "cells": 84
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFB3",
+      "cells": 111
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFB4",
+      "cells": 133
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NDUFB6",
+      "cells": 65
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NISCH",
+      "cells": 134
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NOL8",
+      "cells": 38
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NOM1",
+      "cells": 59
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NOP9",
+      "cells": 39
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NSRP1",
+      "cells": 43
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NUDCD3",
+      "cells": 108
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NUDT15",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NUF2",
+      "cells": 62
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "NVL",
+      "cells": 37
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "OLFML3",
+      "cells": 108
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "OXA1L",
+      "cells": 41
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PFDN4",
+      "cells": 80
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PGS1",
+      "cells": 77
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PHF10",
+      "cells": 101
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PHF12",
+      "cells": 52
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PIAS1",
+      "cells": 54
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PIK3C3",
+      "cells": 58
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PLRG1",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "POLA2",
+      "cells": 45
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PPP1R15B",
+      "cells": 61
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PPP2CB",
+      "cells": 76
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PPP2R1A",
+      "cells": 245
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PPP2R3C",
+      "cells": 108
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PRELID1",
+      "cells": 43
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PRPF40A",
+      "cells": 45
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PRRC2A",
+      "cells": 124
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMA3",
+      "cells": 45
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMB2",
+      "cells": 56
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMB5",
+      "cells": 118
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMB6",
+      "cells": 55
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PSMD13",
+      "cells": 36
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PTCD1",
+      "cells": 57
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PTPN1",
+      "cells": 79
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "PUF60",
+      "cells": 53
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RAD17",
+      "cells": 59
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RANBP2",
+      "cells": 43
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RBM10",
+      "cells": 109
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RBM12",
+      "cells": 72
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RBM42",
+      "cells": 49
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RBMX2",
+      "cells": 84
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RCL1",
+      "cells": 38
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RCOR1",
+      "cells": 65
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RFC2",
+      "cells": 64
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RFC5",
+      "cells": 44
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RNF113A",
+      "cells": 59
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RNF168",
+      "cells": 55
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RNF20",
+      "cells": 124
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPAP3",
+      "cells": 39
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPE",
+      "cells": 57
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPL11",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPL18A",
+      "cells": 41
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPL29",
+      "cells": 34
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPL31",
+      "cells": 44
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPL7",
+      "cells": 98
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPLP0",
+      "cells": 92
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPP21",
+      "cells": 102
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RPS15",
+      "cells": 57
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RRM1",
+      "cells": 54
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RRM2",
+      "cells": 184
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "RTRAF",
+      "cells": 158
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SAMD4B",
+      "cells": 71
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SAMM50",
+      "cells": 43
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SARS2",
+      "cells": 88
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SBDS",
+      "cells": 70
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SDAD1",
+      "cells": 38
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SDC1",
+      "cells": 67
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SEC63",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SEPHS2",
+      "cells": 65
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SEPSECS",
+      "cells": 135
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SETX",
+      "cells": 99
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SHOC2",
+      "cells": 59
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SHQ1",
+      "cells": 120
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SLC25A3",
+      "cells": 45
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SLC2A8",
+      "cells": 53
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SMAGP",
+      "cells": 141
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SMC5",
+      "cells": 61
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SMG8",
+      "cells": 72
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SNRPA",
+      "cells": 36
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SPG7",
+      "cells": 101
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SRP68",
+      "cells": 55
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SRPRB",
+      "cells": 153
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "SSBP1",
+      "cells": 53
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "STAG2",
+      "cells": 102
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "STARD7",
+      "cells": 63
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TADA1",
+      "cells": 111
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TAF13",
+      "cells": 149
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TARS2",
+      "cells": 152
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TAZ",
+      "cells": 79
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TELO2",
+      "cells": 47
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TFAM",
+      "cells": 3529
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TFB1M",
+      "cells": 89
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TIGD1",
+      "cells": 78
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TIMM10",
+      "cells": 88
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TIMM9",
+      "cells": 41
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TM7SF2",
+      "cells": 128
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TMSB10",
+      "cells": 65
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TOX4",
+      "cells": 137
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TPR",
+      "cells": 105
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TTC4",
+      "cells": 100
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "TYK2",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBA2",
+      "cells": 125
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBE3C",
+      "cells": 69
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBE3D",
+      "cells": 115
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBL5",
+      "cells": 101
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UBR4",
+      "cells": 59
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UCHL5",
+      "cells": 69
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UQCRB",
+      "cells": 96
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UQCRFS1",
+      "cells": 32
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "UQCRQ",
+      "cells": 53
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "URB2",
+      "cells": 40
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "USF2",
+      "cells": 84
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "USP19",
+      "cells": 98
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VBP1",
+      "cells": 67
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS13D",
+      "cells": 78
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS29",
+      "cells": 79
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS54",
+      "cells": 186
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "VPS72",
+      "cells": 72
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "WDR25",
+      "cells": 39
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "WDR4",
+      "cells": 113
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "WDR44",
+      "cells": 74
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "WNK1",
+      "cells": 88
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "XRCC5",
+      "cells": 56
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YARS2",
+      "cells": 74
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YPEL5",
+      "cells": 60
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YTHDC1",
+      "cells": 164
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "YY1",
+      "cells": 69
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ZC3H3",
+      "cells": 82
+    },
+    {
+      "source": "rpe1",
+      "context": "RPE1",
+      "target": "ZNF292",
+      "cells": 107
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ACSS2",
+      "cells": 33
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ANAPC13",
+      "cells": 56
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ARFRP1",
+      "cells": 40
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ARL6IP6",
+      "cells": 48
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ARPC4",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ATP2A2",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ATP5ME",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ATP6V0B",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ATP6V0C",
+      "cells": 63
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "BCL2L1",
+      "cells": 96
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "BCS1L",
+      "cells": 38
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "BPTF",
+      "cells": 194
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "C1QBP",
+      "cells": 32
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CA5A",
+      "cells": 62
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CALR",
+      "cells": 69
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CAST",
+      "cells": 32
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CBX1",
+      "cells": 50
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CCAR1",
+      "cells": 33
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CCDC174",
+      "cells": 43
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CCDC6",
+      "cells": 361
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CCNC",
+      "cells": 52
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CCP110",
+      "cells": 43
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CDC16",
+      "cells": 49
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CDC20",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CENPN",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CHAF1B",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CHCHD4",
+      "cells": 63
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CHMP6",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CHTOP",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CLPB",
+      "cells": 37
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CNN2",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CNOT10",
+      "cells": 69
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "COPS5",
+      "cells": 42
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "COX7C",
+      "cells": 43
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CSTF3",
+      "cells": 56
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CUL7",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CWC15",
+      "cells": 45
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "CWC22",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DAXX",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DDOST",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DDX18",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DDX19A",
+      "cells": 140
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DDX20",
+      "cells": 45
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DENR",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DHX15",
+      "cells": 48
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DHX36",
+      "cells": 45
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DNAJA3",
+      "cells": 61
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DNMT1",
+      "cells": 66
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DNTTIP2",
+      "cells": 55
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "DPH3",
+      "cells": 43
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EIF2B2",
+      "cells": 143
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EIF2B4",
+      "cells": 63
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EIF4B",
+      "cells": 173
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EIF4G1",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EWSR1",
+      "cells": 40
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "EXOC3",
+      "cells": 40
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "FAM133B",
+      "cells": 32
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "FASTKD5",
+      "cells": 47
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "FNBP4",
+      "cells": 89
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "FTSJ3",
+      "cells": 35
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GINS2",
+      "cells": 62
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GNL2",
+      "cells": 61
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GNL3",
+      "cells": 92
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GPS2",
+      "cells": 39
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GSK3B",
+      "cells": 59
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GTF2A1",
+      "cells": 72
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "GTF3A",
+      "cells": 42
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HIRA",
+      "cells": 104
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HMX3",
+      "cells": 47
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSCB",
+      "cells": 146
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSD17B10",
+      "cells": 184
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSD17B12",
+      "cells": 143
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSPA8",
+      "cells": 59
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSPA9",
+      "cells": 84
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HSPE1",
+      "cells": 70
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "HUWE1",
+      "cells": 58
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "JMJD6",
+      "cells": 63
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "KDM1A",
+      "cells": 47
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "KPNB1",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "LAMTOR1",
+      "cells": 101
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "LONP1",
+      "cells": 57
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "LSM4",
+      "cells": 50
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "LTBP4",
+      "cells": 63
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "LZTR1",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MAD2L1",
+      "cells": 73
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MANF",
+      "cells": 52
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MAT2A",
+      "cells": 84
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MAU2",
+      "cells": 36
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MBTPS1",
+      "cells": 92
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MCM10",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MCM5",
+      "cells": 44
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MED4",
+      "cells": 110
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MED8",
+      "cells": 61
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MEN1",
+      "cells": 58
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "METTL14",
+      "cells": 39
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "METTL3",
+      "cells": 59
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MIPEP",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MON1A",
+      "cells": 75
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MPG",
+      "cells": 32
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL10",
+      "cells": 49
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL14",
+      "cells": 46
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL17",
+      "cells": 33
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL28",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL35",
+      "cells": 281
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL36",
+      "cells": 377
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL37",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL50",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPL54",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPS10",
+      "cells": 38
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPS16",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPS30",
+      "cells": 33
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MRPS5",
+      "cells": 57
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "MYC",
+      "cells": 52
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NAGLU",
+      "cells": 71
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NBAS",
+      "cells": 35
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NDUFA2",
+      "cells": 35
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NDUFAF3",
+      "cells": 44
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NDUFAF5",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NDUFB3",
+      "cells": 39
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NDUFB4",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NISCH",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NOL8",
+      "cells": 100
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NOM1",
+      "cells": 105
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NOP9",
+      "cells": 46
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NUDCD3",
+      "cells": 138
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NUDT15",
+      "cells": 39
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "NVL",
+      "cells": 59
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "OLFML3",
+      "cells": 61
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PFDN4",
+      "cells": 44
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PGS1",
+      "cells": 34
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PHF10",
+      "cells": 64
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PHF12",
+      "cells": 48
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PIAS1",
+      "cells": 50
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PIK3C3",
+      "cells": 32
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "POLR2C",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "POLR3D",
+      "cells": 55
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PPP1R15B",
+      "cells": 35
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PPP2CB",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PPP2R1A",
+      "cells": 158
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PPP2R3C",
+      "cells": 38
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PRELID1",
+      "cells": 56
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PRPF40A",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PRRC2A",
+      "cells": 45
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PSMA3",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PSMB2",
+      "cells": 55
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PSMB5",
+      "cells": 99
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PSMB6",
+      "cells": 61
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PTCD1",
+      "cells": 46
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PTPN1",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PUF60",
+      "cells": 61
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "PYURF",
+      "cells": 61
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RBM10",
+      "cells": 136
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RBM42",
+      "cells": 52
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RBMX2",
+      "cells": 92
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RCL1",
+      "cells": 87
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RFC2",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RFC5",
+      "cells": 50
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RNF113A",
+      "cells": 36
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPAP2",
+      "cells": 55
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPAP3",
+      "cells": 51
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPL11",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPL18A",
+      "cells": 57
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPL29",
+      "cells": 46
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPL31",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPL7",
+      "cells": 98
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPLP0",
+      "cells": 76
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPP21",
+      "cells": 66
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPS15",
+      "cells": 57
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPS15A",
+      "cells": 35
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RPS19BP1",
+      "cells": 55
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RRM2",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RRP15",
+      "cells": 44
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RRP7A",
+      "cells": 55
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RSL24D1",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "RTRAF",
+      "cells": 90
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SAMD4B",
+      "cells": 44
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SARS2",
+      "cells": 36
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SDAD1",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SDC1",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SEPHS2",
+      "cells": 55
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SEPSECS",
+      "cells": 51
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SETX",
+      "cells": 74
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SHOC2",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SHQ1",
+      "cells": 118
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SLC2A8",
+      "cells": 53
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SMAGP",
+      "cells": 50
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SMC5",
+      "cells": 60
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SNRPA1",
+      "cells": 36
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SPAG7",
+      "cells": 43
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SPG7",
+      "cells": 62
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SRP68",
+      "cells": 105
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SRPRB",
+      "cells": 64
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "STAG2",
+      "cells": 40
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "SUGT1",
+      "cells": 44
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TADA1",
+      "cells": 62
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TAF13",
+      "cells": 108
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TARS2",
+      "cells": 51
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TAZ",
+      "cells": 50
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TFAM",
+      "cells": 1158
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TFB1M",
+      "cells": 39
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TIGD1",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TIMM10",
+      "cells": 52
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TIMM9",
+      "cells": 32
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TM7SF2",
+      "cells": 49
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TMSB10",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TPR",
+      "cells": 75
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "TTC4",
+      "cells": 37
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "UBA2",
+      "cells": 96
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "UBE3D",
+      "cells": 62
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "UBL5",
+      "cells": 68
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "UCHL5",
+      "cells": 36
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "URB2",
+      "cells": 76
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "USF2",
+      "cells": 54
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "USP19",
+      "cells": 37
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "VPS13D",
+      "cells": 37
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "VPS29",
+      "cells": 36
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "VPS54",
+      "cells": 81
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "WDR4",
+      "cells": 86
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "WDR44",
+      "cells": 49
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "WNK1",
+      "cells": 40
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "XRCC5",
+      "cells": 41
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "YARS2",
+      "cells": 37
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "YPEL5",
+      "cells": 40
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "YTHDC1",
+      "cells": 56
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "YY1",
+      "cells": 51
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ZC3H3",
+      "cells": 56
+    },
+    {
+      "source": "hepg2",
+      "context": "HepG2",
+      "target": "ZNF292",
+      "cells": 63
+    }
+  ],
+  "protocol_sha256": "7185df9969d690f7ebe93e1a2a17e821e3bf71181902c0f1992aebb55a086f8e",
+  "candidate_hashes": {
+    "expanded": "3812cca8ccf71a1e4ee1848667e20254e887b0bd69c734cf3cdcb57809ea9cad",
+    "shrunk": "43bfe1e327ea5c30a0a4b6903a26b9908c55b0630ebda9aaf85e6ac0f2155cc9"
+  }
+}
