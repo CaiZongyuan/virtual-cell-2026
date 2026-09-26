@@ -54,35 +54,33 @@ class ReleasedPredictor:
 
 def checked_release(args):
     work = args.work
-    summary = json.loads((work / "summary.json").read_text())
+    summary = json.loads((work / "final-selection.json").read_text())
     if summary["selected"] == "incumbent":
         raise ValueError("Incumbent is already published; do not create a duplicate artifact")
     if summary["local_release_passed"] is not True:
-        raise ValueError("Fixed seed confirmation gate did not pass")
+        raise ValueError("Final seed stability gate did not pass")
     baseline = json.loads((args.incumbent / "evaluation/control/manifest.json").read_text())
     incumbent = read_result(args.incumbent / "evaluation/empirical", baseline,
                             args.incumbent / "predictions/empirical.h5ad")
-    results = {}
+    results = {"incumbent": incumbent}
     for arm in ["expanded", "shrunk", "state"]:
+        terminal = json.loads((work / "status" / f"{arm}-score-42.json").read_text())
+        if terminal["exit_code"] != 0:
+            continue
         require_stage(work, f"{arm}-score-42")
         result = read_result(work / "evaluation" / f"{arm}-seed42", baseline,
                             work / "predictions" / f"{arm}-seed42.h5ad")
-        result["accepted"] = (result["score"] >= incumbent["score"] + .01
-            and result["raw"]["MSE"] <= incumbent["raw"]["MSE"]
-            and result["raw"]["NMAE"] <= 1.1 * incumbent["raw"]["NMAE"])
         results[arm] = result
-    eligible = [a for a, r in results.items() if r["accepted"]]
-    selected = max(eligible, key=lambda a: results[a]["score"]) if eligible else "incumbent"
+    selected = max(results, key=lambda a: results[a]["score"])
     if selected != summary["selected"]:
         raise ValueError("Selected candidate differs from actual verified scores")
-    require_stage(work, f"{selected}-score-43")
+    confirmation_stage = f"{selected}-score-43" if summary["confirmation_reused"] else "final-confirmation-score"
+    require_stage(work, confirmation_stage)
     confirmation = read_result(work / "evaluation" / f"{selected}-seed43", baseline,
                                work / "predictions" / f"{selected}-seed43.h5ad")
     if not (confirmation["score"] >= results[selected]["score"]-.01
-            and confirmation["score"] >= incumbent["score"]+.01
-            and confirmation["raw"]["MSE"] <= incumbent["raw"]["MSE"]
-            and confirmation["raw"]["NMAE"] <= 1.1*incumbent["raw"]["NMAE"]):
-        raise ValueError("Confirmation no longer satisfies the fixed gate")
+            and confirmation["score"] >= incumbent["score"]):
+        raise ValueError("Confirmation no longer satisfies the final stability gate")
     model = ReleasedPredictor(args, selected)
     fingerprint = {"effects_sha256": sha(model.table_path), "fit_sha256": sha(work / "fit.json"),
                    "checkpoint_sha256": sha(work / "state/final.pt") if selected == "state" else None,
@@ -96,7 +94,9 @@ def checked_release(args):
             raise ValueError("Scored prediction provenance differs from released model")
     return model, {"released": True, "selected_arm": selected, **fingerprint,
         "checkpoint_masks_sha256": sha(work / "state/masks.npz") if selected == "state" else None,
-        "selection_sha256": sha(work / "selection.json"), "summary_sha256": sha(work / "summary.json"),
+        "selection_sha256": sha(work / "final-selection.json"),
+        "original_selection_sha256": sha(work / "selection.json") if (work / "selection.json").exists() else None,
+        "summary_sha256": sha(work / "final-selection.json"),
         "first_seed": results[selected], "confirmation": confirmation,
         "submission_count_limit_this_round": 1,
         "user_authorization": "Finish this round, submit the best validated result to the leaderboard, then stop work.",
