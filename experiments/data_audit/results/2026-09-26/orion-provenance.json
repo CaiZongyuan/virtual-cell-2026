@@ -1,0 +1,18 @@
+{
+  "counts_script_sha256": "2abeec59462200552bb7f0b8a5c5576120d634dafc8a5024e05e13ca2831d65c",
+  "metadata_reader_sha256": "53c3a29150b7bd3a2903a1fb8c04f2952886f0a03ebd05ce990f6379c873bf88",
+  "label_audit_original_revision": "3af8b3c",
+  "label_audit_repair_script_sha256": "aa25ef6ae2ea62a5ba5f692b4c8acea06f4863e15593b18c7ab5e2590805ca9f",
+  "runtime": "Isolated uv environments with Python 3.13.14, pyarrow 21.0.0; counts audit also numpy 2.2.6. Training/evaluation environments unchanged.",
+  "local_raw_pilot_bytes": 697883271,
+  "full_training_use": false,
+  "official_submission_use": false,
+  "artifacts_sha256": {
+    "orion-metadata-pilot.json": "fd65b9fd31ec9639d6acec9f4d7b3d91a0b092671dac453e3c52e5edebb10302",
+    "orion-counts-pilot.json": "7c787f68d90353e706b98c8ad4c99dbadb8e423b65a251d98bf52d7f6105964e",
+    "orion-label-coverage-initial.json": "bb37993c7fcb4602729e32f2f37b30e7fee41c6c36b3bc109893701c44302ed0",
+    "orion-label-coverage.json": "14f00152de7564188d5ff7180cf2c365c9e10fc5c7247763d344726fd1db35c8",
+    "orion-raw-download-receipts.json": "1aa63adaabfa0924806dd54bdc0c262797830bf137195cefcf05a65f4e53c140",
+    "orion-label-training-opportunity.json": "d5c3015f8ca1b50a7c4610a50d106bbc2ba830f2e11d6ce989fbfaef09851a85"
+  }
+}

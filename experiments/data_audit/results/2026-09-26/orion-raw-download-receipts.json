@@ -1,0 +1,18 @@
+[
+  {
+    "file": "data/HCT116_Batch1.parquet",
+    "revision": "53a5bc98d49247bcf967500292575c3d3602de31",
+    "bytes": 327620255,
+    "sha256": "a7a6918ecda30343e3f9262bcfb654bf077170d2e99c7bcd0c8b9f963764f13b",
+    "sha256_verified": true,
+    "elapsed_seconds": 20.08149613699061
+  },
+  {
+    "file": "data/HEK293T_Batch1.parquet",
+    "revision": "53a5bc98d49247bcf967500292575c3d3602de31",
+    "bytes": 370263016,
+    "sha256": "bc97ddfeef8df72fbd7aa03cf8e5fd1a6293e0d467735e5e59ce907df49af8d1",
+    "sha256_verified": true,
+    "elapsed_seconds": 26.69827312300913
+  }
+]

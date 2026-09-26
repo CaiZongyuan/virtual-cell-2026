@@ -306,7 +306,7 @@
 - 来源：[DOI/bioRxiv](https://doi.org/10.1101/2025.06.11.659105)；Ann C Huang et al.；2025-06-16 预印本；[Crossref](https://api.crossref.org/works/10.1101/2025.06.11.659105)书目核验 2026-09-14；本地全文未保存；线索与边界见[材料审阅](../research/participant-evidence-review.md)。
 - 2026-09-23 数据更新：作者 [Figshare v3](https://doi.org/10.25452/figshare.plus.29190726.v3) 已发布 HCT116/HEK293T 两个处理后 H5AD（合计 559,518,282,173 bytes）；[Hugging Face Parquet 副本](https://huggingface.co/datasets/Xaira-Therapeutics/X-Atlas-Orion)文件树约 126.26 GB，数据卡声明稀疏表达为 raw counts。两个入口均标 CC BY-NC-SA 4.0；奖金竞赛用途许可、对照标签和矩阵内容未核实。维持备选，不将其与 X-Cell 模型页或 X-Atlas/Pisces 汇编混为一项。详见[数据清单](../research/perturbation-dataset-catalog.md)。
 
-- 2026-09-26 标签试点：固定 HF revision `53a5bc98d49247bcf967500292575c3d3602de31`。仅取 HCT116/HEK293T 各 Batch1 的四列标签与页脚，共 704,911 bytes，验证批次内 `Non-Targeting` 对照；两批分别有 168/160 个官方靶点标签、270/296 个对应细胞。基因元数据覆盖 18,106 个官方符号，存在 22 个重复符号；矩阵原始计数、全批次覆盖与竞赛许可适用性仍未解决，维持备选，未进入训练/提交。[可复核试点](../research/orion-metadata-pilot-2026-09-26.md)。
+- 2026-09-26 实测：固定 HF revision `53a5bc98d49247bcf967500292575c3d3602de31`，已完整核对 332 个批次、7,943,468 个细胞的标签；HCT116/HEK293T 分别有 280/290 个官方靶点达到 ≥32 个批次匹配细胞。结合 GWPS，290 个官方靶点在标签层可获至少两个生物背景。另下载两个真实批次共 697,883,271 bytes，通过作者 LFS SHA-256、非负整数计数、逐细胞基因轴与 UMI 总数校验。正式训练/提交仍未使用 Orion；其余计数文件、符号映射与非商业许可适用性待核。维持高优先级备选。[完整审计](../research/orion-metadata-pilot-2026-09-26.md)。
 
 ### Genome-scale perturb-seq in primary human CD4+ T cells maps context-specific regulators of T cell programs and human immune traits
 

@@ -53,10 +53,26 @@ def run(args):
     files = sorted(s["rfilename"] for s in tree["siblings"] if s["rfilename"].startswith("data/") and s["rfilename"].endswith(".parquet"))
     if len(files) != 332:
         raise ValueError("Pinned Orion file set changed")
+    all_files = files
     panel = set(protocol["training_targets"]) | set(protocol["official_targets"]) | set(protocol["h1_targets"])
-    args.cache.mkdir(parents=True, exist_ok=False)
-    started = time.monotonic()
     records, failures = [], []
+    initial = None
+    if args.repair:
+        initial = json.loads(args.output.read_text())
+        if initial["revision"] != args.revision or initial["complete"] or not initial["failures"]:
+            raise ValueError("No matching incomplete label audit to repair")
+        preserved = args.output.with_name(args.output.stem + "-initial.json")
+        with preserved.open("x") as stream:
+            stream.write(args.output.read_text())
+        files = [r["file"] for r in initial["failures"]]
+        for filename in all_files:
+            if filename not in files:
+                record = json.loads((args.cache / (Path(filename).stem + ".json")).read_text())
+                if record["file"] != filename or record["status"] != "verified_labels_only":
+                    raise ValueError("Existing successful cache identity changed")
+                records.append(record)
+    args.cache.mkdir(parents=True, exist_ok=args.repair)
+    started = time.monotonic()
     with ThreadPoolExecutor(max_workers=2) as executor:
         jobs = {executor.submit(audit_file, filename, args.revision, panel): filename for filename in files}
         for job in as_completed(jobs):
@@ -85,13 +101,17 @@ def run(args):
             "official_targets_at_least_32_cells": sum(counts[t] >= 32 for t in protocol["official_targets"]),
             "official_targets_at_least_64_cells": sum(counts[t] >= 64 for t in protocol["official_targets"]),
             "public_h1_target_counts_in_NT_matched_batches": {t: counts[t] for t in protocol["h1_targets"]}}
-    summary = {"revision": args.revision, "complete": not failures and len(records) == len(files),
-        "expected_files": len(files), "verified_files": len(records), "failures": failures,
+    summary = {"revision": args.revision, "complete": not failures and len(records) == len(all_files),
+        "expected_files": len(all_files), "verified_files": len(records), "failures": failures,
         "http_range_requests_successful_files": sum(r["requests"] for r in records),
         "bytes_downloaded_successful_files": sum(r["downloaded_bytes"] for r in records),
         "source_bytes_successful_files": sum(r["source_bytes"] for r in records),
         "all_successful_files_have_one_row_group": all(r["row_groups"] == 1 for r in records),
         "elapsed_seconds": time.monotonic()-started, "contexts": contexts,
+        "one_targeted_repair": args.repair,
+        "initial_failed_attempts": initial["failures"] if initial else [],
+        "initial_elapsed_seconds": initial["elapsed_seconds"] if initial else None,
+        "cache_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(args.cache.glob("*.json"))},
         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "scope": "Public labels only, pass_guide_filter required and batch NT counts explicit. No gene-expression/token count columns read, no training or competition submission with Orion data. Counts do not establish knockdown efficiency or count-matrix validity."}
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -106,4 +126,5 @@ if __name__ == "__main__":
     parser.add_argument("--revision", required=True)
     parser.add_argument("--cache", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--repair", action="store_true")
     run(parser.parse_args())

@@ -1,0 +1,65 @@
+{
+  "revision": "53a5bc98d49247bcf967500292575c3d3602de31",
+  "gene_metadata_sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf",
+  "shards": [
+    {
+      "file": "data/HCT116_Batch1.parquet",
+      "source_bytes": 327620255,
+      "sha256": "a7a6918ecda30343e3f9262bcfb654bf077170d2e99c7bcd0c8b9f963764f13b",
+      "sha256_verified": true,
+      "cells": 18549,
+      "stored_values_scanned": 118892859,
+      "finite_nonnegative_integer_counts": true,
+      "paired_axes_verified": true,
+      "duplicate_tokens_per_cell": 0,
+      "unsorted_token_rows": 0,
+      "explicit_zeros": 0,
+      "maximum_count": 3325,
+      "library_size_quantiles": [
+        668.0,
+        23189.0,
+        29650.0,
+        36991.0,
+        154143.0
+      ],
+      "rows_differing_from_author_total_counts": 0,
+      "rows_differing_from_author_n_genes": 0,
+      "NT_cells": 891,
+      "nonzero_gene_tokens": 32231,
+      "official_symbols_with_nonzero_counts": 16876,
+      "official_targets_present": 168,
+      "elapsed_seconds": 3.912588089995552,
+      "process_peak_RSS_bytes": 564006912
+    },
+    {
+      "file": "data/HEK293T_Batch1.parquet",
+      "source_bytes": 370263016,
+      "sha256": "bc97ddfeef8df72fbd7aa03cf8e5fd1a6293e0d467735e5e59ce907df49af8d1",
+      "sha256_verified": true,
+      "cells": 22731,
+      "stored_values_scanned": 138023058,
+      "finite_nonnegative_integer_counts": true,
+      "paired_axes_verified": true,
+      "duplicate_tokens_per_cell": 0,
+      "unsorted_token_rows": 0,
+      "explicit_zeros": 0,
+      "maximum_count": 1498,
+      "library_size_quantiles": [
+        4653.0,
+        12987.0,
+        18751.0,
+        25168.5,
+        69226.0
+      ],
+      "rows_differing_from_author_total_counts": 0,
+      "rows_differing_from_author_n_genes": 0,
+      "NT_cells": 1079,
+      "nonzero_gene_tokens": 34135,
+      "official_symbols_with_nonzero_counts": 17286,
+      "official_targets_present": 160,
+      "elapsed_seconds": 4.0593207250058185,
+      "process_peak_RSS_bytes": 618610688
+    }
+  ],
+  "scope": "Two actual raw-count shards only; full corpus validity and model benefit are not established. No Orion data used in training or submission. Duplicate gene-symbol resolution remains separate from unique token-axis validation."
+}
