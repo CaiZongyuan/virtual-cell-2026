@@ -70,7 +70,9 @@ def safe_status(entry):
             result[key]=value
     if isinstance(entry.get("is_final"),bool):
         result["is_final"]=entry["is_final"]
-    for key in ["score","overall_score","total_score","avg_score","scores","metrics","partition","panel_id","anchor_version"]:
+    for key in ["score","overall_score","total_score","avg_score","scores","metrics",
+                "score_avg","score_pds","score_mse","score_nmae","score_fid","score_reach","score_jac","rank",
+                "partition","panel_id","anchor_version"]:
         if key in entry:
             value=safe_scores(entry[key],key)
             if value is not None:
