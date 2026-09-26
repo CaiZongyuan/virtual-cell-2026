@@ -137,10 +137,16 @@ conservative predictor, and the additive candidate worsens H1 mean error despite
 its favorable source-context surrogate. The incumbent remains selected; its
 second decoding-seed score completed at **0.164808**, versus **0.163874**
 for seed 42. Both passed the fixed release gate. This confirms decoding stability
-with fixed controls, not independent retraining. Official ABC export is running.
+with fixed controls, not independent retraining. Official ABC export, native prep
+and the one authorized upload have completed; the entry is published.
 [Source calibration and complete score artifacts](results/2026-09-26/).
 Live noncached account/allowance checks passed through the established SSH
-forward; no official upload has occurred at this stage.
+forward before upload. Official entry `wwojQdFnxb0tiobhyPe3`, public name
+`entry-9875149c772f0260`, scored **-0.006956916763307641** versus the previous
+official **-0.992407445228847**, with identical panel and anchor versions. Rank
+was 760 at the 2026-09-26 04:14 UTC check. The large NMAE improvement accompanied
+worse FID/JAC; these official scores are distinct from the H1 development scores.
+See [final report](../../docs/research/effect-calibration-run-2026-09-26.md).
 
 State completed all 6,000 updates and the full H1 export. Its fixed source
 development-cell loss was 0.152172 versus zero-correction 0.171487; these are
@@ -186,7 +192,16 @@ The execution environment briefly changed to restricted networking and read-only
 Git metadata while remote evaluations were running. The user restored full access
 on 2026-09-26. SSH inspection confirmed all three scores completed and the
 controller advanced to the second decoding-seed confirmation. Training was not
-repeated. No official upload has been initiated at this stage. Existing
-task/submission authorization remains valid.
+repeated. At that recovery checkpoint, upload had not yet begun; it subsequently
+completed under the existing authorization after the release and artifact gates.
 See [recovery notes](../../docs/research/effect-calibration-recovery-2026-09-26.md)
 and [consolidated status](results/2026-09-26/campaign-status.json).
+
+## Final resource state
+
+The local controller, all evaluations, native preparation, upload and separate
+Jiang count audit completed. No campaign processes, tmux sessions or GPU compute
+processes remained at the final check. Total project storage was 128,549,398,944
+bytes, below the 500,000,000,000-byte cap. The owned CONNECT proxy and reverse SSH
+tunnel were stopped after the published result was retrieved. Large artifacts
+remain on the server; Git retains the audited small reports only.

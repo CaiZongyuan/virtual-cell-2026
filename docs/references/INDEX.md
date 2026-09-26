@@ -270,10 +270,11 @@
 - 摘要：Jiang 等将 Perturb-seq 用于六个细胞系、五类信号条件下的调控与分子通路响应分析，公开五个 pathway Seurat RDS 对象。刺激条件属于背景定义，不把它们当成新增独立细胞系。
 - 核心关联：可为 State 增加背景多样性，但需要 RDS 转换、刺激条件和匹配对照审计，先不作为第一轮微调前置。
 - 关系：补充 Replogle/Nadig；本轮 Scholar 命中的 bioRxiv 2024 版本与 Nature Cell Biology 正式版合并，不作为独立数据证据。
-- 结论：备选为第二阶段背景扩展；四背景流程跑通后再下载，单独评估增益。
+- 结论：备选为第二阶段背景扩展；TGFB 单文件已于 2026-09-26 下载并完成 counts/元数据审计，尚未进入训练，增益待独立验证。
 - 关键词：Perturb-seq、信号通路、Mixscale、六细胞系、刺激条件、数据扩展。
 - 来源：[Nature Cell Biology DOI](https://doi.org/10.1038/s41556-025-01622-z)；Longda Jiang et al.；正式在线 2025-02-26；[预印本 DOI](https://doi.org/10.1101/2024.01.29.576933)、[Zenodo 14518762](https://zenodo.org/records/14518762)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)及[微调教程](../lessons/03-State上手.md)，独立全文未保存；检索与书目核验 2026-09-14，复用既有数据审计。
 - 2026-09-25 模态缺口已解决：PMC 作者稿正文确认六细胞系均使用 dCas9-KRAB-MeCP2 CRISPRi，分别为 A549/MCF7/HT29/HAP1/BxPC3/K562，五种刺激 24 h。约 1,500 是靶基因×细胞系×刺激组合，不是约 1,500 个独立靶基因；每通路 44–61 targets。正式版指向 Zenodo 14518762，五 RDS 共 20,141,612,637 bytes，CC BY 4.0；继续备选，先做单通路 counts/NTC 审计，未读取大矩阵或证明训练增益。[核验记录](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+- 2026-09-26 实测：TGFB RDS（2,642,041,433 bytes，MD5 `8e9b4d39a95ec5881a30be6a2df541d1`）含 236,606 cells × 33,525 genes、6 个细胞系、52 个扰动靶点和 9,809 个 NT 细胞；RNA counts 的非负整数与轴检查通过。该文件官方靶点交集仅 MED15，H1 交集 4 个；可新增测量的官方输出基因 6,670 个，不等同于预测增益。刺激 TGFB1 及 orig.ident/sample_ID 均保留，技术批次含义仍待核；未进入本轮训练或提交。[完整数据审计](../research/jiang-tgfb-data-pilot-2026-09-26.md)、[小型产物](../../experiments/data_audit/results/2026-09-26/)。本次复用原文与作者资产，无新增论文查询。
 
 
 ### scPerturb harmonized datasets — Zenodo record 13350497

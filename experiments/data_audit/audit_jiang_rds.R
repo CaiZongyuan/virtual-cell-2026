@@ -87,7 +87,9 @@ metadata_summary <- lapply(names(meta), function(name) {
   if (unique_count <= 200 && (is.character(value) || is.factor(value) || is.logical(value))) {
     counts_by_value <- table(as.character(value), useNA = "ifany")
     result$counts <- as.list(as.numeric(counts_by_value))
-    names(result$counts) <- names(counts_by_value)
+    labels <- names(counts_by_value)
+    labels[is.na(labels)] <- "__MISSING__"
+    names(result$counts) <- labels
   }
   result
 })

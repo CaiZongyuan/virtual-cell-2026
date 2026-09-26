@@ -1,12 +1,12 @@
 {
-  "recorded_at_utc": "2026-09-26T03:49:53.264593+00:00",
-  "status": "official_artifact_ready",
+  "recorded_at_utc": "2026-09-26T04:21:43.396151+00:00",
+  "status": "completed_official_published",
   "environment_blocker": null,
   "authorization": "Continue optimization and submit once the fixed local gates pass; no new submission approval required",
-  "last_verified_git_commit": "2820de6e6b1da42621ea2cd12f2a629b1befc6cf",
+  "last_verified_git_commit": "7e548ecdb1c09bc70349edc5966d2d024b5bf661",
   "branch": "autoresearch/20260926-effect-calibration",
   "remote_run": "/home/caii/vcc2026-effect-calibration-20260926",
-  "remote_live_status": "local controller completed, native artifact ready",
+  "remote_live_status": "All owned experiment stages completed; no matching processes, tmux sessions or GPU compute processes at final audit",
   "verified_h1": {
     "control": -0.04523068765223785,
     "incumbent": 0.16387417225775552,
@@ -27,10 +27,9 @@
   "state_prediction_export_exit_code": 0,
   "last_observed_remaining_scores": [],
   "local_controller": "finish_local.py: selection -> one decoding-seed confirmation -> release -> ABC export -> native prep; no credentials or upload",
-  "official_upload_performed_this_round": false,
+  "official_upload_performed_this_round": true,
   "previous_official_entry_id": "2TvmhHnxpkc8hhjCSWcG",
   "previous_official_scores": {
-    "rank": 1140,
     "score_avg": -0.992407445228847,
     "score_pds": 0.00703193915819459,
     "score_mse": 0,
@@ -38,18 +37,29 @@
     "score_fid": -0.03705835186180883,
     "score_reach": 0.07386654622167142,
     "score_jac": 0.001715195108860262,
+    "rank": 1149,
     "partition": "val",
     "panel_id": "vcc2026-val-1",
     "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4"
   },
-  "previous_official_record": "experiments/state_finetune/results/2026-09-25/summary.json",
+  "previous_official_record": "experiments/effect_calibration/results/2026-09-26/audit/previous-official-live.json",
   "jurkat_used_for_tuning_this_round": false,
   "new_data": {
     "path": "/mnt/e/vcc2026-data/raw/jiang_tgfb.rds",
     "bytes": 2642041433,
     "md5": "8e9b4d39a95ec5881a30be6a2df541d1",
     "download_exit_code": 0,
-    "full_object_audit": "pending; reader fixture passed"
+    "full_object_audit": "completed; exit 0; finite nonnegative integer counts and axis checks passed",
+    "cells": 236606,
+    "genes": 33525,
+    "NT_cells": 9809,
+    "official_target_overlap": [
+      "MED15"
+    ],
+    "official_genes_in_union": 17150,
+    "new_official_genes_measured": 6670,
+    "used_for_current_training_or_submission": false,
+    "audit_report": "docs/research/jiang-tgfb-data-pilot-2026-09-26.md"
   },
   "isolated_r_runtime": {
     "path": "/home/caii/vcc2026-rds-audit/env",
@@ -59,8 +69,8 @@
   },
   "storage_limit_bytes": 500000000000,
   "last_storage_before_jiang_download_bytes": 95445946493,
-  "final_storage_recheck": "pending remote access; all stages reserve 50 GB headroom",
-  "record_scope": "Consolidated from verified local artifacts and prior tool outputs. This is not a new live server check.",
+  "final_storage_recheck": "experiments/effect_calibration/results/2026-09-26/audit/final-resources.json",
+  "record_scope": "Completed campaign, consolidated from verified artifacts and final live official/server checks. Git commit identifies the artifact/upload source revision; final report is committed afterward.",
   "selected_arm": "incumbent",
   "submission_gate_passed": true,
   "confirmation": {
@@ -100,5 +110,83 @@
     "estimated_prep_peak_bytes": 22720368328,
     "available_bytes_before_prep": 32317505536,
     "finished_at_unix": 1790394451.5511687
+  },
+  "official_submission": {
+    "creation_attempted": true,
+    "model_name": "entry-9875149c772f0260",
+    "artifact_sha256": "7e51bd148c759ee70345fd9e439a2a14b63ea251dbb0f765fe997f25989af050",
+    "entry_id": "wwojQdFnxb0tiobhyPe3",
+    "is_final": false,
+    "status": "published",
+    "bytes_uploaded": 3301734400,
+    "md5_verified": true,
+    "checked_at_utc": "2026-09-26T04:14:21.556987+00:00",
+    "score_avg": -0.006956916763307641,
+    "score_pds": 0.2634656660369015,
+    "score_mse": 0,
+    "score_nmae": 0.06669389213488823,
+    "score_fid": -0.4023102717029962,
+    "score_reach": 0.07185905985861332,
+    "score_jac": -0.041449846907252764,
+    "rank": 760,
+    "partition": "val",
+    "panel_id": "vcc2026-val-1",
+    "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4"
+  },
+  "official_comparison": {
+    "previous_entry_id": "2TvmhHnxpkc8hhjCSWcG",
+    "new_entry_id": "wwojQdFnxb0tiobhyPe3",
+    "same_partition_panel_and_anchor": true,
+    "partition": "val",
+    "panel_id": "vcc2026-val-1",
+    "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4",
+    "metrics": {
+      "avg": {
+        "previous": -0.992407445228847,
+        "current": -0.006956916763307641,
+        "delta": 0.9854505284655394
+      },
+      "pds": {
+        "previous": 0.00703193915819459,
+        "current": 0.2634656660369015,
+        "delta": 0.2564337268787069
+      },
+      "mse": {
+        "previous": 0,
+        "current": 0,
+        "delta": 0
+      },
+      "nmae": {
+        "previous": -6,
+        "current": 0.06669389213488823,
+        "delta": 6.0666938921348885
+      },
+      "fid": {
+        "previous": -0.03705835186180883,
+        "current": -0.4023102717029962,
+        "delta": -0.3652519198411874
+      },
+      "reach": {
+        "previous": 0.07386654622167142,
+        "current": 0.07185905985861332,
+        "delta": -0.0020074863630581002
+      },
+      "jac": {
+        "previous": 0.001715195108860262,
+        "current": -0.041449846907252764,
+        "delta": -0.04316504201611303
+      }
+    },
+    "rank_at_new_check": 760,
+    "checked_at_utc": "2026-09-26T04:14:21.556987+00:00",
+    "interpretation": "Official scaled scores, not percentages or H1 metrics. Rank is time dependent. This campaign selected the pre-existing H1 incumbent after three candidates failed the improvement gate."
+  },
+  "final_storage_bytes": 128549398944,
+  "network_cleanup": {
+    "checked_at_utc": "2026-09-26T04:17:23.767927+00:00",
+    "identity_checked": true,
+    "supervisor_terminated": true,
+    "proxy_terminated": true,
+    "ssh_tunnel_terminated": true
   }
 }

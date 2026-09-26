@@ -1,0 +1,48 @@
+{
+  "previous_entry_id": "2TvmhHnxpkc8hhjCSWcG",
+  "new_entry_id": "wwojQdFnxb0tiobhyPe3",
+  "same_partition_panel_and_anchor": true,
+  "partition": "val",
+  "panel_id": "vcc2026-val-1",
+  "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4",
+  "metrics": {
+    "avg": {
+      "previous": -0.992407445228847,
+      "current": -0.006956916763307641,
+      "delta": 0.9854505284655394
+    },
+    "pds": {
+      "previous": 0.00703193915819459,
+      "current": 0.2634656660369015,
+      "delta": 0.2564337268787069
+    },
+    "mse": {
+      "previous": 0,
+      "current": 0,
+      "delta": 0
+    },
+    "nmae": {
+      "previous": -6,
+      "current": 0.06669389213488823,
+      "delta": 6.0666938921348885
+    },
+    "fid": {
+      "previous": -0.03705835186180883,
+      "current": -0.4023102717029962,
+      "delta": -0.3652519198411874
+    },
+    "reach": {
+      "previous": 0.07386654622167142,
+      "current": 0.07185905985861332,
+      "delta": -0.0020074863630581002
+    },
+    "jac": {
+      "previous": 0.001715195108860262,
+      "current": -0.041449846907252764,
+      "delta": -0.04316504201611303
+    }
+  },
+  "rank_at_new_check": 760,
+  "checked_at_utc": "2026-09-26T04:14:21.556987+00:00",
+  "interpretation": "Official scaled scores, not percentages or H1 metrics. Rank is time dependent. This campaign selected the pre-existing H1 incumbent after three candidates failed the improvement gate."
+}

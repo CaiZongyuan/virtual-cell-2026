@@ -1,0 +1,34 @@
+{
+  "source_url": "https://zenodo.org/api/records/14518762/files/Seurat_object_TGFB_Perturb_seq.rds/content",
+  "source_bytes": 2642041433,
+  "source_md5": "8e9b4d39a95ec5881a30be6a2df541d1",
+  "source_md5_verified_by_download_receipt": true,
+  "remote_audit_root": "/home/caii/vcc2026-rds-audit",
+  "remote_sha256": {
+    "audit_jiang_rds.R": "572dc84f71db00ae4c25ef4fb8b0a57830186e8e80ac7cc15a09cca25ddbceba",
+    "summarize_jiang.py": "a99632594ad80d19d9dd2636f1b2590e187d1ca3fe353ab3b653389ba5aa7be9",
+    "jiang/metadata.tsv.gz": "21396a78a5a54911625918832b0b30d5b21769d4070decbbc70984b784eab0fa",
+    "jiang/genes.tsv": "0c6b0c9dfc32018b9adcc35a656e734e9c36348594879fbded51b9cf91e43eed",
+    "jiang/counts-audit.json": "0e9984407b3d1033bfebccba100a34fb128cb5e0e83fde19aea7a221543a34a7",
+    "jiang/metadata-columns-reviewed.json": "971a5126fc3b39dad3a17878e500e2cbd8b1ceaaae36adcb1f6f2e7cdf94d6a8",
+    "jiang/metadata-coverage.json": "3a8bbdc92e1c3d83770b3d48f9ca9b3ca7a40f96919b8ef4f62f026f9feca227"
+  },
+  "local_corrected_R_sha256": "76f95914e51913e73eaa06d6d8e1ff402d94412ddcd871b6f6a731f44118be3e",
+  "R_reporting_correction": "Full read used the recorded original R script. Missing-category names were later corrected from original metadata by the Python summary; the R fix passed an NA JSON round-trip fixture without rereading the matrix. Counts were unaffected.",
+  "NA_JSON_fixture_passed": true,
+  "stage_status_record": "experiments/effect_calibration/results/2026-09-26/status/jiang-audit.json",
+  "artifacts_sha256": {
+    "conditions.csv": "eeb77d3654e36c03bfdc2527657e32e152d040218e89e164c338d2c85e40adcd",
+    "counts-audit.json": "0e9984407b3d1033bfebccba100a34fb128cb5e0e83fde19aea7a221543a34a7",
+    "metadata-columns-reviewed.json": "971a5126fc3b39dad3a17878e500e2cbd8b1ceaaae36adcb1f6f2e7cdf94d6a8",
+    "metadata-coverage.json": "3a8bbdc92e1c3d83770b3d48f9ca9b3ca7a40f96919b8ef4f62f026f9feca227",
+    "read-resources.log": "959a75d869336fed92f51af3724b0eb034583e0dcf01a4acd6c745b0b75059bb",
+    "runtime-versions.json": "c40ea2de0523751f5c494eb73151ad7580e3c44fd680f1d3d8622f3e3a6c72b4",
+    "strata.csv": "22396542ff88f16d50fe17e8561af2b6b8881b5bb3f0cf4f24cbc68f274a6a05"
+  },
+  "fetched_csv_sha256": {
+    "conditions.csv": "a9f5261ce7814bb785cc701fc2e8447865e40e80fe207752eee6441b10b426d9",
+    "strata.csv": "7dbe4c3968beb7eb71e435364de2a03777a79a1138ccaaed71a19ca57ffd2806"
+  },
+  "csv_normalization": "Fetched CSV CRLF was normalized to LF for Git; cells and fields are unchanged. artifacts_sha256 hashes the versioned local files; fetched_csv_sha256 preserves transfer bytes."
+}
