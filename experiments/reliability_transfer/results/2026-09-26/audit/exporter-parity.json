@@ -1,0 +1,8 @@
+{
+  "h1_rows": 50400,
+  "h1_genes": 18080,
+  "all_counts_exact": true,
+  "scored_prediction_sha256": "785526d7b2b1ad0e0b19a9fb35810766a56303f57440c43c94d02e91e2a26ac8",
+  "source_revision": "255525a5da358d6b35fd4ba2dc09235a11d03119",
+  "scope": "Full deterministic replay of frozen predictions, not retraining or another scored experiment"
+}

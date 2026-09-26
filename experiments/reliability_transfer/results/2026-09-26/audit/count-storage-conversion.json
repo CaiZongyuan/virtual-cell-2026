@@ -1,0 +1,10 @@
+{
+  "source_sha256": "2d290f9e854d916acfb4d63aa8eb82bcae47b021901777ba58ec6aad07db5cc3",
+  "copy_sha256": "02e0b1935777dbd583464992bc8397604bd5472fe147ea1355ea6979e10a673a",
+  "stored_entries": 2070753486,
+  "source_dtype": "int32",
+  "copy_dtype": "float32",
+  "all_values_exact": true,
+  "all_indices_and_indptr_exact": true,
+  "chunk_values": 1048576
+}

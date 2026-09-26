@@ -1,0 +1,23 @@
+	Command being timed: "/home/caii/vcc2026-run/.submit-venv/bin/vcc --json prep /home/caii/vcc2026-reliability-20260926/submission/counts-float32.h5ad --genes /home/caii/vcc2026-run/controls/gene_names.csv --perts /home/caii/vcc2026-run/controls/pert_counts.csv --output /home/caii/vcc2026-reliability-20260926/submission/prediction.vcc --require-counts --verify-targets --check-cell-counts --reject-controls"
+	User time (seconds): 362.46
+	System time (seconds): 62.57
+	Percent of CPU this job got: 292%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:25.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 18338580
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 37946
+	Minor (reclaiming a frame) page faults: 1314296
+	Voluntary context switches: 99500
+	Involuntary context switches: 5374
+	Swaps: 0
+	File system inputs: 40740416
+	File system outputs: 45305680
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

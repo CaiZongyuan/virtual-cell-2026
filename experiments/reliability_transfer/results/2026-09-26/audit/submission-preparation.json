@@ -1,0 +1,15 @@
+{
+  "selected_arm": "expanded",
+  "release_sha256": "a17f060e10322eeb0315bc2fdb18f77ed15142f5cb084a61268c75f9cdb7d496",
+  "original_prediction_sha256": "2d290f9e854d916acfb4d63aa8eb82bcae47b021901777ba58ec6aad07db5cc3",
+  "converted_prediction_sha256": "02e0b1935777dbd583464992bc8397604bd5472fe147ea1355ea6979e10a673a",
+  "artifact_sha256": "3a568acaa5f88ed92dc5e38f4650238ecd5413653a010306baa8c27e8ce1d33c",
+  "artifact_bytes": 3301201920,
+  "artifact_path": "/home/caii/vcc2026-reliability-20260926/submission/prediction.vcc",
+  "prep_source_sha256": "4a93e7d267379a32b661f7f9bd4de6543bb372816362a2a85e6f70e437240ad3",
+  "native_prep_completed": true,
+  "matrix_count_values_changed": false,
+  "estimated_prep_peak_bytes": 22710414868,
+  "available_bytes_before_prep": 32438988800,
+  "finished_at_unix": 1790439846.6832528
+}

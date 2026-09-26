@@ -110,7 +110,10 @@ configuration or data collection follows this final instruction.
 submission. It waits for final selection, runs exact count replay/ABC export and
 native preparation, rechecks live eligibility, uploads once through the existing
 credential-on-stdin helper, and polls the durable entry ID. It closes its owned
-network supervisor on success or failure. The current selected model is expanded;
-all three candidate scores are archived, and its one seed-43 confirmation is the
-remaining local evaluation. After the official result, only report/commit and
-resource cleanup remain.
+network supervisor on success or failure. The selected model is `expanded`:
+seed 42 scored 0.169257009 and its one seed-43 confirmation scored 0.169405318.
+The official exporter reproduced every H1 count exactly, then generated all
+360,000 ABC cells using the predetermined seed 42. Full native preparation
+passed with counts preserved; the 3,301,201,920-byte artifact has SHA-256
+`3a568acaa5f88ed92dc5e38f4650238ecd5413653a010306baa8c27e8ce1d33c`.
+After the official result, only report/commit and resource cleanup remain.

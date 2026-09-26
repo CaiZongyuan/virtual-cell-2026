@@ -1,0 +1,63 @@
+{
+  "released": true,
+  "selected_arm": "expanded",
+  "effects_sha256": "3812cca8ccf71a1e4ee1848667e20254e887b0bd69c734cf3cdcb57809ea9cad",
+  "fit_sha256": "92a9bd309130062beaad35089097825ee55ff72de5ba864d9d733c37edaa280b",
+  "checkpoint_sha256": null,
+  "protocol_sha256": "7185df9969d690f7ebe93e1a2a17e821e3bf71181902c0f1992aebb55a086f8e",
+  "controls_sha256": "bdd0020ff43afcb02e7025b4e01cbeb4d4c0738b266f7f3e0778a4128bc2acbd",
+  "checkpoint_masks_sha256": null,
+  "selection_sha256": "f1637ab21a01bfcbd16294250897909f8d6f89286463c4e568ab5466de20d48a",
+  "original_selection_sha256": "31fac13c8eec94f7730e420e4a6fe32aecab23a6536e9ed83adf9eb6c76ff7c6",
+  "summary_sha256": "f1637ab21a01bfcbd16294250897909f8d6f89286463c4e568ab5466de20d48a",
+  "first_seed": {
+    "score": 0.16925700855422468,
+    "scaled": {
+      "NMAE": -0.0456128467536725,
+      "MSE": 0.0,
+      "FID": 0.39260241957687486,
+      "REACH": -0.0089012479150077,
+      "JAC": 0.1450743909817906,
+      "PDS": 0.5323793354353629,
+      "avg_score": 0.16925700855422468
+    },
+    "raw": {
+      "PDS": 0.7576507936507939,
+      "MSE": 1.3179030447339273,
+      "NMAE": 0.9859276915062478,
+      "FID": 0.38127132569119415,
+      "REACH": 0.07419869838056829,
+      "JAC": 0.06394118946758172
+    },
+    "scores_sha256": "37b02bf5088fd3cb60a45b9bec8e83ed534064e0226d4204180265aedd082227",
+    "prediction_sha256": "785526d7b2b1ad0e0b19a9fb35810766a56303f57440c43c94d02e91e2a26ac8",
+    "status": "valid"
+  },
+  "confirmation": {
+    "score": 0.169405317771529,
+    "scaled": {
+      "NMAE": -0.04587243955932596,
+      "MSE": 0.0,
+      "FID": 0.39323077184522137,
+      "REACH": -0.01089120552278148,
+      "JAC": 0.1450252805802098,
+      "PDS": 0.5349394992858503,
+      "avg_score": 0.169405317771529
+    },
+    "raw": {
+      "PDS": 0.7588571428571436,
+      "MSE": 1.3181985317890335,
+      "NMAE": 0.9860896067358054,
+      "FID": 0.38177438358355914,
+      "REACH": 0.07240302375713295,
+      "JAC": 0.06392025857224587
+    },
+    "scores_sha256": "d9d345360c24574a0d31cbc3f268f04c6fb8da52060725bbab3acdef2e2c0f6f",
+    "prediction_sha256": "40c1827f76135ba801fbd38f7cb4497d4a9deacb3c4059bb500be63679f91cd9",
+    "status": "valid"
+  },
+  "submission_count_limit_this_round": 1,
+  "user_authorization": "Finish this round, submit the best validated result to the leaderboard, then stop work.",
+  "source_revision": "255525a5da358d6b35fd4ba2dc09235a11d03119",
+  "recorded_at_unix": 1790438838.5158536
+}
