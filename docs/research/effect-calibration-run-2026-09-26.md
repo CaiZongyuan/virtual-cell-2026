@@ -52,7 +52,7 @@ State 复用公开权重的既有后代，采用零初始化有符号输出头�
 | REACH | 0.073867 | 0.071859 | −0.002007 |
 | JAC | 0.001715 | −0.041450 | −0.043165 |
 
-主要改善来自 NMAE 和 PDS。FID、JAC 反而下降，MSE 仍为 0，说明分布和差异表达结构尚有明显短板。这里各项均为官方缩放分数，不能当作原始误差、百分比或与 H1 逐值互换；也不能仅据缩放 MSE 的 0 推断两模型原始误差相同。旧条目在先前查询时排名 1149，排名随其他提交变化，不作为固定实验指标。
+主要改善来自 NMAE 和 PDS。FID、JAC 反而下降，MSE 仍为 0，说明差异表达方向和显著基因集合尚有明显短板。此处 FID 对应 `de_wilcoxon_direction_fidelity_yield_raw`（方向保真度）。这里各项均为官方缩放分数，不能当作原始误差、百分比或与 H1 逐值互换；也不能仅据缩放 MSE 的 0 推断两模型原始误差相同。旧条目在先前查询时排名 1149，排名随其他提交变化，不作为固定实验指标。
 
 完整数值见[新条目](../../experiments/effect_calibration/results/2026-09-26/audit/official-submission.json)、[旧条目实时记录](../../experiments/effect_calibration/results/2026-09-26/audit/previous-official-live.json)及[同面板比较](../../experiments/effect_calibration/results/2026-09-26/audit/official-comparison.json)。
 

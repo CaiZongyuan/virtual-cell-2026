@@ -41,6 +41,7 @@ def centered_response(model, controls, target_vectors, anchor_vectors, anchor_ma
 
 
 def prepare_targets(args):
+    prior_strength = getattr(args, "prior_strength", 0.2)
     with np.load(args.campaign / "effects.npz") as archive:
         tables={k:archive[k] for k in archive.files}
     entries=json.loads((args.campaign / "effects.json").read_text())["entries"]
@@ -51,7 +52,7 @@ def prepare_targets(args):
         if mask.any():
             valid.append({"index":i,"source":row["source"],"target":row["target"],
                           "prior":np.clip(prior,-np.log(4),np.log(4)),"mask":mask,
-                          "residual":np.clip(tables["deltas"][i],-np.log(4),np.log(4))-0.2*np.clip(prior,-np.log(4),np.log(4))})
+                          "residual":np.clip(tables["deltas"][i],-np.log(4),np.log(4))-prior_strength*np.clip(prior,-np.log(4),np.log(4))})
     lookup={(r["source"],r["target"]):r for r in valid}
     common=set.intersection(*[{r["target"] for r in valid if r["source"]==s} for s in SOURCES])
     if len(common)<4:
@@ -99,7 +100,7 @@ def train(args):
                       eligible_conditions=len(valid),eligible_targets=len(vectors),
                       trainable_parameters=sum(p.numel() for p in model.parameters() if p.requires_grad),
                       initialization="existing all-source descendant; signed output head reset to zero",
-                      prior_strength=0.2,residual_strength=0.1,pairwise_weight=0.5,
+                      prior_strength=args.prior_strength,residual_strength=0.1,pairwise_weight=0.5,
                       source_effects_sha256=sha(args.campaign / "effects.npz"),
                       target_center="four fixed training anchors, per-gene measured masks; same centering for predictions and labels",
                       background_holdout_claim=False)
@@ -118,7 +119,7 @@ def train(args):
             source=sources[source_name]
             control,treated=matched_means(source,groups[key],split="development")
             delta=np.clip(log_effect(control,treated,source.measured),-np.log(4),np.log(4))
-            development[key]=(delta-0.2*row["prior"]).astype(np.float32)
+            development[key]=(delta-args.prior_strength*row["prior"]).astype(np.float32)
         return development[key]
 
     def loss(rng,split="training",null_check=False):
@@ -232,6 +233,7 @@ if __name__ == "__main__":
     parser.add_argument("--work",type=Path,required=True)
     parser.add_argument("--root",type=Path,default=Path("/mnt/e/vcc2026-data"))
     parser.add_argument("--steps",type=int,default=6000)
+    parser.add_argument("--prior-strength",type=float,default=0.2)
     parser.add_argument("--output-subdir",default="state")
     parser.add_argument("--revision",required=True)
     train(parser.parse_args())
