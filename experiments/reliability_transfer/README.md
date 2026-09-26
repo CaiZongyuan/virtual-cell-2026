@@ -104,3 +104,13 @@ candidate once. Confirmation must remain above the incumbent and within .01 of
 the first seed; otherwise retain the already published incumbent. Count replay,
 native full preparation and live allowance gates remain mandatory. No new training
 configuration or data collection follows this final instruction.
+
+
+`finish_submission.py` is the local bounded supervisor for the final authorized
+submission. It waits for final selection, runs exact count replay/ABC export and
+native preparation, rechecks live eligibility, uploads once through the existing
+credential-on-stdin helper, and polls the durable entry ID. It closes its owned
+network supervisor on success or failure. The current selected model is expanded;
+all three candidate scores are archived, and its one seed-43 confirmation is the
+remaining local evaluation. After the official result, only report/commit and
+resource cleanup remain.
