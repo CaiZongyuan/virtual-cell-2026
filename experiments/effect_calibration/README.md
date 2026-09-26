@@ -164,3 +164,10 @@ file can contain an upload URL and remains server-only with mode 0600; audit
 records contain only permitted IDs/statuses/numeric scores. No API token or
 private upload URL is copied into Git. Credential access before release and
 duplicate creation after an ambiguous attempt are covered by integration checks.
+
+`finish_local.py` holds an exclusive controller lock, waits for the current
+candidate scores, freezes selection, runs the single seed confirmation and
+release check, then exports and prepares ABC. Every stage has its own exit
+record and bounded timeout. It carries no credentials and stops before upload;
+the already-authorized upload is then executed and monitored separately. An
+explicitly named repair preserves its original failed stage record.

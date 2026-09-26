@@ -43,7 +43,11 @@ def read_result(folder, baseline, prediction=None):
 
 
 def require_stage(work,name):
-    status=json.loads((work / "status" / f"{name}.json").read_text())
+    paths=[work / "status" / f"{name}.json",*sorted((work / "status").glob(f"{name}-repair*.json"))]
+    records=[json.loads(p.read_text()) for p in paths if p.exists()]
+    if not records:
+        raise FileNotFoundError(f"No recorded stage: {name}")
+    status=max(records,key=lambda r:r["finished_at_unix"])
     if status["exit_code"]!=0:
         raise ValueError(f"Stage did not succeed: {name}")
     return status
