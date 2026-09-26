@@ -48,6 +48,10 @@ def safe_scores(value,key=None):
     if isinstance(value,list):
         return [item for v in value if (item:=safe_scores(v)) is not None]
     if isinstance(value,str):
+        if key=="partition" and value in {"val","validation","test","final"}:
+            return value
+        if key in {"panel_id","anchor_version"} and len(value)<=300 and re.fullmatch(r"vcc[0-9]{4}-[A-Za-z0-9_.:+-]+",value):
+            return value
         if key in {"metric","context","aggregation"} and re.fullmatch(r"[A-Za-z][A-Za-z0-9_ -]{0,100}",value):
             return value
         try:
@@ -66,9 +70,11 @@ def safe_status(entry):
             result[key]=value
     if isinstance(entry.get("is_final"),bool):
         result["is_final"]=entry["is_final"]
-    for key in ["score","overall_score","total_score","avg_score","scores","metrics"]:
+    for key in ["score","overall_score","total_score","avg_score","scores","metrics","partition","panel_id","anchor_version"]:
         if key in entry:
-            result[key]=safe_scores(entry[key])
+            value=safe_scores(entry[key],key)
+            if value is not None:
+                result[key]=value
     return result
 
 

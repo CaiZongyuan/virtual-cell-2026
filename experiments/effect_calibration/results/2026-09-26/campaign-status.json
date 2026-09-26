@@ -1,0 +1,67 @@
+{
+  "recorded_at_utc": "2026-09-26T02:51:44.910935+00:00",
+  "status": "confirmation_running",
+  "environment_blocker": null,
+  "authorization": "Continue optimization and submit once the fixed local gates pass; no new submission approval required",
+  "last_verified_git_commit": "2820de6e6b1da42621ea2cd12f2a629b1befc6cf",
+  "branch": "autoresearch/20260926-effect-calibration",
+  "remote_run": "/home/caii/vcc2026-effect-calibration-20260926",
+  "remote_live_status": "SSH restored; all candidate scores complete; seed43 confirmation running; one scoring process",
+  "verified_h1": {
+    "control": -0.04523068765223785,
+    "incumbent": 0.16387417225775552,
+    "conservative": 0.0805021159614971,
+    "mean_shift": 0.05795182380158415,
+    "state_residual": 0.08169653143426088
+  },
+  "conservative_raw_mse": 1.018686500188639,
+  "additive_strength": 0.5,
+  "source_calibration_conditions": 600,
+  "state_training": {
+    "steps": 6000,
+    "development_loss": 0.15217214357107878,
+    "zero_correction_development_loss": 0.17148695839568973,
+    "scope": "source held-cell diagnostics, not held-background validation or early stopping",
+    "elapsed_seconds": 709.0201356589996
+  },
+  "state_prediction_export_exit_code": 0,
+  "last_observed_remaining_scores": [
+    "confirmation"
+  ],
+  "local_controller": "finish_local.py: selection -> one decoding-seed confirmation -> release -> ABC export -> native prep; no credentials or upload",
+  "official_upload_performed_this_round": false,
+  "previous_official_entry_id": "2TvmhHnxpkc8hhjCSWcG",
+  "previous_official_scores": {
+    "rank": 1140,
+    "score_avg": -0.992407445228847,
+    "score_pds": 0.00703193915819459,
+    "score_mse": 0,
+    "score_nmae": -6,
+    "score_fid": -0.03705835186180883,
+    "score_reach": 0.07386654622167142,
+    "score_jac": 0.001715195108860262,
+    "partition": "val",
+    "panel_id": "vcc2026-val-1",
+    "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4"
+  },
+  "previous_official_record": "experiments/state_finetune/results/2026-09-25/summary.json",
+  "jurkat_used_for_tuning_this_round": false,
+  "new_data": {
+    "path": "/mnt/e/vcc2026-data/raw/jiang_tgfb.rds",
+    "bytes": 2642041433,
+    "md5": "8e9b4d39a95ec5881a30be6a2df541d1",
+    "download_exit_code": 0,
+    "full_object_audit": "pending; reader fixture passed"
+  },
+  "isolated_r_runtime": {
+    "path": "/home/caii/vcc2026-rds-audit/env",
+    "R": "4.5.3",
+    "Matrix": "1.7.6",
+    "jsonlite": "2.0.0"
+  },
+  "storage_limit_bytes": 500000000000,
+  "last_storage_before_jiang_download_bytes": 95445946493,
+  "final_storage_recheck": "pending remote access; all stages reserve 50 GB headroom",
+  "record_scope": "Consolidated from verified local artifacts and prior tool outputs. This is not a new live server check.",
+  "selected_arm": "incumbent"
+}

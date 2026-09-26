@@ -116,7 +116,7 @@ identity. The correction weight 0.1 is fixed, not selected with source-context
 validation: the initialization already saw all training sources. Source
 development-cell diagnostics measure fitting only, and never select a checkpoint.
 
-## Interim results
+## Candidate results
 
 Source fitting completed on 600 conditions / 201 targets. Additive strength 0.5
 minimized the declared context-balanced mean-error surrogate (ratio 0.727812).
@@ -127,9 +127,15 @@ applying candidate-specific strength. The four count-decoder checks passed.
 |---|---:|---:|---:|
 | Incumbent, strength 0.5 | 0.163874 | 1.303612 | 0.986160 |
 | Conservative, strength 0.2 | 0.080502 | 1.018687 | 0.987548 |
+| Additive mean shift, strength 0.5 | 0.057952 | 3.575863 | 1.353180 |
+| State residual | 0.081697 | 1.024098 | 0.989496 |
 
 Conservative transfer reduced mean error but failed to improve the composite;
-it is not selected. Additive and State residual evaluations are still running.
+it is not selected. All three new candidates have completed scoring and failed
+the declared improvement gate. State residual gains only 0.001194 over the
+conservative predictor, and the additive candidate worsens H1 mean error despite
+its favorable source-context surrogate. The incumbent remains selected; its
+second decoding-seed score is now running.
 [Source calibration and complete score artifacts](results/2026-09-26/).
 Live noncached account/allowance checks passed through the established SSH
 forward; no official upload has occurred at this stage.
@@ -171,3 +177,14 @@ release check, then exports and prepares ABC. Every stage has its own exit
 record and bounded timeout. It carries no credentials and stops before upload;
 the already-authorized upload is then executed and monitored separately. An
 explicitly named repair preserves its original failed stage record.
+
+## Execution-environment interruption
+
+The execution environment briefly changed to restricted networking and read-only
+Git metadata while remote evaluations were running. The user restored full access
+on 2026-09-26. SSH inspection confirmed all three scores completed and the
+controller advanced to the second decoding-seed confirmation. Training was not
+repeated. No official upload has been initiated at this stage. Existing
+task/submission authorization remains valid.
+See [recovery notes](../../docs/research/effect-calibration-recovery-2026-09-26.md)
+and [consolidated status](results/2026-09-26/campaign-status.json).
