@@ -75,3 +75,16 @@ streams source sufficient statistics; `fit.py` produces fixed candidate tables.
 `predict.py` exports the same canonical H1 panel. Stages run through the existing
 bounded `effect_calibration/stage.py`; large arrays stay on the server. Small
 diagnostics, code revisions, stage exits and verified scores are committed.
+
+
+## Final user stopping instruction
+
+The user requested: finish this round, submit its best result to the leaderboard,
+then stop. Complete the already frozen three-arm comparison and its required
+confirmation only. Do not start a new experiment, data expansion or campaign.
+If a new candidate passes the fixed release gates, `export_official.py` rechecks
+all score/prediction hashes and replays every stored H1 count exactly before
+exporting ABC from the same frozen predictor. Native full prep and live account
+allowance checks remain required. If the incumbent stays best, retain its already
+published entry instead of uploading an identical artifact. After the official
+terminal status, finish records and commits and terminate owned helpers/jobs.
