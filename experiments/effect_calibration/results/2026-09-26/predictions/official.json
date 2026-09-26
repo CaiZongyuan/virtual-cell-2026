@@ -1,0 +1,5424 @@
+{
+  "path": "/home/caii/vcc2026-effect-calibration-20260926/predictions/official.h5ad",
+  "rows": 360000,
+  "stored_entries": 2071748832,
+  "bytes": 11649634466,
+  "arm": "incumbent",
+  "panel": "abc",
+  "decoding_seed": 42,
+  "strength": 0.5,
+  "effects_sha256": "0bc002398bc11cc4eaf7de376190e630c43a70300b8623f40df1811d5675b18c",
+  "fit_sha256": "cd7f6d058f3e6a8d120de50712f5a023efe7aad203e2402f8939f564d94210a1",
+  "protocol_sha256": "7185df9969d690f7ebe93e1a2a17e821e3bf71181902c0f1992aebb55a086f8e",
+  "controls_sha256": {
+    "A": "f22e71968487d3da9402769dcd0c73a47851fad4cd7dd25510283c923031fe3e",
+    "B": "41557555b3febf6db19fd930b4dd7db88941840077bf985d14dfff959c782380",
+    "C": "e090e7c7cfdd0006f689214ba38ba0cd2669578e89c9bc325b65f0bd940c02e0"
+  },
+  "control_sampling": "canonical H1; guide-stratified ABC with fixed seed 42",
+  "sha256": "bc51d14ebe4ffcaa84fe219677d1a1a66f92e21cfb2eafb2c0060f24cd3eb575",
+  "diagnostics": [
+    {
+      "context": "A",
+      "target": "ABCD1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "ACLY",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9887774473086776
+    },
+    {
+      "context": "A",
+      "target": "ADNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9916997512714435
+    },
+    {
+      "context": "A",
+      "target": "AGO1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9964897730593908
+    },
+    {
+      "context": "A",
+      "target": "AKAP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995369942492063
+    },
+    {
+      "context": "A",
+      "target": "AKIRIN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9944255368592537
+    },
+    {
+      "context": "A",
+      "target": "AKT2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00146620505626
+    },
+    {
+      "context": "A",
+      "target": "ALG12",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9945828063136468
+    },
+    {
+      "context": "A",
+      "target": "ANKRD52",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "ANKZF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9981310274757617
+    },
+    {
+      "context": "A",
+      "target": "ANP32B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0117512442097276
+    },
+    {
+      "context": "A",
+      "target": "AP2A2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0007342228043838
+    },
+    {
+      "context": "A",
+      "target": "API5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000849326274675
+    },
+    {
+      "context": "A",
+      "target": "ARL14EP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9968388420936696
+    },
+    {
+      "context": "A",
+      "target": "ASCC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0014146379094075
+    },
+    {
+      "context": "A",
+      "target": "BCKDK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9994736435803315
+    },
+    {
+      "context": "A",
+      "target": "BCL6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9962494438602859
+    },
+    {
+      "context": "A",
+      "target": "BCL7C",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9966206105085315
+    },
+    {
+      "context": "A",
+      "target": "BRD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0005668623167578
+    },
+    {
+      "context": "A",
+      "target": "BRPF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993516439244952
+    },
+    {
+      "context": "A",
+      "target": "C5orf22",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0032664348658125
+    },
+    {
+      "context": "A",
+      "target": "CAND1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "CAPRIN2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "CARM1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.009119778013961
+    },
+    {
+      "context": "A",
+      "target": "CAT",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995549748159321
+    },
+    {
+      "context": "A",
+      "target": "CCDC112",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990313733469927
+    },
+    {
+      "context": "A",
+      "target": "CDK8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982878862578527
+    },
+    {
+      "context": "A",
+      "target": "CHD3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982071674824441
+    },
+    {
+      "context": "A",
+      "target": "CHD6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0006853198176509
+    },
+    {
+      "context": "A",
+      "target": "CHKB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0081185266979482
+    },
+    {
+      "context": "A",
+      "target": "CLCN6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0021754325812076
+    },
+    {
+      "context": "A",
+      "target": "COIL",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0020385286893736
+    },
+    {
+      "context": "A",
+      "target": "COMMD8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984797714878754
+    },
+    {
+      "context": "A",
+      "target": "COQ10B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9942971764825529
+    },
+    {
+      "context": "A",
+      "target": "CSNK2A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995142180598079
+    },
+    {
+      "context": "A",
+      "target": "CYTH2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0006530839046477
+    },
+    {
+      "context": "A",
+      "target": "DBF4B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999144602597919
+    },
+    {
+      "context": "A",
+      "target": "DBN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967561340965823
+    },
+    {
+      "context": "A",
+      "target": "DCAF16",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0034337109175648
+    },
+    {
+      "context": "A",
+      "target": "DCP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0036169319307633
+    },
+    {
+      "context": "A",
+      "target": "DDHD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0043494398421478
+    },
+    {
+      "context": "A",
+      "target": "DEAF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9932333664319473
+    },
+    {
+      "context": "A",
+      "target": "DEK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987025635127431
+    },
+    {
+      "context": "A",
+      "target": "DHRS1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0015831144550946
+    },
+    {
+      "context": "A",
+      "target": "DHX35",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0020713427828125
+    },
+    {
+      "context": "A",
+      "target": "DLAT",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "DMTF1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "DNTTIP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0051377805799446
+    },
+    {
+      "context": "A",
+      "target": "DRG2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004084644731217
+    },
+    {
+      "context": "A",
+      "target": "DTNBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970786967163641
+    },
+    {
+      "context": "A",
+      "target": "DVL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999628716529516
+    },
+    {
+      "context": "A",
+      "target": "E2F1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9958737495614437
+    },
+    {
+      "context": "A",
+      "target": "E2F4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970935368258246
+    },
+    {
+      "context": "A",
+      "target": "EAPP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003386400416856
+    },
+    {
+      "context": "A",
+      "target": "EEF1A2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9979568643819143
+    },
+    {
+      "context": "A",
+      "target": "ELK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999251582248857
+    },
+    {
+      "context": "A",
+      "target": "EPC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9955891706435028
+    },
+    {
+      "context": "A",
+      "target": "EPHB2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "EPM2AIP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.010549809800254
+    },
+    {
+      "context": "A",
+      "target": "EZH2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978809687852239
+    },
+    {
+      "context": "A",
+      "target": "FAM120A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9908847505384699
+    },
+    {
+      "context": "A",
+      "target": "FCGRT",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9952246480961996
+    },
+    {
+      "context": "A",
+      "target": "FHL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993008577774518
+    },
+    {
+      "context": "A",
+      "target": "FOXN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001223715942023
+    },
+    {
+      "context": "A",
+      "target": "FOXO4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985056307769475
+    },
+    {
+      "context": "A",
+      "target": "FUBP3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991011836650363
+    },
+    {
+      "context": "A",
+      "target": "FXYD5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987165383896915
+    },
+    {
+      "context": "A",
+      "target": "FZD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989634260189368
+    },
+    {
+      "context": "A",
+      "target": "GIGYF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001749944709068
+    },
+    {
+      "context": "A",
+      "target": "GLI3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999201389700585
+    },
+    {
+      "context": "A",
+      "target": "GLYR1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0014201830892413
+    },
+    {
+      "context": "A",
+      "target": "GMEB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991631832891769
+    },
+    {
+      "context": "A",
+      "target": "GPATCH8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001750882821066
+    },
+    {
+      "context": "A",
+      "target": "GRAMD1A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982152357174177
+    },
+    {
+      "context": "A",
+      "target": "GTF2IRD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997422143776663
+    },
+    {
+      "context": "A",
+      "target": "HDAC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9944260339951282
+    },
+    {
+      "context": "A",
+      "target": "HDAC8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996110440553455
+    },
+    {
+      "context": "A",
+      "target": "HEATR6",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "HMGN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9992552274557409
+    },
+    {
+      "context": "A",
+      "target": "HMGN4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0041335095398893
+    },
+    {
+      "context": "A",
+      "target": "HMGXB3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974751566987522
+    },
+    {
+      "context": "A",
+      "target": "HOMEZ",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954914381291131
+    },
+    {
+      "context": "A",
+      "target": "HSBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9925773895252454
+    },
+    {
+      "context": "A",
+      "target": "HSP90AB1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996688503495
+    },
+    {
+      "context": "A",
+      "target": "IFI27L2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996325642874309
+    },
+    {
+      "context": "A",
+      "target": "IFNAR2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0012678556136747
+    },
+    {
+      "context": "A",
+      "target": "IFNGR2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0008038613780448
+    },
+    {
+      "context": "A",
+      "target": "IL10RB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999398809165958
+    },
+    {
+      "context": "A",
+      "target": "IREB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0066035454390412
+    },
+    {
+      "context": "A",
+      "target": "KDM5A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996453499303669
+    },
+    {
+      "context": "A",
+      "target": "KHDRBS1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999558301297148
+    },
+    {
+      "context": "A",
+      "target": "KHSRP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9959296203941139
+    },
+    {
+      "context": "A",
+      "target": "KIF21B",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "KIF2A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9998079215683198
+    },
+    {
+      "context": "A",
+      "target": "KMT2A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999409305423744
+    },
+    {
+      "context": "A",
+      "target": "LDLR",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0019631029419602
+    },
+    {
+      "context": "A",
+      "target": "LENG1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998996133713005
+    },
+    {
+      "context": "A",
+      "target": "LMAN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985025965224771
+    },
+    {
+      "context": "A",
+      "target": "LMBRD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004115974423324
+    },
+    {
+      "context": "A",
+      "target": "LPCAT3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9992823976661397
+    },
+    {
+      "context": "A",
+      "target": "MAN2A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993544145941992
+    },
+    {
+      "context": "A",
+      "target": "MAP2K2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00013171918185
+    },
+    {
+      "context": "A",
+      "target": "MAPK12",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "MAPK7",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "MARCKSL1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9929699814366573
+    },
+    {
+      "context": "A",
+      "target": "MBD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9958930591237647
+    },
+    {
+      "context": "A",
+      "target": "MED13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9977053163525612
+    },
+    {
+      "context": "A",
+      "target": "MED15",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000590403755491
+    },
+    {
+      "context": "A",
+      "target": "MED25",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0030049581000182
+    },
+    {
+      "context": "A",
+      "target": "MLKL",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "MLLT10",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9976236507026107
+    },
+    {
+      "context": "A",
+      "target": "MSANTD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0026267903800692
+    },
+    {
+      "context": "A",
+      "target": "MSI2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9952817301719424
+    },
+    {
+      "context": "A",
+      "target": "MTA1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9969327738272795
+    },
+    {
+      "context": "A",
+      "target": "MTF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9969275858086059
+    },
+    {
+      "context": "A",
+      "target": "MTHFSD",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0018600045042043
+    },
+    {
+      "context": "A",
+      "target": "MTM1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982480382306067
+    },
+    {
+      "context": "A",
+      "target": "MYD88",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978427987173181
+    },
+    {
+      "context": "A",
+      "target": "MYPOP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974193398569913
+    },
+    {
+      "context": "A",
+      "target": "MYRF",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999305421754372
+    },
+    {
+      "context": "A",
+      "target": "NABP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9975448412021909
+    },
+    {
+      "context": "A",
+      "target": "NAIF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967781299913222
+    },
+    {
+      "context": "A",
+      "target": "NCLN",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9956670537876634
+    },
+    {
+      "context": "A",
+      "target": "NFE2L1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9944471267665423
+    },
+    {
+      "context": "A",
+      "target": "NGLY1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9953652068475528
+    },
+    {
+      "context": "A",
+      "target": "NICN1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "NIPAL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996833080029693
+    },
+    {
+      "context": "A",
+      "target": "NIPSNAP3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9998176832744615
+    },
+    {
+      "context": "A",
+      "target": "NT5DC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988986989369291
+    },
+    {
+      "context": "A",
+      "target": "NUP37",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0016012206472076
+    },
+    {
+      "context": "A",
+      "target": "PAN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0018137312797946
+    },
+    {
+      "context": "A",
+      "target": "PAPOLA",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PARP3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PATL1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0031651961934458
+    },
+    {
+      "context": "A",
+      "target": "PBLD",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PCGF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000801413988639
+    },
+    {
+      "context": "A",
+      "target": "PCGF6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9994103528767481
+    },
+    {
+      "context": "A",
+      "target": "PDCD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990969982986069
+    },
+    {
+      "context": "A",
+      "target": "PDE6D",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978680788694752
+    },
+    {
+      "context": "A",
+      "target": "PDK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954593383144035
+    },
+    {
+      "context": "A",
+      "target": "PDK3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PGLS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999001968779812
+    },
+    {
+      "context": "A",
+      "target": "PHF11",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PHF19",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PHF23",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.992577927541332
+    },
+    {
+      "context": "A",
+      "target": "PHF8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9889482822140347
+    },
+    {
+      "context": "A",
+      "target": "PI4KB",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PIM2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974859032361517
+    },
+    {
+      "context": "A",
+      "target": "PIN1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PINK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999431966707186
+    },
+    {
+      "context": "A",
+      "target": "PKN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000394329848408
+    },
+    {
+      "context": "A",
+      "target": "PLAGL2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978162801754973
+    },
+    {
+      "context": "A",
+      "target": "PLCG1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984931775698237
+    },
+    {
+      "context": "A",
+      "target": "PNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0046863188297195
+    },
+    {
+      "context": "A",
+      "target": "POLD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996279012691996
+    },
+    {
+      "context": "A",
+      "target": "POR",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9998299449714295
+    },
+    {
+      "context": "A",
+      "target": "PPIF",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9992536773036144
+    },
+    {
+      "context": "A",
+      "target": "PPIP5K2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983827587797802
+    },
+    {
+      "context": "A",
+      "target": "PQBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0069459459940304
+    },
+    {
+      "context": "A",
+      "target": "PRDX3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9976308439289548
+    },
+    {
+      "context": "A",
+      "target": "PRKAB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00149447069268
+    },
+    {
+      "context": "A",
+      "target": "PRKACA",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0021435159755707
+    },
+    {
+      "context": "A",
+      "target": "PRMT2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0010271702090687
+    },
+    {
+      "context": "A",
+      "target": "PRMT6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9934675099642122
+    },
+    {
+      "context": "A",
+      "target": "PRMT7",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9947682490196555
+    },
+    {
+      "context": "A",
+      "target": "PRNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995748663925537
+    },
+    {
+      "context": "A",
+      "target": "PSKH1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9942886200260685
+    },
+    {
+      "context": "A",
+      "target": "PSMB9",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "PTMS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9965009607141245
+    },
+    {
+      "context": "A",
+      "target": "PTOV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9966833620067707
+    },
+    {
+      "context": "A",
+      "target": "PYCR1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0006123088632353
+    },
+    {
+      "context": "A",
+      "target": "R3HCC1L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00111436804078
+    },
+    {
+      "context": "A",
+      "target": "RAB11FIP5",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "RAB5A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990931766292496
+    },
+    {
+      "context": "A",
+      "target": "RABEP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002298661859835
+    },
+    {
+      "context": "A",
+      "target": "RBM18",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9981738247508936
+    },
+    {
+      "context": "A",
+      "target": "RBM26",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983385852692129
+    },
+    {
+      "context": "A",
+      "target": "RBM4B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9965373187783719
+    },
+    {
+      "context": "A",
+      "target": "RBM5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9928225136906057
+    },
+    {
+      "context": "A",
+      "target": "RC3H2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023521063486436
+    },
+    {
+      "context": "A",
+      "target": "REV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0018742945699388
+    },
+    {
+      "context": "A",
+      "target": "RFK",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "RNF10",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002147360444539
+    },
+    {
+      "context": "A",
+      "target": "RNF141",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000318128414833
+    },
+    {
+      "context": "A",
+      "target": "RNF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9927089436762535
+    },
+    {
+      "context": "A",
+      "target": "RSRC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9946861641205028
+    },
+    {
+      "context": "A",
+      "target": "S100A11",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0006046458009108
+    },
+    {
+      "context": "A",
+      "target": "SAP30L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001568339800957
+    },
+    {
+      "context": "A",
+      "target": "SCAF8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985025838014667
+    },
+    {
+      "context": "A",
+      "target": "SEMA4F",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "SFXN4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995530783521122
+    },
+    {
+      "context": "A",
+      "target": "SH2D3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9968894718552038
+    },
+    {
+      "context": "A",
+      "target": "SHPRH",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0020158257018237
+    },
+    {
+      "context": "A",
+      "target": "SIN3B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980452856118025
+    },
+    {
+      "context": "A",
+      "target": "SLC25A13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0002123050679264
+    },
+    {
+      "context": "A",
+      "target": "SLC39A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998063053124753
+    },
+    {
+      "context": "A",
+      "target": "SLC44A1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "SLIRP",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "SMARCA5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980968667486577
+    },
+    {
+      "context": "A",
+      "target": "SMARCC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983322180168593
+    },
+    {
+      "context": "A",
+      "target": "SMYD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997046410017699
+    },
+    {
+      "context": "A",
+      "target": "SND1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9941404668666052
+    },
+    {
+      "context": "A",
+      "target": "SNN",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "SNRK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991469368390817
+    },
+    {
+      "context": "A",
+      "target": "SNX4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997112448410674
+    },
+    {
+      "context": "A",
+      "target": "SOCS5",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "SPATA20",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "SRSF5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0005073099987183
+    },
+    {
+      "context": "A",
+      "target": "SSR4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970231198858065
+    },
+    {
+      "context": "A",
+      "target": "STAT6",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "STK3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001848395572384
+    },
+    {
+      "context": "A",
+      "target": "STT3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9979288790654207
+    },
+    {
+      "context": "A",
+      "target": "SUPT7L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0046562918135662
+    },
+    {
+      "context": "A",
+      "target": "SYVN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985554640498611
+    },
+    {
+      "context": "A",
+      "target": "TAF15",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993980966607959
+    },
+    {
+      "context": "A",
+      "target": "TAF4",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TARBP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000006757273156
+    },
+    {
+      "context": "A",
+      "target": "TBC1D13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9971544977126512
+    },
+    {
+      "context": "A",
+      "target": "TBC1D19",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TBCK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9965674314970446
+    },
+    {
+      "context": "A",
+      "target": "TDRD7",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TEAD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996823672882245
+    },
+    {
+      "context": "A",
+      "target": "TESK2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TEX2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990762124185899
+    },
+    {
+      "context": "A",
+      "target": "TFCP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974235674539599
+    },
+    {
+      "context": "A",
+      "target": "THAP3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980926003897316
+    },
+    {
+      "context": "A",
+      "target": "THAP7",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0015310912447313
+    },
+    {
+      "context": "A",
+      "target": "TIMM17B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0084756369201668
+    },
+    {
+      "context": "A",
+      "target": "TIMM50",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TMCO6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9971791605039283
+    },
+    {
+      "context": "A",
+      "target": "TMED3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9950278340141339
+    },
+    {
+      "context": "A",
+      "target": "TMEM104",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TMEM147",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9936978178694373
+    },
+    {
+      "context": "A",
+      "target": "TMEM186",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980477090727014
+    },
+    {
+      "context": "A",
+      "target": "TMEM209",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985078152025856
+    },
+    {
+      "context": "A",
+      "target": "TMEM41B",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TMEM79",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TMF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9992832661246334
+    },
+    {
+      "context": "A",
+      "target": "TRAPPC6A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9969537408546879
+    },
+    {
+      "context": "A",
+      "target": "TRIB3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003491096073658
+    },
+    {
+      "context": "A",
+      "target": "TRIM35",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9997445621586529
+    },
+    {
+      "context": "A",
+      "target": "TRIP4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001737408246791
+    },
+    {
+      "context": "A",
+      "target": "TRMT1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9946265926017412
+    },
+    {
+      "context": "A",
+      "target": "TRPC4AP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9925447747961795
+    },
+    {
+      "context": "A",
+      "target": "TTBK2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "TWF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998659917724687
+    },
+    {
+      "context": "A",
+      "target": "TXNDC16",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "UNK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9998857144633247
+    },
+    {
+      "context": "A",
+      "target": "UPF3B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9963530603240552
+    },
+    {
+      "context": "A",
+      "target": "UROS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978603379676335
+    },
+    {
+      "context": "A",
+      "target": "USP28",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967918308161484
+    },
+    {
+      "context": "A",
+      "target": "VAPB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9962022320464391
+    },
+    {
+      "context": "A",
+      "target": "VIM",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991170151809865
+    },
+    {
+      "context": "A",
+      "target": "WBP4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0019214211169967
+    },
+    {
+      "context": "A",
+      "target": "YIPF6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004917101762822
+    },
+    {
+      "context": "A",
+      "target": "ZBTB34",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9964413079133876
+    },
+    {
+      "context": "A",
+      "target": "ZBTB41",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982337899260822
+    },
+    {
+      "context": "A",
+      "target": "ZBTB48",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9981181294898251
+    },
+    {
+      "context": "A",
+      "target": "ZC2HC1A",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "ZC3HAV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990787205130987
+    },
+    {
+      "context": "A",
+      "target": "ZDHHC12",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967398134044174
+    },
+    {
+      "context": "A",
+      "target": "ZDHHC4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0014630211815183
+    },
+    {
+      "context": "A",
+      "target": "ZFP62",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0028589224250044
+    },
+    {
+      "context": "A",
+      "target": "ZHX3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967795172109355
+    },
+    {
+      "context": "A",
+      "target": "ZKSCAN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954126594697723
+    },
+    {
+      "context": "A",
+      "target": "ZKSCAN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996692161018954
+    },
+    {
+      "context": "A",
+      "target": "ZKSCAN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954314742148259
+    },
+    {
+      "context": "A",
+      "target": "ZNF16",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974753839016404
+    },
+    {
+      "context": "A",
+      "target": "ZNF174",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "ZNF219",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9969021051576368
+    },
+    {
+      "context": "A",
+      "target": "ZNF22",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989496334622896
+    },
+    {
+      "context": "A",
+      "target": "ZNF25",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9963321678421805
+    },
+    {
+      "context": "A",
+      "target": "ZNF251",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993790798870379
+    },
+    {
+      "context": "A",
+      "target": "ZNF280C",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948001581929204
+    },
+    {
+      "context": "A",
+      "target": "ZNF282",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9977047396423487
+    },
+    {
+      "context": "A",
+      "target": "ZNF32",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9934941804586355
+    },
+    {
+      "context": "A",
+      "target": "ZNF324",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "ZNF397",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "A",
+      "target": "ZNF410",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0058310649961142
+    },
+    {
+      "context": "A",
+      "target": "ZNF444",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984645196864194
+    },
+    {
+      "context": "A",
+      "target": "ZNF462",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970061975942144
+    },
+    {
+      "context": "A",
+      "target": "ZNF496",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9966127618884563
+    },
+    {
+      "context": "A",
+      "target": "ZNF507",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9957793379429255
+    },
+    {
+      "context": "A",
+      "target": "ZNF514",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982155321235383
+    },
+    {
+      "context": "A",
+      "target": "ZNF526",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000676867009465
+    },
+    {
+      "context": "A",
+      "target": "ZNF530",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0032733017015292
+    },
+    {
+      "context": "A",
+      "target": "ZNF543",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9968265394778558
+    },
+    {
+      "context": "A",
+      "target": "ZNF627",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995091233499969
+    },
+    {
+      "context": "A",
+      "target": "ZNF628",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0005348721507819
+    },
+    {
+      "context": "A",
+      "target": "ZNF641",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001298206004041
+    },
+    {
+      "context": "A",
+      "target": "ZNF670",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0039238932976384
+    },
+    {
+      "context": "A",
+      "target": "ZNF714",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9950615474248716
+    },
+    {
+      "context": "A",
+      "target": "ZNF740",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9934805220386701
+    },
+    {
+      "context": "A",
+      "target": "ZNF768",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0026042221294178
+    },
+    {
+      "context": "A",
+      "target": "ZNF777",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9940933300513264
+    },
+    {
+      "context": "A",
+      "target": "ZNF783",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0025757338559684
+    },
+    {
+      "context": "A",
+      "target": "ZNF784",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9979288107633287
+    },
+    {
+      "context": "A",
+      "target": "ZNF786",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948174558026679
+    },
+    {
+      "context": "A",
+      "target": "ZNF821",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967788988117248
+    },
+    {
+      "context": "A",
+      "target": "ZRANB3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "ABCD1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "ACLY",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9910735416360753
+    },
+    {
+      "context": "B",
+      "target": "ADNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9931015711675026
+    },
+    {
+      "context": "B",
+      "target": "AGO1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0017644581450074
+    },
+    {
+      "context": "B",
+      "target": "AKAP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967510110514122
+    },
+    {
+      "context": "B",
+      "target": "AKIRIN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973674266234132
+    },
+    {
+      "context": "B",
+      "target": "AKT2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0029924524296914
+    },
+    {
+      "context": "B",
+      "target": "ALG12",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9939238827101317
+    },
+    {
+      "context": "B",
+      "target": "ANKRD52",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "ANKZF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989684514619819
+    },
+    {
+      "context": "B",
+      "target": "ANP32B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0079492115856397
+    },
+    {
+      "context": "B",
+      "target": "AP2A2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0019120247731266
+    },
+    {
+      "context": "B",
+      "target": "API5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995084478719788
+    },
+    {
+      "context": "B",
+      "target": "ARL14EP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9943268783263578
+    },
+    {
+      "context": "B",
+      "target": "ASCC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989634816902833
+    },
+    {
+      "context": "B",
+      "target": "BCKDK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987895943665024
+    },
+    {
+      "context": "B",
+      "target": "BCL6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970980132473927
+    },
+    {
+      "context": "B",
+      "target": "BCL7C",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995784613301415
+    },
+    {
+      "context": "B",
+      "target": "BRD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000300747320114
+    },
+    {
+      "context": "B",
+      "target": "BRPF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0006692317677448
+    },
+    {
+      "context": "B",
+      "target": "C5orf22",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0028334803995815
+    },
+    {
+      "context": "B",
+      "target": "CAND1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "CAPRIN2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "CARM1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0085994077342286
+    },
+    {
+      "context": "B",
+      "target": "CAT",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9958101552625026
+    },
+    {
+      "context": "B",
+      "target": "CCDC112",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995518462739432
+    },
+    {
+      "context": "B",
+      "target": "CDK8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0014208025337066
+    },
+    {
+      "context": "B",
+      "target": "CHD3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984966420947546
+    },
+    {
+      "context": "B",
+      "target": "CHD6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0043387706091604
+    },
+    {
+      "context": "B",
+      "target": "CHKB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.007487022329707
+    },
+    {
+      "context": "B",
+      "target": "CLCN6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002402281418195
+    },
+    {
+      "context": "B",
+      "target": "COIL",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987972562814095
+    },
+    {
+      "context": "B",
+      "target": "COMMD8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9969306913061642
+    },
+    {
+      "context": "B",
+      "target": "COQ10B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954152573381487
+    },
+    {
+      "context": "B",
+      "target": "CSNK2A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996803536027778
+    },
+    {
+      "context": "B",
+      "target": "CYTH2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0009267880326067
+    },
+    {
+      "context": "B",
+      "target": "DBF4B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999848793037281
+    },
+    {
+      "context": "B",
+      "target": "DBN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9960919270188952
+    },
+    {
+      "context": "B",
+      "target": "DCAF16",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023653299586102
+    },
+    {
+      "context": "B",
+      "target": "DCP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0082846955197533
+    },
+    {
+      "context": "B",
+      "target": "DDHD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0064180804496055
+    },
+    {
+      "context": "B",
+      "target": "DEAF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9943556259065404
+    },
+    {
+      "context": "B",
+      "target": "DEK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0008948844530012
+    },
+    {
+      "context": "B",
+      "target": "DHRS1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004136309641842
+    },
+    {
+      "context": "B",
+      "target": "DHX35",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0014178162009266
+    },
+    {
+      "context": "B",
+      "target": "DLAT",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "DMTF1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "DNTTIP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0044531289214413
+    },
+    {
+      "context": "B",
+      "target": "DRG2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023355508415948
+    },
+    {
+      "context": "B",
+      "target": "DTNBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988357448340971
+    },
+    {
+      "context": "B",
+      "target": "DVL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993148984336928
+    },
+    {
+      "context": "B",
+      "target": "E2F1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001152123114811
+    },
+    {
+      "context": "B",
+      "target": "E2F4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9962487026822089
+    },
+    {
+      "context": "B",
+      "target": "EAPP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988387846702877
+    },
+    {
+      "context": "B",
+      "target": "EEF1A2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996281234462909
+    },
+    {
+      "context": "B",
+      "target": "ELK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9971125753702283
+    },
+    {
+      "context": "B",
+      "target": "EPC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9969079833404296
+    },
+    {
+      "context": "B",
+      "target": "EPHB2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "EPM2AIP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0134353443478175
+    },
+    {
+      "context": "B",
+      "target": "EZH2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004456156710346
+    },
+    {
+      "context": "B",
+      "target": "FAM120A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9884598787700227
+    },
+    {
+      "context": "B",
+      "target": "FCGRT",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974842732872341
+    },
+    {
+      "context": "B",
+      "target": "FHL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0011487560310313
+    },
+    {
+      "context": "B",
+      "target": "FOXN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987491569735663
+    },
+    {
+      "context": "B",
+      "target": "FOXO4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9994304156485314
+    },
+    {
+      "context": "B",
+      "target": "FUBP3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9961404218325763
+    },
+    {
+      "context": "B",
+      "target": "FXYD5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9994221642269835
+    },
+    {
+      "context": "B",
+      "target": "FZD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997347644803071
+    },
+    {
+      "context": "B",
+      "target": "GIGYF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0020957385276472
+    },
+    {
+      "context": "B",
+      "target": "GLI3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9997843088538361
+    },
+    {
+      "context": "B",
+      "target": "GLYR1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0015059047515245
+    },
+    {
+      "context": "B",
+      "target": "GMEB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993615081756041
+    },
+    {
+      "context": "B",
+      "target": "GPATCH8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987547970957035
+    },
+    {
+      "context": "B",
+      "target": "GRAMD1A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985910874798044
+    },
+    {
+      "context": "B",
+      "target": "GTF2IRD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003584116211395
+    },
+    {
+      "context": "B",
+      "target": "HDAC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995857935727412
+    },
+    {
+      "context": "B",
+      "target": "HDAC8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9976267416798079
+    },
+    {
+      "context": "B",
+      "target": "HEATR6",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "HMGN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974536455724632
+    },
+    {
+      "context": "B",
+      "target": "HMGN4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001799193671189
+    },
+    {
+      "context": "B",
+      "target": "HMGXB3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984451585419508
+    },
+    {
+      "context": "B",
+      "target": "HOMEZ",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9946669375587481
+    },
+    {
+      "context": "B",
+      "target": "HSBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9975133765397846
+    },
+    {
+      "context": "B",
+      "target": "HSP90AB1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990087665963842
+    },
+    {
+      "context": "B",
+      "target": "IFI27L2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9956760386941719
+    },
+    {
+      "context": "B",
+      "target": "IFNAR2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995213042281603
+    },
+    {
+      "context": "B",
+      "target": "IFNGR2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996885308474757
+    },
+    {
+      "context": "B",
+      "target": "IL10RB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990442367665412
+    },
+    {
+      "context": "B",
+      "target": "IREB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0049438981977423
+    },
+    {
+      "context": "B",
+      "target": "KDM5A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974186118992783
+    },
+    {
+      "context": "B",
+      "target": "KHDRBS1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002930911145296
+    },
+    {
+      "context": "B",
+      "target": "KHSRP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974109434705131
+    },
+    {
+      "context": "B",
+      "target": "KIF21B",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "KIF2A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004555820538925
+    },
+    {
+      "context": "B",
+      "target": "KMT2A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999469718718764
+    },
+    {
+      "context": "B",
+      "target": "LDLR",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983283166117239
+    },
+    {
+      "context": "B",
+      "target": "LENG1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967534878395735
+    },
+    {
+      "context": "B",
+      "target": "LMAN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997352608915276
+    },
+    {
+      "context": "B",
+      "target": "LMBRD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987447500232148
+    },
+    {
+      "context": "B",
+      "target": "LPCAT3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983248997384787
+    },
+    {
+      "context": "B",
+      "target": "MAN2A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000680220492776
+    },
+    {
+      "context": "B",
+      "target": "MAP2K2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997990681350398
+    },
+    {
+      "context": "B",
+      "target": "MAPK12",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "MAPK7",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "MARCKSL1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9927646947821585
+    },
+    {
+      "context": "B",
+      "target": "MBD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996981407195059
+    },
+    {
+      "context": "B",
+      "target": "MED13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974956781380844
+    },
+    {
+      "context": "B",
+      "target": "MED15",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990717338509459
+    },
+    {
+      "context": "B",
+      "target": "MED25",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004212988095575
+    },
+    {
+      "context": "B",
+      "target": "MLKL",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "MLLT10",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980083820753898
+    },
+    {
+      "context": "B",
+      "target": "MSANTD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.005935985704473
+    },
+    {
+      "context": "B",
+      "target": "MSI2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9964370937859091
+    },
+    {
+      "context": "B",
+      "target": "MTA1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954359372505408
+    },
+    {
+      "context": "B",
+      "target": "MTF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9949403402319854
+    },
+    {
+      "context": "B",
+      "target": "MTHFSD",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9997686469862208
+    },
+    {
+      "context": "B",
+      "target": "MTM1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995893834551198
+    },
+    {
+      "context": "B",
+      "target": "MYD88",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998099944918616
+    },
+    {
+      "context": "B",
+      "target": "MYPOP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999673548416147
+    },
+    {
+      "context": "B",
+      "target": "MYRF",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989654396572364
+    },
+    {
+      "context": "B",
+      "target": "NABP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972257419764156
+    },
+    {
+      "context": "B",
+      "target": "NAIF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978758561239819
+    },
+    {
+      "context": "B",
+      "target": "NCLN",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984241971563846
+    },
+    {
+      "context": "B",
+      "target": "NFE2L1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9927606635918603
+    },
+    {
+      "context": "B",
+      "target": "NGLY1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967677778694948
+    },
+    {
+      "context": "B",
+      "target": "NICN1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "NIPAL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997306307758604
+    },
+    {
+      "context": "B",
+      "target": "NIPSNAP3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989336115216321
+    },
+    {
+      "context": "B",
+      "target": "NT5DC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985324238615119
+    },
+    {
+      "context": "B",
+      "target": "NUP37",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993760783771339
+    },
+    {
+      "context": "B",
+      "target": "PAN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0019393188649388
+    },
+    {
+      "context": "B",
+      "target": "PAPOLA",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PARP3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PATL1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002639920753469
+    },
+    {
+      "context": "B",
+      "target": "PBLD",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PCGF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0020472431506702
+    },
+    {
+      "context": "B",
+      "target": "PCGF6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9998316493884786
+    },
+    {
+      "context": "B",
+      "target": "PDCD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0010581684452553
+    },
+    {
+      "context": "B",
+      "target": "PDE6D",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9977529706310673
+    },
+    {
+      "context": "B",
+      "target": "PDK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9961695022896383
+    },
+    {
+      "context": "B",
+      "target": "PDK3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PGLS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9992741356176474
+    },
+    {
+      "context": "B",
+      "target": "PHF11",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PHF19",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PHF23",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9923144636971255
+    },
+    {
+      "context": "B",
+      "target": "PHF8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.992540700532675
+    },
+    {
+      "context": "B",
+      "target": "PI4KB",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PIM2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9965479262343305
+    },
+    {
+      "context": "B",
+      "target": "PIN1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PINK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982331684325396
+    },
+    {
+      "context": "B",
+      "target": "PKN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967336447188041
+    },
+    {
+      "context": "B",
+      "target": "PLAGL2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0008857654229821
+    },
+    {
+      "context": "B",
+      "target": "PLCG1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9962652154729659
+    },
+    {
+      "context": "B",
+      "target": "PNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0049603455980558
+    },
+    {
+      "context": "B",
+      "target": "POLD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0013191841466258
+    },
+    {
+      "context": "B",
+      "target": "POR",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991585188649864
+    },
+    {
+      "context": "B",
+      "target": "PPIF",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0010425744592661
+    },
+    {
+      "context": "B",
+      "target": "PPIP5K2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0007676571740995
+    },
+    {
+      "context": "B",
+      "target": "PQBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0075154985222194
+    },
+    {
+      "context": "B",
+      "target": "PRDX3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972052475672701
+    },
+    {
+      "context": "B",
+      "target": "PRKAB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0010244642204384
+    },
+    {
+      "context": "B",
+      "target": "PRKACA",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0005504701560701
+    },
+    {
+      "context": "B",
+      "target": "PRMT2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0018710549355483
+    },
+    {
+      "context": "B",
+      "target": "PRMT6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9938647691288834
+    },
+    {
+      "context": "B",
+      "target": "PRMT7",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997686952652967
+    },
+    {
+      "context": "B",
+      "target": "PRNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973040366975418
+    },
+    {
+      "context": "B",
+      "target": "PSKH1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967372718450134
+    },
+    {
+      "context": "B",
+      "target": "PSMB9",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "PTMS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9950282663514083
+    },
+    {
+      "context": "B",
+      "target": "PTOV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999867755585333
+    },
+    {
+      "context": "B",
+      "target": "PYCR1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003264937336125
+    },
+    {
+      "context": "B",
+      "target": "R3HCC1L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995257926540118
+    },
+    {
+      "context": "B",
+      "target": "RAB11FIP5",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "RAB5A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970527929113214
+    },
+    {
+      "context": "B",
+      "target": "RABEP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000839676816027
+    },
+    {
+      "context": "B",
+      "target": "RBM18",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984100178094226
+    },
+    {
+      "context": "B",
+      "target": "RBM26",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999790439729813
+    },
+    {
+      "context": "B",
+      "target": "RBM4B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9959266202839296
+    },
+    {
+      "context": "B",
+      "target": "RBM5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9924562256061441
+    },
+    {
+      "context": "B",
+      "target": "RC3H2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0015596178339514
+    },
+    {
+      "context": "B",
+      "target": "REV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0022904127454793
+    },
+    {
+      "context": "B",
+      "target": "RFK",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "RNF10",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001378544004317
+    },
+    {
+      "context": "B",
+      "target": "RNF141",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003392736391525
+    },
+    {
+      "context": "B",
+      "target": "RNF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9947072284231969
+    },
+    {
+      "context": "B",
+      "target": "RSRC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9951419107165936
+    },
+    {
+      "context": "B",
+      "target": "S100A11",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0011023015796507
+    },
+    {
+      "context": "B",
+      "target": "SAP30L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000685483413061
+    },
+    {
+      "context": "B",
+      "target": "SCAF8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9997715838979936
+    },
+    {
+      "context": "B",
+      "target": "SEMA4F",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "SFXN4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982143613854123
+    },
+    {
+      "context": "B",
+      "target": "SH2D3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9966276372201957
+    },
+    {
+      "context": "B",
+      "target": "SHPRH",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002402820824564
+    },
+    {
+      "context": "B",
+      "target": "SIN3B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0008990371614468
+    },
+    {
+      "context": "B",
+      "target": "SLC25A13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997864386971011
+    },
+    {
+      "context": "B",
+      "target": "SLC39A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9956098430089821
+    },
+    {
+      "context": "B",
+      "target": "SLC44A1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "SLIRP",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "SMARCA5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0028541875656063
+    },
+    {
+      "context": "B",
+      "target": "SMARCC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988188470558729
+    },
+    {
+      "context": "B",
+      "target": "SMYD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988813505547497
+    },
+    {
+      "context": "B",
+      "target": "SND1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9955862495440589
+    },
+    {
+      "context": "B",
+      "target": "SNN",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "SNRK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001352291824819
+    },
+    {
+      "context": "B",
+      "target": "SNX4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9943172406558337
+    },
+    {
+      "context": "B",
+      "target": "SOCS5",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "SPATA20",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "SRSF5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001022509433761
+    },
+    {
+      "context": "B",
+      "target": "SSR4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983128308895686
+    },
+    {
+      "context": "B",
+      "target": "STAT6",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "STK3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0002673051070399
+    },
+    {
+      "context": "B",
+      "target": "STT3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988638849812549
+    },
+    {
+      "context": "B",
+      "target": "SUPT7L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0016412334766587
+    },
+    {
+      "context": "B",
+      "target": "SYVN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996916475814685
+    },
+    {
+      "context": "B",
+      "target": "TAF15",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0006823612302413
+    },
+    {
+      "context": "B",
+      "target": "TAF4",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TARBP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9997500699408041
+    },
+    {
+      "context": "B",
+      "target": "TBC1D13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9958949782526751
+    },
+    {
+      "context": "B",
+      "target": "TBC1D19",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TBCK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972561649664844
+    },
+    {
+      "context": "B",
+      "target": "TDRD7",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TEAD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000204339122223
+    },
+    {
+      "context": "B",
+      "target": "TESK2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TEX2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989923839225049
+    },
+    {
+      "context": "B",
+      "target": "TFCP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973025952916467
+    },
+    {
+      "context": "B",
+      "target": "THAP3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9962089154775998
+    },
+    {
+      "context": "B",
+      "target": "THAP7",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0009170651728378
+    },
+    {
+      "context": "B",
+      "target": "TIMM17B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.006289048022873
+    },
+    {
+      "context": "B",
+      "target": "TIMM50",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TMCO6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972572047896432
+    },
+    {
+      "context": "B",
+      "target": "TMED3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9971018331467693
+    },
+    {
+      "context": "B",
+      "target": "TMEM104",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TMEM147",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948843455005879
+    },
+    {
+      "context": "B",
+      "target": "TMEM186",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00049122358493
+    },
+    {
+      "context": "B",
+      "target": "TMEM209",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999998750533678
+    },
+    {
+      "context": "B",
+      "target": "TMEM41B",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TMEM79",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TMF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978089611773733
+    },
+    {
+      "context": "B",
+      "target": "TRAPPC6A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9976863171288792
+    },
+    {
+      "context": "B",
+      "target": "TRIB3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996226055248884
+    },
+    {
+      "context": "B",
+      "target": "TRIM35",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999329999507091
+    },
+    {
+      "context": "B",
+      "target": "TRIP4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0025806416183474
+    },
+    {
+      "context": "B",
+      "target": "TRMT1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996777604031477
+    },
+    {
+      "context": "B",
+      "target": "TRPC4AP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948345673518767
+    },
+    {
+      "context": "B",
+      "target": "TTBK2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "TWF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998935280930865
+    },
+    {
+      "context": "B",
+      "target": "TXNDC16",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "UNK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000879434166852
+    },
+    {
+      "context": "B",
+      "target": "UPF3B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9977958291987454
+    },
+    {
+      "context": "B",
+      "target": "UROS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980812390037548
+    },
+    {
+      "context": "B",
+      "target": "USP28",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990105537983769
+    },
+    {
+      "context": "B",
+      "target": "VAPB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996261306433792
+    },
+    {
+      "context": "B",
+      "target": "VIM",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000836443241605
+    },
+    {
+      "context": "B",
+      "target": "WBP4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0020530964006642
+    },
+    {
+      "context": "B",
+      "target": "YIPF6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0019061525380288
+    },
+    {
+      "context": "B",
+      "target": "ZBTB34",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996543817289259
+    },
+    {
+      "context": "B",
+      "target": "ZBTB41",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973858900904667
+    },
+    {
+      "context": "B",
+      "target": "ZBTB48",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973460133025694
+    },
+    {
+      "context": "B",
+      "target": "ZC2HC1A",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "ZC3HAV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991365332986214
+    },
+    {
+      "context": "B",
+      "target": "ZDHHC12",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987685474672279
+    },
+    {
+      "context": "B",
+      "target": "ZDHHC4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0017366517369597
+    },
+    {
+      "context": "B",
+      "target": "ZFP62",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0029744808419536
+    },
+    {
+      "context": "B",
+      "target": "ZHX3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004796693678304
+    },
+    {
+      "context": "B",
+      "target": "ZKSCAN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978933133151023
+    },
+    {
+      "context": "B",
+      "target": "ZKSCAN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995939544796634
+    },
+    {
+      "context": "B",
+      "target": "ZKSCAN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9949322803256745
+    },
+    {
+      "context": "B",
+      "target": "ZNF16",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003218098875561
+    },
+    {
+      "context": "B",
+      "target": "ZNF174",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "ZNF219",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954978371097967
+    },
+    {
+      "context": "B",
+      "target": "ZNF22",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999207725562731
+    },
+    {
+      "context": "B",
+      "target": "ZNF25",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9962254610080309
+    },
+    {
+      "context": "B",
+      "target": "ZNF251",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991038405440428
+    },
+    {
+      "context": "B",
+      "target": "ZNF280C",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9928629633665733
+    },
+    {
+      "context": "B",
+      "target": "ZNF282",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997952342173247
+    },
+    {
+      "context": "B",
+      "target": "ZNF32",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9963759532184296
+    },
+    {
+      "context": "B",
+      "target": "ZNF324",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "ZNF397",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "B",
+      "target": "ZNF410",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023594037891377
+    },
+    {
+      "context": "B",
+      "target": "ZNF444",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001544294831182
+    },
+    {
+      "context": "B",
+      "target": "ZNF462",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9981575308612955
+    },
+    {
+      "context": "B",
+      "target": "ZNF496",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970298647008985
+    },
+    {
+      "context": "B",
+      "target": "ZNF507",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996710954772687
+    },
+    {
+      "context": "B",
+      "target": "ZNF514",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9987477658013346
+    },
+    {
+      "context": "B",
+      "target": "ZNF526",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000016143501322
+    },
+    {
+      "context": "B",
+      "target": "ZNF530",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0025238962998377
+    },
+    {
+      "context": "B",
+      "target": "ZNF543",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995074316378075
+    },
+    {
+      "context": "B",
+      "target": "ZNF627",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001512951396594
+    },
+    {
+      "context": "B",
+      "target": "ZNF628",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0032599424934785
+    },
+    {
+      "context": "B",
+      "target": "ZNF641",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985575583780677
+    },
+    {
+      "context": "B",
+      "target": "ZNF670",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0044992293101116
+    },
+    {
+      "context": "B",
+      "target": "ZNF714",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9934011040709174
+    },
+    {
+      "context": "B",
+      "target": "ZNF740",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9941459644426005
+    },
+    {
+      "context": "B",
+      "target": "ZNF768",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0033104698533373
+    },
+    {
+      "context": "B",
+      "target": "ZNF777",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9919301295231394
+    },
+    {
+      "context": "B",
+      "target": "ZNF783",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001581418628173
+    },
+    {
+      "context": "B",
+      "target": "ZNF784",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982483227074326
+    },
+    {
+      "context": "B",
+      "target": "ZNF786",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0011028349773559
+    },
+    {
+      "context": "B",
+      "target": "ZNF821",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9975753540017365
+    },
+    {
+      "context": "B",
+      "target": "ZRANB3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "ABCD1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "ACLY",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970281988989579
+    },
+    {
+      "context": "C",
+      "target": "ADNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9940887272098012
+    },
+    {
+      "context": "C",
+      "target": "AGO1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002544716580178
+    },
+    {
+      "context": "C",
+      "target": "AKAP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9968607904251461
+    },
+    {
+      "context": "C",
+      "target": "AKIRIN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0002566868752734
+    },
+    {
+      "context": "C",
+      "target": "AKT2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0031616568274502
+    },
+    {
+      "context": "C",
+      "target": "ALG12",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967558578365707
+    },
+    {
+      "context": "C",
+      "target": "ANKRD52",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "ANKZF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995445567065979
+    },
+    {
+      "context": "C",
+      "target": "ANP32B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0091737586941778
+    },
+    {
+      "context": "C",
+      "target": "AP2A2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002172089224072
+    },
+    {
+      "context": "C",
+      "target": "API5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.99866216050691
+    },
+    {
+      "context": "C",
+      "target": "ARL14EP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9953507796302833
+    },
+    {
+      "context": "C",
+      "target": "ASCC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000546427539008
+    },
+    {
+      "context": "C",
+      "target": "BCKDK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9981080873526426
+    },
+    {
+      "context": "C",
+      "target": "BCL6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9969491998429402
+    },
+    {
+      "context": "C",
+      "target": "BCL7C",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.99479159687926
+    },
+    {
+      "context": "C",
+      "target": "BRD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0020210386171473
+    },
+    {
+      "context": "C",
+      "target": "BRPF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0012455698124523
+    },
+    {
+      "context": "C",
+      "target": "C5orf22",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00667750416264
+    },
+    {
+      "context": "C",
+      "target": "CAND1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "CAPRIN2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "CARM1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.009717713713035
+    },
+    {
+      "context": "C",
+      "target": "CAT",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982260190433528
+    },
+    {
+      "context": "C",
+      "target": "CCDC112",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972041114683831
+    },
+    {
+      "context": "C",
+      "target": "CDK8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003311357709652
+    },
+    {
+      "context": "C",
+      "target": "CHD3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995262948042642
+    },
+    {
+      "context": "C",
+      "target": "CHD6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0059633024730625
+    },
+    {
+      "context": "C",
+      "target": "CHKB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0071663753289888
+    },
+    {
+      "context": "C",
+      "target": "CLCN6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0034648938138773
+    },
+    {
+      "context": "C",
+      "target": "COIL",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998575926739538
+    },
+    {
+      "context": "C",
+      "target": "COMMD8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948162619950813
+    },
+    {
+      "context": "C",
+      "target": "COQ10B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972927619944206
+    },
+    {
+      "context": "C",
+      "target": "CSNK2A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000031623398234
+    },
+    {
+      "context": "C",
+      "target": "CYTH2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0009561890259329
+    },
+    {
+      "context": "C",
+      "target": "DBF4B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000251020933574
+    },
+    {
+      "context": "C",
+      "target": "DBN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973151908836987
+    },
+    {
+      "context": "C",
+      "target": "DCAF16",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0016483759965553
+    },
+    {
+      "context": "C",
+      "target": "DCP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0111426890045967
+    },
+    {
+      "context": "C",
+      "target": "DDHD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0070506780389241
+    },
+    {
+      "context": "C",
+      "target": "DEAF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9951390913496533
+    },
+    {
+      "context": "C",
+      "target": "DEK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000717044693531
+    },
+    {
+      "context": "C",
+      "target": "DHRS1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023879471581474
+    },
+    {
+      "context": "C",
+      "target": "DHX35",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0029436418764421
+    },
+    {
+      "context": "C",
+      "target": "DLAT",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "DMTF1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "DNTTIP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0045017268114103
+    },
+    {
+      "context": "C",
+      "target": "DRG2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002814277045261
+    },
+    {
+      "context": "C",
+      "target": "DTNBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9971390169664628
+    },
+    {
+      "context": "C",
+      "target": "DVL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001276957461434
+    },
+    {
+      "context": "C",
+      "target": "E2F1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0016586574073625
+    },
+    {
+      "context": "C",
+      "target": "E2F4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970223597654313
+    },
+    {
+      "context": "C",
+      "target": "EAPP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000262586025924
+    },
+    {
+      "context": "C",
+      "target": "EEF1A2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985061914524261
+    },
+    {
+      "context": "C",
+      "target": "ELK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972830203972572
+    },
+    {
+      "context": "C",
+      "target": "EPC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996260839959388
+    },
+    {
+      "context": "C",
+      "target": "EPHB2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "EPM2AIP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.012733947655984
+    },
+    {
+      "context": "C",
+      "target": "EZH2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0008720557472164
+    },
+    {
+      "context": "C",
+      "target": "FAM120A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9911067107747877
+    },
+    {
+      "context": "C",
+      "target": "FCGRT",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991594565567337
+    },
+    {
+      "context": "C",
+      "target": "FHL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0012129229494564
+    },
+    {
+      "context": "C",
+      "target": "FOXN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991592545884515
+    },
+    {
+      "context": "C",
+      "target": "FOXO4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991623356494186
+    },
+    {
+      "context": "C",
+      "target": "FUBP3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9960759197545133
+    },
+    {
+      "context": "C",
+      "target": "FXYD5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983660790714101
+    },
+    {
+      "context": "C",
+      "target": "FZD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.99842958325659
+    },
+    {
+      "context": "C",
+      "target": "GIGYF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0026229532116262
+    },
+    {
+      "context": "C",
+      "target": "GLI3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9994524852186221
+    },
+    {
+      "context": "C",
+      "target": "GLYR1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.004685614396468
+    },
+    {
+      "context": "C",
+      "target": "GMEB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0013389007561246
+    },
+    {
+      "context": "C",
+      "target": "GPATCH8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991084653389251
+    },
+    {
+      "context": "C",
+      "target": "GRAMD1A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989076566457088
+    },
+    {
+      "context": "C",
+      "target": "GTF2IRD1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9968207275528645
+    },
+    {
+      "context": "C",
+      "target": "HDAC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9971276901752102
+    },
+    {
+      "context": "C",
+      "target": "HDAC8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9979745818723089
+    },
+    {
+      "context": "C",
+      "target": "HEATR6",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "HMGN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9960785461356121
+    },
+    {
+      "context": "C",
+      "target": "HMGN4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993407850451705
+    },
+    {
+      "context": "C",
+      "target": "HMGXB3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989132154922696
+    },
+    {
+      "context": "C",
+      "target": "HOMEZ",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9937820296320092
+    },
+    {
+      "context": "C",
+      "target": "HSBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982317828247861
+    },
+    {
+      "context": "C",
+      "target": "HSP90AB1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978829641904629
+    },
+    {
+      "context": "C",
+      "target": "IFI27L2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948325432977927
+    },
+    {
+      "context": "C",
+      "target": "IFNAR2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0028488505989954
+    },
+    {
+      "context": "C",
+      "target": "IFNGR2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999432330085773
+    },
+    {
+      "context": "C",
+      "target": "IL10RB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9975813816983462
+    },
+    {
+      "context": "C",
+      "target": "IREB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.004227224263266
+    },
+    {
+      "context": "C",
+      "target": "KDM5A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000083906247645
+    },
+    {
+      "context": "C",
+      "target": "KHDRBS1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00385196306121
+    },
+    {
+      "context": "C",
+      "target": "KHSRP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985678789821616
+    },
+    {
+      "context": "C",
+      "target": "KIF21B",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "KIF2A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000273825439351
+    },
+    {
+      "context": "C",
+      "target": "KMT2A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.000015436206534
+    },
+    {
+      "context": "C",
+      "target": "LDLR",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9994539362998202
+    },
+    {
+      "context": "C",
+      "target": "LENG1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970522426891456
+    },
+    {
+      "context": "C",
+      "target": "LMAN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996829049232028
+    },
+    {
+      "context": "C",
+      "target": "LMBRD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9999406713854478
+    },
+    {
+      "context": "C",
+      "target": "LPCAT3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974988362777647
+    },
+    {
+      "context": "C",
+      "target": "MAN2A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993786151565469
+    },
+    {
+      "context": "C",
+      "target": "MAP2K2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996835991489688
+    },
+    {
+      "context": "C",
+      "target": "MAPK12",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "MAPK7",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "MARCKSL1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9939611450566177
+    },
+    {
+      "context": "C",
+      "target": "MBD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9971854489424713
+    },
+    {
+      "context": "C",
+      "target": "MED13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0010734751628294
+    },
+    {
+      "context": "C",
+      "target": "MED15",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9998208718594898
+    },
+    {
+      "context": "C",
+      "target": "MED25",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001611603741963
+    },
+    {
+      "context": "C",
+      "target": "MLKL",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "MLLT10",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9976722429298308
+    },
+    {
+      "context": "C",
+      "target": "MSANTD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0042740756525086
+    },
+    {
+      "context": "C",
+      "target": "MSI2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9968772546295834
+    },
+    {
+      "context": "C",
+      "target": "MTA1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.994181599294316
+    },
+    {
+      "context": "C",
+      "target": "MTF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9958450004411038
+    },
+    {
+      "context": "C",
+      "target": "MTHFSD",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993552965822723
+    },
+    {
+      "context": "C",
+      "target": "MTM1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9981787633226448
+    },
+    {
+      "context": "C",
+      "target": "MYD88",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9978334172886038
+    },
+    {
+      "context": "C",
+      "target": "MYPOP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000064339224466
+    },
+    {
+      "context": "C",
+      "target": "MYRF",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980032517884209
+    },
+    {
+      "context": "C",
+      "target": "NABP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972583157410542
+    },
+    {
+      "context": "C",
+      "target": "NAIF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997610650657463
+    },
+    {
+      "context": "C",
+      "target": "NCLN",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9958485677091443
+    },
+    {
+      "context": "C",
+      "target": "NFE2L1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9943070452926512
+    },
+    {
+      "context": "C",
+      "target": "NGLY1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988791444911425
+    },
+    {
+      "context": "C",
+      "target": "NICN1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "NIPAL3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972197317878824
+    },
+    {
+      "context": "C",
+      "target": "NIPSNAP3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9986117179825137
+    },
+    {
+      "context": "C",
+      "target": "NT5DC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9979313885169833
+    },
+    {
+      "context": "C",
+      "target": "NUP37",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9990354178362835
+    },
+    {
+      "context": "C",
+      "target": "PAN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023724852148344
+    },
+    {
+      "context": "C",
+      "target": "PAPOLA",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PARP3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PATL1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0024170622304247
+    },
+    {
+      "context": "C",
+      "target": "PBLD",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PCGF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0026305629622791
+    },
+    {
+      "context": "C",
+      "target": "PCGF6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982126500713369
+    },
+    {
+      "context": "C",
+      "target": "PDCD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00095465230266
+    },
+    {
+      "context": "C",
+      "target": "PDE6D",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997661960117787
+    },
+    {
+      "context": "C",
+      "target": "PDK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9934604749340868
+    },
+    {
+      "context": "C",
+      "target": "PDK3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PGLS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9996312086083093
+    },
+    {
+      "context": "C",
+      "target": "PHF11",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PHF19",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PHF23",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.992881229551489
+    },
+    {
+      "context": "C",
+      "target": "PHF8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9930071951630152
+    },
+    {
+      "context": "C",
+      "target": "PI4KB",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PIM2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974753563282954
+    },
+    {
+      "context": "C",
+      "target": "PIN1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PINK1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9992370063411488
+    },
+    {
+      "context": "C",
+      "target": "PKN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0003608701300577
+    },
+    {
+      "context": "C",
+      "target": "PLAGL2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0007339312517116
+    },
+    {
+      "context": "C",
+      "target": "PLCG1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9977946700592508
+    },
+    {
+      "context": "C",
+      "target": "PNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0029250837191586
+    },
+    {
+      "context": "C",
+      "target": "POLD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0013217205397544
+    },
+    {
+      "context": "C",
+      "target": "POR",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993108735507907
+    },
+    {
+      "context": "C",
+      "target": "PPIF",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004587719455131
+    },
+    {
+      "context": "C",
+      "target": "PPIP5K2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023211694444334
+    },
+    {
+      "context": "C",
+      "target": "PQBP1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0106884557127218
+    },
+    {
+      "context": "C",
+      "target": "PRDX3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9974475459640603
+    },
+    {
+      "context": "C",
+      "target": "PRKAB2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0002379228772993
+    },
+    {
+      "context": "C",
+      "target": "PRKACA",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0029878814825062
+    },
+    {
+      "context": "C",
+      "target": "PRMT2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0027238051453131
+    },
+    {
+      "context": "C",
+      "target": "PRMT6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9941879697419308
+    },
+    {
+      "context": "C",
+      "target": "PRMT7",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9954191322543139
+    },
+    {
+      "context": "C",
+      "target": "PRNP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973532328403303
+    },
+    {
+      "context": "C",
+      "target": "PSKH1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.996107126639025
+    },
+    {
+      "context": "C",
+      "target": "PSMB9",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "PTMS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973294161046818
+    },
+    {
+      "context": "C",
+      "target": "PTOV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0005188089165853
+    },
+    {
+      "context": "C",
+      "target": "PYCR1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0009616775409202
+    },
+    {
+      "context": "C",
+      "target": "R3HCC1L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0014219222688148
+    },
+    {
+      "context": "C",
+      "target": "RAB11FIP5",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "RAB5A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9964426853469046
+    },
+    {
+      "context": "C",
+      "target": "RABEP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982036377173916
+    },
+    {
+      "context": "C",
+      "target": "RBM18",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982186217434491
+    },
+    {
+      "context": "C",
+      "target": "RBM26",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0012566340511788
+    },
+    {
+      "context": "C",
+      "target": "RBM4B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998037812129018
+    },
+    {
+      "context": "C",
+      "target": "RBM5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9939391721431847
+    },
+    {
+      "context": "C",
+      "target": "RC3H2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002029704489187
+    },
+    {
+      "context": "C",
+      "target": "REV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0015019587136265
+    },
+    {
+      "context": "C",
+      "target": "RFK",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "RNF10",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00136427935459
+    },
+    {
+      "context": "C",
+      "target": "RNF141",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993503171284163
+    },
+    {
+      "context": "C",
+      "target": "RNF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9951024618253977
+    },
+    {
+      "context": "C",
+      "target": "RSRC1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9933349258258207
+    },
+    {
+      "context": "C",
+      "target": "S100A11",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980718112529707
+    },
+    {
+      "context": "C",
+      "target": "SAP30L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001180899738609
+    },
+    {
+      "context": "C",
+      "target": "SCAF8",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0001131380001358
+    },
+    {
+      "context": "C",
+      "target": "SEMA4F",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "SFXN4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988670768282418
+    },
+    {
+      "context": "C",
+      "target": "SH2D3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9953622283914667
+    },
+    {
+      "context": "C",
+      "target": "SHPRH",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0034191863146587
+    },
+    {
+      "context": "C",
+      "target": "SIN3B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9997853146258884
+    },
+    {
+      "context": "C",
+      "target": "SLC25A13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9975999931817988
+    },
+    {
+      "context": "C",
+      "target": "SLC39A1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948310274272528
+    },
+    {
+      "context": "C",
+      "target": "SLC44A1",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "SLIRP",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "SMARCA5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002008769262333
+    },
+    {
+      "context": "C",
+      "target": "SMARCC2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9992336101778995
+    },
+    {
+      "context": "C",
+      "target": "SMYD2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999131855041595
+    },
+    {
+      "context": "C",
+      "target": "SND1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9955417467364003
+    },
+    {
+      "context": "C",
+      "target": "SNN",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "SNRK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0017861301615347
+    },
+    {
+      "context": "C",
+      "target": "SNX4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9945229302609947
+    },
+    {
+      "context": "C",
+      "target": "SOCS5",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "SPATA20",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "SRSF5",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0009321140077676
+    },
+    {
+      "context": "C",
+      "target": "SSR4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9966324832096869
+    },
+    {
+      "context": "C",
+      "target": "STAT6",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "STK3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989968896847945
+    },
+    {
+      "context": "C",
+      "target": "STT3A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989394536859022
+    },
+    {
+      "context": "C",
+      "target": "SUPT7L",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0031450764097996
+    },
+    {
+      "context": "C",
+      "target": "SYVN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970374626042191
+    },
+    {
+      "context": "C",
+      "target": "TAF15",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0019033634712693
+    },
+    {
+      "context": "C",
+      "target": "TAF4",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TARBP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0012310343007662
+    },
+    {
+      "context": "C",
+      "target": "TBC1D13",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967842174655805
+    },
+    {
+      "context": "C",
+      "target": "TBC1D19",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TBCK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9979135710965373
+    },
+    {
+      "context": "C",
+      "target": "TDRD7",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TEAD4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0004802761719007
+    },
+    {
+      "context": "C",
+      "target": "TESK2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TEX2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973552395410985
+    },
+    {
+      "context": "C",
+      "target": "TFCP2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973190426515413
+    },
+    {
+      "context": "C",
+      "target": "THAP3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972696126718746
+    },
+    {
+      "context": "C",
+      "target": "THAP7",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.001319372970598
+    },
+    {
+      "context": "C",
+      "target": "TIMM17B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0078959168919448
+    },
+    {
+      "context": "C",
+      "target": "TIMM50",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TMCO6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985199572230689
+    },
+    {
+      "context": "C",
+      "target": "TMED3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.995685665815585
+    },
+    {
+      "context": "C",
+      "target": "TMEM104",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TMEM147",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991472971716444
+    },
+    {
+      "context": "C",
+      "target": "TMEM186",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0010474085525178
+    },
+    {
+      "context": "C",
+      "target": "TMEM209",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989432929582489
+    },
+    {
+      "context": "C",
+      "target": "TMEM41B",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TMEM79",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TMF1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9989710088688731
+    },
+    {
+      "context": "C",
+      "target": "TRAPPC6A",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982030813569838
+    },
+    {
+      "context": "C",
+      "target": "TRIB3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9982735067109731
+    },
+    {
+      "context": "C",
+      "target": "TRIM35",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.999821696188361
+    },
+    {
+      "context": "C",
+      "target": "TRIP4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0039545678530803
+    },
+    {
+      "context": "C",
+      "target": "TRMT1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9959468601439848
+    },
+    {
+      "context": "C",
+      "target": "TRPC4AP",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948984651940697
+    },
+    {
+      "context": "C",
+      "target": "TTBK2",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "TWF2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984382405637096
+    },
+    {
+      "context": "C",
+      "target": "TXNDC16",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "UNK",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0009916049289809
+    },
+    {
+      "context": "C",
+      "target": "UPF3B",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9980032596462207
+    },
+    {
+      "context": "C",
+      "target": "UROS",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985208591257577
+    },
+    {
+      "context": "C",
+      "target": "USP28",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983957600680552
+    },
+    {
+      "context": "C",
+      "target": "VAPB",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9972357632887906
+    },
+    {
+      "context": "C",
+      "target": "VIM",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.00232531087063
+    },
+    {
+      "context": "C",
+      "target": "WBP4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9994620131815241
+    },
+    {
+      "context": "C",
+      "target": "YIPF6",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9993348984339107
+    },
+    {
+      "context": "C",
+      "target": "ZBTB34",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9943747140380678
+    },
+    {
+      "context": "C",
+      "target": "ZBTB41",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9977679606455403
+    },
+    {
+      "context": "C",
+      "target": "ZBTB48",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9956786848903957
+    },
+    {
+      "context": "C",
+      "target": "ZC2HC1A",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "ZC3HAV1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985200059872485
+    },
+    {
+      "context": "C",
+      "target": "ZDHHC12",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9984299377968336
+    },
+    {
+      "context": "C",
+      "target": "ZDHHC4",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0019337231309593
+    },
+    {
+      "context": "C",
+      "target": "ZFP62",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0029594711293959
+    },
+    {
+      "context": "C",
+      "target": "ZHX3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9983456451073405
+    },
+    {
+      "context": "C",
+      "target": "ZKSCAN1",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973260438944237
+    },
+    {
+      "context": "C",
+      "target": "ZKSCAN2",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9947565716757228
+    },
+    {
+      "context": "C",
+      "target": "ZKSCAN3",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9948546646126
+    },
+    {
+      "context": "C",
+      "target": "ZNF16",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.002697994181047
+    },
+    {
+      "context": "C",
+      "target": "ZNF174",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "ZNF219",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997338624140499
+    },
+    {
+      "context": "C",
+      "target": "ZNF22",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9988492690201662
+    },
+    {
+      "context": "C",
+      "target": "ZNF25",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9964788002782531
+    },
+    {
+      "context": "C",
+      "target": "ZNF251",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9967994832395869
+    },
+    {
+      "context": "C",
+      "target": "ZNF280C",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9908379625132516
+    },
+    {
+      "context": "C",
+      "target": "ZNF282",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.997389885927081
+    },
+    {
+      "context": "C",
+      "target": "ZNF32",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9985610260060778
+    },
+    {
+      "context": "C",
+      "target": "ZNF324",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "ZNF397",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    },
+    {
+      "context": "C",
+      "target": "ZNF410",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0031953529726114
+    },
+    {
+      "context": "C",
+      "target": "ZNF444",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0025101422573595
+    },
+    {
+      "context": "C",
+      "target": "ZNF462",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0010854734637034
+    },
+    {
+      "context": "C",
+      "target": "ZNF496",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9986633731368795
+    },
+    {
+      "context": "C",
+      "target": "ZNF507",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9961219712190051
+    },
+    {
+      "context": "C",
+      "target": "ZNF514",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9973532692300517
+    },
+    {
+      "context": "C",
+      "target": "ZNF526",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9991564069292124
+    },
+    {
+      "context": "C",
+      "target": "ZNF530",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0023312897016317
+    },
+    {
+      "context": "C",
+      "target": "ZNF543",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0002126908699907
+    },
+    {
+      "context": "C",
+      "target": "ZNF627",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.998928644568755
+    },
+    {
+      "context": "C",
+      "target": "ZNF628",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0039485943935582
+    },
+    {
+      "context": "C",
+      "target": "ZNF641",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9997201435123505
+    },
+    {
+      "context": "C",
+      "target": "ZNF670",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0065832651681041
+    },
+    {
+      "context": "C",
+      "target": "ZNF714",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9936316320560131
+    },
+    {
+      "context": "C",
+      "target": "ZNF740",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9975659226752691
+    },
+    {
+      "context": "C",
+      "target": "ZNF768",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0030733099177536
+    },
+    {
+      "context": "C",
+      "target": "ZNF777",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9912276242236513
+    },
+    {
+      "context": "C",
+      "target": "ZNF783",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9995829591143018
+    },
+    {
+      "context": "C",
+      "target": "ZNF784",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9981776632688393
+    },
+    {
+      "context": "C",
+      "target": "ZNF786",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 1.0000170712129204
+    },
+    {
+      "context": "C",
+      "target": "ZNF821",
+      "supervised_genes": 7679,
+      "mean_depth_ratio": 0.9970106489368687
+    },
+    {
+      "context": "C",
+      "target": "ZRANB3",
+      "supervised_genes": 0,
+      "mean_depth_ratio": 1.0
+    }
+  ],
+  "source_revision": "a856ee4",
+  "resumed_from_conditions": 0
+}

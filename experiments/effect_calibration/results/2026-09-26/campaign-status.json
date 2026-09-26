@@ -1,12 +1,12 @@
 {
-  "recorded_at_utc": "2026-09-26T03:32:12.938618+00:00",
-  "status": "official_export_running",
+  "recorded_at_utc": "2026-09-26T03:49:53.264593+00:00",
+  "status": "official_artifact_ready",
   "environment_blocker": null,
   "authorization": "Continue optimization and submit once the fixed local gates pass; no new submission approval required",
   "last_verified_git_commit": "2820de6e6b1da42621ea2cd12f2a629b1befc6cf",
   "branch": "autoresearch/20260926-effect-calibration",
   "remote_run": "/home/caii/vcc2026-effect-calibration-20260926",
-  "remote_live_status": "seed43 confirmed; official ABC export launched",
+  "remote_live_status": "local controller completed, native artifact ready",
   "verified_h1": {
     "control": -0.04523068765223785,
     "incumbent": 0.16387417225775552,
@@ -85,5 +85,20 @@
     "scores_sha256": "60db6132107dec337d6de5102fddd2778cbce913b6be66227872863e70a0d8d1",
     "prediction_sha256": "1889d8eeb017350749f06aece32432bd77c0c8f75dd5a43bd506b1d5be539aaf",
     "status": "valid"
+  },
+  "official_artifact": {
+    "selected_arm": "incumbent",
+    "release_sha256": "a365339a6da5fbfe3bccb8ec1102b922cbd1ff1a4d5341d2ec79965f7553ba61",
+    "original_prediction_sha256": "bc51d14ebe4ffcaa84fe219677d1a1a66f92e21cfb2eafb2c0060f24cd3eb575",
+    "converted_prediction_sha256": "351614b84ddf7d3e5f6b2cb623dfac970629e02766e7a330c17cdc02d2cd5a76",
+    "artifact_sha256": "7e51bd148c759ee70345fd9e439a2a14b63ea251dbb0f765fe997f25989af050",
+    "artifact_bytes": 3301734400,
+    "artifact_path": "/home/caii/vcc2026-effect-calibration-20260926/submission/prediction.vcc",
+    "prep_source_sha256": "4a93e7d267379a32b661f7f9bd4de6543bb372816362a2a85e6f70e437240ad3",
+    "native_prep_completed": true,
+    "matrix_count_values_changed": false,
+    "estimated_prep_peak_bytes": 22720368328,
+    "available_bytes_before_prep": 32317505536,
+    "finished_at_unix": 1790394451.5511687
   }
 }
