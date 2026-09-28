@@ -1,0 +1,8 @@
+{
+  "native_packed_counts_equal": true,
+  "native_packed_obs_equal": true,
+  "native_packed_genes_equal": true,
+  "million_count_boundary_preserved": true,
+  "fractional_tail_after_first_chunk_rejected": true,
+  "scored_predictions_not_mutated": true
+}

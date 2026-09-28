@@ -1,0 +1,462 @@
+{
+  "scope": "paired raw per-target differences; MSE_uncapped is the uncapped audit metric, not the panel-normalized scored MSE; no significance tests",
+  "coverage_scope": "supervision in the prepared campaign data, not the full pretraining history",
+  "models": {
+    "empirical": {
+      "all": {
+        "PDS": {
+          "valid_targets": 126,
+          "improved_targets": 96,
+          "worsened_targets": 12,
+          "unchanged_targets": 18,
+          "baseline_raw_mean": 0.48533333333333334,
+          "candidate_raw_mean": 0.7514285714285713
+        },
+        "MSE_uncapped": {
+          "valid_targets": 126,
+          "improved_targets": 4,
+          "worsened_targets": 106,
+          "unchanged_targets": 16,
+          "baseline_raw_mean": 0.0022547137023222253,
+          "candidate_raw_mean": 0.0029342887160639292
+        },
+        "NMAE": {
+          "valid_targets": 110,
+          "improved_targets": 71,
+          "worsened_targets": 30,
+          "unchanged_targets": 9,
+          "baseline_raw_mean": 1.005044996558229,
+          "candidate_raw_mean": 0.986159522940415
+        },
+        "FID": {
+          "valid_targets": 126,
+          "improved_targets": 110,
+          "worsened_targets": 0,
+          "unchanged_targets": 16,
+          "baseline_raw_mean": 3.672149265953206e-05,
+          "candidate_raw_mean": 0.37144312178534766
+        },
+        "REACH": {
+          "valid_targets": 126,
+          "improved_targets": 68,
+          "worsened_targets": 13,
+          "unchanged_targets": 45,
+          "baseline_raw_mean": 0.027146970519590467,
+          "candidate_raw_mean": 0.07467499124681541
+        },
+        "JAC": {
+          "valid_targets": 126,
+          "improved_targets": 108,
+          "worsened_targets": 0,
+          "unchanged_targets": 18,
+          "baseline_raw_mean": 1.1278254847957937e-06,
+          "candidate_raw_mean": 0.060969704316103844
+        }
+      },
+      "prepared_supervision": {
+        "PDS": {
+          "valid_targets": 110,
+          "improved_targets": 96,
+          "worsened_targets": 12,
+          "unchanged_targets": 2,
+          "baseline_raw_mean": 0.4850909090909091,
+          "candidate_raw_mean": 0.7898909090909091
+        },
+        "MSE_uncapped": {
+          "valid_targets": 110,
+          "improved_targets": 4,
+          "worsened_targets": 106,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.0023636136989256392,
+          "candidate_raw_mean": 0.0031420359873934084
+        },
+        "NMAE": {
+          "valid_targets": 101,
+          "improved_targets": 71,
+          "worsened_targets": 30,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 1.0052641471983095,
+          "candidate_raw_mean": 0.9846958095947496
+        },
+        "FID": {
+          "valid_targets": 110,
+          "improved_targets": 110,
+          "worsened_targets": 0,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 4.2062800682736724e-05,
+          "candidate_raw_mean": 0.4254712122268528
+        },
+        "REACH": {
+          "valid_targets": 110,
+          "improved_targets": 68,
+          "worsened_targets": 13,
+          "unchanged_targets": 29,
+          "baseline_raw_mean": 0.015409793073595754,
+          "candidate_raw_mean": 0.06985098045205343
+        },
+        "JAC": {
+          "valid_targets": 110,
+          "improved_targets": 108,
+          "worsened_targets": 0,
+          "unchanged_targets": 2,
+          "baseline_raw_mean": 1.2918728280388182e-06,
+          "candidate_raw_mean": 0.06983802494390078
+        }
+      },
+      "no_prepared_supervision": {
+        "PDS": {
+          "valid_targets": 16,
+          "improved_targets": 0,
+          "worsened_targets": 0,
+          "unchanged_targets": 16,
+          "baseline_raw_mean": 0.487,
+          "candidate_raw_mean": 0.487
+        },
+        "MSE_uncapped": {
+          "valid_targets": 16,
+          "improved_targets": 0,
+          "worsened_targets": 0,
+          "unchanged_targets": 16,
+          "baseline_raw_mean": 0.001506026225673755,
+          "candidate_raw_mean": 0.001506026225673755
+        },
+        "NMAE": {
+          "valid_targets": 9,
+          "improved_targets": 0,
+          "worsened_targets": 0,
+          "unchanged_targets": 9,
+          "baseline_raw_mean": 1.0025856393751047,
+          "candidate_raw_mean": 1.0025856393751047
+        },
+        "FID": {
+          "valid_targets": 16,
+          "improved_targets": 0,
+          "worsened_targets": 0,
+          "unchanged_targets": 16,
+          "baseline_raw_mean": 0.0,
+          "candidate_raw_mean": 0.0
+        },
+        "REACH": {
+          "valid_targets": 16,
+          "improved_targets": 0,
+          "worsened_targets": 0,
+          "unchanged_targets": 16,
+          "baseline_raw_mean": 0.10784006546080412,
+          "candidate_raw_mean": 0.10784006546080412
+        },
+        "JAC": {
+          "valid_targets": 16,
+          "improved_targets": 0,
+          "worsened_targets": 0,
+          "unchanged_targets": 16,
+          "baseline_raw_mean": 0.0,
+          "candidate_raw_mean": 0.0
+        }
+      }
+    },
+    "frozen": {
+      "all": {
+        "PDS": {
+          "valid_targets": 126,
+          "improved_targets": 65,
+          "worsened_targets": 60,
+          "unchanged_targets": 1,
+          "baseline_raw_mean": 0.48533333333333334,
+          "candidate_raw_mean": 0.489968253968254
+        },
+        "MSE_uncapped": {
+          "valid_targets": 126,
+          "improved_targets": 4,
+          "worsened_targets": 122,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.0022547137023222253,
+          "candidate_raw_mean": 0.0032550725576741494
+        },
+        "NMAE": {
+          "valid_targets": 110,
+          "improved_targets": 54,
+          "worsened_targets": 56,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 1.005044996558229,
+          "candidate_raw_mean": 1.0239224550373907
+        },
+        "FID": {
+          "valid_targets": 126,
+          "improved_targets": 126,
+          "worsened_targets": 0,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 3.672149265953206e-05,
+          "candidate_raw_mean": 0.40952066853949637
+        },
+        "REACH": {
+          "valid_targets": 126,
+          "improved_targets": 66,
+          "worsened_targets": 24,
+          "unchanged_targets": 36,
+          "baseline_raw_mean": 0.027146970519590467,
+          "candidate_raw_mean": 0.034710653851414405
+        },
+        "JAC": {
+          "valid_targets": 126,
+          "improved_targets": 112,
+          "worsened_targets": 0,
+          "unchanged_targets": 14,
+          "baseline_raw_mean": 1.1278254847957937e-06,
+          "candidate_raw_mean": 0.06262715013788542
+        }
+      },
+      "prepared_supervision": {
+        "PDS": {
+          "valid_targets": 110,
+          "improved_targets": 60,
+          "worsened_targets": 49,
+          "unchanged_targets": 1,
+          "baseline_raw_mean": 0.4850909090909091,
+          "candidate_raw_mean": 0.5068363636363636
+        },
+        "MSE_uncapped": {
+          "valid_targets": 110,
+          "improved_targets": 4,
+          "worsened_targets": 106,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.0023636136989256392,
+          "candidate_raw_mean": 0.0034234598297624283
+        },
+        "NMAE": {
+          "valid_targets": 101,
+          "improved_targets": 49,
+          "worsened_targets": 52,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 1.0052641471983095,
+          "candidate_raw_mean": 1.0269316853360224
+        },
+        "FID": {
+          "valid_targets": 110,
+          "improved_targets": 110,
+          "worsened_targets": 0,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 4.2062800682736724e-05,
+          "candidate_raw_mean": 0.40636116015104895
+        },
+        "REACH": {
+          "valid_targets": 110,
+          "improved_targets": 61,
+          "worsened_targets": 20,
+          "unchanged_targets": 29,
+          "baseline_raw_mean": 0.015409793073595754,
+          "candidate_raw_mean": 0.02780110081243293
+        },
+        "JAC": {
+          "valid_targets": 110,
+          "improved_targets": 100,
+          "worsened_targets": 0,
+          "unchanged_targets": 10,
+          "baseline_raw_mean": 1.2918728280388182e-06,
+          "candidate_raw_mean": 0.06718182049630116
+        }
+      },
+      "no_prepared_supervision": {
+        "PDS": {
+          "valid_targets": 16,
+          "improved_targets": 5,
+          "worsened_targets": 11,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.487,
+          "candidate_raw_mean": 0.374
+        },
+        "MSE_uncapped": {
+          "valid_targets": 16,
+          "improved_targets": 0,
+          "worsened_targets": 16,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.001506026225673755,
+          "candidate_raw_mean": 0.0020974100620672295
+        },
+        "NMAE": {
+          "valid_targets": 9,
+          "improved_targets": 5,
+          "worsened_targets": 4,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 1.0025856393751047,
+          "candidate_raw_mean": 0.9901522039083032
+        },
+        "FID": {
+          "valid_targets": 16,
+          "improved_targets": 16,
+          "worsened_targets": 0,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.0,
+          "candidate_raw_mean": 0.431242288710072
+        },
+        "REACH": {
+          "valid_targets": 16,
+          "improved_targets": 5,
+          "worsened_targets": 4,
+          "unchanged_targets": 7,
+          "baseline_raw_mean": 0.10784006546080412,
+          "candidate_raw_mean": 0.0822138309944121
+        },
+        "JAC": {
+          "valid_targets": 16,
+          "improved_targets": 12,
+          "worsened_targets": 0,
+          "unchanged_targets": 4,
+          "baseline_raw_mean": 0.0,
+          "candidate_raw_mean": 0.03131379142377726
+        }
+      }
+    },
+    "limited": {
+      "all": {
+        "PDS": {
+          "valid_targets": 126,
+          "improved_targets": 58,
+          "worsened_targets": 64,
+          "unchanged_targets": 4,
+          "baseline_raw_mean": 0.48533333333333334,
+          "candidate_raw_mean": 0.482984126984127
+        },
+        "MSE_uncapped": {
+          "valid_targets": 126,
+          "improved_targets": 3,
+          "worsened_targets": 123,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.0022547137023222253,
+          "candidate_raw_mean": 0.003329233745365777
+        },
+        "NMAE": {
+          "valid_targets": 110,
+          "improved_targets": 51,
+          "worsened_targets": 59,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 1.005044996558229,
+          "candidate_raw_mean": 1.0238334303303132
+        },
+        "FID": {
+          "valid_targets": 126,
+          "improved_targets": 125,
+          "worsened_targets": 0,
+          "unchanged_targets": 1,
+          "baseline_raw_mean": 3.672149265953206e-05,
+          "candidate_raw_mean": 0.38761834430393116
+        },
+        "REACH": {
+          "valid_targets": 126,
+          "improved_targets": 68,
+          "worsened_targets": 24,
+          "unchanged_targets": 34,
+          "baseline_raw_mean": 0.027146970519590467,
+          "candidate_raw_mean": 0.0465512096650926
+        },
+        "JAC": {
+          "valid_targets": 126,
+          "improved_targets": 111,
+          "worsened_targets": 0,
+          "unchanged_targets": 15,
+          "baseline_raw_mean": 1.1278254847957937e-06,
+          "candidate_raw_mean": 0.06070342510764318
+        }
+      },
+      "prepared_supervision": {
+        "PDS": {
+          "valid_targets": 110,
+          "improved_targets": 54,
+          "worsened_targets": 53,
+          "unchanged_targets": 3,
+          "baseline_raw_mean": 0.4850909090909091,
+          "candidate_raw_mean": 0.5047272727272727
+        },
+        "MSE_uncapped": {
+          "valid_targets": 110,
+          "improved_targets": 3,
+          "worsened_targets": 107,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.0023636136989256392,
+          "candidate_raw_mean": 0.0035001538152705965
+        },
+        "NMAE": {
+          "valid_targets": 101,
+          "improved_targets": 47,
+          "worsened_targets": 54,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 1.0052641471983095,
+          "candidate_raw_mean": 1.025453741675789
+        },
+        "FID": {
+          "valid_targets": 110,
+          "improved_targets": 109,
+          "worsened_targets": 0,
+          "unchanged_targets": 1,
+          "baseline_raw_mean": 4.2062800682736724e-05,
+          "candidate_raw_mean": 0.38247219286459144
+        },
+        "REACH": {
+          "valid_targets": 110,
+          "improved_targets": 64,
+          "worsened_targets": 20,
+          "unchanged_targets": 26,
+          "baseline_raw_mean": 0.015409793073595754,
+          "candidate_raw_mean": 0.03735455392013123
+        },
+        "JAC": {
+          "valid_targets": 110,
+          "improved_targets": 99,
+          "worsened_targets": 0,
+          "unchanged_targets": 11,
+          "baseline_raw_mean": 1.2918728280388182e-06,
+          "candidate_raw_mean": 0.06480778676118894
+        }
+      },
+      "no_prepared_supervision": {
+        "PDS": {
+          "valid_targets": 16,
+          "improved_targets": 4,
+          "worsened_targets": 11,
+          "unchanged_targets": 1,
+          "baseline_raw_mean": 0.487,
+          "candidate_raw_mean": 0.3335
+        },
+        "MSE_uncapped": {
+          "valid_targets": 16,
+          "improved_targets": 0,
+          "worsened_targets": 16,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.001506026225673755,
+          "candidate_raw_mean": 0.0021541582647701405
+        },
+        "NMAE": {
+          "valid_targets": 9,
+          "improved_targets": 4,
+          "worsened_targets": 5,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 1.0025856393751047,
+          "candidate_raw_mean": 1.0056499363421973
+        },
+        "FID": {
+          "valid_targets": 16,
+          "improved_targets": 16,
+          "worsened_targets": 0,
+          "unchanged_targets": 0,
+          "baseline_raw_mean": 0.0,
+          "candidate_raw_mean": 0.42299813544939197
+        },
+        "REACH": {
+          "valid_targets": 16,
+          "improved_targets": 4,
+          "worsened_targets": 4,
+          "unchanged_targets": 8,
+          "baseline_raw_mean": 0.10784006546080412,
+          "candidate_raw_mean": 0.10977821791170207
+        },
+        "JAC": {
+          "valid_targets": 16,
+          "improved_targets": 12,
+          "worsened_targets": 0,
+          "unchanged_targets": 4,
+          "baseline_raw_mean": 0.0,
+          "candidate_raw_mean": 0.03248593873951606
+        }
+      }
+    }
+  }
+}

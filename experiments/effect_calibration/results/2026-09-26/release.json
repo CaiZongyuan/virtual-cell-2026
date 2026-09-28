@@ -1,0 +1,85 @@
+{
+  "released": true,
+  "recorded_at_unix": 1790393470.4033334,
+  "selected_arm": "incumbent",
+  "selection_sha256": "fb6d3c46605cc7d154e60d04a3c4b084c35c123b8bbd9075b4fa481166384a68",
+  "effects_sha256": "0bc002398bc11cc4eaf7de376190e630c43a70300b8623f40df1811d5675b18c",
+  "fit_sha256": "cd7f6d058f3e6a8d120de50712f5a023efe7aad203e2402f8939f564d94210a1",
+  "checkpoint_sha256": null,
+  "first_seed": {
+    "score": 0.16387417225775552,
+    "scaled": {
+      "NMAE": -0.04598453367033017,
+      "MSE": 0.0,
+      "FID": 0.38032634894616174,
+      "REACH": -0.00837342255046392,
+      "JAC": 0.13810236103568033,
+      "PDS": 0.5191742797854851,
+      "avg_score": 0.16387417225775552
+    },
+    "raw": {
+      "PDS": 0.7514285714285716,
+      "MSE": 1.3036115079004935,
+      "NMAE": 0.9861595229404151,
+      "FID": 0.3714431217853479,
+      "REACH": 0.07467499124681538,
+      "JAC": 0.06096970431610386
+    },
+    "scores_sha256": "45fe75a40299290b5608c9a65d31ce15f12a77b6a0cb7be72fd49f681cfdce74",
+    "prediction_sha256": "050dbdcd28162c779a7290ee6ec62b5688028ac5135347a15a8ffe96ddcd883f",
+    "status": "valid"
+  },
+  "confirmation": {
+    "score": 0.1648077509661463,
+    "scaled": {
+      "NMAE": -0.0460506467563857,
+      "MSE": 0.0,
+      "FID": 0.38095146508193833,
+      "REACH": -0.00655177136291655,
+      "JAC": 0.13835877880082398,
+      "PDS": 0.5221386800334178,
+      "avg_score": 0.1648077509661463
+    },
+    "raw": {
+      "PDS": 0.7528253968253974,
+      "MSE": 1.303669930382105,
+      "NMAE": 0.9862007595050359,
+      "FID": 0.371943588834786,
+      "REACH": 0.07631879149534888,
+      "JAC": 0.06107898978785153
+    },
+    "scores_sha256": "60db6132107dec337d6de5102fddd2778cbce913b6be66227872863e70a0d8d1",
+    "prediction_sha256": "1889d8eeb017350749f06aece32432bd77c0c8f75dd5a43bd506b1d5be539aaf",
+    "status": "valid"
+  },
+  "control": {
+    "score": -0.04523068765223785,
+    "scaled": {
+      "NMAE": -0.07626292746898011,
+      "MSE": 0.0,
+      "FID": -0.08358457988385724,
+      "REACH": -0.06104373664535853,
+      "JAC": -0.00494891446973539,
+      "PDS": -0.04554396744549582,
+      "avg_score": -0.04523068765223785
+    },
+    "raw": {
+      "PDS": 0.4853333333333334,
+      "MSE": 1.0022423529338134,
+      "NMAE": 1.0050449965582289,
+      "FID": 3.672149265953e-05,
+      "REACH": 0.02714697051959047,
+      "JAC": 1.1278254848e-06
+    },
+    "scores_sha256": "ba43552639a2640f4497151d18fee5c6c2cb39113630da6d512575dd937cbc43",
+    "prediction_sha256": null,
+    "status": "valid"
+  },
+  "user_authorization": "2026-09-26: continue optimization and start official submissions after sufficient local trials",
+  "submission_count_limit_this_round": 1,
+  "remaining_requirements": [
+    "complete ABC export and fresh full prep",
+    "live eligibility and daily allowance",
+    "artifact and provenance verification"
+  ]
+}

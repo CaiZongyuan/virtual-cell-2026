@@ -1,0 +1,26 @@
+{
+  "stage": "final-confirmation-score",
+  "trial": "final-confirmation",
+  "source_revision": "677e89746ec61c2aeb19c50ae279226f4edcbe03",
+  "started_at_utc": "2026-09-26T14:50:50.917913+00:00",
+  "command": [
+    "/home/caii/vcc2026-run/.eval-venv/bin/python",
+    "/home/caii/vcc2026-reliability-20260926/code/experiments/calibrated_transfer/score_cached_inputs.py",
+    "score",
+    "/home/caii/vcc2026-reliability-20260926/predictions/expanded-seed43.h5ad",
+    "--data-dir",
+    "/home/caii/vcc2026-run/h1-benchmark",
+    "--gene-chunk",
+    "512",
+    "--de-threads",
+    "8",
+    "--output",
+    "/home/caii/vcc2026-reliability-20260926/evaluation/expanded-seed43"
+  ],
+  "log": "logs/final-confirmation-score-1790434250917909154.log",
+  "exit_code": 0,
+  "project_storage_bytes_before_stage": 140296160527,
+  "timeout_seconds": 10800,
+  "elapsed_seconds": 4537.853352069855,
+  "finished_at_unix": 1790438788.7711704
+}

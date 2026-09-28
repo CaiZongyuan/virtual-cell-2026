@@ -1,0 +1,18 @@
+{
+  "stage": "jiang-download",
+  "trial": "data-pilot",
+  "source_revision": "2820de6",
+  "started_at_utc": "2026-09-26T00:36:06.280619+00:00",
+  "command": [
+    "/home/caii/vcc2026-run/.venv/bin/python",
+    "-u",
+    "-c",
+    "from pathlib import Path; from assets import download; download(\"https://zenodo.org/api/records/14518762/files/Seurat_object_TGFB_Perturb_seq.rds/content\", Path(\"/mnt/e/vcc2026-data/raw/jiang_tgfb.rds\"), expected_hash=\"8e9b4d39a95ec5881a30be6a2df541d1\", algorithm=\"md5\", size=2642041433)"
+  ],
+  "log": "logs/jiang-download-1790382966280595625.log",
+  "exit_code": 0,
+  "project_storage_bytes_before_stage": 95445946493,
+  "timeout_seconds": 3600,
+  "elapsed_seconds": 178.43669080734253,
+  "finished_at_unix": 1790383144.716545
+}

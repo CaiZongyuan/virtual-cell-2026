@@ -1,0 +1,22 @@
+{
+  "path": "/home/caii/vcc2026-reliability-20260926/predictions/official.h5ad",
+  "rows": 360000,
+  "stored_entries": 2070753486,
+  "bytes": 11648105659,
+  "arm": "expanded",
+  "panel": "abc",
+  "decoding_seed": 42,
+  "effects_sha256": "3812cca8ccf71a1e4ee1848667e20254e887b0bd69c734cf3cdcb57809ea9cad",
+  "fit_sha256": "92a9bd309130062beaad35089097825ee55ff72de5ba864d9d733c37edaa280b",
+  "checkpoint_sha256": null,
+  "release_sha256": "a17f060e10322eeb0315bc2fdb18f77ed15142f5cb084a61268c75f9cdb7d496",
+  "source_revision": "255525a5da358d6b35fd4ba2dc09235a11d03119",
+  "controls_sha256": {
+    "A": "f22e71968487d3da9402769dcd0c73a47851fad4cd7dd25510283c923031fe3e",
+    "B": "41557555b3febf6db19fd930b4dd7db88941840077bf985d14dfff959c782380",
+    "C": "e090e7c7cfdd0006f689214ba38ba0cd2669578e89c9bc325b65f0bd940c02e0"
+  },
+  "prior_strength": 0.5,
+  "residual_strength": 0,
+  "sha256": "2d290f9e854d916acfb4d63aa8eb82bcae47b021901777ba58ec6aad07db5cc3"
+}

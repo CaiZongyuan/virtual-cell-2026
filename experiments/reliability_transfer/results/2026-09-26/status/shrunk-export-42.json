@@ -1,0 +1,26 @@
+{
+  "stage": "shrunk-export-42",
+  "trial": "shrunk",
+  "source_revision": "4a4913ee2c10c058cb415ef4fc1d95d33d41d461",
+  "started_at_utc": "2026-09-26T04:55:35.338857+00:00",
+  "command": [
+    "/home/caii/vcc2026-run/.venv/bin/python",
+    "/home/caii/vcc2026-reliability-20260926/code/experiments/reliability_transfer/predict.py",
+    "--work",
+    "/home/caii/vcc2026-reliability-20260926",
+    "--previous",
+    "/home/caii/vcc2026-run",
+    "--arm",
+    "shrunk",
+    "--seed",
+    "42",
+    "--revision",
+    "4a4913ee2c10c058cb415ef4fc1d95d33d41d461"
+  ],
+  "log": "logs/shrunk-export-42-1790398535338853322.log",
+  "exit_code": 0,
+  "project_storage_bytes_before_stage": 132099577296,
+  "timeout_seconds": 1800,
+  "elapsed_seconds": 103.86638402938843,
+  "finished_at_unix": 1790398639.205117
+}

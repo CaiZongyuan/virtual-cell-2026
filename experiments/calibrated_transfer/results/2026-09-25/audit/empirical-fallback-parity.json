@@ -1,0 +1,90 @@
+{
+  "uncovered_targets": 16,
+  "compared_pairs": 137,
+  "differences": [
+    {
+      "target": "SRC",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1573758622799905e-06
+    },
+    {
+      "target": "ATP1B1",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1935298372400014e-06
+    },
+    {
+      "target": "KDR",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1571253237400166e-06
+    },
+    {
+      "target": "WFS1",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1673920873300025e-06
+    },
+    {
+      "target": "CAMSAP2",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1535900255899994e-06
+    },
+    {
+      "target": "TGFBR2",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.2171342393299586e-06
+    },
+    {
+      "target": "ANTXR1",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.140876065290001e-06
+    },
+    {
+      "target": "LAD1",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1604587826500006e-06
+    },
+    {
+      "target": "HAT1",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.298254618619965e-06
+    },
+    {
+      "target": "STAT6",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.170033861100161e-06
+    },
+    {
+      "target": "SOX2",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1307272073503867e-06
+    },
+    {
+      "target": "RAB3B",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1859247378600007e-06
+    },
+    {
+      "target": "SV2A",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1862872297400667e-06
+    },
+    {
+      "target": "TXNDC9",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.0926004984000322e-06
+    },
+    {
+      "target": "MED24",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.1235010943299335e-06
+    },
+    {
+      "target": "DZIP3",
+      "metric": "expr_mse_unbiased_capped",
+      "delta": -3.136379656030001e-06
+    }
+  ],
+  "tolerance": 1e-12,
+  "non_panel_coupled_metrics_match": true,
+  "explanation": "The capped MSE correction uses the whole prediction panel across-perturbation spread. Changed predictions for other targets alter this correction even for unchanged fallback counts. Uncapped MSE, PDS and DE metrics match.",
+  "source": "https://github.com/ArcInstitute/cell-eval2/blob/5e64833518a6603a0301cbe28185d49c30f4a986/src/cell_eval2/metrics/delta.py#L722"
+}

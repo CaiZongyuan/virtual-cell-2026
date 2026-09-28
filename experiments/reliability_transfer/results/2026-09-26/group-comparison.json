@@ -1,0 +1,803 @@
+{
+  "group_definition": {
+    "declared_at_utc": "2026-09-26T05:24:42.468533+00:00",
+    "before_any_candidate_scores": true,
+    "groups": {
+      "GWPS_only": [
+        "ACAT2",
+        "ACVR1B",
+        "AKT2",
+        "ARID1A",
+        "ATM",
+        "BIRC2",
+        "CALM3",
+        "CASP2",
+        "CASP3",
+        "CDCA2",
+        "CENPO",
+        "CLDN6",
+        "CLDN7",
+        "CREG1",
+        "DHCR24",
+        "DLG5",
+        "EID2",
+        "FOXH1",
+        "HAT1",
+        "HMGB2",
+        "HMGN1",
+        "IDE",
+        "IGF2R",
+        "IKBKG",
+        "INSIG1",
+        "IRF3",
+        "KAT2A",
+        "KDM2B",
+        "KIF1B",
+        "KLF10",
+        "MAP1B",
+        "MAP3K7",
+        "MAPKAPK2",
+        "MAST2",
+        "MED13",
+        "MED13L",
+        "MKI67",
+        "MTA1",
+        "NCK2",
+        "NIT1",
+        "NRAS",
+        "OXCT1",
+        "PAGR1",
+        "PBX1",
+        "PHF14",
+        "PLCB3",
+        "PMS1",
+        "POLB",
+        "PRCP",
+        "PRR12",
+        "RAF1",
+        "RNF2",
+        "SAFB",
+        "SIN3B",
+        "SIX4",
+        "SMARCA4",
+        "SMARCA5",
+        "STAT1",
+        "STX4",
+        "TARBP2",
+        "TCF3",
+        "TET1",
+        "TMBIM6",
+        "TMSB4X",
+        "TRAM2",
+        "TRAPPC6A",
+        "TSC22D4",
+        "TWF2",
+        "USP22",
+        "WSB2",
+        "XRCC4",
+        "ZNF286A",
+        "ZNF426",
+        "ZNF562",
+        "ZNF593",
+        "ZNF714"
+      ],
+      "multiple_biological_contexts": [
+        "C1QBP",
+        "CAST",
+        "CHMP3",
+        "DAXX",
+        "DHX36",
+        "DNMT1",
+        "EIF4B",
+        "EWSR1",
+        "GSK3B",
+        "HIRA",
+        "LRPPRC",
+        "LZTR1",
+        "MAU2",
+        "MBTPS1",
+        "MED1",
+        "MED12",
+        "MED24",
+        "METTL14",
+        "METTL17",
+        "METTL3",
+        "NDUFB4",
+        "NDUFB6",
+        "NISCH",
+        "PHF10",
+        "PTPN1",
+        "RRM1",
+        "SLC25A3",
+        "SMAGP",
+        "SSBP1",
+        "STAG2",
+        "TADA1",
+        "TAZ",
+        "TFAM",
+        "TMSB10",
+        "UBE3C",
+        "UQCRQ"
+      ],
+      "other_single_context": [],
+      "unsupported": [
+        "ANTXR1",
+        "ATP1B1",
+        "CAMSAP2",
+        "DZIP3",
+        "KDR",
+        "LAD1",
+        "RAB3B",
+        "SOX2",
+        "SRC",
+        "STAT6",
+        "SV2A",
+        "TGFBR2",
+        "TXNDC9",
+        "WFS1"
+      ]
+    },
+    "counts": {
+      "GWPS_only": 76,
+      "multiple_biological_contexts": 36,
+      "other_single_context": 0,
+      "unsupported": 14
+    },
+    "source_effect_metadata_sha256": "9849b001a94247da0b25934338880478432d177de0052c7c76f71091228bd743",
+    "scope": "Post-score diagnostics on fixed public H1 targets, grouping determined solely by external training-source availability. Does not modify the frozen acceptance or release gates; cannot establish official performance."
+  },
+  "results": {
+    "expanded": {
+      "GWPS_only": {
+        "targets": 76,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.7390526315789474,
+            "candidate_mean": 0.7425263157894737,
+            "paired_mean_change": 0.003473684210526316,
+            "targets_improved": 8
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.002269222792231207,
+            "candidate_mean": 0.0023034478761372905,
+            "paired_mean_change": 3.422508390608316e-05,
+            "targets_improved": 19
+          },
+          "NMAE": {
+            "paired_targets": 68,
+            "missing_incumbent_targets": [
+              "HMGN1",
+              "IDE",
+              "NCK2",
+              "PLCB3",
+              "PMS1",
+              "TMSB4X",
+              "ZNF286A",
+              "ZNF426"
+            ],
+            "missing_candidate_targets": [
+              "HMGN1",
+              "IDE",
+              "NCK2",
+              "PLCB3",
+              "PMS1",
+              "TMSB4X",
+              "ZNF286A",
+              "ZNF426"
+            ],
+            "incumbent_mean": 0.9890954221414245,
+            "candidate_mean": 0.9908877925950041,
+            "paired_mean_change": 0.0017923704535796777,
+            "targets_improved": 12
+          },
+          "FID": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.44669125881320104,
+            "candidate_mean": 0.4492889313423763,
+            "paired_mean_change": 0.0025976725291752853,
+            "targets_improved": 5
+          },
+          "REACH": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.09085831484958669,
+            "candidate_mean": 0.09014140123140875,
+            "paired_mean_change": -0.0007169136181779369,
+            "targets_improved": 6
+          },
+          "JAC": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.04627638209428669,
+            "candidate_mean": 0.04648576166645312,
+            "paired_mean_change": 0.0002093795721664346,
+            "targets_improved": 11
+          }
+        }
+      },
+      "multiple_biological_contexts": {
+        "targets": 36,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.8917777777777778,
+            "candidate_mean": 0.9062222222222223,
+            "paired_mean_change": 0.01444444444444445,
+            "targets_improved": 8
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.005002934643538459,
+            "candidate_mean": 0.005043085069804293,
+            "paired_mean_change": 4.0150426265833334e-05,
+            "targets_improved": 14
+          },
+          "NMAE": {
+            "paired_targets": 35,
+            "missing_incumbent_targets": [
+              "PTPN1"
+            ],
+            "missing_candidate_targets": [
+              "PTPN1"
+            ],
+            "incumbent_mean": 0.9756811859439273,
+            "candidate_mean": 0.9714702531267315,
+            "paired_mean_change": -0.004210932817195842,
+            "targets_improved": 13
+          },
+          "FID": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.3570360465319591,
+            "candidate_mean": 0.38595078486305145,
+            "paired_mean_change": 0.028914738331092378,
+            "targets_improved": 16
+          },
+          "REACH": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.02218323637201619,
+            "candidate_mean": 0.02202969564519364,
+            "paired_mean_change": -0.00015354072682254952,
+            "targets_improved": 12
+          },
+          "JAC": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.11569938068509157,
+            "candidate_mean": 0.12565755517402388,
+            "paired_mean_change": 0.009958174488932301,
+            "targets_improved": 17
+          }
+        }
+      },
+      "unsupported": {
+        "targets": 14,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.4577142857142857,
+            "candidate_mean": 0.4577142857142857,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0012252713462213415,
+            "candidate_mean": 0.0012252713462213415,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "NMAE": {
+            "paired_targets": 7,
+            "missing_incumbent_targets": [
+              "ANTXR1",
+              "ATP1B1",
+              "CAMSAP2",
+              "DZIP3",
+              "LAD1",
+              "RAB3B",
+              "WFS1"
+            ],
+            "missing_candidate_targets": [
+              "ANTXR1",
+              "ATP1B1",
+              "CAMSAP2",
+              "DZIP3",
+              "LAD1",
+              "RAB3B",
+              "WFS1"
+            ],
+            "incumbent_mean": 1.0100310442559046,
+            "candidate_mean": 1.0100310442559046,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "FID": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0,
+            "candidate_mean": 0.0,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "REACH": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.12180146136696941,
+            "candidate_mean": 0.12180146136696941,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "JAC": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0,
+            "candidate_mean": 0.0,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          }
+        }
+      }
+    },
+    "shrunk": {
+      "GWPS_only": {
+        "targets": 76,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.7390526315789474,
+            "candidate_mean": 0.6601052631578948,
+            "paired_mean_change": -0.07894736842105263,
+            "targets_improved": 15
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.002269222792231207,
+            "candidate_mean": 0.0014033641958379952,
+            "paired_mean_change": -0.0008658585963932121,
+            "targets_improved": 75
+          },
+          "NMAE": {
+            "paired_targets": 68,
+            "missing_incumbent_targets": [
+              "HMGN1",
+              "IDE",
+              "NCK2",
+              "PLCB3",
+              "PMS1",
+              "TMSB4X",
+              "ZNF286A",
+              "ZNF426"
+            ],
+            "missing_candidate_targets": [
+              "HMGN1",
+              "IDE",
+              "NCK2",
+              "PLCB3",
+              "PMS1",
+              "TMSB4X",
+              "ZNF286A",
+              "ZNF426"
+            ],
+            "incumbent_mean": 0.9890954221414245,
+            "candidate_mean": 0.9903845563890538,
+            "paired_mean_change": 0.0012891342476294093,
+            "targets_improved": 35
+          },
+          "FID": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.44669125881320104,
+            "candidate_mean": 0.187383956614637,
+            "paired_mean_change": -0.25930730219856407,
+            "targets_improved": 12
+          },
+          "REACH": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.09085831484958669,
+            "candidate_mean": 0.06364861794306187,
+            "paired_mean_change": -0.02720969690652482,
+            "targets_improved": 26
+          },
+          "JAC": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.04627638209428669,
+            "candidate_mean": 0.00994811759174662,
+            "paired_mean_change": -0.036328264502540064,
+            "targets_improved": 14
+          }
+        }
+      },
+      "multiple_biological_contexts": {
+        "targets": 36,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.8917777777777778,
+            "candidate_mean": 0.8571111111111112,
+            "paired_mean_change": -0.03466666666666666,
+            "targets_improved": 10
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.005002934643538459,
+            "candidate_mean": 0.00441562190839694,
+            "paired_mean_change": -0.0005873127351415188,
+            "targets_improved": 32
+          },
+          "NMAE": {
+            "paired_targets": 35,
+            "missing_incumbent_targets": [
+              "PTPN1"
+            ],
+            "missing_candidate_targets": [
+              "PTPN1"
+            ],
+            "incumbent_mean": 0.9756811859439273,
+            "candidate_mean": 0.9750994449540699,
+            "paired_mean_change": -0.0005817409898574536,
+            "targets_improved": 14
+          },
+          "FID": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.3570360465319591,
+            "candidate_mean": 0.12839624143347908,
+            "paired_mean_change": -0.22863980509848,
+            "targets_improved": 3
+          },
+          "REACH": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.02218323637201619,
+            "candidate_mean": 0.02785590994885499,
+            "paired_mean_change": 0.0056726735768388,
+            "targets_improved": 23
+          },
+          "JAC": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.11569938068509157,
+            "candidate_mean": 0.04063559663840763,
+            "paired_mean_change": -0.07506378404668396,
+            "targets_improved": 5
+          }
+        }
+      },
+      "unsupported": {
+        "targets": 14,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.4577142857142857,
+            "candidate_mean": 0.4577142857142857,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0012252713462213415,
+            "candidate_mean": 0.0012252713462213415,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "NMAE": {
+            "paired_targets": 7,
+            "missing_incumbent_targets": [
+              "ANTXR1",
+              "ATP1B1",
+              "CAMSAP2",
+              "DZIP3",
+              "LAD1",
+              "RAB3B",
+              "WFS1"
+            ],
+            "missing_candidate_targets": [
+              "ANTXR1",
+              "ATP1B1",
+              "CAMSAP2",
+              "DZIP3",
+              "LAD1",
+              "RAB3B",
+              "WFS1"
+            ],
+            "incumbent_mean": 1.0100310442559046,
+            "candidate_mean": 1.0100310442559046,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "FID": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0,
+            "candidate_mean": 0.0,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "REACH": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.12180146136696941,
+            "candidate_mean": 0.12180146136696941,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "JAC": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0,
+            "candidate_mean": 0.0,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          }
+        }
+      }
+    },
+    "state": {
+      "GWPS_only": {
+        "targets": 76,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.7390526315789474,
+            "candidate_mean": 0.6630526315789474,
+            "paired_mean_change": -0.076,
+            "targets_improved": 17
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.002269222792231207,
+            "candidate_mean": 0.0014093291754335878,
+            "paired_mean_change": -0.0008598936167976195,
+            "targets_improved": 75
+          },
+          "NMAE": {
+            "paired_targets": 68,
+            "missing_incumbent_targets": [
+              "HMGN1",
+              "IDE",
+              "NCK2",
+              "PLCB3",
+              "PMS1",
+              "TMSB4X",
+              "ZNF286A",
+              "ZNF426"
+            ],
+            "missing_candidate_targets": [
+              "HMGN1",
+              "IDE",
+              "NCK2",
+              "PLCB3",
+              "PMS1",
+              "TMSB4X",
+              "ZNF286A",
+              "ZNF426"
+            ],
+            "incumbent_mean": 0.9890954221414245,
+            "candidate_mean": 0.9907314652126471,
+            "paired_mean_change": 0.0016360430712226948,
+            "targets_improved": 34
+          },
+          "FID": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.44669125881320104,
+            "candidate_mean": 0.1900724556786386,
+            "paired_mean_change": -0.2566188031345624,
+            "targets_improved": 13
+          },
+          "REACH": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.09085831484958669,
+            "candidate_mean": 0.07049898223106628,
+            "paired_mean_change": -0.020359332618520402,
+            "targets_improved": 23
+          },
+          "JAC": {
+            "paired_targets": 76,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.04627638209428669,
+            "candidate_mean": 0.010654371723161717,
+            "paired_mean_change": -0.03562201037112497,
+            "targets_improved": 15
+          }
+        }
+      },
+      "multiple_biological_contexts": {
+        "targets": 36,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.8917777777777778,
+            "candidate_mean": 0.8566666666666667,
+            "paired_mean_change": -0.03511111111111111,
+            "targets_improved": 10
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.005002934643538459,
+            "candidate_mean": 0.004425123734402214,
+            "paired_mean_change": -0.0005778109091362445,
+            "targets_improved": 31
+          },
+          "NMAE": {
+            "paired_targets": 35,
+            "missing_incumbent_targets": [
+              "PTPN1"
+            ],
+            "missing_candidate_targets": [
+              "PTPN1"
+            ],
+            "incumbent_mean": 0.9756811859439273,
+            "candidate_mean": 0.9773851362610234,
+            "paired_mean_change": 0.0017039503170961018,
+            "targets_improved": 11
+          },
+          "FID": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.3570360465319591,
+            "candidate_mean": 0.13202237765165906,
+            "paired_mean_change": -0.22501366888030003,
+            "targets_improved": 4
+          },
+          "REACH": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.02218323637201619,
+            "candidate_mean": 0.024798751619207172,
+            "paired_mean_change": 0.0026155152471909818,
+            "targets_improved": 22
+          },
+          "JAC": {
+            "paired_targets": 36,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.11569938068509157,
+            "candidate_mean": 0.040683736733637614,
+            "paired_mean_change": -0.07501564395145396,
+            "targets_improved": 5
+          }
+        }
+      },
+      "unsupported": {
+        "targets": 14,
+        "metrics": {
+          "PDS": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.4577142857142857,
+            "candidate_mean": 0.4577142857142857,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "unscaled_unbiased_MSE": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0012252713462213415,
+            "candidate_mean": 0.0012252713462213415,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "NMAE": {
+            "paired_targets": 7,
+            "missing_incumbent_targets": [
+              "ANTXR1",
+              "ATP1B1",
+              "CAMSAP2",
+              "DZIP3",
+              "LAD1",
+              "RAB3B",
+              "WFS1"
+            ],
+            "missing_candidate_targets": [
+              "ANTXR1",
+              "ATP1B1",
+              "CAMSAP2",
+              "DZIP3",
+              "LAD1",
+              "RAB3B",
+              "WFS1"
+            ],
+            "incumbent_mean": 1.0100310442559046,
+            "candidate_mean": 1.0100310442559046,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "FID": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0,
+            "candidate_mean": 0.0,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "REACH": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.12180146136696941,
+            "candidate_mean": 0.12180146136696941,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          },
+          "JAC": {
+            "paired_targets": 14,
+            "missing_incumbent_targets": [],
+            "missing_candidate_targets": [],
+            "incumbent_mean": 0.0,
+            "candidate_mean": 0.0,
+            "paired_mean_change": 0.0,
+            "targets_improved": 0
+          }
+        }
+      }
+    }
+  },
+  "scope": "Unweighted means over fixed H1 target strata, using original per-target raw values. Not official scaled scores or a new selection gate. Source coverage does not make H1 equivalent to official backgrounds."
+}

@@ -1,0 +1,34 @@
+{
+  "checked_at_utc": "2026-09-26T06:31:26.208421+00:00",
+  "initial_attempt": "System Python lacked hashlib.file_digest; failed before hashing. Repaired with equivalent streamed MD5. No model stage rerun.",
+  "sources": [
+    {
+      "source": "gwps",
+      "bytes": 8805466154,
+      "md5": "13db594f8f1d2ccb88fec44a13e414dc",
+      "matches_author_download_receipt": true,
+      "elapsed_seconds": 75.62265945500258
+    },
+    {
+      "source": "k562",
+      "bytes": 1546729675,
+      "md5": "d8cba17576d1a8afc0f7d71b79cad0f7",
+      "matches_author_download_receipt": true,
+      "elapsed_seconds": 11.689893814000243
+    },
+    {
+      "source": "rpe1",
+      "bytes": 1236886900,
+      "md5": "cc7f1ec50aeb3a3e1b4a6cfa713d80fa",
+      "matches_author_download_receipt": true,
+      "elapsed_seconds": 11.808777981997991
+    },
+    {
+      "source": "hepg2",
+      "bytes": 850590740,
+      "md5": "af2be47f7477cf32fa6e4bec1c6a4868",
+      "matches_author_download_receipt": true,
+      "elapsed_seconds": 5.473006250002072
+    }
+  ]
+}

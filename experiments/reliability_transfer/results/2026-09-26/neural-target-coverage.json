@@ -1,0 +1,7 @@
+{
+  "scope": "Residual training requires the target in another source context; the empirical prior has a different, broader target coverage. This is a structural coverage audit, not an official-score explanation.",
+  "residual_targets_with_multiple_contexts": 201,
+  "official_overlap": [],
+  "public_h1_overlap_count": 35,
+  "source_revision": "4a4913e"
+}

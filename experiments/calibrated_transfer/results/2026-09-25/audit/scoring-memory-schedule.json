@@ -1,0 +1,7 @@
+{
+  "deferred_arm": "limited",
+  "at_unix": 1790354612.5683975,
+  "pid": 5978,
+  "reason": "three resident prediction/control pairs plus diagnostic load caused about 8 GiB swap; finish two scorers then resume limited with same predictions",
+  "maximum_concurrent_cached_scores": 2
+}

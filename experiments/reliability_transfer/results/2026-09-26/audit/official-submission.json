@@ -1,0 +1,22 @@
+{
+  "creation_attempted": true,
+  "model_name": "entry-f0aa6306733a37c4",
+  "artifact_sha256": "3a568acaa5f88ed92dc5e38f4650238ecd5413653a010306baa8c27e8ce1d33c",
+  "entry_id": "FVHFoFT9o5DH5tKeyfmT",
+  "is_final": false,
+  "status": "published",
+  "bytes_uploaded": 3301201920,
+  "md5_verified": true,
+  "checked_at_utc": "2026-09-26T16:46:49.575197+00:00",
+  "score_avg": 0.007441514322745357,
+  "score_pds": 0.2765065261275506,
+  "score_mse": 0,
+  "score_nmae": 0.069676219222723,
+  "score_fid": -0.3425192484913811,
+  "score_reach": 0.07577945835236714,
+  "score_jac": -0.034793869274787496,
+  "rank": 724,
+  "partition": "val",
+  "panel_id": "vcc2026-val-1",
+  "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4"
+}

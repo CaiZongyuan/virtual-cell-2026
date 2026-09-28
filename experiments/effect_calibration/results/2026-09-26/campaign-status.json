@@ -1,0 +1,192 @@
+{
+  "recorded_at_utc": "2026-09-26T04:21:43.396151+00:00",
+  "status": "completed_official_published",
+  "environment_blocker": null,
+  "authorization": "Continue optimization and submit once the fixed local gates pass; no new submission approval required",
+  "last_verified_git_commit": "7e548ecdb1c09bc70349edc5966d2d024b5bf661",
+  "branch": "autoresearch/20260926-effect-calibration",
+  "remote_run": "/home/caii/vcc2026-effect-calibration-20260926",
+  "remote_live_status": "All owned experiment stages completed; no matching processes, tmux sessions or GPU compute processes at final audit",
+  "verified_h1": {
+    "control": -0.04523068765223785,
+    "incumbent": 0.16387417225775552,
+    "conservative": 0.0805021159614971,
+    "mean_shift": 0.05795182380158415,
+    "state_residual": 0.08169653143426088
+  },
+  "conservative_raw_mse": 1.018686500188639,
+  "additive_strength": 0.5,
+  "source_calibration_conditions": 600,
+  "state_training": {
+    "steps": 6000,
+    "development_loss": 0.15217214357107878,
+    "zero_correction_development_loss": 0.17148695839568973,
+    "scope": "source held-cell diagnostics, not held-background validation or early stopping",
+    "elapsed_seconds": 709.0201356589996
+  },
+  "state_prediction_export_exit_code": 0,
+  "last_observed_remaining_scores": [],
+  "local_controller": "finish_local.py: selection -> one decoding-seed confirmation -> release -> ABC export -> native prep; no credentials or upload",
+  "official_upload_performed_this_round": true,
+  "previous_official_entry_id": "2TvmhHnxpkc8hhjCSWcG",
+  "previous_official_scores": {
+    "score_avg": -0.992407445228847,
+    "score_pds": 0.00703193915819459,
+    "score_mse": 0,
+    "score_nmae": -6,
+    "score_fid": -0.03705835186180883,
+    "score_reach": 0.07386654622167142,
+    "score_jac": 0.001715195108860262,
+    "rank": 1149,
+    "partition": "val",
+    "panel_id": "vcc2026-val-1",
+    "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4"
+  },
+  "previous_official_record": "experiments/effect_calibration/results/2026-09-26/audit/previous-official-live.json",
+  "jurkat_used_for_tuning_this_round": false,
+  "new_data": {
+    "path": "/mnt/e/vcc2026-data/raw/jiang_tgfb.rds",
+    "bytes": 2642041433,
+    "md5": "8e9b4d39a95ec5881a30be6a2df541d1",
+    "download_exit_code": 0,
+    "full_object_audit": "completed; exit 0; finite nonnegative integer counts and axis checks passed",
+    "cells": 236606,
+    "genes": 33525,
+    "NT_cells": 9809,
+    "official_target_overlap": [
+      "MED15"
+    ],
+    "official_genes_in_union": 17150,
+    "new_official_genes_measured": 6670,
+    "used_for_current_training_or_submission": false,
+    "audit_report": "docs/research/jiang-tgfb-data-pilot-2026-09-26.md"
+  },
+  "isolated_r_runtime": {
+    "path": "/home/caii/vcc2026-rds-audit/env",
+    "R": "4.5.3",
+    "Matrix": "1.7.6",
+    "jsonlite": "2.0.0"
+  },
+  "storage_limit_bytes": 500000000000,
+  "last_storage_before_jiang_download_bytes": 95445946493,
+  "final_storage_recheck": "experiments/effect_calibration/results/2026-09-26/audit/final-resources.json",
+  "record_scope": "Completed campaign, consolidated from verified artifacts and final live official/server checks. Git commit identifies the artifact/upload source revision; final report is committed afterward.",
+  "selected_arm": "incumbent",
+  "submission_gate_passed": true,
+  "confirmation": {
+    "score": 0.1648077509661463,
+    "scaled": {
+      "NMAE": -0.0460506467563857,
+      "MSE": 0.0,
+      "FID": 0.38095146508193833,
+      "REACH": -0.00655177136291655,
+      "JAC": 0.13835877880082398,
+      "PDS": 0.5221386800334178,
+      "avg_score": 0.1648077509661463
+    },
+    "raw": {
+      "PDS": 0.7528253968253974,
+      "MSE": 1.303669930382105,
+      "NMAE": 0.9862007595050359,
+      "FID": 0.371943588834786,
+      "REACH": 0.07631879149534888,
+      "JAC": 0.06107898978785153
+    },
+    "scores_sha256": "60db6132107dec337d6de5102fddd2778cbce913b6be66227872863e70a0d8d1",
+    "prediction_sha256": "1889d8eeb017350749f06aece32432bd77c0c8f75dd5a43bd506b1d5be539aaf",
+    "status": "valid"
+  },
+  "official_artifact": {
+    "selected_arm": "incumbent",
+    "release_sha256": "a365339a6da5fbfe3bccb8ec1102b922cbd1ff1a4d5341d2ec79965f7553ba61",
+    "original_prediction_sha256": "bc51d14ebe4ffcaa84fe219677d1a1a66f92e21cfb2eafb2c0060f24cd3eb575",
+    "converted_prediction_sha256": "351614b84ddf7d3e5f6b2cb623dfac970629e02766e7a330c17cdc02d2cd5a76",
+    "artifact_sha256": "7e51bd148c759ee70345fd9e439a2a14b63ea251dbb0f765fe997f25989af050",
+    "artifact_bytes": 3301734400,
+    "artifact_path": "/home/caii/vcc2026-effect-calibration-20260926/submission/prediction.vcc",
+    "prep_source_sha256": "4a93e7d267379a32b661f7f9bd4de6543bb372816362a2a85e6f70e437240ad3",
+    "native_prep_completed": true,
+    "matrix_count_values_changed": false,
+    "estimated_prep_peak_bytes": 22720368328,
+    "available_bytes_before_prep": 32317505536,
+    "finished_at_unix": 1790394451.5511687
+  },
+  "official_submission": {
+    "creation_attempted": true,
+    "model_name": "entry-9875149c772f0260",
+    "artifact_sha256": "7e51bd148c759ee70345fd9e439a2a14b63ea251dbb0f765fe997f25989af050",
+    "entry_id": "wwojQdFnxb0tiobhyPe3",
+    "is_final": false,
+    "status": "published",
+    "bytes_uploaded": 3301734400,
+    "md5_verified": true,
+    "checked_at_utc": "2026-09-26T04:14:21.556987+00:00",
+    "score_avg": -0.006956916763307641,
+    "score_pds": 0.2634656660369015,
+    "score_mse": 0,
+    "score_nmae": 0.06669389213488823,
+    "score_fid": -0.4023102717029962,
+    "score_reach": 0.07185905985861332,
+    "score_jac": -0.041449846907252764,
+    "rank": 760,
+    "partition": "val",
+    "panel_id": "vcc2026-val-1",
+    "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4"
+  },
+  "official_comparison": {
+    "previous_entry_id": "2TvmhHnxpkc8hhjCSWcG",
+    "new_entry_id": "wwojQdFnxb0tiobhyPe3",
+    "same_partition_panel_and_anchor": true,
+    "partition": "val",
+    "panel_id": "vcc2026-val-1",
+    "anchor_version": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4",
+    "metrics": {
+      "avg": {
+        "previous": -0.992407445228847,
+        "current": -0.006956916763307641,
+        "delta": 0.9854505284655394
+      },
+      "pds": {
+        "previous": 0.00703193915819459,
+        "current": 0.2634656660369015,
+        "delta": 0.2564337268787069
+      },
+      "mse": {
+        "previous": 0,
+        "current": 0,
+        "delta": 0
+      },
+      "nmae": {
+        "previous": -6,
+        "current": 0.06669389213488823,
+        "delta": 6.0666938921348885
+      },
+      "fid": {
+        "previous": -0.03705835186180883,
+        "current": -0.4023102717029962,
+        "delta": -0.3652519198411874
+      },
+      "reach": {
+        "previous": 0.07386654622167142,
+        "current": 0.07185905985861332,
+        "delta": -0.0020074863630581002
+      },
+      "jac": {
+        "previous": 0.001715195108860262,
+        "current": -0.041449846907252764,
+        "delta": -0.04316504201611303
+      }
+    },
+    "rank_at_new_check": 760,
+    "checked_at_utc": "2026-09-26T04:14:21.556987+00:00",
+    "interpretation": "Official scaled scores, not percentages or H1 metrics. Rank is time dependent. This campaign selected the pre-existing H1 incumbent after three candidates failed the improvement gate."
+  },
+  "final_storage_bytes": 128549398944,
+  "network_cleanup": {
+    "checked_at_utc": "2026-09-26T04:17:23.767927+00:00",
+    "identity_checked": true,
+    "supervisor_terminated": true,
+    "proxy_terminated": true,
+    "ssh_tunnel_terminated": true
+  }
+}

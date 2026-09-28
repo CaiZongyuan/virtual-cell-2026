@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "work_stopped": true,
+  "selected_arm": "expanded",
+  "h1_score": 0.16925700855422468,
+  "confirmation_score": 0.169405317771529,
+  "official_entry_id": "FVHFoFT9o5DH5tKeyfmT",
+  "official_status": "published",
+  "official_score": 0.007441514322745357,
+  "official_rank_at_check": 724,
+  "official_submission_count_this_campaign": 1,
+  "original_automatic_improvement_gate_passed": false,
+  "final_policy": "Highest valid completed H1 composite per final user instruction; seed43 confirmation and full count/artifact checks passed.",
+  "storage_bytes": 166857854640,
+  "project_jobs_remaining": 0,
+  "owned_network_helpers_remaining": 0,
+  "final_report": "docs/research/reliability-transfer-run-2026-09-26.md",
+  "checked_at_utc": "2026-09-26T16:49:18.193416+00:00",
+  "scientific_candidate_revision": "4a4913e",
+  "submission_source_revision": "255525a5da358d6b35fd4ba2dc09235a11d03119",
+  "stop_instruction": "Finish this round, submit the best result to the leaderboard, then stop all work."
+}

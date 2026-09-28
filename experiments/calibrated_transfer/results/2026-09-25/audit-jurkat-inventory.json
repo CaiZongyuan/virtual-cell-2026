@@ -1,0 +1,16 @@
+{
+  "file": "NadigOConner2024_jurkat.h5ad",
+  "bytes": 1293665804,
+  "md5": "d8b05d00bfbd686d37ffdd4293bc6c8c",
+  "shape": [
+    262956,
+    8882
+  ],
+  "controls": 12013,
+  "targets": 2393,
+  "batches": 55,
+  "h1_target_overlap": 50,
+  "official_target_overlap": 0,
+  "official_gene_overlap": 8283,
+  "role": "held-out confirmation; no effect labels read"
+}

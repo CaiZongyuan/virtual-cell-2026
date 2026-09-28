@@ -1,0 +1,8 @@
+{"cached": false, "seconds": {"candidate": 2.7713658489992667, "memory": 0.05463328300174908}, "ratio": 50.7266943652378, "counts_and_order_equal": true}
+Traceback (most recent call last):
+  File "/home/caii/vcc2026-calibrated-20260925/code/experiments/calibrated_transfer/cache_probe.py", line 48, in <module>
+    run(args.fixture, args.cached)
+  File "/home/caii/vcc2026-calibrated-20260925/code/experiments/calibrated_transfer/cache_probe.py", line 40, in run
+    assert ratio < 2.5, "Repeated disk-backed reads exceed 2.5x resident read time"
+           ^^^^^^^^^^^
+AssertionError: Repeated disk-backed reads exceed 2.5x resident read time

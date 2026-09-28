@@ -1,0 +1,6 @@
+{
+  "all_target_effects_exactly_match_incumbent": true,
+  "targets": 619,
+  "source_effects_sha256": "69b22a87638b986a7a8443829b1d8c03b02dc7d968a29e1d97825a9803a4ab0b",
+  "fitted_effects_sha256": "0bc002398bc11cc4eaf7de376190e630c43a70300b8623f40df1811d5675b18c"
+}

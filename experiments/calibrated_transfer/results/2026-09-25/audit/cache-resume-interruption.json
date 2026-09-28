@@ -1,0 +1,9 @@
+{
+  "pids": [
+    5155,
+    5306,
+    5677
+  ],
+  "at_unix": 1790353937.1418276,
+  "reason": "restart storage wrapper with verified resident input cache; reuse same immutable predictions and checkpointed DE chunks; no training repeated"
+}

@@ -10,7 +10,7 @@
 
 ### 当前实验方向
 
-复用文献公开预训练权重做微调，不从零预训练基础模型；先完善扰动数据与本地验证，再比较 State、Stack 等候选。执行入口见 [本地微调方案](docs/research/pretrained-finetuning-local-plan.md)。官方提交已暂停，直到用户重新指示恢复；恢复后公开名称随机生成，不含架构信息，内部保留完整来源和映射。
+复用文献公开预训练权重做微调，不从零预训练基础模型；先完善扰动数据与本地验证，再比较 State、Stack 等候选。执行入口见 [本地微调方案](docs/research/pretrained-finetuning-local-plan.md)。2026-09-26 用户已授权继续优化，并在完成一轮充分的本地尝试与验证后恢复官方提交；按当轮固定验证门槛执行，无需再次请求许可。公开名称随机生成，不含架构信息，内部保留完整来源和映射。当前轮协议见 `experiments/effect_calibration/README.md`。
 
 ## 科研检索
 

@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-09-26T04:16:09.481690+00:00",
+  "storage_entries": [
+    {
+      "path": "/home/caii/vcc2026-calibrated-20260925",
+      "bytes": 9393472686
+    },
+    {
+      "path": "/home/caii/vcc2026-effect-calibration-20260926",
+      "bytes": 37538556607
+    },
+    {
+      "path": "/home/caii/vcc2026-rds-audit",
+      "bytes": 1798513579
+    },
+    {
+      "path": "/home/caii/vcc2026-run",
+      "bytes": 23365662550
+    },
+    {
+      "path": "/home/caii/vcc2026-stack-smoke",
+      "bytes": 505938168
+    },
+    {
+      "path": "/mnt/e/vcc2026-data",
+      "bytes": 55885278109
+    },
+    {
+      "path": "/home/caii/.cache/uv",
+      "bytes": 61977245
+    }
+  ],
+  "storage_bytes": 128549398944,
+  "storage_limit_bytes": 500000000000,
+  "storage_scope": "All home vcc2026-* directories, /mnt/e/vcc2026-data and ~/.cache/uv via du -sb",
+  "matching_processes": [],
+  "tmux_sessions": [],
+  "gpu_query_exit_code": 0,
+  "gpu_compute_processes": [],
+  "exit_files": {
+    "finish-local.exit": "0",
+    "fit.exit": "0",
+    "official-upload.exit": "0"
+  }
+}

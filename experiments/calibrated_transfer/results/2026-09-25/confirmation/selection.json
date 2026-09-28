@@ -1,0 +1,11 @@
+{
+  "arm": "empirical",
+  "effect_sha256": "69b22a87638b986a7a8443829b1d8c03b02dc7d968a29e1d97825a9803a4ab0b",
+  "checkpoint_sha256": null,
+  "metric": "ratio of summed squared normalized-mean errors to sampled NTC",
+  "seed": 991,
+  "max_cells_per_target": 256,
+  "target_self_excluded": true,
+  "eligible_targets": "Jurkat conditions admitted by frozen prepared-source protocol and present in the external training effect table",
+  "use": "one-shot confirmation; no tuning or retraining after result"
+}

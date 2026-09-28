@@ -1,0 +1,139 @@
+{
+  "selected_arm": "incumbent",
+  "selected_at_unix": 1790388856.227632,
+  "results": {
+    "control": {
+      "score": -0.04523068765223785,
+      "scaled": {
+        "NMAE": -0.07626292746898011,
+        "MSE": 0.0,
+        "FID": -0.08358457988385724,
+        "REACH": -0.06104373664535853,
+        "JAC": -0.00494891446973539,
+        "PDS": -0.04554396744549582,
+        "avg_score": -0.04523068765223785
+      },
+      "raw": {
+        "PDS": 0.4853333333333334,
+        "MSE": 1.0022423529338134,
+        "NMAE": 1.0050449965582289,
+        "FID": 3.672149265953e-05,
+        "REACH": 0.02714697051959047,
+        "JAC": 1.1278254848e-06
+      },
+      "scores_sha256": "ba43552639a2640f4497151d18fee5c6c2cb39113630da6d512575dd937cbc43",
+      "prediction_sha256": null,
+      "status": "valid"
+    },
+    "incumbent": {
+      "score": 0.16387417225775552,
+      "scaled": {
+        "NMAE": -0.04598453367033017,
+        "MSE": 0.0,
+        "FID": 0.38032634894616174,
+        "REACH": -0.00837342255046392,
+        "JAC": 0.13810236103568033,
+        "PDS": 0.5191742797854851,
+        "avg_score": 0.16387417225775552
+      },
+      "raw": {
+        "PDS": 0.7514285714285716,
+        "MSE": 1.3036115079004935,
+        "NMAE": 0.9861595229404151,
+        "FID": 0.3714431217853479,
+        "REACH": 0.07467499124681538,
+        "JAC": 0.06096970431610386
+      },
+      "scores_sha256": "45fe75a40299290b5608c9a65d31ce15f12a77b6a0cb7be72fd49f681cfdce74",
+      "prediction_sha256": "050dbdcd28162c779a7290ee6ec62b5688028ac5135347a15a8ffe96ddcd883f",
+      "status": "valid"
+    },
+    "conservative": {
+      "score": 0.0805021159614971,
+      "scaled": {
+        "NMAE": -0.04821138475313091,
+        "MSE": 0.0,
+        "FID": 0.1455628107778809,
+        "REACH": -0.01639840963278398,
+        "JAC": 0.02692830254784718,
+        "PDS": 0.3751313768291694,
+        "avg_score": 0.0805021159614971
+      },
+      "raw": {
+        "PDS": 0.6835555555555556,
+        "MSE": 1.018686500188639,
+        "NMAE": 0.9875484716955802,
+        "FID": 0.1834917819646719,
+        "REACH": 0.06743349745778954,
+        "JAC": 0.01358722509849351
+      },
+      "scores_sha256": "09b2a999e05372450c0a6f1a59a78e93570ed0964710fce09c756cb0ba61841d",
+      "prediction_sha256": "cfbe9e89f88f0a49a00560fb0860d8b70614e5318e585fec1bb093c4572587d8",
+      "status": "valid",
+      "stage": "conservative-score",
+      "score_elapsed_seconds": 4868.2372534275055,
+      "gate_passed": false
+    },
+    "mean_shift": {
+      "score": 0.05795182380158415,
+      "scaled": {
+        "NMAE": -0.6344153315268433,
+        "MSE": 0.0,
+        "FID": 0.42593874572871854,
+        "REACH": -0.00680928791860426,
+        "JAC": 0.13140708952054742,
+        "PDS": 0.4315897270056865,
+        "avg_score": 0.05795182380158415
+      },
+      "raw": {
+        "PDS": 0.7101587301587304,
+        "MSE": 3.575862895672501,
+        "NMAE": 1.3531801245855315,
+        "FID": 0.4079603388736706,
+        "REACH": 0.0760864167239686,
+        "JAC": 0.05811617384562309
+      },
+      "scores_sha256": "e9c472574800f76545591f544b50dec67b5e1490e74745a541fe33e67eaa4bcd",
+      "prediction_sha256": "67a52b2dcbd0df8a53765a2f10b4f3cc552ee3908d5b1dfe4dcb7e51eddc30b3",
+      "status": "valid",
+      "stage": "mean_shift-score",
+      "score_elapsed_seconds": 7470.70956492424,
+      "gate_passed": false
+    },
+    "state_residual": {
+      "score": 0.08169653143426088,
+      "scaled": {
+        "NMAE": -0.05133442355290629,
+        "MSE": 0.0,
+        "FID": 0.15530415343250648,
+        "REACH": -0.01754688029714655,
+        "JAC": 0.02768174393323692,
+        "PDS": 0.37607459508987473,
+        "avg_score": 0.08169653143426088
+      },
+      "raw": {
+        "PDS": 0.6839999999999999,
+        "MSE": 1.0240982128417777,
+        "NMAE": 0.9894963975747659,
+        "FID": 0.1912906864192332,
+        "REACH": 0.06639715395996854,
+        "JAC": 0.0139083424640957
+      },
+      "scores_sha256": "05df52fb37a8d721fba1929514de3200cc271e02a06aff9489f46ee58af9c153",
+      "prediction_sha256": "d52be40c4a95051374894765b84fcc7061427df14a71f980a0aa051d4b12235b",
+      "status": "valid",
+      "stage": "state-score",
+      "score_elapsed_seconds": 7297.3088500499725,
+      "gate_passed": false
+    }
+  },
+  "effects_sha256": "0bc002398bc11cc4eaf7de376190e630c43a70300b8623f40df1811d5675b18c",
+  "fit_sha256": "cd7f6d058f3e6a8d120de50712f5a023efe7aad203e2402f8939f564d94210a1",
+  "checkpoint_sha256": null,
+  "checkpoint_masks_sha256": null,
+  "selection_seed": 42,
+  "confirmation_seed": 43,
+  "official_score": false,
+  "confirmation_scope": "decoding seed only; canonical H1 control cells remain fixed",
+  "jurkat_used_this_round": false
+}

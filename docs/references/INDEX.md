@@ -126,6 +126,8 @@
 - 结论：备选为细胞背景适配参考。2026-09-14 当前[官方 FAQ](https://virtualcellchallenge.org/faq#legal)已对 State 和 Stack 并列给出比赛用途说明：参赛使用代码视为 Non-Commercial Purpose，仍须遵守适用代码许可；非商业参赛者可使用预训练检查点，商业参赛者使用预训练权重需相应商业许可。8 月核查时“FAQ 未给 Stack 例外、须先取书面比赛许可”的判断不再作为统一前置条件；具体 checkpoint、团队身份和适用条款仍需对应核对。首投暂不依赖 Stack，是实施优先级决定。
 - 关键词：上下文学习、表格注意力、单细胞基础模型、零样本、背景适配。
 - 来源：[DOI/bioRxiv](https://doi.org/10.64898/2026.01.09.698608)；[官方代码与 README](https://github.com/ArcInstitute/stack)；[模型许可](https://github.com/ArcInstitute/stack/blob/main/MODEL_LICENSE.md)；Dong et al.；bioRxiv 预印本，2026（Crossref 首发标识 2026-01-09，bioRxiv 页面版本日期 2026-06-08）；[本地中文阅读材料](<Stack_ In-Context Learning of Single-Cell Biology.md>)（转述材料，不替代原文）；代码、标识与许可核验日期 2026-08-30。
+- 2026-09-26 原生推理核查：固定官方源码与预测教程确认可将外部同条件扰动示例作为 base、目标背景 NTC 作为 query，无需目标背景扰动真值或一一配对细胞。输入为 raw counts→模型轴映射→log1p；NB 均值使用模型轴内库大小，抽样总量不固定；缺源基因补零、test-only 输出默认零，完整比赛轴仍需独立适配。标准 torch attention 无 flash-attn 要求；64-cell/batch1/FP32 的 3090 可行性待实测。所谓 frozen teacher 是无梯度但每 500 steps 做 EMA 更新。保持本地候选，未宣称 CRISPRi 收益或排除 H1 预训练暴露。[可执行入口与边界](../research/stack-native-transfer-readiness-2026-09-26.md)。
+
 
 ## 基准与可迁移建模证据
 
@@ -249,6 +251,8 @@
 - 结论：采用为核心 CRISPRi 训练数据；优先四背景核心，再加 GWPS。实际训练行数、目标交集、基因缺测和父权重暴露仍需下载后审计。
 - 关键词：CRISPRi、Perturb-seq、K562、RPE1、GWPS、State、训练数据。
 - 来源：[Cell DOI](https://doi.org/10.1016/j.cell.2022.05.013)；Joseph M. Replogle et al.；Cell，2022；[作者 Figshare](https://plus.figshare.com/articles/dataset/20029387)、[PMC 原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9380471/)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/03-State上手.md)，本地独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据/原文审计。
+- 2026-09-25 再核：作者 Figshare 明确 raw single-cell 已过滤至平均 >0.01 UMI/cell；固定 scPerturb 转换脚本保留 X，未做表达归一化或基因子集。继续采用压缩副本，排除为补基因而重复下载约 85 GB 原件的做法。[本轮核验与实验建议](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+
 
 ### Transcriptome-wide analysis of differential expression in perturbation atlases
 
@@ -258,15 +262,20 @@
 - 结论：采用为第一批微调核心数据；`.X` 计数、对照标签、实测基因覆盖与筛选口径在 ETL 时逐项确认。
 - 关键词：CRISPRi、HepG2、Jurkat、差异表达、背景迁移、State。
 - 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-025-02169-3)；Ajay Nadig et al.；正式在线 2025-04-21；[GEO GSE264667](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264667)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)和[微调教程](../lessons/03-State上手.md)，独立全文未保存；本轮书目核验 2026-09-14，复用 2026-08-30 数据审计。
+- 2026-09-25 补充：固定 Zenodo API 再核 Jurkat 压缩 H5AD 为 1,293,665,804 bytes、MD5 `d8b05d00bfbd686d37ffdd4293bc6c8c`。采用为本轮独立确认背景；其全部扰动标签不得进入微调和配置选择。矩阵下载后的覆盖另行核验。[下载合同与隔离方案](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+
 
 ### Systematic reconstruction of molecular pathway signatures using scalable single-cell perturbation screens
 
 - 摘要：Jiang 等将 Perturb-seq 用于六个细胞系、五类信号条件下的调控与分子通路响应分析，公开五个 pathway Seurat RDS 对象。刺激条件属于背景定义，不把它们当成新增独立细胞系。
 - 核心关联：可为 State 增加背景多样性，但需要 RDS 转换、刺激条件和匹配对照审计，先不作为第一轮微调前置。
 - 关系：补充 Replogle/Nadig；本轮 Scholar 命中的 bioRxiv 2024 版本与 Nature Cell Biology 正式版合并，不作为独立数据证据。
-- 结论：备选为第二阶段背景扩展；四背景流程跑通后再下载，单独评估增益。
+- 结论：备选为第二阶段背景扩展；TGFB 单文件已于 2026-09-26 下载并完成 counts/元数据审计，尚未进入训练，增益待独立验证。
 - 关键词：Perturb-seq、信号通路、Mixscale、六细胞系、刺激条件、数据扩展。
 - 来源：[Nature Cell Biology DOI](https://doi.org/10.1038/s41556-025-01622-z)；Longda Jiang et al.；正式在线 2025-02-26；[预印本 DOI](https://doi.org/10.1101/2024.01.29.576933)、[Zenodo 14518762](https://zenodo.org/records/14518762)；本地证据见[容量核验](../research/data-compute-capacity-sources.md)及[微调教程](../lessons/03-State上手.md)，独立全文未保存；检索与书目核验 2026-09-14，复用既有数据审计。
+- 2026-09-25 模态缺口已解决：PMC 作者稿正文确认六细胞系均使用 dCas9-KRAB-MeCP2 CRISPRi，分别为 A549/MCF7/HT29/HAP1/BxPC3/K562，五种刺激 24 h。约 1,500 是靶基因×细胞系×刺激组合，不是约 1,500 个独立靶基因；每通路 44–61 targets。正式版指向 Zenodo 14518762，五 RDS 共 20,141,612,637 bytes，CC BY 4.0；继续备选，先做单通路 counts/NTC 审计，未读取大矩阵或证明训练增益。[核验记录](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+- 2026-09-26 实测：TGFB RDS（2,642,041,433 bytes，MD5 `8e9b4d39a95ec5881a30be6a2df541d1`）含 236,606 cells × 33,525 genes、6 个细胞系、52 个扰动靶点和 9,809 个 NT 细胞；RNA counts 的非负整数与轴检查通过。该文件官方靶点交集仅 MED15，H1 交集 4 个；可新增测量的官方输出基因 6,670 个，不等同于预测增益。刺激 TGFB1 及 orig.ident/sample_ID 均保留，技术批次含义仍待核；未进入本轮训练或提交。[完整数据审计](../research/jiang-tgfb-data-pilot-2026-09-26.md)、[小型产物](../../experiments/data_audit/results/2026-09-26/)。本次复用原文与作者资产，无新增论文查询。
+
 
 ### scPerturb harmonized datasets — Zenodo record 13350497
 
@@ -296,6 +305,8 @@
 - 关键词：X-Atlas、Orion、Perturb-seq、HCT116、HEK293T、数据整合。
 - 来源：[DOI/bioRxiv](https://doi.org/10.1101/2025.06.11.659105)；Ann C Huang et al.；2025-06-16 预印本；[Crossref](https://api.crossref.org/works/10.1101/2025.06.11.659105)书目核验 2026-09-14；本地全文未保存；线索与边界见[材料审阅](../research/participant-evidence-review.md)。
 - 2026-09-23 数据更新：作者 [Figshare v3](https://doi.org/10.25452/figshare.plus.29190726.v3) 已发布 HCT116/HEK293T 两个处理后 H5AD（合计 559,518,282,173 bytes）；[Hugging Face Parquet 副本](https://huggingface.co/datasets/Xaira-Therapeutics/X-Atlas-Orion)文件树约 126.26 GB，数据卡声明稀疏表达为 raw counts。两个入口均标 CC BY-NC-SA 4.0；奖金竞赛用途许可、对照标签和矩阵内容未核实。维持备选，不将其与 X-Cell 模型页或 X-Atlas/Pisces 汇编混为一项。详见[数据清单](../research/perturbation-dataset-catalog.md)。
+
+- 2026-09-26 实测：固定 HF revision `53a5bc98d49247bcf967500292575c3d3602de31`，已完整核对 332 个批次、7,943,468 个细胞的标签；HCT116/HEK293T 分别有 280/290 个官方靶点达到 ≥32 个批次匹配细胞。结合 GWPS，290 个官方靶点在标签层可获至少两个生物背景。另下载两个真实批次共 697,883,271 bytes，通过作者 LFS SHA-256、非负整数计数、逐细胞基因轴与 UMI 总数校验。正式训练/提交仍未使用 Orion；其余计数文件、符号映射与非商业许可适用性待核。维持高优先级备选。[完整审计](../research/orion-metadata-pilot-2026-09-26.md)。
 
 ### Genome-scale perturb-seq in primary human CD4+ T cells maps context-specific regulators of T cell programs and human immune traits
 
@@ -666,3 +677,84 @@
 - 顺序直接 HTTP 4 次，全部成功：Stack-Large 与 Stack-Large-Aligned 各 1 次 HF metadata、1 次固定 revision README。对应 [Large](https://huggingface.co/arcinstitute/Stack-Large/tree/6e1f352e8cc7f8718c74fe1d20b95c42e0942d9b) / [Aligned](https://huggingface.co/arcinstitute/Stack-Large-Aligned/tree/b09f085dac03d170b078a5c72f550ae93686e544)，checkpoint 分别 2,610,004,146 / 2,613,863,242 bytes，SHA 与请求记录见[资产清单](../../experiments/local_benchmark/asset-inventory-2026-09-25.json)。仅核验元数据，未下载或执行权重。
 - State：保留为微调主候选，首轮适配失败与 State 方法整体有效性分开判断。Stack：由仅作背景适配参考提升为首批本地实测候选；原生冻结教师微调入口存在，但 CRISPRi 条件示例迁移、完整输出基因轴和 24 GB 资源可行性待实测。Lingshu-Cell 继续备选，其 H1 监督暴露使该权重不能直接作为严格未见 H1 背景的对照。
 - 数据核对：服务器已有 H1 training 全矩阵及四份 scPerturb 来源；H1 canonical 126-target / 2026 六指标开发回路已实际跑通，修正早期条目“尚未下载/运行”的历史状态。作者训练来源清单、Stack 效果和 Jurkat/全基因原件补充仍有缺口。
+
+### Iterative, multimodal, and scalable single-cell profiling for discovery and characterization of signaling regulators
+
+- 摘要：搜索返回的作者摘要描述以 mTOR/pRPS6 为示例的蛋白、RNA 与 CRISPR 联合单细胞测量及计算筛选，使用 10x Flex；本轮原文未成功读取，摘要线索不等于已核实原始数据合同。
+- 核心关联：若确有公开 CRISPRi 原始计数，可补充与 VC2026 相同 10x Flex 化学方法的外部背景；当前不能确认模态、细胞系、靶点规模及矩阵可下载性。
+- 关系：与 Jiang 同属 Satija 实验/计算筛选路线；不是 H1 数据的已验证独立替代品，不与已有 genome-wide 参考数据重复计数。
+- 结论：备选，排除出本轮直接训练；需要原文 Data Availability、模态、许可和原始计数证据后才能采用。
+- 关键词：10x Flex、CRISPR、多模态、mTOR、pRPS6、扰动数据候选。
+- 来源：[bioRxiv DOI](https://doi.org/10.1101/2025.08.27.672635)；[Europe PMC 书目](https://europepmc.org/article/PPR/PPR1074298)；John D. Blair, Alexandra Bradu, Carol Dalgarno, Isabella N. Grabski, Rahul Satija；预印本 2025-08-30，同行评议版本待核验；本地原文未保存，bioRxiv HTML 返回 403；检索日期 2026-09-25；[本轮记录](../research/autonomous-finetuning-data-review-2026-09-25.md)。
+
+### 2026-09-25 自主微调的数据与证据复核
+
+- 目标：在总存储不超过 500 GB、复用公开权重、H1 本地开发和官方提交暂停的条件下，确定下一批可执行数据及一个基线加三个候选。产物：[研究记录](../research/autonomous-finetuning-data-review-2026-09-25.md)。此条记录建议与来源，实际训练和评分另有实验记录。
+- 默认发现：Infra Scholar 顺序 2 次，查询 `cross cell type CRISPRi Perturb-seq raw count public dataset Jiang 2025 transcriptional responses signal pathways multi cell lines finetuning State`；因 Jiang 模态缺口再精炼一次为精确题名 `"Systematic reconstruction of molecular pathway signatures using scalable single-cell perturbation screens"`。各看前 10 条，无继续扩搜。其余未用于决策的题名/摘要线索不当作已全文评估候选。
+- 一手核验：直接 HTTP 14 次，10 次取得可用元数据、正文或作者代码；Jiang Europe PMC XML 500、Blair HTML 403、补充 XLSX 达到 10 MB 小文件限额后中止、PMC 向导 XLSX 返回过渡 HTML，均未声称读取成功。完整 URL、请求与缺口见研究记录；无 SciVerse/Paper Schema 调用，不下载训练大矩阵。
+- 数据状态：Replogle 与 Nadig 继续采用；Jurkat 安排为确认背景。Jiang 模态由未知更新为确认 CRISPRi，仍为待 counts/覆盖核验的训练备选。Orion 作者数据卡再核为可流式原始计数，但许可适用性与读取成本仍待解决，保持备选。Blair 新增备选，未找到可直接采用的矩阵合同。
+- 方法状态：State 继续采用为公开权重微调主候选；Stack 保持后续独立原生校准/微调候选，沿用同日已固定的官方资产。响应分解与线性基线继续采用为经验效应参考和背景/靶点分离的依据；本轮未重读这些论文原文，不升级其证据范围。差分 State、未监督基因计数保持及 thinning/Poisson 解码均为待验证工程假设，无文献或本轮得分保证。
+
+### 2026-09-26 Stack 原生迁移就绪核查
+
+- 无新论文或主题查询，Scholar/SciVerse/HTTP 调用均为 0；仅阅读固定 Stack commit `cacc2e4b09435c3e536d46237d10b50f222dd144` 的推理、基因映射、计数解码、微调源码和既有 HF metadata/model card。
+- 产物：[原生迁移可执行性记录](../research/stack-native-transfer-readiness-2026-09-26.md)。确认外部示例+目标 NTC 的合法输入操作；未下载权重、安装依赖或运行 GPU。State 当前比较不变，Stack 的基因轴、原生计数预处理、CLI device 未传递、模型轴外零填充及教师 EMA 等限制已记录，原生接口可用不等于本赛精度已验证。
+
+- 2026-09-26 原生实跑补充（工程证据，非论文结论）：Stack-Large-Aligned 严格加载成功，3090 上 FP32、batch=1 的 64/512-cell 推理峰值显存约 0.90/1.35 GiB；H1 NTC 组成 TV 约 0.35，剔除未测基因后仍约 0.33，未通过本轮校准门槛。保留为后续适配候选，不直接晋级完整 H1 预测；未读取 H1 扰动真值，未更新权重。见[实跑记录](../../experiments/stack_native/README.md)。
+
+### 2026-09-26 补齐 9 月 25 日 Scholar 前十条筛选台账
+
+离线恢复上述 Q1/Q2 的完整缓存响应（各 10 条），按规范 DOI 和题名合并版本，共 20 个不同候选：5 个复用已有条目，另 15 个列于下表。初次 Q2 工具展示曾截断第 5–8 条之间的内容；本次才完整补读该段，不把本次判断倒填为 9 月 25 日的全文核验。两份完整响应留在 Git 忽略目录 `output/autonomous-data-review-2026-09-25/scholar-query-{1,2}.cached.json`；本次 Scholar/HTTP 调用均为 0。
+
+已登记的 5 条：Q1-1 → [X-Cell](#x-cell-scaling-causal-perturbation-prediction-across-diverse-cellular-contexts)（检索题名带 “via diffusion language models”，对应同一已登记预印本）；Q1-2 → [Replogle](#mapping-information-rich-genotype-phenotype-landscapes-with-genome-scale-perturb-seq)；Q2-1 → [VC Challenge 评论](#virtual-cell-challenge-toward-a-turing-test-for-the-virtual-cell)；Q2-3 → [Jiang](#systematic-reconstruction-of-molecular-pathway-signatures-using-scalable-single-cell-perturbation-screens)（`10.1101/2024.01.29.576933` 与 `10.1038/s41556-025-01622-z` 合并，采用正式版）；Q2-4 → [Blair](#iterative-multimodal-and-scalable-single-cell-profiling-for-discovery-and-characterization-of-signaling-regulators)。沿用原条目的采用/备选状态，不重复建项。
+
+下表全部只是**题名、摘要或 snippet 级初筛**；简介与排除理由据返回内容，不表示全文结论已核验。“排除本轮”只针对当前公开权重 CRISPRi 微调 campaign，不判断论文整体价值。作者/年份/期刊均为搜索返回字段，完整书目、精确发表日、后续正式版本与方法资产仍待核验；未提供摘要者明确标出。各项本地原文均未保存；检索日 2026-09-25，补审日 2026-09-26。题名及简介兼作关键词和与本项目关系。
+
+| 序号 | 题名与返回来源 | 返回书目（未交叉核验） | 状态、简要内容与实际筛选理由 |
+|---|---|---|---|
+| Q1-3 | [A versatile information retrieval framework for evaluating profile strength and similarity](https://doi.org/10.1038/s41467-025-60306-2) | Alexandr A. Kalinin et al.; 2025; Nature Communications | **排除本轮**：用 mAP/copairs 评价高维表型强度与相似性；本轮已固定 VC2026 六指标，不替换评价目标，未核实可新增的独立训练数据。 |
+| Q1-4 | [Learning Cellular States with Generalist Transformer Architectures](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2026/EECS-2026-210.pdf) | D Gautam; 索引年 2026；DOI、出版类型待核验；无摘要 | **排除本轮**：题名/snippet 指向通用 Transformer 与扰动模型，但未建立可直接复用的 checkpoint 或新增 raw-count 数据合同；继续优先已核资产的 State/Stack。 |
+| Q1-5 | [Bidirectional epigenetic editing reveals hierarchies in gene regulation](https://doi.org/10.1038/s41587-024-02213-3) | Naomi M. Pacalin et al.; 2024; Nature Biotechnology | **备选**：CRISPRai 同时包含激活、抑制与双扰动；可能提取单 CRISPRi 子集，但不能把混合干预直接并入单靶点 CRISPRi 标签，矩阵/对照尚未核验。 |
+| Q1-6 | [Unsupervised Deep Disentangled Representation of Single-Cell Omics](https://doi.org/10.1101/2024.11.06.622266) | Amir Ali Moinfar, Fabian J. Theis; 2024; bioRxiv | **排除本轮**：DRVI 为无监督可解耦表征与整合方法；返回摘要未建立目标 NTC-only 跨背景 CRISPRi 预测或可复用扰动权重，不新增一个表征训练项目。 |
+| Q1-7 | [Mapping transcriptional responses to cellular perturbation dictionaries with RNA fingerprinting](https://doi.org/10.1101/2025.09.19.676866) | Isabella N. Grabski et al.; 2025; bioRxiv | **备选**：把已观测细胞映射到扰动字典，方向不同于前向表达预测；snippet 提及两背景 CPA-Perturb-seq，可作为后续数据线索，但原始来源/计数/许可未核验。 |
+| Q1-8 | [Predicting how perturbations reshape cellular trajectories with PerturbGen](https://www.biorxiv.org/content/10.64898/2026.03.04.709254.abstract) | K Chi Hao Ly et al.（返回作者不完整）；索引年 2026；DOI 字段空，URL 内标识待核验；无摘要 | **排除本轮**：题名/snippet 指向轨迹预测与 TF knockout，多背景 CRISPRi 原始计数/公开权重合同未建立；不据 snippet 把整篇方法确定为 KO-only。 |
+| Q1-9 | [Towards Expression Forecasting](https://dspace.cuni.cz/handle/20.500.11956/209521) | J Bruthans; 索引年 2026；DOI、文献类型待核验；无摘要 | **排除本轮**：只有题名和关于 Perturb-seq 模型的 snippet，没有已核实的新增权重或数据入口，暂不扩展精读范围。 |
+| Q1-10 | [LazyNet: Interpretable ODE Modeling of Sparse CRISPR Single-Cell Screens Reveals New Biological Insights](https://www.mdpi.com/2079-7737/15/1/62) | Z Yi, N Ma, Y Ao；返回年 2025，年份/卷期待核验；DOI 未提供；无摘要 | **排除本轮**：题名为稀疏 CRISPR 的可解释 ODE 建模，尚未核实可用于本轮的预训练权重或新背景数据；不由标题推断其性能。 |
+| Q2-2 | [PerturBase: a comprehensive database for single-cell perturbation data analysis and visualization](https://doi.org/10.1093/nar/gkae858) | Zhiting Wei et al.; 2024; Nucleic Acids Research（正式卷年待核验） | **备选**：公开单细胞扰动数据汇编与分析入口；与已采用 scPerturb 功能互补，但必须回溯每项原实验并去重。不同于 DOI 为 `gkae777` 的 PerturbDB，不合并两数据库论文。 |
+| Q2-5 | [SIGNAL-seq: Multimodal Single-cell Inter- and Intra-cellular Signalling Analysis](https://doi.org/10.1101/2024.02.23.581433) | James W. Opzoomer et al.; 2024; bioRxiv | **排除本轮**：摘要介绍 3D 模型中的 RNA/蛋白翻译后修饰联合测量，不提供本轮已核的 CRISPRi 靶点—计数合同；保留为多模态测量线索。 |
+| Q2-6 | [Regulators of Interferon-Responsive Microglia Uncovered by Genome-wide CRISPRi Screening](https://doi.org/10.1101/2025.06.05.658176) | Amanda McQuade et al.; 2025; bioRxiv | **备选**：人 iPSC 衍生小胶质细胞的 CRISPRi 为新背景候选；摘要以 IFIT1 标志物筛选描述实验，不能据 “genome-wide” 推断有 genome-wide Perturb-seq 原始转录组矩阵。全文/矩阵/许可待核验。 |
+| Q2-7 | [Transcription factor networks disproportionately enrich for heritability of blood cell phenotypes](https://doi.org/10.1101/2024.09.09.611392) | Jorge Diego Martin-Rufino et al.; 2024; bioRxiv；返回 [PMC 入口](https://www.ncbi.nlm.nih.gov/pmc/articles/11419094) | **备选**：Perturb-multiome 同时测 TF 扰动后的染色质可及性和表达，可能补充造血分化背景；CRISPRi/KO 模态、raw counts、匹配对照与公开许可未核验，暂不混训。 |
+| Q2-8 | [Guide assignment in single-cell CRISPR screens using crispat](https://doi.org/10.1101/2024.05.06.592692) | Jana M. Braunger, Britta Velten; 2024; bioRxiv | **备选**：guide 分配软件与策略比较，摘要称重分析两研究的四个 CRISPRi screen；可用于后续标签质量审计，不作为四组新独立数据，也不重写本轮已固定标签。 |
+| Q2-9 | [A heterogeneous pharmaco-transcriptomic landscape induced by targeting a single oncogenic kinase](https://doi.org/10.1101/2024.04.08.587960) | Ross M. Giglio et al.; 2024; bioRxiv | **排除本轮**：胶质母细胞瘤 EGFR 抑制剂的化学扰动转录组；与现有化学数据一样，不能不加干预模态地当作 CRISPRi 标签。 |
+| Q2-10 | [Analyzing the functional effects of DNA variants with gene editing](https://doi.org/10.1016/j.crmeth.2024.100776) | Sarah Cooper et al.; 2024; Cell Reports Methods | **排除本轮**：讨论饱和、碱基及 prime editing 的变异功能分析方法；是编辑方法综述性质的摘要内容，未给本轮直接可用的 CRISPRi 训练矩阵。 |
+
+补审完成度：20/20 条已映射到完整条目或本表；新增 15 条中 6 条备选、9 条排除本轮。缓存中有重复作者字符串，表中只保留第一作者 et al. 或明确的两/三作者，不以重复字符串构造作者名单；缺 DOI/摘要及上述原文/资产问题保持未解决。此表仅补台账，不新增训练候选、网络调用或模型成绩结论。
+
+### 2026-09-26 下一组 State 残差候选的证据复核
+
+- 产物：[候选证据记录](../research/state-next-candidate-evidence-2026-09-26.md)。复用 State 与响应分解论文条目；State 保持采用为公开预训练主干，响应分解保持采用为分量诊断依据，Stack 保持备选。本轮没有新论文或主题发现，Scholar/SciVerse/HTTP 均 0 次，未重读论文全文，不升级既有论文结论。
+- 一手代码：State `9bbfe78a434a55205e4de834e1ea99f85f7a3add` 的 gene-space 输出/ReLU、分布损失；响应分解 `a15214780619736d393f40240e56ba992fd416a3` 的 ANOVA。确认 ReLU 后差分可为负、当前损失与原生 State 不同；公共响应仅解释当前来源加权训练效应平方量的 2.2%–14.2%，不足以断言公共效应占优导致模型塌缩。
+- 新建议属于工程假设：既有公开权重后代继续微调 6000 步，零初始化 signed residual head、靶点中心化、pairwise response loss、固定保守经验先验加 0.1 修正；不作为已验证收益。旧 all-source 后代权重不能充当未见来源证据，State 修正权重固定，不声称 source-LOCO 选模；公开父权重历史暴露仍未完整核验。服务器只读查询两次，第一次 ESM 别名错误后修正完成；没有远程写入、数据下载或 GPU 训练。
+
+
+## 2026-09-26：效应可信度、收缩估计与候选审计
+
+### ashr — Adaptive Shrinkage（作者软件与方法说明）
+
+- 摘要：作者 README 描述以效应估计和对应标准误为输入，从数据估计收缩程度；高标准误观测收缩更多，使用以零为中心的单峰先验及正态/可选 t 观测模型。
+- 来源：[作者仓库](https://github.com/stephens999/ashr)、[已读 README](https://github.com/stephens999/ashr/blob/master/README.md)；软件包具体 release 待核验，本轮仅核验作者说明的内容与文件 SHA-256。
+- 本地：[检索与原文核验记录](../research/reliability-transfer-literature-2026-09-26.md)。原始 README 仅在忽略目录留作核验输入。
+- 核心关联与决定：**采用方法原则**，用于区分扰动效应和估计噪声；项目自定义 normal-mixture posterior 不等同于 ashr 的完整实现，不继承其 FDR 或可信区间保证。
+- 相关材料：与下述 Urbut 等的跨条件收缩属于同一方法脉络；本轮采用一元估计器，未实现 mash 的条件相关性模型。
+- 关键词：empirical Bayes、standard error、shrinkage、normal means；核验日期 2026-09-26；论文 DOI 与软件版本关系未在本轮独立核验，不补造。
+
+### Flexible statistical methods for estimating and testing effects in genomic studies with multiple conditions
+
+- 摘要：Urbut 等提出跨多条件联合估计大量效应的方法，通过效应相关性增加信息共享；出版页摘要以 44 个人体组织的 cis-eQTL 作示例，强调效应可共享但幅度仍可随组织变化。
+- 来源：[Nature Genetics DOI](https://doi.org/10.1038/s41588-018-0268-8)；Sarah M. Urbut、Gao Wang、Peter Carbonetto、Matthew Stephens；在线 2018-11-26，Nature Genetics 51:187–195 (2019)。出版页书目/摘要已核，全文正文未取得。
+- 本地：[检索与核验记录](../research/reliability-transfer-literature-2026-09-26.md)、[原始候选元数据](../research/reliability-transfer-sources-2026-09-26/search-results.json)。
+- 核心关联与决定：**采用效应及不确定性联合建模的问题意识**；多变量 mash 实现为备选，本轮不会把自定义一元混合估计器称为 mash 复现，也不把 eQTL 结果等同于 CRISPRi 跨背景预测收益。
+- 相关论文：与既有 response decomposition 的共享/背景特异响应结构互补；与 ashr 的一元收缩相关，应用领域及统计目标不同。
+- 关键词：mash、effect estimation、multivariate shrinkage、eQTL、跨条件；检索与核验日期 2026-09-26。
+
+本次两个 Scholar 查询的 20 个已查看命中均在[逐候选表](../research/reliability-transfer-literature-2026-09-26.md#候选收敛)登记采用、备选或排除及理由；题名、摘要、作者、原文链接、年份和版本线索保存在上述 JSON。BuDDI 预印本/正式版合并，既有 dbDiffusion 不重复建项。其余仅作题名/摘要筛选，未取得摘要或核实书目的项明确待核，不用于具体方法性能判断。2 次 Scholar、7 次一手 HTTP（含 3 个 404）的完整台账、修正入口和未取得全文的范围见记录；没有继续扩搜。

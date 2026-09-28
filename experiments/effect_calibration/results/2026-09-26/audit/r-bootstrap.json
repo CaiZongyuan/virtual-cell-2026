@@ -1,0 +1,8 @@
+{
+  "source": "https://micro.mamba.pm/api/micromamba/linux-64/latest",
+  "archive_sha256": "8761c382127e6363bd9e0a2451aa3ef90d071a79133f736e2f759a3bf13040dd",
+  "binary_sha256": "366cd9cd8be14df1ab8ed50352a82111082a36686b2d389fdb79a92c3fafb3e3",
+  "version": "2.9.0",
+  "recorded_at_unix": 1790383859.9693193,
+  "scope": "isolated R runtime; no modification to training/evaluation environments"
+}

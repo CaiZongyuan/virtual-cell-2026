@@ -1,0 +1,72 @@
+[
+  {
+    "source": "gwps",
+    "cells": 1989578,
+    "genes": 8248,
+    "perturbation_targets": 9866,
+    "ntc_cells": 75328,
+    "technical_batches": 267,
+    "official_target_overlap": 272,
+    "official_genes_measured": 7679,
+    "requested_targets_available_cells": 123531,
+    "labels_only_audit": true,
+    "h1_public_panel_targets": 150,
+    "h1_public_target_overlap": 136
+  },
+  {
+    "source": "k562",
+    "cells": 310385,
+    "genes": 8563,
+    "perturbation_targets": 2057,
+    "ntc_cells": 10691,
+    "technical_batches": 48,
+    "official_target_overlap": 0,
+    "official_genes_measured": 7938,
+    "requested_targets_available_cells": 36674,
+    "labels_only_audit": true,
+    "h1_public_panel_targets": 150,
+    "h1_public_target_overlap": 35
+  },
+  {
+    "source": "rpe1",
+    "cells": 247914,
+    "genes": 8749,
+    "perturbation_targets": 2393,
+    "ntc_cells": 11485,
+    "technical_batches": 56,
+    "official_target_overlap": 0,
+    "official_genes_measured": 8259,
+    "requested_targets_available_cells": 36840,
+    "labels_only_audit": true,
+    "h1_public_panel_targets": 150,
+    "h1_public_target_overlap": 50
+  },
+  {
+    "source": "hepg2",
+    "cells": 145473,
+    "genes": 9624,
+    "perturbation_targets": 2393,
+    "ntc_cells": 4976,
+    "technical_batches": 56,
+    "official_target_overlap": 0,
+    "official_genes_measured": 9023,
+    "requested_targets_available_cells": 18903,
+    "labels_only_audit": true,
+    "h1_public_panel_targets": 150,
+    "h1_public_target_overlap": 50
+  },
+  {
+    "source": "jurkat",
+    "cells": 262956,
+    "genes": 8882,
+    "perturbation_targets": 2393,
+    "ntc_cells": 12013,
+    "technical_batches": 55,
+    "official_target_overlap": 0,
+    "official_genes_measured": 8283,
+    "requested_targets_available_cells": 36236,
+    "labels_only_audit": true,
+    "h1_public_panel_targets": 150,
+    "h1_public_target_overlap": 50
+  }
+]

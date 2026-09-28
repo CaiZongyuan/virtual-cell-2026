@@ -1,0 +1,1 @@
+{"attempt": "limited", "exit_code": 124, "finished_at_unix": 1790364785.731432, "evaluation_resumed": true, "training_repeated": false, "log": "logs/limited-final.log", "scheduling": "deferred to keep resident scoring concurrency <=2"}

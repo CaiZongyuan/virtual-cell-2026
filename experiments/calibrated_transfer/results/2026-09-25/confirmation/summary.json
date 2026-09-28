@@ -1,0 +1,1400 @@
+{
+  "arm": "empirical",
+  "targets": 198,
+  "cells": 24865,
+  "measured_project_axis_genes": 8283,
+  "target_gene_excluded_per_condition": true,
+  "baseline": 1.0,
+  "pooled_error_ratio": 0.5758562333532025,
+  "median_target_ratio": 0.8414972308288124,
+  "targets_improved": 148,
+  "metric_scope": "Jurkat normalized mean-expression error; not H1 canonical six-metric score",
+  "details": [
+    {
+      "target": "ACSS2",
+      "cells": 86,
+      "baseline_sse": 32724.62069726527,
+      "candidate_sse": 8624.688882714161,
+      "ratio": 0.26355351716681347
+    },
+    {
+      "target": "ALG14",
+      "cells": 107,
+      "baseline_sse": 731.3040732824339,
+      "candidate_sse": 597.6973929529956,
+      "ratio": 0.8173035195472805
+    },
+    {
+      "target": "ANAPC13",
+      "cells": 129,
+      "baseline_sse": 570.3361590266248,
+      "candidate_sse": 735.9875885883932,
+      "ratio": 1.2904452522254255
+    },
+    {
+      "target": "ARFRP1",
+      "cells": 83,
+      "baseline_sse": 798.28363193103,
+      "candidate_sse": 775.3181393139646,
+      "ratio": 0.9712314123721761
+    },
+    {
+      "target": "ARL6IP6",
+      "cells": 65,
+      "baseline_sse": 3795.3670407740938,
+      "candidate_sse": 3765.7107395903995,
+      "ratio": 0.9921861836114682
+    },
+    {
+      "target": "ARPC4",
+      "cells": 148,
+      "baseline_sse": 2214.7094209721618,
+      "candidate_sse": 1459.5125693784687,
+      "ratio": 0.6590086065276255
+    },
+    {
+      "target": "ATP2A2",
+      "cells": 131,
+      "baseline_sse": 6110.122458247205,
+      "candidate_sse": 6302.387876442436,
+      "ratio": 1.031466704556096
+    },
+    {
+      "target": "ATP5ME",
+      "cells": 131,
+      "baseline_sse": 3765.8729901021397,
+      "candidate_sse": 2738.1894923965624,
+      "ratio": 0.7271061715552696
+    },
+    {
+      "target": "BCL2L1",
+      "cells": 94,
+      "baseline_sse": 1402.9014141155005,
+      "candidate_sse": 1451.3187666161336,
+      "ratio": 1.0345122985930977
+    },
+    {
+      "target": "BCS1L",
+      "cells": 79,
+      "baseline_sse": 1833.8343514191263,
+      "candidate_sse": 1637.5754980805264,
+      "ratio": 0.8929789633470856
+    },
+    {
+      "target": "C7orf50",
+      "cells": 126,
+      "baseline_sse": 500.9772447167497,
+      "candidate_sse": 530.1820006072584,
+      "ratio": 1.0582955736982045
+    },
+    {
+      "target": "CA5A",
+      "cells": 122,
+      "baseline_sse": 374.46237120552297,
+      "candidate_sse": 382.1065882340895,
+      "ratio": 1.020413845599378
+    },
+    {
+      "target": "CALR",
+      "cells": 81,
+      "baseline_sse": 3012.7161684683965,
+      "candidate_sse": 2108.702058812408,
+      "ratio": 0.6999338606412528
+    },
+    {
+      "target": "CAST",
+      "cells": 88,
+      "baseline_sse": 55065.34612335793,
+      "candidate_sse": 19477.08456454864,
+      "ratio": 0.3537085651094589
+    },
+    {
+      "target": "CBX1",
+      "cells": 117,
+      "baseline_sse": 475.14241805059834,
+      "candidate_sse": 506.4282983355691,
+      "ratio": 1.0658452689055413
+    },
+    {
+      "target": "CCAR1",
+      "cells": 69,
+      "baseline_sse": 1119.4785407084096,
+      "candidate_sse": 1012.7897051661415,
+      "ratio": 0.9046977394718482
+    },
+    {
+      "target": "CCDC6",
+      "cells": 256,
+      "baseline_sse": 2370.7307969648336,
+      "candidate_sse": 1180.485371386258,
+      "ratio": 0.4979415515661219
+    },
+    {
+      "target": "CCNC",
+      "cells": 82,
+      "baseline_sse": 15796.690730607266,
+      "candidate_sse": 14685.970563858249,
+      "ratio": 0.9296865282931118
+    },
+    {
+      "target": "CHCHD4",
+      "cells": 163,
+      "baseline_sse": 15587.323943534639,
+      "candidate_sse": 9244.76989751106,
+      "ratio": 0.5930953851347676
+    },
+    {
+      "target": "CHMP6",
+      "cells": 139,
+      "baseline_sse": 5455.415318601909,
+      "candidate_sse": 4028.2240082097564,
+      "ratio": 0.7383899800395202
+    },
+    {
+      "target": "CHTOP",
+      "cells": 121,
+      "baseline_sse": 580.0931490666212,
+      "candidate_sse": 596.7340384539729,
+      "ratio": 1.0286865814811417
+    },
+    {
+      "target": "CLPB",
+      "cells": 84,
+      "baseline_sse": 3862.405411422385,
+      "candidate_sse": 3752.243849206184,
+      "ratio": 0.9714785087317822
+    },
+    {
+      "target": "CNN2",
+      "cells": 174,
+      "baseline_sse": 262.0582925399321,
+      "candidate_sse": 290.6469793686139,
+      "ratio": 1.1090928531648183
+    },
+    {
+      "target": "CNOT10",
+      "cells": 100,
+      "baseline_sse": 2397.1665074041357,
+      "candidate_sse": 1851.5942107461879,
+      "ratio": 0.7724095114073899
+    },
+    {
+      "target": "COX7C",
+      "cells": 108,
+      "baseline_sse": 3767.145600067591,
+      "candidate_sse": 2781.365488568356,
+      "ratio": 0.7383217384850885
+    },
+    {
+      "target": "DDOST",
+      "cells": 80,
+      "baseline_sse": 2356.894020335032,
+      "candidate_sse": 2707.714273049113,
+      "ratio": 1.1488485479988668
+    },
+    {
+      "target": "DDX18",
+      "cells": 84,
+      "baseline_sse": 13303.849555567993,
+      "candidate_sse": 8582.97335947052,
+      "ratio": 0.645149610540983
+    },
+    {
+      "target": "DDX42",
+      "cells": 75,
+      "baseline_sse": 818.732553926115,
+      "candidate_sse": 725.9822407388302,
+      "ratio": 0.8867147608306108
+    },
+    {
+      "target": "DHX36",
+      "cells": 113,
+      "baseline_sse": 4456.074902162493,
+      "candidate_sse": 2409.0171846621274,
+      "ratio": 0.5406141587730163
+    },
+    {
+      "target": "DNAJA3",
+      "cells": 99,
+      "baseline_sse": 56894.75240380189,
+      "candidate_sse": 11526.184117204575,
+      "ratio": 0.20258782453958546
+    },
+    {
+      "target": "DNMT1",
+      "cells": 177,
+      "baseline_sse": 15431.180159971065,
+      "candidate_sse": 12803.399899213875,
+      "ratio": 0.8297097024650305
+    },
+    {
+      "target": "DNTTIP2",
+      "cells": 70,
+      "baseline_sse": 13575.714292159926,
+      "candidate_sse": 11936.285496878223,
+      "ratio": 0.8792381188937892
+    },
+    {
+      "target": "DPAGT1",
+      "cells": 91,
+      "baseline_sse": 898.088620311408,
+      "candidate_sse": 900.2630892460024,
+      "ratio": 1.0024212186697572
+    },
+    {
+      "target": "DPH3",
+      "cells": 90,
+      "baseline_sse": 1352.3554327194588,
+      "candidate_sse": 1255.0559842181833,
+      "ratio": 0.9280518670261001
+    },
+    {
+      "target": "EIF2B2",
+      "cells": 202,
+      "baseline_sse": 8228.181033248638,
+      "candidate_sse": 5615.837342953552,
+      "ratio": 0.6825126136944407
+    },
+    {
+      "target": "EIF2B4",
+      "cells": 68,
+      "baseline_sse": 7789.225507259752,
+      "candidate_sse": 5919.988299771897,
+      "ratio": 0.7600227126887418
+    },
+    {
+      "target": "EIF3M",
+      "cells": 101,
+      "baseline_sse": 7685.738879472116,
+      "candidate_sse": 5833.631319866469,
+      "ratio": 0.7590202336235424
+    },
+    {
+      "target": "EIF4B",
+      "cells": 256,
+      "baseline_sse": 2169.4240365083187,
+      "candidate_sse": 895.2693982324924,
+      "ratio": 0.41267607584611526
+    },
+    {
+      "target": "EIF4G1",
+      "cells": 73,
+      "baseline_sse": 12119.47808132315,
+      "candidate_sse": 10676.799456313962,
+      "ratio": 0.8809619840616368
+    },
+    {
+      "target": "EPB41L2",
+      "cells": 79,
+      "baseline_sse": 1896.8890059959379,
+      "candidate_sse": 1893.1507561429453,
+      "ratio": 0.9980292732778901
+    },
+    {
+      "target": "EWSR1",
+      "cells": 89,
+      "baseline_sse": 883.4725122746154,
+      "candidate_sse": 769.5546552820681,
+      "ratio": 0.8710567047533252
+    },
+    {
+      "target": "FASTKD5",
+      "cells": 117,
+      "baseline_sse": 32425.967041412165,
+      "candidate_sse": 8612.199193486027,
+      "ratio": 0.2655957548617481
+    },
+    {
+      "target": "FNBP4",
+      "cells": 256,
+      "baseline_sse": 801.187583218288,
+      "candidate_sse": 651.9567514855777,
+      "ratio": 0.8137379624216524
+    },
+    {
+      "target": "FTSJ3",
+      "cells": 67,
+      "baseline_sse": 1308.410836559019,
+      "candidate_sse": 1200.8467689364886,
+      "ratio": 0.9177902959704826
+    },
+    {
+      "target": "GINS2",
+      "cells": 163,
+      "baseline_sse": 1995.8623894664536,
+      "candidate_sse": 1011.2511240137776,
+      "ratio": 0.5066737713736424
+    },
+    {
+      "target": "GNL2",
+      "cells": 96,
+      "baseline_sse": 10707.056346190117,
+      "candidate_sse": 5956.844455164623,
+      "ratio": 0.5563475396563353
+    },
+    {
+      "target": "GNL3",
+      "cells": 145,
+      "baseline_sse": 8517.309943536266,
+      "candidate_sse": 7149.09077579979,
+      "ratio": 0.8393601762989958
+    },
+    {
+      "target": "GPS2",
+      "cells": 95,
+      "baseline_sse": 1317.4162143994583,
+      "candidate_sse": 1003.5402616493211,
+      "ratio": 0.761748831296101
+    },
+    {
+      "target": "GTF2A1",
+      "cells": 92,
+      "baseline_sse": 24802.30528365368,
+      "candidate_sse": 15917.832795719032,
+      "ratio": 0.6417884391661735
+    },
+    {
+      "target": "HIRA",
+      "cells": 233,
+      "baseline_sse": 2000.3540342949354,
+      "candidate_sse": 1252.0115951294497,
+      "ratio": 0.6258950034166058
+    },
+    {
+      "target": "HLA-C",
+      "cells": 97,
+      "baseline_sse": 542.877038327623,
+      "candidate_sse": 586.9360859368065,
+      "ratio": 1.0811584290706253
+    },
+    {
+      "target": "HMX3",
+      "cells": 172,
+      "baseline_sse": 1520.4480195618899,
+      "candidate_sse": 2264.412745828689,
+      "ratio": 1.489306254929497
+    },
+    {
+      "target": "HSCB",
+      "cells": 256,
+      "baseline_sse": 1337.07423079899,
+      "candidate_sse": 888.2660314358089,
+      "ratio": 0.6643356150129462
+    },
+    {
+      "target": "HSD17B10",
+      "cells": 256,
+      "baseline_sse": 16580.553482981948,
+      "candidate_sse": 3716.5979666655558,
+      "ratio": 0.22415403505559817
+    },
+    {
+      "target": "HSD17B12",
+      "cells": 256,
+      "baseline_sse": 386.9583374845428,
+      "candidate_sse": 317.5606592961061,
+      "ratio": 0.820658527118029
+    },
+    {
+      "target": "HSPA8",
+      "cells": 155,
+      "baseline_sse": 3036.3331122452455,
+      "candidate_sse": 3605.793889668862,
+      "ratio": 1.1875488480256118
+    },
+    {
+      "target": "HSPA9",
+      "cells": 64,
+      "baseline_sse": 51050.840897738075,
+      "candidate_sse": 10094.97278435803,
+      "ratio": 0.19774351620533856
+    },
+    {
+      "target": "HSPE1",
+      "cells": 159,
+      "baseline_sse": 52576.275582996706,
+      "candidate_sse": 20110.515514831328,
+      "ratio": 0.3825017137831482
+    },
+    {
+      "target": "HUWE1",
+      "cells": 84,
+      "baseline_sse": 3473.41451406435,
+      "candidate_sse": 3808.2079101478607,
+      "ratio": 1.0963874005615755
+    },
+    {
+      "target": "IPO13",
+      "cells": 229,
+      "baseline_sse": 1391.0203856924247,
+      "candidate_sse": 3256.247424505408,
+      "ratio": 2.340905610009811
+    },
+    {
+      "target": "JMJD6",
+      "cells": 133,
+      "baseline_sse": 664.6087177898575,
+      "candidate_sse": 606.4243692450477,
+      "ratio": 0.9124532270080649
+    },
+    {
+      "target": "KANSL2",
+      "cells": 85,
+      "baseline_sse": 6591.84651223075,
+      "candidate_sse": 4985.58698224081,
+      "ratio": 0.7563263150909798
+    },
+    {
+      "target": "KDM1A",
+      "cells": 195,
+      "baseline_sse": 879.3554995748738,
+      "candidate_sse": 876.1912961386287,
+      "ratio": 0.9964016789139605
+    },
+    {
+      "target": "KPNB1",
+      "cells": 99,
+      "baseline_sse": 795.3527766833962,
+      "candidate_sse": 999.3980139764903,
+      "ratio": 1.2565468346561364
+    },
+    {
+      "target": "LAMTOR1",
+      "cells": 256,
+      "baseline_sse": 717.3082095662013,
+      "candidate_sse": 421.7115396112562,
+      "ratio": 0.587908424840544
+    },
+    {
+      "target": "LTBP4",
+      "cells": 111,
+      "baseline_sse": 1594.8948354116062,
+      "candidate_sse": 1143.1077188081908,
+      "ratio": 0.716729212125877
+    },
+    {
+      "target": "LZTR1",
+      "cells": 192,
+      "baseline_sse": 3336.623340701569,
+      "candidate_sse": 2198.3249694534575,
+      "ratio": 0.6588472071861821
+    },
+    {
+      "target": "MAD2L1",
+      "cells": 73,
+      "baseline_sse": 4774.456734033736,
+      "candidate_sse": 3819.0870004478834,
+      "ratio": 0.7998998028873745
+    },
+    {
+      "target": "MANF",
+      "cells": 144,
+      "baseline_sse": 948.099596622592,
+      "candidate_sse": 980.8009932906128,
+      "ratio": 1.034491520494801
+    },
+    {
+      "target": "MAU2",
+      "cells": 72,
+      "baseline_sse": 12225.229139696745,
+      "candidate_sse": 11819.713765479943,
+      "ratio": 0.9668296299739654
+    },
+    {
+      "target": "MBTPS1",
+      "cells": 192,
+      "baseline_sse": 578.327401980796,
+      "candidate_sse": 562.4535023612033,
+      "ratio": 0.9725520534471928
+    },
+    {
+      "target": "MCM5",
+      "cells": 100,
+      "baseline_sse": 2198.6760885819144,
+      "candidate_sse": 1930.3239696859607,
+      "ratio": 0.8779483161300793
+    },
+    {
+      "target": "MED1",
+      "cells": 120,
+      "baseline_sse": 1002.0313593619205,
+      "candidate_sse": 999.4296065974813,
+      "ratio": 0.9974035216162337
+    },
+    {
+      "target": "MED12",
+      "cells": 143,
+      "baseline_sse": 1113.962987939499,
+      "candidate_sse": 2476.8643948824897,
+      "ratio": 2.2234709965220243
+    },
+    {
+      "target": "MED4",
+      "cells": 219,
+      "baseline_sse": 16189.750323354372,
+      "candidate_sse": 9149.29741274909,
+      "ratio": 0.5651290001397278
+    },
+    {
+      "target": "MED8",
+      "cells": 109,
+      "baseline_sse": 4471.390688753835,
+      "candidate_sse": 2587.209147785569,
+      "ratio": 0.5786139766969496
+    },
+    {
+      "target": "MEN1",
+      "cells": 91,
+      "baseline_sse": 1110.4595213107345,
+      "candidate_sse": 1319.562925272865,
+      "ratio": 1.1883034905363452
+    },
+    {
+      "target": "METTL14",
+      "cells": 87,
+      "baseline_sse": 4095.5777608926837,
+      "candidate_sse": 3481.8958905981294,
+      "ratio": 0.8501598782583499
+    },
+    {
+      "target": "METTL17",
+      "cells": 83,
+      "baseline_sse": 2191.4952651191957,
+      "candidate_sse": 2034.052007123556,
+      "ratio": 0.9281571534734407
+    },
+    {
+      "target": "METTL3",
+      "cells": 177,
+      "baseline_sse": 2243.310382856211,
+      "candidate_sse": 1929.1100876067494,
+      "ratio": 0.8599390001264925
+    },
+    {
+      "target": "MIPEP",
+      "cells": 105,
+      "baseline_sse": 1623.2269351633768,
+      "candidate_sse": 1426.8042544098862,
+      "ratio": 0.8789924708009353
+    },
+    {
+      "target": "MON1A",
+      "cells": 162,
+      "baseline_sse": 548.4871375310955,
+      "candidate_sse": 513.0952328223291,
+      "ratio": 0.9354735922011298
+    },
+    {
+      "target": "MPG",
+      "cells": 66,
+      "baseline_sse": 2222.55187278744,
+      "candidate_sse": 1875.0209608715143,
+      "ratio": 0.8436342853586289
+    },
+    {
+      "target": "MRPL10",
+      "cells": 103,
+      "baseline_sse": 10704.248042988835,
+      "candidate_sse": 3667.056103517843,
+      "ratio": 0.34257951504774076
+    },
+    {
+      "target": "MRPL14",
+      "cells": 82,
+      "baseline_sse": 9239.417845393617,
+      "candidate_sse": 4683.588242818345,
+      "ratio": 0.5069137819276551
+    },
+    {
+      "target": "MRPL17",
+      "cells": 75,
+      "baseline_sse": 5986.710221104905,
+      "candidate_sse": 2167.2903913923155,
+      "ratio": 0.3620169193678329
+    },
+    {
+      "target": "MRPL28",
+      "cells": 120,
+      "baseline_sse": 5739.1120562524775,
+      "candidate_sse": 2677.3327666878663,
+      "ratio": 0.4665064456741257
+    },
+    {
+      "target": "MRPL35",
+      "cells": 256,
+      "baseline_sse": 8017.450371901407,
+      "candidate_sse": 3182.092123450269,
+      "ratio": 0.3968957680863833
+    },
+    {
+      "target": "MRPL36",
+      "cells": 256,
+      "baseline_sse": 6990.323378116268,
+      "candidate_sse": 2026.1625600393465,
+      "ratio": 0.28985247898293237
+    },
+    {
+      "target": "MRPL37",
+      "cells": 75,
+      "baseline_sse": 6008.972341903501,
+      "candidate_sse": 2441.8126444581426,
+      "ratio": 0.4063611056137153
+    },
+    {
+      "target": "MRPL50",
+      "cells": 107,
+      "baseline_sse": 6166.056420874131,
+      "candidate_sse": 3033.2095643162966,
+      "ratio": 0.4919205010917324
+    },
+    {
+      "target": "MRPL54",
+      "cells": 156,
+      "baseline_sse": 5333.254650911814,
+      "candidate_sse": 1617.37945161561,
+      "ratio": 0.30326312120481447
+    },
+    {
+      "target": "MRPS10",
+      "cells": 81,
+      "baseline_sse": 4829.46270444602,
+      "candidate_sse": 3194.3693672190225,
+      "ratio": 0.6614336961911467
+    },
+    {
+      "target": "MRPS16",
+      "cells": 156,
+      "baseline_sse": 6403.441010154717,
+      "candidate_sse": 4353.75884530469,
+      "ratio": 0.679909261036434
+    },
+    {
+      "target": "MRPS30",
+      "cells": 75,
+      "baseline_sse": 9141.112488332265,
+      "candidate_sse": 3803.0871366722813,
+      "ratio": 0.4160420453775785
+    },
+    {
+      "target": "MRPS5",
+      "cells": 129,
+      "baseline_sse": 5209.627483199677,
+      "candidate_sse": 2811.114136864917,
+      "ratio": 0.539599836251319
+    },
+    {
+      "target": "MYC",
+      "cells": 120,
+      "baseline_sse": 8228.070815398562,
+      "candidate_sse": 7142.619680074054,
+      "ratio": 0.8680795098052484
+    },
+    {
+      "target": "NAGLU",
+      "cells": 203,
+      "baseline_sse": 332.4552232971565,
+      "candidate_sse": 341.26897368159644,
+      "ratio": 1.0265110901162229
+    },
+    {
+      "target": "NASP",
+      "cells": 117,
+      "baseline_sse": 480.73311240659217,
+      "candidate_sse": 621.4201114038356,
+      "ratio": 1.2926509436659188
+    },
+    {
+      "target": "NBAS",
+      "cells": 105,
+      "baseline_sse": 1733.0526785909717,
+      "candidate_sse": 1828.1290209609856,
+      "ratio": 1.0548606188054908
+    },
+    {
+      "target": "NCAPD3",
+      "cells": 95,
+      "baseline_sse": 640.1651625115144,
+      "candidate_sse": 622.0236360283811,
+      "ratio": 0.9716611781685216
+    },
+    {
+      "target": "NDUFAF3",
+      "cells": 78,
+      "baseline_sse": 1030.8388534661974,
+      "candidate_sse": 929.9684635538864,
+      "ratio": 0.9021472759072534
+    },
+    {
+      "target": "NDUFB3",
+      "cells": 130,
+      "baseline_sse": 1306.2231448116847,
+      "candidate_sse": 1190.0113473218798,
+      "ratio": 0.9110322015412161
+    },
+    {
+      "target": "NDUFB4",
+      "cells": 133,
+      "baseline_sse": 4287.850714191856,
+      "candidate_sse": 3254.711492225882,
+      "ratio": 0.75905429297095
+    },
+    {
+      "target": "NDUFB6",
+      "cells": 76,
+      "baseline_sse": 1171.1008339932498,
+      "candidate_sse": 1164.5667222760708,
+      "ratio": 0.9944205387550628
+    },
+    {
+      "target": "NISCH",
+      "cells": 127,
+      "baseline_sse": 433.7482567188105,
+      "candidate_sse": 452.4601470425151,
+      "ratio": 1.0431399781644195
+    },
+    {
+      "target": "NOL8",
+      "cells": 198,
+      "baseline_sse": 7173.617001670352,
+      "candidate_sse": 4421.937588765085,
+      "ratio": 0.6164167375726154
+    },
+    {
+      "target": "NOM1",
+      "cells": 256,
+      "baseline_sse": 2999.7728242592957,
+      "candidate_sse": 2033.143709130122,
+      "ratio": 0.6777658936996824
+    },
+    {
+      "target": "NOP9",
+      "cells": 169,
+      "baseline_sse": 853.7298207390426,
+      "candidate_sse": 781.6536303698579,
+      "ratio": 0.9155749411367744
+    },
+    {
+      "target": "NUDCD3",
+      "cells": 83,
+      "baseline_sse": 1462.1370261137822,
+      "candidate_sse": 1944.3251390450866,
+      "ratio": 1.3297831217727338
+    },
+    {
+      "target": "NUDT15",
+      "cells": 105,
+      "baseline_sse": 576.2627526003753,
+      "candidate_sse": 949.0355221514855,
+      "ratio": 1.6468798614329658
+    },
+    {
+      "target": "NVL",
+      "cells": 154,
+      "baseline_sse": 7290.114575779218,
+      "candidate_sse": 4785.14827391484,
+      "ratio": 0.6563886238239773
+    },
+    {
+      "target": "OLFML3",
+      "cells": 112,
+      "baseline_sse": 485.8245145017922,
+      "candidate_sse": 531.345553685464,
+      "ratio": 1.0936985224600144
+    },
+    {
+      "target": "PFDN4",
+      "cells": 107,
+      "baseline_sse": 455.1413134044229,
+      "candidate_sse": 514.4331613053259,
+      "ratio": 1.1302712941117221
+    },
+    {
+      "target": "PHF10",
+      "cells": 136,
+      "baseline_sse": 1422.6195280951313,
+      "candidate_sse": 1608.568357301339,
+      "ratio": 1.1307087563005624
+    },
+    {
+      "target": "PHF12",
+      "cells": 83,
+      "baseline_sse": 2278.155702622028,
+      "candidate_sse": 1568.5606078279027,
+      "ratio": 0.6885221260437021
+    },
+    {
+      "target": "PPP2CB",
+      "cells": 168,
+      "baseline_sse": 2424.993465558665,
+      "candidate_sse": 1686.3176421531227,
+      "ratio": 0.6953905922235681
+    },
+    {
+      "target": "PPP2R1A",
+      "cells": 256,
+      "baseline_sse": 529.0628437360878,
+      "candidate_sse": 971.4971044520114,
+      "ratio": 1.8362603156774
+    },
+    {
+      "target": "PPP2R3C",
+      "cells": 76,
+      "baseline_sse": 28493.86490231975,
+      "candidate_sse": 11447.203605333703,
+      "ratio": 0.40174274864347237
+    },
+    {
+      "target": "PRRC2A",
+      "cells": 102,
+      "baseline_sse": 1511.7117684192074,
+      "candidate_sse": 1087.1944751082897,
+      "ratio": 0.7191810620388077
+    },
+    {
+      "target": "PSMB5",
+      "cells": 256,
+      "baseline_sse": 621.1010923897661,
+      "candidate_sse": 3845.921760312191,
+      "ratio": 6.19210271473604
+    },
+    {
+      "target": "PSMB6",
+      "cells": 117,
+      "baseline_sse": 829.8514096111255,
+      "candidate_sse": 1999.8616558915103,
+      "ratio": 2.4099033064589963
+    },
+    {
+      "target": "PSMD13",
+      "cells": 70,
+      "baseline_sse": 4970.1198847078895,
+      "candidate_sse": 3953.5794186372073,
+      "ratio": 0.7954696285700505
+    },
+    {
+      "target": "PTCD1",
+      "cells": 73,
+      "baseline_sse": 14551.702136766024,
+      "candidate_sse": 7400.131091453291,
+      "ratio": 0.5085405832185278
+    },
+    {
+      "target": "PTPN1",
+      "cells": 136,
+      "baseline_sse": 436.6830390421533,
+      "candidate_sse": 815.232636132711,
+      "ratio": 1.8668749716519584
+    },
+    {
+      "target": "PYURF",
+      "cells": 85,
+      "baseline_sse": 5054.121556419197,
+      "candidate_sse": 2604.0985365005863,
+      "ratio": 0.5152425614285321
+    },
+    {
+      "target": "RBM10",
+      "cells": 88,
+      "baseline_sse": 1829.024676030985,
+      "candidate_sse": 1380.3245283842866,
+      "ratio": 0.7546779146684968
+    },
+    {
+      "target": "RBMX2",
+      "cells": 150,
+      "baseline_sse": 6347.322176388086,
+      "candidate_sse": 4368.848665083584,
+      "ratio": 0.6882979221277936
+    },
+    {
+      "target": "RCL1",
+      "cells": 199,
+      "baseline_sse": 7242.96953686621,
+      "candidate_sse": 5163.987626193255,
+      "ratio": 0.7129655315970774
+    },
+    {
+      "target": "RNF20",
+      "cells": 131,
+      "baseline_sse": 7783.537560231359,
+      "candidate_sse": 6229.615586496653,
+      "ratio": 0.800357875617611
+    },
+    {
+      "target": "RPE",
+      "cells": 68,
+      "baseline_sse": 705.261640785836,
+      "candidate_sse": 707.2236053154797,
+      "ratio": 1.0027818959889236
+    },
+    {
+      "target": "RPL29",
+      "cells": 82,
+      "baseline_sse": 1280.1658069776433,
+      "candidate_sse": 1171.2029280305005,
+      "ratio": 0.914883776497363
+    },
+    {
+      "target": "RPL7",
+      "cells": 146,
+      "baseline_sse": 10268.3797779193,
+      "candidate_sse": 4854.795611662274,
+      "ratio": 0.4727908118573707
+    },
+    {
+      "target": "RPLP0",
+      "cells": 77,
+      "baseline_sse": 13756.325770096431,
+      "candidate_sse": 6599.869230074102,
+      "ratio": 0.4797697684959548
+    },
+    {
+      "target": "RPP21",
+      "cells": 198,
+      "baseline_sse": 1710.4771279294048,
+      "candidate_sse": 1355.5175904051484,
+      "ratio": 0.7924792259841862
+    },
+    {
+      "target": "RPS15A",
+      "cells": 74,
+      "baseline_sse": 17354.953736959073,
+      "candidate_sse": 11947.241113990822,
+      "ratio": 0.688405241239451
+    },
+    {
+      "target": "RPS17",
+      "cells": 67,
+      "baseline_sse": 8922.561036594307,
+      "candidate_sse": 6271.600683418118,
+      "ratio": 0.7028924383589259
+    },
+    {
+      "target": "RPS19BP1",
+      "cells": 108,
+      "baseline_sse": 3040.854213097458,
+      "candidate_sse": 2981.9624892318516,
+      "ratio": 0.9806331643220678
+    },
+    {
+      "target": "RPS25",
+      "cells": 72,
+      "baseline_sse": 2868.198619596428,
+      "candidate_sse": 2357.9750928295052,
+      "ratio": 0.822110113546211
+    },
+    {
+      "target": "RRP7A",
+      "cells": 130,
+      "baseline_sse": 5293.739896802506,
+      "candidate_sse": 3280.0245731549453,
+      "ratio": 0.6196044076770992
+    },
+    {
+      "target": "RTRAF",
+      "cells": 183,
+      "baseline_sse": 537.5047496136018,
+      "candidate_sse": 614.6116621566185,
+      "ratio": 1.1434534533851968
+    },
+    {
+      "target": "SAMD4B",
+      "cells": 113,
+      "baseline_sse": 13273.91960970418,
+      "candidate_sse": 2946.210021359459,
+      "ratio": 0.22195478863722887
+    },
+    {
+      "target": "SARS2",
+      "cells": 83,
+      "baseline_sse": 2818.444717349535,
+      "candidate_sse": 2851.886335512304,
+      "ratio": 1.011865273764964
+    },
+    {
+      "target": "SBDS",
+      "cells": 87,
+      "baseline_sse": 1560.8414059568124,
+      "candidate_sse": 1052.8210849126772,
+      "ratio": 0.6745214990419136
+    },
+    {
+      "target": "SDAD1",
+      "cells": 135,
+      "baseline_sse": 9576.498419122041,
+      "candidate_sse": 5827.44391211754,
+      "ratio": 0.6085151019793925
+    },
+    {
+      "target": "SDC1",
+      "cells": 156,
+      "baseline_sse": 7020.679801196602,
+      "candidate_sse": 3830.5299113133674,
+      "ratio": 0.5456066961863855
+    },
+    {
+      "target": "SEC63",
+      "cells": 107,
+      "baseline_sse": 700.2786243680846,
+      "candidate_sse": 592.1959074774289,
+      "ratio": 0.8456575523946814
+    },
+    {
+      "target": "SEPHS2",
+      "cells": 122,
+      "baseline_sse": 529.2784053152193,
+      "candidate_sse": 581.9223618464613,
+      "ratio": 1.0994636395563675
+    },
+    {
+      "target": "SEPSECS",
+      "cells": 133,
+      "baseline_sse": 429.6516687357875,
+      "candidate_sse": 620.7990339487825,
+      "ratio": 1.4448891488666376
+    },
+    {
+      "target": "SETX",
+      "cells": 147,
+      "baseline_sse": 608.3471614608129,
+      "candidate_sse": 670.1429716212316,
+      "ratio": 1.1015798446597984
+    },
+    {
+      "target": "SHOC2",
+      "cells": 99,
+      "baseline_sse": 2054.629831592111,
+      "candidate_sse": 1989.6926153656825,
+      "ratio": 0.9683946883141918
+    },
+    {
+      "target": "SHQ1",
+      "cells": 256,
+      "baseline_sse": 338.8058270085444,
+      "candidate_sse": 432.27195650398386,
+      "ratio": 1.2758693093347604
+    },
+    {
+      "target": "SMAGP",
+      "cells": 115,
+      "baseline_sse": 636.8984733871291,
+      "candidate_sse": 622.8112083416797,
+      "ratio": 0.9778814589230667
+    },
+    {
+      "target": "SMC5",
+      "cells": 68,
+      "baseline_sse": 1408.2022315136915,
+      "candidate_sse": 1397.13198757382,
+      "ratio": 0.9921387399535847
+    },
+    {
+      "target": "SMG8",
+      "cells": 98,
+      "baseline_sse": 930.0939630214242,
+      "candidate_sse": 795.8662613299266,
+      "ratio": 0.855683719034734
+    },
+    {
+      "target": "SNRPA",
+      "cells": 74,
+      "baseline_sse": 20711.371200572878,
+      "candidate_sse": 19214.140713681983,
+      "ratio": 0.9277097362414382
+    },
+    {
+      "target": "SPG7",
+      "cells": 163,
+      "baseline_sse": 572.7980858319021,
+      "candidate_sse": 477.2190182795129,
+      "ratio": 0.83313654511681
+    },
+    {
+      "target": "SRP68",
+      "cells": 217,
+      "baseline_sse": 3480.5239763053482,
+      "candidate_sse": 2667.8147599992144,
+      "ratio": 0.766498026780197
+    },
+    {
+      "target": "SRPRB",
+      "cells": 166,
+      "baseline_sse": 1187.6122054067337,
+      "candidate_sse": 868.9124375795792,
+      "ratio": 0.731646604526091
+    },
+    {
+      "target": "STAG2",
+      "cells": 101,
+      "baseline_sse": 533.4985227637831,
+      "candidate_sse": 521.7102126844268,
+      "ratio": 0.9779037624728798
+    },
+    {
+      "target": "STARD7",
+      "cells": 84,
+      "baseline_sse": 5298.279532229416,
+      "candidate_sse": 3570.4645579183134,
+      "ratio": 0.673891314378411
+    },
+    {
+      "target": "SUGT1",
+      "cells": 75,
+      "baseline_sse": 837.6582885431624,
+      "candidate_sse": 865.4054732027381,
+      "ratio": 1.0331247061469815
+    },
+    {
+      "target": "TADA1",
+      "cells": 144,
+      "baseline_sse": 1301.455037997056,
+      "candidate_sse": 867.1590353767535,
+      "ratio": 0.6662996492843228
+    },
+    {
+      "target": "TAF13",
+      "cells": 200,
+      "baseline_sse": 1399.3573761479822,
+      "candidate_sse": 988.9916511910761,
+      "ratio": 0.7067470169153488
+    },
+    {
+      "target": "TARS2",
+      "cells": 133,
+      "baseline_sse": 13609.382654318257,
+      "candidate_sse": 3785.356151836843,
+      "ratio": 0.2781431199331991
+    },
+    {
+      "target": "TAZ",
+      "cells": 92,
+      "baseline_sse": 8318.548325185777,
+      "candidate_sse": 6412.397117808799,
+      "ratio": 0.7708553063752973
+    },
+    {
+      "target": "TELO2",
+      "cells": 98,
+      "baseline_sse": 5304.851430992665,
+      "candidate_sse": 2086.6054851470603,
+      "ratio": 0.39333909955638596
+    },
+    {
+      "target": "TFAM",
+      "cells": 256,
+      "baseline_sse": 47225.7508795162,
+      "candidate_sse": 12494.401908266347,
+      "ratio": 0.26456756484703553
+    },
+    {
+      "target": "TFB1M",
+      "cells": 87,
+      "baseline_sse": 3135.0095576824438,
+      "candidate_sse": 2410.5069993370907,
+      "ratio": 0.7688994100289309
+    },
+    {
+      "target": "TIGD1",
+      "cells": 109,
+      "baseline_sse": 498.7882900426174,
+      "candidate_sse": 508.8315741899953,
+      "ratio": 1.0201353647386546
+    },
+    {
+      "target": "TIMM10",
+      "cells": 156,
+      "baseline_sse": 10116.272137837652,
+      "candidate_sse": 9271.397650379993,
+      "ratio": 0.9164836141272243
+    },
+    {
+      "target": "TIMM9",
+      "cells": 109,
+      "baseline_sse": 15474.946500249143,
+      "candidate_sse": 11869.256686467686,
+      "ratio": 0.7669982372007939
+    },
+    {
+      "target": "TM7SF2",
+      "cells": 115,
+      "baseline_sse": 911.7425293076993,
+      "candidate_sse": 869.1786949390746,
+      "ratio": 0.9533159494041107
+    },
+    {
+      "target": "TOX4",
+      "cells": 115,
+      "baseline_sse": 744.2082279194582,
+      "candidate_sse": 747.8752857913746,
+      "ratio": 1.0049274621461364
+    },
+    {
+      "target": "TTC4",
+      "cells": 107,
+      "baseline_sse": 964.8008505933008,
+      "candidate_sse": 709.3724186344309,
+      "ratio": 0.7352526878455848
+    },
+    {
+      "target": "UBA2",
+      "cells": 101,
+      "baseline_sse": 2139.8726945409235,
+      "candidate_sse": 1979.0453791478838,
+      "ratio": 0.9248425778770252
+    },
+    {
+      "target": "UBE3C",
+      "cells": 70,
+      "baseline_sse": 1697.5003187365512,
+      "candidate_sse": 2109.5721527190785,
+      "ratio": 1.2427521393864787
+    },
+    {
+      "target": "UBE3D",
+      "cells": 119,
+      "baseline_sse": 627.878550612488,
+      "candidate_sse": 716.4739966596563,
+      "ratio": 1.141102839013603
+    },
+    {
+      "target": "UCHL5",
+      "cells": 106,
+      "baseline_sse": 604.6414097146439,
+      "candidate_sse": 598.0430170413663,
+      "ratio": 0.989087097629665
+    },
+    {
+      "target": "UQCRB",
+      "cells": 89,
+      "baseline_sse": 1962.7916879505392,
+      "candidate_sse": 1597.546520477175,
+      "ratio": 0.8139154706454167
+    },
+    {
+      "target": "UQCRFS1",
+      "cells": 69,
+      "baseline_sse": 10519.497922785904,
+      "candidate_sse": 6130.996288339265,
+      "ratio": 0.5828221397391159
+    },
+    {
+      "target": "UQCRQ",
+      "cells": 112,
+      "baseline_sse": 2017.9480056634184,
+      "candidate_sse": 1879.7803280467833,
+      "ratio": 0.9315306057297491
+    },
+    {
+      "target": "URB2",
+      "cells": 211,
+      "baseline_sse": 2501.722586168602,
+      "candidate_sse": 1658.252981496148,
+      "ratio": 0.6628444699121373
+    },
+    {
+      "target": "USF2",
+      "cells": 141,
+      "baseline_sse": 963.5177775117298,
+      "candidate_sse": 932.8407385145397,
+      "ratio": 0.9681614187997515
+    },
+    {
+      "target": "VBP1",
+      "cells": 71,
+      "baseline_sse": 670.6703811686797,
+      "candidate_sse": 782.2406743916434,
+      "ratio": 1.1663563746896746
+    },
+    {
+      "target": "VPS13D",
+      "cells": 110,
+      "baseline_sse": 7965.8790072046595,
+      "candidate_sse": 4074.652055848332,
+      "ratio": 0.5115131741472666
+    },
+    {
+      "target": "VPS29",
+      "cells": 85,
+      "baseline_sse": 1402.4473639754901,
+      "candidate_sse": 1043.9148453571866,
+      "ratio": 0.7443522460607873
+    },
+    {
+      "target": "VPS54",
+      "cells": 256,
+      "baseline_sse": 598.5392904444057,
+      "candidate_sse": 524.2902033679335,
+      "ratio": 0.8759495186667805
+    },
+    {
+      "target": "VPS72",
+      "cells": 79,
+      "baseline_sse": 2906.137999018737,
+      "candidate_sse": 2241.0856349243522,
+      "ratio": 0.7711559587607536
+    },
+    {
+      "target": "WDR4",
+      "cells": 137,
+      "baseline_sse": 543.3495059898775,
+      "candidate_sse": 655.8921330346325,
+      "ratio": 1.2071275041277973
+    },
+    {
+      "target": "WDR44",
+      "cells": 99,
+      "baseline_sse": 870.9548831151444,
+      "candidate_sse": 920.5414275595977,
+      "ratio": 1.05693353973411
+    },
+    {
+      "target": "WNK1",
+      "cells": 87,
+      "baseline_sse": 1737.9243567839926,
+      "candidate_sse": 1880.9988830679838,
+      "ratio": 1.0823249445382932
+    },
+    {
+      "target": "XRCC5",
+      "cells": 77,
+      "baseline_sse": 7684.06258619319,
+      "candidate_sse": 8654.545422995203,
+      "ratio": 1.1262981431913097
+    },
+    {
+      "target": "YARS2",
+      "cells": 133,
+      "baseline_sse": 2556.944699306774,
+      "candidate_sse": 1372.9904731400422,
+      "ratio": 0.5369652591674277
+    },
+    {
+      "target": "YPEL5",
+      "cells": 73,
+      "baseline_sse": 1444.2528201880405,
+      "candidate_sse": 1532.7473296388198,
+      "ratio": 1.0612735583505783
+    },
+    {
+      "target": "YY1",
+      "cells": 65,
+      "baseline_sse": 4647.080847246014,
+      "candidate_sse": 4265.7619098072,
+      "ratio": 0.9179444150052191
+    },
+    {
+      "target": "ZC3H3",
+      "cells": 91,
+      "baseline_sse": 2133.588539833219,
+      "candidate_sse": 1444.6974988136371,
+      "ratio": 0.6771209499121926
+    },
+    {
+      "target": "ZNF292",
+      "cells": 158,
+      "baseline_sse": 1409.7005631868246,
+      "candidate_sse": 1327.4371299340187,
+      "ratio": 0.9416447468341518
+    }
+  ]
+}

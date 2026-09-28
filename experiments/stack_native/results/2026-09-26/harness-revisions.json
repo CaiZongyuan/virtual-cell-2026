@@ -1,0 +1,37 @@
+{
+  "upstream_revision": "cacc2e4b09435c3e536d46237d10b50f222dd144",
+  "attempts": [
+    {
+      "log": "ntc-smoke-pandas3.log",
+      "harness_revision": "9eff749",
+      "pandas": "3.0.6",
+      "exit_code": 1,
+      "outcome": "incompatible pandas StringArray"
+    },
+    {
+      "log": "ntc-smoke-csr-return.log",
+      "harness_revision": "9eff749",
+      "pandas": "2.3.3",
+      "exit_code": 1,
+      "outcome": "local harness expected AnnData instead of native CSR"
+    },
+    {
+      "result": "ntc-smoke.json",
+      "harness_revision": "0efd16a",
+      "pandas": "2.3.3",
+      "exit_code": 0
+    },
+    {
+      "result": "ntc-smoke-512.json",
+      "harness_revision": "0985fea",
+      "pandas": "2.3.3",
+      "exit_code": 0
+    },
+    {
+      "result": "ntc-observed-panel.json",
+      "harness_revision": "f23f4e8",
+      "pandas": "2.3.3",
+      "exit_code": 0
+    }
+  ]
+}

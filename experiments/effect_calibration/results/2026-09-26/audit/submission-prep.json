@@ -1,0 +1,24 @@
+{
+  "input": "/home/caii/vcc2026-effect-calibration-20260926/submission/counts-float32.h5ad",
+  "output": "/home/caii/vcc2026-effect-calibration-20260926/submission/prediction.vcc",
+  "n_cells": 360000,
+  "nnz": 2071748832,
+  "n_genes": 18533,
+  "encoding": 32,
+  "pert_col": "target_gene",
+  "output_pert_col": "target_gene",
+  "celltype_col": null,
+  "normalization": "counts-preserved",
+  "context_col": "context",
+  "cells_per_context": {
+    "A": 120000,
+    "B": 120000,
+    "C": 120000
+  },
+  "verified_targets": true,
+  "dropped": [],
+  "reordered_genes": false,
+  "dry_run": false,
+  "vcc_member": "pred.h5ad.zst",
+  "notes": []
+}

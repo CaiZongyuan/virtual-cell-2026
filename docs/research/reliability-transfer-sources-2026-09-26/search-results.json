@@ -1,0 +1,254 @@
+[
+  {
+    "query": "Perturb-seq cross cell type prediction pseudobulk perturbation effect denoising empirical Bayes uncertainty",
+    "results": [
+      {
+        "title": "Predicting the unseen: a diffusion-based debiasing framework for transcriptional response prediction at single-cell resolution",
+        "url": "https://doi.org/10.1101/2025.09.12.675662",
+        "date_published": "2025-01-01T00:00:00.0000000",
+        "snippet": "… a quantification of uncertainty through a CI on the effect size. … and perform pseudobulk aggregation by tissue type. We then … by conventional perturb-seq methods. The Replogle dataset …",
+        "abstract": "Abstract Predicting cellular responses to genetic perturbations is critical for advancing our understanding of gene regulation. While single-cell CRISPR perturbation assays such as Perturb-seq provide direct measurements of gene function, the scale of these experiments is limited by cost and feasibility. This motivates the development of computational approaches that can accurately infer responses to unmeasured perturbations from related experimental data. We introduce dbDiffusion, a generative framework that integrates diffusion models with classifier-free guidance derived from perturbation information, operating in latent space through a variational autoencoder (VAE). Diffusion models are probabilistic generative models that approximate data distributions by reversing a Markovian diffusion process, progressively denoising Gaussian noise into structured outputs. By exploiting biological similarities in gene expression profiles and relationships among perturbations, dbDiffusion enables the conditional generation of gene expressions for previously unobserved perturbations. In contrast to competing approaches, dbDiffusion does not rely on LLM or foundation models, which have been found to yield unsatisfactory results. Rather, it leverages embeddings derived from measured perturbations to generalize to unseen pertur-bations, effectively transferring information across related experimental conditions. In benchmarking against state-of-the-art methods on Perturb-seq datasets, dbDiffusion demonstrates superior accuracy in predicting perturbation responses. A methodological innovation of dbDiffusion is the integration of prediction-powered inference, which corrects for biases inherent in generative models and enables statistically rigorous downstream tasks, including identification of differentially expressed genes. By combining deep generative modeling with principled inference, dbDiffusion establishes a scalable computational framework for predicting and analyzing transcriptomic perturbation responses, significantly extending the utility of Perturb-seq experiments.",
+        "authors": "E Shang, Y Wei, K Roeder",
+        "citations": 14,
+        "doi": "https://doi.org/10.1101/2025.09.12.675662",
+        "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+        "pdf": "1"
+      },
+      {
+        "title": "Unsupervised removal of systematic background noise from droplet-based single-cell experiments using CellBender",
+        "url": "https://doi.org/10.1038/s41592-023-01943-7",
+        "date_published": "2023-01-01T00:00:00.0000000",
+        "snippet": "… RNA CRISPR guides in Perturb-seq. As the field of single-… dataset-wide average gene expression (‘pseudo-bulk’) ̄χg … that modulates the uncertainty of the cell gene expression prior, …",
+        "abstract": "Droplet-based single-cell assays, including single-cell RNA sequencing (scRNA-seq), single-nucleus RNA sequencing (snRNA-seq) and cellular indexing of transcriptomes and epitopes by sequencing (CITE-seq), generate considerable background noise counts, the hallmark of which is nonzero counts in cell-free droplets and off-target gene expression in unexpected cell types. Such systematic background noise can lead to batch effects and spurious differential gene expression results. Here we develop a deep generative model based on the phenomenology of noise generation in droplet-based assays. The proposed model accurately distinguishes cell-containing droplets from cell-free droplets, learns the background noise profile and provides noise-free quantification in an end-to-end fashion. We implement this approach in the scalable and robust open-source software package CellBender. Analysis of simulated data demonstrates that CellBender operates near the theoretically optimal denoising limit. Extensive evaluations using real datasets and experimental benchmarks highlight enhanced concordance between droplet-based single-cell data and established gene expression patterns, while the learned background noise profile provides evidence of degraded or uncaptured cell types.",
+        "authors": "SJ Fleming, MD Chaffin, A Arduini, AD Akkad…",
+        "citations": 976,
+        "doi": "https://doi.org/10.1038/s41592-023-01943-7",
+        "journal": "Nature Methods",
+        "pdf": "0"
+      },
+      {
+        "title": "Scalable multimodal mapping of macrophage regulatory architecture by integrating optical and transcriptomic pooled screens",
+        "url": "https://www.biorxiv.org/content/10.64898/2026.05.27.728345.abstract",
+        "date_published": "2026-01-01T00:00:00.0000000",
+        "snippet": "… EB-MoCAVI, an empirical Bayesian variational inference … for matched (parallel) Perturb-Seq and OPS with novel AI … between pseudobulk profiles of each gene perturbation (rows…",
+        "abstract": "",
+        "authors": "T Kudo, R Lopez, AM Meireles, A Rios, P Coelho…",
+        "citations": 3,
+        "doi": "",
+        "journal": "",
+        "pdf": "0"
+      },
+      {
+        "title": "BuDDI: Bulk Deconvolution with Domain Invariance to predict cell-type-specific perturbations from bulk",
+        "url": "https://doi.org/10.1371/journal.pcbi.1012742",
+        "date_published": "2025-01-17T00:00:00.0000000",
+        "snippet": ". Three natural extensions for BuDDI can be used to unite across 1) single-cell and bulk ATAC-Seq to get cell-type specific peaks, 2) cell-free DNA and ATAC-Seq to detect cell- or tissue-specific fragments, and 3) single-cell RNA-Seq and spatial RNA-Seq to deconvolve spatial spots. Furthermore, other than cell type proportion, we have currently implemented BuDDI to represent sources of variability only as discrete values",
+        "abstract": "While single-cell experiments provide deep cellular resolution within a single sample, some single-cell experiments are inherently more challenging than bulk experiments due to dissociation difficulties, cost, or limited tissue availability. This creates a situation where we have deep cellular profiles of one sample or condition, and bulk profiles across multiple samples and conditions. To bridge this gap, we propose BuDDI (BUlk Deconvolution with Domain Invariance). BuDDI utilizes domain adaptation techniques to effectively integrate available corpora of case-control bulk and reference scRNA-seq observations to infer cell-type-specific perturbation effects. BuDDI achieves this by learning independent latent spaces within a single variational autoencoder (VAE) encompassing at least four sources of variability: 1) cell type proportion, 2) perturbation effect, 3) structured experimental variability, and 4) remaining variability. Since each latent space is encouraged to be independent, we simulate perturbation responses by independently composing each latent space to simulate cell-type-specific perturbation responses. We evaluated BuDDI’s performance on simulated and real data with experimental designs of increasing complexity. We first validated that BuDDI could learn domain invariant latent spaces on data with matched samples across each source of variability. Then we validated that BuDDI could accurately predict cell-type-specific perturbation response when no single-cell perturbed profiles were used during training; instead, only bulk samples had both perturbed and non-perturbed observations. Finally, we validated BuDDI on predicting sex-specific differences, an experimental design where it is not possible to have matched samples. In each experiment, BuDDI outperformed all other comparative methods and baselines. As more reference atlases are completed, BuDDI provides a path to combine these resources with bulk-profiled treatment or disease signatures to study perturbations, sex differences, or other factors at single-cell resolution.",
+        "authors": "Natalie R. Davidson,Fan Zhang,Casey S. Greene,Natalie R. Davidson,Fan Zhang,Casey S. Greene",
+        "citations": 2,
+        "doi": "https://doi.org/10.1371/journal.pcbi.1012742",
+        "journal": "PLoS Computational Biology",
+        "pdf": "1"
+      },
+      {
+        "title": "BuDDI:<i>Bulk Deconvolution with Domain Invariance</i>to predict cell-type-specific perturbations from bulk",
+        "url": "https://www.biorxiv.org/content/biorxiv/early/2023/10/05/2023.07.20.549951.full.pdf",
+        "date_published": "2023-07-22T00:00:00.0000000",
+        "snippet": ".For CVAE, the perturbation and sample IDs were included in the conditions, so we only had to change the condition status in the CVAE on the pseudobulks with primarily one cell-type to simulate a cell-type specific perturbation effect.We evaluated each method on pseudobulks generated from held-out single-cell RNA-Seq profiles",
+        "abstract": "Abstract While single-cell experiments provide deep cellular resolution within a single sample, some single-cell experiments are inherently more challenging than bulk experiments due to dissociation difficulties, cost, or limited tissue availability. This creates a situation where we have deep cellular profiles of one sample or condition, and bulk profiles across multiple samples and conditions. To bridge this gap, we propose BuDDI (BUlk Deconvolution with Domain Invariance). BuDDI utilizes domain adaptation techniques to effectively integrate available corpora of case-control bulk and reference scRNA-seq observations to infer cell-type-specific perturbation effects. BuDDI achieves this by learning independent latent spaces within a single variational autoencoder (VAE) encompassing at least four sources of variability: 1) cell type proportion, 2) perturbation effect, 3) structured experimental variability, and 4) remaining variability. Since each latent space is encouraged to be independent, we simulate perturbation responses by independently composing each latent space to simulate cell-type-specific perturbation responses. We evaluated BuDDI’s performance on simulated and real data with experimental designs of increasing complexity. We first validated that BuDDI could learn domain invariant latent spaces on data with matched samples across each source of variability. Then we validated that BuDDI could accurately predict cell-type-specific perturbation response when no single-cell perturbed profiles were used during training; instead, only bulk samples had both perturbed and non-perturbed observations. Finally, we validated BuDDI on predicting sex-specific differences, an experimental design where it is not possible to have matched samples. In each experiment, BuDDI outperformed all other comparative methods and baselines. As more reference atlases are completed, BuDDI provides a path to combine these resources with bulk-profiled treatment or disease signatures to study perturbations, sex differences, or other factors at single-cell resolution.",
+        "authors": "Natalie R. Davidson,Fan Zhang,Casey S. Greene,Natalie R. Davidson,Casey S. Greene",
+        "citations": 1,
+        "doi": "https://doi.org/10.1101/2023.07.20.549951",
+        "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+        "pdf": "1"
+      },
+      {
+        "title": "Interpretation, extrapolation and perturbation of single cells",
+        "url": "https://www.nature.com/articles/s41576-025-00920-4",
+        "date_published": "2026-01-01T00:00:00.0000000",
+        "snippet": "… FiCS Perturb-seq Industrialized workflow that chemically … cellular states across conditions, enabling robust prediction of … across cell types and samples, typically via pseudo-bulk …",
+        "abstract": "",
+        "authors": "D Dimitrov, S Schrod, M Rohbeck, O Stegle",
+        "citations": 25,
+        "doi": "",
+        "journal": "",
+        "pdf": "0"
+      },
+      {
+        "title": "A systematic comparison of single-cell perturbation response prediction models",
+        "url": "https://www.science.org/doi/abs/10.1126/sciadv.aed3414",
+        "date_published": "2026-01-01T00:00:00.0000000",
+        "snippet": "… - seq, such as Perturb- seq and CROP- seq, help uncover how cells respond to diverse stimuli or … For each entry, we computed a pseudobulk expression profile Yc,p by averaging normal…",
+        "abstract": "",
+        "authors": "L Li, Y You, Y Fu, W Liao, X Fan, S Lu, Y Cao, B Li…",
+        "citations": 32,
+        "doi": "",
+        "journal": "",
+        "pdf": "0"
+      },
+      {
+        "title": "CellPLM: Pre-training of Cell Language Model Beyond Single Cells",
+        "url": "https://www.biorxiv.org/content/biorxiv/early/2023/10/05/2023.10.03.560734.full.pdf",
+        "date_published": "2023-10-05T00:00:00.0000000",
+        "snippet": ".In the following sections, we evaluate the performance of CellPLM on various downstream tasks, including zero-shot clustering, scRNA-seq denoising, spatial transctiptomic imputation, cell type annotation and perturbation prediction.With the selected tasks, we aim to answer the following research questions:RQ1: Is CellPLM capable of transferring pre-train knowledge to brand new dataset",
+        "abstract": "Abstract The current state-of-the-art single-cell pre-trained models are greatly inspired by the success of large language models. They trained transformers by treating genes as tokens and cells as sentences. However, three fundamental differences between single-cell data and natural language data are overlooked: (1) scRNA-seq data are presented as bag-of-genes instead of sequences of RNAs; (2) Cell-cell relations are more intricate and important than inter-sentence relations; and (3) The quantity of single-cell data is considerably inferior to text data, and they are very noisy. In light of these characteristics, we propose a new pre-trained model CellPLM , which takes cells as tokens and tissues as sentences. In addition, we leverage spatially-resolved transcriptomic data in pre-training to facilitate learning cell-cell relationships and introduce a Gaussian mixture prior distribution as an additional inductive bias to overcome data limitation. CellPLM is the first single-cell pre-trained transformer that encodes cell-cell relations and it consistently outperforms existing pre-trained and non-pre-trained models in diverse downstream tasks, with 100x times higher inference speed compared to existing pre-trained models.",
+        "authors": "Hongzhi Wen,Wenzhuo Tang,Xinnan Dai,Jiayuan Ding,Wei Jin,Yuying Xie,Jiliang Tang,Hongzhi Wen,Wenzhuo Tang,Xinnan Dai,Jiayuan Ding,Wei Jin,Yuying Xie,Jiliang Tang",
+        "citations": 40,
+        "doi": "https://doi.org/10.1101/2023.10.03.560734",
+        "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+        "pdf": "1"
+      },
+      {
+        "title": "ICAT: a novel algorithm to robustly identify cell states following perturbations in single-cell transcriptomes",
+        "url": "https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btad278/50066629/btad278.pdf",
+        "date_published": "2023-04-22T00:00:00.0000000",
+        "snippet": "t with ICAT's performance in simulated data.  3.6 ICAT alone accurately predicts subpopulation response to perturbation in vivo  To empirically test ICAT predictions on cell state compositions following perturbation, we generated scRNA-seq data using th",
+        "abstract": "Abstract Motivation The detection of distinct cellular identities is central to the analysis of single-cell RNA sequencing (scRNA-seq) experiments. However, in perturbation experiments, current methods typically fail to correctly match cell states between conditions or erroneously remove population substructure. Here, we present the novel, unsupervised algorithm Identify Cell states Across Treatments (ICAT) that employs self-supervised feature weighting and control-guided clustering to accurately resolve cell states across heterogeneous conditions. Results Using simulated and real datasets, we show ICAT is superior in identifying and resolving cell states compared with current integration workflows. While requiring no a priori knowledge of extant cell states or discriminatory marker genes, ICAT is robust to low signal strength, high perturbation severity, and disparate cell type proportions. We empirically validate ICAT in a developmental model and find that only ICAT identifies a perturbation-unique cellular response. Taken together, our results demonstrate that ICAT offers a significant improvement in defining cellular responses to perturbation in scRNA-seq data. Availability and implementation https://github.com/BradhamLab/icat.",
+        "authors": "Dakota Y Hawkins,Daniel T Zuch,James Huth,Nahomie Rodriguez-Sastre,Kelley R McCutcheon,Abigail Glick,Alexandra T Lion,Christopher F Thomas,Abigail E Descoteaux,William Evan Johnson,Cynthia A Bradham,Dakota Y Hawkins,Cynthia A Bradham",
+        "citations": 10,
+        "doi": "https://doi.org/10.1093/bioinformatics/btad278",
+        "journal": "Bioinformatics",
+        "pdf": "1"
+      },
+      {
+        "title": "scDisInFact: disentangled learning for integration and prediction of multi-batch multi-condition single-cell RNA-sequencing data",
+        "url": "https://www.biorxiv.org/content/biorxiv/early/2023/05/02/2023.05.01.538975.full.pdf",
+        "date_published": "2023-05-02T00:00:00.0000000",
+        "snippet": ".Here, we propose scDisInFact (single cell disentangled Integration preserving condition-specific Factors), which is the first method that can perform all three tasks: batch effect removal, condition-associated key genes (CKGs) detection, and perturbation prediction on multi-batch multi-condition scRNA-seq dataset (Fig. 1a)",
+        "abstract": "ABSTRACT Single-cell RNA-sequencing (scRNA-seq) has been widely used for disease studies, where sample batches are collected from donors under different conditions including demographical groups, disease stages, and drug treatments. It is worth noting that the differences among sample batches in such a study are a mixture of technical confounders caused by batch effect and the biological variations caused by condition effect. However, current batch effect removal methods often eliminate both technical batch effects and meaningful condition effects, while perturbation prediction methods solely focus on condition effects, resulting in inaccurate gene expression predictions due to unaccounted batch effects. Here we introduce scDisInFact, a deep learning framework that models both batch effect and condition effect in scRNA-seq data. scDisInFact learns latent factors that disentangle condition effects from batch effects, enabling it to simultaneously perform three tasks: batch effect removal, condition-associated key gene detection, and perturbation prediction. We evaluated scDisInFact on both simulated and real datasets, and compared its performance to baseline methods for each task. Our results demonstrate that scDisInFact outperforms existing methods that focus on individual tasks, providing a more comprehensive and accurate approach for integrating and predicting multi-batch multi-condition single-cell RNA-sequencing data.",
+        "authors": "Ziqi Zhang,Xinye Zhao,Peng Qiu,Xiuwei Zhang,Ziqi Zhang,Xiuwei Zhang",
+        "citations": 1,
+        "doi": "https://doi.org/10.1101/2023.05.01.538975",
+        "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+        "pdf": "1"
+      }
+    ],
+    "evidence_scope": "Search metadata/abstract candidates; primary verification and decisions are in the linked run note."
+  },
+  {
+    "query": "\"multivariate adaptive shrinkage\" gene expression effect estimates Stephens Urbut",
+    "results": [
+      {
+        "title": "Fine‐mapping and QTL tissue‐sharing information improves the reliability of causal gene identification",
+        "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/gepi.22346",
+        "date_published": "2020-01-01T00:00:00.0000000",
+        "snippet": "… effect size estimates across multiple experiments (Urbut, Wang, Carbonetto, & Stephens, 2019… The area under the ROC curve (AUC) is greatest for the multivariate adaptive shrinkage in …",
+        "abstract": "Abstract The integration of transcriptomic studies and genome‐wide association studies (GWAS) via imputed expression has seen extensive application in recent years, enabling the functional characterization and causal gene prioritization of GWAS loci. However, the techniques for imputing transcriptomic traits from DNA variation remain underdeveloped. Furthermore, associations found when linking eQTL studies to complex traits through methods like PrediXcan can lead to false positives due to linkage disequilibrium between distinct causal variants. Therefore, the best prediction performance models may not necessarily lead to more reliable causal gene discovery. With the goal of improving discoveries without increasing false positives, we develop and compare multiple transcriptomic imputation approaches using the most recent GTEx release of expression and splicing data on 17,382 RNA‐sequencing samples from 948 post‐mortem donors in 54 tissues. We find that informing prediction models with posterior causal probability from fine‐mapping ( dap‐g ) and borrowing information across tissues ( mashr ) can lead to better performance in terms of number and proportion of significant associations that are colocalized and the proportion of silver standard genes identified as indicated by precision‐recall and receiver operating characteristic curves. All prediction models are made publicly available at predictdb.org.",
+        "authors": "AN Barbeira, OJ Melia, Y Liang…",
+        "citations": 67,
+        "doi": "https://doi.org/10.1002/gepi.22346",
+        "journal": "Genetic Epidemiology",
+        "pdf": "1"
+      },
+      {
+        "title": "Flexible statistical methods for estimating and testing effects in genomic studies with multiple conditions",
+        "url": "https://www.nature.com/articles/s41588-018-0268-8",
+        "date_published": "2019-01-01T00:00:00.0000000",
+        "snippet": "… We introduce new statistical methods for analyzing genomic data sets that measure many effects in many conditions (for example, gene expression changes under many treatments). …",
+        "abstract": "",
+        "authors": "SM Urbut, G Wang, P Carbonetto, M Stephens",
+        "citations": 547,
+        "doi": "",
+        "journal": "",
+        "pdf": "0"
+      },
+      {
+        "title": "A comparison of gene expression and DNA methylation patterns across tissues and species",
+        "url": "https://genome.cshlp.org/content/30/2/250.full.pdf",
+        "date_published": "2020-01-17T00:00:00.0000000",
+        "snippet": ".To assess the significance of this difference, we used adaptive shrinkage (ashr) (Stephens 2017) to compute the posterior mean of the differences in the effect sizes, using vashr (Lu and Stephens 2016), with the degrees of freedom equal to the number of samples in the linear model minus 2. The shrunken variances from vashr were used in the ashr posterior mean computation",
+        "abstract": "Previously published comparative functional genomic data sets from primates using frozen tissue samples, including many data sets from our own group, were often collected and analyzed using nonoptimal study designs and analysis approaches. In addition, when samples from multiple tissues were studied in a comparative framework, individuals and tissues were confounded. We designed a multitissue comparative study of gene expression and DNA methylation in primates that minimizes confounding effects by using a balanced design with respect to species, tissues, and individuals. We also developed a comparative analysis pipeline that minimizes biases attributable to sequence divergence. Thus, we present the most comprehensive catalog of similarities and differences in gene expression and DNA methylation levels between livers, kidneys, hearts, and lungs, in humans, chimpanzees, and rhesus macaques. We estimate that overall, interspecies and inter-tissue differences in gene expression levels can only modestly be accounted for by corresponding differences in promoter DNA methylation. However, the expression pattern of genes with conserved inter-tissue expression differences can be explained by corresponding interspecies methylation changes more often. Finally, we show that genes whose tissue-specific regulatory patterns are consistent with the action of natural selection are highly connected in both gene regulatory and protein–protein interaction networks.",
+        "authors": "Lauren E. Blake,Julien Roux,Irene Hernando-Herraez,Nicholas E. Banovich,Raquel Garcia Perez,Chiaowen Joyce Hsiao,Ittai Eres,Claudia Cuevas,Tomas Marques-Bonet,Yoav Gilad,Lauren E. Blake,Julien Roux,Irene Hernando-Herraez,Nicholas E. Banovich,Raquel Garcia Perez,Chiaowen Joyce Hsiao,Ittai Eres,Claudia Cuevas,Tomas Marques-Bonet,Yoav Gilad",
+        "citations": 134,
+        "doi": "https://doi.org/10.1101/gr.254904.119",
+        "journal": "Genome Research",
+        "pdf": "1"
+      },
+      {
+        "title": "A flexible empirical Bayes approach to multivariate multiple regression, and its improved accuracy in predicting multi-tissue gene expression from genotypes",
+        "url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1010539",
+        "date_published": "2023-01-01T00:00:00.0000000",
+        "snippet": "… , “Multiple Regression with Multivariate Adaptive Shrinkage” or “… effect on expression (in C, white boxes depict zeros in B). The B estimated by mr.mash can then be used to predict gene …",
+        "abstract": "",
+        "authors": "…, G Wang, Y Zou, A Sarkar, M Stephens",
+        "citations": 18,
+        "doi": "",
+        "journal": "",
+        "pdf": "0"
+      },
+      {
+        "title": "Dynamic effects of genetic variation on gene expression revealed following hypoxic stress in cardiomyocytes",
+        "url": "https://doi.org/10.7554/elife.57345",
+        "date_published": "2021-02-08T00:00:00.0000000",
+        "snippet": "ons with a Benjamini and Hochberg FDR < 0.1. To identify regions with small effect size differences between conditions, we used an adaptive shrinkage method implemented in the ashr package in R (Stephens, 2017). We used the regression estimates (regression coefficients, posterior standard errors, and posterior degrees of freedom) generated by limma to calculate a posterior mean (shrunken regression coefficients), FDR, and False Sign Rate (FSR, probability t",
+        "abstract": "One life-threatening outcome of cardiovascular disease is myocardial infarction, where cardiomyocytes are deprived of oxygen. To study inter-individual differences in response to hypoxia, we established an in vitro model of induced pluripotent stem cell-derived cardiomyocytes from 15 individuals. We measured gene expression levels, chromatin accessibility, and methylation levels in four culturing conditions that correspond to normoxia, hypoxia, and short- or long-term re-oxygenation. We characterized thousands of gene regulatory changes as the cells transition between conditions. Using available genotypes, we identified 1,573 genes with a cis expression quantitative locus (eQTL) in at least one condition, as well as 367 dynamic eQTLs, which are classified as eQTLs in at least one, but not in all conditions. A subset of genes with dynamic eQTLs is associated with complex traits and disease. Our data demonstrate how dynamic genetic effects on gene expression, which are likely relevant for disease, can be uncovered under stress.",
+        "authors": "Michelle C Ward,Nicholas E Banovich,Abhishek Sarkar,Matthew Stephens,Yoav Gilad",
+        "citations": 57,
+        "doi": "https://doi.org/10.7554/elife.57345",
+        "journal": "eLife",
+        "pdf": "1"
+      },
+      {
+        "title": "Multivariate adaptive shrinkage improves cross-population transcriptome prediction and association studies in underrepresented populations",
+        "url": "https://zenodo.org/record/7909040",
+        "date_published": "2023-01-01T00:00:00.0000000",
+        "snippet": "… Using Matrix eQTL, we estimated univariate effect sizes for each cis-SNP-gene relationship, … using multivariate adaptive shrinkage, we were able to increase gene expression prediction …",
+        "abstract": "This Zenodo file collection contains transcriptome prediction models built for PrediXcan, as well as concatenated raw results from S-PrediXcan. Files belong to the research paper \"Multivariate adaptive shrinkage improves cross-population transcriptome prediction and association studies in underrepresented populations\" published at HGG Advances (2023, doi: 10.1016/j.xhgg.2023.100216). Please refer to the README file for a more detailed description.",
+        "authors": "DS Araujo, C Nguyen, X Hu, AV Mikhaylova…",
+        "citations": 20,
+        "doi": "https://doi.org/10.5281/zenodo.7909040",
+        "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+        "pdf": "1"
+      },
+      {
+        "title": "Model-based dimensionality reduction for single-cell RNA-seq using generalized bilinear models",
+        "url": "https://www.biorxiv.org/content/biorxiv/early/2023/04/25/2023.04.21.537881.full.pdf",
+        "date_published": "2023-04-25T00:00:00.0000000",
+        "snippet": ".Using the classical method of inverting the Fisher information matrix (Methods), we approximate the standard error corresponding to each entry of U and use the Adaptive Shrinkage (ash) method of Stephens (2017) to perform post hoc shrinkage towards 0. Since ash shrinks genes with larger uncertainties more strongly (Figure 4d, stabilized), this effectively stabilizes the scGBM weights such that low mean genes are not given overly large weights simply due to noise",
+        "abstract": "Abstract Dimensionality reduction is a critical step in the analysis of single-cell RNA-seq (scRNA-seq) data. The standard approach is to apply a transformation to the count matrix followed by principal components analysis (PCA). However, this approach can induce spurious heterogeneity and mask true biological variability. An alternative approach is to directly model the counts, but existing methods tend to be computationally intractable on large datasets and do not quantify uncertainty in the low-dimensional representation. To address these problems, we develop scGBM, a novel method for model-based dimensionality reduction of scRNA-seq data using a Poisson bilinear model. We introduce a fast estimation algorithm to fit the model using iteratively reweighted singular value decompositions, enabling the method to scale to datasets with millions of cells. Furthermore, scGBM quantifies the uncertainty in each cell’s latent position and leverages these uncertainties to assess the confidence associated with a given cell clustering. On real and simulated single-cell data, we find that scGBM produces low-dimensional embeddings that better capture relevant biological information while removing unwanted variation.",
+        "authors": "Phillip B. Nicol,Jeffrey W. Miller,Phillip B. Nicol,Jeffrey W. Miller",
+        "citations": 9,
+        "doi": "https://doi.org/10.1101/2023.04.21.537881",
+        "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+        "pdf": "1"
+      },
+      {
+        "title": "Evolution of gene expression across brain regions in behaviourally divergent deer mice",
+        "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/mec.17270",
+        "date_published": "2025-01-01T00:00:00.0000000",
+        "snippet": "… multivariate adaptive shrinkage to account for correlations in effect sizes among subregions and to improve power (Urbut et … fold change estimates (after multivariate adaptive shrinkage) …",
+        "abstract": "",
+        "authors": "AF Kautt, J Chen, CL Lewarch, C Hu…",
+        "citations": 9,
+        "doi": "",
+        "journal": "",
+        "pdf": "0"
+      },
+      {
+        "title": "Flexible statistical methods for jointly modeling effects",
+        "url": "http://knowledge.uchicago.edu/record/794",
+        "date_published": "2017-01-01T00:00:00.0000000",
+        "snippet": "… We find that some genetic effects associated positively with gene expression in … “multivariate adaptive shrinkage” (mash), build on recent work in [15] for testing and estimation of effects …",
+        "abstract": "n baseline. Such applications are extremely common in genomics. Consider, for instance, the case of gene expression, in which we observe an R vector of ‘noisy’ estimates of gene expression in R subgroups. For every sub- group, there is some underlying mean gene expression which may be diﬀerent from a common con",
+        "authors": "SM Urbut",
+        "citations": 2,
+        "doi": "https://doi.org/10.6082/m1cf9n6p",
+        "journal": "University of Chicago",
+        "pdf": "1"
+      },
+      {
+        "title": "Bayesian multivariate genetic analysis improves translational insights",
+        "url": "https://doi.org/10.1016/j.isci.2023.107854",
+        "date_published": "2023-01-01T00:00:00.0000000",
+        "snippet": "… Multivariate adaptive shrinkage (mash4) is a Bayesian adaptive shrinkage tool designed to estimate genetic … Multivariate adaptive shrinkage adds an additional layer of local false sign …",
+        "abstract": "While lipid traits are known essential mediators of cardiovascular disease, few approaches have taken advantage of their shared genetic effects. We apply a Bayesian multivariate size estimator, mash, to GWAS of four lipid traits in the Million Veterans Program (MVP) and provide posterior mean and local false sign rates for all effects. These estimates borrow information across traits to improve effect size accuracy. We show that controlling local false sign rates accurately and powerfully identifies replicable genetic associations and that multivariate control furthers the ability to explain complex diseases. Our application yields high concordance between independent datasets, more accurately prioritizes causal genes, and significantly improves polygenic prediction beyond state-of-the-art methods by up to 59% for lipid traits. The use of Bayesian multivariate genetic shrinkage has yet to be applied to human quantitative trait GWAS results, and we present a staged approach to prediction on a polygenic scale.",
+        "authors": "SM Urbut, S Koyama, W Hornsby, R Bhukar…",
+        "citations": 2,
+        "doi": "https://doi.org/10.1016/j.isci.2023.107854",
+        "journal": "iScience",
+        "pdf": "1"
+      }
+    ],
+    "evidence_scope": "Search metadata/abstract candidates; primary verification and decisions are in the linked run note."
+  }
+]

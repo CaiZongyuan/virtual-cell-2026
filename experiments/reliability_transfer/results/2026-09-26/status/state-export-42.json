@@ -1,0 +1,26 @@
+{
+  "stage": "state-export-42",
+  "trial": "state",
+  "source_revision": "4a4913ee2c10c058cb415ef4fc1d95d33d41d461",
+  "started_at_utc": "2026-09-26T05:15:16.546808+00:00",
+  "command": [
+    "/home/caii/vcc2026-run/.venv/bin/python",
+    "/home/caii/vcc2026-reliability-20260926/code/experiments/reliability_transfer/predict.py",
+    "--work",
+    "/home/caii/vcc2026-reliability-20260926",
+    "--previous",
+    "/home/caii/vcc2026-run",
+    "--arm",
+    "state",
+    "--seed",
+    "42",
+    "--revision",
+    "4a4913ee2c10c058cb415ef4fc1d95d33d41d461"
+  ],
+  "log": "logs/state-export-42-1790399716546789795.log",
+  "exit_code": 0,
+  "project_storage_bytes_before_stage": 135170209048,
+  "timeout_seconds": 1800,
+  "elapsed_seconds": 399.8728828430176,
+  "finished_at_unix": 1790400116.4194264
+}
